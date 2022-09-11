@@ -1,4 +1,4 @@
-默认的主页不够个性化，自己可以设计好看的主页，然后上传到这个项目中。网上有很多个人主页的模板，可以自行选择一个喜欢的。将要呈现的主页命名为 `index.html` 然后上传至项目。
+默认的github.io主页不够个性化，自己可以设计好看的主页，然后上传到这个项目中。网上有很多个人主页的模板，可以自行选择一个喜欢的。将要呈现的主页命名为 `index.html` 然后上传至项目。
 
 ![image-readme1](https://github.com/ranxi169/ranxi169.github.io/blob/main/photos/readme1.png)
 

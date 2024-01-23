@@ -1296,7 +1296,7 @@ PyCharm官网：PyCharm: the Python IDE for Professional Developers by JetBr
         </div>
         <!-- 正文内容结束 -->
         <!-- 侧边栏开始 -->
-        <div style="width: 230px;">
+        <div id="sidebar" style="width: 230px;">
             <!-- sidebar.ejs -->
 
 <style>
@@ -1349,6 +1349,13 @@ PyCharm官网：PyCharm: the Python IDE for Professional Developers by JetBr
 </aside>
         </div>
         <!-- 侧边栏结束 -->
+
+        <script>
+            var isMobile = /mobile/i.test(navigator.userAgent);
+            if (isMobile) {
+                document.getElementById('sidebar').style.display = 'none';
+            }
+        </script>
 
     </div>
 

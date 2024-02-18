@@ -485,7 +485,15 @@
         document.getElementById('sidebar').style.display = 'none';
     }
 </script>
-<div class="container" style="display: flex; justify-content: space-between;">
+<div class="container" style="display: flex; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto;">
+
+<style>
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+    }
+</style>
     <!-- 正文 -->
     <div id="main-content" style="flex-grow: 1; margin: 0 0px;">
         <!-- 文章内容详情 -->

@@ -485,7 +485,15 @@
         document.getElementById('sidebar').style.display = 'none';
     }
 </script>
-<div class="container" style="display: flex; justify-content: space-between;">
+<div class="container" style="display: flex; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto;">
+
+<style>
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+    }
+</style>
     <!-- 正文 -->
     <div id="main-content" style="flex-grow: 1; margin: 0 0px;">
         <!-- 文章内容详情 -->
@@ -1211,16 +1219,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/chatgpt/">
+                        <span class="chip bg-color">chatgpt</span>
+                    </a>
+                    
                     <a href="/tags/visa/">
                         <span class="chip bg-color">visa</span>
                     </a>
                     
                     <a href="/tags/%E4%BF%A1%E7%94%A8%E5%8D%A1/">
                         <span class="chip bg-color">信用卡</span>
-                    </a>
-                    
-                    <a href="/tags/chatgpt/">
-                        <span class="chip bg-color">chatgpt</span>
                     </a>
                     
                 </div>

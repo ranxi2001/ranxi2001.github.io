@@ -1,108 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Github和git使用指南：以PyCharm为例</title>
-    <url>/posts/16889.html</url>
-    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
-
-<p>注册按照引导完成就可以了</p>
-<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
-<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
-<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
-
-<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
-<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
-
-<p>克隆项目代码：</p>
-<blockquote>
-<p>前置条件：安装Git</p>
-</blockquote>
-<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
-<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
-<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
-<p> 进入cmd</p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
-
-<p> 然后输入<code>git clone 项目地址</code></p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
-
-<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
-<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
-<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
-
-<p>填写github仓库地址，然后点击clone</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
-
-<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
-
-<p>下载完项目仓库后会弹出一个对话框，自选</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
-
-<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
-
-<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
-
-<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
-
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
-
-<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
-<p>接受邀请后就可以push了</p>
-<p>push之前需要在ide登录自己的github账号</p>
-<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
-<p>也就是File-setting配置git和github账号</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
-
-<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
-
-<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
-<p>在Pycahrm中登录</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
-
-<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
-
-<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
-
-<p>解决方法有</p>
-<ol>
-<li>关闭重启编辑器ide</li>
-<li>关闭或打开clash代理</li>
-<li>在终端中输入以下代码</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>其实更加有用的解决方案是：</p>
-<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>git</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Awesome Free ChatGPT | 免费chatgpt镜像国内免翻无需科学上网</title>
     <url>/posts/23702.html</url>
     <content><![CDATA[<p>🎁 免费的 ChatGPT (<a href="https://chat.openai.com/">https://chat.openai.com/</a>) 镜像网站列表，以及更多免费资源，持续更新。</p>
@@ -2275,6 +2173,108 @@
       </tags>
   </entry>
   <entry>
+    <title>Github和git使用指南：以PyCharm为例</title>
+    <url>/posts/16889.html</url>
+    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
+
+<p>注册按照引导完成就可以了</p>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
+<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
+
+<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
+<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
+
+<p>克隆项目代码：</p>
+<blockquote>
+<p>前置条件：安装Git</p>
+</blockquote>
+<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
+<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
+<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
+<p> 进入cmd</p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
+
+<p> 然后输入<code>git clone 项目地址</code></p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
+
+<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
+<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
+<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
+
+<p>填写github仓库地址，然后点击clone</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
+
+<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
+
+<p>下载完项目仓库后会弹出一个对话框，自选</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
+
+<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
+
+<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
+
+<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
+
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
+
+<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
+<p>接受邀请后就可以push了</p>
+<p>push之前需要在ide登录自己的github账号</p>
+<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
+<p>也就是File-setting配置git和github账号</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
+
+<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
+
+<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
+<p>在Pycahrm中登录</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
+
+<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
+
+<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
+
+<p>解决方法有</p>
+<ol>
+<li>关闭重启编辑器ide</li>
+<li>关闭或打开clash代理</li>
+<li>在终端中输入以下代码</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其实更加有用的解决方案是：</p>
+<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PyCharm专业版最简单的破解教程，永久适用</title>
     <url>/posts/15000.html</url>
     <content><![CDATA[<h1 id="PyCharm专业版最简单的破解教程，永久适用"><a href="#PyCharm专业版最简单的破解教程，永久适用" class="headerlink" title="PyCharm专业版最简单的破解教程，永久适用"></a>PyCharm专业版最简单的破解教程，永久适用</h1><h2 id="1-从官网下载PyCharm"><a href="#1-从官网下载PyCharm" class="headerlink" title="1.从官网下载PyCharm"></a>1.从官网下载PyCharm</h2><p>官网的下载速度是很快的！</p>
@@ -2842,6 +2842,27 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>投资学博迪第十版.pdf下载</title>
+    <url>/posts/15785.html</url>
+    <content><![CDATA[<p>作者：（美）滋维&amp;middot;博迪（Zvi Bodie）,（美）亚历克斯&amp;middot;凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
+<p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p>
+格式: PDF
+
+<p>封面：</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png"></p>
+<p>下载链接：扫描下方<u>二维码</u>关注<code>公众号</code>并回复<code>投资学</code>免费下载</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221014121626471-157482862.png"></p>
+<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>经管</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我们应该为Copilot X 的到来做好什么准备？</title>
     <url>/posts/16892.html</url>
     <content><![CDATA[<h1 id="申请github-copilot学生认证以及Jetbrain专业版学生教育免费教程-申请加入Copilot-X-Waitlist"><a href="#申请github-copilot学生认证以及Jetbrain专业版学生教育免费教程-申请加入Copilot-X-Waitlist" class="headerlink" title="申请github copilot学生认证以及Jetbrain专业版学生教育免费教程+申请加入Copilot X Waitlist."></a>申请github copilot学生认证以及Jetbrain专业版学生教育免费教程+申请加入Copilot X Waitlist.</h1><h2 id="教程概览"><a href="#教程概览" class="headerlink" title="教程概览"></a>教程概览</h2><p>1.学信网下载学籍认证pdf</p>
@@ -2903,47 +2924,9 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>人工智能</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>AI</tag>
+        <tag>github</tag>
         <tag>Copilot X</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>投资学博迪第十版.pdf下载</title>
-    <url>/posts/15785.html</url>
-    <content><![CDATA[<p>作者：（美）滋维&amp;middot;博迪（Zvi Bodie）,（美）亚历克斯&amp;middot;凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
-<p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p>
-格式: PDF
-
-<p>封面：</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png"></p>
-<p>下载链接：扫描下方<u>二维码</u>关注<code>公众号</code>并回复<code>投资学</code>免费下载</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221014121626471-157482862.png"></p>
-<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>经管</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一行代码Android（第3版）pdf</title>
-    <url>/posts/43427.html</url>
-    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
-<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
-<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
-<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
-<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>开发</tag>
       </tags>
   </entry>
   <entry>
@@ -3424,6 +3407,23 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>百度网盘</tag>
         <tag>视频会员</tag>
         <tag>自媒体粉丝</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一行代码Android（第3版）pdf</title>
+    <url>/posts/43427.html</url>
+    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
+<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
+<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
+<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
+<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>开发</tag>
       </tags>
   </entry>
 </search>

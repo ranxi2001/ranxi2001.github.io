@@ -1120,12 +1120,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
-                    </a>
-                    
                     <a href="/tags/AI/">
                         <span class="chip bg-color">AI</span>
+                    </a>
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
                     </a>
                     
                     <a href="/tags/Copilot-X/">
@@ -1228,13 +1228,25 @@
             <div id="toc-content"></div>
         </div>
     </div>
-    <script>
-        var isMobile = /mobile/i.test(navigator.userAgent);
-        if (isMobile) {
-            document.getElementById('toc-aside').style.display = 'none';
-        }
-    </script>
 </div>
+
+<style>
+    @media (max-width: 768px) {
+        #main-content {
+            margin: 0;
+        }
+        #toc-aside {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    var isMobile = /mobile/i.test(navigator.userAgent);
+    if (isMobile) {
+        document.getElementById('toc-aside').style.display = 'none';
+    }
+</script>
 
 <!-- TOC 悬浮按钮. -->
 

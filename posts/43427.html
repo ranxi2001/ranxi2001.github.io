@@ -1206,6 +1206,12 @@
             <div id="toc-content"></div>
         </div>
     </div>
+    <script>
+        var isMobile = /mobile/i.test(navigator.userAgent);
+        if (isMobile) {
+            document.getElementById('toc-aside').style.display = 'none';
+        }
+    </script>
 </div>
 
 <!-- TOC 悬浮按钮. -->

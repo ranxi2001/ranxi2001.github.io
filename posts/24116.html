@@ -479,6 +479,12 @@
     </div>    
 </aside>
 </div>
+<script>
+    var isMobile = /mobile/i.test(navigator.userAgent);
+    if (isMobile) {
+        document.getElementById('sidebar').style.display = 'none';
+    }
+</script>
 <div class="container" style="display: flex; justify-content: space-between;">
     <!-- 正文 -->
     <div id="main-content" style="flex-grow: 1; margin: 0 20px;">

@@ -487,7 +487,7 @@
 </script>
 <div class="container" style="display: flex; justify-content: space-between;">
     <!-- 正文 -->
-    <div id="main-content" style="flex-grow: 1; margin: 0 20px;">
+    <div id="main-content" style="flex-grow: 1; margin: 0 0px;">
         <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -1421,25 +1421,13 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
             <div id="toc-content"></div>
         </div>
     </div>
+    <script>
+        var isMobile = /mobile/i.test(navigator.userAgent);
+        if (isMobile) {
+            document.getElementById('toc-aside').style.display = 'none';
+        }
+    </script>
 </div>
-
-<style>
-    @media (max-width: 768px) {
-        #main-content {
-            margin: 0;
-        }
-        #toc-aside {
-            display: none;
-        }
-    }
-</style>
-
-<script>
-    var isMobile = /mobile/i.test(navigator.userAgent);
-    if (isMobile) {
-        document.getElementById('toc-aside').style.display = 'none';
-    }
-</script>
 
 <!-- TOC 悬浮按钮. -->
 

@@ -2275,165 +2275,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python数据分析教程（二）：Pandas</title>
-    <url>/posts/13141.html</url>
-    <content><![CDATA[<h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
-<li>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</li>
-<li>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用</li>
-<li>两个数据类型：Series, DataFrame</li>
-</ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="Pandas与numpy的比较"><a href="#Pandas与numpy的比较" class="headerlink" title="Pandas与numpy的比较"></a><strong>Pandas</strong>与numpy的比较</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204036490-294398481.png"></p>
-<h2 id="Pandas的Series类型"><a href="#Pandas的Series类型" class="headerlink" title="Pandas的Series类型"></a><strong>Pandas的Series类型</strong></h2><p>由一组数据及与之相关的数据索引组成</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204224581-494169725.png"></p>
-<h3 id="Pandas的Series类型的创建"><a href="#Pandas的Series类型的创建" class="headerlink" title="Pandas的Series类型的创建"></a><strong>Pandas的Series类型的创建</strong></h3><p>Series类型可以由如下类型创建：</p>
-<ul>
-<li>Python列表，index与列表元素个数一致</li>
-<li>标量值，index表达Series类型的尺寸</li>
-<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
-<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
-<li>其他函数，range()函数等</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204306537-1503027646.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204534311-1927277320.png"></p>
-<h3 id="Pandas的Series类型的基本操作"><a href="#Pandas的Series类型的基本操作" class="headerlink" title="Pandas的Series类型的基本操作"></a><strong>Pandas的Series类型的基本操作</strong></h3><p>Series类型包含index和values两个部分：</p>
-<ul>
-<li>index 获得索引</li>
-<li>values 获得数据</li>
-</ul>
-<p>由ndarray或字典创建的Series，操作类似ndarray或字典类型</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204858056-644012635.png"></p>
-<h2 id="pandas的DataFrame类型"><a href="#pandas的DataFrame类型" class="headerlink" title="pandas的DataFrame类型"></a><strong>pandas的DataFrame类型</strong></h2><ul>
-<li><p>DataFrame类型由共用相同索引的一组列组成</p>
-</li>
-<li><p>DataFrame是一个表格型的数据类型，每列值类型可以不同</p>
-</li>
-<li><p>DataFrame既有行索引、也有列索引</p>
-</li>
-<li><p>DataFrame常用于表达二维数据，但可以表达多维数据</p>
-</li>
-<li><p>DataFrame是二维带“标签”数组</p>
-</li>
-<li><p>DataFrame基本操作类似Series，依据行列索引</p>
-</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205139067-819109186.png"></p>
-<h3 id="pandas的DataFrame类型创建"><a href="#pandas的DataFrame类型创建" class="headerlink" title="pandas的DataFrame类型创建"></a><strong>pandas的DataFrame类型创建</strong></h3><p>DataFrame类型可以由如下类型创建：</p>
-<ul>
-<li>二维ndarray对象</li>
-<li>由一维ndarray、列表、字典、元组或Series构成的字典</li>
-<li>Series类型</li>
-<li>其他的DataFrame类型</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205306000-1512929844.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205403500-1728575625.png"></p>
-<h3 id="Pandas的Dataframe类型的基本操作"><a href="#Pandas的Dataframe类型的基本操作" class="headerlink" title="Pandas的Dataframe类型的基本操作"></a><strong>Pandas的Dataframe类型的基本操作</strong></h3><h4 id="pandas索引操作"><a href="#pandas索引操作" class="headerlink" title="pandas索引操作"></a><strong>pandas索引操作</strong></h4><h5 id="pandas重新索引"><a href="#pandas重新索引" class="headerlink" title="pandas重新索引"></a><strong>pandas重新索引</strong></h5><p>reindex()能够改变或重排Series和DataFrame索引</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205722764-2087213798.png"></p>
-<p>reindex(index=None, columns=None, …)的参数</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205810608-1806112533.png"></p>
-<p><strong>pandas删除索引</strong></p>
-<p>drop()能够删除Series和DataFrame指定行或列索引</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210003320-843812767.png"></p>
-<h4 id="pandas数据运算"><a href="#pandas数据运算" class="headerlink" title="pandas数据运算"></a><strong>pandas数据运算</strong></h4><ul>
-<li>算术运算根据行列索引，补齐后运算，运算默认产生浮点数</li>
-<li>补齐时缺项填充NaN (空值)</li>
-<li>二维和一维、一维和零维间为广播运算</li>
-<li>采用+ ‐ * /符号进行的二元运算产生新的对象</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210126120-1408047150.png"></p>
-<h5 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h5><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210234171-1672958996.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210300650-988503635.png"></p>
-<ul>
-<li>不同维度间为广播运算，一维Series默认在轴1参与运算</li>
-<li>使用运算方法可以令一维Series参与轴0运算</li>
-</ul>
-<h2 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a><strong>Pandas数据分析</strong></h2><h3 id="Pandas导入与导出数据"><a href="#Pandas导入与导出数据" class="headerlink" title="Pandas导入与导出数据"></a><strong>Pandas导入与导出数据</strong></h3><h4 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h4><p>pd.read_csv(filename)：从CSV文件导入数据</p>
-<p>pd.read_table(filename)：从限定分隔符的文本文件导入数据</p>
-<p>pd.read_excel(filename)：从Excel文件导入数据</p>
-<p>pd.read_sql(query, connection_object)：从SQL表/库导入数据</p>
-<p>pd.read_json(json_string)：从JSON格式的字符串导入数据</p>
-<p>pd.read_html(url)：解析URL、字符串或者HTML文件，抽取其中的tables表格</p>
-<p>pd.read_clipboard()：从你的粘贴板获取内容，并传给read_table()</p>
-<p>pd.DataFrame(dict)：从字典对象导入数据，Key是列名，Value是数据</p>
-<h4 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h4><p>df.to_csv(filename)：导出数据到CSV文件</p>
-<p>df.to_excel(filename)：导出数据到Excel文件</p>
-<p>df.to_sql(table_name, connection_object)：导出数据到SQL表</p>
-<p>df.to_json(filename)：以Json格式导出数据到文本文件</p>
-<h3 id="Pandas查看、检查数据"><a href="#Pandas查看、检查数据" class="headerlink" title="Pandas查看、检查数据"></a><strong>Pandas查看、检查数据</strong></h3><p>df.head(n)：查看DataFrame对象的前n行</p>
-<p>df.tail(n)：查看DataFrame对象的最后n行</p>
-<p>df.shape()：查看行数和列数</p>
-<p>df.info()：查看索引、数据类型和内存信息</p>
-<p>df.describe()：查看数值型列的汇总统计</p>
-<p>s.value_counts(dropna=False)：查看Series对象的唯一值和计数</p>
-<p>df.apply(pd.Series.value_counts)：查看DataFrame对象中每一列的唯一值和计数</p>
-<h3 id="Pandas数据选取"><a href="#Pandas数据选取" class="headerlink" title="Pandas数据选取"></a><strong>Pandas数据选取</strong></h3><p>df[col]：根据列名，并以Series的形式返回列</p>
-<p>df[[col1, col2]]：以DataFrame形式返回多列</p>
-<p>s.iloc[0]：按位置选取数据</p>
-<p>s.loc[‘index_one’]：按索引选取数据</p>
-<p>df.iloc[0,:]：返回第一行</p>
-<p>df.iloc[0,0]：返回第一列的第一个元素</p>
-<h3 id="pandas数据清理"><a href="#pandas数据清理" class="headerlink" title="pandas数据清理"></a><strong>pandas数据清理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
-<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
-<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
-<p>df.dropna()：删除所有包含空值的行</p>
-<p>df.dropna(axis=1)：删除所有包含空值的列</p>
-<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
-<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
-<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
-<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
-<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
-<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
-<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
-<p>df.set_index(‘column_one’)：更改索引列</p>
-<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
-<h3 id="Pandas数据处理"><a href="#Pandas数据处理" class="headerlink" title="Pandas数据处理"></a><strong>Pandas数据处理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
-<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
-<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
-<p>df.dropna()：删除所有包含空值的行</p>
-<p>df.dropna(axis=1)：删除所有包含空值的列</p>
-<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
-<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
-<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
-<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
-<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
-<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
-<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
-<p>df.set_index(‘column_one’)：更改索引列</p>
-<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
-<p>df[df[col] &gt; 0.5]：选择col列的值大于0.5的行</p>
-<p>df.sort_values(col1)：按照列col1排序数据，默认升序排列</p>
-<p>df.sort_values(col2, ascending=False)：按照列col1降序排列数据</p>
-<p>df.sort_values([col1,col2], ascending=[True,False])：先按列col1升序排列，后按col2降序排列数据</p>
-<p>df.groupby(col)：返回一个按列col进行分组的Groupby对象</p>
-<p>df.groupby([col1,col2])：返回一个按多列进行分组的Groupby对象</p>
-<p>df.groupby(col1)[col2]：返回按列col1进行分组后，列col2的均值</p>
-<p>df.pivot_table(index=col1, values=[col2,col3], aggfunc=max)：创建一个按列col1进行分组，并计算col2和col3的最大值的数据透视表</p>
-<p>df.groupby(col1).agg(np.mean)：返回按列col1分组的所有列的均值</p>
-<p>data.apply(np.mean)：对DataFrame中的每一列应用函数np.mean</p>
-<p>data.apply(np.max,axis=1)：对DataFrame中的每一行应用函数np.max</p>
-<h4 id="Pandas数据合并"><a href="#Pandas数据合并" class="headerlink" title="Pandas数据合并"></a><strong>Pandas数据合并</strong></h4><p>df1.append(df2)：将df2中的行添加到df1的尾部</p>
-<p>df.concat([df1, df2],axis=1)：将df2中的列添加到df1的尾部</p>
-<p>df1.join(df2,on=col1,how=’inner’)：对df1的列和df2的列执行SQL形式的join</p>
-<h4 id="Pandas数据统计"><a href="#Pandas数据统计" class="headerlink" title="Pandas数据统计"></a><strong>Pandas数据统计</strong></h4><p>df.describe()：查看数据值列的汇总统计</p>
-<p>df.mean()：返回所有列的均值</p>
-<p>df.corr()：返回列与列之间的相关系数</p>
-<p>df.count()：返回每一列中的非空值的个数</p>
-<p>df.max()：返回每一列的最大值</p>
-<p>df.min()：返回每一列的最小值</p>
-<p>df.median()：返回每一列的中位数</p>
-<p>df.std()：返回每一列的标准差</p>
-]]></content>
-      <categories>
-        <category>数据分析</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数据分析</tag>
-        <tag>pandas</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python数据分析教程（一）：Numpy</title>
     <url>/posts/13140.html</url>
     <content><![CDATA[<h2 id="数据的纬度"><a href="#数据的纬度" class="headerlink" title="数据的纬度"></a>数据的纬度</h2><p>一维数据：列表和集合类型</p>
@@ -2681,50 +2522,162 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>Solana土狗交易机器人使用教程【Sol Trading Bot中文教程】</title>
-    <url>/posts/231224.html</url>
-    <content><![CDATA[<p>众所周知，swap工具不仅有滑点，还十分考验手速，慢一点价格又变了，根本不能成功交易，那么有没有一种方法能够丝滑交易呢，那就是交易机器人！</p>
-<p>下面是一篇完整的sol链上交易机器人使用教程【含翻译】： </p>
-<p>【<strong>安全声明</strong>：交易机器人与本人无关，只提供使用教程，使用机器人造成的一切损失自负】</p>
-<h2 id="1-开始使用机器人"><a href="#1-开始使用机器人" class="headerlink" title="1.开始使用机器人"></a>1.开始使用机器人</h2><p>直接点击机器人链接，或在支持跳转telegram的浏览器打开下面的机器人链接，或者复制链接到tg聊天发送给任意对象再点击链接打开。</p>
-<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114651851-1104401959.jpg" style="zoom:50%;">
+    <title>Python数据分析教程（二）：Pandas</title>
+    <url>/posts/13141.html</url>
+    <content><![CDATA[<h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
+<li>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</li>
+<li>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用</li>
+<li>两个数据类型：Series, DataFrame</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114719167-626787221.jpg" style="zoom:50%;">
-
-<h2 id="2-机器人基本菜单介绍"><a href="#2-机器人基本菜单介绍" class="headerlink" title="2.机器人基本菜单介绍"></a>2.机器人基本菜单介绍</h2><p>对应的基本功能见翻译，快捷命令菜单和图中按钮面板一致，不会英文的请熟记以下几个单词，buy是买，sell是卖。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114841303-1858318205.jpg" style="zoom:50%;">
-
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114858659-1344250239.jpg" style="zoom:50%;">
-
-<h2 id="3-机器人钱包系统介绍"><a href="#3-机器人钱包系统介绍" class="headerlink" title="3.机器人钱包系统介绍"></a>3.机器人钱包系统介绍</h2><p>建议不要告诉机器人自己的私钥，而是创建一个新钱包，然后用自己的钱包给机器人转账，为什么要用机器人是因为机器人能够秒买秒卖，但是有一定安全风险，所以赚多了可以提出来，机器人会告诉你钱包的公钥和私钥，你可以把私钥添加到自己的钱包插件中，这样方便后面监控操作。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114952964-1330364325.jpg" style="zoom:50%;">
-
-<h2 id="4-机器人买卖币系统介绍"><a href="#4-机器人买卖币系统介绍" class="headerlink" title="4.机器人买卖币系统介绍"></a>4.机器人买卖币系统介绍</h2><p>直接给机器人发送代币合约地址即可开始买卖，机器人首先会回复你币种基本信息，然后下面是买卖功能菜单面板。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115102492-902648871.jpg" style="zoom:50%;">
-
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115135278-892642567.jpg" style="zoom:50%;">
-
-<h2 id="5-机器人自动买卖和自定义按钮介绍"><a href="#5-机器人自动买卖和自定义按钮介绍" class="headerlink" title="5.机器人自动买卖和自定义按钮介绍"></a>5.机器人自动买卖和自定义按钮介绍</h2><p>bot提供了简单的自动买卖功能，以及一个购买数量的快捷按钮设置，一个适合自己的冲土狗数量快捷单位。 自动买卖指给机器让发送合约地址就会自动买卖，可以选开启自动买还是自动卖。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115226190-537804814.jpg" style="zoom:50%;">
-
-<h2 id="6-机器人交易收益追踪介绍"><a href="#6-机器人交易收益追踪介绍" class="headerlink" title="6.机器人交易收益追踪介绍"></a>6.机器人交易收益追踪介绍</h2><p>在菜单中选择trade就能看最近10笔订单的收益情况，但是图表，蜡烛图才是交易员的归宿，所以可以用下面的网站链接钱包查看。</p>
-<p><a href="https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana">https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana</a></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115426681-390263752.jpg" style="zoom:50%;">
-
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115606171-455902962.jpg"></p>
-<blockquote>
-<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<p>原文链接：<a href="https://x.com/Onefly_eth/status/1738755042335985853?s=20">https://x.com/Onefly_eth/status/1738755042335985853?s=20</a></p>
-</blockquote>
+<h3 id="Pandas与numpy的比较"><a href="#Pandas与numpy的比较" class="headerlink" title="Pandas与numpy的比较"></a><strong>Pandas</strong>与numpy的比较</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204036490-294398481.png"></p>
+<h2 id="Pandas的Series类型"><a href="#Pandas的Series类型" class="headerlink" title="Pandas的Series类型"></a><strong>Pandas的Series类型</strong></h2><p>由一组数据及与之相关的数据索引组成</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204224581-494169725.png"></p>
+<h3 id="Pandas的Series类型的创建"><a href="#Pandas的Series类型的创建" class="headerlink" title="Pandas的Series类型的创建"></a><strong>Pandas的Series类型的创建</strong></h3><p>Series类型可以由如下类型创建：</p>
+<ul>
+<li>Python列表，index与列表元素个数一致</li>
+<li>标量值，index表达Series类型的尺寸</li>
+<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
+<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
+<li>其他函数，range()函数等</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204306537-1503027646.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204534311-1927277320.png"></p>
+<h3 id="Pandas的Series类型的基本操作"><a href="#Pandas的Series类型的基本操作" class="headerlink" title="Pandas的Series类型的基本操作"></a><strong>Pandas的Series类型的基本操作</strong></h3><p>Series类型包含index和values两个部分：</p>
+<ul>
+<li>index 获得索引</li>
+<li>values 获得数据</li>
+</ul>
+<p>由ndarray或字典创建的Series，操作类似ndarray或字典类型</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204858056-644012635.png"></p>
+<h2 id="pandas的DataFrame类型"><a href="#pandas的DataFrame类型" class="headerlink" title="pandas的DataFrame类型"></a><strong>pandas的DataFrame类型</strong></h2><ul>
+<li><p>DataFrame类型由共用相同索引的一组列组成</p>
+</li>
+<li><p>DataFrame是一个表格型的数据类型，每列值类型可以不同</p>
+</li>
+<li><p>DataFrame既有行索引、也有列索引</p>
+</li>
+<li><p>DataFrame常用于表达二维数据，但可以表达多维数据</p>
+</li>
+<li><p>DataFrame是二维带“标签”数组</p>
+</li>
+<li><p>DataFrame基本操作类似Series，依据行列索引</p>
+</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205139067-819109186.png"></p>
+<h3 id="pandas的DataFrame类型创建"><a href="#pandas的DataFrame类型创建" class="headerlink" title="pandas的DataFrame类型创建"></a><strong>pandas的DataFrame类型创建</strong></h3><p>DataFrame类型可以由如下类型创建：</p>
+<ul>
+<li>二维ndarray对象</li>
+<li>由一维ndarray、列表、字典、元组或Series构成的字典</li>
+<li>Series类型</li>
+<li>其他的DataFrame类型</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205306000-1512929844.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205403500-1728575625.png"></p>
+<h3 id="Pandas的Dataframe类型的基本操作"><a href="#Pandas的Dataframe类型的基本操作" class="headerlink" title="Pandas的Dataframe类型的基本操作"></a><strong>Pandas的Dataframe类型的基本操作</strong></h3><h4 id="pandas索引操作"><a href="#pandas索引操作" class="headerlink" title="pandas索引操作"></a><strong>pandas索引操作</strong></h4><h5 id="pandas重新索引"><a href="#pandas重新索引" class="headerlink" title="pandas重新索引"></a><strong>pandas重新索引</strong></h5><p>reindex()能够改变或重排Series和DataFrame索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205722764-2087213798.png"></p>
+<p>reindex(index=None, columns=None, …)的参数</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205810608-1806112533.png"></p>
+<p><strong>pandas删除索引</strong></p>
+<p>drop()能够删除Series和DataFrame指定行或列索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210003320-843812767.png"></p>
+<h4 id="pandas数据运算"><a href="#pandas数据运算" class="headerlink" title="pandas数据运算"></a><strong>pandas数据运算</strong></h4><ul>
+<li>算术运算根据行列索引，补齐后运算，运算默认产生浮点数</li>
+<li>补齐时缺项填充NaN (空值)</li>
+<li>二维和一维、一维和零维间为广播运算</li>
+<li>采用+ ‐ * /符号进行的二元运算产生新的对象</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210126120-1408047150.png"></p>
+<h5 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h5><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210234171-1672958996.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210300650-988503635.png"></p>
+<ul>
+<li>不同维度间为广播运算，一维Series默认在轴1参与运算</li>
+<li>使用运算方法可以令一维Series参与轴0运算</li>
+</ul>
+<h2 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a><strong>Pandas数据分析</strong></h2><h3 id="Pandas导入与导出数据"><a href="#Pandas导入与导出数据" class="headerlink" title="Pandas导入与导出数据"></a><strong>Pandas导入与导出数据</strong></h3><h4 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h4><p>pd.read_csv(filename)：从CSV文件导入数据</p>
+<p>pd.read_table(filename)：从限定分隔符的文本文件导入数据</p>
+<p>pd.read_excel(filename)：从Excel文件导入数据</p>
+<p>pd.read_sql(query, connection_object)：从SQL表/库导入数据</p>
+<p>pd.read_json(json_string)：从JSON格式的字符串导入数据</p>
+<p>pd.read_html(url)：解析URL、字符串或者HTML文件，抽取其中的tables表格</p>
+<p>pd.read_clipboard()：从你的粘贴板获取内容，并传给read_table()</p>
+<p>pd.DataFrame(dict)：从字典对象导入数据，Key是列名，Value是数据</p>
+<h4 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h4><p>df.to_csv(filename)：导出数据到CSV文件</p>
+<p>df.to_excel(filename)：导出数据到Excel文件</p>
+<p>df.to_sql(table_name, connection_object)：导出数据到SQL表</p>
+<p>df.to_json(filename)：以Json格式导出数据到文本文件</p>
+<h3 id="Pandas查看、检查数据"><a href="#Pandas查看、检查数据" class="headerlink" title="Pandas查看、检查数据"></a><strong>Pandas查看、检查数据</strong></h3><p>df.head(n)：查看DataFrame对象的前n行</p>
+<p>df.tail(n)：查看DataFrame对象的最后n行</p>
+<p>df.shape()：查看行数和列数</p>
+<p>df.info()：查看索引、数据类型和内存信息</p>
+<p>df.describe()：查看数值型列的汇总统计</p>
+<p>s.value_counts(dropna=False)：查看Series对象的唯一值和计数</p>
+<p>df.apply(pd.Series.value_counts)：查看DataFrame对象中每一列的唯一值和计数</p>
+<h3 id="Pandas数据选取"><a href="#Pandas数据选取" class="headerlink" title="Pandas数据选取"></a><strong>Pandas数据选取</strong></h3><p>df[col]：根据列名，并以Series的形式返回列</p>
+<p>df[[col1, col2]]：以DataFrame形式返回多列</p>
+<p>s.iloc[0]：按位置选取数据</p>
+<p>s.loc[‘index_one’]：按索引选取数据</p>
+<p>df.iloc[0,:]：返回第一行</p>
+<p>df.iloc[0,0]：返回第一列的第一个元素</p>
+<h3 id="pandas数据清理"><a href="#pandas数据清理" class="headerlink" title="pandas数据清理"></a><strong>pandas数据清理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<h3 id="Pandas数据处理"><a href="#Pandas数据处理" class="headerlink" title="Pandas数据处理"></a><strong>Pandas数据处理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<p>df[df[col] &gt; 0.5]：选择col列的值大于0.5的行</p>
+<p>df.sort_values(col1)：按照列col1排序数据，默认升序排列</p>
+<p>df.sort_values(col2, ascending=False)：按照列col1降序排列数据</p>
+<p>df.sort_values([col1,col2], ascending=[True,False])：先按列col1升序排列，后按col2降序排列数据</p>
+<p>df.groupby(col)：返回一个按列col进行分组的Groupby对象</p>
+<p>df.groupby([col1,col2])：返回一个按多列进行分组的Groupby对象</p>
+<p>df.groupby(col1)[col2]：返回按列col1进行分组后，列col2的均值</p>
+<p>df.pivot_table(index=col1, values=[col2,col3], aggfunc=max)：创建一个按列col1进行分组，并计算col2和col3的最大值的数据透视表</p>
+<p>df.groupby(col1).agg(np.mean)：返回按列col1分组的所有列的均值</p>
+<p>data.apply(np.mean)：对DataFrame中的每一列应用函数np.mean</p>
+<p>data.apply(np.max,axis=1)：对DataFrame中的每一行应用函数np.max</p>
+<h4 id="Pandas数据合并"><a href="#Pandas数据合并" class="headerlink" title="Pandas数据合并"></a><strong>Pandas数据合并</strong></h4><p>df1.append(df2)：将df2中的行添加到df1的尾部</p>
+<p>df.concat([df1, df2],axis=1)：将df2中的列添加到df1的尾部</p>
+<p>df1.join(df2,on=col1,how=’inner’)：对df1的列和df2的列执行SQL形式的join</p>
+<h4 id="Pandas数据统计"><a href="#Pandas数据统计" class="headerlink" title="Pandas数据统计"></a><strong>Pandas数据统计</strong></h4><p>df.describe()：查看数据值列的汇总统计</p>
+<p>df.mean()：返回所有列的均值</p>
+<p>df.corr()：返回列与列之间的相关系数</p>
+<p>df.count()：返回每一列中的非空值的个数</p>
+<p>df.max()：返回每一列的最大值</p>
+<p>df.min()：返回每一列的最小值</p>
+<p>df.median()：返回每一列的中位数</p>
+<p>df.std()：返回每一列的标准差</p>
 ]]></content>
       <categories>
-        <category>技术教程</category>
+        <category>数据分析</category>
       </categories>
       <tags>
-        <tag>web3</tag>
-        <tag>bot</tag>
-        <tag>sol</tag>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+        <tag>pandas</tag>
       </tags>
   </entry>
   <entry>
@@ -2774,46 +2727,50 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>Z-Lib 安卓app | Zlibrary永久有效的电子书库 无视网站迁移</title>
-    <url>/posts/23703.html</url>
-    <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称： <strong>Z-lib</strong></p>
-<p>软件大小：31 MB</p>
-<p>安装环境： 安卓</p>
-<p>下载链接： <a href="https://wwke.lanzoub.com/iJp5F10zzc1a">Z-lib.apk - 蓝奏云 (lanzoub.com)</a></p>
-<p>软件介绍：Z-Library安卓应用是一个知识爱好者的宝藏，它使用户可以随时随地获取到大量的电子书和学术文章。这款应用来源于Z-Library（z-lib.org），这是一个拥有超过5百万本电子书和7,700万篇科学文章的在线资源库，致力于为全球用户提供全面而高质量的知识资料。Z-Library安卓应用继承了其网页版的主要特点，拥有强大的搜索功能，用户可以通过书名、作者名、ISBN或者关键词进行查找，为读者带来便捷的阅读体验。（甚至连<u>顶尖考研</u>最新的考研扫描书都能搜到）。</p>
-<h2 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h2><p>Zlibrary的网站会经常换，但app是一直有效的。</p>
-<p>Zlibrary有很多国产盗版网站，不充值一本书都不能下（如果支持支付宝，微信支付开会员大概率是盗版网站）。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230702000731385-1763095700.png"></p>
-<p>Z-lib每天能免费下10本书，不需要开会员，app没有广告。</p>
-<p>当然这是一个正版官网：<a href="https://zh.zlibrary-ar.se/">https://zh.zlibrary-ar.se/</a></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230702001402038-1506176577.png"></p>
-<h2 id="官网下载地址：博客：Z-库桌面启动器"><a href="#官网下载地址：博客：Z-库桌面启动器" class="headerlink" title="官网下载地址：博客：Z 库桌面启动器"></a>官网下载地址：<a href="https://zh.zlibrary-ar.se/blog/44">博客：Z 库桌面启动器</a></h2><p>我们的团队继续努力改善我们库的可访问性，我们现在想介绍适用于 Windows、macOS 和 Linux 的桌面启动器的 alpha 版本。此启动器将为您省去搜索工作网站链接的麻烦，因为它将为您处理所有事情。此外，该应用程序可以通过 TOR 网络运行，因此您将始终能够在保持隐私的同时使用该库。作为一个小奖励，<strong>所有通过桌面应用程序访问库的用户都将获得一个月的高级会员资格和双倍的每日下载限制</strong>（从第一次应用程序启动开始）！</p>
-<p>请注意，由于这是alpha版本，该应用程序可能无法在您的计算机上运行。如果您遇到任何问题，请随时联系我们<a href="mailto:support@z-lib.se">的支持团队 support@z-lib.se</a>，我们将为您提供帮助。</p>
-<p>⚠️ 首次启动应用程序时，您可能会遇到有关未经验证的开发人员的警告消息。这是意料之中的，因为我们在这些平台上还没有开发者帐户。</p>
-<p><img src="https://zh.zlibrary-ar.se/img/z-access/windows.svg"></p>
-<p>Windows 120 MB：<a href="https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.exe">https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.exe</a></p>
-<p><img src="https://zh.zlibrary-ar.se/img/z-access/macos.svg"></p>
-<p>Mac OS 119 MB：<a href="https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.dmg">https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.dmg</a></p>
-<p><img src="https://zh.zlibrary-ar.se/img/z-access/linux.svg"></p>
-<p>Linux 89 MB：<a href="https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.deb">https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.deb</a></p>
-<h3 id="新版本的安卓应用程序"><a href="#新版本的安卓应用程序" class="headerlink" title="新版本的安卓应用程序"></a>新版本的安卓应用程序</h3><p>除了桌面启动器之外，我们还发布了新版本的Android应用程序。我们提高了应用程序的稳定性，增加了通过 TOR 网络的操作，并引入了多种授权方法（使用 QR 码或 Z-Access 页面上的令牌）。我们建议在安装新版本之前卸载旧版本的应用程序。</p>
-<p><img src="https://zh.zlibrary-ar.se/img/z-access/android.svg"></p>
-<p>安卓 APK：<a href="https://go-to-zlibrary.se/soft/zlibrary-app-latest.apk">https://go-to-zlibrary.se/soft/zlibrary-app-latest.apk</a></p>
-<h3 id="“共享”按钮"><a href="#“共享”按钮" class="headerlink" title="“共享”按钮"></a>“共享”按钮</h3><p>您可能注意到网站上出现了分享按钮，使您可以更轻松地在社交媒体上与朋友分享 Z-Library。随意使用它们！</p>
-<p>每个在其公共博客、频道或社交媒体帐户（必须可公开访问）上分享 Z-Library 链接并 <a href="mailto:support@z-lib.se">support@z-lib.se</a> 该帖子的链接发送给我们的人，都将<strong>获得 1 个月的高级会员身份</strong>。</p>
-<p>如果您还没有听说过，我们有以下新闻帐户：</p>
-<p>乳齿象 - <a href="https://mastodon.social/@Z_Lib_official">https://mastodon.social/@Z_Lib_official</a></p>
-<p>推特 - <a href="https://twitter.com/Z_Lib_official">https://twitter.com/Z_Lib_official</a></p>
-<p>电报 - <a href="https://t.me/zlibrary_official">https://t.me/zlibrary_official</a></p>
-<p>尽管我们是新来的，但我们会逐渐在频道中填充有关图书馆的信息和新闻。加入吧！</p>
+    <title>Solana土狗交易机器人使用教程【Sol Trading Bot中文教程】</title>
+    <url>/posts/231224.html</url>
+    <content><![CDATA[<p>众所周知，swap工具不仅有滑点，还十分考验手速，慢一点价格又变了，根本不能成功交易，那么有没有一种方法能够丝滑交易呢，那就是交易机器人！</p>
+<p>下面是一篇完整的sol链上交易机器人使用教程【含翻译】： </p>
+<p>【<strong>安全声明</strong>：交易机器人与本人无关，只提供使用教程，使用机器人造成的一切损失自负】</p>
+<h2 id="1-开始使用机器人"><a href="#1-开始使用机器人" class="headerlink" title="1.开始使用机器人"></a>1.开始使用机器人</h2><p>直接点击机器人链接，或在支持跳转telegram的浏览器打开下面的机器人链接，或者复制链接到tg聊天发送给任意对象再点击链接打开。</p>
+<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114651851-1104401959.jpg" style="zoom:50%;">
+
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114719167-626787221.jpg" style="zoom:50%;">
+
+<h2 id="2-机器人基本菜单介绍"><a href="#2-机器人基本菜单介绍" class="headerlink" title="2.机器人基本菜单介绍"></a>2.机器人基本菜单介绍</h2><p>对应的基本功能见翻译，快捷命令菜单和图中按钮面板一致，不会英文的请熟记以下几个单词，buy是买，sell是卖。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114841303-1858318205.jpg" style="zoom:50%;">
+
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114858659-1344250239.jpg" style="zoom:50%;">
+
+<h2 id="3-机器人钱包系统介绍"><a href="#3-机器人钱包系统介绍" class="headerlink" title="3.机器人钱包系统介绍"></a>3.机器人钱包系统介绍</h2><p>建议不要告诉机器人自己的私钥，而是创建一个新钱包，然后用自己的钱包给机器人转账，为什么要用机器人是因为机器人能够秒买秒卖，但是有一定安全风险，所以赚多了可以提出来，机器人会告诉你钱包的公钥和私钥，你可以把私钥添加到自己的钱包插件中，这样方便后面监控操作。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114952964-1330364325.jpg" style="zoom:50%;">
+
+<h2 id="4-机器人买卖币系统介绍"><a href="#4-机器人买卖币系统介绍" class="headerlink" title="4.机器人买卖币系统介绍"></a>4.机器人买卖币系统介绍</h2><p>直接给机器人发送代币合约地址即可开始买卖，机器人首先会回复你币种基本信息，然后下面是买卖功能菜单面板。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115102492-902648871.jpg" style="zoom:50%;">
+
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115135278-892642567.jpg" style="zoom:50%;">
+
+<h2 id="5-机器人自动买卖和自定义按钮介绍"><a href="#5-机器人自动买卖和自定义按钮介绍" class="headerlink" title="5.机器人自动买卖和自定义按钮介绍"></a>5.机器人自动买卖和自定义按钮介绍</h2><p>bot提供了简单的自动买卖功能，以及一个购买数量的快捷按钮设置，一个适合自己的冲土狗数量快捷单位。 自动买卖指给机器让发送合约地址就会自动买卖，可以选开启自动买还是自动卖。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115226190-537804814.jpg" style="zoom:50%;">
+
+<h2 id="6-机器人交易收益追踪介绍"><a href="#6-机器人交易收益追踪介绍" class="headerlink" title="6.机器人交易收益追踪介绍"></a>6.机器人交易收益追踪介绍</h2><p>在菜单中选择trade就能看最近10笔订单的收益情况，但是图表，蜡烛图才是交易员的归宿，所以可以用下面的网站链接钱包查看。</p>
+<p><a href="https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana">https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana</a></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115426681-390263752.jpg" style="zoom:50%;">
+
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115606171-455902962.jpg"></p>
+<blockquote>
+<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<p>原文链接：<a href="https://x.com/Onefly_eth/status/1738755042335985853?s=20">https://x.com/Onefly_eth/status/1738755042335985853?s=20</a></p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>资源分享</category>
+        <category>技术教程</category>
       </categories>
       <tags>
-        <tag>免费</tag>
-        <tag>电子书</tag>
-        <tag>zlibrary</tag>
+        <tag>web3</tag>
+        <tag>bot</tag>
+        <tag>sol</tag>
       </tags>
   </entry>
   <entry>
@@ -2927,6 +2884,49 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       <tags>
         <tag>电子书</tag>
         <tag>经管</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Z-Lib 安卓app | Zlibrary永久有效的电子书库 无视网站迁移</title>
+    <url>/posts/23703.html</url>
+    <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称： <strong>Z-lib</strong></p>
+<p>软件大小：31 MB</p>
+<p>安装环境： 安卓</p>
+<p>下载链接： <a href="https://wwke.lanzoub.com/iJp5F10zzc1a">Z-lib.apk - 蓝奏云 (lanzoub.com)</a></p>
+<p>软件介绍：Z-Library安卓应用是一个知识爱好者的宝藏，它使用户可以随时随地获取到大量的电子书和学术文章。这款应用来源于Z-Library（z-lib.org），这是一个拥有超过5百万本电子书和7,700万篇科学文章的在线资源库，致力于为全球用户提供全面而高质量的知识资料。Z-Library安卓应用继承了其网页版的主要特点，拥有强大的搜索功能，用户可以通过书名、作者名、ISBN或者关键词进行查找，为读者带来便捷的阅读体验。（甚至连<u>顶尖考研</u>最新的考研扫描书都能搜到）。</p>
+<h2 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h2><p>Zlibrary的网站会经常换，但app是一直有效的。</p>
+<p>Zlibrary有很多国产盗版网站，不充值一本书都不能下（如果支持支付宝，微信支付开会员大概率是盗版网站）。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230702000731385-1763095700.png"></p>
+<p>Z-lib每天能免费下10本书，不需要开会员，app没有广告。</p>
+<p>当然这是一个正版官网：<a href="https://zh.zlibrary-ar.se/">https://zh.zlibrary-ar.se/</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230702001402038-1506176577.png"></p>
+<h2 id="官网下载地址：博客：Z-库桌面启动器"><a href="#官网下载地址：博客：Z-库桌面启动器" class="headerlink" title="官网下载地址：博客：Z 库桌面启动器"></a>官网下载地址：<a href="https://zh.zlibrary-ar.se/blog/44">博客：Z 库桌面启动器</a></h2><p>我们的团队继续努力改善我们库的可访问性，我们现在想介绍适用于 Windows、macOS 和 Linux 的桌面启动器的 alpha 版本。此启动器将为您省去搜索工作网站链接的麻烦，因为它将为您处理所有事情。此外，该应用程序可以通过 TOR 网络运行，因此您将始终能够在保持隐私的同时使用该库。作为一个小奖励，<strong>所有通过桌面应用程序访问库的用户都将获得一个月的高级会员资格和双倍的每日下载限制</strong>（从第一次应用程序启动开始）！</p>
+<p>请注意，由于这是alpha版本，该应用程序可能无法在您的计算机上运行。如果您遇到任何问题，请随时联系我们<a href="mailto:support@z-lib.se">的支持团队 support@z-lib.se</a>，我们将为您提供帮助。</p>
+<p>⚠️ 首次启动应用程序时，您可能会遇到有关未经验证的开发人员的警告消息。这是意料之中的，因为我们在这些平台上还没有开发者帐户。</p>
+<p><img src="https://zh.zlibrary-ar.se/img/z-access/windows.svg"></p>
+<p>Windows 120 MB：<a href="https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.exe">https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.exe</a></p>
+<p><img src="https://zh.zlibrary-ar.se/img/z-access/macos.svg"></p>
+<p>Mac OS 119 MB：<a href="https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.dmg">https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.dmg</a></p>
+<p><img src="https://zh.zlibrary-ar.se/img/z-access/linux.svg"></p>
+<p>Linux 89 MB：<a href="https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.deb">https://zh.zlibrary-ar.se/soft/zlibrary-setup-latest.deb</a></p>
+<h3 id="新版本的安卓应用程序"><a href="#新版本的安卓应用程序" class="headerlink" title="新版本的安卓应用程序"></a>新版本的安卓应用程序</h3><p>除了桌面启动器之外，我们还发布了新版本的Android应用程序。我们提高了应用程序的稳定性，增加了通过 TOR 网络的操作，并引入了多种授权方法（使用 QR 码或 Z-Access 页面上的令牌）。我们建议在安装新版本之前卸载旧版本的应用程序。</p>
+<p><img src="https://zh.zlibrary-ar.se/img/z-access/android.svg"></p>
+<p>安卓 APK：<a href="https://go-to-zlibrary.se/soft/zlibrary-app-latest.apk">https://go-to-zlibrary.se/soft/zlibrary-app-latest.apk</a></p>
+<h3 id="“共享”按钮"><a href="#“共享”按钮" class="headerlink" title="“共享”按钮"></a>“共享”按钮</h3><p>您可能注意到网站上出现了分享按钮，使您可以更轻松地在社交媒体上与朋友分享 Z-Library。随意使用它们！</p>
+<p>每个在其公共博客、频道或社交媒体帐户（必须可公开访问）上分享 Z-Library 链接并 <a href="mailto:support@z-lib.se">support@z-lib.se</a> 该帖子的链接发送给我们的人，都将<strong>获得 1 个月的高级会员身份</strong>。</p>
+<p>如果您还没有听说过，我们有以下新闻帐户：</p>
+<p>乳齿象 - <a href="https://mastodon.social/@Z_Lib_official">https://mastodon.social/@Z_Lib_official</a></p>
+<p>推特 - <a href="https://twitter.com/Z_Lib_official">https://twitter.com/Z_Lib_official</a></p>
+<p>电报 - <a href="https://t.me/zlibrary_official">https://t.me/zlibrary_official</a></p>
+<p>尽管我们是新来的，但我们会逐渐在频道中填充有关图书馆的信息和新闻。加入吧！</p>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>免费</tag>
+        <tag>电子书</tag>
+        <tag>zlibrary</tag>
       </tags>
   </entry>
   <entry>
@@ -3410,6 +3410,23 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>第一行代码Android（第3版）pdf</title>
+    <url>/posts/43427.html</url>
+    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
+<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
+<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
+<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
+<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>探秘比特币：数字黄金还是黄粱一梦？</title>
     <url>/posts/24218.html</url>
     <content><![CDATA[<p>在金融科技的飞速发展下，比特币作为第一个也是最著名的加密货币，自2009年问世以来，一直是争议和讨论的焦点。它被一些人视为数字时代的黄金，而被另一些人批评为现代版的庞氏骗局。本文将深入探讨比特币的本质、投资价值、加密货币交易所的角色，以及与法币兑换相关的风险。</p>
@@ -3492,23 +3509,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>web3</tag>
         <tag>虚拟货币</tag>
         <tag>比特币</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一行代码Android（第3版）pdf</title>
-    <url>/posts/43427.html</url>
-    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
-<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
-<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
-<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
-<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>开发</tag>
       </tags>
   </entry>
   <entry>

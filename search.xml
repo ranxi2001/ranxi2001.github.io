@@ -1,6 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Github和git使用指南：以PyCharm为例</title>
+    <url>/posts/16889.html</url>
+    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
+
+<p>注册按照引导完成就可以了</p>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
+<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
+
+<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
+<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
+
+<p>克隆项目代码：</p>
+<blockquote>
+<p>前置条件：安装Git</p>
+</blockquote>
+<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
+<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
+<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
+<p> 进入cmd</p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
+
+<p> 然后输入<code>git clone 项目地址</code></p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
+
+<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
+<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
+<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
+
+<p>填写github仓库地址，然后点击clone</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
+
+<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
+
+<p>下载完项目仓库后会弹出一个对话框，自选</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
+
+<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
+
+<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
+
+<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
+
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
+
+<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
+<p>接受邀请后就可以push了</p>
+<p>push之前需要在ide登录自己的github账号</p>
+<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
+<p>也就是File-setting配置git和github账号</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
+
+<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
+
+<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
+<p>在Pycahrm中登录</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
+
+<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
+
+<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
+
+<p>解决方法有</p>
+<ol>
+<li>关闭重启编辑器ide</li>
+<li>关闭或打开clash代理</li>
+<li>在终端中输入以下代码</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其实更加有用的解决方案是：</p>
+<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MindMaster 10 最新破解版安装教程</title>
+    <url>/posts/24116.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>软件上新了，MindMaster 10，最新破解版，是一款由Wondershare推出的多功能思维导图软件。这款软件支持在多平台上使用，包括PC、平板电脑、手机和网络浏览器，使用户能够轻松创建和访问思维导图。</p>
+<p><strong>主要特点和功能：</strong></p>
+<ol>
+<li><p><strong>多平台兼容性</strong>：MindMaster Pro 10可在PC、平板电脑、手机和网络上使用，为用户提供灵活的访问和编辑选项。</p>
+</li>
+<li><p><strong>强大的编辑功能</strong>：用户可以根据需求选择不同的主题、风格和颜色，定制个性化的思维导图。</p>
+</li>
+<li><p><strong>协作和共享</strong>：与团队成员协作变得更加简便，支持多用户同时编辑和访问同一思维导图。</p>
+</li>
+<li><p><strong>演示模式</strong>：内置的演示文稿功能，可将思维导图快速转换成动态幻灯片，支持导出为PNG格式，并可在线共享。</p>
+</li>
+<li><p><strong>丰富的模板和资源</strong>：提供12种不同的思维导图模型，33个预设主题和700多幅精美的拼贴画，以增强视觉效果。</p>
+</li>
+<li><p><strong>高度定制</strong>：用户可以自定义字体、线条、分支颜色，甚至选择不同的图标形状如卵巢、六边形、钻石、星星等。</p>
+</li>
+<li><p><strong>信息丰富的元素</strong>：支持添加消息、关系、注释、超链接等，以丰富思维导图的内容。</p>
+</li>
+<li><p><strong>项目规划和管理</strong>：通过转换到甘特图视图，跟踪项目的开始/结束日期和进展情况。</p>
+</li>
+<li><p><strong>多主题支持</strong>：无论您使用Windows、Mac还是Linux操作系统，都可以无缝编辑和保存文件。同时支持移动端和网页端使用。</p>
+</li>
+<li><p><strong>导出和分享</strong>：用户可以将思维导图导出为多种格式，如Office文档、PDF、Evernote以及图片格式，并方便地与他人共享。</p>
+</li>
+</ol>
+<p>总体而言，MindMaster 10破解版是一款强大、易用且功能全面的思维导图工具，非常适合个人、团队协作和企业使用。</p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>1.下载并解压到桌面</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116123108128-655493307.png"></p>
+<p>2.打开解压后的文件夹安装软件（点击setup.exe）</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116124903143-1580129747.png"></p>
+<p>3.安装完成<strong>取消勾选打开软件</strong>，完成并退出。</p>
+<p>4.将<code>crack</code>文件夹的<code>MindMaster1.exe</code><strong>粘贴</strong>添加到桌面软件<strong>安装位置</strong>。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116152859149-1585529636.png"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125240831-1267535789.png"></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153037294-2001469114.png" style="zoom:80%;">
+
+<p>5.<strong>替换桌面快捷方式指向的软件地址</strong></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153229410-214299034.png" style="zoom:67%;">
+
+<p>6.打开桌面的Mindmaster软件即为破解后的pro版本。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125708320-1664314119.png"></p>
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><ul>
+<li>百度网盘（提取码：daqo  ）：<a href="https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo">https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo</a> </li>
+<li>夸克网盘：<a href="https://pan.quark.cn/s/f3b49cee2961">https://pan.quark.cn/s/f3b49cee2961</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>思维导图</tag>
+        <tag>mind</tag>
+        <tag>破解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OneKey Card关闭中国大陆注册后还能申请注册！抓紧最后开通ChatGPT4 PLUS的机会 | 美国VISA信用卡注册办理</title>
     <url>/posts/23808.html</url>
     <content><![CDATA[<h2 id="OneKey-Card-News"><a href="#OneKey-Card-News" class="headerlink" title="OneKey Card News"></a>OneKey Card News</h2><p>但是经过网友实测，<strong>大陆身份证还是可以通过kyc的，只需要选择香港地区，然后上传大陆身份证即可</strong>。</p>
@@ -2058,165 +2217,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github和git使用指南：以PyCharm为例</title>
-    <url>/posts/16889.html</url>
-    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
-
-<p>注册按照引导完成就可以了</p>
-<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
-<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
-<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
-
-<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
-<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
-
-<p>克隆项目代码：</p>
-<blockquote>
-<p>前置条件：安装Git</p>
-</blockquote>
-<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
-<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
-<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
-<p> 进入cmd</p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
-
-<p> 然后输入<code>git clone 项目地址</code></p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
-
-<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
-<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
-<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
-
-<p>填写github仓库地址，然后点击clone</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
-
-<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
-
-<p>下载完项目仓库后会弹出一个对话框，自选</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
-
-<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
-
-<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
-
-<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
-
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
-
-<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
-<p>接受邀请后就可以push了</p>
-<p>push之前需要在ide登录自己的github账号</p>
-<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
-<p>也就是File-setting配置git和github账号</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
-
-<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
-
-<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
-<p>在Pycahrm中登录</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
-
-<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
-
-<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
-
-<p>解决方法有</p>
-<ol>
-<li>关闭重启编辑器ide</li>
-<li>关闭或打开clash代理</li>
-<li>在终端中输入以下代码</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>其实更加有用的解决方案是：</p>
-<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>git</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MindMaster 10 最新破解版安装教程</title>
-    <url>/posts/24116.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>软件上新了，MindMaster 10，最新破解版，是一款由Wondershare推出的多功能思维导图软件。这款软件支持在多平台上使用，包括PC、平板电脑、手机和网络浏览器，使用户能够轻松创建和访问思维导图。</p>
-<p><strong>主要特点和功能：</strong></p>
-<ol>
-<li><p><strong>多平台兼容性</strong>：MindMaster Pro 10可在PC、平板电脑、手机和网络上使用，为用户提供灵活的访问和编辑选项。</p>
-</li>
-<li><p><strong>强大的编辑功能</strong>：用户可以根据需求选择不同的主题、风格和颜色，定制个性化的思维导图。</p>
-</li>
-<li><p><strong>协作和共享</strong>：与团队成员协作变得更加简便，支持多用户同时编辑和访问同一思维导图。</p>
-</li>
-<li><p><strong>演示模式</strong>：内置的演示文稿功能，可将思维导图快速转换成动态幻灯片，支持导出为PNG格式，并可在线共享。</p>
-</li>
-<li><p><strong>丰富的模板和资源</strong>：提供12种不同的思维导图模型，33个预设主题和700多幅精美的拼贴画，以增强视觉效果。</p>
-</li>
-<li><p><strong>高度定制</strong>：用户可以自定义字体、线条、分支颜色，甚至选择不同的图标形状如卵巢、六边形、钻石、星星等。</p>
-</li>
-<li><p><strong>信息丰富的元素</strong>：支持添加消息、关系、注释、超链接等，以丰富思维导图的内容。</p>
-</li>
-<li><p><strong>项目规划和管理</strong>：通过转换到甘特图视图，跟踪项目的开始/结束日期和进展情况。</p>
-</li>
-<li><p><strong>多主题支持</strong>：无论您使用Windows、Mac还是Linux操作系统，都可以无缝编辑和保存文件。同时支持移动端和网页端使用。</p>
-</li>
-<li><p><strong>导出和分享</strong>：用户可以将思维导图导出为多种格式，如Office文档、PDF、Evernote以及图片格式，并方便地与他人共享。</p>
-</li>
-</ol>
-<p>总体而言，MindMaster 10破解版是一款强大、易用且功能全面的思维导图工具，非常适合个人、团队协作和企业使用。</p>
-<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>1.下载并解压到桌面</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116123108128-655493307.png"></p>
-<p>2.打开解压后的文件夹安装软件（点击setup.exe）</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116124903143-1580129747.png"></p>
-<p>3.安装完成<strong>取消勾选打开软件</strong>，完成并退出。</p>
-<p>4.将<code>crack</code>文件夹的<code>MindMaster1.exe</code><strong>粘贴</strong>添加到桌面软件<strong>安装位置</strong>。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116152859149-1585529636.png"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125240831-1267535789.png"></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153037294-2001469114.png" style="zoom:80%;">
-
-<p>5.<strong>替换桌面快捷方式指向的软件地址</strong></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153229410-214299034.png" style="zoom:67%;">
-
-<p>6.打开桌面的Mindmaster软件即为破解后的pro版本。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125708320-1664314119.png"></p>
-<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><ul>
-<li>百度网盘（提取码：daqo  ）：<a href="https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo">https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo</a> </li>
-<li>夸克网盘：<a href="https://pan.quark.cn/s/f3b49cee2961">https://pan.quark.cn/s/f3b49cee2961</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>思维导图</tag>
-        <tag>mind</tag>
-        <tag>破解</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenAI推出超神Chatgpt注册教程来了|Gmail外国手机短信验证码接码</title>
     <url>/posts/16890.html</url>
     <content><![CDATA[<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206113426088-1538964752.png"></p>
@@ -2272,190 +2272,6 @@
         <tag>chatgpt</tag>
         <tag>接码</tag>
         <tag>美国</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PyCharm专业版最简单的破解教程，永久适用</title>
-    <url>/posts/15000.html</url>
-    <content><![CDATA[<h1 id="PyCharm专业版最简单的破解教程，永久适用"><a href="#PyCharm专业版最简单的破解教程，永久适用" class="headerlink" title="PyCharm专业版最简单的破解教程，永久适用"></a>PyCharm专业版最简单的破解教程，永久适用</h1><h2 id="1-从官网下载PyCharm"><a href="#1-从官网下载PyCharm" class="headerlink" title="1.从官网下载PyCharm"></a>1.从官网下载PyCharm</h2><p>官网的下载速度是很快的！</p>
-<p>PyCharm官网：<a href="https://www.jetbrains.com/pycharm/">PyCharm: the Python IDE for Professional Developers by JetBrains</a></p>
-<p>重点：必须下载2021.2.2及之前的版本，否则只能首次试用30天，之后不可试用（要登录官网账号验证是否试用过）</p>
-<p>下载链接直接放下面了：</p>
-<p>方式一：<strong>直接下载</strong>：<a href="https://download.jetbrains.com/python/pycharm-professional-2021.2.2.exe?_ga=2.177314661.139758805.1663811841-1329964021.1654160823&amp;_gl=1">https://download.jetbrains.com/python/pycharm-professional-2021.2.2.exe?_ga=2.177314661.139758805.1663811841-1329964021.1654160823&amp;_gl=1</a></p>
-<p>方式二：进入下载页面下载：<a href="https://www.jetbrains.com/pycharm/download/other.html">Other Versions - PyCharm (jetbrains.com)</a></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220922145852780-920855323.png"></p>
-<h2 id="2-使用脚本清空试用天数续期【无限续期】"><a href="#2-使用脚本清空试用天数续期【无限续期】" class="headerlink" title="2.使用脚本清空试用天数续期【无限续期】"></a>2.使用脚本清空试用天数续期【无限续期】</h2><p>等到过期的时候再使用脚本<code>reset_jetbrains_eval_windows.vbs</code>清空天数就ok</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220922150445043-2094612096.png"></p>
-<p>使用方法：双击脚本即可</p>
-<p>另外这个脚本对于所有的<code>JetBrain</code>的产品都是有效的，记住软件版本选择<code>2021.2.2</code>以前的</p>
-<p>脚本下载链接：<a href="https://wwp.lanzoub.com/iQk4t0c5wm7e">https://wwp.lanzoub.com/iQk4t0c5wm7e</a></p>
-]]></content>
-      <categories>
-        <category>破解资源</category>
-      </categories>
-      <tags>
-        <tag>破解软件</tag>
-        <tag>JetBrain</tag>
-        <tag>PyCharm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python数据分析教程（二）：Pandas</title>
-    <url>/posts/13141.html</url>
-    <content><![CDATA[<h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
-<li>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</li>
-<li>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用</li>
-<li>两个数据类型：Series, DataFrame</li>
-</ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="Pandas与numpy的比较"><a href="#Pandas与numpy的比较" class="headerlink" title="Pandas与numpy的比较"></a><strong>Pandas</strong>与numpy的比较</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204036490-294398481.png"></p>
-<h2 id="Pandas的Series类型"><a href="#Pandas的Series类型" class="headerlink" title="Pandas的Series类型"></a><strong>Pandas的Series类型</strong></h2><p>由一组数据及与之相关的数据索引组成</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204224581-494169725.png"></p>
-<h3 id="Pandas的Series类型的创建"><a href="#Pandas的Series类型的创建" class="headerlink" title="Pandas的Series类型的创建"></a><strong>Pandas的Series类型的创建</strong></h3><p>Series类型可以由如下类型创建：</p>
-<ul>
-<li>Python列表，index与列表元素个数一致</li>
-<li>标量值，index表达Series类型的尺寸</li>
-<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
-<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
-<li>其他函数，range()函数等</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204306537-1503027646.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204534311-1927277320.png"></p>
-<h3 id="Pandas的Series类型的基本操作"><a href="#Pandas的Series类型的基本操作" class="headerlink" title="Pandas的Series类型的基本操作"></a><strong>Pandas的Series类型的基本操作</strong></h3><p>Series类型包含index和values两个部分：</p>
-<ul>
-<li>index 获得索引</li>
-<li>values 获得数据</li>
-</ul>
-<p>由ndarray或字典创建的Series，操作类似ndarray或字典类型</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204858056-644012635.png"></p>
-<h2 id="pandas的DataFrame类型"><a href="#pandas的DataFrame类型" class="headerlink" title="pandas的DataFrame类型"></a><strong>pandas的DataFrame类型</strong></h2><ul>
-<li><p>DataFrame类型由共用相同索引的一组列组成</p>
-</li>
-<li><p>DataFrame是一个表格型的数据类型，每列值类型可以不同</p>
-</li>
-<li><p>DataFrame既有行索引、也有列索引</p>
-</li>
-<li><p>DataFrame常用于表达二维数据，但可以表达多维数据</p>
-</li>
-<li><p>DataFrame是二维带“标签”数组</p>
-</li>
-<li><p>DataFrame基本操作类似Series，依据行列索引</p>
-</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205139067-819109186.png"></p>
-<h3 id="pandas的DataFrame类型创建"><a href="#pandas的DataFrame类型创建" class="headerlink" title="pandas的DataFrame类型创建"></a><strong>pandas的DataFrame类型创建</strong></h3><p>DataFrame类型可以由如下类型创建：</p>
-<ul>
-<li>二维ndarray对象</li>
-<li>由一维ndarray、列表、字典、元组或Series构成的字典</li>
-<li>Series类型</li>
-<li>其他的DataFrame类型</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205306000-1512929844.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205403500-1728575625.png"></p>
-<h3 id="Pandas的Dataframe类型的基本操作"><a href="#Pandas的Dataframe类型的基本操作" class="headerlink" title="Pandas的Dataframe类型的基本操作"></a><strong>Pandas的Dataframe类型的基本操作</strong></h3><h4 id="pandas索引操作"><a href="#pandas索引操作" class="headerlink" title="pandas索引操作"></a><strong>pandas索引操作</strong></h4><h5 id="pandas重新索引"><a href="#pandas重新索引" class="headerlink" title="pandas重新索引"></a><strong>pandas重新索引</strong></h5><p>reindex()能够改变或重排Series和DataFrame索引</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205722764-2087213798.png"></p>
-<p>reindex(index=None, columns=None, …)的参数</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205810608-1806112533.png"></p>
-<p><strong>pandas删除索引</strong></p>
-<p>drop()能够删除Series和DataFrame指定行或列索引</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210003320-843812767.png"></p>
-<h4 id="pandas数据运算"><a href="#pandas数据运算" class="headerlink" title="pandas数据运算"></a><strong>pandas数据运算</strong></h4><ul>
-<li>算术运算根据行列索引，补齐后运算，运算默认产生浮点数</li>
-<li>补齐时缺项填充NaN (空值)</li>
-<li>二维和一维、一维和零维间为广播运算</li>
-<li>采用+ ‐ * /符号进行的二元运算产生新的对象</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210126120-1408047150.png"></p>
-<h5 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h5><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210234171-1672958996.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210300650-988503635.png"></p>
-<ul>
-<li>不同维度间为广播运算，一维Series默认在轴1参与运算</li>
-<li>使用运算方法可以令一维Series参与轴0运算</li>
-</ul>
-<h2 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a><strong>Pandas数据分析</strong></h2><h3 id="Pandas导入与导出数据"><a href="#Pandas导入与导出数据" class="headerlink" title="Pandas导入与导出数据"></a><strong>Pandas导入与导出数据</strong></h3><h4 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h4><p>pd.read_csv(filename)：从CSV文件导入数据</p>
-<p>pd.read_table(filename)：从限定分隔符的文本文件导入数据</p>
-<p>pd.read_excel(filename)：从Excel文件导入数据</p>
-<p>pd.read_sql(query, connection_object)：从SQL表/库导入数据</p>
-<p>pd.read_json(json_string)：从JSON格式的字符串导入数据</p>
-<p>pd.read_html(url)：解析URL、字符串或者HTML文件，抽取其中的tables表格</p>
-<p>pd.read_clipboard()：从你的粘贴板获取内容，并传给read_table()</p>
-<p>pd.DataFrame(dict)：从字典对象导入数据，Key是列名，Value是数据</p>
-<h4 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h4><p>df.to_csv(filename)：导出数据到CSV文件</p>
-<p>df.to_excel(filename)：导出数据到Excel文件</p>
-<p>df.to_sql(table_name, connection_object)：导出数据到SQL表</p>
-<p>df.to_json(filename)：以Json格式导出数据到文本文件</p>
-<h3 id="Pandas查看、检查数据"><a href="#Pandas查看、检查数据" class="headerlink" title="Pandas查看、检查数据"></a><strong>Pandas查看、检查数据</strong></h3><p>df.head(n)：查看DataFrame对象的前n行</p>
-<p>df.tail(n)：查看DataFrame对象的最后n行</p>
-<p>df.shape()：查看行数和列数</p>
-<p>df.info()：查看索引、数据类型和内存信息</p>
-<p>df.describe()：查看数值型列的汇总统计</p>
-<p>s.value_counts(dropna=False)：查看Series对象的唯一值和计数</p>
-<p>df.apply(pd.Series.value_counts)：查看DataFrame对象中每一列的唯一值和计数</p>
-<h3 id="Pandas数据选取"><a href="#Pandas数据选取" class="headerlink" title="Pandas数据选取"></a><strong>Pandas数据选取</strong></h3><p>df[col]：根据列名，并以Series的形式返回列</p>
-<p>df[[col1, col2]]：以DataFrame形式返回多列</p>
-<p>s.iloc[0]：按位置选取数据</p>
-<p>s.loc[‘index_one’]：按索引选取数据</p>
-<p>df.iloc[0,:]：返回第一行</p>
-<p>df.iloc[0,0]：返回第一列的第一个元素</p>
-<h3 id="pandas数据清理"><a href="#pandas数据清理" class="headerlink" title="pandas数据清理"></a><strong>pandas数据清理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
-<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
-<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
-<p>df.dropna()：删除所有包含空值的行</p>
-<p>df.dropna(axis=1)：删除所有包含空值的列</p>
-<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
-<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
-<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
-<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
-<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
-<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
-<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
-<p>df.set_index(‘column_one’)：更改索引列</p>
-<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
-<h3 id="Pandas数据处理"><a href="#Pandas数据处理" class="headerlink" title="Pandas数据处理"></a><strong>Pandas数据处理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
-<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
-<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
-<p>df.dropna()：删除所有包含空值的行</p>
-<p>df.dropna(axis=1)：删除所有包含空值的列</p>
-<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
-<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
-<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
-<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
-<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
-<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
-<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
-<p>df.set_index(‘column_one’)：更改索引列</p>
-<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
-<p>df[df[col] &gt; 0.5]：选择col列的值大于0.5的行</p>
-<p>df.sort_values(col1)：按照列col1排序数据，默认升序排列</p>
-<p>df.sort_values(col2, ascending=False)：按照列col1降序排列数据</p>
-<p>df.sort_values([col1,col2], ascending=[True,False])：先按列col1升序排列，后按col2降序排列数据</p>
-<p>df.groupby(col)：返回一个按列col进行分组的Groupby对象</p>
-<p>df.groupby([col1,col2])：返回一个按多列进行分组的Groupby对象</p>
-<p>df.groupby(col1)[col2]：返回按列col1进行分组后，列col2的均值</p>
-<p>df.pivot_table(index=col1, values=[col2,col3], aggfunc=max)：创建一个按列col1进行分组，并计算col2和col3的最大值的数据透视表</p>
-<p>df.groupby(col1).agg(np.mean)：返回按列col1分组的所有列的均值</p>
-<p>data.apply(np.mean)：对DataFrame中的每一列应用函数np.mean</p>
-<p>data.apply(np.max,axis=1)：对DataFrame中的每一行应用函数np.max</p>
-<h4 id="Pandas数据合并"><a href="#Pandas数据合并" class="headerlink" title="Pandas数据合并"></a><strong>Pandas数据合并</strong></h4><p>df1.append(df2)：将df2中的行添加到df1的尾部</p>
-<p>df.concat([df1, df2],axis=1)：将df2中的列添加到df1的尾部</p>
-<p>df1.join(df2,on=col1,how=’inner’)：对df1的列和df2的列执行SQL形式的join</p>
-<h4 id="Pandas数据统计"><a href="#Pandas数据统计" class="headerlink" title="Pandas数据统计"></a><strong>Pandas数据统计</strong></h4><p>df.describe()：查看数据值列的汇总统计</p>
-<p>df.mean()：返回所有列的均值</p>
-<p>df.corr()：返回列与列之间的相关系数</p>
-<p>df.count()：返回每一列中的非空值的个数</p>
-<p>df.max()：返回每一列的最大值</p>
-<p>df.min()：返回每一列的最小值</p>
-<p>df.median()：返回每一列的中位数</p>
-<p>df.std()：返回每一列的标准差</p>
-]]></content>
-      <categories>
-        <category>数据分析</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>数据分析</tag>
-        <tag>pandas</tag>
       </tags>
   </entry>
   <entry>
@@ -2681,6 +2497,236 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>PyCharm专业版最简单的破解教程，永久适用</title>
+    <url>/posts/15000.html</url>
+    <content><![CDATA[<h1 id="PyCharm专业版最简单的破解教程，永久适用"><a href="#PyCharm专业版最简单的破解教程，永久适用" class="headerlink" title="PyCharm专业版最简单的破解教程，永久适用"></a>PyCharm专业版最简单的破解教程，永久适用</h1><h2 id="1-从官网下载PyCharm"><a href="#1-从官网下载PyCharm" class="headerlink" title="1.从官网下载PyCharm"></a>1.从官网下载PyCharm</h2><p>官网的下载速度是很快的！</p>
+<p>PyCharm官网：<a href="https://www.jetbrains.com/pycharm/">PyCharm: the Python IDE for Professional Developers by JetBrains</a></p>
+<p>重点：必须下载2021.2.2及之前的版本，否则只能首次试用30天，之后不可试用（要登录官网账号验证是否试用过）</p>
+<p>下载链接直接放下面了：</p>
+<p>方式一：<strong>直接下载</strong>：<a href="https://download.jetbrains.com/python/pycharm-professional-2021.2.2.exe?_ga=2.177314661.139758805.1663811841-1329964021.1654160823&amp;_gl=1">https://download.jetbrains.com/python/pycharm-professional-2021.2.2.exe?_ga=2.177314661.139758805.1663811841-1329964021.1654160823&amp;_gl=1</a></p>
+<p>方式二：进入下载页面下载：<a href="https://www.jetbrains.com/pycharm/download/other.html">Other Versions - PyCharm (jetbrains.com)</a></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220922145852780-920855323.png"></p>
+<h2 id="2-使用脚本清空试用天数续期【无限续期】"><a href="#2-使用脚本清空试用天数续期【无限续期】" class="headerlink" title="2.使用脚本清空试用天数续期【无限续期】"></a>2.使用脚本清空试用天数续期【无限续期】</h2><p>等到过期的时候再使用脚本<code>reset_jetbrains_eval_windows.vbs</code>清空天数就ok</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220922150445043-2094612096.png"></p>
+<p>使用方法：双击脚本即可</p>
+<p>另外这个脚本对于所有的<code>JetBrain</code>的产品都是有效的，记住软件版本选择<code>2021.2.2</code>以前的</p>
+<p>脚本下载链接：<a href="https://wwp.lanzoub.com/iQk4t0c5wm7e">https://wwp.lanzoub.com/iQk4t0c5wm7e</a></p>
+]]></content>
+      <categories>
+        <category>破解资源</category>
+      </categories>
+      <tags>
+        <tag>破解软件</tag>
+        <tag>JetBrain</tag>
+        <tag>PyCharm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python数据分析教程（二）：Pandas</title>
+    <url>/posts/13141.html</url>
+    <content><![CDATA[<h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
+<li>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</li>
+<li>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用</li>
+<li>两个数据类型：Series, DataFrame</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Pandas与numpy的比较"><a href="#Pandas与numpy的比较" class="headerlink" title="Pandas与numpy的比较"></a><strong>Pandas</strong>与numpy的比较</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204036490-294398481.png"></p>
+<h2 id="Pandas的Series类型"><a href="#Pandas的Series类型" class="headerlink" title="Pandas的Series类型"></a><strong>Pandas的Series类型</strong></h2><p>由一组数据及与之相关的数据索引组成</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204224581-494169725.png"></p>
+<h3 id="Pandas的Series类型的创建"><a href="#Pandas的Series类型的创建" class="headerlink" title="Pandas的Series类型的创建"></a><strong>Pandas的Series类型的创建</strong></h3><p>Series类型可以由如下类型创建：</p>
+<ul>
+<li>Python列表，index与列表元素个数一致</li>
+<li>标量值，index表达Series类型的尺寸</li>
+<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
+<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
+<li>其他函数，range()函数等</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204306537-1503027646.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204534311-1927277320.png"></p>
+<h3 id="Pandas的Series类型的基本操作"><a href="#Pandas的Series类型的基本操作" class="headerlink" title="Pandas的Series类型的基本操作"></a><strong>Pandas的Series类型的基本操作</strong></h3><p>Series类型包含index和values两个部分：</p>
+<ul>
+<li>index 获得索引</li>
+<li>values 获得数据</li>
+</ul>
+<p>由ndarray或字典创建的Series，操作类似ndarray或字典类型</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204858056-644012635.png"></p>
+<h2 id="pandas的DataFrame类型"><a href="#pandas的DataFrame类型" class="headerlink" title="pandas的DataFrame类型"></a><strong>pandas的DataFrame类型</strong></h2><ul>
+<li><p>DataFrame类型由共用相同索引的一组列组成</p>
+</li>
+<li><p>DataFrame是一个表格型的数据类型，每列值类型可以不同</p>
+</li>
+<li><p>DataFrame既有行索引、也有列索引</p>
+</li>
+<li><p>DataFrame常用于表达二维数据，但可以表达多维数据</p>
+</li>
+<li><p>DataFrame是二维带“标签”数组</p>
+</li>
+<li><p>DataFrame基本操作类似Series，依据行列索引</p>
+</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205139067-819109186.png"></p>
+<h3 id="pandas的DataFrame类型创建"><a href="#pandas的DataFrame类型创建" class="headerlink" title="pandas的DataFrame类型创建"></a><strong>pandas的DataFrame类型创建</strong></h3><p>DataFrame类型可以由如下类型创建：</p>
+<ul>
+<li>二维ndarray对象</li>
+<li>由一维ndarray、列表、字典、元组或Series构成的字典</li>
+<li>Series类型</li>
+<li>其他的DataFrame类型</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205306000-1512929844.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205403500-1728575625.png"></p>
+<h3 id="Pandas的Dataframe类型的基本操作"><a href="#Pandas的Dataframe类型的基本操作" class="headerlink" title="Pandas的Dataframe类型的基本操作"></a><strong>Pandas的Dataframe类型的基本操作</strong></h3><h4 id="pandas索引操作"><a href="#pandas索引操作" class="headerlink" title="pandas索引操作"></a><strong>pandas索引操作</strong></h4><h5 id="pandas重新索引"><a href="#pandas重新索引" class="headerlink" title="pandas重新索引"></a><strong>pandas重新索引</strong></h5><p>reindex()能够改变或重排Series和DataFrame索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205722764-2087213798.png"></p>
+<p>reindex(index=None, columns=None, …)的参数</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205810608-1806112533.png"></p>
+<p><strong>pandas删除索引</strong></p>
+<p>drop()能够删除Series和DataFrame指定行或列索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210003320-843812767.png"></p>
+<h4 id="pandas数据运算"><a href="#pandas数据运算" class="headerlink" title="pandas数据运算"></a><strong>pandas数据运算</strong></h4><ul>
+<li>算术运算根据行列索引，补齐后运算，运算默认产生浮点数</li>
+<li>补齐时缺项填充NaN (空值)</li>
+<li>二维和一维、一维和零维间为广播运算</li>
+<li>采用+ ‐ * /符号进行的二元运算产生新的对象</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210126120-1408047150.png"></p>
+<h5 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h5><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210234171-1672958996.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210300650-988503635.png"></p>
+<ul>
+<li>不同维度间为广播运算，一维Series默认在轴1参与运算</li>
+<li>使用运算方法可以令一维Series参与轴0运算</li>
+</ul>
+<h2 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a><strong>Pandas数据分析</strong></h2><h3 id="Pandas导入与导出数据"><a href="#Pandas导入与导出数据" class="headerlink" title="Pandas导入与导出数据"></a><strong>Pandas导入与导出数据</strong></h3><h4 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h4><p>pd.read_csv(filename)：从CSV文件导入数据</p>
+<p>pd.read_table(filename)：从限定分隔符的文本文件导入数据</p>
+<p>pd.read_excel(filename)：从Excel文件导入数据</p>
+<p>pd.read_sql(query, connection_object)：从SQL表/库导入数据</p>
+<p>pd.read_json(json_string)：从JSON格式的字符串导入数据</p>
+<p>pd.read_html(url)：解析URL、字符串或者HTML文件，抽取其中的tables表格</p>
+<p>pd.read_clipboard()：从你的粘贴板获取内容，并传给read_table()</p>
+<p>pd.DataFrame(dict)：从字典对象导入数据，Key是列名，Value是数据</p>
+<h4 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h4><p>df.to_csv(filename)：导出数据到CSV文件</p>
+<p>df.to_excel(filename)：导出数据到Excel文件</p>
+<p>df.to_sql(table_name, connection_object)：导出数据到SQL表</p>
+<p>df.to_json(filename)：以Json格式导出数据到文本文件</p>
+<h3 id="Pandas查看、检查数据"><a href="#Pandas查看、检查数据" class="headerlink" title="Pandas查看、检查数据"></a><strong>Pandas查看、检查数据</strong></h3><p>df.head(n)：查看DataFrame对象的前n行</p>
+<p>df.tail(n)：查看DataFrame对象的最后n行</p>
+<p>df.shape()：查看行数和列数</p>
+<p>df.info()：查看索引、数据类型和内存信息</p>
+<p>df.describe()：查看数值型列的汇总统计</p>
+<p>s.value_counts(dropna=False)：查看Series对象的唯一值和计数</p>
+<p>df.apply(pd.Series.value_counts)：查看DataFrame对象中每一列的唯一值和计数</p>
+<h3 id="Pandas数据选取"><a href="#Pandas数据选取" class="headerlink" title="Pandas数据选取"></a><strong>Pandas数据选取</strong></h3><p>df[col]：根据列名，并以Series的形式返回列</p>
+<p>df[[col1, col2]]：以DataFrame形式返回多列</p>
+<p>s.iloc[0]：按位置选取数据</p>
+<p>s.loc[‘index_one’]：按索引选取数据</p>
+<p>df.iloc[0,:]：返回第一行</p>
+<p>df.iloc[0,0]：返回第一列的第一个元素</p>
+<h3 id="pandas数据清理"><a href="#pandas数据清理" class="headerlink" title="pandas数据清理"></a><strong>pandas数据清理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<h3 id="Pandas数据处理"><a href="#Pandas数据处理" class="headerlink" title="Pandas数据处理"></a><strong>Pandas数据处理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<p>df[df[col] &gt; 0.5]：选择col列的值大于0.5的行</p>
+<p>df.sort_values(col1)：按照列col1排序数据，默认升序排列</p>
+<p>df.sort_values(col2, ascending=False)：按照列col1降序排列数据</p>
+<p>df.sort_values([col1,col2], ascending=[True,False])：先按列col1升序排列，后按col2降序排列数据</p>
+<p>df.groupby(col)：返回一个按列col进行分组的Groupby对象</p>
+<p>df.groupby([col1,col2])：返回一个按多列进行分组的Groupby对象</p>
+<p>df.groupby(col1)[col2]：返回按列col1进行分组后，列col2的均值</p>
+<p>df.pivot_table(index=col1, values=[col2,col3], aggfunc=max)：创建一个按列col1进行分组，并计算col2和col3的最大值的数据透视表</p>
+<p>df.groupby(col1).agg(np.mean)：返回按列col1分组的所有列的均值</p>
+<p>data.apply(np.mean)：对DataFrame中的每一列应用函数np.mean</p>
+<p>data.apply(np.max,axis=1)：对DataFrame中的每一行应用函数np.max</p>
+<h4 id="Pandas数据合并"><a href="#Pandas数据合并" class="headerlink" title="Pandas数据合并"></a><strong>Pandas数据合并</strong></h4><p>df1.append(df2)：将df2中的行添加到df1的尾部</p>
+<p>df.concat([df1, df2],axis=1)：将df2中的列添加到df1的尾部</p>
+<p>df1.join(df2,on=col1,how=’inner’)：对df1的列和df2的列执行SQL形式的join</p>
+<h4 id="Pandas数据统计"><a href="#Pandas数据统计" class="headerlink" title="Pandas数据统计"></a><strong>Pandas数据统计</strong></h4><p>df.describe()：查看数据值列的汇总统计</p>
+<p>df.mean()：返回所有列的均值</p>
+<p>df.corr()：返回列与列之间的相关系数</p>
+<p>df.count()：返回每一列中的非空值的个数</p>
+<p>df.max()：返回每一列的最大值</p>
+<p>df.min()：返回每一列的最小值</p>
+<p>df.median()：返回每一列的中位数</p>
+<p>df.std()：返回每一列的标准差</p>
+]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+        <tag>pandas</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora 1.6.7 安装包下载及安装教程 | typora最新版破解教程</title>
+    <url>/posts/23701.html</url>
+    <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称: <strong>Typora 1.6.7 永久激活包</strong></p>
+<p>软件大小: 80.3 MB</p>
+<p>安装环境]: Win11/Win 10/Win 7</p>
+<p>下载链接: <a href="https://wwke.lanzoub.com/i6UZw10z9fde">Typora 1.6.7.zip - 蓝奏云 (lanzoub.com)</a></p>
+<p>软件介绍：Typora是一款简洁的Markdown编辑器,支持即时渲染技术,使用起来也是十分方便。使用Typora可以日常记录笔记,代码学习,界面层级清晰,用于日常工作可以提高效率</p>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>1.选中下载的安装包，鼠标右键选择解压到“Typora 1.6.7“文件夹</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205504020-1956921260.png"></p>
+<p>2.选中“Typora 1.6.7.exe”鼠标右键选择以管理员身份运行</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205456406-1815227489.png"></p>
+<p>3.点击“Install for all users (recommended)”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205448052-1527644165.png"></p>
+<p>4.选择安装位置，点击“Next”（建议和我的路径保持一致）</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205440634-269826617.png"></p>
+<p>5.勾选”Create a desktop shortcut”，点击“Next”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205434094-821299412.png"></p>
+<p>6.点击“Install“</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205421584-1170530835.png"></p>
+<p>7.软件正在安装中，请耐心等待安装完成</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205407822-1415242824.png"></p>
+<p>8.取消勾选“Launch Typora“，点击“Finish“</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205403222-1532128650.png"></p>
+<p>9打开安装包，复制“winmm.dll”文件</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205358091-1872128224.png"></p>
+<p>10.鼠标放在软件上，鼠标右键点击“打开文件所在位置”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205352329-549941236.png"></p>
+<p>11.鼠标放在空白处右键“粘贴”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205348297-967587077.png"></p>
+<p>12.双击打开软件</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205343398-579212640.png"></p>
+<p>13.激活成功</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205336294-786732545.png"></p>
+<p>14.软件安装完成</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205327655-1547912110.png"></p>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>破解</tag>
+        <tag>typora</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Solana土狗交易机器人使用教程【Sol Trading Bot中文教程】</title>
     <url>/posts/231224.html</url>
     <content><![CDATA[<p>众所周知，swap工具不仅有滑点，还十分考验手速，慢一点价格又变了，根本不能成功交易，那么有没有一种方法能够丝滑交易呢，那就是交易机器人！</p>
@@ -2728,49 +2774,37 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>Typora 1.6.7 安装包下载及安装教程 | typora最新版破解教程</title>
-    <url>/posts/23701.html</url>
-    <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称: <strong>Typora 1.6.7 永久激活包</strong></p>
-<p>软件大小: 80.3 MB</p>
-<p>安装环境]: Win11/Win 10/Win 7</p>
-<p>下载链接: <a href="https://wwke.lanzoub.com/i6UZw10z9fde">Typora 1.6.7.zip - 蓝奏云 (lanzoub.com)</a></p>
-<p>软件介绍：Typora是一款简洁的Markdown编辑器,支持即时渲染技术,使用起来也是十分方便。使用Typora可以日常记录笔记,代码学习,界面层级清晰,用于日常工作可以提高效率</p>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>1.选中下载的安装包，鼠标右键选择解压到“Typora 1.6.7“文件夹</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205504020-1956921260.png"></p>
-<p>2.选中“Typora 1.6.7.exe”鼠标右键选择以管理员身份运行</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205456406-1815227489.png"></p>
-<p>3.点击“Install for all users (recommended)”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205448052-1527644165.png"></p>
-<p>4.选择安装位置，点击“Next”（建议和我的路径保持一致）</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205440634-269826617.png"></p>
-<p>5.勾选”Create a desktop shortcut”，点击“Next”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205434094-821299412.png"></p>
-<p>6.点击“Install“</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205421584-1170530835.png"></p>
-<p>7.软件正在安装中，请耐心等待安装完成</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205407822-1415242824.png"></p>
-<p>8.取消勾选“Launch Typora“，点击“Finish“</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205403222-1532128650.png"></p>
-<p>9打开安装包，复制“winmm.dll”文件</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205358091-1872128224.png"></p>
-<p>10.鼠标放在软件上，鼠标右键点击“打开文件所在位置”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205352329-549941236.png"></p>
-<p>11.鼠标放在空白处右键“粘贴”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205348297-967587077.png"></p>
-<p>12.双击打开软件</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205343398-579212640.png"></p>
-<p>13.激活成功</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205336294-786732545.png"></p>
-<p>14.软件安装完成</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205327655-1547912110.png"></p>
+    <title>开源开发者的狂欢，STRK开了一个好头！附领取价值800元的web3空投教程</title>
+    <url>/posts/24222.html</url>
+    <content><![CDATA[<p>这两天在Github和推特上最热闹的事情便是知名ETH（以太坊）二层公链项目STRK给所有gtihub上排名前5000的开源项目的项目贡献者提供了价值800元的代币空投，其中不乏前端程序员、大学生等web3（币圈）圈外用户。</p>
+<p>开源项目的贡献者经常是技术社区中最不被外界注意的英雄。他们在没有任何预期回报的情况下，贡献自己的时间和技能来帮助软件项目发展和成长。当像STRK这样的Web3项目决定对这些贡献者进行空投时，这不仅是对这些贡献者劳动的认可，也是一种激励机制的创新，鼓励更多的开发者参与到开源项目中来。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130412920-2009916679.png">
+
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130450240-629495615.png"></p>
+<h2 id="行业影响分析"><a href="#行业影响分析" class="headerlink" title="行业影响分析"></a>行业影响分析</h2><p>以下是几个原因，解释为什么这对整个开源和Web3生态系统都是好事。</p>
+<h3 id="1-激励更多开发者参与开源项目"><a href="#1-激励更多开发者参与开源项目" class="headerlink" title="1. 激励更多开发者参与开源项目"></a>1. 激励更多开发者参与开源项目</h3><p>通过对开源项目贡献者进行代币空投，Web3项目能够激励更多的开发者参与到开源项目中。这种激励机制能够吸引那些可能对开源贡献感到犹豫的开发者，因为它提供了一个即时的、有形的奖励。随着更多的开发者投入到开源项目中，这些项目的发展速度和质量都将得到提升。</p>
+<h3 id="2-促进Web3技术的普及和理解"><a href="#2-促进Web3技术的普及和理解" class="headerlink" title="2. 促进Web3技术的普及和理解"></a>2. 促进Web3技术的普及和理解</h3><p>对于许多传统的开发者来说，Web3仍然是一个相对陌生的概念。通过将Web3项目与开源社区结合起来，可以帮助传统开发者更容易地了解和接触到区块链和加密货币相关的技术。这种跨界合作有助于加速Web3技术的普及和理解，同时也为开源项目引入了新的视角和技术解决方案。</p>
+<h3 id="3-增加开源项目的可持续性"><a href="#3-增加开源项目的可持续性" class="headerlink" title="3. 增加开源项目的可持续性"></a>3. 增加开源项目的可持续性</h3><p>开源项目的可持续性一直是一个挑战，因为许多项目依赖于志愿者的贡献和赞助。通过代币空投，Web3项目可以为开源贡献者提供一种新的收入来源，增加项目的吸引力和可持续性。这种财务激励也可能鼓励更多的人投入到项目的长期维护和发展中。</p>
+<h3 id="4-建立更紧密的社区联系"><a href="#4-建立更紧密的社区联系" class="headerlink" title="4. 建立更紧密的社区联系"></a>4. 建立更紧密的社区联系</h3><p>空投活动能够帮助建立和加强Web3项目与开源社区之间的联系。通过对开源贡献者的奖励，Web3项目可以展示它们对社区的支持和承诺，从而建立起更强的社区信任和忠诚度。这种紧密的联系不仅有助于项目的长期成功，也为开源贡献者提供了更多的参与和影响项目发展的机会。</p>
+<h3 id="5-鼓励创新和实验"><a href="#5-鼓励创新和实验" class="headerlink" title="5. 鼓励创新和实验"></a>5. 鼓励创新和实验</h3><p>最后，对开源项目贡献者进行空投是一种鼓励创新和实验的方式。它提供了一种机制，奖励那些愿意尝试新技术和解决方案的开发者。这种鼓励可以推动技术的快速发展，促进新的解决方案和应用的产生。</p>
+<p>总而言之，STRK给知名GitHub项目贡献者进行空投不仅是对这些贡献者的肯定，也是推动开源和Web3生态系统发展的一种创新方式。这种跨界合作的模式为其他项目提供了一个值得学习的榜样，预示着未来可能会有更多类似的活动，为整个技术社区带来正面的影响。</p>
+<h2 id="STRK空投领取教程"><a href="#STRK空投领取教程" class="headerlink" title="STRK空投领取教程"></a>STRK空投领取教程</h2><h3 id="1-从网站领取到钱包"><a href="#1-从网站领取到钱包" class="headerlink" title="1.从网站领取到钱包"></a>1.从网站领取到钱包</h3><p>领取STRK空投的网站：<a href="https://provisions.starknet.io/">https://provisions.starknet.io/</a></p>
+<p>进入网站后向下翻阅，选择通过github用户名查询，如果查询有资格再领取</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130856050-1957409003.png"></p>
+<p>如果有领取资格便会显示数量，然后下载指定钱包按照网站教程提现，最后可以去交易所充值然后卖出提现。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222131210848-230148057.png"></p>
+<h3 id="2-从钱包充值到交易所提现"><a href="#2-从钱包充值到交易所提现" class="headerlink" title="2.从钱包充值到交易所提现"></a>2.从钱包充值到交易所提现</h3><p>注册交易所可以看这篇博客：<a href="https://onefly.top/posts/24219.html">https://onefly.top/posts/24219.html</a></p>
+<p>下面可以简单介绍一下如何充值STRK到交易所。</p>
+<p>具体来说就是链上充币，选择STRK，然后复制充值地址，用钱包转账STRK过来，到账后就可以卖出了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222131645318-500394530.png"></p>
 ]]></content>
       <categories>
-        <category>资源分享</category>
+        <category>技术教程</category>
       </categories>
       <tags>
-        <tag>破解</tag>
-        <tag>typora</tag>
-        <tag>markdown</tag>
+        <tag>web3</tag>
+        <tag>strk</tag>
+        <tag>交易所</tag>
       </tags>
   </entry>
   <entry>
@@ -2878,8 +2912,8 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>人工智能</category>
       </categories>
       <tags>
-        <tag>AI</tag>
         <tag>github</tag>
+        <tag>AI</tag>
         <tag>Copilot X</tag>
       </tags>
   </entry>
@@ -2906,6 +2940,44 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>AI</tag>
         <tag>技术分享</tag>
         <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一行代码Android（第3版）pdf</title>
+    <url>/posts/43427.html</url>
+    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
+<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
+<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
+<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
+<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>投资学博迪第十版.pdf下载</title>
+    <url>/posts/15785.html</url>
+    <content><![CDATA[<p>作者：（美）滋维&amp;middot;博迪（Zvi Bodie）,（美）亚历克斯&amp;middot;凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
+<p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p>
+格式: PDF
+
+<p>封面：</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png"></p>
+<p>下载链接：扫描下方<u>二维码</u>关注<code>公众号</code>并回复<code>投资学</code>免费下载</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221014121626471-157482862.png"></p>
+<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>经管</tag>
       </tags>
   </entry>
   <entry>
@@ -3389,23 +3461,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>第一行代码Android（第3版）pdf</title>
-    <url>/posts/43427.html</url>
-    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
-<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
-<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
-<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
-<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例</title>
     <url>/posts/24219.html</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。</p>
@@ -3431,8 +3486,8 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </categories>
       <tags>
         <tag>web3</tag>
-        <tag>虚拟货币</tag>
         <tag>交易所</tag>
+        <tag>虚拟货币</tag>
       </tags>
   </entry>
   <entry>
@@ -3521,27 +3576,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>web3</tag>
         <tag>虚拟货币</tag>
         <tag>比特币</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>投资学博迪第十版.pdf下载</title>
-    <url>/posts/15785.html</url>
-    <content><![CDATA[<p>作者：（美）滋维&amp;middot;博迪（Zvi Bodie）,（美）亚历克斯&amp;middot;凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
-<p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p>
-格式: PDF
-
-<p>封面：</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png"></p>
-<p>下载链接：扫描下方<u>二维码</u>关注<code>公众号</code>并回复<code>投资学</code>免费下载</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221014121626471-157482862.png"></p>
-<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>经管</tag>
       </tags>
   </entry>
 </search>

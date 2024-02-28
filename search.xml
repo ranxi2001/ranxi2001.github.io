@@ -1,162 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Github和git使用指南：以PyCharm为例</title>
-    <url>/posts/16889.html</url>
-    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
-
-<p>注册按照引导完成就可以了</p>
-<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
-<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
-<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
-
-<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
-<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
-
-<p>克隆项目代码：</p>
-<blockquote>
-<p>前置条件：安装Git</p>
-</blockquote>
-<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
-<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
-<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
-<p> 进入cmd</p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
-
-<p> 然后输入<code>git clone 项目地址</code></p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
-
-<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
-<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
-<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
-
-<p>填写github仓库地址，然后点击clone</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
-
-<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
-
-<p>下载完项目仓库后会弹出一个对话框，自选</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
-
-<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
-
-<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
-
-<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
-
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
-
-<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
-<p>接受邀请后就可以push了</p>
-<p>push之前需要在ide登录自己的github账号</p>
-<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
-<p>也就是File-setting配置git和github账号</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
-
-<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
-
-<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
-<p>在Pycahrm中登录</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
-
-<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
-
-<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
-
-<p>解决方法有</p>
-<ol>
-<li>关闭重启编辑器ide</li>
-<li>关闭或打开clash代理</li>
-<li>在终端中输入以下代码</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>其实更加有用的解决方案是：</p>
-<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
+    <title>OKX Web3钱包入门教程，区块链钱包介绍</title>
+    <url>/posts/24228.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/24219.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
+<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
+<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png"></p>
+<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
+<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png"></p>
+<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png"></p>
+<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png"></p>
 ]]></content>
       <categories>
         <category>技术教程</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>git</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MindMaster 10 最新破解版安装教程</title>
-    <url>/posts/24116.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>软件上新了，MindMaster 10，最新破解版，是一款由Wondershare推出的多功能思维导图软件。这款软件支持在多平台上使用，包括PC、平板电脑、手机和网络浏览器，使用户能够轻松创建和访问思维导图。</p>
-<p><strong>主要特点和功能：</strong></p>
-<ol>
-<li><p><strong>多平台兼容性</strong>：MindMaster Pro 10可在PC、平板电脑、手机和网络上使用，为用户提供灵活的访问和编辑选项。</p>
-</li>
-<li><p><strong>强大的编辑功能</strong>：用户可以根据需求选择不同的主题、风格和颜色，定制个性化的思维导图。</p>
-</li>
-<li><p><strong>协作和共享</strong>：与团队成员协作变得更加简便，支持多用户同时编辑和访问同一思维导图。</p>
-</li>
-<li><p><strong>演示模式</strong>：内置的演示文稿功能，可将思维导图快速转换成动态幻灯片，支持导出为PNG格式，并可在线共享。</p>
-</li>
-<li><p><strong>丰富的模板和资源</strong>：提供12种不同的思维导图模型，33个预设主题和700多幅精美的拼贴画，以增强视觉效果。</p>
-</li>
-<li><p><strong>高度定制</strong>：用户可以自定义字体、线条、分支颜色，甚至选择不同的图标形状如卵巢、六边形、钻石、星星等。</p>
-</li>
-<li><p><strong>信息丰富的元素</strong>：支持添加消息、关系、注释、超链接等，以丰富思维导图的内容。</p>
-</li>
-<li><p><strong>项目规划和管理</strong>：通过转换到甘特图视图，跟踪项目的开始/结束日期和进展情况。</p>
-</li>
-<li><p><strong>多主题支持</strong>：无论您使用Windows、Mac还是Linux操作系统，都可以无缝编辑和保存文件。同时支持移动端和网页端使用。</p>
-</li>
-<li><p><strong>导出和分享</strong>：用户可以将思维导图导出为多种格式，如Office文档、PDF、Evernote以及图片格式，并方便地与他人共享。</p>
-</li>
-</ol>
-<p>总体而言，MindMaster 10破解版是一款强大、易用且功能全面的思维导图工具，非常适合个人、团队协作和企业使用。</p>
-<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>1.下载并解压到桌面</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116123108128-655493307.png"></p>
-<p>2.打开解压后的文件夹安装软件（点击setup.exe）</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116124903143-1580129747.png"></p>
-<p>3.安装完成<strong>取消勾选打开软件</strong>，完成并退出。</p>
-<p>4.将<code>crack</code>文件夹的<code>MindMaster1.exe</code><strong>粘贴</strong>添加到桌面软件<strong>安装位置</strong>。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116152859149-1585529636.png"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125240831-1267535789.png"></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153037294-2001469114.png" style="zoom:80%;">
-
-<p>5.<strong>替换桌面快捷方式指向的软件地址</strong></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153229410-214299034.png" style="zoom:67%;">
-
-<p>6.打开桌面的Mindmaster软件即为破解后的pro版本。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125708320-1664314119.png"></p>
-<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><ul>
-<li>百度网盘（提取码：daqo  ）：<a href="https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo">https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo</a> </li>
-<li>夸克网盘：<a href="https://pan.quark.cn/s/f3b49cee2961">https://pan.quark.cn/s/f3b49cee2961</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>思维导图</tag>
-        <tag>mind</tag>
-        <tag>破解</tag>
+        <tag>web3</tag>
+        <tag>区块链钱包</tag>
+        <tag>交易所</tag>
       </tags>
   </entry>
   <entry>
@@ -2119,27 +1984,162 @@
       </tags>
   </entry>
   <entry>
-    <title>OKX Web3钱包入门教程，区块链钱包介绍</title>
-    <url>/posts/24228.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/24219.html">注册<strong>OKX</strong></a> 后，我们点击**<code>交易所</code><strong>旁边的</strong><code>Web3钱包</code>**即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
-<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
-<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png"></p>
-<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
-<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png"></p>
-<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png"></p>
-<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png"></p>
+    <title>Github和git使用指南：以PyCharm为例</title>
+    <url>/posts/16889.html</url>
+    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
+
+<p>注册按照引导完成就可以了</p>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
+<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
+
+<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
+<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
+
+<p>克隆项目代码：</p>
+<blockquote>
+<p>前置条件：安装Git</p>
+</blockquote>
+<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
+<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
+<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
+<p> 进入cmd</p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
+
+<p> 然后输入<code>git clone 项目地址</code></p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
+
+<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
+<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
+<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
+
+<p>填写github仓库地址，然后点击clone</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
+
+<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
+
+<p>下载完项目仓库后会弹出一个对话框，自选</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
+
+<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
+
+<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
+
+<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
+
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
+
+<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
+<p>接受邀请后就可以push了</p>
+<p>push之前需要在ide登录自己的github账号</p>
+<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
+<p>也就是File-setting配置git和github账号</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
+
+<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
+
+<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
+<p>在Pycahrm中登录</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
+
+<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
+
+<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
+
+<p>解决方法有</p>
+<ol>
+<li>关闭重启编辑器ide</li>
+<li>关闭或打开clash代理</li>
+<li>在终端中输入以下代码</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其实更加有用的解决方案是：</p>
+<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
 ]]></content>
       <categories>
         <category>技术教程</category>
       </categories>
       <tags>
-        <tag>web3</tag>
-        <tag>区块链钱包</tag>
-        <tag>交易所</tag>
+        <tag>python</tag>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MindMaster 10 最新破解版安装教程</title>
+    <url>/posts/24116.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>软件上新了，MindMaster 10，最新破解版，是一款由Wondershare推出的多功能思维导图软件。这款软件支持在多平台上使用，包括PC、平板电脑、手机和网络浏览器，使用户能够轻松创建和访问思维导图。</p>
+<p><strong>主要特点和功能：</strong></p>
+<ol>
+<li><p><strong>多平台兼容性</strong>：MindMaster Pro 10可在PC、平板电脑、手机和网络上使用，为用户提供灵活的访问和编辑选项。</p>
+</li>
+<li><p><strong>强大的编辑功能</strong>：用户可以根据需求选择不同的主题、风格和颜色，定制个性化的思维导图。</p>
+</li>
+<li><p><strong>协作和共享</strong>：与团队成员协作变得更加简便，支持多用户同时编辑和访问同一思维导图。</p>
+</li>
+<li><p><strong>演示模式</strong>：内置的演示文稿功能，可将思维导图快速转换成动态幻灯片，支持导出为PNG格式，并可在线共享。</p>
+</li>
+<li><p><strong>丰富的模板和资源</strong>：提供12种不同的思维导图模型，33个预设主题和700多幅精美的拼贴画，以增强视觉效果。</p>
+</li>
+<li><p><strong>高度定制</strong>：用户可以自定义字体、线条、分支颜色，甚至选择不同的图标形状如卵巢、六边形、钻石、星星等。</p>
+</li>
+<li><p><strong>信息丰富的元素</strong>：支持添加消息、关系、注释、超链接等，以丰富思维导图的内容。</p>
+</li>
+<li><p><strong>项目规划和管理</strong>：通过转换到甘特图视图，跟踪项目的开始/结束日期和进展情况。</p>
+</li>
+<li><p><strong>多主题支持</strong>：无论您使用Windows、Mac还是Linux操作系统，都可以无缝编辑和保存文件。同时支持移动端和网页端使用。</p>
+</li>
+<li><p><strong>导出和分享</strong>：用户可以将思维导图导出为多种格式，如Office文档、PDF、Evernote以及图片格式，并方便地与他人共享。</p>
+</li>
+</ol>
+<p>总体而言，MindMaster 10破解版是一款强大、易用且功能全面的思维导图工具，非常适合个人、团队协作和企业使用。</p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>1.下载并解压到桌面</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116123108128-655493307.png"></p>
+<p>2.打开解压后的文件夹安装软件（点击setup.exe）</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116124903143-1580129747.png"></p>
+<p>3.安装完成<strong>取消勾选打开软件</strong>，完成并退出。</p>
+<p>4.将<code>crack</code>文件夹的<code>MindMaster1.exe</code><strong>粘贴</strong>添加到桌面软件<strong>安装位置</strong>。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116152859149-1585529636.png"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125240831-1267535789.png"></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153037294-2001469114.png" style="zoom:80%;">
+
+<p>5.<strong>替换桌面快捷方式指向的软件地址</strong></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116153229410-214299034.png" style="zoom:67%;">
+
+<p>6.打开桌面的Mindmaster软件即为破解后的pro版本。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202401/2910984-20240116125708320-1664314119.png"></p>
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><ul>
+<li>百度网盘（提取码：daqo  ）：<a href="https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo">https://pan.baidu.com/s/1e6-h9CanheNFfgzkiwlrxQ?pwd=daqo</a> </li>
+<li>夸克网盘：<a href="https://pan.quark.cn/s/f3b49cee2961">https://pan.quark.cn/s/f3b49cee2961</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>思维导图</tag>
+        <tag>mind</tag>
+        <tag>破解</tag>
       </tags>
   </entry>
   <entry>
@@ -2900,27 +2900,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>投资学博迪第十版.pdf下载</title>
-    <url>/posts/15785.html</url>
-    <content><![CDATA[<p>作者：（美）滋维&amp;middot;博迪（Zvi Bodie）,（美）亚历克斯&amp;middot;凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
-<p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p>
-格式: PDF
-
-<p>封面：</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png"></p>
-<p>下载链接：扫描下方<u>二维码</u>关注<code>公众号</code>并回复<code>投资学</code>免费下载</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221014121626471-157482862.png"></p>
-<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>经管</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我们应该为Copilot X 的到来做好什么准备？</title>
     <url>/posts/16892.html</url>
     <content><![CDATA[<h1 id="申请github-copilot学生认证以及Jetbrain专业版学生教育免费教程-申请加入Copilot-X-Waitlist"><a href="#申请github-copilot学生认证以及Jetbrain专业版学生教育免费教程-申请加入Copilot-X-Waitlist" class="headerlink" title="申请github copilot学生认证以及Jetbrain专业版学生教育免费教程+申请加入Copilot X Waitlist."></a>申请github copilot学生认证以及Jetbrain专业版学生教育免费教程+申请加入Copilot X Waitlist.</h1><h2 id="教程概览"><a href="#教程概览" class="headerlink" title="教程概览"></a>教程概览</h2><p>1.学信网下载学籍认证pdf</p>
@@ -2982,9 +2961,30 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>人工智能</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>AI</tag>
+        <tag>github</tag>
         <tag>Copilot X</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>投资学博迪第十版.pdf下载</title>
+    <url>/posts/15785.html</url>
+    <content><![CDATA[<p>作者：（美）滋维&amp;middot;博迪（Zvi Bodie）,（美）亚历克斯&amp;middot;凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
+<p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p>
+格式: PDF
+
+<p>封面：</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png"></p>
+<p>下载链接：扫描下方<u>二维码</u>关注<code>公众号</code>并回复<code>投资学</code>免费下载</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221014121626471-157482862.png"></p>
+<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>经管</tag>
       </tags>
   </entry>
   <entry>
@@ -3468,38 +3468,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例</title>
-    <url>/posts/24219.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。</p>
-<p>以下是常用交易所<em><strong>官方注册链接</strong></em>：</p>
-<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国内 ip 用这个</strong></em> 】：<a href="https://www.nuancebot.com/cn/join/8385429">https://www.nuancebot.com/cn/join/8385429</a></p>
-<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国外 ip 用这个</strong></em> 】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
-<p><strong>Binance（币安）</strong>是<strong>世界上最大</strong>的<strong>加密货币交易所</strong>：<a href="https://www.binance.info/zh-CN/join?ref=170981146">https://www.binance.info/zh-CN/join?ref=170981146</a></p>
-<p><strong>Bitget （推荐注册）</strong>是<strong>上币很快福利很多</strong>的<strong>虚拟货币交易所</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
-<p><strong>Gate（芝麻）</strong>是<strong>币种最全上币很快</strong>的<strong>区块链交易所【强烈推荐】</strong>：<a href="https://www.gate.io/signup/AlVEAFtf?ref_type=103">https://www.gate.io/signup/AlVEAFtf?ref_type=103</a></p>
-<p><strong>MEXC(抹茶)</strong> 是<strong>币种最多</strong>的<strong>老交易所</strong>（不要用+86手机号注册）：<a href="https://www.mexc.com/register?inviteCode=1278L4">https://www.mexc.com/register?inviteCode=1278L4</a></p>
-<p>下面以<strong>OKX</strong>为例（其余软件都类似），介绍软件的<strong>使用方法</strong>：</p>
-<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p>注册流程是：<strong>邮箱验证-绑定手机-下载app（苹果手机需要美区id）-实名认证kyc</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219103533717-675787184.png"></p>
-<h2 id="充值入金"><a href="#充值入金" class="headerlink" title="充值入金"></a>充值入金</h2><p>完成实名认证后即可开始用法定货币（人民币）等购买usdt（美元等值稳定币），然后用usdt购买比特币。</p>
-<p>充值的时候可以选择快捷买币，支付的时候优先选择支付宝和微信，不光是安全问题（银行卡冻卡概率高），扫二维码转账比银行卡号转账方便。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104133026-1904762255.png"></p>
-<h2 id="交易"><a href="#交易" class="headerlink" title="交易"></a>交易</h2><p>可以从主页搜索制定货币进入蜡烛图界面，然后点击交易，进入交易界面，没有usdt可以从资金账户划转（充值默认放在资金账户），然后想以最快速度买入选择市价委托，挂单指定价格选择限价委托。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104857126-1921524025.png"></p>
-<h2 id="提现出金"><a href="#提现出金" class="headerlink" title="提现出金"></a>提现出金</h2><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219105244859-74669162.png" style="zoom:50%;">
-
-<p>出金和入金类似，选择出售指定货币即可，如果想要获得更优价格，可以选择C2C自己选择商家交易。</p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>web3</tag>
-        <tag>交易所</tag>
-        <tag>虚拟货币</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>探秘比特币：数字黄金还是黄粱一梦？</title>
     <url>/posts/24218.html</url>
     <content><![CDATA[<p>在金融科技的飞速发展下，比特币作为第一个也是最著名的加密货币，自2009年问世以来，一直是争议和讨论的焦点。它被一些人视为数字时代的黄金，而被另一些人批评为现代版的庞氏骗局。本文将深入探讨比特币的本质、投资价值、加密货币交易所的角色，以及与法币兑换相关的风险。</p>
@@ -3602,6 +3570,38 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       <tags>
         <tag>电子书</tag>
         <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例</title>
+    <url>/posts/24219.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。</p>
+<p>以下是常用交易所<em><strong>官方注册链接</strong></em>：</p>
+<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国内 ip 用这个</strong></em> 】：<a href="https://www.nuancebot.com/cn/join/8385429">https://www.nuancebot.com/cn/join/8385429</a></p>
+<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国外 ip 用这个</strong></em> 】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
+<p><strong>Binance（币安）</strong>是<strong>世界上最大</strong>的<strong>加密货币交易所</strong>：<a href="https://www.binance.info/zh-CN/join?ref=170981146">https://www.binance.info/zh-CN/join?ref=170981146</a></p>
+<p><strong>Bitget （推荐注册）</strong>是<strong>上币很快福利很多</strong>的<strong>虚拟货币交易所</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
+<p><strong>Gate（芝麻）</strong>是<strong>币种最全上币很快</strong>的<strong>区块链交易所【强烈推荐】</strong>：<a href="https://www.gate.io/signup/AlVEAFtf?ref_type=103">https://www.gate.io/signup/AlVEAFtf?ref_type=103</a></p>
+<p><strong>MEXC(抹茶)</strong> 是<strong>币种最多</strong>的<strong>老交易所</strong>（不要用+86手机号注册）：<a href="https://www.mexc.com/register?inviteCode=1278L4">https://www.mexc.com/register?inviteCode=1278L4</a></p>
+<p>下面以<strong>OKX</strong>为例（其余软件都类似），介绍软件的<strong>使用方法</strong>：</p>
+<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p>注册流程是：<strong>邮箱验证-绑定手机-下载app（苹果手机需要美区id）-实名认证kyc</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219103533717-675787184.png"></p>
+<h2 id="充值入金"><a href="#充值入金" class="headerlink" title="充值入金"></a>充值入金</h2><p>完成实名认证后即可开始用法定货币（人民币）等购买usdt（美元等值稳定币），然后用usdt购买比特币。</p>
+<p>充值的时候可以选择快捷买币，支付的时候优先选择支付宝和微信，不光是安全问题（银行卡冻卡概率高），扫二维码转账比银行卡号转账方便。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104133026-1904762255.png"></p>
+<h2 id="交易"><a href="#交易" class="headerlink" title="交易"></a>交易</h2><p>可以从主页搜索制定货币进入蜡烛图界面，然后点击交易，进入交易界面，没有usdt可以从资金账户划转（充值默认放在资金账户），然后想以最快速度买入选择市价委托，挂单指定价格选择限价委托。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104857126-1921524025.png"></p>
+<h2 id="提现出金"><a href="#提现出金" class="headerlink" title="提现出金"></a>提现出金</h2><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219105244859-74669162.png" style="zoom:50%;">
+
+<p>出金和入金类似，选择出售指定货币即可，如果想要获得更优价格，可以选择C2C自己选择商家交易。</p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>交易所</tag>
+        <tag>虚拟货币</tag>
       </tags>
   </entry>
 </search>

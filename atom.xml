@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2024-02-23T08:12:59.943Z</updated>
+  <updated>2024-02-28T06:40:13.508Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OKX Web3钱包入门教程，区块链钱包介绍</title>
+    <link href="https://onefly.top/posts/24228.html"/>
+    <id>https://onefly.top/posts/24228.html</id>
+    <published>2024-02-28T02:06:51.000Z</published>
+    <updated>2024-02-28T06:40:13.508Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;在我们 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://onefly.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="web3" scheme="https://onefly.top/tags/web3/"/>
+    
+    <category term="区块链钱包" scheme="https://onefly.top/tags/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%92%B1%E5%8C%85/"/>
+    
+    <category term="交易所" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E6%89%80/"/>
+    
+  </entry>
   
   <entry>
     <title>开源开发者的狂欢，STRK开了一个好头！附领取价值1700元的web3空投教程</title>
@@ -40,9 +69,9 @@
     
     <category term="web3" scheme="https://onefly.top/tags/web3/"/>
     
-    <category term="strk" scheme="https://onefly.top/tags/strk/"/>
-    
     <category term="交易所" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E6%89%80/"/>
+    
+    <category term="strk" scheme="https://onefly.top/tags/strk/"/>
     
   </entry>
   
@@ -155,11 +184,11 @@
     <category term="技术教程" scheme="https://onefly.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     
+    <category term="chatgpt" scheme="https://onefly.top/tags/chatgpt/"/>
+    
     <category term="visa" scheme="https://onefly.top/tags/visa/"/>
     
     <category term="信用卡" scheme="https://onefly.top/tags/%E4%BF%A1%E7%94%A8%E5%8D%A1/"/>
-    
-    <category term="chatgpt" scheme="https://onefly.top/tags/chatgpt/"/>
     
   </entry>
   
@@ -364,9 +393,9 @@
     <category term="人工智能" scheme="https://onefly.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
     
-    <category term="AI" scheme="https://onefly.top/tags/AI/"/>
-    
     <category term="github" scheme="https://onefly.top/tags/github/"/>
+    
+    <category term="AI" scheme="https://onefly.top/tags/AI/"/>
     
     <category term="Copilot X" scheme="https://onefly.top/tags/Copilot-X/"/>
     

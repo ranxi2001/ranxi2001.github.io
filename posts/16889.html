@@ -369,7 +369,7 @@
     }
 </style>
 <!-- 左侧边栏 -->
-<div id="sidebar" style="width: 325px; position: fixed; top: 35%; left: 20px; transform: translateY(-50%); height: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+<div id="sidebar" style="width: 20vw; position: fixed; top: 35%; left: 20px; transform: translateY(-50%); height: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     <!-- sidebar.ejs -->
 
 <style>
@@ -410,7 +410,7 @@
         <img src="https://images.cnblogs.com/cnblogs_com/blogs/757245/galleries/2178271/o_220723103231_wechat.png" alt="Profile Picture" class="profile-pic">
         <p>欢迎关注微信公众号！</p>
         <p><strong><span style="color: rgb(240, 137, 12);">加密货币交易所 </span></strong><strong>购买比特币教程</strong>：<a href="https://onefly.top/posts/24219.html">https://onefly.top/posts/24219.html</a></p>
-        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国内ip】</strong>：<a target="_blank" rel="noopener" href="https://shuidingding.com/join/8385429">https://shuidingding.com/join/8385429</a></p>
+        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国内ip】</strong>：<a target="_blank" rel="noopener" href="https://olmojzjxjs.com/join/8385429">https://olmojzjxjs.com/join/8385429</a></p>
         <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国外ip】</strong>：<a target="_blank" rel="noopener" href="https://okx.com/cn/join/8385429">https://okx.com/cn/join/8385429</a></p>
         <p>视频网盘等会员和自媒体刷粉：<a target="_blank" rel="noopener" href="https://hy.huoyuan.xyz/a/b/c///">https://hy.huoyuan.xyz/a/b/c///</a></p>
     </div>    
@@ -422,21 +422,24 @@
         document.getElementById('sidebar').style.display = 'none';
     }
 </script>
+
 <div class="container" style="display: flex; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto;">
 
-<style>
-    @media (max-width: 768px) {
-        .container {
-            width: 100%;
+    <!-- 左侧占位元素 -->
+    <div id="left-padding" style="width: 15vw;"></div>
+    <script>
+        var isMobile = /mobile/i.test(navigator.userAgent);
+        if (isMobile) {
+            var leftPadding = document.getElementById('left-padding');
+            leftPadding.style.visibility = 'hidden';
+            leftPadding.style.width = '0';
         }
-        #main-content img {
-            max-width: 100%;
-        }
-    }
-</style>
+    </script>
+
     <!-- 正文 -->
-    <div id="main-content" style="flex-grow: 1; margin: 0 0px;">
-        <!-- 文章内容详情 -->
+    <div id="main-content" style="flex-basis: 100vw; margin: 0 0px; overflow-x: auto;">
+        <div style="width: 100%;">
+            <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -1244,10 +1247,11 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+        </div>
     </div>
 
     <!-- 右侧边栏 -->
-    <div id="toc-aside" style="width: 230px;">
+    <div id="toc-aside" style="width: 10vw;">
         <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
@@ -1260,6 +1264,7 @@
         }
     </script>
 </div>
+
 <!-- TOC 悬浮按钮. -->
 
 <div id="floating-toc-btn" class="hide-on-med-and-down">

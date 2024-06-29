@@ -1,6 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Github和git使用指南：以PyCharm为例</title>
+    <url>/posts/16889.html</url>
+    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
+
+<p>注册按照引导完成就可以了</p>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
+<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
+
+<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
+<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
+
+<p>克隆项目代码：</p>
+<blockquote>
+<p>前置条件：安装Git</p>
+</blockquote>
+<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
+<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
+<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
+<p> 进入cmd</p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
+
+<p> 然后输入<code>git clone 项目地址</code></p>
+ <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
+
+<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
+<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
+<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
+
+<p>填写github仓库地址，然后点击clone</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
+
+<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
+
+<p>下载完项目仓库后会弹出一个对话框，自选</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
+
+<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
+
+<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
+
+<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
+
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
+
+<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
+<p>接受邀请后就可以push了</p>
+<p>push之前需要在ide登录自己的github账号</p>
+<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
+<p>也就是File-setting配置git和github账号</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
+
+<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
+
+<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
+
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
+<p>在Pycahrm中登录</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
+
+<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
+
+<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
+<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
+
+<p>解决方法有</p>
+<ol>
+<li>关闭重启编辑器ide</li>
+<li>关闭或打开clash代理</li>
+<li>在终端中输入以下代码</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其实更加有用的解决方案是：</p>
+<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab R2024a For Mac 苹果M1/2/3芯片中文破解版</title>
+    <url>/posts/24430.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Matlab R2024a 是一个高级的<strong>数学计算软件</strong>，广泛应用于工程、科学研究和经济统计等领域。该版本专为<strong>苹果 M1、M2 和 M3 芯片的 Mac 设备优化</strong>，提供了更好的性能和更高的计算效率。Matlab R2024a 支持多种编程语言，包括 MATLAB 自身的语言、C++、Python 等，使得用户可以方便地进行算法开发、数据分析和数值计算。此外，本版本还包括各种工具箱，支持图像处理、信号分析、机器学习等多种应用，是科研和工程设计的强大工具。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p><strong>已经修复在Sonoma 系统出现打开一分钟后崩溃的问题</strong>。</p>
+<p>小编亲自安装测试于 Macbook Pro <strong>M1</strong> 2021 设备macOS <strong>Sonoma 14.4.1</strong>系统。</p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>1.打开下载的安装包，再打开matlab_R2024a_macOSxxxxProcessor.dmg，对着“Install” 右键 ，然后选择“打开”，打开后提示输入密码的请输入你的Mac开机密码确定；</p>
+<p>2.进入到如下图的界面后，点击右上角的“高级选项”，选择“我有文件安装密钥”继续；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626999-1243608753.png" style="zoom:50%;">
+
+<p>3.到了下图界面，勾选“是”，然后点击“下一步”继续；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627637-2139944504.png" style="zoom:50%;">
+
+<p>4.到了下图界面后先放在一边不管它，打开安装说明文件把里面的安装密钥拷贝粘贴到输入框，然后点击“下一步”继续；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626273-1996866138.png" style="zoom:50%;">
+
+<p>5.到了选择 许可证文件界面，直接点击“下一步”继续；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626058-339982714.png" style="zoom:50%;">
+
+<p>6.选择目标文件夹，保持默认继续；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626251-109142825.png" style="zoom:50%;">
+
+<p>取消 “向MathWorks 发送用户体验信息来帮助改进MATLAB” 勾选，下一步；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626274-979692388.png" style="zoom:50%;">
+
+<p>7.到了选择组件界面，这里默认全部安装；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626303-1344473947.png" style="zoom:50%;">
+
+<p>下一步继续，最后点击开始安装；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626467-1892057042.png" style="zoom:50%;">
+
+<p>安装过程会比较费时间，请耐心等待即可。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626490-226745071.png" style="zoom:50%;">
+
+<p>8.等提示 安装完毕之后，点击关闭即可。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626630-452701039.png" style="zoom:50%;">
+
+<p>9.最后回到dmg安装包，双击里面的“R2024a 补丁.pkg”运行默认安装；</p>
+<p>【注：如果<strong>打不开</strong>或打开软件显示<strong>没有证书而闪退</strong>，错误error报 <code>-5</code> 那么转第<strong>11</strong>步解决】</p>
+<p>10.然后打开 Matlab R2024a 出现 “MathWorks Product Activation”激活界面后，点击 “高级选项” – “我要使用许可证文件”；</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626858-1285969756.png" style="zoom:50%;">
+
+<p>然后浏览安装包里面的“license.lic”文件并点击“激活”按钮即可完成激活。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627077-907847392.png" style="zoom:50%;">
+
+<p>11.如果软件闪退，我们可以手动为软件添加证书，如此可以<strong>替代第10步</strong>顺利完成软件激活！首先进入访达的应用程序中，右键选择<code>显示包内容</code>。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627135-1860486702.png" style="zoom:50%;">
+
+<p>然后把之前的证书文件<code>license.lic</code>复制到<code>licenses</code>文件夹，软件即可激活并打开不再闪退。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627312-1656127817.png" style="zoom:50%;">
+
+<p>12.附注：<strong>激活后打不开</strong>的请打开终端工具运行下面的命令<strong>签名</strong>即可。</p>
+<ul>
+<li>ARM机型（M芯片）</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">codesign <span class="token parameter variable">--verbose</span> <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">-s</span> - /Applications/MATLAB_R2024a.app/bin/maca64/matlab_startup_plugins/lmgrimpl/libmwlmgrimpl.dylib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>intel机型（老款x86芯片 i7等）</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">codesign <span class="token parameter variable">--verbose</span> <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">-s</span> - /Applications/MATLAB_R2024a.app/bin/maci64/matlab_startup_plugins/lmgrimpl/libmwlmgrimpl.dylib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>扫描下方二维码关注<code>公众号</code>并回复<code>MacMatlab</code>免费获取下载链接</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627509-2093241857.png" style="zoom: 40%;">
+
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>破解</tag>
+        <tag>编程</tag>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OKX Web3钱包入门教程，区块链钱包介绍</title>
     <url>/posts/24228.html</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/24219.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
@@ -1984,108 +2161,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github和git使用指南：以PyCharm为例</title>
-    <url>/posts/16889.html</url>
-    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;">
-
-<p>注册按照引导完成就可以了</p>
-<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png"></p>
-<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png"></p>
-<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;">
-
-<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png"></p>
-<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;">
-
-<p>克隆项目代码：</p>
-<blockquote>
-<p>前置条件：安装Git</p>
-</blockquote>
-<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
-<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
-<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
-<p> 进入cmd</p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;">
-
-<p> 然后输入<code>git clone 项目地址</code></p>
- <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;">
-
-<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
-<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
-<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;">
-
-<p>填写github仓库地址，然后点击clone</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;">
-
-<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;">
-
-<p>下载完项目仓库后会弹出一个对话框，自选</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;">
-
-<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;">
-
-<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;">
-
-<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;">
-
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;">
-
-<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
-<p>接受邀请后就可以push了</p>
-<p>push之前需要在ide登录自己的github账号</p>
-<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
-<p>也就是File-setting配置git和github账号</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;">
-
-<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;">
-
-<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png"></p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;">
-
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png"></p>
-<p>在Pycahrm中登录</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;">
-
-<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;">
-
-<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
-<img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;">
-
-<p>解决方法有</p>
-<ol>
-<li>关闭重启编辑器ide</li>
-<li>关闭或打开clash代理</li>
-<li>在终端中输入以下代码</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>其实更加有用的解决方案是：</p>
-<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>git</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MindMaster 10 最新破解版安装教程</title>
     <url>/posts/24116.html</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>软件上新了，MindMaster 10，最新破解版，是一款由Wondershare推出的多功能思维导图软件。这款软件支持在多平台上使用，包括PC、平板电脑、手机和网络浏览器，使用户能够轻松创建和访问思维导图。</p>
@@ -2137,9 +2212,9 @@
         <category>资源分享</category>
       </categories>
       <tags>
+        <tag>破解</tag>
         <tag>思维导图</tag>
         <tag>mind</tag>
-        <tag>破解</tag>
       </tags>
   </entry>
   <entry>
@@ -2546,6 +2621,83 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>Solana土狗交易机器人使用教程【Sol Trading Bot中文教程】</title>
+    <url>/posts/231224.html</url>
+    <content><![CDATA[<p>众所周知，swap工具不仅有滑点，还十分考验手速，慢一点价格又变了，根本不能成功交易，那么有没有一种方法能够丝滑交易呢，那就是交易机器人！</p>
+<h2 id="更多土狗机器人推荐"><a href="#更多土狗机器人推荐" class="headerlink" title="更多土狗机器人推荐"></a>更多土狗机器人推荐</h2><p><strong>Sol\ETH\Base\BSC土狗tg交流群</strong>：<a href="https://t.me/onefly_sol">https://t.me/onefly_sol</a></p>
+<p>以下机器人按个人<strong>喜好推荐顺序排列</strong>：</p>
+<h5 id="（一）Sol土狗机器人："><a href="#（一）Sol土狗机器人：" class="headerlink" title="（一）Sol土狗机器人："></a>（一）<strong>Sol</strong>土狗机器人：</h5><p><strong>1.Sol土狗英文机器人STB</strong>（<strong>本文教程-强烈推荐</strong>）：</p>
+<p><a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<p>2.全中文<strong>pepe</strong>机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/pepeboost_sol_bot?start=ref_0oldsx">https://t.me/pepeboost_sol_bot?start=ref_0oldsx</a></p>
+<p>3.<strong>Unibot</strong>土狗交易机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/solana_unibot?start=r-jack_fly317186">https://t.me/solana_unibot?start=r-jack_fly317186</a></p>
+<p>4.Sol三链<strong>龙狙</strong>机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/dragun69_bot?start=richb425ddf7f6c9">https://t.me/dragun69_bot?start=richb425ddf7f6c9</a></p>
+<p>5.<strong>Rebotech</strong> Sol土狗交易机器人（<strong>有中文</strong>）</p>
+<p><a href="https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY">https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY</a></p>
+<h5 id="（二）ETH和以太二层链土狗机器人："><a href="#（二）ETH和以太二层链土狗机器人：" class="headerlink" title="（二）ETH和以太二层链土狗机器人："></a>（二）ETH和以太二层链土狗机器人：</h5><p>1.<strong>unibot</strong>土狗机器人［<strong>arb base</strong>］（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/unibotsniper_bot?start=oneflyeth">https://t.me/unibotsniper_bot?start=oneflyeth</a></p>
+<p>2.<strong>pepe</strong>土狗交易全中文机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/pepeboost_swap_bot?start=ref_08tucl">https://t.me/pepeboost_swap_bot?start=ref_08tucl</a></p>
+<p>3.<strong>Sigma</strong> 主攻<strong>base</strong>链机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/SigmaTrading4_bot?start=ref=1794496608">https://t.me/SigmaTrading4_bot?start=ref=1794496608</a></p>
+<p>4.<strong>Memebest</strong>主攻<strong>Base</strong>链机器人（<strong>有中文</strong>）</p>
+<p><a href="https://t.me/MemeBestBase_bot?start=ref_luZSdX">https://t.me/MemeBestBase_bot?start=ref_luZSdX</a></p>
+<h5 id="（三）BSC土狗交易机器人："><a href="#（三）BSC土狗交易机器人：" class="headerlink" title="（三）BSC土狗交易机器人："></a>（三）<strong>BSC</strong>土狗交易机器人：</h5><p>1.<strong>ave</strong>三链通用机器人（<strong>有中文</strong>）</p>
+<p><a href="https://t.me/AveSniperBot?start=ref_MTc5NDQ5NjYwOA">https://t.me/AveSniperBot?start=ref_MTc5NDQ5NjYwOA</a></p>
+<h5 id="（四）Ton土狗交易机器人："><a href="#（四）Ton土狗交易机器人：" class="headerlink" title="（四）Ton土狗交易机器人："></a>（四）Ton土狗交易机器人：</h5><p>1.<strong>Stonks</strong>机器人</p>
+<p><a href="https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78">https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78</a></p>
+<p>下面是一篇完整的<strong>第一个sol链上STB交易机器人使用教程</strong>【含翻译】： </p>
+<p>【<strong>安全声明</strong>：交易机器人与本人无关，只提供使用教程，使用机器人造成的一切损失自负】</p>
+<h2 id="1-开始使用机器人"><a href="#1-开始使用机器人" class="headerlink" title="1.开始使用机器人"></a>1.开始使用机器人</h2><p>直接点击机器人链接，或在支持跳转telegram的浏览器打开下面的机器人链接，或者复制链接到tg聊天发送给任意对象再点击链接打开。</p>
+<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114651851-1104401959.jpg" style="zoom:50%;">
+
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114719167-626787221.jpg" style="zoom:50%;">
+
+<h2 id="2-机器人基本菜单介绍"><a href="#2-机器人基本菜单介绍" class="headerlink" title="2.机器人基本菜单介绍"></a>2.机器人基本菜单介绍</h2><p>对应的基本功能见翻译，快捷命令菜单和图中按钮面板一致，不会英文的请熟记以下几个单词，buy是买，sell是卖。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114841303-1858318205.jpg" style="zoom:50%;">
+
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114858659-1344250239.jpg" style="zoom:50%;">
+
+<h2 id="3-机器人钱包系统介绍"><a href="#3-机器人钱包系统介绍" class="headerlink" title="3.机器人钱包系统介绍"></a>3.机器人钱包系统介绍</h2><p>建议不要告诉机器人自己的私钥，而是创建一个新钱包，然后用自己的钱包给机器人转账，为什么要用机器人是因为机器人能够秒买秒卖，但是有一定安全风险，所以赚多了可以提出来，机器人会告诉你钱包的公钥和私钥，你可以把私钥添加到自己的钱包插件中，这样方便后面监控操作。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114952964-1330364325.jpg" style="zoom:50%;">
+
+<h2 id="4-机器人买卖币系统介绍"><a href="#4-机器人买卖币系统介绍" class="headerlink" title="4.机器人买卖币系统介绍"></a>4.机器人买卖币系统介绍</h2><p>直接给机器人发送代币合约地址即可开始买卖，机器人首先会回复你币种基本信息，然后下面是买卖功能菜单面板。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115102492-902648871.jpg" style="zoom:50%;">
+
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115135278-892642567.jpg" style="zoom:50%;">
+
+<h2 id="5-机器人自动买卖和自定义按钮介绍"><a href="#5-机器人自动买卖和自定义按钮介绍" class="headerlink" title="5.机器人自动买卖和自定义按钮介绍"></a>5.机器人自动买卖和自定义按钮介绍</h2><p>bot提供了简单的自动买卖功能，以及一个购买数量的快捷按钮设置，一个适合自己的冲土狗数量快捷单位。 自动买卖指给机器让发送合约地址就会自动买卖，可以选开启自动买还是自动卖。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115226190-537804814.jpg" style="zoom:50%;">
+
+<h2 id="6-机器人狙击新币功能介绍"><a href="#6-机器人狙击新币功能介绍" class="headerlink" title="6.机器人狙击新币功能介绍"></a>6.机器人狙击新币功能介绍</h2><p>直接给机器人发送还没开盘，即没有加池子的合约地址，机器人默认选择狙击模式，设置好大额滑点和贿赂矿工的gas，选择买入数量，抢跑以求在最低点开盘就狙击买入！</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142025210-825027281.png" style="zoom:50%;">
+
+<h2 id="7-机器人参数设置讲解"><a href="#7-机器人参数设置讲解" class="headerlink" title="7.机器人参数设置讲解"></a>7.机器人参数设置讲解</h2><p>关闭自动买卖，这样发送合约才能狙击。参数可以按照自己仓位来设置，狙击滑点设大一点，买卖滑点小一点，贿赂小费gas按照买卖仓位来设置，别亏gas。贿赂gas越高，滑点就可以设得越低，这样不容易去山顶。滑点10000就表示开盘100倍以内的涨幅都要追进去！</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142154021-1234853139.png" style="zoom:50%;">
+
+<h2 id="8-机器人交易收益追踪介绍"><a href="#8-机器人交易收益追踪介绍" class="headerlink" title="8.机器人交易收益追踪介绍"></a>8.机器人交易收益追踪介绍</h2><p>在菜单中选择trade就能看最近10笔订单的收益情况，但是图表，蜡烛图才是交易员的归宿，所以可以用下面的网站链接钱包查看。</p>
+<p><a href="https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana">https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana</a></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115426681-390263752.jpg" style="zoom:50%;">
+
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115606171-455902962.jpg"></p>
+<blockquote>
+<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<p>原文链接：<a href="https://x.com/Onefly_eth/status/1738755042335985853?s=20">https://x.com/Onefly_eth/status/1738755042335985853?s=20</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>bot</tag>
+        <tag>sol</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python数据分析教程（二）：Pandas</title>
     <url>/posts/13141.html</url>
     <content><![CDATA[<h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
@@ -2705,83 +2857,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>Solana土狗交易机器人使用教程【Sol Trading Bot中文教程】</title>
-    <url>/posts/231224.html</url>
-    <content><![CDATA[<p>众所周知，swap工具不仅有滑点，还十分考验手速，慢一点价格又变了，根本不能成功交易，那么有没有一种方法能够丝滑交易呢，那就是交易机器人！</p>
-<h2 id="更多土狗机器人推荐"><a href="#更多土狗机器人推荐" class="headerlink" title="更多土狗机器人推荐"></a>更多土狗机器人推荐</h2><p><strong>Sol\ETH\Base\BSC土狗tg交流群</strong>：<a href="https://t.me/onefly_sol">https://t.me/onefly_sol</a></p>
-<p>以下机器人按个人<strong>喜好推荐顺序排列</strong>：</p>
-<h5 id="（一）Sol土狗机器人："><a href="#（一）Sol土狗机器人：" class="headerlink" title="（一）Sol土狗机器人："></a>（一）<strong>Sol</strong>土狗机器人：</h5><p><strong>1.Sol土狗英文机器人STB</strong>（<strong>本文教程-强烈推荐</strong>）：</p>
-<p><a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<p>2.全中文<strong>pepe</strong>机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/pepeboost_sol_bot?start=ref_0oldsx">https://t.me/pepeboost_sol_bot?start=ref_0oldsx</a></p>
-<p>3.<strong>Unibot</strong>土狗交易机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/solana_unibot?start=r-jack_fly317186">https://t.me/solana_unibot?start=r-jack_fly317186</a></p>
-<p>4.Sol三链<strong>龙狙</strong>机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/dragun69_bot?start=richb425ddf7f6c9">https://t.me/dragun69_bot?start=richb425ddf7f6c9</a></p>
-<p>5.<strong>Rebotech</strong> Sol土狗交易机器人（<strong>有中文</strong>）</p>
-<p><a href="https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY">https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY</a></p>
-<h5 id="（二）ETH和以太二层链土狗机器人："><a href="#（二）ETH和以太二层链土狗机器人：" class="headerlink" title="（二）ETH和以太二层链土狗机器人："></a>（二）ETH和以太二层链土狗机器人：</h5><p>1.<strong>unibot</strong>土狗机器人［<strong>arb base</strong>］（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/unibotsniper_bot?start=oneflyeth">https://t.me/unibotsniper_bot?start=oneflyeth</a></p>
-<p>2.<strong>pepe</strong>土狗交易全中文机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/pepeboost_swap_bot?start=ref_08tucl">https://t.me/pepeboost_swap_bot?start=ref_08tucl</a></p>
-<p>3.<strong>Sigma</strong> 主攻<strong>base</strong>链机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/SigmaTrading4_bot?start=ref=1794496608">https://t.me/SigmaTrading4_bot?start=ref=1794496608</a></p>
-<p>4.<strong>Memebest</strong>主攻<strong>Base</strong>链机器人（<strong>有中文</strong>）</p>
-<p><a href="https://t.me/MemeBestBase_bot?start=ref_luZSdX">https://t.me/MemeBestBase_bot?start=ref_luZSdX</a></p>
-<h5 id="（三）BSC土狗交易机器人："><a href="#（三）BSC土狗交易机器人：" class="headerlink" title="（三）BSC土狗交易机器人："></a>（三）<strong>BSC</strong>土狗交易机器人：</h5><p>1.<strong>ave</strong>三链通用机器人（<strong>有中文</strong>）</p>
-<p><a href="https://t.me/AveSniperBot?start=ref_MTc5NDQ5NjYwOA">https://t.me/AveSniperBot?start=ref_MTc5NDQ5NjYwOA</a></p>
-<h5 id="（四）Ton土狗交易机器人："><a href="#（四）Ton土狗交易机器人：" class="headerlink" title="（四）Ton土狗交易机器人："></a>（四）Ton土狗交易机器人：</h5><p>1.<strong>Stonks</strong>机器人</p>
-<p><a href="https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78">https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78</a></p>
-<p>下面是一篇完整的<strong>第一个sol链上STB交易机器人使用教程</strong>【含翻译】： </p>
-<p>【<strong>安全声明</strong>：交易机器人与本人无关，只提供使用教程，使用机器人造成的一切损失自负】</p>
-<h2 id="1-开始使用机器人"><a href="#1-开始使用机器人" class="headerlink" title="1.开始使用机器人"></a>1.开始使用机器人</h2><p>直接点击机器人链接，或在支持跳转telegram的浏览器打开下面的机器人链接，或者复制链接到tg聊天发送给任意对象再点击链接打开。</p>
-<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114651851-1104401959.jpg" style="zoom:50%;">
-
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114719167-626787221.jpg" style="zoom:50%;">
-
-<h2 id="2-机器人基本菜单介绍"><a href="#2-机器人基本菜单介绍" class="headerlink" title="2.机器人基本菜单介绍"></a>2.机器人基本菜单介绍</h2><p>对应的基本功能见翻译，快捷命令菜单和图中按钮面板一致，不会英文的请熟记以下几个单词，buy是买，sell是卖。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114841303-1858318205.jpg" style="zoom:50%;">
-
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114858659-1344250239.jpg" style="zoom:50%;">
-
-<h2 id="3-机器人钱包系统介绍"><a href="#3-机器人钱包系统介绍" class="headerlink" title="3.机器人钱包系统介绍"></a>3.机器人钱包系统介绍</h2><p>建议不要告诉机器人自己的私钥，而是创建一个新钱包，然后用自己的钱包给机器人转账，为什么要用机器人是因为机器人能够秒买秒卖，但是有一定安全风险，所以赚多了可以提出来，机器人会告诉你钱包的公钥和私钥，你可以把私钥添加到自己的钱包插件中，这样方便后面监控操作。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114952964-1330364325.jpg" style="zoom:50%;">
-
-<h2 id="4-机器人买卖币系统介绍"><a href="#4-机器人买卖币系统介绍" class="headerlink" title="4.机器人买卖币系统介绍"></a>4.机器人买卖币系统介绍</h2><p>直接给机器人发送代币合约地址即可开始买卖，机器人首先会回复你币种基本信息，然后下面是买卖功能菜单面板。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115102492-902648871.jpg" style="zoom:50%;">
-
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115135278-892642567.jpg" style="zoom:50%;">
-
-<h2 id="5-机器人自动买卖和自定义按钮介绍"><a href="#5-机器人自动买卖和自定义按钮介绍" class="headerlink" title="5.机器人自动买卖和自定义按钮介绍"></a>5.机器人自动买卖和自定义按钮介绍</h2><p>bot提供了简单的自动买卖功能，以及一个购买数量的快捷按钮设置，一个适合自己的冲土狗数量快捷单位。 自动买卖指给机器让发送合约地址就会自动买卖，可以选开启自动买还是自动卖。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115226190-537804814.jpg" style="zoom:50%;">
-
-<h2 id="6-机器人狙击新币功能介绍"><a href="#6-机器人狙击新币功能介绍" class="headerlink" title="6.机器人狙击新币功能介绍"></a>6.机器人狙击新币功能介绍</h2><p>直接给机器人发送还没开盘，即没有加池子的合约地址，机器人默认选择狙击模式，设置好大额滑点和贿赂矿工的gas，选择买入数量，抢跑以求在最低点开盘就狙击买入！</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142025210-825027281.png" style="zoom:50%;">
-
-<h2 id="7-机器人参数设置讲解"><a href="#7-机器人参数设置讲解" class="headerlink" title="7.机器人参数设置讲解"></a>7.机器人参数设置讲解</h2><p>关闭自动买卖，这样发送合约才能狙击。参数可以按照自己仓位来设置，狙击滑点设大一点，买卖滑点小一点，贿赂小费gas按照买卖仓位来设置，别亏gas。贿赂gas越高，滑点就可以设得越低，这样不容易去山顶。滑点10000就表示开盘100倍以内的涨幅都要追进去！</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142154021-1234853139.png" style="zoom:50%;">
-
-<h2 id="8-机器人交易收益追踪介绍"><a href="#8-机器人交易收益追踪介绍" class="headerlink" title="8.机器人交易收益追踪介绍"></a>8.机器人交易收益追踪介绍</h2><p>在菜单中选择trade就能看最近10笔订单的收益情况，但是图表，蜡烛图才是交易员的归宿，所以可以用下面的网站链接钱包查看。</p>
-<p><a href="https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana">https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana</a></p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115426681-390263752.jpg" style="zoom:50%;">
-
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115606171-455902962.jpg"></p>
-<blockquote>
-<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<p>原文链接：<a href="https://x.com/Onefly_eth/status/1738755042335985853?s=20">https://x.com/Onefly_eth/status/1738755042335985853?s=20</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>web3</tag>
-        <tag>bot</tag>
-        <tag>sol</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Typora 1.6.7 安装包下载及安装教程 | typora最新版破解教程</title>
     <url>/posts/23701.html</url>
     <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称: <strong>Typora 1.6.7 永久激活包</strong></p>
@@ -2828,6 +2903,65 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>开源开发者的狂欢，STRK开了一个好头！附领取价值1700元的web3空投教程</title>
+    <url>/posts/24222.html</url>
+    <content><![CDATA[<p>这两天在Github和推特上最热闹的事情便是知名ETH（以太坊）二层公链项目STRK给所有gtihub上排名前5000的开源项目的项目贡献者提供了价值1700元的代币空投，其中不乏前端程序员、大学生等web3（币圈）圈外用户。</p>
+<p>开源项目的贡献者经常是技术社区中最不被外界注意的英雄。他们在没有任何预期回报的情况下，贡献自己的时间和技能来帮助软件项目发展和成长。当像STRK这样的Web3项目决定对这些贡献者进行空投时，这不仅是对这些贡献者劳动的认可，也是一种激励机制的创新，鼓励更多的开发者参与到开源项目中来。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130412920-2009916679.png">
+
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130450240-629495615.png"></p>
+<h2 id="行业影响分析"><a href="#行业影响分析" class="headerlink" title="行业影响分析"></a>行业影响分析</h2><p>以下是几个原因，解释为什么这对整个开源和Web3生态系统都是好事。</p>
+<h3 id="1-激励更多开发者参与开源项目"><a href="#1-激励更多开发者参与开源项目" class="headerlink" title="1. 激励更多开发者参与开源项目"></a>1. 激励更多开发者参与开源项目</h3><p>通过对开源项目贡献者进行代币空投，Web3项目能够激励更多的开发者参与到开源项目中。这种激励机制能够吸引那些可能对开源贡献感到犹豫的开发者，因为它提供了一个即时的、有形的奖励。随着更多的开发者投入到开源项目中，这些项目的发展速度和质量都将得到提升。</p>
+<h3 id="2-促进Web3技术的普及和理解"><a href="#2-促进Web3技术的普及和理解" class="headerlink" title="2. 促进Web3技术的普及和理解"></a>2. 促进Web3技术的普及和理解</h3><p>对于许多传统的开发者来说，Web3仍然是一个相对陌生的概念。通过将Web3项目与开源社区结合起来，可以帮助传统开发者更容易地了解和接触到区块链和加密货币相关的技术。这种跨界合作有助于加速Web3技术的普及和理解，同时也为开源项目引入了新的视角和技术解决方案。</p>
+<h3 id="3-增加开源项目的可持续性"><a href="#3-增加开源项目的可持续性" class="headerlink" title="3. 增加开源项目的可持续性"></a>3. 增加开源项目的可持续性</h3><p>开源项目的可持续性一直是一个挑战，因为许多项目依赖于志愿者的贡献和赞助。通过代币空投，Web3项目可以为开源贡献者提供一种新的收入来源，增加项目的吸引力和可持续性。这种财务激励也可能鼓励更多的人投入到项目的长期维护和发展中。</p>
+<h3 id="4-建立更紧密的社区联系"><a href="#4-建立更紧密的社区联系" class="headerlink" title="4. 建立更紧密的社区联系"></a>4. 建立更紧密的社区联系</h3><p>空投活动能够帮助建立和加强Web3项目与开源社区之间的联系。通过对开源贡献者的奖励，Web3项目可以展示它们对社区的支持和承诺，从而建立起更强的社区信任和忠诚度。这种紧密的联系不仅有助于项目的长期成功，也为开源贡献者提供了更多的参与和影响项目发展的机会。</p>
+<h3 id="5-鼓励创新和实验"><a href="#5-鼓励创新和实验" class="headerlink" title="5. 鼓励创新和实验"></a>5. 鼓励创新和实验</h3><p>最后，对开源项目贡献者进行空投是一种鼓励创新和实验的方式。它提供了一种机制，奖励那些愿意尝试新技术和解决方案的开发者。这种鼓励可以推动技术的快速发展，促进新的解决方案和应用的产生。</p>
+<p>总而言之，STRK给知名GitHub项目贡献者进行空投不仅是对这些贡献者的肯定，也是推动开源和Web3生态系统发展的一种创新方式。这种跨界合作的模式为其他项目提供了一个值得学习的榜样，预示着未来可能会有更多类似的活动，为整个技术社区带来正面的影响。</p>
+<h2 id="STRK空投领取教程"><a href="#STRK空投领取教程" class="headerlink" title="STRK空投领取教程"></a>STRK空投领取教程</h2><h3 id="1-从网站领取到钱包"><a href="#1-从网站领取到钱包" class="headerlink" title="1.从网站领取到钱包"></a>1.从网站领取到钱包</h3><p>领取STRK空投的网站：<a href="https://provisions.starknet.io/">https://provisions.starknet.io/</a></p>
+<p>进入网站后向下翻阅，选择通过github用户名查询，如果查询有资格再领取。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130856050-1957409003.png"></p>
+<p>如果有领取资格便会显示数量，然后下载指定钱包按照网站教程提现，最后可以去交易所充值然后卖出提现。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222131210848-230148057.png"></p>
+<h3 id="2-从钱包充值到交易所提现"><a href="#2-从钱包充值到交易所提现" class="headerlink" title="2.从钱包充值到交易所提现"></a>2.从钱包充值到交易所提现</h3><p>注册交易所可以看这篇博客：<a href="https://onefly.top/posts/24219.html">https://onefly.top/posts/24219.html</a></p>
+<p>下面可以简单介绍一下如何充值STRK到交易所。</p>
+<p>具体来说就是链上充币，选择STRK，然后复制充值地址，用钱包转账STRK过来，到账后就可以卖出了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222131645318-500394530.png"></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>交易所</tag>
+        <tag>strk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个100%立即获得New bing资格的方法教程-点击就送bing chat</title>
+    <url>/posts/16891.html</url>
+    <content><![CDATA[<p>之前加入waitlist的账号一个多月过去了还没有任何反应，但是身边朋友却“点击就送”？</p>
+<p>深入调查后发现原来是IP的影响，相信说到这里就已经有人知道该怎么做了</p>
+<p>方法：</p>
+<ol>
+<li>将节点IP更换为日本全局（不会换ip的看这个<a href="https://blog.onefly.top/posts/16888.html">简易教程</a>)</li>
+</ol>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113249267-1194007670.png"></p>
+<ol start="2">
+<li>进入new bing 申请网站点击立即加入</li>
+</ol>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113536042-1695660571.png"></p>
+<p>之后就可以直接在bing搜索中开启聊天了<br><a href="https://www.bing.com/?/ai">https://www.bing.com/?/ai</a><br>其他建议：先退账号，删除注册表，vpn登录国外邮箱，现在秒成功<br>其他方案：<a href="https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A">https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A</a></p>
+]]></content>
+      <categories>
+        <category>前沿技术</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>技术分享</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Z-Lib 安卓app | Zlibrary永久有效的电子书库 无视网站迁移</title>
     <url>/posts/23703.html</url>
     <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称： <strong>Z-lib</strong></p>
@@ -2868,65 +3002,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>免费</tag>
         <tag>电子书</tag>
         <tag>zlibrary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个100%立即获得New bing资格的方法教程-点击就送bing chat</title>
-    <url>/posts/16891.html</url>
-    <content><![CDATA[<p>之前加入waitlist的账号一个多月过去了还没有任何反应，但是身边朋友却“点击就送”？</p>
-<p>深入调查后发现原来是IP的影响，相信说到这里就已经有人知道该怎么做了</p>
-<p>方法：</p>
-<ol>
-<li>将节点IP更换为日本全局（不会换ip的看这个<a href="https://blog.onefly.top/posts/16888.html">简易教程</a>)</li>
-</ol>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113249267-1194007670.png"></p>
-<ol start="2">
-<li>进入new bing 申请网站点击立即加入</li>
-</ol>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113536042-1695660571.png"></p>
-<p>之后就可以直接在bing搜索中开启聊天了<br><a href="https://www.bing.com/?/ai">https://www.bing.com/?/ai</a><br>其他建议：先退账号，删除注册表，vpn登录国外邮箱，现在秒成功<br>其他方案：<a href="https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A">https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A</a></p>
-]]></content>
-      <categories>
-        <category>前沿技术</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
-        <tag>技术分享</tag>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开源开发者的狂欢，STRK开了一个好头！附领取价值1700元的web3空投教程</title>
-    <url>/posts/24222.html</url>
-    <content><![CDATA[<p>这两天在Github和推特上最热闹的事情便是知名ETH（以太坊）二层公链项目STRK给所有gtihub上排名前5000的开源项目的项目贡献者提供了价值1700元的代币空投，其中不乏前端程序员、大学生等web3（币圈）圈外用户。</p>
-<p>开源项目的贡献者经常是技术社区中最不被外界注意的英雄。他们在没有任何预期回报的情况下，贡献自己的时间和技能来帮助软件项目发展和成长。当像STRK这样的Web3项目决定对这些贡献者进行空投时，这不仅是对这些贡献者劳动的认可，也是一种激励机制的创新，鼓励更多的开发者参与到开源项目中来。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130412920-2009916679.png">
-
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130450240-629495615.png"></p>
-<h2 id="行业影响分析"><a href="#行业影响分析" class="headerlink" title="行业影响分析"></a>行业影响分析</h2><p>以下是几个原因，解释为什么这对整个开源和Web3生态系统都是好事。</p>
-<h3 id="1-激励更多开发者参与开源项目"><a href="#1-激励更多开发者参与开源项目" class="headerlink" title="1. 激励更多开发者参与开源项目"></a>1. 激励更多开发者参与开源项目</h3><p>通过对开源项目贡献者进行代币空投，Web3项目能够激励更多的开发者参与到开源项目中。这种激励机制能够吸引那些可能对开源贡献感到犹豫的开发者，因为它提供了一个即时的、有形的奖励。随着更多的开发者投入到开源项目中，这些项目的发展速度和质量都将得到提升。</p>
-<h3 id="2-促进Web3技术的普及和理解"><a href="#2-促进Web3技术的普及和理解" class="headerlink" title="2. 促进Web3技术的普及和理解"></a>2. 促进Web3技术的普及和理解</h3><p>对于许多传统的开发者来说，Web3仍然是一个相对陌生的概念。通过将Web3项目与开源社区结合起来，可以帮助传统开发者更容易地了解和接触到区块链和加密货币相关的技术。这种跨界合作有助于加速Web3技术的普及和理解，同时也为开源项目引入了新的视角和技术解决方案。</p>
-<h3 id="3-增加开源项目的可持续性"><a href="#3-增加开源项目的可持续性" class="headerlink" title="3. 增加开源项目的可持续性"></a>3. 增加开源项目的可持续性</h3><p>开源项目的可持续性一直是一个挑战，因为许多项目依赖于志愿者的贡献和赞助。通过代币空投，Web3项目可以为开源贡献者提供一种新的收入来源，增加项目的吸引力和可持续性。这种财务激励也可能鼓励更多的人投入到项目的长期维护和发展中。</p>
-<h3 id="4-建立更紧密的社区联系"><a href="#4-建立更紧密的社区联系" class="headerlink" title="4. 建立更紧密的社区联系"></a>4. 建立更紧密的社区联系</h3><p>空投活动能够帮助建立和加强Web3项目与开源社区之间的联系。通过对开源贡献者的奖励，Web3项目可以展示它们对社区的支持和承诺，从而建立起更强的社区信任和忠诚度。这种紧密的联系不仅有助于项目的长期成功，也为开源贡献者提供了更多的参与和影响项目发展的机会。</p>
-<h3 id="5-鼓励创新和实验"><a href="#5-鼓励创新和实验" class="headerlink" title="5. 鼓励创新和实验"></a>5. 鼓励创新和实验</h3><p>最后，对开源项目贡献者进行空投是一种鼓励创新和实验的方式。它提供了一种机制，奖励那些愿意尝试新技术和解决方案的开发者。这种鼓励可以推动技术的快速发展，促进新的解决方案和应用的产生。</p>
-<p>总而言之，STRK给知名GitHub项目贡献者进行空投不仅是对这些贡献者的肯定，也是推动开源和Web3生态系统发展的一种创新方式。这种跨界合作的模式为其他项目提供了一个值得学习的榜样，预示着未来可能会有更多类似的活动，为整个技术社区带来正面的影响。</p>
-<h2 id="STRK空投领取教程"><a href="#STRK空投领取教程" class="headerlink" title="STRK空投领取教程"></a>STRK空投领取教程</h2><h3 id="1-从网站领取到钱包"><a href="#1-从网站领取到钱包" class="headerlink" title="1.从网站领取到钱包"></a>1.从网站领取到钱包</h3><p>领取STRK空投的网站：<a href="https://provisions.starknet.io/">https://provisions.starknet.io/</a></p>
-<p>进入网站后向下翻阅，选择通过github用户名查询，如果查询有资格再领取。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222130856050-1957409003.png"></p>
-<p>如果有领取资格便会显示数量，然后下载指定钱包按照网站教程提现，最后可以去交易所充值然后卖出提现。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222131210848-230148057.png"></p>
-<h3 id="2-从钱包充值到交易所提现"><a href="#2-从钱包充值到交易所提现" class="headerlink" title="2.从钱包充值到交易所提现"></a>2.从钱包充值到交易所提现</h3><p>注册交易所可以看这篇博客：<a href="https://onefly.top/posts/24219.html">https://onefly.top/posts/24219.html</a></p>
-<p>下面可以简单介绍一下如何充值STRK到交易所。</p>
-<p>具体来说就是链上充币，选择STRK，然后复制充值地址，用钱包转账STRK过来，到账后就可以卖出了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240222131645318-500394530.png"></p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>web3</tag>
-        <tag>交易所</tag>
-        <tag>strk</tag>
       </tags>
   </entry>
   <entry>
@@ -2991,9 +3066,97 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>人工智能</category>
       </categories>
       <tags>
-        <tag>AI</tag>
         <tag>github</tag>
+        <tag>AI</tag>
         <tag>Copilot X</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>探秘比特币：数字黄金还是黄粱一梦？</title>
+    <url>/posts/24218.html</url>
+    <content><![CDATA[<p>在金融科技的飞速发展下，比特币作为第一个也是最著名的加密货币，自2009年问世以来，一直是争议和讨论的焦点。它被一些人视为数字时代的黄金，而被另一些人批评为现代版的庞氏骗局。本文将深入探讨比特币的本质、投资价值、加密货币交易所的角色，以及与法币兑换相关的风险。</p>
+<h2 id="1-比特币是不是庞氏骗局？"><a href="#1-比特币是不是庞氏骗局？" class="headerlink" title="1. 比特币是不是庞氏骗局？"></a>1. 比特币是不是庞氏骗局？</h2><p>庞氏骗局是一种投资诈骗，新投资者的资金用于支付早期投资者的回报，而不是通过合法业务活动或投资收益。比特币的工作原理与此不同。它基于区块链技术——一个去中心化、分布式的账本，记录所有交易。比特币的价值不是由支付早期投资者的后来者资金支撑，而是由市场需求、有限的供应（总量上限为2100万），以及挖矿成本（即生成新比特币的电脑算力成本）决定的。</p>
+<blockquote>
+<p>比特币与历史上著名的郁金香泡沫之间存在显著的区别，尽管两者都被用作投机泡沫的例证。为了更深入地理解这些区别，我们需要回顾郁金香泡沫的历史背景，并与比特币的当前情况进行对比。</p>
+<h3 id="郁金香泡沫简介"><a href="#郁金香泡沫简介" class="headerlink" title="郁金香泡沫简介"></a>郁金香泡沫简介</h3><p>郁金香泡沫（1634-1637年）是历史上最早的经济泡沫之一，发生在荷兰的黄金时代。当时，郁金香球茎成为了极度炒作的投机对象，其价格在短时间内飙升至荒谬的高位，后来突然崩溃，给投资者带来了巨大的财务损失。</p>
+<h3 id="比特币简介"><a href="#比特币简介" class="headerlink" title="比特币简介"></a>比特币简介</h3><p>比特币是2009年由一个化名为中本聪的人或团体创造的数字加密货币。它基于去中心化的区块链技术，使用户能够在没有中央权威机构的情况下进行交易。</p>
+<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ol>
+<li><p><strong>基础资产的性质</strong>：</p>
+<ul>
+<li><strong>郁金香泡沫</strong>：基于实体商品——郁金香球茎。其价值本质上受限于物理属性和实际用途。</li>
+<li><strong>比特币</strong>：基于数字技术和数学原理。它作为一种去中心化的货币和价值储存手段，其价值不仅仅取决于市场供需，还涉及其作为技术创新的潜力。</li>
+</ul>
+</li>
+<li><p><strong>市场参与者的范围</strong>：</p>
+<ul>
+<li>郁金香泡沫主要局限于荷兰，影响相对有限。</li>
+<li>比特币是全球性的，影响广泛，涉及全球各地的投资者和用户。</li>
+</ul>
+</li>
+<li><p><strong>持久性和应用</strong>：</p>
+<ul>
+<li>郁金香的狂热是短暂的，且主要是基于物理商品的美学价值和稀有性。</li>
+<li>比特币及其背后的区块链技术有着更广泛的应用前景，包括金融、法律、物流等领域，其技术创新为其价值提供了持续的支撑。</li>
+</ul>
+</li>
+<li><p><strong>经济影响</strong>：</p>
+<ul>
+<li>郁金香泡沫的崩溃对当时的荷兰经济造成了影响，但其影响相对局限。</li>
+<li>比特币的波动性及其对全球金融市场的潜在影响更为广泛，同时也引发了对加密货币监管的全球性讨论。</li>
+</ul>
+</li>
+<li><p><strong>技术与创新</strong>：</p>
+<ul>
+<li>郁金香泡沫缺乏持续的技术或创新支撑。</li>
+<li>比特币代表了区块链技术的突破，这是一种具有革命性的技术创新，可能改变多个行业的运作方式。</li>
+</ul>
+</li>
+</ol>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>虽然比特币的价格波动和郁金香泡沫在某些方面看似相似，但比较两者的基础、影响范围、应用前景和技术背景揭示了它们之间的本质区别。比特币及其区块链技术的出现不仅仅是一场简单的投机狂</p>
+<p>热，而是一次可能对全球经济和社会产生深远影响的技术革新。尽管如此，比特币的未来仍充满不确定性，其作为一种投资和价值储存手段的真正潜力有待市场和时间的检验。</p>
+</blockquote>
+<p>尽管比特币不符合传统庞氏骗局的定义，但它的价格波动极大，且受到投机行为的影响，因此一些批评者认为它具有类似风险。</p>
+<h2 id="2-比特币有没有投资价值？"><a href="#2-比特币有没有投资价值？" class="headerlink" title="2. 比特币有没有投资价值？"></a>2. 比特币有没有投资价值？</h2><p>比特币被许多投资者视为一种“数字黄金”，具有对冲通货膨胀和货币贬值的潜力。与传统金融资产相比，比特币具有几个独特优势：供应量上限固定、去中心化、全球可接入性等。然而，它的价格波动性高，投资风险也相应较大。投资比特币要求对市场动态有深入了解，并且能够承受可能的资本损失。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218183520256-1443590482.png" style="zoom: 67%;">
+
+<p>从2022年底开始，比特币从15600一路涨上52800美元，同时若按照人民币计价，当前价格已达最高点（69000 usd）的90%分位。在过去的10年中，比特币作为一种投资标的涨幅一直是位列第一的（要么是涨幅第一，要么是跌幅第一），但是我们只要在跌幅最大的一年年底购买并持有3年，那么至少会有4倍收益。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218184323982-241807225.png" style="zoom:67%;">
+
+<p><strong>2024年1月24日，美国证券交易委员会（SEC）批准比特币现货ETF</strong>（交易所交易基金）是加密货币领域的重大里程碑，对比特币的投资价值及其与黄金关系的影响深远。比特币ETF的批准意味着投资者可以通过传统的投资渠道参与比特币投资，无需直接购买和持有比特币，从而降低了投资门槛和复杂性。这一举措不仅增强了比特币作为投资工具的合法性，也提高了其对主流投资者的吸引力。</p>
+<blockquote>
+<h3 id="比特币ETF对比特币投资价值的影响"><a href="#比特币ETF对比特币投资价值的影响" class="headerlink" title="比特币ETF对比特币投资价值的影响"></a>比特币ETF对比特币投资价值的影响</h3><ol>
+<li><strong>增加流动性和可接入性</strong>：比特币ETF使得投资比特币像购买股票一样简单，通过增加流动性和可接入性，吸引了更多的个人和机构投资者。</li>
+<li><strong>提高认可度</strong>：SEC的批准是对比特币及其底层技术的一种认可，增强了投资者对比特币作为一种投资类别合法性的信心。</li>
+<li><strong>市场成熟</strong>：比特币ETF的存在表明加密货币市场正在成熟，有助于减少市场波动性，提高价格稳定性。</li>
+</ol>
+<h3 id="比特币现货ETF与黄金ETF价格关系"><a href="#比特币现货ETF与黄金ETF价格关系" class="headerlink" title="比特币现货ETF与黄金ETF价格关系"></a>比特币现货ETF与黄金ETF价格关系</h3><p>比特币ETF批准后，观察到黄金ETF的价格出现下跌，这可能反映了投资者在两种资产之间重新分配资金。这种现象指向了比特币和黄金之间的几个关键关系：</p>
+<ol>
+<li><strong>投资多样化</strong>：一些投资者可能将比特币视为黄金的现代替代品，用于对冲通货膨胀和货币贬值。随着比特币ETF的推出，这些投资者可能转向比特币，寻求更高的回报率，从而对黄金ETF的需求产生影响。</li>
+<li><strong>风险偏好变化</strong>：比特币通常被视为更高风险、更高回报的投资。比特币ETF的批准可能吸引了寻求高风险投资的投资者，这部分资本的流入可能部分来源于原本投资于黄金的资金。</li>
+<li><strong>市场认知变化</strong>：随着比特币成为主流投资选项，其与黄金作为“避险资产”的竞争地位可能会增强。投资者可能重新评估这两种资产在投资组合中的角色，导致资金流向的变化。</li>
+</ol>
+<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>比特币ETF的批准不仅提升了比特币的投资价值，也可能改变了其与黄金的关系。作为数字黄金，比特币提供了一种新的避险机制和价值储存方式，可能在某些投资者心中取代或补充传统的黄金投资。然而，比特币与黄金仍然有着本质的不同，包括其波动性、市场成熟度以及被接受的程度。因此，虽然比特币可能会对黄金ETF的价格产生影响，但两者都可能在多样化的投资组合中发挥重要作用，满足不同投资者的需求和风险偏好。在未来，随着市场的进一步发展和成熟，投资者将更加深入地理解如何在这两种资产之间做出最佳配置决策。</p>
+</blockquote>
+<h2 id="3-什么是加密货币交易所？"><a href="#3-什么是加密货币交易所？" class="headerlink" title="3. 什么是加密货币交易所？"></a>3. 什么是加密货币交易所？</h2><p>加密货币交易所是允许买家和卖家交易加密货币的平台，如比特币、以太坊等。它们为用户提供了将加密货币兑换成其他加密货币或法币（如美元、欧元）的服务。这些交易所可以是中心化的，由特定公司运营，也可以是去中心化的，依靠自动化的智能合约直接在用户之间进行交易。选择一个可靠、安全的交易所对于保护投资者资金至关重要。</p>
+<p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。但是下载交易所有一定的门槛，建议寻求值得信任的有经验的朋友辅导。</p>
+<h2 id="4-虚拟货币和法币兑换的风险"><a href="#4-虚拟货币和法币兑换的风险" class="headerlink" title="4. 虚拟货币和法币兑换的风险"></a>4. 虚拟货币和法币兑换的风险</h2><p>虚拟货币与法币兑换带来了多重风险，包括但不限于市场风险、流动性风险、法律和监管风险。市场波动可能导致投资者在兑换过程中遭受重大损失。此外，虽然加密货币交易日益增加，但相对于传统市场，它们的流动性仍然较低，这可能导致兑换成本增加。法律和监管的不确定性也是一个重要因素，不同国家对加密货币的态度和政策各不相同。</p>
+<p>由于在中国，从事虚拟货币和人民币的兑换属于非法金融活动，请不要私下和他人买卖比特币，以防上当受骗和冻卡。如果你投资比特币获得相当的收益可前往香港兑换成人民币，或者直接在上述3种交易所内选择值得信任的OTC出入金。</p>
+<h2 id="5-如何购买或注册交易所？"><a href="#5-如何购买或注册交易所？" class="headerlink" title="5.如何购买或注册交易所？"></a>5.如何购买或注册交易所？</h2><p><strong>详细注册和使用教程见另一博客</strong>：</p>
+<p><a href="https://onefly.top/posts/24219.html">简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例 | 孤飞的博客 (onefly.top)</a></p>
+<p>以下是官方注册渠道：【强烈建议看<strong>上方注册和使用教程</strong>的博客】</p>
+<p><strong>OKX</strong>【国内IP】：<a href="https://www.nuancebot.com/cn/join/8385429">https://www.nuancebot.com/cn/join/8385429</a></p>
+<p><strong>OKX</strong>【国外IP】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
+<p><strong>Bitget</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
+<p><strong>Binance</strong>：<a href="https://www.suitechsui.io/zh-CN/join?ref=170981146">https://www.suitechsui.io/zh-CN/join?ref=170981146</a></p>
+<p>欢迎关注我的最新博客！</p>
+]]></content>
+      <categories>
+        <category>前沿技术</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>虚拟货币</tag>
+        <tag>比特币</tag>
       </tags>
   </entry>
   <entry>
@@ -3015,6 +3178,55 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       <tags>
         <tag>电子书</tag>
         <tag>经管</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例</title>
+    <url>/posts/24219.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。</p>
+<p>以下是常用交易所<em><strong>官方注册链接</strong></em>：</p>
+<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国内 ip 用这个</strong></em> 】：<a href="https://olmojzjxjs.com/join/8385429">https://olmojzjxjs.com/join/8385429</a></p>
+<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国外 ip 用这个</strong></em> 】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
+<p><strong>Binance（币安）</strong>是<strong>世界上最大</strong>的<strong>加密货币交易所</strong>：<a href="https://www.binance.info/zh-CN/join?ref=170981146">https://www.binance.info/zh-CN/join?ref=170981146</a></p>
+<p><strong>Bitget （推荐注册）</strong>是<strong>上币很快福利很多</strong>的<strong>虚拟货币交易所</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
+<p><strong>Gate（芝麻）</strong>是<strong>币种最全上币最快</strong>的<strong>区块链交易所【强烈推荐】</strong>：<a href="https://www.gate.io/signup/AlVEAFtf?ref_type=103">https://www.gate.io/signup/AlVEAFtf?ref_type=103</a></p>
+<p><strong>MEXC（抹茶）</strong>是<strong>网络稳定适合开合约</strong>的交易所（<strong>不要用手机号注册，不要放很多钱</strong>）：<a href="https://www.mexc.com/register?inviteCode=1278L4">https://www.mexc.com/register?inviteCode=1278L4</a></p>
+<p>下面以<strong>OKX</strong>为例（其余软件都类似），介绍软件的<strong>使用方法</strong>：</p>
+<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p>注册流程是：<strong>邮箱验证-绑定手机-下载app（苹果手机需要美区id）-实名认证kyc</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219103533717-675787184.png"></p>
+<h2 id="充值入金"><a href="#充值入金" class="headerlink" title="充值入金"></a>充值入金</h2><p>完成实名认证后即可开始用法定货币（人民币）等购买usdt（美元等值稳定币），然后用usdt购买比特币。</p>
+<p>充值的时候可以选择快捷买币，支付的时候优先选择支付宝和微信，不光是安全问题（银行卡冻卡概率高），扫二维码转账比银行卡号转账方便。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104133026-1904762255.png"></p>
+<h2 id="交易"><a href="#交易" class="headerlink" title="交易"></a>交易</h2><p>可以从主页搜索制定货币进入蜡烛图界面，然后点击交易，进入交易界面，没有usdt可以从资金账户划转（充值默认放在资金账户），然后想以最快速度买入选择市价委托，挂单指定价格选择限价委托。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104857126-1921524025.png"></p>
+<h2 id="提现出金"><a href="#提现出金" class="headerlink" title="提现出金"></a>提现出金</h2><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219105244859-74669162.png" style="zoom:50%;">
+
+<p>出金和入金类似，选择出售指定货币即可，如果想要获得更优价格，可以选择C2C自己选择商家交易。</p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>交易所</tag>
+        <tag>虚拟货币</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一行代码Android（第3版）pdf</title>
+    <url>/posts/43427.html</url>
+    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
+<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
+<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
+<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
+<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>开发</tag>
       </tags>
   </entry>
   <entry>
@@ -3495,143 +3707,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>百度网盘</tag>
         <tag>视频会员</tag>
         <tag>自媒体粉丝</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>探秘比特币：数字黄金还是黄粱一梦？</title>
-    <url>/posts/24218.html</url>
-    <content><![CDATA[<p>在金融科技的飞速发展下，比特币作为第一个也是最著名的加密货币，自2009年问世以来，一直是争议和讨论的焦点。它被一些人视为数字时代的黄金，而被另一些人批评为现代版的庞氏骗局。本文将深入探讨比特币的本质、投资价值、加密货币交易所的角色，以及与法币兑换相关的风险。</p>
-<h2 id="1-比特币是不是庞氏骗局？"><a href="#1-比特币是不是庞氏骗局？" class="headerlink" title="1. 比特币是不是庞氏骗局？"></a>1. 比特币是不是庞氏骗局？</h2><p>庞氏骗局是一种投资诈骗，新投资者的资金用于支付早期投资者的回报，而不是通过合法业务活动或投资收益。比特币的工作原理与此不同。它基于区块链技术——一个去中心化、分布式的账本，记录所有交易。比特币的价值不是由支付早期投资者的后来者资金支撑，而是由市场需求、有限的供应（总量上限为2100万），以及挖矿成本（即生成新比特币的电脑算力成本）决定的。</p>
-<blockquote>
-<p>比特币与历史上著名的郁金香泡沫之间存在显著的区别，尽管两者都被用作投机泡沫的例证。为了更深入地理解这些区别，我们需要回顾郁金香泡沫的历史背景，并与比特币的当前情况进行对比。</p>
-<h3 id="郁金香泡沫简介"><a href="#郁金香泡沫简介" class="headerlink" title="郁金香泡沫简介"></a>郁金香泡沫简介</h3><p>郁金香泡沫（1634-1637年）是历史上最早的经济泡沫之一，发生在荷兰的黄金时代。当时，郁金香球茎成为了极度炒作的投机对象，其价格在短时间内飙升至荒谬的高位，后来突然崩溃，给投资者带来了巨大的财务损失。</p>
-<h3 id="比特币简介"><a href="#比特币简介" class="headerlink" title="比特币简介"></a>比特币简介</h3><p>比特币是2009年由一个化名为中本聪的人或团体创造的数字加密货币。它基于去中心化的区块链技术，使用户能够在没有中央权威机构的情况下进行交易。</p>
-<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ol>
-<li><p><strong>基础资产的性质</strong>：</p>
-<ul>
-<li><strong>郁金香泡沫</strong>：基于实体商品——郁金香球茎。其价值本质上受限于物理属性和实际用途。</li>
-<li><strong>比特币</strong>：基于数字技术和数学原理。它作为一种去中心化的货币和价值储存手段，其价值不仅仅取决于市场供需，还涉及其作为技术创新的潜力。</li>
-</ul>
-</li>
-<li><p><strong>市场参与者的范围</strong>：</p>
-<ul>
-<li>郁金香泡沫主要局限于荷兰，影响相对有限。</li>
-<li>比特币是全球性的，影响广泛，涉及全球各地的投资者和用户。</li>
-</ul>
-</li>
-<li><p><strong>持久性和应用</strong>：</p>
-<ul>
-<li>郁金香的狂热是短暂的，且主要是基于物理商品的美学价值和稀有性。</li>
-<li>比特币及其背后的区块链技术有着更广泛的应用前景，包括金融、法律、物流等领域，其技术创新为其价值提供了持续的支撑。</li>
-</ul>
-</li>
-<li><p><strong>经济影响</strong>：</p>
-<ul>
-<li>郁金香泡沫的崩溃对当时的荷兰经济造成了影响，但其影响相对局限。</li>
-<li>比特币的波动性及其对全球金融市场的潜在影响更为广泛，同时也引发了对加密货币监管的全球性讨论。</li>
-</ul>
-</li>
-<li><p><strong>技术与创新</strong>：</p>
-<ul>
-<li>郁金香泡沫缺乏持续的技术或创新支撑。</li>
-<li>比特币代表了区块链技术的突破，这是一种具有革命性的技术创新，可能改变多个行业的运作方式。</li>
-</ul>
-</li>
-</ol>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>虽然比特币的价格波动和郁金香泡沫在某些方面看似相似，但比较两者的基础、影响范围、应用前景和技术背景揭示了它们之间的本质区别。比特币及其区块链技术的出现不仅仅是一场简单的投机狂</p>
-<p>热，而是一次可能对全球经济和社会产生深远影响的技术革新。尽管如此，比特币的未来仍充满不确定性，其作为一种投资和价值储存手段的真正潜力有待市场和时间的检验。</p>
-</blockquote>
-<p>尽管比特币不符合传统庞氏骗局的定义，但它的价格波动极大，且受到投机行为的影响，因此一些批评者认为它具有类似风险。</p>
-<h2 id="2-比特币有没有投资价值？"><a href="#2-比特币有没有投资价值？" class="headerlink" title="2. 比特币有没有投资价值？"></a>2. 比特币有没有投资价值？</h2><p>比特币被许多投资者视为一种“数字黄金”，具有对冲通货膨胀和货币贬值的潜力。与传统金融资产相比，比特币具有几个独特优势：供应量上限固定、去中心化、全球可接入性等。然而，它的价格波动性高，投资风险也相应较大。投资比特币要求对市场动态有深入了解，并且能够承受可能的资本损失。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218183520256-1443590482.png" style="zoom: 67%;">
-
-<p>从2022年底开始，比特币从15600一路涨上52800美元，同时若按照人民币计价，当前价格已达最高点（69000 usd）的90%分位。在过去的10年中，比特币作为一种投资标的涨幅一直是位列第一的（要么是涨幅第一，要么是跌幅第一），但是我们只要在跌幅最大的一年年底购买并持有3年，那么至少会有4倍收益。</p>
-<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218184323982-241807225.png" style="zoom:67%;">
-
-<p><strong>2024年1月24日，美国证券交易委员会（SEC）批准比特币现货ETF</strong>（交易所交易基金）是加密货币领域的重大里程碑，对比特币的投资价值及其与黄金关系的影响深远。比特币ETF的批准意味着投资者可以通过传统的投资渠道参与比特币投资，无需直接购买和持有比特币，从而降低了投资门槛和复杂性。这一举措不仅增强了比特币作为投资工具的合法性，也提高了其对主流投资者的吸引力。</p>
-<blockquote>
-<h3 id="比特币ETF对比特币投资价值的影响"><a href="#比特币ETF对比特币投资价值的影响" class="headerlink" title="比特币ETF对比特币投资价值的影响"></a>比特币ETF对比特币投资价值的影响</h3><ol>
-<li><strong>增加流动性和可接入性</strong>：比特币ETF使得投资比特币像购买股票一样简单，通过增加流动性和可接入性，吸引了更多的个人和机构投资者。</li>
-<li><strong>提高认可度</strong>：SEC的批准是对比特币及其底层技术的一种认可，增强了投资者对比特币作为一种投资类别合法性的信心。</li>
-<li><strong>市场成熟</strong>：比特币ETF的存在表明加密货币市场正在成熟，有助于减少市场波动性，提高价格稳定性。</li>
-</ol>
-<h3 id="比特币现货ETF与黄金ETF价格关系"><a href="#比特币现货ETF与黄金ETF价格关系" class="headerlink" title="比特币现货ETF与黄金ETF价格关系"></a>比特币现货ETF与黄金ETF价格关系</h3><p>比特币ETF批准后，观察到黄金ETF的价格出现下跌，这可能反映了投资者在两种资产之间重新分配资金。这种现象指向了比特币和黄金之间的几个关键关系：</p>
-<ol>
-<li><strong>投资多样化</strong>：一些投资者可能将比特币视为黄金的现代替代品，用于对冲通货膨胀和货币贬值。随着比特币ETF的推出，这些投资者可能转向比特币，寻求更高的回报率，从而对黄金ETF的需求产生影响。</li>
-<li><strong>风险偏好变化</strong>：比特币通常被视为更高风险、更高回报的投资。比特币ETF的批准可能吸引了寻求高风险投资的投资者，这部分资本的流入可能部分来源于原本投资于黄金的资金。</li>
-<li><strong>市场认知变化</strong>：随着比特币成为主流投资选项，其与黄金作为“避险资产”的竞争地位可能会增强。投资者可能重新评估这两种资产在投资组合中的角色，导致资金流向的变化。</li>
-</ol>
-<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>比特币ETF的批准不仅提升了比特币的投资价值，也可能改变了其与黄金的关系。作为数字黄金，比特币提供了一种新的避险机制和价值储存方式，可能在某些投资者心中取代或补充传统的黄金投资。然而，比特币与黄金仍然有着本质的不同，包括其波动性、市场成熟度以及被接受的程度。因此，虽然比特币可能会对黄金ETF的价格产生影响，但两者都可能在多样化的投资组合中发挥重要作用，满足不同投资者的需求和风险偏好。在未来，随着市场的进一步发展和成熟，投资者将更加深入地理解如何在这两种资产之间做出最佳配置决策。</p>
-</blockquote>
-<h2 id="3-什么是加密货币交易所？"><a href="#3-什么是加密货币交易所？" class="headerlink" title="3. 什么是加密货币交易所？"></a>3. 什么是加密货币交易所？</h2><p>加密货币交易所是允许买家和卖家交易加密货币的平台，如比特币、以太坊等。它们为用户提供了将加密货币兑换成其他加密货币或法币（如美元、欧元）的服务。这些交易所可以是中心化的，由特定公司运营，也可以是去中心化的，依靠自动化的智能合约直接在用户之间进行交易。选择一个可靠、安全的交易所对于保护投资者资金至关重要。</p>
-<p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。但是下载交易所有一定的门槛，建议寻求值得信任的有经验的朋友辅导。</p>
-<h2 id="4-虚拟货币和法币兑换的风险"><a href="#4-虚拟货币和法币兑换的风险" class="headerlink" title="4. 虚拟货币和法币兑换的风险"></a>4. 虚拟货币和法币兑换的风险</h2><p>虚拟货币与法币兑换带来了多重风险，包括但不限于市场风险、流动性风险、法律和监管风险。市场波动可能导致投资者在兑换过程中遭受重大损失。此外，虽然加密货币交易日益增加，但相对于传统市场，它们的流动性仍然较低，这可能导致兑换成本增加。法律和监管的不确定性也是一个重要因素，不同国家对加密货币的态度和政策各不相同。</p>
-<p>由于在中国，从事虚拟货币和人民币的兑换属于非法金融活动，请不要私下和他人买卖比特币，以防上当受骗和冻卡。如果你投资比特币获得相当的收益可前往香港兑换成人民币，或者直接在上述3种交易所内选择值得信任的OTC出入金。</p>
-<h2 id="5-如何购买或注册交易所？"><a href="#5-如何购买或注册交易所？" class="headerlink" title="5.如何购买或注册交易所？"></a>5.如何购买或注册交易所？</h2><p><strong>详细注册和使用教程见另一博客</strong>：</p>
-<p><a href="https://onefly.top/posts/24219.html">简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例 | 孤飞的博客 (onefly.top)</a></p>
-<p>以下是官方注册渠道：【强烈建议看<strong>上方注册和使用教程</strong>的博客】</p>
-<p><strong>OKX</strong>【国内IP】：<a href="https://www.nuancebot.com/cn/join/8385429">https://www.nuancebot.com/cn/join/8385429</a></p>
-<p><strong>OKX</strong>【国外IP】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
-<p><strong>Bitget</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
-<p><strong>Binance</strong>：<a href="https://www.suitechsui.io/zh-CN/join?ref=170981146">https://www.suitechsui.io/zh-CN/join?ref=170981146</a></p>
-<p>欢迎关注我的最新博客！</p>
-]]></content>
-      <categories>
-        <category>前沿技术</category>
-      </categories>
-      <tags>
-        <tag>web3</tag>
-        <tag>虚拟货币</tag>
-        <tag>比特币</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一行代码Android（第3版）pdf</title>
-    <url>/posts/43427.html</url>
-    <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
-<p>封面：<br><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083910008-28177591.png"></p>
-<p>内容简介：<br>《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。全书系统全面、循序渐进地介绍了Android软件开发的必备知识、经验和技巧。<br>《第一行代码 Android 第3版》基于Android 10.0对第2版进行了全面更新，不仅将所有知识点都在Android 10.0系统上进行了重新适配，同时加入Kotlin语言的全面讲解，使用Kotlin对全书代码进行重写，而且还介绍了最新系统特性以及Jetpack架构组件的使用，使本书更加实用。<br>《第一行代码 Android 第3版》内容通俗易懂，由浅入深，既是Android初学者的入门必备，也是Android开发者的进阶首选。 </p>
-<p>下载地址：<a href="https://wwp.lanzoub.com/iNBcu0bh15xi">https://wwp.lanzoub.com/iNBcu0bh15xi</a></p>
-<p>资源来自于互联网，如分享有损你的权益，请私信我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例</title>
-    <url>/posts/24219.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。</p>
-<p>以下是常用交易所<em><strong>官方注册链接</strong></em>：</p>
-<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国内 ip 用这个</strong></em> 】：<a href="https://shuidingding.com/join/8385429">https://shuidingding.com/join/8385429</a></p>
-<p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国外 ip 用这个</strong></em> 】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
-<p><strong>Binance（币安）</strong>是<strong>世界上最大</strong>的<strong>加密货币交易所</strong>：<a href="https://www.binance.info/zh-CN/join?ref=170981146">https://www.binance.info/zh-CN/join?ref=170981146</a></p>
-<p><strong>Bitget （推荐注册）</strong>是<strong>上币很快福利很多</strong>的<strong>虚拟货币交易所</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
-<p><strong>Gate（芝麻）</strong>是<strong>币种最全上币最快</strong>的<strong>区块链交易所【强烈推荐】</strong>：<a href="https://www.gate.io/signup/AlVEAFtf?ref_type=103">https://www.gate.io/signup/AlVEAFtf?ref_type=103</a></p>
-<p><strong>MEXC（抹茶）</strong>是<strong>网络稳定适合开合约</strong>的交易所（<strong>不要用手机号注册，不要放很多钱</strong>）：<a href="https://www.mexc.com/register?inviteCode=1278L4">https://www.mexc.com/register?inviteCode=1278L4</a></p>
-<p>下面以<strong>OKX</strong>为例（其余软件都类似），介绍软件的<strong>使用方法</strong>：</p>
-<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p>注册流程是：<strong>邮箱验证-绑定手机-下载app（苹果手机需要美区id）-实名认证kyc</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219103533717-675787184.png"></p>
-<h2 id="充值入金"><a href="#充值入金" class="headerlink" title="充值入金"></a>充值入金</h2><p>完成实名认证后即可开始用法定货币（人民币）等购买usdt（美元等值稳定币），然后用usdt购买比特币。</p>
-<p>充值的时候可以选择快捷买币，支付的时候优先选择支付宝和微信，不光是安全问题（银行卡冻卡概率高），扫二维码转账比银行卡号转账方便。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104133026-1904762255.png"></p>
-<h2 id="交易"><a href="#交易" class="headerlink" title="交易"></a>交易</h2><p>可以从主页搜索制定货币进入蜡烛图界面，然后点击交易，进入交易界面，没有usdt可以从资金账户划转（充值默认放在资金账户），然后想以最快速度买入选择市价委托，挂单指定价格选择限价委托。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219104857126-1921524025.png"></p>
-<h2 id="提现出金"><a href="#提现出金" class="headerlink" title="提现出金"></a>提现出金</h2><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240219105244859-74669162.png" style="zoom:50%;">
-
-<p>出金和入金类似，选择出售指定货币即可，如果想要获得更优价格，可以选择C2C自己选择商家交易。</p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>web3</tag>
-        <tag>交易所</tag>
-        <tag>虚拟货币</tag>
       </tags>
   </entry>
 </search>

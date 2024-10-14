@@ -452,9 +452,10 @@
     </script>
 
     <!-- 正文 -->
-    <div id="main-content" style="flex: 1; min-width: 57vw; padding: 5px 0px; box-sizing: border-box;">
-        <div style="width: 100%; max-width: 55vw; margin: 0 auto;">
-            <!-- 文章内容详情 -->
+    <div id="main-content" style="flex: 1; box-sizing: border-box;">
+        <div style="width: 100%; margin: 0 auto;">
+            <div id="mobile-content" style="min-width: 100%; padding: 5px 10px; display: none;">
+                <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -1248,6 +1249,803 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+            </div>
+            <div id="desktop-content" style="min-width: 57vw; max-width: 55vw; padding: 5px 0px;">
+                <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/web3/">
+                                <span class="chip bg-color">web3</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%99%9A%E6%8B%9F%E8%B4%A7%E5%B8%81/">
+                                <span class="chip bg-color">虚拟货币</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/">
+                                <span class="chip bg-color">比特币</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/" class="post-category">
+                                前沿技术
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-02-18
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>在金融科技的飞速发展下，比特币作为第一个也是最著名的加密货币，自2009年问世以来，一直是争议和讨论的焦点。它被一些人视为数字时代的黄金，而被另一些人批评为现代版的庞氏骗局。本文将深入探讨比特币的本质、投资价值、加密货币交易所的角色，以及与法币兑换相关的风险。</p>
+<h2 id="1-比特币是不是庞氏骗局？"><a href="#1-比特币是不是庞氏骗局？" class="headerlink" title="1. 比特币是不是庞氏骗局？"></a>1. 比特币是不是庞氏骗局？</h2><p>庞氏骗局是一种投资诈骗，新投资者的资金用于支付早期投资者的回报，而不是通过合法业务活动或投资收益。比特币的工作原理与此不同。它基于区块链技术——一个去中心化、分布式的账本，记录所有交易。比特币的价值不是由支付早期投资者的后来者资金支撑，而是由市场需求、有限的供应（总量上限为2100万），以及挖矿成本（即生成新比特币的电脑算力成本）决定的。</p>
+<blockquote>
+<p>比特币与历史上著名的郁金香泡沫之间存在显著的区别，尽管两者都被用作投机泡沫的例证。为了更深入地理解这些区别，我们需要回顾郁金香泡沫的历史背景，并与比特币的当前情况进行对比。</p>
+<h3 id="郁金香泡沫简介"><a href="#郁金香泡沫简介" class="headerlink" title="郁金香泡沫简介"></a>郁金香泡沫简介</h3><p>郁金香泡沫（1634-1637年）是历史上最早的经济泡沫之一，发生在荷兰的黄金时代。当时，郁金香球茎成为了极度炒作的投机对象，其价格在短时间内飙升至荒谬的高位，后来突然崩溃，给投资者带来了巨大的财务损失。</p>
+<h3 id="比特币简介"><a href="#比特币简介" class="headerlink" title="比特币简介"></a>比特币简介</h3><p>比特币是2009年由一个化名为中本聪的人或团体创造的数字加密货币。它基于去中心化的区块链技术，使用户能够在没有中央权威机构的情况下进行交易。</p>
+<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ol>
+<li><p><strong>基础资产的性质</strong>：</p>
+<ul>
+<li><strong>郁金香泡沫</strong>：基于实体商品——郁金香球茎。其价值本质上受限于物理属性和实际用途。</li>
+<li><strong>比特币</strong>：基于数字技术和数学原理。它作为一种去中心化的货币和价值储存手段，其价值不仅仅取决于市场供需，还涉及其作为技术创新的潜力。</li>
+</ul>
+</li>
+<li><p><strong>市场参与者的范围</strong>：</p>
+<ul>
+<li>郁金香泡沫主要局限于荷兰，影响相对有限。</li>
+<li>比特币是全球性的，影响广泛，涉及全球各地的投资者和用户。</li>
+</ul>
+</li>
+<li><p><strong>持久性和应用</strong>：</p>
+<ul>
+<li>郁金香的狂热是短暂的，且主要是基于物理商品的美学价值和稀有性。</li>
+<li>比特币及其背后的区块链技术有着更广泛的应用前景，包括金融、法律、物流等领域，其技术创新为其价值提供了持续的支撑。</li>
+</ul>
+</li>
+<li><p><strong>经济影响</strong>：</p>
+<ul>
+<li>郁金香泡沫的崩溃对当时的荷兰经济造成了影响，但其影响相对局限。</li>
+<li>比特币的波动性及其对全球金融市场的潜在影响更为广泛，同时也引发了对加密货币监管的全球性讨论。</li>
+</ul>
+</li>
+<li><p><strong>技术与创新</strong>：</p>
+<ul>
+<li>郁金香泡沫缺乏持续的技术或创新支撑。</li>
+<li>比特币代表了区块链技术的突破，这是一种具有革命性的技术创新，可能改变多个行业的运作方式。</li>
+</ul>
+</li>
+</ol>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>虽然比特币的价格波动和郁金香泡沫在某些方面看似相似，但比较两者的基础、影响范围、应用前景和技术背景揭示了它们之间的本质区别。比特币及其区块链技术的出现不仅仅是一场简单的投机狂</p>
+<p>热，而是一次可能对全球经济和社会产生深远影响的技术革新。尽管如此，比特币的未来仍充满不确定性，其作为一种投资和价值储存手段的真正潜力有待市场和时间的检验。</p>
+</blockquote>
+<p>尽管比特币不符合传统庞氏骗局的定义，但它的价格波动极大，且受到投机行为的影响，因此一些批评者认为它具有类似风险。</p>
+<h2 id="2-比特币有没有投资价值？"><a href="#2-比特币有没有投资价值？" class="headerlink" title="2. 比特币有没有投资价值？"></a>2. 比特币有没有投资价值？</h2><p>比特币被许多投资者视为一种“数字黄金”，具有对冲通货膨胀和货币贬值的潜力。与传统金融资产相比，比特币具有几个独特优势：供应量上限固定、去中心化、全球可接入性等。然而，它的价格波动性高，投资风险也相应较大。投资比特币要求对市场动态有深入了解，并且能够承受可能的资本损失。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218183520256-1443590482.png" style="zoom: 67%;">
+
+<p>从2022年底开始，比特币从15600一路涨上52800美元，同时若按照人民币计价，当前价格已达最高点（69000 usd）的90%分位。在过去的10年中，比特币作为一种投资标的涨幅一直是位列第一的（要么是涨幅第一，要么是跌幅第一），但是我们只要在跌幅最大的一年年底购买并持有3年，那么至少会有4倍收益。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218184323982-241807225.png" style="zoom:67%;">
+
+<p><strong>2024年1月24日，美国证券交易委员会（SEC）批准比特币现货ETF</strong>（交易所交易基金）是加密货币领域的重大里程碑，对比特币的投资价值及其与黄金关系的影响深远。比特币ETF的批准意味着投资者可以通过传统的投资渠道参与比特币投资，无需直接购买和持有比特币，从而降低了投资门槛和复杂性。这一举措不仅增强了比特币作为投资工具的合法性，也提高了其对主流投资者的吸引力。</p>
+<blockquote>
+<h3 id="比特币ETF对比特币投资价值的影响"><a href="#比特币ETF对比特币投资价值的影响" class="headerlink" title="比特币ETF对比特币投资价值的影响"></a>比特币ETF对比特币投资价值的影响</h3><ol>
+<li><strong>增加流动性和可接入性</strong>：比特币ETF使得投资比特币像购买股票一样简单，通过增加流动性和可接入性，吸引了更多的个人和机构投资者。</li>
+<li><strong>提高认可度</strong>：SEC的批准是对比特币及其底层技术的一种认可，增强了投资者对比特币作为一种投资类别合法性的信心。</li>
+<li><strong>市场成熟</strong>：比特币ETF的存在表明加密货币市场正在成熟，有助于减少市场波动性，提高价格稳定性。</li>
+</ol>
+<h3 id="比特币现货ETF与黄金ETF价格关系"><a href="#比特币现货ETF与黄金ETF价格关系" class="headerlink" title="比特币现货ETF与黄金ETF价格关系"></a>比特币现货ETF与黄金ETF价格关系</h3><p>比特币ETF批准后，观察到黄金ETF的价格出现下跌，这可能反映了投资者在两种资产之间重新分配资金。这种现象指向了比特币和黄金之间的几个关键关系：</p>
+<ol>
+<li><strong>投资多样化</strong>：一些投资者可能将比特币视为黄金的现代替代品，用于对冲通货膨胀和货币贬值。随着比特币ETF的推出，这些投资者可能转向比特币，寻求更高的回报率，从而对黄金ETF的需求产生影响。</li>
+<li><strong>风险偏好变化</strong>：比特币通常被视为更高风险、更高回报的投资。比特币ETF的批准可能吸引了寻求高风险投资的投资者，这部分资本的流入可能部分来源于原本投资于黄金的资金。</li>
+<li><strong>市场认知变化</strong>：随着比特币成为主流投资选项，其与黄金作为“避险资产”的竞争地位可能会增强。投资者可能重新评估这两种资产在投资组合中的角色，导致资金流向的变化。</li>
+</ol>
+<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>比特币ETF的批准不仅提升了比特币的投资价值，也可能改变了其与黄金的关系。作为数字黄金，比特币提供了一种新的避险机制和价值储存方式，可能在某些投资者心中取代或补充传统的黄金投资。然而，比特币与黄金仍然有着本质的不同，包括其波动性、市场成熟度以及被接受的程度。因此，虽然比特币可能会对黄金ETF的价格产生影响，但两者都可能在多样化的投资组合中发挥重要作用，满足不同投资者的需求和风险偏好。在未来，随着市场的进一步发展和成熟，投资者将更加深入地理解如何在这两种资产之间做出最佳配置决策。</p>
+</blockquote>
+<h2 id="3-什么是加密货币交易所？"><a href="#3-什么是加密货币交易所？" class="headerlink" title="3. 什么是加密货币交易所？"></a>3. 什么是加密货币交易所？</h2><p>加密货币交易所是允许买家和卖家交易加密货币的平台，如比特币、以太坊等。它们为用户提供了将加密货币兑换成其他加密货币或法币（如美元、欧元）的服务。这些交易所可以是中心化的，由特定公司运营，也可以是去中心化的，依靠自动化的智能合约直接在用户之间进行交易。选择一个可靠、安全的交易所对于保护投资者资金至关重要。</p>
+<p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。但是下载交易所有一定的门槛，建议寻求值得信任的有经验的朋友辅导。</p>
+<h2 id="4-虚拟货币和法币兑换的风险"><a href="#4-虚拟货币和法币兑换的风险" class="headerlink" title="4. 虚拟货币和法币兑换的风险"></a>4. 虚拟货币和法币兑换的风险</h2><p>虚拟货币与法币兑换带来了多重风险，包括但不限于市场风险、流动性风险、法律和监管风险。市场波动可能导致投资者在兑换过程中遭受重大损失。此外，虽然加密货币交易日益增加，但相对于传统市场，它们的流动性仍然较低，这可能导致兑换成本增加。法律和监管的不确定性也是一个重要因素，不同国家对加密货币的态度和政策各不相同。</p>
+<p>由于在中国，从事虚拟货币和人民币的兑换属于非法金融活动，请不要私下和他人买卖比特币，以防上当受骗和冻卡。如果你投资比特币获得相当的收益可前往香港兑换成人民币，或者直接在上述3种交易所内选择值得信任的OTC出入金。</p>
+<h2 id="5-如何购买或注册交易所？"><a href="#5-如何购买或注册交易所？" class="headerlink" title="5.如何购买或注册交易所？"></a>5.如何购买或注册交易所？</h2><p><strong>详细注册和使用教程见另一博客</strong>：</p>
+<p><a href="https://onefly.top/posts/24219.html">简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例 | 孤飞的博客 (onefly.top)</a></p>
+<p>以下是官方注册渠道：【强烈建议看<strong>上方注册和使用教程</strong>的博客】</p>
+<p><strong>OKX</strong>【国内IP】：<a target="_blank" rel="noopener" href="https://www.nuancebot.com/cn/join/8385429">https://www.nuancebot.com/cn/join/8385429</a></p>
+<p><strong>OKX</strong>【国外IP】：<a target="_blank" rel="noopener" href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
+<p><strong>Bitget</strong>：<a target="_blank" rel="noopener" href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
+<p><strong>Binance</strong>：<a target="_blank" rel="noopener" href="https://www.suitechsui.io/zh-CN/join?ref=170981146">https://www.suitechsui.io/zh-CN/join?ref=170981146</a></p>
+<p>欢迎关注我的最新博客！</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/24218.html">https://onefly.top/posts/24218.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/web3/">
+                                    <span class="chip bg-color">web3</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%99%9A%E6%8B%9F%E8%B4%A7%E5%B8%81/">
+                                    <span class="chip bg-color">虚拟货币</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/">
+                                    <span class="chip bg-color">比特币</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/24219.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例">
+                        
+                        <span class="card-title">简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-02-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/web3/">
+                        <span class="chip bg-color">web3</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%A4%E6%98%93%E6%89%80/">
+                        <span class="chip bg-color">交易所</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E8%B4%A7%E5%B8%81/">
+                        <span class="chip bg-color">虚拟货币</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/24116.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="MindMaster 10 最新破解版安装教程">
+                        
+                        <span class="card-title">MindMaster 10 最新破解版安装教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" class="post-category">
+                                    资源分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
+                        <span class="chip bg-color">思维导图</span>
+                    </a>
+                    
+                    <a href="/tags/mind/">
+                        <span class="chip bg-color">mind</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A0%B4%E8%A7%A3/">
+                        <span class="chip bg-color">破解</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+            </div>
         </div>
     </div>
 
@@ -1262,6 +2060,11 @@
         var isMobile = /mobile/i.test(navigator.userAgent);
         if (isMobile) {
             document.getElementById('toc-aside').style.display = 'none';
+            document.getElementById('mobile-content').style.display = 'block';
+            document.getElementById('desktop-content').style.display = 'none';
+        } else {
+            document.getElementById('mobile-content').style.display = 'none';
+            document.getElementById('desktop-content').style.display = 'block';
         }
     </script>
 </div>

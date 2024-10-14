@@ -452,9 +452,10 @@
     </script>
 
     <!-- 正文 -->
-    <div id="main-content" style="flex: 1; min-width: 57vw; padding: 5px 0px; box-sizing: border-box;">
-        <div style="width: 100%; max-width: 55vw; margin: 0 auto;">
-            <!-- 文章内容详情 -->
+    <div id="main-content" style="flex: 1; box-sizing: border-box;">
+        <div style="width: 100%; margin: 0 auto;">
+            <div id="mobile-content" style="min-width: 100%; padding: 5px 10px; display: none;">
+                <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -1319,6 +1320,874 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+            </div>
+            <div id="desktop-content" style="min-width: 57vw; max-width: 55vw; padding: 5px 0px;">
+                <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">数据分析</span>
+                            </a>
+                        
+                            <a href="/tags/pandas/">
+                                <span class="chip bg-color">pandas</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
+                                数据分析
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-20
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    6 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
+<li>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</li>
+<li>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用</li>
+<li>两个数据类型：Series, DataFrame</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Pandas与numpy的比较"><a href="#Pandas与numpy的比较" class="headerlink" title="Pandas与numpy的比较"></a><strong>Pandas</strong>与numpy的比较</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204036490-294398481.png"></p>
+<h2 id="Pandas的Series类型"><a href="#Pandas的Series类型" class="headerlink" title="Pandas的Series类型"></a><strong>Pandas的Series类型</strong></h2><p>由一组数据及与之相关的数据索引组成</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204224581-494169725.png"></p>
+<h3 id="Pandas的Series类型的创建"><a href="#Pandas的Series类型的创建" class="headerlink" title="Pandas的Series类型的创建"></a><strong>Pandas的Series类型的创建</strong></h3><p>Series类型可以由如下类型创建：</p>
+<ul>
+<li>Python列表，index与列表元素个数一致</li>
+<li>标量值，index表达Series类型的尺寸</li>
+<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
+<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
+<li>其他函数，range()函数等</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204306537-1503027646.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204534311-1927277320.png"></p>
+<h3 id="Pandas的Series类型的基本操作"><a href="#Pandas的Series类型的基本操作" class="headerlink" title="Pandas的Series类型的基本操作"></a><strong>Pandas的Series类型的基本操作</strong></h3><p>Series类型包含index和values两个部分：</p>
+<ul>
+<li>index 获得索引</li>
+<li>values 获得数据</li>
+</ul>
+<p>由ndarray或字典创建的Series，操作类似ndarray或字典类型</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204858056-644012635.png"></p>
+<h2 id="pandas的DataFrame类型"><a href="#pandas的DataFrame类型" class="headerlink" title="pandas的DataFrame类型"></a><strong>pandas的DataFrame类型</strong></h2><ul>
+<li><p>DataFrame类型由共用相同索引的一组列组成</p>
+</li>
+<li><p>DataFrame是一个表格型的数据类型，每列值类型可以不同</p>
+</li>
+<li><p>DataFrame既有行索引、也有列索引</p>
+</li>
+<li><p>DataFrame常用于表达二维数据，但可以表达多维数据</p>
+</li>
+<li><p>DataFrame是二维带“标签”数组</p>
+</li>
+<li><p>DataFrame基本操作类似Series，依据行列索引</p>
+</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205139067-819109186.png"></p>
+<h3 id="pandas的DataFrame类型创建"><a href="#pandas的DataFrame类型创建" class="headerlink" title="pandas的DataFrame类型创建"></a><strong>pandas的DataFrame类型创建</strong></h3><p>DataFrame类型可以由如下类型创建：</p>
+<ul>
+<li>二维ndarray对象</li>
+<li>由一维ndarray、列表、字典、元组或Series构成的字典</li>
+<li>Series类型</li>
+<li>其他的DataFrame类型</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205306000-1512929844.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205403500-1728575625.png"></p>
+<h3 id="Pandas的Dataframe类型的基本操作"><a href="#Pandas的Dataframe类型的基本操作" class="headerlink" title="Pandas的Dataframe类型的基本操作"></a><strong>Pandas的Dataframe类型的基本操作</strong></h3><h4 id="pandas索引操作"><a href="#pandas索引操作" class="headerlink" title="pandas索引操作"></a><strong>pandas索引操作</strong></h4><h5 id="pandas重新索引"><a href="#pandas重新索引" class="headerlink" title="pandas重新索引"></a><strong>pandas重新索引</strong></h5><p>reindex()能够改变或重排Series和DataFrame索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205722764-2087213798.png"></p>
+<p>reindex(index=None, columns=None, …)的参数</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205810608-1806112533.png"></p>
+<p><strong>pandas删除索引</strong></p>
+<p>drop()能够删除Series和DataFrame指定行或列索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210003320-843812767.png"></p>
+<h4 id="pandas数据运算"><a href="#pandas数据运算" class="headerlink" title="pandas数据运算"></a><strong>pandas数据运算</strong></h4><ul>
+<li>算术运算根据行列索引，补齐后运算，运算默认产生浮点数</li>
+<li>补齐时缺项填充NaN (空值)</li>
+<li>二维和一维、一维和零维间为广播运算</li>
+<li>采用+ ‐ * /符号进行的二元运算产生新的对象</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210126120-1408047150.png"></p>
+<h5 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h5><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210234171-1672958996.png"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210300650-988503635.png"></p>
+<ul>
+<li>不同维度间为广播运算，一维Series默认在轴1参与运算</li>
+<li>使用运算方法可以令一维Series参与轴0运算</li>
+</ul>
+<h2 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a><strong>Pandas数据分析</strong></h2><h3 id="Pandas导入与导出数据"><a href="#Pandas导入与导出数据" class="headerlink" title="Pandas导入与导出数据"></a><strong>Pandas导入与导出数据</strong></h3><h4 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h4><p>pd.read_csv(filename)：从CSV文件导入数据</p>
+<p>pd.read_table(filename)：从限定分隔符的文本文件导入数据</p>
+<p>pd.read_excel(filename)：从Excel文件导入数据</p>
+<p>pd.read_sql(query, connection_object)：从SQL表/库导入数据</p>
+<p>pd.read_json(json_string)：从JSON格式的字符串导入数据</p>
+<p>pd.read_html(url)：解析URL、字符串或者HTML文件，抽取其中的tables表格</p>
+<p>pd.read_clipboard()：从你的粘贴板获取内容，并传给read_table()</p>
+<p>pd.DataFrame(dict)：从字典对象导入数据，Key是列名，Value是数据</p>
+<h4 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h4><p>df.to_csv(filename)：导出数据到CSV文件</p>
+<p>df.to_excel(filename)：导出数据到Excel文件</p>
+<p>df.to_sql(table_name, connection_object)：导出数据到SQL表</p>
+<p>df.to_json(filename)：以Json格式导出数据到文本文件</p>
+<h3 id="Pandas查看、检查数据"><a href="#Pandas查看、检查数据" class="headerlink" title="Pandas查看、检查数据"></a><strong>Pandas查看、检查数据</strong></h3><p>df.head(n)：查看DataFrame对象的前n行</p>
+<p>df.tail(n)：查看DataFrame对象的最后n行</p>
+<p>df.shape()：查看行数和列数</p>
+<p>df.info()：查看索引、数据类型和内存信息</p>
+<p>df.describe()：查看数值型列的汇总统计</p>
+<p>s.value_counts(dropna=False)：查看Series对象的唯一值和计数</p>
+<p>df.apply(pd.Series.value_counts)：查看DataFrame对象中每一列的唯一值和计数</p>
+<h3 id="Pandas数据选取"><a href="#Pandas数据选取" class="headerlink" title="Pandas数据选取"></a><strong>Pandas数据选取</strong></h3><p>df[col]：根据列名，并以Series的形式返回列</p>
+<p>df[[col1, col2]]：以DataFrame形式返回多列</p>
+<p>s.iloc[0]：按位置选取数据</p>
+<p>s.loc[‘index_one’]：按索引选取数据</p>
+<p>df.iloc[0,:]：返回第一行</p>
+<p>df.iloc[0,0]：返回第一列的第一个元素</p>
+<h3 id="pandas数据清理"><a href="#pandas数据清理" class="headerlink" title="pandas数据清理"></a><strong>pandas数据清理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<h3 id="Pandas数据处理"><a href="#Pandas数据处理" class="headerlink" title="Pandas数据处理"></a><strong>Pandas数据处理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old_name’: ‘new_ name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<p>df[df[col] &gt; 0.5]：选择col列的值大于0.5的行</p>
+<p>df.sort_values(col1)：按照列col1排序数据，默认升序排列</p>
+<p>df.sort_values(col2, ascending=False)：按照列col1降序排列数据</p>
+<p>df.sort_values([col1,col2], ascending=[True,False])：先按列col1升序排列，后按col2降序排列数据</p>
+<p>df.groupby(col)：返回一个按列col进行分组的Groupby对象</p>
+<p>df.groupby([col1,col2])：返回一个按多列进行分组的Groupby对象</p>
+<p>df.groupby(col1)[col2]：返回按列col1进行分组后，列col2的均值</p>
+<p>df.pivot_table(index=col1, values=[col2,col3], aggfunc=max)：创建一个按列col1进行分组，并计算col2和col3的最大值的数据透视表</p>
+<p>df.groupby(col1).agg(np.mean)：返回按列col1分组的所有列的均值</p>
+<p>data.apply(np.mean)：对DataFrame中的每一列应用函数np.mean</p>
+<p>data.apply(np.max,axis=1)：对DataFrame中的每一行应用函数np.max</p>
+<h4 id="Pandas数据合并"><a href="#Pandas数据合并" class="headerlink" title="Pandas数据合并"></a><strong>Pandas数据合并</strong></h4><p>df1.append(df2)：将df2中的行添加到df1的尾部</p>
+<p>df.concat([df1, df2],axis=1)：将df2中的列添加到df1的尾部</p>
+<p>df1.join(df2,on=col1,how=’inner’)：对df1的列和df2的列执行SQL形式的join</p>
+<h4 id="Pandas数据统计"><a href="#Pandas数据统计" class="headerlink" title="Pandas数据统计"></a><strong>Pandas数据统计</strong></h4><p>df.describe()：查看数据值列的汇总统计</p>
+<p>df.mean()：返回所有列的均值</p>
+<p>df.corr()：返回列与列之间的相关系数</p>
+<p>df.count()：返回每一列中的非空值的个数</p>
+<p>df.max()：返回每一列的最大值</p>
+<p>df.min()：返回每一列的最小值</p>
+<p>df.median()：返回每一列的中位数</p>
+<p>df.std()：返回每一列的标准差</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/13141.html">https://onefly.top/posts/13141.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">数据分析</span>
+                                </a>
+                            
+                                <a href="/tags/pandas/">
+                                    <span class="chip bg-color">pandas</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/15000.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="PyCharm专业版最简单的破解教程，永久适用">
+                        
+                        <span class="card-title">PyCharm专业版最简单的破解教程，永久适用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A0%B4%E8%A7%A3%E8%B5%84%E6%BA%90/" class="post-category">
+                                    破解资源
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A0%B4%E8%A7%A3%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">破解软件</span>
+                    </a>
+                    
+                    <a href="/tags/JetBrain/">
+                        <span class="chip bg-color">JetBrain</span>
+                    </a>
+                    
+                    <a href="/tags/PyCharm/">
+                        <span class="chip bg-color">PyCharm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/13140.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Python数据分析教程（一）：Numpy">
+                        
+                        <span class="card-title">Python数据分析教程（一）：Numpy</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
+                                    数据分析
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
+                    </a>
+                    
+                    <a href="/tags/numpy/">
+                        <span class="chip bg-color">numpy</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+            </div>
         </div>
     </div>
 
@@ -1333,6 +2202,11 @@
         var isMobile = /mobile/i.test(navigator.userAgent);
         if (isMobile) {
             document.getElementById('toc-aside').style.display = 'none';
+            document.getElementById('mobile-content').style.display = 'block';
+            document.getElementById('desktop-content').style.display = 'none';
+        } else {
+            document.getElementById('mobile-content').style.display = 'none';
+            document.getElementById('desktop-content').style.display = 'block';
         }
     </script>
 </div>

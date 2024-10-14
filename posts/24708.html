@@ -452,9 +452,10 @@
     </script>
 
     <!-- 正文 -->
-    <div id="main-content" style="flex: 1; min-width: 57vw; padding: 5px 0px; box-sizing: border-box;">
-        <div style="width: 100%; max-width: 55vw; margin: 0 auto;">
-            <!-- 文章内容详情 -->
+    <div id="main-content" style="flex: 1; box-sizing: border-box;">
+        <div style="width: 100%; margin: 0 auto;">
+            <div id="mobile-content" style="min-width: 100%; padding: 5px 10px; display: none;">
+                <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -1215,6 +1216,770 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+            </div>
+            <div id="desktop-content" style="min-width: 57vw; max-width: 55vw; padding: 5px 0px;">
+                <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%A0%B4%E8%A7%A3/">
+                                <span class="chip bg-color">破解</span>
+                            </a>
+                        
+                            <a href="/tags/Mac/">
+                                <span class="chip bg-color">Mac</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                <span class="chip bg-color">虚拟机</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" class="post-category">
+                                资源分享
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-07-08
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Parallels Desktop 19 for Mac：在 Mac 上无缝运行 Windows</p>
+<p>Parallels Desktop 19 for Mac 是一款强大而简单的软件，让您能在 Mac 上运行 Windows 系统及其应用程序。它已获得 Microsoft 授权，为用户提供超过 200,000 款 Windows 应用，满足工作、开发、学习、测试和游戏需求。</p>
+<p>主要特点：</p>
+<ol>
+<li>简易安装：只需双击即可下载、安装和配置 Windows 11。</li>
+<li>优化性能：针对 macOS Sonoma 进行优化，提供最佳性能和无缝交互。</li>
+<li>增强打印：通过互联网打印协议（IPP）提供增强打印选项。</li>
+<li>完美协同：与 Windows 共享 Mac 的摄像头、麦克风、触控板等硬件。</li>
+<li>灵活视图：选择 Coherence™ 模式隐藏 Windows 桌面，或使用全屏模式。</li>
+<li>文件共享：在 Mac 和 Windows 之间轻松共享和访问文件。</li>
+<li>拖放功能：在 Windows 和 Mac 应用之间拖放文件和图像。</li>
+<li>游戏支持：在 Mac 上畅玩 Windows 专属游戏。</li>
+</ol>
+<p>Parallels Desktop 19 让 macOS 和 Windows 的协作变得简单、强大且无缝，显著提升您的工作效率。</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202407/2910984-20240708202508733-468396441.png" style="zoom:50%;">
+
+<h2 id="安装激活说明"><a href="#安装激活说明" class="headerlink" title="安装激活说明"></a>安装激活说明</h2><p>安装测试于macOS Sonoma 14.3系统，SIP为关闭状态。本激活工具为代码激活，无加密，无任何后门。</p>
+<blockquote>
+<p><strong>1.打开 ParallelsDesktop-19.3.0-54924.dmg ，双击安装开始安装，安装好之后先不要去打开虚拟机或者安装Win系统！</strong></p>
+<p><strong>2.把 PDCARK 文件夹 拖到桌面来，然后进入文件夹里面，根据电脑机型双击 INTEL激活 或ARM激活 开始激活虚拟机即可。</strong></p>
+<p>最新安装说明请参考安装包内的安装说明来操作！</p>
+</blockquote>
+<h2 id="激活必备权限"><a href="#激活必备权限" class="headerlink" title="激活必备权限"></a>激活必备权限</h2><p>1.Xcode Command Line Tools(命令行开发者工具) 必须要先安装才能运行上面的命令，如果没有安装的请在终端运行下面的命令安装！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xcode-select <span class="token parameter variable">--install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>2.终端机必须有权限</p>
+<blockquote>
+<p>打开“系统偏好设置 — &gt; 隐私与安全性 — &gt; 完全磁盘访问权限 –&gt; 找到“终端” ，可以看到终端后面的开关没有打开，我们打开它，然后会提示输入你的Mac开机密码，输入密码确认即可开启，这个时候可能会提示你退出终端，这个时候要记得点击退出，不然设置无效！</p>
+<p>如果你在 “系统偏好设置 — &gt; 隐私与安全性 — &gt; 完全磁盘访问权限 –&gt; ” 里面没有找到 终端 的选项，那么打开 “访达” — &gt; “应用程序” — &gt; “实用程序” 里面找到 “终端” APP后，直接把它往 “完全磁盘访问权限” 窗口里面拖入即可设置开启选项。</p>
+</blockquote>
+<h2 id="跳过更新提示"><a href="#跳过更新提示" class="headerlink" title="跳过更新提示"></a>跳过更新提示</h2><blockquote>
+<p>如果提示更新的话，点击左上角红色按钮关闭更新提示，在弹出“我们建议安装新的版本。”提示，直接点击“不，使用现有的”，跳过更新。如果没有提示更新就忽略这一步操作！</p>
+</blockquote>
+<h2 id="启动时出现不能启动虚拟机提示？"><a href="#启动时出现不能启动虚拟机提示？" class="headerlink" title="启动时出现不能启动虚拟机提示？"></a>启动时出现不能启动虚拟机提示？</h2><blockquote>
+<p>如果是ARM机型打开PD虚拟机时候一直提示正在启动…解决方法：</p>
+<p>1.首先退出PD虚拟机；</p>
+<p>2.打开访达 – 应用程序 – 找到 Parallels Desktop图标，对着Parallels Desktop 鼠标右键 – 打开，打开即可。</p>
+</blockquote>
+<blockquote>
+<p>Parallels Desktop 虚拟机由于临界误差，不能启动虚拟机。解决方法：</p>
+<ol>
+<li>退出 Parallels Desktop。</li>
+<li>打开启动台 – 其他 打开活动监视器(Activity Monitor) ，并确保退出 <em>prl_disp_service</em> 、prl_client_app进程。如果没有退出，请单击<strong>齿轮</strong>图标，然后选择<strong>退出</strong>。</li>
+<li>打开 Parallels Desktop 并启动虚拟机。</li>
+</ol>
+</blockquote>
+<h2 id="如何查看PD虚拟机是否激活成功？"><a href="#如何查看PD虚拟机是否激活成功？" class="headerlink" title="如何查看PD虚拟机是否激活成功？"></a>如何查看PD虚拟机是否激活成功？</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h3><p>打开 Parallels Desktop 后，点击最左上角的菜单：Parallels Desktop -&gt; 关于 Parallels Desktop -&gt; 授权信息：Parallels Desktop已经激活。</p>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h3><p>打开 Parallels Desktop 后，点击最左上角的菜单：Parallels Desktop -&gt; 账户和许可证… -&gt; 激活许可证：永久许可证。</p>
+<p>就是激活成功了。</p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>链接:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1BFzcJMd1K00YDw5YXABcUA?pwd=74r8">https://pan.baidu.com/s/1BFzcJMd1K00YDw5YXABcUA?pwd=74r8</a><br>提取码:74r8</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/24708.html">https://onefly.top/posts/24708.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%A0%B4%E8%A7%A3/">
+                                    <span class="chip bg-color">破解</span>
+                                </a>
+                            
+                                <a href="/tags/Mac/">
+                                    <span class="chip bg-color">Mac</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                    <span class="chip bg-color">虚拟机</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/24718.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Web3的你为什么需要一部iPhone作为主力机？">
+                        
+                        <span class="card-title">Web3的你为什么需要一部iPhone作为主力机？</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    前沿技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/web3/">
+                        <span class="chip bg-color">web3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/24430.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Matlab R2024a For Mac 苹果M1/2/3芯片中文破解版">
+                        
+                        <span class="card-title">Matlab R2024a For Mac 苹果M1/2/3芯片中文破解版</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" class="post-category">
+                                    资源分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A0%B4%E8%A7%A3/">
+                        <span class="chip bg-color">破解</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">编程</span>
+                    </a>
+                    
+                    <a href="/tags/Mac/">
+                        <span class="chip bg-color">Mac</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+            </div>
         </div>
     </div>
 
@@ -1229,6 +1994,11 @@
         var isMobile = /mobile/i.test(navigator.userAgent);
         if (isMobile) {
             document.getElementById('toc-aside').style.display = 'none';
+            document.getElementById('mobile-content').style.display = 'block';
+            document.getElementById('desktop-content').style.display = 'none';
+        } else {
+            document.getElementById('mobile-content').style.display = 'none';
+            document.getElementById('desktop-content').style.display = 'block';
         }
     </script>
 </div>

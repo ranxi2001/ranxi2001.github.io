@@ -365,16 +365,24 @@
     #floating-toc-btn .btn-floating i {
         line-height: 48px;
         font-size: 1.4rem;
+    }    
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
     }
-    #article-content.desktop-style {
-        min-width: 57vw;
-        max-width: 55vw;
-        padding: 5px 0px;
+    @media screen and (min-width: 768px) {
+        #article-content {
+            min-width: 57vw;
+            max-width: 55vw;
+            padding: 5px 0px;
+        }
     }
-    #article-content.mobile-style {
-        min-width: 99vw;
-        max-width: 99vw;
-        padding: 0vw 3.5vw;
+    @media screen and (max-width: 767px) {
+        #article-content {
+            min-width: 99vw;
+            max-width: 99vw;
+            padding: 0vw 3.5vw;
+        }
     }
 </style>
 
@@ -464,7 +472,7 @@
     <!-- 正文 -->
     <div id="main-content" style="flex: 1; box-sizing: border-box;">
         <div style="width: 100%; margin: 0 auto;">
-            <div id="article-content" class="desktop-style">
+            <div id="article-content">
                 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -1407,12 +1415,8 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 
         if (isMobile) {
             tocAside.style.display = 'none';
-            articleContent.classList.remove('desktop-style');
-            articleContent.classList.add('mobile-style');
         } else {
             tocAside.style.display = 'block';
-            articleContent.classList.remove('mobile-style');
-            articleContent.classList.add('desktop-style');
         }
     </script>
 </div>

@@ -4336,4 +4336,31 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>Office</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Windows ChatGPT客户端下载安装教程</title>
+    <url>/posts/241020.html</url>
+    <content><![CDATA[<h1 id="Windows-ChatGPT客户端下载安装教程"><a href="#Windows-ChatGPT客户端下载安装教程" class="headerlink" title="Windows ChatGPT客户端下载安装教程"></a>Windows ChatGPT客户端下载安装教程</h1><p>OpenAI 已经发布了 ChatGPT 的 Windows 客户端。</p>
+<p>麻烦的是，客户端是 UMP 格式的，必须在 MS Store 下载，且需要使用<strong>美区微软账号</strong>。、</p>
+<p>下面是安装 ChatGPT Windows客户端的教程：</p>
+<p>没有美区账号，可以使用以下方法，也适用于任何没有外区账号的 UMP 安装包下载。</p>
+<p><strong>打开链接</strong>：<a href="https://store.rg-adguard.net/?ref=wqmoran.com">https://store.rg-adguard.net/</a></p>
+<p><strong>输入安装包地址</strong>：<a href="https://apps.microsoft.com/detail/9nt1r1c2hh7j?hl=en-us&amp;gl=US&amp;ref=wqmoran.com">https://apps.microsoft.com/detail/9nt1r1c2hh7j?hl=en-us&amp;gl=US</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241020150701789-1685010156.png"></p>
+<p><strong>双击安装包即可安装</strong>：</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241020150803290-1428305212.png"></p>
+<p>参考文献：</p>
+<ol>
+<li><a href="https://wqmoran.com/chatgpt-windows-installation-guide/">安装 ChatGPT Windows客户端</a></li>
+<li><a href="https://blog.xiaoz.org/archives/18479">如何让 Windows 应用商店走代理？这个小技巧告诉你 - 小z博客</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>chatgpt</tag>
+        <tag>美国</tag>
+        <tag>微软商店</tag>
+      </tags>
+  </entry>
 </search>

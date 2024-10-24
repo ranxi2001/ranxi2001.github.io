@@ -4370,4 +4370,64 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>微软商店</tag>
       </tags>
   </entry>
+  <entry>
+    <title>【免费 | 多端同步】X推特账号设置备注篡改猴浏览器插件</title>
+    <url>/posts/241024.html</url>
+    <content><![CDATA[<h1 id="【免费-多端同步】X推特账号备注篡改猴插件"><a href="#【免费-多端同步】X推特账号备注篡改猴插件" class="headerlink" title="【免费 | 多端同步】X推特账号备注篡改猴插件"></a>【免费 | 多端同步】X推特账号备注篡改猴插件</h1><blockquote>
+<p>在推特关注Web3信息关注的外国人太多就需要写备注了，KOL千千万，一个备注全记住！</p>
+<p>一直以来因为我有多台电脑，所以对于没有同步功能的插件不是很感冒。有的浏览器插件能够同步但是要收费，也担心安全问题，下面介绍的这款代码开源的脚本插件功能强大，能够多设备同步很好的满足了我的要求。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024123209624-627699411.png"></p>
+</blockquote>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>1.先去官网下载<code>篡改猴</code></p>
+<p><a href="https://www.tampermonkey.net/">https://www.tampermonkey.net/</a></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024121121832-268740447.png" style="zoom:67%;">
+
+<p>2.安装油猴脚本——<code>X(Twitter) - 为用户添加备注(别名/标签)</code></p>
+<blockquote>
+<p>【代码开源】为用户添加备注(别名/标签)功能，以帮助识别和搜索，并支持 WebDAV 同步功能</p>
+</blockquote>
+<p><a href="https://greasyfork.org/zh-CN/scripts/404587-x-twitter-add-notes-to-the-user">https://greasyfork.org/zh-CN/scripts/404587-x-twitter-add-notes-to-the-user</a></p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024121218665-655558745.png" style="zoom:67%;">
+
+<h2 id="WebDAV-同步"><a href="#WebDAV-同步" class="headerlink" title="WebDAV 同步"></a>WebDAV 同步</h2><h3 id="注册-InfiniCloud-网盘"><a href="#注册-InfiniCloud-网盘" class="headerlink" title="注册 InfiniCloud 网盘"></a>注册 <code>InfiniCloud</code> 网盘</h3><p>InfiniCloud是一款，支持 WebDAV 同步并且无需魔法网络即可访问的日本网盘。免费用户默认 20G 永久空间，输入注册码还能得到 5G永久空间，25GB完全够用了！</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024121829102-1498672429.png" style="zoom:67%;">
+
+<ul>
+<li>打开 <a href="https://infini-cloud.net/en/">网盘官网</a></li>
+<li>点击 <a href="https://account.teracloud.jp/RegistForm.php/index/">Create Account</a> 开始注册</li>
+<li>First name 和 Last name可以随便写，写拼音就行</li>
+<li>Mail address，你的邮箱</li>
+<li>User ID 你的用户名（请记住这个用户名，后面有用）</li>
+<li>输入两次密码</li>
+<li>勾上所有的勾，点NEXT注册即可。</li>
+</ul>
+<p>完成邮箱验证码验证后，你会有20GB的初始免费永久空间。</p>
+<h3 id="获取WebDAV链接"><a href="#获取WebDAV链接" class="headerlink" title="获取WebDAV链接"></a>获取WebDAV链接</h3><p>1.登录后我们点击<a href="https://infini-cloud.net/en/modules/mypage/usage/">My Page</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024121931739-1667961390.png"></p>
+<p>2.填写邀请码 <code>MMS4K</code> 领取额外5GB永久存储空间</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122154981-930832339.png"></p>
+<p>3.获取WebDAV链接、账号和密码</p>
+<ul>
+<li>勾选<strong>Turn on Apps Connection</strong> 并在弹出窗口中勾选同意</li>
+<li>这里需要记住三个东西，就是三个红框打码处的东西，网址、账号名、密码（独立生成的）</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122455698-1842264887.png"></p>
+<h3 id="推特备注插件设置网盘同步"><a href="#推特备注插件设置网盘同步" class="headerlink" title="推特备注插件设置网盘同步"></a>推特备注插件设置网盘同步</h3><p>1.打开篡改猴备注插件<strong>设置面板</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122633440-1531045239.png"></p>
+<p>2.启用 WebDAV 同步数据功能 ——<strong>配置VebDAV</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122731118-841595791.png"></p>
+<p>3.输入上面获取的网盘信息，数据目录写<code>Xnote/data.txt</code>,同步时间写30分钟</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122925278-136595560.png"></p>
+<p>保存后选择上传数据，另一个设备选择下载，之后就会自动同步，大功告成！</p>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024123128359-1592851579.png"></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>推特</tag>
+        <tag>网盘</tag>
+      </tags>
+  </entry>
 </search>

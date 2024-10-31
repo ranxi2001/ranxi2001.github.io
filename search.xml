@@ -2388,7 +2388,7 @@
 <p>脚本下载链接：<a href="https://wwp.lanzoub.com/iQk4t0c5wm7e">https://wwp.lanzoub.com/iQk4t0c5wm7e</a></p>
 ]]></content>
       <categories>
-        <category>破解资源</category>
+        <category>资源分享</category>
       </categories>
       <tags>
         <tag>破解软件</tag>
@@ -4425,9 +4425,34 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>技术教程</category>
       </categories>
       <tags>
-        <tag>web3</tag>
         <tag>推特</tag>
         <tag>网盘</tag>
+        <tag>Web3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查询推特账号是否改名的教程——防止冲web3项目被假号rug</title>
+    <url>/posts/241031.html</url>
+    <content><![CDATA[<h1 id="查询推特账号是否改名的教程——防止冲web3项目被假号rug"><a href="#查询推特账号是否改名的教程——防止冲web3项目被假号rug" class="headerlink" title="查询推特账号是否改名的教程——防止冲web3项目被假号rug"></a>查询推特账号是否改名的教程——防止冲web3项目被假号rug</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>在WEB3冲Alpha项目，鉴于很多人fomo冲了推特改名盘（伪装名人发币）被收割的情况，今天出个&lt;&lt;**如何查询推特是否改名**&gt;&gt;教程，希望能尽量避免更多的朋友被明显的rug盘欺骗</p>
+<p>免费查询工具，官网 <a href="https://discover.beta.getmoni.io/checker">https://discover.beta.getmoni.io/checker</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241031113020167-239512146.png"></p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p>举例说明：搜索这个推特账号：<code>@BorisTranSOL</code></p>
+<p>示例：<a href="https://discover.beta.getmoni.io/BorisTranSOL">https://discover.beta.getmoni.io/BorisTranSOL</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241031113522673-62611124.png"></p>
+<h2 id="配套插件"><a href="#配套插件" class="headerlink" title="配套插件"></a>配套插件</h2><p>免费查询工具discover的插件下载链接：</p>
+<p><a href="https://chromewebstore.google.com/detail/moni-discover-twitter-che/bgooiolaoinoncegoopcmincbomphmhi?hl=zh-CN&amp;utm_source=ext_sidebar">https://chromewebstore.google.com/detail/moni-discover-twitter-che/bgooiolaoinoncegoopcmincbomphmhi?hl=zh-CN&amp;utm_source=ext_sidebar</a></p>
+<p>下载安装后，登录，然后刷新推特页面，可以直接在页面上看见一个小眼睛，点击小眼睛就能更快速的查看该推特的基本信息，有无改名，改签名！其他功能，自己研究哦！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241031113748018-955970800.png"></p>
+<p>参考文献：</p>
+<p>[1] <a href="https://x.com/Cryptoxiaodd">小叮当</a> —— <a href="https://x.com/Cryptoxiaodd/status/1851466215249818060">https://x.com/Cryptoxiaodd/status/1851466215249818060</a></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>推特</tag>
+        <tag>Web3</tag>
+        <tag>Alpha</tag>
       </tags>
   </entry>
 </search>

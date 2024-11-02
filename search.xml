@@ -4489,14 +4489,14 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <h3 id="5-中转钱包"><a href="#5-中转钱包" class="headerlink" title="5. 中转钱包"></a><strong>5. 中转钱包</strong></h3><p>是为了打散筹码时让筹码追溯更难而存在的，有的盘有有的盘没有，大Neiro的就有，可以去自己看一下</p>
 <h2 id="二、下面我来讲讲doggo这个阴毛盘的案例"><a href="#二、下面我来讲讲doggo这个阴毛盘的案例" class="headerlink" title="二、下面我来讲讲doggo这个阴毛盘的案例"></a>二、下面我来讲讲doggo这个阴毛盘的案例</h2><h3 id="1-操盘钱包"><a href="#1-操盘钱包" class="headerlink" title="1.操盘钱包"></a>1.操盘钱包</h3><p>先说明，俩个doggo都是阴毛盘，这个你千万别自我洗脑，我之前写doggo这篇逻辑贴的时候也明确跟大家指出了，我讨厌阴毛盘，但我不介意有交易机会的时候进去赚钱。<strong>首先，我们来跟一个庄主操盘钱包来进入他的视角讲讲为什么我当时认为Dev跑是假的，大概率会有反转，钱包地址是：</strong></p>
 <p>0xa7c74f0564d292aa6414b70de43625480d45f31d</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Gh3lcVCVHZT4KiclrOnDD4aRLby6ZU2fUqgTXZMP7Gh5ERiaFUiaglPnQZjicsCgWDs83ESNrqUOZGDF2NUERlfhvA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142330624-1303790534.png"></p>
 <p>看一下上图这个钱包的交易点位，就问你牛逼吗？一个新钱包在刚开盘的土狗就打进去了1.3wu，然后就算从高点市值的20M跌到5M，所有狙击钱包在狂砸散户全都Fud的情况下还能在5m精准抄底把下引线瞬间拉回来，在关键的支撑位和阻力位都起到了推波助澜的作用，然后在第二波高点的时候直接盖帽砸了13WU，以下是他的部分交易记录，建议大家直接去你常用的dashboard直接搜他的地址去自己跟着看。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Gh3lcVCVHZT4KiclrOnDD4aRLby6ZU2fUEJetiabxvMf056IxXkWZFXicYB8PURqfU2HgEs4B9S3NA8pvk8aVKqvg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142151767-312540510.png"></p>
 <p>doggo的主力操盘钱包不止这一个，当你把庄的主力操盘钱包找出来以后，你就明白局部的高点和低点大致在哪里了（也会有散户追高把价格推更高的情况，但庄一般都会砸下来，画线一定要自己来画），所以当时tg里社区都在说dev跑了，盘子要归零了，但如果盘子真的被dev放弃了，为什么他的主操盘钱包还在接货，然后还在底部做拉升？这就是为什么我那天觉得doggo有反转的“客观”依据，而不仅是这个叙事不错的“主观”依据。</p>
 <p>庄的操盘钱包在第二波的高点开始出货13wu的时候，这里其实留给你了半天多的时间跟着庄跑或者至少出本。所以如果你玩阴毛庄盘，当你发现你追踪的主力操盘钱包都在出货了，然后他的囤货钱包也开始在出了，你难道连个本都不出，还幻想着你的社区帮你推的更高吗？</p>
 <h3 id="1-囤货钱包"><a href="#1-囤货钱包" class="headerlink" title="1.囤货钱包"></a>1.囤货钱包</h3><p><strong>下面我们看一下囤货钱包，这种钱包一般长这样：</strong></p>
 <p>0x345b629908fdc2b8caf87a7ded876ff0c90ce444 0x4422ba9d6278836cbcef6df2114ce488d19f0c1e</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Gh3lcVCVHZT4KiclrOnDD4aRLby6ZU2fUpjdTQlARr2mYlxgKYVc7vhbtCEwM2RjeawiaW9wTGUkPXmibj8Ee6JRw/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142122207-1143092395.png"></p>
 <p>囤货钱包的特征是大多是新钱包，大部分时候每笔交易金额在1-2e，去看囤货钱包的意义在于：</p>
 <ol>
 <li>你可以知道庄有没有第二波的打算（如果砸盘之后你发现你找不到囤货钱包收筹码的痕迹，那很明显没有第二波了）</li>
@@ -4504,7 +4504,7 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <li>同理，你也别看庄的囤货钱包开始接了，你就跟着接，因为人家收筹码也需要一个过程，人家本来就是用盈利收，而你是拿本金收。</li>
 </ol>
 <h3 id="3-狙击钱包"><a href="#3-狙击钱包" class="headerlink" title="3.狙击钱包"></a>3.狙击钱包</h3><p>盯狙击钱包一般去判断第一波高点是最有效的，下图标出的是狙击钱包的砸盘交易，你看到狙击钱包开始大笔多笔的砸盘的时候，这个时候你一定要跟着跑，就算之后还有第二波，你等下去能接到的成本也会低不少。看下图第一波高点那里红点最多的位置就是大家在说的“Dev跑了”。</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Gh3lcVCVHZT4KiclrOnDD4aRLby6ZU2fURTP1GjicZlbicX4vjpQbHPp20qHkwibjpaT6ibYZc3OYOv6T533ncwIIug/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142439802-85714917.png"></p>
 <h2 id="三、最后总结一些关键点和小技巧"><a href="#三、最后总结一些关键点和小技巧" class="headerlink" title="三、最后总结一些关键点和小技巧"></a>三、最后总结一些关键点和小技巧</h2><ol>
 <li>识别庄钱包：狙击钱包是第一个块捆绑狙击的交易钱包；主操盘钱包是大开大合在关键点位大笔交易的钱包，去按大金额筛选通常能找到；主囤货钱包通常是多笔1-2e交易额的新钱包。所有情况下，新钱包且交易很多的基本都是庄的钱包。</li>
 <li>任何盘子一定要去找出来狙击钱包、主操盘钱包、主囤货钱包都是哪些，尤其是阴毛盘，如果是老币，你找不出来主操盘钱包和囤货钱包，说明这个盘子废了里面没有庄。 </li>

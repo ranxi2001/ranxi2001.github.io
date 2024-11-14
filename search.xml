@@ -3395,6 +3395,7 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国内 ip 用这个</strong></em> 】：<a href="https://onefly.top/posts/8888.html">https://onefly.top/posts/8888.html</a></p>
 <blockquote>
 <p>微信内打不开上面的链接请<strong>复制到</strong><code>Edge</code>或者<code>Chrome</code><strong>浏览器打开</strong></p>
+<p>或者 <strong>获取国外ip</strong>（注册后查看 <u><em>使用文档</em></u> ）：<a href="https://onefly.top/posts/9999.html">https://onefly.top/posts/9999.html</a></p>
 </blockquote>
 <p><strong>OKX（欧易）</strong> 是<strong>安全正规</strong>的<strong>比特币交易所</strong>【 <em><strong>国外 ip 用这个</strong></em> 】：<a href="https://okx.com/join/45175356">https://okx.com/join/45175356</a></p>
 <p><strong>Binance（币安）</strong>是<strong>世界上最大</strong>的<strong>加密货币交易所</strong>：<a href="https://www.binance.info/zh-CN/join?ref=170981146">https://www.binance.info/zh-CN/join?ref=170981146</a></p>
@@ -4589,6 +4590,113 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       <tags>
         <tag>sol</tag>
         <tag>土狗</tag>
+        <tag>Web3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ</title>
+    <url>/posts/241114.html</url>
+    <content><![CDATA[<h1 id="Dune-Query-入门教程及Sol钱包转账追踪实践Ⅰ"><a href="#Dune-Query-入门教程及Sol钱包转账追踪实践Ⅰ" class="headerlink" title="Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ"></a>Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ</h1><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Dune Analytics 是一个用于分析并发现区块链数据的强大工具。它使用 SQL 语言来查询链上数据，使用者可以将这些数据转换为有用的分析。这篇博客将介绍 Dune 查询的基础用法，并通过一个 Solana 链上链下链监控实践项目来帮助你学会实践中的基础查询技术。</p>
+<h3 id="Data-Explorer-功能介绍"><a href="#Data-Explorer-功能介绍" class="headerlink" title="Data Explorer 功能介绍"></a>Data Explorer 功能介绍</h3><p>在开始编写查询之前，熟悉 Dune Analytics 左侧的 <strong>Data Explorer</strong> 是非常重要的。Data Explorer 提供了对数据库中可用数据表和字段的浏览功能。你可以通过它查看不同区块链的数据集、表结构和字段的类型，从而更好地理解哪些数据可以用于查询。例如，你可以在 Solana 区块链下找到 <code>transactions</code> 表，并看到其中的字段（如 <code>block_time</code>、<code>pre_token_balances</code> 等），这些信息对你编写查询时非常有帮助。</p>
+<p><strong>Data Explorer</strong> 的主要功能包括：</p>
+<ul>
+<li>浏览不同区块链（例如以太坊、Solana 等）的数据集。</li>
+<li>查看每个数据表的字段和数据类型，帮助你了解如何构建查询。</li>
+<li>使用过滤功能快速定位特定的表或字段。</li>
+</ul>
+<p>利用 Data Explorer 可以帮助你更快地找到你需要的数据，并了解这些数据的结构。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241114220654496-210989301.png"></p>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p>Dune 使用 Trino 语法的 SQL，对于很多只写过 MySQL 的人来说，这些语法可能会有一些不同，但大部分基础查询是相似的，基本语法和我们所熟悉的 SQL 应该相当接近。下面对一些常用的 SQL 基础语法用词进行解释：</p>
+<ul>
+<li><p><strong>WITH</strong>：用于定义公用表表达式（CTE），可以让查询分步骤进行，增加可读性和模块化。</p>
+</li>
+<li><p><strong>SELECT</strong>：用于指定查询的列。</p>
+</li>
+<li><p><strong>FROM</strong>：用于指定查询的数据表。</p>
+</li>
+<li><p><strong>WHERE</strong>：用于过滤数据，指定查询条件。</p>
+</li>
+<li><p><strong>UNNEST</strong>：用于将数组字段解包为多行，便于后续处理。</p>
+</li>
+<li><p><strong>AS</strong>：为字段或表赋予别名，方便引用。</p>
+</li>
+</ul>
+<p>例如，要查询 Solana 链上特定时间段内的交易，可以使用下面的基本查询语法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span>
+<span class="token keyword">WHERE</span> block_time <span class="token operator">&gt;=</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">INTERVAL</span> <span class="token string">'7'</span> <span class="token keyword">DAY</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>SELECT</strong> 语法用于查询指定列。在这个例子中，查询所有交易。</li>
+<li><strong>FROM</strong> 用于指定数据来源，此处为 <code>solana.transactions</code> 表。</li>
+<li><strong>WHERE</strong> 用来过滤数据，例如查询最近7天的交易。</li>
+</ul>
+<h3 id="联合用法和基础-UNNEST"><a href="#联合用法和基础-UNNEST" class="headerlink" title="联合用法和基础 UNNEST"></a>联合用法和基础 UNNEST</h3><p>在 Dune 中，链上数据常包含运行结果为数组的记录，例如交易的应用数量变更。这时，可以用 <code>UNNEST</code> 。<code>UNNEST</code> 用于将数组字段中的每个元素都作为单独的一行进行处理。比如，在链上交易的数据中，有些字段包含数组（例如一个钱包的多个代币余额），通过 <code>UNNEST</code> 操作，可以将这些数组元素解开，让每个元素变成一行数据。这对于需要分析数组内部各个元素的情况非常有用，这样就可以将数组内容逐条处理，而不是整体作为一个复杂的数据结构。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> t<span class="token punctuation">.</span>block_time<span class="token punctuation">,</span> pre<span class="token punctuation">.</span>owner
+<span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span> t<span class="token punctuation">,</span>
+     UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>pre_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> pre
+<span class="token keyword">WHERE</span> pre<span class="token punctuation">.</span>owner <span class="token operator">=</span> <span class="token string">'6EDJ7JuynXSPaMvufzAX4swSRJZXv6uPi4s6jmo33xj5'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>UNNEST</strong> 语法用来将数组字段解包为多行，此处是 <code>pre_token_balances</code>。</li>
+<li><strong>AS</strong> pre 用来为每一行数组记录赋予一个别名pre，便于后面查询。</li>
+</ul>
+<h3 id="这个查询实践项目"><a href="#这个查询实践项目" class="headerlink" title="这个查询实践项目"></a>这个查询实践项目</h3><p>我们的实践项目是一个用于追踪 Solana 链上特定链下链的代币转账的分析工具。并通过这个查询实现了特定代币的交易跟踪：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">WITH</span> filtered_transactions <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+  <span class="token keyword">SELECT</span> <span class="token operator">*</span>
+  <span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span> t
+  <span class="token keyword">WHERE</span> block_time <span class="token operator">&gt;=</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">INTERVAL</span> <span class="token string">'7'</span> <span class="token keyword">DAY</span>  <span class="token comment">-- 限制时间范围为最近7天</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span>
+wallet_related_transactions <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+  <span class="token keyword">SELECT</span> <span class="token operator">*</span>
+  <span class="token keyword">FROM</span> filtered_transactions t<span class="token punctuation">,</span>
+    UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>pre_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> pre
+  <span class="token keyword">WHERE</span> pre<span class="token punctuation">.</span>owner <span class="token operator">=</span> <span class="token string">'6EDJ7JuynXSPaMvufzAX4swSRJZXv6uPi4s6jmo33xj5'</span>  <span class="token comment">-- 为指定链下链地址</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span>
+token_transfers <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+  <span class="token keyword">SELECT</span>
+    t<span class="token punctuation">.</span>block_time<span class="token punctuation">,</span>
+    pre<span class="token punctuation">.</span>owner <span class="token keyword">AS</span> <span class="token string">"From"</span><span class="token punctuation">,</span>
+    post<span class="token punctuation">.</span>owner <span class="token keyword">AS</span> <span class="token string">"To"</span><span class="token punctuation">,</span>
+    post<span class="token punctuation">.</span>mint <span class="token keyword">AS</span> <span class="token string">"Token"</span><span class="token punctuation">,</span>
+    pre<span class="token punctuation">.</span>amount <span class="token keyword">AS</span> <span class="token string">"Pre_Amount"</span><span class="token punctuation">,</span>
+    post<span class="token punctuation">.</span>amount <span class="token keyword">AS</span> <span class="token string">"Post_Amount"</span>
+  <span class="token keyword">FROM</span>
+    wallet_related_transactions t<span class="token punctuation">,</span>
+    UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>pre_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> pre<span class="token punctuation">,</span>
+    UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>post_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> post
+  <span class="token keyword">WHERE</span>
+    pre<span class="token punctuation">.</span>owner <span class="token operator">=</span> <span class="token string">'6EDJ7JuynXSPaMvufzAX4swSRJZXv6uPi4s6jmo33xj5'</span>  <span class="token comment">-- 指定主链包并地址</span>
+    <span class="token operator">AND</span> post<span class="token punctuation">.</span>owner <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+    <span class="token operator">AND</span> post<span class="token punctuation">.</span>mint <span class="token operator">=</span> <span class="token string">'BYcs8bjoGv6m4LkRrpEDVbJvPESvP9A1migRmaDApump'</span>  <span class="token comment">-- 指定代币合约地址</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span>
+  block_time<span class="token punctuation">,</span>
+  <span class="token string">"From"</span><span class="token punctuation">,</span>
+  <span class="token string">"To"</span><span class="token punctuation">,</span>
+  <span class="token string">"Token"</span><span class="token punctuation">,</span>
+  <span class="token string">"Pre_Amount"</span><span class="token punctuation">,</span>
+  <span class="token string">"Post_Amount"</span>
+<span class="token keyword">FROM</span>
+  token_transfers
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+  block_time <span class="token keyword">DESC</span>
+<span class="token keyword">LIMIT</span> <span class="token number">1000</span><span class="token punctuation">;</span>  <span class="token comment">-- 限制最多返回 1000 条记录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="这个查询的过程"><a href="#这个查询的过程" class="headerlink" title="这个查询的过程"></a>这个查询的过程</h4><ol>
+<li>首先在 <code>filtered_transactions</code> 中限制查询最近7天的数据，使数据量更可控。</li>
+<li>然后在 <code>wallet_related_transactions</code> 中将这些数据进行 <code>UNNEST</code>，按照为指定链下链的交易进行过滤。</li>
+<li>最后在 <code>token_transfers</code> 中进行更详细的解包，并追踪代币从 “From” 到 “To” 的转账。</li>
+</ol>
+<p>这样的查询设计使用了多个 CTE 来组织查询过程，通过渐进过滤的方式，使得查询更加高效。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>使用 Dune Analytics 可以帮助你对区块链数据进行深入分析。通过基础的 SQL 语法并使用 <code>UNNEST</code> 来处理复杂数据结构，你可以实现特定链下链的转账查询和跟踪。在实践中，使用强化的数据过滤以便将查询范围限制在为你所关心的信息上，这样会更有效率。希望这篇博客能帮助你学会使用 Dune 来开始实现你的区块链数据分析目标。</p>
+]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>sol</tag>
+        <tag>数据分析</tag>
         <tag>Web3</tag>
       </tags>
   </entry>

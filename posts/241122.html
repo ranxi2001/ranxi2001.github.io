@@ -8,7 +8,7 @@
     <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
     <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
     <meta charset="utf-8">
-    <meta name="keywords" content="Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ, 孤飞的博客">
+    <meta name="keywords" content="如何将参与一级土狗市场需要的时间精力最小化, 孤飞的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ | 孤飞的博客</title>
+    <title>如何将参与一级土狗市场需要的时间精力最小化 | 孤飞的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -255,12 +255,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ</h1>
+                    <h1 class="description center-align post-title">如何将参与一级土狗市场需要的时间精力最小化</h1>
                 </div>
             </div>
         </div>
@@ -486,8 +486,8 @@
                                 <span class="chip bg-color">sol</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">数据分析</span>
+                            <a href="/tags/%E5%9C%9F%E7%8B%97/">
+                                <span class="chip bg-color">土狗</span>
                             </a>
                         
                             <a href="/tags/Web3/">
@@ -502,8 +502,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
-                                数据分析
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -515,7 +515,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-11-14
+                    2024-11-22
                 </div>
                 
 
@@ -524,14 +524,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -549,100 +549,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Dune-Query-入门教程及Sol钱包转账追踪实践Ⅰ"><a href="#Dune-Query-入门教程及Sol钱包转账追踪实践Ⅰ" class="headerlink" title="Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ"></a>Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ</h1><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Dune Analytics 是一个用于分析并发现区块链数据的强大工具。它使用 SQL 语言来查询链上数据，使用者可以将这些数据转换为有用的分析。这篇博客将介绍 Dune 查询的基础用法，并通过一个 Solana 链上链下链监控实践项目来帮助你学会实践中的基础查询技术。</p>
-<h3 id="Data-Explorer-功能介绍"><a href="#Data-Explorer-功能介绍" class="headerlink" title="Data Explorer 功能介绍"></a>Data Explorer 功能介绍</h3><p>在开始编写查询之前，熟悉 Dune Analytics 左侧的 <strong>Data Explorer</strong> 是非常重要的。Data Explorer 提供了对数据库中可用数据表和字段的浏览功能。你可以通过它查看不同区块链的数据集、表结构和字段的类型，从而更好地理解哪些数据可以用于查询。例如，你可以在 Solana 区块链下找到 <code>transactions</code> 表，并看到其中的字段（如 <code>block_time</code>、<code>pre_token_balances</code> 等），这些信息对你编写查询时非常有帮助。</p>
-<p><strong>Data Explorer</strong> 的主要功能包括：</p>
-<ul>
-<li>浏览不同区块链（例如以太坊、Solana 等）的数据集。</li>
-<li>查看每个数据表的字段和数据类型，帮助你了解如何构建查询。</li>
-<li>使用过滤功能快速定位特定的表或字段。</li>
-</ul>
-<p>利用 Data Explorer 可以帮助你更快地找到你需要的数据，并了解这些数据的结构。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241114220654496-210989301.png"></p>
-<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p>Dune 使用 Trino 语法的 SQL，对于很多只写过 MySQL 的人来说，这些语法可能会有一些不同，但大部分基础查询是相似的，基本语法和我们所熟悉的 SQL 应该相当接近。下面对一些常用的 SQL 基础语法用词进行解释：</p>
-<ul>
-<li><p><strong>WITH</strong>：用于定义公用表表达式（CTE），可以让查询分步骤进行，增加可读性和模块化。</p>
+                <h1 id="如何将参与一级土狗市场需要的时间精力最小化"><a href="#如何将参与一级土狗市场需要的时间精力最小化" class="headerlink" title="如何将参与一级土狗市场需要的时间精力最小化"></a>如何将参与一级土狗市场需要的时间精力最小化</h1><h2 id="原文索引"><a href="#原文索引" class="headerlink" title="原文索引"></a>原文索引</h2><p>XQ哥：<a target="_blank" rel="noopener" href="https://x.com/0xXQ1/status/1859813987552256179">https://x.com/0xXQ1/status/1859813987552256179</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>本篇Thread讲一下如何将参与一级市场需要的时间精力最小化，也就是如何偷懒。这是我目前正在采取的交易模式，也是我认为最适合打工人和学生的交易方法。 </p>
+<p>目前我不需要7x24h的坐在电脑前时刻盯着链上的动态，而是在没出金狗的时候正常工作，出金的时候再抽出一段完整的时间制定策略和完成交易。但是请注意：  </p>
+<ol>
+<li><p>本篇介绍的方法会牺牲掉一些获取早期筹码的机会 </p>
 </li>
-<li><p><strong>SELECT</strong>：用于指定查询的列。</p>
+<li><p>只适用于兼职炒币，而不适用于全职炒币。全职依旧建议allin扫链，最大限度的发挥你的时间优势 </p>
 </li>
-<li><p><strong>FROM</strong>：用于指定查询的数据表。</p>
+<li><p>整体收益不会比全职高，一分耕耘一分收获，这个道理在哪里都成立 </p>
 </li>
-<li><p><strong>WHERE</strong>：用于过滤数据，指定查询条件。</p>
+<li><p>这个偷懒不是真偷懒，懒是赚不到钱的，你对钱的态度一定程度决定了你能赚到钱的期望。</p>
 </li>
-<li><p><strong>UNNEST</strong>：用于将数组字段解包为多行，便于后续处理。</p>
-</li>
-<li><p><strong>AS</strong>：为字段或表赋予别名，方便引用。</p>
-</li>
-</ul>
-<p>例如，要查询 Solana 链上特定时间段内的交易，可以使用下面的基本查询语法：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
-<span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span>
-<span class="token keyword">WHERE</span> block_time <span class="token operator">&gt;=</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">INTERVAL</span> <span class="token string">'7'</span> <span class="token keyword">DAY</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><strong>SELECT</strong> 语法用于查询指定列。在这个例子中，查询所有交易。</li>
-<li><strong>FROM</strong> 用于指定数据来源，此处为 <code>solana.transactions</code> 表。</li>
-<li><strong>WHERE</strong> 用来过滤数据，例如查询最近7天的交易。</li>
-</ul>
-<h3 id="联合用法和基础-UNNEST"><a href="#联合用法和基础-UNNEST" class="headerlink" title="联合用法和基础 UNNEST"></a>联合用法和基础 UNNEST</h3><p>在 Dune 中，链上数据常包含运行结果为数组的记录，例如交易的应用数量变更。这时，可以用 <code>UNNEST</code> 。<code>UNNEST</code> 用于将数组字段中的每个元素都作为单独的一行进行处理。比如，在链上交易的数据中，有些字段包含数组（例如一个钱包的多个代币余额），通过 <code>UNNEST</code> 操作，可以将这些数组元素解开，让每个元素变成一行数据。这对于需要分析数组内部各个元素的情况非常有用，这样就可以将数组内容逐条处理，而不是整体作为一个复杂的数据结构。</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> t<span class="token punctuation">.</span>block_time<span class="token punctuation">,</span> pre<span class="token punctuation">.</span>owner
-<span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span> t<span class="token punctuation">,</span>
-     UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>pre_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> pre
-<span class="token keyword">WHERE</span> pre<span class="token punctuation">.</span>owner <span class="token operator">=</span> <span class="token string">'6EDJ7JuynXSPaMvufzAX4swSRJZXv6uPi4s6jmo33xj5'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><strong>UNNEST</strong> 语法用来将数组字段解包为多行，此处是 <code>pre_token_balances</code>。</li>
-<li><strong>AS</strong> pre 用来为每一行数组记录赋予一个别名pre，便于后面查询。</li>
-</ul>
-<h3 id="这个查询实践项目"><a href="#这个查询实践项目" class="headerlink" title="这个查询实践项目"></a>这个查询实践项目</h3><p>我们的实践项目是一个用于追踪 Solana 链上特定链下链的代币转账的分析工具。并通过这个查询实现了特定代币的交易跟踪：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">WITH</span> filtered_transactions <span class="token keyword">AS</span> <span class="token punctuation">(</span>
-  <span class="token keyword">SELECT</span> <span class="token operator">*</span>
-  <span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span> t
-  <span class="token keyword">WHERE</span> block_time <span class="token operator">&gt;=</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">INTERVAL</span> <span class="token string">'7'</span> <span class="token keyword">DAY</span>  <span class="token comment">-- 限制时间范围为最近7天</span>
-<span class="token punctuation">)</span><span class="token punctuation">,</span>
-wallet_related_transactions <span class="token keyword">AS</span> <span class="token punctuation">(</span>
-  <span class="token keyword">SELECT</span> <span class="token operator">*</span>
-  <span class="token keyword">FROM</span> filtered_transactions t<span class="token punctuation">,</span>
-    UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>pre_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> pre
-  <span class="token keyword">WHERE</span> pre<span class="token punctuation">.</span>owner <span class="token operator">=</span> <span class="token string">'6EDJ7JuynXSPaMvufzAX4swSRJZXv6uPi4s6jmo33xj5'</span>  <span class="token comment">-- 为指定链下链地址</span>
-<span class="token punctuation">)</span><span class="token punctuation">,</span>
-token_transfers <span class="token keyword">AS</span> <span class="token punctuation">(</span>
-  <span class="token keyword">SELECT</span>
-    t<span class="token punctuation">.</span>block_time<span class="token punctuation">,</span>
-    pre<span class="token punctuation">.</span>owner <span class="token keyword">AS</span> <span class="token string">"From"</span><span class="token punctuation">,</span>
-    post<span class="token punctuation">.</span>owner <span class="token keyword">AS</span> <span class="token string">"To"</span><span class="token punctuation">,</span>
-    post<span class="token punctuation">.</span>mint <span class="token keyword">AS</span> <span class="token string">"Token"</span><span class="token punctuation">,</span>
-    pre<span class="token punctuation">.</span>amount <span class="token keyword">AS</span> <span class="token string">"Pre_Amount"</span><span class="token punctuation">,</span>
-    post<span class="token punctuation">.</span>amount <span class="token keyword">AS</span> <span class="token string">"Post_Amount"</span>
-  <span class="token keyword">FROM</span>
-    wallet_related_transactions t<span class="token punctuation">,</span>
-    UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>pre_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> pre<span class="token punctuation">,</span>
-    UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>post_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> post
-  <span class="token keyword">WHERE</span>
-    pre<span class="token punctuation">.</span>owner <span class="token operator">=</span> <span class="token string">'6EDJ7JuynXSPaMvufzAX4swSRJZXv6uPi4s6jmo33xj5'</span>  <span class="token comment">-- 指定主链包并地址</span>
-    <span class="token operator">AND</span> post<span class="token punctuation">.</span>owner <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
-    <span class="token operator">AND</span> post<span class="token punctuation">.</span>mint <span class="token operator">=</span> <span class="token string">'BYcs8bjoGv6m4LkRrpEDVbJvPESvP9A1migRmaDApump'</span>  <span class="token comment">-- 指定代币合约地址</span>
-<span class="token punctuation">)</span>
-<span class="token keyword">SELECT</span>
-  block_time<span class="token punctuation">,</span>
-  <span class="token string">"From"</span><span class="token punctuation">,</span>
-  <span class="token string">"To"</span><span class="token punctuation">,</span>
-  <span class="token string">"Token"</span><span class="token punctuation">,</span>
-  <span class="token string">"Pre_Amount"</span><span class="token punctuation">,</span>
-  <span class="token string">"Post_Amount"</span>
-<span class="token keyword">FROM</span>
-  token_transfers
-<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
-  block_time <span class="token keyword">DESC</span>
-<span class="token keyword">LIMIT</span> <span class="token number">1000</span><span class="token punctuation">;</span>  <span class="token comment">-- 限制最多返回 1000 条记录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="这个查询的过程"><a href="#这个查询的过程" class="headerlink" title="这个查询的过程"></a>这个查询的过程</h4><ol>
-<li>首先在 <code>filtered_transactions</code> 中限制查询最近7天的数据，使数据量更可控。</li>
-<li>然后在 <code>wallet_related_transactions</code> 中将这些数据进行 <code>UNNEST</code>，按照为指定链下链的交易进行过滤。</li>
-<li>最后在 <code>token_transfers</code> 中进行更详细的解包，并追踪代币从 “From” 到 “To” 的转账。</li>
 </ol>
-<p>这样的查询设计使用了多个 CTE 来组织查询过程，通过渐进过滤的方式，使得查询更加高效。</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>使用 Dune Analytics 可以帮助你对区块链数据进行深入分析。通过基础的 SQL 语法并使用 <code>UNNEST</code> 来处理复杂数据结构，你可以实现特定链下链的转账查询和跟踪。在实践中，使用强化的数据过滤以便将查询范围限制在为你所关心的信息上，这样会更有效率。希望这篇博客能帮助你学会使用 Dune 来开始实现你的区块链数据分析目标。</p>
+<p>下面将介绍详细的内容。 </p>
+<p><a target="_blank" rel="noopener" href="https://x.com/hashtag/%E6%89%AB%E9%93%BE?src=hashtag_click">#扫链</a> <a target="_blank" rel="noopener" href="https://x.com/hashtag/%E4%BA%A4%E6%98%93?src=hashtag_click">#交易</a> <a target="_blank" rel="noopener" href="https://x.com/hashtag/meme?src=hashtag_click">#meme</a></p>
+<h2 id="如何偷懒"><a href="#如何偷懒" class="headerlink" title="如何偷懒"></a>如何偷懒</h2><p>总结为一句话就是： 将<strong>主动</strong>获取信息的过程变成<strong>被动</strong>接收信息的过程 </p>
+<p>下面让我们具体分析一下。</p>
+<p> 先前扫链篇介绍的方法中，我们收集信息的过程是<strong>主动</strong>收集和筛选的过程。我们需要坐在电脑前，人肉扫描和筛选新Pair里的每一个Ca。扫过链的朋友都知道，这个过程偷懒不得，稍不注意就会错过有角度的项目或底部的筹码。在这个过程中，你基本无法做其他需要脑力活动的事情和工作。</p>
+<p><strong>被动</strong>获取信息是指，利用tgbot、twitter 提醒推送以及网页监控的工具，用机器或监控体系做一次预先的筛选，然后用通知推送功能实时的推送链上相关活动的内容。这样当有好项目的时候，你的手机电脑会主动给你发送提醒，而平常我们大概率是不会遇到金狗的，我们就可以用这个时间来安心工作了。</p>
+<p>所以核心是构建一套属于你自己的完善的监控体系，这样可以大大降低你日常的时间精力开销，也就是功夫需要用在平时。那么下面将讲解一下构建的思路。</p>
+<h2 id="构建思路1-聪明钱监控"><a href="#构建思路1-聪明钱监控" class="headerlink" title="构建思路1 - 聪明钱监控"></a>构建思路1 - 聪明钱监控</h2><p>聪明钱监控后续会单独开一个thread来讲清楚，这里地方太小挑重点来写。监控聪明钱是最直接让你知道链上发生了什么事情的方式。你监控的聪明钱只要足够优质，就可以最大程度的接近自己扫链的效果。 </p>
+<p>在我的体系中，一般将聪明钱分为3个种类，对应三种不同的模式，分别是： </p>
+<h3 id="a-名人、KOL"><a href="#a-名人、KOL" class="headerlink" title="a. 名人、KOL"></a>a. 名人、KOL</h3><ul>
+<li>例如v神、狗爹、Tate以及其他alpha博主等。监控这类钱包的目的是吃较慢跟单的流动性（需要有较快的反应速度和交易工具，很难），以及吃KOL的喊单预期。涨幅和收益取决于KOL的能量。</li>
+</ul>
+<h3 id="b-内幕地址"><a href="#b-内幕地址" class="headerlink" title="b. 内幕地址"></a>b. 内幕地址</h3><ul>
+<li>SOL几乎所有速通盘和前几个月流行的普通猫狗盘，都是阴谋集团的产物。监控阴谋集团的建仓线索可以帮助你吃到他们建仓过程中的最早期筹码。 但是存在弃盘风险，同时需要你对具体阴谋集团的钱包地址集群调研监控的足够丰富。相对应的，这样的方法上限是最高的</li>
+</ul>
+<h3 id="c-扫链地址"><a href="#c-扫链地址" class="headerlink" title="c. 扫链地址"></a>c. 扫链地址</h3><ul>
+<li>这一点是最好理解的，如果你不会扫链、没时间扫链，那很简单，找个厉害的扫链哥帮你扫就可以了。扫链地址可以帮你做海量项目的初步筛选，一些优质的扫链地址甚至可以直接拉跟单bot跟单吃收益。这种地址比前两种都要好找和好收集。</li>
+</ul>
+<p>监控上述三种聪明钱地址，构建属于自己的监控体系，配合时效性足够强的监控，你就具备被动实时获知链上优质项目的能力了。</p>
+<h2 id="构建思路2-推特监控"><a href="#构建思路2-推特监控" class="headerlink" title="构建思路2 - 推特监控"></a>构建思路2 - 推特监控</h2><p>其实从几个月前开始，pump的热点来源之一就是名人开盘了。逻辑很简单，人们会直观的认为新开的盘是他先前项目的beta，同时名人本身也会为其信誉背书，另外先前的名人盘（jenner mother等）取得了非常不错的表现。因此如果能够早期买入低价位的名人币，将会取得非常可观的收益。小资金往往可以通过这一次相对确定的机会，就收获第一桶金。 </p>
+<p>这就要求你需要做到三件事： </p>
+<h3 id="a-第一时间获知是否有人在推上发Ca"><a href="#a-第一时间获知是否有人在推上发Ca" class="headerlink" title="a. 第一时间获知是否有人在推上发Ca"></a>a. 第一时间获知是否有人在推上发Ca</h3><p>目前市面上的推文监控bot很多，这里不做推荐。实现的功能就是，监控推特api，当有正则表达式解析有人发送的文章内容带Ca的时候，就进行推送。由于推特api很贵，导致自己写不是很划算，因此大家的解决方案都是去购买集成的推送群。 </p>
+<h3 id="b-快速买入个人的能量（是否是名人）"><a href="#b-快速买入个人的能量（是否是名人）" class="headerlink" title="b. 快速买入个人的能量（是否是名人）"></a>b. 快速买入个人的能量（是否是名人）</h3><p>最直接的方式是看共同关注，这就要求你必须在平时维护好自己的推特关注列表，控制在1000以内，且必须是精品。共同关注意味着圈内的地位相对较高，圈子里的朋友存在互相喊单的预期，相应的估值就会变高。但是这里要注意，有一些账号关注的非常泛滥，有一些账号什么ca都发，这就不满足我们找角度里的special enough原则。有50%以上的账号是改名推，同样需要找相应的工具来判断。这里gmgn已经支持了。 </p>
+<p>另外一种方式是，去看发币的这个人先前的作品如何，如果这个人是web2的，看这个人的公司社会地位如何。这都可以成为项目估值的标准。可以用beta的标注来衡量，但在土狗季，上限的估算就不会严格按照10%的估值上限来进行了。 </p>
+<p>但是请注意，单纯的粉丝多，绝对不算角度。看到一些人拿着devsell的ca去cx，他们缺德，你也需要擦亮眼睛。 </p>
+<h3 id="c-快速买入"><a href="#c-快速买入" class="headerlink" title="c. 快速买入"></a>c. 快速买入</h3><p>热点出现的时候，拿到底部筹码的机会往往是秒级的，因此你必须要快。我觉得越是小资金，越需要对底部的筹码足够贪婪，对时间的追求足够极致，否则那只能说明你不是来赚钱的，你是来给前排送钱的。 </p>
+<p>我的做法是单独开一个交易bot，打开发送ca就自动买入的功能，这样能在交互操作上节省一秒钟的时间。观察到有些同行会在查看前两点之前先买入，这样确实可以做到比所有人都快，但是风险会被大大提高，不建议小资金这么做，你输不起。 </p>
+<p>我在工作比较忙的时候，会选择这种方式来赚钱，因为这种方式的推送频率较低，倍率较高，确定性较高，会更节省我的精力。</p>
+<h2 id="构建思路3-网站监控"><a href="#构建思路3-网站监控" class="headerlink" title="构建思路3 - 网站监控"></a>构建思路3 - 网站监控</h2><p>这里需要用到一款插件，叫distill web monitor，在google官方的插件市场就可以下载到（不对安全做背书，请自己对自己的财产安全负责） </p>
+<p>它实现的基本功能是，通过定期刷新的方式，监控网页的特定区域是否有变化，这对一些预热项目来说非常有用，例如前一阵子的LMAO（一个pumpfun的仿盘，虽然最后没有起来） </p>
+<p>我通过监控相应的网站，在正式发布之前逮到了网页dev在做上线测试，提前进入了<a target="_blank" rel="noopener" href="https://x.com/0xXQ1/status/1852028178228736024">网页</a> ，并且（应该是第一棒）在诸多ca当时的最底部买入了筹码。虽然平台整体不及预期，但还是赚到了几千u的收益。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>金狗总是出现在一天当中那些零碎的时间里。因此被动的接收信息的方法可以帮助你节省掉90%盯链的时间来做其他的事情。炒币目前只占我整体时间的10%-20%，想一想还是非常划算的。 </p>
+<p>看完你可能也明白了，赚钱不存在偷懒，只是功夫需要下在平时。再多思考一些，你看事情的角度就会变得非常不一样。</p>
 
                 
             </div>
@@ -669,7 +621,7 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://onefly.top/posts/241114.html">https://onefly.top/posts/241114.html</a>
+                    <a href="https://onefly.top/posts/241122.html">https://onefly.top/posts/241122.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -711,8 +663,8 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
                                     <span class="chip bg-color">sol</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">数据分析</span>
+                                <a href="/tags/%E5%9C%9F%E7%8B%97/">
+                                    <span class="chip bg-color">土狗</span>
                                 </a>
                             
                                 <a href="/tags/Web3/">
@@ -1149,9 +1101,10 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/241122.html">
                     <div class="card-image">
@@ -1169,9 +1122,9 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-11-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1184,6 +1137,7 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1210,13 +1164,13 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/241110.html">
+                <a href="/posts/241114.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="北大区块链博士XQ哥的Sol土狗角度秘籍">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ">
                         
-                        <span class="card-title">北大区块链博士XQ哥的Sol土狗角度秘籍</span>
+                        <span class="card-title">Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1227,14 +1181,14 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
-                                    技术教程
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
+                                    数据分析
                                 </a>
                             
                             
@@ -1248,8 +1202,8 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
                         <span class="chip bg-color">sol</span>
                     </a>
                     
-                    <a href="/tags/%E5%9C%9F%E7%8B%97/">
-                        <span class="chip bg-color">土狗</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                     <a href="/tags/Web3/">

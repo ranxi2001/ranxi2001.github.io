@@ -4430,7 +4430,7 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122633440-1531045239.png"></p>
 <p>2.启用 WebDAV 同步数据功能 ——<strong>配置VebDAV</strong></p>
 <p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122731118-841595791.png"></p>
-<p>网盘里面需要创建一个Xnote文件夹，然后在里面创建data.txt文件，<strong>此处报错和不懂</strong>的可以来 **<a href="https://x.com/Onefly_eth/status/1865806372308439350">推特评论区查看</a> **留言。</p>
+<p>网盘里面需要创建一个Xnote文件夹，然后在里面创建data.txt文件，<strong>此处报错和不懂</strong>的可以来 <a href="https://x.com/Onefly_eth/status/1865806372308439350">推特评论区查看</a> 留言。</p>
 <p>3.输入上面获取的网盘信息，数据目录写<code>Xnote/data.txt</code>,同步时间写30分钟</p>
 <p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241024122925278-136595560.png"></p>
 <p>保存后选择上传数据，另一个设备选择下载，之后就会自动同步，大功告成！</p>

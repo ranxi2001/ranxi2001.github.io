@@ -5046,4 +5046,283 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>Web3</tag>
       </tags>
   </entry>
+  <entry>
+    <title>0x哪吒：从0到100万人民币meme操作指南</title>
+    <url>/posts/250206.html</url>
+    <content><![CDATA[<h1 id="0x哪吒：从0到100万人民币meme操作指南"><a href="#0x哪吒：从0到100万人民币meme操作指南" class="headerlink" title="0x哪吒：从0到100万人民币meme操作指南"></a>0x哪吒：从0到100万人民币meme操作指南</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>哪吒(不甘心版)：<a href="https://x.com/0x_nezha/status/1886811255899611208">https://x.com/0x_nezha/status/1886811255899611208</a></p>
+<blockquote>
+<p>转载仅供收藏和方便阅读</p>
+</blockquote>
+<p>昨天收到了很多推友和群友的鼓励，真的非常感激。想了很久，觉得自己似乎没有什么特别的东西可以回报大家的善意。加上这两天状态不太好，也没心思继续打狗，索性决定把<strong>这一年在一级市场摸爬滚打积累的经验整理出来，分享给大家</strong>。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>虽然肯定有很多不足，但确实是掏心的了，对于刚接触一级的小白，或者正在二级市场挣扎的朋友，或许能提供一些帮助，哪怕只是少走一点弯路。<a href="https://gmgn.ai/?ref=cLf0ZwzZ&amp;chain=sol">GMGN</a> 是0-1000万美金，我就贴合自身情况一点，取名叫《0x_哪吒：从0到100万人民币meme操作指南》</p>
+<p>关于<a href="https://t.me/onefly_sol">如何配置机器人、购买代币，以及如何使用DEX行情软件</a>，这部分内容我不会详细展开。原因很简单，我认为这是最基础的操作，如果连这些都无法通过自己的摸索搞定，那么进入这个市场大概率也是亏钱的。这也可以看作是一种初次的筛选。如果你已经顺利完成了这一步，那么恭喜你，接下来我们可以进入正文了。</p>
+<h2 id="1-扫推-x2F-ins-x2F-warpcast-x2F-youtobe（名人币）"><a href="#1-扫推-x2F-ins-x2F-warpcast-x2F-youtobe（名人币）" class="headerlink" title="1.扫推/ins/ warpcast/youtobe（名人币）"></a>1.扫推/ins/ warpcast/youtobe（名人币）</h2><p>推特是Crypto社交圈的核心，其他平台虽然偶尔也有价值信息，但出现频率较低。 投资的核心就是投人，而在社交软件上判断一个人是否牛逼，主要看他的关系网——他是否认识牛人，或者是否有牛人关注他。比如，像马斯克、特朗普、v神、Solana官方、Solana创始人。 </p>
+<p>名人通常会更爱惜自己的声誉，因此他们的背书往往会给项目带来一定的市值支撑，同时也容易引发散户的FOMO情绪=早期进入能赚钱。 </p>
+<p>扫推的逻辑就是在于看发贴的人的背景和影响力。具体操作上，可以通过关键词（比如<a href="https://t.co/d8NJ928ZHR">http://pump.fun</a>）检索，如果有技术能力，可以自己做一个爬虫在tg进行推送。</p>
+<h2 id="2-扫链（熟能生巧）"><a href="#2-扫链（熟能生巧）" class="headerlink" title="2.扫链（熟能生巧）"></a>2.扫链（熟能生巧）</h2><p>区块链的代币发行都会上链，扫链也就是从源头找新发行的代币 扫链的核心是通过看板追踪新上线的代币。重点关注以下几个要素：头像、Ticker（代币名字）、官网、Twitter以及dev地址。 </p>
+<ul>
+<li>a. 头像和ticker更多是看自己的审美，需要多扫链培养，知道市场是喜欢什么样的。 </li>
+<li>b. 官网是看有没有牛逼的东西，是不是套皮，dev有没有用心做。 </li>
+<li>c. twitter就是看关注列表中有没有厉害的人以及twitter和项目之间能否验证。 </li>
+<li>d. pump发出来的币会带有dev地址。 Dev地址拿去twitter检索，看看是否有人曾经公开过这个钱包地址。 如果发现这个地址属于某个很牛的人，那这个币也会很牛逼。 有一点信息差，相当于悄咪咪的发币被抓包。</li>
+</ul>
+<h2 id="3-监控钱包玩法（循序渐进-持续积累）"><a href="#3-监控钱包玩法（循序渐进-持续积累）" class="headerlink" title="3.监控钱包玩法（循序渐进 持续积累）"></a>3.监控钱包玩法（循序渐进 持续积累）</h2><p>链上地址公开透明，监控钱包一定是相对较快获取到信息的方法。 </p>
+<ul>
+<li>a. 多收集中国和外国的车头钱包 一般来说，一个聪明钱会失误，但多个聪明钱失误的概率就会大大降低。 行情差的时候，这种玩法会小亏，一旦行情转好，这种玩法能猛赚。 </li>
+<li>b. 收集出名的币的dev钱包 dev重新再发币、转币都容易引起fomo，会是不错的信息差。</li>
+</ul>
+<h2 id="4-仿盘玩法"><a href="#4-仿盘玩法" class="headerlink" title="4.仿盘玩法"></a>4.仿盘玩法</h2><p>一人得道，鸡犬升天。当龙头币开始发光，市场上就会出现大量仿盘。 比如某个币爆红后，同一个开发者发的其他币也会被挖出来炒作，或者是开发者曾经在推特上推荐过的币。核心是围绕同一个dev逻辑 </p>
+<p>此外，时间维度也是一个重要的考量因素。市场有时会遵循“First is First”的原则，即优先关注最早发行的同名代币；有时则会追溯历史，寻找具有“OG”（Original）地位的早期项目。这些时间相关的叙事逻辑常常成为市场炒作的重要依据。 </p>
+<p>仿盘的炒作手法也多种多样，包括但不限于：主题延伸（如“狗”系代币成功后出现“猫”系代币）、命名变体（大小写、中英文混搭）、以及家族谱系（同一生态或主题下的系列代币）。</p>
+<h2 id="5-市场热点盘（高风险也有可能高收益）"><a href="#5-市场热点盘（高风险也有可能高收益）" class="headerlink" title="5.市场热点盘（高风险也有可能高收益）"></a>5.市场热点盘（高风险也有可能高收益）</h2><p>马斯克/trump/x发的推里面含有的单词，新闻上线出现的币名，电影出现的币名，看起来稍微meme的，都会有人去投机炒作，如果被野庄看上，可能会有高收益。</p>
+<h2 id="6-叙事盘（可能会有抄不完的底）"><a href="#6-叙事盘（可能会有抄不完的底）" class="headerlink" title="6.叙事盘（可能会有抄不完的底）"></a>6.叙事盘（可能会有抄不完的底）</h2><p>主要是玩二段，即便是优质代币，也总会有部分获利者选择离场，导致价格出现回调。但如果项目的叙事足够强，估值仍有上升空间，那么回调后往往会出现第二波上涨。结合K线走势和估值水平，判断是否值得入场。</p>
+<h2 id="7-新概念-x2F-新台子（盈亏比高-信息获取难）"><a href="#7-新概念-x2F-新台子（盈亏比高-信息获取难）" class="headerlink" title="7.新概念/新台子（盈亏比高 信息获取难）"></a>7.新概念/新台子（盈亏比高 信息获取难）</h2><p>拥抱新概念，新的东西总是会有人踏空，属于是蓝海市场，一旦有人涌入就是增量资金，高盈亏比，对信息的要求较高。</p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>sol</tag>
+        <tag>Web3</tag>
+        <tag>meme</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XQ哥的web3一级逻辑——时间差和信息差</title>
+    <url>/posts/250226.html</url>
+    <content><![CDATA[<h1 id="XQ哥的web3一级逻辑——时间差和信息差"><a href="#XQ哥的web3一级逻辑——时间差和信息差" class="headerlink" title="XQ哥的web3一级逻辑——时间差和信息差"></a>XQ哥的web3一级逻辑——时间差和信息差</h1><blockquote>
+<p>原文索引：<a href="https://x.com/0xXQ1/status/1894409517112447108">https://x.com/0xXQ1/status/1894409517112447108</a></p>
+</blockquote>
+<p>本篇Thread讲一下时间差和信息差。这两个比较抽象的概念可以帮助我判断市场上项目的合理估值和点位。而合理的估值就是降低接盘和卖飞概率的关键，因为一笔交易产生之前，你需要迅速得到的三个最基础的点位是合理买入点位、止盈点位和止损点位，而这三点恰恰离不开的就是估值，判断估值比较重要的一个方面就是合理评估你当前所处位置的时间差和信息差还有多少。这也是我目前所有交易利润最核心最本质的的来源。 折腾一周可算是办完了休学的手续，结果市场熊了。</p>
+<p>不过好在我不承担任何二级代币的风险，在SOL 260-290的这个区间基本卖光了TRUMP的收益，也算平稳落地。过两天准备一个人在国内到处转一转，正好这两天看看能不能多补几篇落下的文章。</p>
+<h2 id="1-时间差和信息差的定义"><a href="#1-时间差和信息差的定义" class="headerlink" title="1. 时间差和信息差的定义"></a>1. 时间差和信息差的定义</h2><p>时间差就是你比别人快或慢多少，当一个有角度的币注定会被人买入，那你买的快你就买的低，后面买的慢的人就会来给你接盘，这就是时间差赚钱最直观的逻辑。 </p>
+<p>信息差相似，或者可以被理解为更高级别的时间差。本质是通过信息差来制造时间差。为什么 <a href="https://x.com/search?q=$LIBRA&amp;src=cashtag_click">$LIBRA</a> 中米莱能割掉几乎全币圈的人，关键是他具有最顶级的信息差，面临全局更加透明。另外一个例子是在你做交易的时候，你是会通过一些迹象来猜测项目是否会拉盘，而庄家本身是决定拉盘的，那他就必然能赚到比你多的钱，这也是信息差所决定的。 </p>
+<p>这里先抛一个不负责的结论，好的市场应当是信息差主导的市场，而非时间差。因为只有信息差存在，有效市场假说不成立，散户才有在背离合理定价的这一部分空间里赚到差值的财富。当市场只剩时间差，意味着谁的网快谁的手速快就可以得到财富，那市场会被bot吃干抹净。因为信息差带来的机会更加平均，</p>
+<p>而时间差是赢者通吃的。 而很遗憾，当前的pump市场逐渐变成信息差主导的市场了（后面会给出例子）。当前的pump越来越像去年同期的铭文，当基建越来越丰富，各种交易工具层出不穷卷到飞起，当初那些高级的监控工具也飞入寻常百姓家的时候，市场反而无法给到你满意的答案。</p>
+<h2 id="2-时间差的层级"><a href="#2-时间差的层级" class="headerlink" title="2. 时间差的层级"></a>2. 时间差的层级</h2><p>这里我用层级来评估时间差的不同阶段。 </p>
+<p>一层：bot、量化玩家。根据预先定好的策略全自动买入卖出。手动玩家无法在时间层面战胜。这体现在市面上现存的一些自动开盘、封盘bot，以及刮刀。当你的对手都是手动的时候，自动策略+高gas小费可以保证获得最底部的筹码。 </p>
+<p>二层：手动扫链玩家。手动如果想获得最顶级的时间差，扫链是唯一的方式，只有这样能保证你能在全网第一时间得到目前链上出现的新项目。链上是所有项目唯一的公平的信息源。这个概念也可以扩展到新闻热点的交易。方程式是一层时间差的玩家，盯着方程式消息做news trade的则是二层的信息差玩家。同样也可以扩展到基于地址做内幕交易的玩家， 直接自动跟单的是一层时间差玩家，你第一时间根据买入情况和位置做判断的为二层时间差。 </p>
+<p>三层：被其他人cx的。这里的cx包括群聊、推、甚至是所谓的研报，统称三层。分为三层的原因很简单，因为在你之前一定有人建好仓准备砸你。如果继续细分，按照时间差快满顺序来说，可以排序为：微信私聊、小群群聊、大群群聊、推特、研报。 点对点的时效性一般大于私域，私域的小群时效性一般大于大群（因为大群总有人比你快看见，且多数群聊质量参差不齐）、私域的时效性大于大群。 </p>
+<p>产生这样层级的原因也很简单，每一层前面都有更多的人比你先看到比你先进去，这都会拉高你的成本和降低你的潜在收益区间。</p>
+<h2 id="3-时间差指导决策"><a href="#3-时间差指导决策" class="headerlink" title="3. 时间差指导决策"></a>3. 时间差指导决策</h2><p>这三层对于不同风险偏好和资金量的人来说选择也是不一样的。如果你的地址库充沛、当前市场行情好、那么一层玩家基本等于印钞机。但是直接跟单对应的就是每笔交易的确定性会更低，以及成本会更高。 </p>
+<p>对于二层玩家来说，你会具有更高的确定性和更好的对项目的覆盖程度。但是由于所有的信息都依赖你来进行筛选，因此对时间的要求更高。扫链玩家需要具有更多的时间全身心扑在链上，而监控地址或新闻热点的玩家则需要更快的进行决策和执行交易。我是处在第二层稍微靠后，即不扫链，等待热点和地址推送来进行快速的决策和交易。 </p>
+<p>而三层玩家虽然得到的信息量更少，相对更加省时间，但是你的不确定性和筹码成本都会更高。不确定性是指如果在相对不好的行情上了一个小角度盘，你会被前排cx你的人砸的很惨。他们画多长时间cx你，就会准备砸你有多狠。所以不建议小资金玩家沉浸在这个所谓的舒适区，你需要的是高倍数，不思进取等人喂饭是拿不到大结果的，信息从来都不是免费的。 </p>
+<p>另外，一些热点盘的新闻发出来以后，你需要根据时间来判断新闻的时效性。例如如果是针对马斯克的热点蹭盘，当你看到新闻已经是3min以后了说明你已经没有必要上角度比较小的盘了，大概率进去就是接盘。 </p>
+<p>这个逻辑同样适用于考古盘，当没角度玩的时候，市场就会出现考古盘。考古盘一定会有一批人等着砸你，如果此时你又是在twitter上看到别人写了一大段的考古文案，那么恭喜你，你极大概率会给别人接盘。所以我基本不会玩任何别人的考古盘，别人能考我又不是不会，下次自己考完埋伏别人就行了。 打币盘也如此。</p>
+<p>打币盘承受的不确定性甚至更大一些，可能的风险有：dev不打币直接砸你、dev打完币然后砸你、正主不承认打币盘、正主给打币的卖了、出现打币更多的人卷打币更少的盘….. 更重要的是，你很难确定合理的进入时间是什么时候。这里的结论是：打币盘盈亏比最高的进入时间是在内盘转外盘的时候，当你观察到dev已经转币，此时狙击相应的筹码是最好的，因为这个时候你的成本甚至可以做到比dev更低（因为你比他快） </p>
+<p>当然，下次在大群或推上看到ca或角度，你最应该做的事反思自己为什么没有先看到，而不是冲上去觉得好牛逼然后爽快接盘。</p>
+<h2 id="4-获取信息差的几种方式"><a href="#4-获取信息差的几种方式" class="headerlink" title="4. 获取信息差的几种方式"></a>4. 获取信息差的几种方式</h2><p>获取信息差最简单的方式，就是精进你的思路和工具。当下扫推工具已经泛滥，但其实早在Jenner时期就有扫推工具诞生，那个时候的扫推和现在比难度要低非常多。举这个例子是为了说明，好的持续的信息差可能意味着稳定、长期、高倍数的盈利策略。如果你不愿意自己去思考和找，那你唯一了解到它的时候就是它没有用的时候。具体来说，有下面几种思路： </p>
+<p><strong>建立监控体系：</strong>监控体系具体见上一篇，包括地址监控和扫推监控等可以，可以让你第一时间知道推特上哪位名人发了新盘子，这是很多类似 <a href="https://x.com/search?q=$Jelly&amp;src=cashtag_click">$Jelly</a> 的名人盘的第一信息源。这也是为什么我愿意写这些内容出来，因为这些内容本身并不是信息差，基于思路指导的属于你的体系才是信息差，这个是需要时间和经验来建立的， </p>
+<p><strong>挖地址：</strong>提前挖掘名人和kol的地址，建立地址储备和监控的体系。这样当名人发币，你就能够比直接看监控的人买的更快、成本更低。这种方式单币a7 a8的人我见过很多。也正是我一直说的，功夫要用在平时。 </p>
+<p><strong>优化工具：</strong>其实现在有了gpt和deepseek，<strong>写脚本来做监控并不是一件很难的事情</strong>。如果你能够对一个新的meta做相应的脚本来快速反应，实际上你创造了很好的信息差。举一个例子，从<code>makenowmeme</code>到   <a href="https://t.co/j5FGqrmWpq">http://lmao.fun </a> 到 <a href="https://t.co/8wuWjiXiBP">http://pump.science</a> 到现在的 <a href="https://t.co/gxRuaEEIoX">http://time.fun</a> ，我基本都有在第一时间对新盘和网站做监控，来获取最新的币，这样当别人还在手动刷新或等微信群喂饭的时候，我就可以在第一时间发现并进入。技术并不难，难的是思路和执行力。 </p>
+<p><strong>经验：</strong>在圈内的经验同样是信息差。当机会来临的时候（例如Trump），能够在第一时间做出对的决策并迅速执行，强烈依赖你过往的经验。通常这样现象级的机会是非常公平的，全网无论贫富，都具有相同的信息差。这个时候唯一能够体现出差别盈亏的就是你的经验。所以如果你想吃到下一个Trump，你一定要复盘Trump拿到大结果的那几位国人车头，这就是他们个人能力和经验的外在展现。这个逻辑也适用于所有的交易，复盘能为你带来经验的积累，下次就有希望做的更好。</p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>sol</tag>
+        <tag>土狗</tag>
+        <tag>Web3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【零基础教程】如何用 Binance Alpha 免费撸空投月薪1万+？完整刷分指南+收益计算策略</title>
+    <url>/posts/250526.html</url>
+    <content><![CDATA[<h1 id="【零基础教程】如何用-Binance-Alpha-免费撸空投月薪1万-？完整刷分指南-收益计算策略"><a href="#【零基础教程】如何用-Binance-Alpha-免费撸空投月薪1万-？完整刷分指南-收益计算策略" class="headerlink" title="【零基础教程】如何用 Binance Alpha 免费撸空投月薪1万+？完整刷分指南+收益计算策略"></a>【零基础教程】如何用 Binance Alpha 免费撸空投月薪1万+？完整刷分指南+收益计算策略</h1><p>Binance Alpha 正在掀起一场 Web3 空投革命。它通过<strong>资产余额+交易量</strong>赚取积分，帮助用户参与早期项目空投与代币生成（TGE）活动，实现低风险、高收益参与 Web3。本文为你全面拆解 Binance Alpha 的玩法、赚钱逻辑与实用技巧，适合所有从零起步的用户。</p>
+<blockquote>
+<p>📅 数据截至：2025年5月30日，内容持续更新，建议收藏！</p>
+</blockquote>
+<hr>
+<h2 id="✳️-Binance-Alpha-是什么？"><a href="#✳️-Binance-Alpha-是什么？" class="headerlink" title="✳️ Binance Alpha 是什么？"></a>✳️ Binance Alpha 是什么？</h2><p>Binance Alpha 是 Binance 在 2024 年底推出的一种<strong>Web3 积分机制</strong>，通过每日资产余额和交易量累积“Alpha Points”，进而兑换空投与 TGE 参与资格。该系统大幅提高了 Binance Web3 钱包的活跃度，截至 2025 年 5 月，其交易量市场占有率高达 <strong>95.7%</strong> 【<a href="https://m.marsbit.co/newsdetail/20250512191825396946.html">1</a>】。</p>
+<hr>
+<h2 id="🧱-Step-1：账号设置与钱包创建"><a href="#🧱-Step-1：账号设置与钱包创建" class="headerlink" title="🧱 Step 1：账号设置与钱包创建"></a>🧱 Step 1：账号设置与钱包创建</h2><ol>
+<li>注册 Binance 账户：<a href="https://www.marketwebb.me/join?ref=ONEFLY">Binance 官网注册有优惠奖励</a></li>
+<li>完成 KYC 身份认证（必需）</li>
+<li>打开 Binance App → 左上角 Binance Logo → “更多服务” → 设置【Web3 钱包】</li>
+<li>开始赚取 Alpha Points！</li>
+</ol>
+<hr>
+<h2 id="🎯-Step-2：Alpha-Points-积分机制详解"><a href="#🎯-Step-2：Alpha-Points-积分机制详解" class="headerlink" title="🎯 Step 2：Alpha Points 积分机制详解"></a>🎯 Step 2：Alpha Points 积分机制详解</h2><h3 id="💼-1-资产余额积分（Balance-Points）"><a href="#💼-1-资产余额积分（Balance-Points）" class="headerlink" title="💼 1. 资产余额积分（Balance Points）"></a>💼 1. 资产余额积分（Balance Points）</h3><table>
+<thead>
+<tr>
+<th>资产范围（$）</th>
+<th>每日可得积分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100 – 999</td>
+<td>1 分</td>
+</tr>
+<tr>
+<td>1,000 – 9,999</td>
+<td>2 分【推荐】</td>
+</tr>
+<tr>
+<td>10,000 – 99,999</td>
+<td>3 分</td>
+</tr>
+<tr>
+<td>100,000+</td>
+<td>4 分</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>✅ <strong>建议</strong>：保持 $1,000+ 资产，性价比最高</p>
+</blockquote>
+<hr>
+<h3 id="🔁-2-交易量积分（Volume-Points）【实测版】"><a href="#🔁-2-交易量积分（Volume-Points）【实测版】" class="headerlink" title="🔁 2. 交易量积分（Volume Points）【实测版】"></a>🔁 2. 交易量积分（Volume Points）【实测版】</h3><table>
+<thead>
+<tr>
+<th>成交额（约值）</th>
+<th>获得积分（Volume）</th>
+<th>示例备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$2</td>
+<td>1 分</td>
+<td>从2开始</td>
+</tr>
+<tr>
+<td>$32</td>
+<td>5 分</td>
+<td>2的幂次方计算</td>
+</tr>
+<tr>
+<td>$8000</td>
+<td>13 分</td>
+<td>对应基础交易额（如图）</td>
+</tr>
+<tr>
+<td>$16,000</td>
+<td>14 分</td>
+<td>成交翻倍 +1分【推荐】</td>
+</tr>
+<tr>
+<td>$32,000</td>
+<td>15 分</td>
+<td>成交再翻倍 +1分</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>✅ 买入 Alpha 项目代币并<strong>成交金额达到标准</strong>后即可获得对应积分，建议使用限价单或 BSC 链交易获取双倍积分。</p>
+</blockquote>
+<blockquote>
+<p>❗注意：卖出<strong>不计积分</strong>，刷分应以“买入为主”，成交量累计计算，<strong>非单笔交易</strong>。</p>
+<p>买入实操教程：一定要选择 Alpha代币进行交易哦！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250526152840881-1122744045.png"></p>
+</blockquote>
+<hr>
+<h3 id="⏳-3-积分规则补充说明"><a href="#⏳-3-积分规则补充说明" class="headerlink" title="⏳ 3. 积分规则补充说明"></a>⏳ 3. 积分规则补充说明</h3><ul>
+<li><strong>每日 UTC 23:59:59 快照</strong>【北京时间 第二天早上八点算昨天】，计算资产和交易量。</li>
+<li><strong>15 天滚动积分制度</strong>，旧积分将自动过期。</li>
+<li>可在 Binance App 中查看当前 Alpha Points。</li>
+<li>领取空投或参加<code>TGE</code>将会扣除最新获得的15分。</li>
+</ul>
+<hr>
+<h2 id="🚀-Step-3：如何参与空投和-TGE？"><a href="#🚀-Step-3：如何参与空投和-TGE？" class="headerlink" title="🚀 Step 3：如何参与空投和 TGE？"></a>🚀 Step 3：如何参与空投和 TGE？</h2><ol>
+<li>打开 App → “更多服务” → <strong>Alpha Events</strong></li>
+<li>查看当前可参与项目（如 DOOD、NXPC、ZKJ 等）</li>
+<li>点击“确认参与”，扣除积分</li>
+<li>活动开始后 <strong>马上空投到账</strong> Web3 钱包</li>
+</ol>
+<hr>
+<h2 id="📊-Step-4：实战策略与收益计算"><a href="#📊-Step-4：实战策略与收益计算" class="headerlink" title="📊 Step 4：实战策略与收益计算"></a>📊 Step 4：实战策略与收益计算</h2><h3 id="✅-推荐低成本刷分组合："><a href="#✅-推荐低成本刷分组合：" class="headerlink" title="✅ 推荐低成本刷分组合："></a>✅ 推荐低成本刷分组合：</h3><ul>
+<li>维持 <strong>$1,000+</strong> 资产 → 2 分/天</li>
+<li>每日交易 <strong>$16000 以上</strong> → 14 分/天</li>
+<li>每日共计 <strong>16 分</strong>，15 天累计 <strong>240 分</strong></li>
+</ul>
+<h3 id="📌-示例：SOON-空投案例"><a href="#📌-示例：SOON-空投案例" class="headerlink" title="📌 示例：SOON 空投案例"></a>📌 示例：SOON 空投案例</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>需求积分</th>
+<th>成本估算</th>
+<th>空投价值</th>
+<th>净收益率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Soon</td>
+<td>190 分</td>
+<td>~$75</td>
+<td>~$125</td>
+<td>约 40%</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>🧠 说明：含滑点、手续费估算。若计算资金占用机会成本，15 天收益约为 <strong>400%</strong> 。</p>
+</blockquote>
+<hr>
+<h2 id="🧠-Step-5：优化技巧与高阶策略"><a href="#🧠-Step-5：优化技巧与高阶策略" class="headerlink" title="🧠 Step 5：优化技巧与高阶策略"></a>🧠 Step 5：优化技巧与高阶策略</h2><h3 id="💡-刷分小技巧："><a href="#💡-刷分小技巧：" class="headerlink" title="💡 刷分小技巧："></a>💡 刷分小技巧：</h3><ul>
+<li><p>使用滑点0.01%【需要切换到币安钱包而不是交易平台】</p>
+</li>
+<li><p>选择合适的交易币种和交易对，有的币适合usdt有的适合bnb</p>
+<blockquote>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250530105208186-1431292977.png"></p>
+</blockquote>
+</li>
+<li><p>使用 <strong>限价单</strong> 或 <strong>BSC链交易</strong> 可获得 <strong>双倍积分</strong>【<a href="https://www.binance.com/zh-CN/support/announcement/detail/afa3aa4588404598b42950885355bef4">2</a>】</p>
+</li>
+<li><p>快速买入+卖出同一代币，减少价格波动和持仓风险</p>
+</li>
+<li><p>使用流动性高的项目（如 $ZKJ、B2）减少滑点</p>
+</li>
+</ul>
+<h3 id="👥-多账号操作建议："><a href="#👥-多账号操作建议：" class="headerlink" title="👥 多账号操作建议："></a>👥 多账号操作建议：</h3><ul>
+<li>若平台政策允许，合规操作多个账号可放大收益，但<strong>切勿违规套利</strong>！</li>
+</ul>
+<hr>
+<h2 id="⚠️-风险与争议：撸毛并非无风险"><a href="#⚠️-风险与争议：撸毛并非无风险" class="headerlink" title="⚠️ 风险与争议：撸毛并非无风险"></a>⚠️ 风险与争议：撸毛并非无风险</h2><p>尽管部分项目如 NXPC 单账号收益超 $700【<a href="https://www.panewslab.com/en/articles/i7bji6lh">3</a>】，但积分门槛也水涨船高（如 DOOD 一度高达 200 分），导致<strong>刷分成本上升，空投收益下降</strong>【<a href="https://www.feixiaohao.com.cn/news/12135454.html">4</a>】。</p>
+<p>建议：</p>
+<ul>
+<li>控制成本，不贪不赌；</li>
+<li>设置止盈策略，长期参与需精打细算；</li>
+<li>多关注 Binance 官方公告：<a href="https://www.binance.com/zh-CN/support/announcement">官方入口</a></li>
+</ul>
+<hr>
+<h2 id="📚-进阶阅读与工具推荐"><a href="#📚-进阶阅读与工具推荐" class="headerlink" title="📚 进阶阅读与工具推荐"></a>📚 进阶阅读与工具推荐</h2><ul>
+<li><p>输入钱包地址查询每日交易量和分数：<a href="https://www.bn-alpha.site/">https://www.bn-alpha.site/</a></p>
+<blockquote>
+<p>输入地址即可查询交易量和当日可获得积分数量</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250530105024786-383291776.png"></p>
+</blockquote>
+</li>
+<li><p>自动卖出工具币安 Alpha 交易助手：<a href="https://alphabot.cm/">https://alphabot.cm/</a></p>
+<blockquote>
+<p>这里讲解一下工具如何使用：<br>1.链接钱包 币安手机钱包扫码链接【交易平台切换到币安钱包】</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250530104401365-288700271.png"></p>
+<p>2.授权时间和代币</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250530104453274-1967172482.png"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250530104614781-1129942879.png"></p>
+<p>3.然后在手机端钱包开始交易 设置必须一致</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250530104925885-963570882.png"></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="✅-总结：Binance-Alpha-是撸空投的新黄金赛道？"><a href="#✅-总结：Binance-Alpha-是撸空投的新黄金赛道？" class="headerlink" title="✅ 总结：Binance Alpha 是撸空投的新黄金赛道？"></a>✅ 总结：Binance Alpha 是撸空投的新黄金赛道？</h2><p>Binance Alpha 的本质是<strong>“资产+交易 = 空投”</strong>。虽然玩法有内卷风险，但对精细操作的用户而言仍是<strong>高性价比的撸空投利器</strong>。通过本文教程，你可以：</p>
+<ul>
+<li>轻松上手 Binance Alpha 积分机制</li>
+<li>用最优交易策略刷分获利</li>
+<li>参与早期项目分发，提升 Web3 财富积累效率</li>
+</ul>
+<blockquote>
+<p>📢 提醒：高收益往往伴随高波动，请量力而行。</p>
+</blockquote>
+<hr>
+<p>如果你觉得这篇指南实用，不妨分享给朋友一起上车，或关注我的频道解锁更多 Web3 空投玩法！🚀</p>
+<p>如果还有什么不懂的地方，欢迎在X私信我：<a href="https://x.com/Onefly_eth">https://x.com/Onefly_eth</a></p>
+<p>或者加入右侧web3新人群！</p>
+<img src="https://img2023.cnblogs.com/blog/2910984/202505/2910984-20250526152510432-934828687.png" style="zoom: 33%;">]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>Airdrop</tag>
+        <tag>Binance</tag>
+      </tags>
+  </entry>
 </search>

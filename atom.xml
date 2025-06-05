@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2025-05-30T05:33:34.371Z</updated>
+  <updated>2025-06-05T09:42:55.550Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【2025.6】当前行情下 Solana 土狗打狗心得分享篇</title>
+    <link href="https://onefly.top/posts/250605.html"/>
+    <id>https://onefly.top/posts/250605.html</id>
+    <published>2025-06-05T09:15:51.000Z</published>
+    <updated>2025-06-05T09:42:55.550Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;【2025-6】当前行情下-Solana-土狗打狗心得分享篇&quot;&gt;&lt;a href=&quot;#【2025-6】当前行情下-Solana-土狗打狗心得分享篇&quot; class=&quot;headerlink&quot; title=&quot;【2025.6】当前行情下 Solana</summary>
+        
+      
+    
+    
+    
+    <category term="Web3" scheme="https://onefly.top/categories/Web3/"/>
+    
+    
+    <category term="sol" scheme="https://onefly.top/tags/sol/"/>
+    
+    <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
+    
+    <category term="meme" scheme="https://onefly.top/tags/meme/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【零基础教程】如何用 Binance Alpha 免费撸空投月薪1万+？完整刷分指南+收益计算策略</title>
     <link href="https://onefly.top/posts/250526.html"/>
     <id>https://onefly.top/posts/250526.html</id>
     <published>2025-05-26T03:15:51.000Z</published>
-    <updated>2025-05-30T05:33:34.371Z</updated>
+    <updated>2025-06-05T09:38:42.153Z</updated>
     
     
       
@@ -562,36 +591,6 @@
     
     
     <category term="Office" scheme="https://onefly.top/tags/Office/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>兼容性最高的Git push推送到Github仓库的SSH设置方法</title>
-    <link href="https://onefly.top/posts/241007.html"/>
-    <id>https://onefly.top/posts/241007.html</id>
-    <published>2024-10-07T08:20:51.000Z</published>
-    <updated>2024-10-08T01:34:40.596Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;使用 SSH 方式推送项目到 GitHub 是一种安全且方便的方式，尤其在频繁推送代码时不需要每次都输入用户名和密码。以下是详细的步骤教程，涵盖从创建 SSH 密钥到配置 GitHub、推送项目的整个流程。&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="技术教程" scheme="https://onefly.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="git" scheme="https://onefly.top/tags/git/"/>
-    
-    <category term="github" scheme="https://onefly.top/tags/github/"/>
-    
-    <category term="jetbrain" scheme="https://onefly.top/tags/jetbrain/"/>
     
   </entry>
   

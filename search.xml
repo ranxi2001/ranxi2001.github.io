@@ -5507,7 +5507,8 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <hr>
 <h2 id="1-研究背景与动机"><a href="#1-研究背景与动机" class="headerlink" title="1. 研究背景与动机"></a>1. 研究背景与动机</h2><p>在加密货币市场中，由于不同交易所的撮合引擎、参与者结构以及 API 响应速度存在差异，即使是同一资产，其买卖报价在平台之间也经常出现短期偏差。如果能够利用这些报价延迟，就可以构建“时延套利策略”，实现短期稳定盈利。</p>
 <p>本研究分析了领先交易所（交易所 A）和跟随交易所（交易所 B）之间的报价同步性，重点关注<strong>仅在交易所 B 开仓并等待价格收敛</strong>以实现盈利的策略。</p>
-<h3 id="💼-交易所账户类型与策略设计的关系："><a href="#💼-交易所账户类型与策略设计的关系：" class="headerlink" title="💼 交易所账户类型与策略设计的关系："></a>💼 交易所账户类型与策略设计的关系：</h3><table>
+<h3 id="💼-交易所账户类型与策略设计的关系："><a href="#💼-交易所账户类型与策略设计的关系：" class="headerlink" title="💼 交易所账户类型与策略设计的关系："></a>💼 交易所账户类型与策略设计的关系：</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>账户类型</th>
@@ -5515,7 +5516,8 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <th>劣势</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>标准账户</td>
 <td>简单易用</td>
 <td>手续费高，API 速率限制</td>
@@ -5535,7 +5537,9 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <td>返佣高，无门槛</td>
 <td>适合小规模套利</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <hr>
 <h2 id="2-策略逻辑与入场条件"><a href="#2-策略逻辑与入场条件" class="headerlink" title="2. 策略逻辑与入场条件"></a>2. 策略逻辑与入场条件</h2><p>设：</p>
 <ul>
@@ -5546,8 +5550,10 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 </ul>
 <p>入场条件：</p>
 <ul>
-<li>多头条件：$$ \Delta P_{\text{long}} = P^{A}<em>{\text{bid}} - P^{B}</em>{\text{ask}} &gt; \theta_{\text{entry}} $$</li>
-<li>空头条件：$$ \Delta P_{\text{short}} = P^{B}<em>{\text{bid}} - P^{A}</em>{\text{ask}} &gt; \theta_{\text{entry}} $$</li>
+<li>多头条件：<script type="math/tex; mode=display">
+\Delta P_{\text{long}} = P^{A}*{\text{bid}} - P^{B}*{\text{ask}} > \theta_{\text{entry}}</script></li>
+<li>空头条件：<script type="math/tex; mode=display">
+\Delta P_{\text{short}} = P^{B}*{\text{bid}} - P^{A}*{\text{ask}} > \theta_{\text{entry}}</script></li>
 </ul>
 <p>其中 $\theta_{\text{entry}}$ 是最小套利阈值（例如 0.15%）。</p>
 <blockquote>
@@ -5603,14 +5609,16 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <li>年化回报 ≈ 3066%</li>
 </ul>
 <hr>
-<h2 id="7-风险因素与对策"><a href="#7-风险因素与对策" class="headerlink" title="7. 风险因素与对策"></a>7. 风险因素与对策</h2><table>
+<h2 id="7-风险因素与对策"><a href="#7-风险因素与对策" class="headerlink" title="7. 风险因素与对策"></a>7. 风险因素与对策</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>风险类型</th>
 <th>对策建议</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>价差未收敛</td>
 <td>最大持仓时间、交易量确认</td>
 </tr>
@@ -5638,7 +5646,9 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <td>系统故障</td>
 <td>冗余机制、自动报警系统</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <hr>
 <h2 id="8-未来研究方向"><a href="#8-未来研究方向" class="headerlink" title="8. 未来研究方向"></a>8. 未来研究方向</h2><ul>
 <li>跨交易所延迟预测（如 LSTM）</li>

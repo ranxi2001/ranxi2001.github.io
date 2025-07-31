@@ -5502,7 +5502,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
     <title>时延套利策略研究：基于双交易所报价延迟的量化交易模型</title>
     <url>/posts/250731.html</url>
     <content><![CDATA[<h1 id="时延套利策略研究：基于双交易所报价延迟的量化交易模型"><a href="#时延套利策略研究：基于双交易所报价延迟的量化交易模型" class="headerlink" title="时延套利策略研究：基于双交易所报价延迟的量化交易模型"></a>时延套利策略研究：基于双交易所报价延迟的量化交易模型</h1><blockquote>
-<p><strong>长文预警｜全文干货</strong></p>
 <p><strong>作者：</strong> Waynecoin | <strong>单位：</strong> Alpha 9 Ventures  | <strong>日期：</strong> 2025年7月</p>
 </blockquote>
 <hr>
@@ -5547,8 +5546,8 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 </ul>
 <p>入场条件：</p>
 <ul>
-<li>多头条件：$\Delta P_{\text{long}} = P^{A}<em>{\text{bid}} - P^{B}</em>{\text{ask}} &gt; \theta_{\text{entry}}$</li>
-<li>空头条件：$\Delta P_{\text{short}} = P^{B}<em>{\text{bid}} - P^{A}</em>{\text{ask}} &gt; \theta_{\text{entry}}$</li>
+<li>多头条件：$$ \Delta P_{\text{long}} = P^{A}<em>{\text{bid}} - P^{B}</em>{\text{ask}} &gt; \theta_{\text{entry}} $$</li>
+<li>空头条件：$$ \Delta P_{\text{short}} = P^{B}<em>{\text{bid}} - P^{A}</em>{\text{ask}} &gt; \theta_{\text{entry}} $$</li>
 </ul>
 <p>其中 $\theta_{\text{entry}}$ 是最小套利阈值（例如 0.15%）。</p>
 <blockquote>

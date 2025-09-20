@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://onefly.top/posts/25920.html</loc>
+    
+    <lastmod>2025-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/posts/250920.html</loc>
     
     <lastmod>2025-09-20</lastmod>
@@ -943,6 +952,34 @@
   
   <url>
     <loc>https://onefly.top/tags/%E4%BA%A4%E6%98%93%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/Adobe/</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/Acrobat/</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/PDF/</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2025-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

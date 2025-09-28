@@ -116,7 +116,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
       
       <i class="fab fa-blogger" style="zoom: 0.6;"></i>
       
@@ -219,7 +219,7 @@
         
         <li class="m-nav-item">
 	  
-		<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fab fa-blogger"></i>
 			
@@ -431,11 +431,11 @@
         </div>
         <p>点击加入【☞ <a href="https://www.cnblogs.com/ranxi169/p/18456954" target="_blank"><strong>WEB3新人交流群</strong></a> ☜】</p>
         <div style="margin-top: 10px;">
-            <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranxi169/p/18456954"><span style="font-size: 16px; font-weight: bold; background: linear-gradient(45deg, #ff00cc, #3333ff); -webkit-background-clip: text; color: transparent; animation: rainbow-text 2s infinite; display: inline-block;">加群注册就给你发100元微信红包 ↑</span></a>
+            <a href="https://www.cnblogs.com/ranxi169/p/18456954"><span style="font-size: 16px; font-weight: bold; background: linear-gradient(45deg, #ff00cc, #3333ff); -webkit-background-clip: text; color: transparent; animation: rainbow-text 2s infinite; display: inline-block;">加群注册就给你发100元微信红包 ↑</span></a>
         </div>
         <p><strong style="color: #f0890c;">加密货币交易所</strong> 购买比特币教程：<a href="https://onefly.top/posts/24219.html" target="_blank">https://onefly.top/posts/24219.html</a></p>
         <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国内ip】</strong>：<a href="https://onefly.top/posts/8888.html">https://onefly.top/posts/8888.html</a></p>
-        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国外ip】</strong>：<a target="_blank" rel="noopener" href="https://www.okx.com/zh-hans/join/45175356">https://okx.com/cn/join/45175356</a></p>
+        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国外ip】</strong>：<a href="https://www.okx.com/zh-hans/join/45175356">https://okx.com/cn/join/45175356</a></p>
         <p>视频网盘等会员和自媒体刷粉：<a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">https://hy.huoyuan.xyz/a/b/c///</a></p>
 
     </div>
@@ -558,7 +558,7 @@
 <li>使用过滤功能快速定位特定的表或字段。</li>
 </ul>
 <p>利用 Data Explorer 可以帮助你更快地找到你需要的数据，并了解这些数据的结构。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241114220654496-210989301.png"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241114220654496-210989301.png" alt=""></p>
 <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p>Dune 使用 Trino 语法的 SQL，对于很多只写过 MySQL 的人来说，这些语法可能会有一些不同，但大部分基础查询是相似的，基本语法和我们所熟悉的 SQL 应该相当接近。下面对一些常用的 SQL 基础语法用词进行解释：</p>
 <ul>
 <li><p><strong>WITH</strong>：用于定义公用表表达式（CTE），可以让查询分步骤进行，增加可读性和模块化。</p>
@@ -578,7 +578,6 @@
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
 <span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span>
 <span class="token keyword">WHERE</span> block_time <span class="token operator">&gt;=</span> <span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">INTERVAL</span> <span class="token string">'7'</span> <span class="token keyword">DAY</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li><strong>SELECT</strong> 语法用于查询指定列。在这个例子中，查询所有交易。</li>
 <li><strong>FROM</strong> 用于指定数据来源，此处为 <code>solana.transactions</code> 表。</li>
@@ -589,7 +588,6 @@
 <span class="token keyword">FROM</span> solana<span class="token punctuation">.</span><span class="token keyword">transactions</span> t<span class="token punctuation">,</span>
      UNNEST<span class="token punctuation">(</span>t<span class="token punctuation">.</span>pre_token_balances<span class="token punctuation">)</span> <span class="token keyword">AS</span> pre
 <span class="token keyword">WHERE</span> pre<span class="token punctuation">.</span>owner <span class="token operator">=</span> <span class="token string">'6EDJ7JuynXSPaMvufzAX4swSRJZXv6uPi4s6jmo33xj5'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li><strong>UNNEST</strong> 语法用来将数组字段解包为多行，此处是 <code>pre_token_balances</code>。</li>
 <li><strong>AS</strong> pre 用来为每一行数组记录赋予一个别名pre，便于后面查询。</li>
@@ -635,7 +633,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
 <span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
   block_time <span class="token keyword">DESC</span>
 <span class="token keyword">LIMIT</span> <span class="token number">1000</span><span class="token punctuation">;</span>  <span class="token comment">-- 限制最多返回 1000 条记录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="这个查询的过程"><a href="#这个查询的过程" class="headerlink" title="这个查询的过程"></a>这个查询的过程</h4><ol>
 <li>首先在 <code>filtered_transactions</code> 中限制查询最近7天的数据，使数据量更可控。</li>
 <li>然后在 <code>wallet_related_transactions</code> 中将这些数据进行 <code>UNNEST</code>，按照为指定链下链的交易进行过滤。</li>
@@ -1654,6 +1651,16 @@ $(function () {
 
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
     
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>

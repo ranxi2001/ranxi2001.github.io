@@ -116,7 +116,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
       
       <i class="fab fa-blogger" style="zoom: 0.6;"></i>
       
@@ -219,7 +219,7 @@
         
         <li class="m-nav-item">
 	  
-		<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fab fa-blogger"></i>
 			
@@ -431,11 +431,11 @@
         </div>
         <p>点击加入【☞ <a href="https://www.cnblogs.com/ranxi169/p/18456954" target="_blank"><strong>WEB3新人交流群</strong></a> ☜】</p>
         <div style="margin-top: 10px;">
-            <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranxi169/p/18456954"><span style="font-size: 16px; font-weight: bold; background: linear-gradient(45deg, #ff00cc, #3333ff); -webkit-background-clip: text; color: transparent; animation: rainbow-text 2s infinite; display: inline-block;">加群注册就给你发100元微信红包 ↑</span></a>
+            <a href="https://www.cnblogs.com/ranxi169/p/18456954"><span style="font-size: 16px; font-weight: bold; background: linear-gradient(45deg, #ff00cc, #3333ff); -webkit-background-clip: text; color: transparent; animation: rainbow-text 2s infinite; display: inline-block;">加群注册就给你发100元微信红包 ↑</span></a>
         </div>
         <p><strong style="color: #f0890c;">加密货币交易所</strong> 购买比特币教程：<a href="https://onefly.top/posts/24219.html" target="_blank">https://onefly.top/posts/24219.html</a></p>
         <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国内ip】</strong>：<a href="https://onefly.top/posts/8888.html">https://onefly.top/posts/8888.html</a></p>
-        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国外ip】</strong>：<a target="_blank" rel="noopener" href="https://www.okx.com/zh-hans/join/45175356">https://okx.com/cn/join/45175356</a></p>
+        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国外ip】</strong>：<a href="https://www.okx.com/zh-hans/join/45175356">https://okx.com/cn/join/45175356</a></p>
         <p>视频网盘等会员和自媒体刷粉：<a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">https://hy.huoyuan.xyz/a/b/c///</a></p>
 
     </div>
@@ -552,7 +552,6 @@
                 <p>使用 SSH 方式推送项目到 GitHub 是一种安全且方便的方式，尤其在频繁推送代码时不需要每次都输入用户名和密码。以下是详细的步骤教程，涵盖从创建 SSH 密钥到配置 GitHub、推送项目的整个流程。</p>
 <h2 id="使用-SSH-方式推送-GitHub-项目的完整流程"><a href="#使用-SSH-方式推送-GitHub-项目的完整流程" class="headerlink" title="使用 SSH 方式推送 GitHub 项目的完整流程"></a>使用 SSH 方式推送 GitHub 项目的完整流程</h2><h3 id="1-生成-SSH-密钥"><a href="#1-生成-SSH-密钥" class="headerlink" title="1. 生成 SSH 密钥"></a>1. <strong>生成 SSH 密钥</strong></h3><p>如果你还没有生成 SSH 密钥，首先需要在本地机器生成一个 SSH 密钥。</p>
 <h4 id="在命令行中执行以下命令："><a href="#在命令行中执行以下命令：" class="headerlink" title="在命令行中执行以下命令："></a>在命令行中执行以下命令：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-b</span> <span class="token number">4096</span> <span class="token parameter variable">-C</span> <span class="token string">"your_email@example.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <ul>
 <li><code>-t rsa</code>: 使用 RSA 算法生成密钥。</li>
 <li><code>-b 4096</code>: 密钥长度为 4096 位（推荐）。</li>
@@ -561,16 +560,13 @@
 <p>按提示，默认情况下，SSH 密钥会被生成到 <code>~/.ssh/id_rsa</code> 文件中。</p>
 <h3 id="2-添加-SSH-密钥到-SSH-代理"><a href="#2-添加-SSH-密钥到-SSH-代理" class="headerlink" title="2. 添加 SSH 密钥到 SSH 代理"></a>2. <strong>添加 SSH 密钥到 SSH 代理</strong></h3><p>要确保 SSH 代理在后台运行，并将生成的密钥添加到代理中：</p>
 <h4 id="启动-SSH-代理："><a href="#启动-SSH-代理：" class="headerlink" title="启动 SSH 代理："></a>启动 SSH 代理：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>ssh-agent <span class="token parameter variable">-s</span><span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h4 id="添加私钥到-SSH-代理："><a href="#添加私钥到-SSH-代理：" class="headerlink" title="添加私钥到 SSH 代理："></a>添加私钥到 SSH 代理：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-add ~/.ssh/id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h3 id="3-将-SSH-公钥添加到-GitHub"><a href="#3-将-SSH-公钥添加到-GitHub" class="headerlink" title="3. 将 SSH 公钥添加到 GitHub"></a>3. <strong>将 SSH 公钥添加到 GitHub</strong></h3><p>现在，你需要将生成的公钥添加到 GitHub 上。</p>
 <h4 id="获取公钥内容："><a href="#获取公钥内容：" class="headerlink" title="获取公钥内容："></a>获取公钥内容：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ~/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>这会输出公钥的内容，类似于 <code>ssh-rsa AAAA...your_key...== your_email@example.com</code>，复制这一整段内容。</p>
 <h4 id="在-GitHub-上添加-SSH-密钥："><a href="#在-GitHub-上添加-SSH-密钥：" class="headerlink" title="在 GitHub 上添加 SSH 密钥："></a>在 GitHub 上添加 SSH 密钥：</h4><ol>
 <li>登录 GitHub 账户。</li>
-<li>进入 GitHub 设置页面：<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a>。</li>
+<li>进入 GitHub 设置页面：<a href="https://github.com/settings/keys">https://github.com/settings/keys</a>。</li>
 <li>点击右上角的 “New SSH Key”。</li>
 <li>在 “Title” 框中为该密钥起一个名字，比如 <code>My Laptop SSH Key</code>。</li>
 <li>在 “Key” 框中粘贴刚才复制的公钥内容。</li>
@@ -578,28 +574,19 @@
 </ol>
 <h3 id="4-测试-SSH-连接"><a href="#4-测试-SSH-连接" class="headerlink" title="4. 测试 SSH 连接"></a>4. <strong>测试 SSH 连接</strong></h3><p>你可以通过以下命令测试 SSH 连接是否正常：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>如果配置正确，GitHub 应该会返回类似这样的信息：</p>
 <pre class="line-numbers language-none"><code class="language-none">Hi &lt;username&gt;! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>这表明你已经成功配置 SSH 连接，并且可以推送代码到 GitHub。</p>
 <h3 id="5-配置本地-Git-远程仓库-URL-为-SSH"><a href="#5-配置本地-Git-远程仓库-URL-为-SSH" class="headerlink" title="5. 配置本地 Git 远程仓库 URL 为 SSH"></a>5. <strong>配置本地 Git 远程仓库 URL 为 SSH</strong></h3><p>如果你已经克隆了项目仓库并且仓库使用的是 HTTPS 方式，你需要将远程仓库的 URL 修改为 SSH 方式。</p>
 <h4 id="先检查当前远程仓库-URL："><a href="#先检查当前远程仓库-URL：" class="headerlink" title="先检查当前远程仓库 URL："></a>先检查当前远程仓库 URL：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>如果显示的是 HTTPS URL，如 <code>https://github.com/username/repository.git</code>，需要将其更改为 SSH URL。</p>
 <h4 id="修改远程仓库-URL-为-SSH："><a href="#修改远程仓库-URL-为-SSH：" class="headerlink" title="修改远程仓库 URL 为 SSH："></a>修改远程仓库 URL 为 SSH：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin git@github.com:<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>/<span class="token operator">&lt;</span>repository<span class="token operator">&gt;</span>.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>这里的 <code>&lt;username&gt;</code> 是你的 GitHub 用户名，<code>&lt;repository&gt;</code> 是你的项目仓库名称。</p>
 <h3 id="6-推送本地代码到-GitHub"><a href="#6-推送本地代码到-GitHub" class="headerlink" title="6. 推送本地代码到 GitHub"></a>6. <strong>推送本地代码到 GitHub</strong></h3><p>现在你已经配置好 SSH，接下来可以使用 Git 进行代码的推送操作。</p>
 <h4 id="添加文件到-Git-仓库："><a href="#添加文件到-Git-仓库：" class="headerlink" title="添加文件到 Git 仓库："></a>添加文件到 Git 仓库：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h4 id="提交更改："><a href="#提交更改：" class="headerlink" title="提交更改："></a>提交更改：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Initial commit"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h4 id="推送代码到-GitHub："><a href="#推送代码到-GitHub：" class="headerlink" title="推送代码到 GitHub："></a>推送代码到 GitHub：</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin main<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>如果你的默认分支是 <code>master</code>，则使用：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<p>如果你的默认分支是 <code>master</code>，则使用：<br></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p></p>
 <h3 id="7-后续操作"><a href="#7-后续操作" class="headerlink" title="7. 后续操作"></a>7. <strong>后续操作</strong></h3><p>在完成上述配置后，你可以直接通过 <code>git push</code> 命令推送本地代码到 GitHub，无需再输入用户名和密码。</p>
 <h3 id="8-总结流程"><a href="#8-总结流程" class="headerlink" title="8. 总结流程"></a>8. <strong>总结流程</strong></h3><ol>
 <li>使用 <code>ssh-keygen</code> 生成 SSH 密钥。</li>
@@ -619,7 +606,7 @@
 <li><p>将公钥添加到 GitHub：</p>
 <ol>
 <li>复制公钥内容：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ~/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>登录 GitHub，进入 <a target="_blank" rel="noopener" href="https://github.com/settings/keys">SSH 和 GPG 密钥页面</a>。</li>
+<li>登录 GitHub，进入 <a href="https://github.com/settings/keys">SSH 和 GPG 密钥页面</a>。</li>
 <li>点击 “New SSH Key”，将公钥粘贴到 “Key” 框中并点击 “Add SSH Key”。</li>
 </ol>
 </li>
@@ -645,21 +632,18 @@
 </ol>
 <h4 id="d-修改远程仓库-URL-为-SSH"><a href="#d-修改远程仓库-URL-为-SSH" class="headerlink" title="d. 修改远程仓库 URL 为 SSH"></a>d. <strong>修改远程仓库 URL 为 SSH</strong></h4><p>确保你使用的是 SSH URL，而不是 HTTPS URL：</p>
 <ol>
-<li><p>在 JetBrains 工具中，打开 <code>View &gt; Tool Windows &gt; Git</code>（或按快捷键 <code>Alt + 9</code>）。</p>
-</li>
-<li><p>在 Git 工具窗口中，点击 <code>Log</code> 标签。</p>
-</li>
-<li><p>点击右上角的 “Remotes” 按钮（小齿轮图标），选择 “Manage Remotes”。</p>
-</li>
+<li>在 JetBrains 工具中，打开 <code>View &gt; Tool Windows &gt; Git</code>（或按快捷键 <code>Alt + 9</code>）。</li>
+<li>在 Git 工具窗口中，点击 <code>Log</code> 标签。</li>
+<li>点击右上角的 “Remotes” 按钮（小齿轮图标），选择 “Manage Remotes”。</li>
 <li><p>选择现有的远程仓库（如 <code>origin</code>），并将 URL 修改为 SSH 格式，例如：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git@github.com:<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>/<span class="token operator">&lt;</span>repository<span class="token operator">&gt;</span>.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>点击 <code>OK</code>，保存配置。</p>
 </li>
 </ol>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241007161531617-614017691.png"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241007161531617-614017691.png" alt=""></p>
 <h3 id="3-推送代码到-GitHub-使用-SSH"><a href="#3-推送代码到-GitHub-使用-SSH" class="headerlink" title="3. 推送代码到 GitHub 使用 SSH"></a>3. <strong>推送代码到 GitHub 使用 SSH</strong></h3><p>在正确配置 SSH 后，你可以使用 JetBrains 工具推送代码到 GitHub。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241007161642006-1873807662.png"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241007161642006-1873807662.png" alt=""></p>
 <h4 id="a-提交代码"><a href="#a-提交代码" class="headerlink" title="a. 提交代码"></a>a. <strong>提交代码</strong></h4><ol>
 <li>点击 <code>Git</code> 工具窗口，选择 <code>Commit</code> 或者点击顶部工具栏的 <code>Commit</code> 按钮。</li>
 <li>选择你想要提交的文件，填写提交信息后点击 <code>Commit</code> 按钮。</li>
@@ -672,15 +656,16 @@
 <h3 id="4-测试-SSH-连接-1"><a href="#4-测试-SSH-连接-1" class="headerlink" title="4. 测试 SSH 连接"></a>4. <strong>测试 SSH 连接</strong></h3><p>你可以使用 JetBrains 工具中的 SSH 测试来确保连接正确。</p>
 <h4 id="a-打开终端"><a href="#a-打开终端" class="headerlink" title="a. 打开终端"></a>a. <strong>打开终端</strong></h4><ol>
 <li>在 JetBrains 工具中，打开 <code>Terminal</code> 窗口（在工具窗口中可以找到）。</li>
-<li>运行以下命令测试 SSH 连接：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-如果配置正确，你应该看到类似的信息：<pre class="line-numbers language-none"><code class="language-none">Hi &lt;username&gt;! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>运行以下命令测试 SSH 连接：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果配置正确，你应该看到类似的信息：</p>
+<pre class="line-numbers language-none"><code class="language-none">Hi &lt;username&gt;! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 </ol>
 <h3 id="5-常见问题排查"><a href="#5-常见问题排查" class="headerlink" title="5. 常见问题排查"></a>5. <strong>常见问题排查</strong></h3><ul>
 <li><p><strong>Git 出现认证错误</strong>：<br>如果你收到 <code>Permission denied (publickey)</code> 错误，确保你的 SSH 密钥已被添加到 SSH 代理，并且 GitHub 上的 SSH 公钥已正确配置。</p>
 <p>使用以下命令确认 SSH 密钥已加载到代理中：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-add <span class="token parameter variable">-l</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>如果没有列出密钥，使用以下命令添加密钥：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-add ~/.ssh/id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -1696,6 +1681,16 @@ $(function () {
 
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
     
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>

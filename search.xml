@@ -7143,7 +7143,7 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <li>输入邮箱、设置密码，接收验证码验证邮箱。</li>
 <li>填写个人信息：<ul>
 <li>居住国家：中国大陆。</li>
-<li>姓名：用汉字，与身份证匹配。</li>
+<li>姓名：用拼音 <code>XX Zhang</code>，与身份证匹配。</li>
 <li>手机号：中国大陆号，接收短信。</li>
 <li>地址：真实国内地址（可选英文），小概率触发。</li>
 </ul>
@@ -7176,8 +7176,12 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <li>验证失败：重试视频，确保环境安静、无眼镜；或联系客服（APP 内聊天）。</li>
 <li>电脑注册：网页注册后，用微信扫 APP 二维码完成人脸验证。</li>
 </ul>
+<blockquote>
 <h3 id="⚠️-常见问题：账户名称为中文导致转账失败怎么办？"><a href="#⚠️-常见问题：账户名称为中文导致转账失败怎么办？" class="headerlink" title="⚠️ 常见问题：账户名称为中文导致转账失败怎么办？"></a>⚠️ 常见问题：账户名称为中文导致转账失败怎么办？</h3><p><strong>问题描述</strong>：<br>使用大陆身份证注册 Wise，默认账户名为中文。当从 ZA Bank、PayPal 等不支持中文输入的平台向 Wise 转账时，会因无法输入中文名称而导致转账失败。</p>
-<p><strong>解决方法</strong>：<br>无需更改注册证件，只需设置“首选姓名”为拼音即可：</p>
+<p><strong>解决方法</strong>：</p>
+<p><strong><em>优先建议联系客服一劳永逸！</em></strong>：<strong>帮助—联系我们—-更新信息—更改我的个人详细信息—我的姓名—仍然需要帮助—在线联系客服</strong></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202512/2910984-20251205162549517-182602685.png" style="zoom:25%;"></p>
+<p>无需更改注册证件，只需设置“首选姓名”为拼音即可：</p>
 <ol>
 <li>在 Wise 中打开 <strong>设置</strong> &gt; <strong>个人信息</strong>。</li>
 <li>找到 <strong>首选姓名 (Preferred Name)</strong> 选项。</li>
@@ -7185,6 +7189,7 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
 <li>保存后，使用此拼音姓名进行转账。</li>
 </ol>
 <p><img src="https://img2024.cnblogs.com/blog/2910984/202512/2910984-20251205153848590-809836356.png" style="zoom: 33%;"></p>
+</blockquote>
 <h1 id="步骤-3-激活账户（入金，首次小额，5-10-分钟）"><a href="#步骤-3-激活账户（入金，首次小额，5-10-分钟）" class="headerlink" title="步骤 3: 激活账户（入金，首次小额，5-10 分钟）"></a>步骤 3: 激活账户（入金，首次小额，5-10 分钟）</h1><ol>
 <li>在港币账户下，选择“添加资金”（Add money）。<strong>这一步就能看到你的卡号和收款信息了！</strong></li>
 <li>推荐用港卡入金（0 手续费）：如果已有香港银行卡（如 ZA Bank、HSBC），转入 200 HKD（最小激活额）。</li>

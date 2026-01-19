@@ -558,31 +558,31 @@
 <p>这篇文章就是要解决这个问题。我会先带你理解 Claude Code 的 SDK 体系——Skills、Agents、Subagents 的本质和协作方式，然后给出具体可行的解耦方案，让你也能把自己的 skills 从 Claude Code 中解放出来，真正实现自动化和开放使用。</p>
 <hr>
 <h2 id="第二部分：理解-Claude-Code-体系"><a href="#第二部分：理解-Claude-Code-体系" class="headerlink" title="第二部分：理解 Claude Code 体系"></a>第二部分：理解 Claude Code 体系</h2><h3 id="Skills、Agents、Subagents-是什么？"><a href="#Skills、Agents、Subagents-是什么？" class="headerlink" title="Skills、Agents、Subagents 是什么？"></a>Skills、Agents、Subagents 是什么？</h3><p>要解耦 skills，首先要理解它们的本质。我用一个做菜的比喻来解释：</p>
-<p><strong>Skills（技能）就像菜谱。</strong> 比如我用的 brainstorming skill，就像一份”头脑风暴菜谱”，上面写着：什么时候用这个菜谱（开始做新功能前）、具体步骤是什么（先问一个问题、再提几个方案、最后分段呈现设计）。重点是：<strong>Skills 不是代码，而是一份 Markdown 文档</strong>，就像菜谱是文字而不是食材。</p>
-<p><strong>举个实际例子</strong>：我的”写文章 skill”里写着：”先理解用户想写什么主题 → 问清楚目标读者是谁 → 提出 3 种文章结构 → 用户选择后，分段写作并逐段确认”。这就是一份”菜谱”。</p>
+<p><strong>Skills（技能）就像菜谱。</strong> 比如我用的 brainstorming skill，就像一份“头脑风暴菜谱”，上面写着：什么时候用这个菜谱（开始做新功能前）、具体步骤是什么（先问一个问题、再提几个方案、最后分段呈现设计）。重点是：<strong>Skills 不是代码，而是一份 Markdown 文档</strong>，就像菜谱是文字而不是食材。</p>
+<p><strong>举个实际例子</strong>：我的“写文章 skill”里写着：“先理解用户想写什么主题 → 问清楚目标读者是谁 → 提出 3 种文章结构 → 用户选择后，分段写作并逐段确认”。这就是一份“菜谱”。</p>
 <p><strong>Agents（代理）就像请来的专业厨师。</strong> 比如 code-reviewer agent 就像一位专门负责品鉴的大厨，他有自己的评判标准、专业术语、沟通方式。你把做好的菜交给他，他会按照自己的专业标准给出反馈。Agent 和主 Claude 是分开的，就像主厨和品鉴师是两个人。</p>
 <p><strong>Subagents（子代理）就像临时工。</strong> 比如你要做 10 道菜，每道菜都叫一个新的临时厨师来做，做完这道菜他就走了，下一道菜再叫一个新的。为什么这样？因为每个临时工只专注做一道菜，不会被之前的菜影响判断，也不会把上一道菜的调料带到下一道菜里。</p>
 <h3 id="它们怎么配合？"><a href="#它们怎么配合？" class="headerlink" title="它们怎么配合？"></a>它们怎么配合？</h3><p>你（Claude Code 主实例）手里拿着菜谱（Skills），决定今天做什么菜。需要专业意见时，请来大厨（Agent）。需要批量做菜时，雇一堆临时工（Subagents），每人做一道。</p>
 <hr>
-<h2 id="第三部分：Claude-Code-在背后做了什么？"><a href="#第三部分：Claude-Code-在背后做了什么？" class="headerlink" title="第三部分：Claude Code 在背后做了什么？"></a>第三部分：Claude Code 在背后做了什么？</h2><h3 id="为什么在-Claude-Code-中”很简单”？"><a href="#为什么在-Claude-Code-中”很简单”？" class="headerlink" title="为什么在 Claude Code 中”很简单”？"></a>为什么在 Claude Code 中”很简单”？</h3><p>现在你可能会问：既然 Skills 只是 Markdown 文档，为什么它们在 Claude Code 中能自动工作，离开就不行了？</p>
-<p>答案是：<strong>Claude Code 在背后做了大量”脏活累活”。</strong></p>
-<h4 id="第一件事：自动加载和触发"><a href="#第一件事：自动加载和触发" class="headerlink" title="第一件事：自动加载和触发"></a>第一件事：自动加载和触发</h4><p>你把 skill 文件放到 <code>.claude/skills/</code> 目录，Claude Code 会自动扫描、解析、在合适的时机触发。就像你把菜谱放进菜谱架，厨房系统会自动识别”哦，今天要做新菜，应该先看看这份’准备工作菜谱’”。</p>
-<p><strong>举例</strong>：我的 brainstorming skill 文件开头写着 <code>description: "You MUST use this before any creative work"</code>，Claude Code 看到我要创建新功能，就自动把这份 skill 的内容注入到对话中。我不需要手动说”请使用 brainstorming skill”。</p>
-<h4 id="第二件事：提供工具箱"><a href="#第二件事：提供工具箱" class="headerlink" title="第二件事：提供工具箱"></a>第二件事：提供工具箱</h4><p>Claude Code 内置了一堆工具：读文件（Read）、写文件（Edit）、执行命令（Execute）、搜索代码（Grep）等等。我的”发布公众号 skill”能工作，是因为它可以调用这些工具——读取文章内容、调用发布 API、保存结果。</p>
-<h4 id="第三件事：管理上下文"><a href="#第三件事：管理上下文" class="headerlink" title="第三件事：管理上下文"></a>第三件事：管理上下文</h4><p>所有 skills 共享同一个”工作台”：同样的文件系统、同样的 git 仓库、同样的对话历史。我的”写文章 skill”生成的内容，”生成配图 skill”可以直接读取，”发布公众号 skill”可以直接使用。就像所有厨师在同一个厨房工作，食材、调料、工具都共享。</p>
+<h2 id="第三部分：Claude-Code-在背后做了什么？"><a href="#第三部分：Claude-Code-在背后做了什么？" class="headerlink" title="第三部分：Claude Code 在背后做了什么？"></a>第三部分：Claude Code 在背后做了什么？</h2><h3 id="为什么在-Claude-Code-中“很简单”？"><a href="#为什么在-Claude-Code-中“很简单”？" class="headerlink" title="为什么在 Claude Code 中“很简单”？"></a>为什么在 Claude Code 中“很简单”？</h3><p>现在你可能会问：既然 Skills 只是 Markdown 文档，为什么它们在 Claude Code 中能自动工作，离开就不行了？</p>
+<p>答案是：<strong>Claude Code 在背后做了大量“脏活累活”。</strong></p>
+<h4 id="第一件事：自动加载和触发"><a href="#第一件事：自动加载和触发" class="headerlink" title="第一件事：自动加载和触发"></a>第一件事：自动加载和触发</h4><p>你把 skill 文件放到 <code>.claude/skills/</code> 目录，Claude Code 会自动扫描、解析、在合适的时机触发。就像你把菜谱放进菜谱架，厨房系统会自动识别“哦，今天要做新菜，应该先看看这份’准备工作菜谱’”。</p>
+<p><strong>举例</strong>：我的 brainstorming skill 文件开头写着 <code>description: "You MUST use this before any creative work"</code>，Claude Code 看到我要创建新功能，就自动把这份 skill 的内容注入到对话中。我不需要手动说“请使用 brainstorming skill”。</p>
+<h4 id="第二件事：提供工具箱"><a href="#第二件事：提供工具箱" class="headerlink" title="第二件事：提供工具箱"></a>第二件事：提供工具箱</h4><p>Claude Code 内置了一堆工具：读文件（Read）、写文件（Edit）、执行命令（Execute）、搜索代码（Grep）等等。我的“发布公众号 skill”能工作，是因为它可以调用这些工具——读取文章内容、调用发布 API、保存结果。</p>
+<h4 id="第三件事：管理上下文"><a href="#第三件事：管理上下文" class="headerlink" title="第三件事：管理上下文"></a>第三件事：管理上下文</h4><p>所有 skills 共享同一个“工作台”：同样的文件系统、同样的 git 仓库、同样的对话历史。我的“写文章 skill”生成的内容，“生成配图 skill”可以直接读取，“发布公众号 skill”可以直接使用。就像所有厨师在同一个厨房工作，食材、调料、工具都共享。</p>
 <hr>
 <h2 id="第四部分：Claude-Agent-SDK-架构深度解析"><a href="#第四部分：Claude-Agent-SDK-架构深度解析" class="headerlink" title="第四部分：Claude Agent SDK 架构深度解析"></a>第四部分：Claude Agent SDK 架构深度解析</h2><h3 id="Claude-Agent-SDK-是什么？"><a href="#Claude-Agent-SDK-是什么？" class="headerlink" title="Claude Agent SDK 是什么？"></a>Claude Agent SDK 是什么？</h3><p><strong>Claude Agent SDK 是 Anthropic 官方提供的 Agent 开发框架。</strong> 它的核心理念很简单：给 Claude 一台计算机。</p>
-<p>什么意思？就像程序员工作需要终端、文件系统、代码编辑器，Claude 也需要这些工具才能真正”干活”。SDK 就是提供这些能力的框架。</p>
+<p>什么意思？就像程序员工作需要终端、文件系统、代码编辑器，Claude 也需要这些工具才能真正“干活”。SDK 就是提供这些能力的框架。</p>
 <h3 id="三层分工：谁负责什么？"><a href="#三层分工：谁负责什么？" class="headerlink" title="三层分工：谁负责什么？"></a>三层分工：谁负责什么？</h3><p>整个系统分三层，每层干不同的事：</p>
 <p><strong>第一层：用户层</strong> - 这是你和系统交互的地方。可以是网页、可以是 API、可以是命令行。你在这里提需求，系统在这里给你结果。</p>
-<p><strong>第二层：编排层</strong> - 这是”大脑”。主 Agent 在这里工作，它的任务是：听懂你要什么、决定该调用哪些 skills、协调它们的执行顺序、管理整个过程的上下文（记住之前发生了什么）。Skills 也在这一层，它们是”工作手册”，告诉 Agent 该怎么做事。</p>
-<p><strong>第三层：执行层</strong> - 这是”手脚”。Subagents 在这里干具体的活：写文件、调用 API、生成图片、发布内容。Tools（工具函数）也在这里，它们是具体的能力。还有文件系统，作为工作空间存放中间结果。</p>
+<p><strong>第二层：编排层</strong> - 这是“大脑”。主 Agent 在这里工作，它的任务是：听懂你要什么、决定该调用哪些 skills、协调它们的执行顺序、管理整个过程的上下文（记住之前发生了什么）。Skills 也在这一层，它们是“工作手册”，告诉 Agent 该怎么做事。</p>
+<p><strong>第三层：执行层</strong> - 这是“手脚”。Subagents 在这里干具体的活：写文件、调用 API、生成图片、发布内容。Tools（工具函数）也在这里，它们是具体的能力。还有文件系统，作为工作空间存放中间结果。</p>
 <p><strong>简单说</strong>：用户层接需求，编排层做决策，执行层干活。就像你去餐厅点菜（用户层），经理安排厨师和流程（编排层），厨师做菜（执行层）。</p>
 <hr>
 <h2 id="第五部分：Skills、Agents、Subagents-的分工"><a href="#第五部分：Skills、Agents、Subagents-的分工" class="headerlink" title="第五部分：Skills、Agents、Subagents 的分工"></a>第五部分：Skills、Agents、Subagents 的分工</h2><h3 id="为什么需要三个角色？"><a href="#为什么需要三个角色？" class="headerlink" title="为什么需要三个角色？"></a>为什么需要三个角色？</h3><p>在 Claude Agent SDK 中，Skills、Agents、Subagents 各司其职，缺一不可。让我用一个完整的例子来说明。</p>
 <p><strong>场景：你要写一篇文章并发布到公众号</strong></p>
-<h4 id="Skills：工作流程的定义者"><a href="#Skills：工作流程的定义者" class="headerlink" title="Skills：工作流程的定义者"></a>Skills：工作流程的定义者</h4><p>Skills 是”剧本”，定义了整个工作应该怎么做。</p>
-<p>比如你有一个”内容创作 skill”，它的剧本是这样的：</p>
+<h4 id="Skills：工作流程的定义者"><a href="#Skills：工作流程的定义者" class="headerlink" title="Skills：工作流程的定义者"></a>Skills：工作流程的定义者</h4><p>Skills 是“剧本”，定义了整个工作应该怎么做。</p>
+<p>比如你有一个“内容创作 skill”，它的剧本是这样的：</p>
 <ol>
 <li>先问用户：写什么主题？目标读者是谁？</li>
 <li>提出 3 种文章结构让用户选择</li>
@@ -590,25 +590,25 @@
 <li>文章完成后，生成配图</li>
 <li>最后发布到公众号</li>
 </ol>
-<p><strong>Skills 不干活，它只告诉 Agent”该做什么、按什么顺序做”。</strong> 就像菜谱告诉你先切菜、再炒菜、最后装盘，但菜谱本身不会动手。</p>
-<h4 id="Agent：决策和调度者"><a href="#Agent：决策和调度者" class="headerlink" title="Agent：决策和调度者"></a>Agent：决策和调度者</h4><p>Agent 是”项目经理”，它拿着 Skills 这份剧本，负责执行和调度。</p>
-<p>当你说”我要写一篇关于 AI 的文章”，主 Agent 会：</p>
+<p><strong>Skills 不干活，它只告诉 Agent“该做什么、按什么顺序做”。</strong> 就像菜谱告诉你先切菜、再炒菜、最后装盘，但菜谱本身不会动手。</p>
+<h4 id="Agent：决策和调度者"><a href="#Agent：决策和调度者" class="headerlink" title="Agent：决策和调度者"></a>Agent：决策和调度者</h4><p>Agent 是“项目经理”，它拿着 Skills 这份剧本，负责执行和调度。</p>
+<p>当你说“我要写一篇关于 AI 的文章”，主 Agent 会：</p>
 <ol>
 <li>理解你的需求</li>
-<li>找到”内容创作 skill”这份剧本</li>
+<li>找到“内容创作 skill”这份剧本</li>
 <li>按照剧本的步骤，开始工作</li>
 <li>决定什么时候该派发 Subagent 去干具体的活</li>
 <li>收集所有结果，最终交付给你</li>
 </ol>
 <p><strong>Agent 做决策，但不亲自干重活。</strong> 就像项目经理规划任务、分配工作，但不会自己去写代码。</p>
-<h4 id="Subagents：具体任务的执行者"><a href="#Subagents：具体任务的执行者" class="headerlink" title="Subagents：具体任务的执行者"></a>Subagents：具体任务的执行者</h4><p>Subagents 是”临时工”，专门负责某一个具体任务。</p>
+<h4 id="Subagents：具体任务的执行者"><a href="#Subagents：具体任务的执行者" class="headerlink" title="Subagents：具体任务的执行者"></a>Subagents：具体任务的执行者</h4><p>Subagents 是“临时工”，专门负责某一个具体任务。</p>
 <p>在这个例子中，主 Agent 会派发多个 Subagents：</p>
 <ul>
 <li><strong>写作 Subagent</strong>：负责写文章的某一段</li>
 <li><strong>配图 Subagent</strong>：负责调用图片生成 API，生成配图</li>
 <li><strong>发布 Subagent</strong>：负责调用公众号 API，完成发布</li>
 </ul>
-<p><strong>每个 Subagent 只关注自己的任务，完成后就消失。</strong> 为什么要这样？因为上下文隔离。写作 Subagent 不需要知道配图的细节，配图 Subagent 不需要知道发布的逻辑。这样每个任务都是”干净”的，不会互相干扰。</p>
+<p><strong>每个 Subagent 只关注自己的任务，完成后就消失。</strong> 为什么要这样？因为上下文隔离。写作 Subagent 不需要知道配图的细节，配图 Subagent 不需要知道发布的逻辑。这样每个任务都是“干净”的，不会互相干扰。</p>
 <h3 id="三者的协作关系"><a href="#三者的协作关系" class="headerlink" title="三者的协作关系"></a>三者的协作关系</h3><p><strong>Skills 定义流程 → Agent 执行调度 → Subagents 完成任务</strong></p>
 <p>用餐厅的例子：</p>
 <ul>
@@ -628,7 +628,7 @@
 </ol>
 <p>听起来很复杂？确实如此。但好消息是：<strong>有办法解决。</strong></p>
 <hr>
-<h2 id="第七部分：从架构看解耦方案"><a href="#第七部分：从架构看解耦方案" class="headerlink" title="第七部分：从架构看解耦方案"></a>第七部分：从架构看解耦方案</h2><h3 id="现在问题就清晰了"><a href="#现在问题就清晰了" class="headerlink" title="现在问题就清晰了"></a>现在问题就清晰了</h3><p>理解了 Claude Agent SDK 的架构和分工，”如何解耦”的答案就呼之欲出了。</p>
+<h2 id="第七部分：从架构看解耦方案"><a href="#第七部分：从架构看解耦方案" class="headerlink" title="第七部分：从架构看解耦方案"></a>第七部分：从架构看解耦方案</h2><h3 id="现在问题就清晰了"><a href="#现在问题就清晰了" class="headerlink" title="现在问题就清晰了"></a>现在问题就清晰了</h3><p>理解了 Claude Agent SDK 的架构和分工，“如何解耦”的答案就呼之欲出了。</p>
 <p>在 Claude Code 中，这三层都是现成的：</p>
 <ul>
 <li>Skills 自动加载</li>
@@ -636,7 +636,7 @@
 <li>Subagents 可以随时派发</li>
 <li>工具、文件系统、上下文管理都内置好了</li>
 </ul>
-<p><strong>要解耦，就是要把这三层”搬出来”，在 Web/API 环境中重建。</strong></p>
+<p><strong>要解耦，就是要把这三层“搬出来”，在 Web/API 环境中重建。</strong></p>
 <h3 id="解耦的核心：重建编排层"><a href="#解耦的核心：重建编排层" class="headerlink" title="解耦的核心：重建编排层"></a>解耦的核心：重建编排层</h3><p>关键在于<strong>编排层</strong>。执行层相对简单（调用 API、操作文件），用户层也好办（做个网页或 API 接口）。难的是编排层：<strong>如何让主 Agent 理解需求、选择 skills、协调执行？</strong></p>
 <p>有三种方案：</p>
 <h4 id="方案一：直接使用-Claude-Agent-SDK"><a href="#方案一：直接使用-Claude-Agent-SDK" class="headerlink" title="方案一：直接使用 Claude Agent SDK"></a>方案一：直接使用 Claude Agent SDK</h4><p>最直接的方式：用 Anthropic 官方的 Agent SDK 来构建你的系统。</p>
@@ -670,8 +670,8 @@
 <p><strong>改造重点</strong>：</p>
 <ol>
 <li><strong>Skills 变成 System Prompt</strong>：你的 skill 文件内容会成为 Agent 的 system prompt 的一部分，告诉 Agent 该如何工作。</li>
-<li><strong>工具函数变成 Tools</strong>：你的”生成图片”、”发布公众号”等能力，需要封装成 SDK 的 Tools 格式，让 Agent 可以调用。</li>
-<li><strong>触发逻辑变成编排逻辑</strong>：原来 Claude Code 自动触发 skills，现在你需要在主 Agent 的 prompt 中定义”什么情况下用哪个 skill”。</li>
+<li><strong>工具函数变成 Tools</strong>：你的“生成图片”、“发布公众号”等能力，需要封装成 SDK 的 Tools 格式，让 Agent 可以调用。</li>
+<li><strong>触发逻辑变成编排逻辑</strong>：原来 Claude Code 自动触发 skills，现在你需要在主 Agent 的 prompt 中定义“什么情况下用哪个 skill”。</li>
 </ol>
 <h3 id="第二步：搭建基础架构"><a href="#第二步：搭建基础架构" class="headerlink" title="第二步：搭建基础架构"></a>第二步：搭建基础架构</h3><p>你需要准备的环境：</p>
 <ul>
@@ -698,8 +698,8 @@
 <span class="token list punctuation">2.</span> 提出 3 种结构
 <span class="token list punctuation">3.</span> 分段写作并确认<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>改造后（作为 System Prompt 的一部分）</strong>：</p>
-<p>你需要把这个内容整合到主 Agent 的 system prompt 中，告诉它：”当用户要写文章时，按照这个流程工作”。</p>
-<p>同时，把”生成图片”、”发布公众号”等操作封装成 Tools，让 Agent 可以调用。</p>
+<p>你需要把这个内容整合到主 Agent 的 system prompt 中，告诉它：“当用户要写文章时，按照这个流程工作”。</p>
+<p>同时，把“生成图片”、“发布公众号”等操作封装成 Tools，让 Agent 可以调用。</p>
 <h3 id="第四步：封装工具函数"><a href="#第四步：封装工具函数" class="headerlink" title="第四步：封装工具函数"></a>第四步：封装工具函数</h3><p>你的每个能力都要变成一个 Tool：</p>
 <ul>
 <li><code>generate_image</code>：调用图片生成 API</li>
@@ -732,12 +732,12 @@
 <p>Agent SDK 支持创建 Subagent，你只需要定义 Subagent 的角色和任务，SDK 会处理上下文隔离和结果收集。</p>
 <h3 id="第七步：暴露-Web-API-接口"><a href="#第七步：暴露-Web-API-接口" class="headerlink" title="第七步：暴露 Web/API 接口"></a>第七步：暴露 Web/API 接口</h3><p><strong>用户通过 Web 或 API 访问</strong>：</p>
 <ol>
-<li>用户发送请求：”帮我写一篇关于 AI 的文章并发布到公众号”</li>
+<li>用户发送请求：“帮我写一篇关于 AI 的文章并发布到公众号”</li>
 <li>你的 Web 服务接收请求，传递给主 Agent</li>
 <li>主 Agent 执行整个流程（调用 skills、派发 Subagents、使用 Tools）</li>
 <li>返回结果给用户</li>
 </ol>
-<p><strong>关键点</strong>：你需要管理会话状态，让用户可以多轮对话（比如 Agent 问”目标读者是谁”，用户回答后继续）。</p>
+<p><strong>关键点</strong>：你需要管理会话状态，让用户可以多轮对话（比如 Agent 问“目标读者是谁”，用户回答后继续）。</p>
 <h3 id="实施难点和注意事项"><a href="#实施难点和注意事项" class="headerlink" title="实施难点和注意事项"></a>实施难点和注意事项</h3><h4 id="难点一：上下文管理"><a href="#难点一：上下文管理" class="headerlink" title="难点一：上下文管理"></a>难点一：上下文管理</h4><ul>
 <li>多个 skills 之间如何传递数据？用文件系统作为中转。</li>
 <li>对话历史如何保存？用 SDK 的上下文管理功能。</li>

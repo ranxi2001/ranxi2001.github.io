@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-01-19T18:07:07.358Z</updated>
+  <updated>2026-01-19T18:54:26.805Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/260120.html"/>
     <id>https://onefly.top/posts/260120.html</id>
     <published>2026-01-20T02:00:00.000Z</published>
-    <updated>2026-01-19T18:07:07.358Z</updated>
+    <updated>2026-01-19T18:54:26.805Z</updated>
     
     
     <summary type="html">Vercel 推出 Skills 命令行工具，打造 AI 技能的 npm，通过 npx skills 一键安装 AI 代理技能扩展。</summary>
@@ -44,7 +44,7 @@
     <link href="https://onefly.top/posts/260118.html"/>
     <id>https://onefly.top/posts/260118.html</id>
     <published>2026-01-18T06:15:00.000Z</published>
-    <updated>2026-01-19T17:19:19.332Z</updated>
+    <updated>2026-01-19T18:54:26.803Z</updated>
     
     
     <summary type="html">深度解析 Claude Code 的 Skills、Agents、Subagents 体系架构，详解如何将 Claude Code 中的 skills 解耦到 Web API 环境，实现自动化和开放使用。从架构理解到实施方案，一文掌握 AI Agent 开发的核心原理。</summary>
@@ -67,7 +67,7 @@
     <link href="https://onefly.top/posts/260112.html"/>
     <id>https://onefly.top/posts/260112.html</id>
     <published>2026-01-12T08:31:52.000Z</published>
-    <updated>2026-01-18T15:53:46.030Z</updated>
+    <updated>2026-01-19T18:54:26.809Z</updated>
     
     
     <summary type="html">DAN KOE分享如何在一天内彻底改变你的生活。摆脱传统新年决心的陷阱，采用正确的方式实现真正的人生转变。</summary>
@@ -90,7 +90,7 @@
     <link href="https://onefly.top/posts/260104.html"/>
     <id>https://onefly.top/posts/260104.html</id>
     <published>2026-01-04T00:25:14.000Z</published>
-    <updated>2026-01-19T17:16:14.486Z</updated>
+    <updated>2026-01-19T18:54:26.807Z</updated>
     
     
     <summary type="html">使用 tmux 让多个 AI 终端互相感知、通讯和控制，实现蜂群式自动协作编程。一个人 + N 个 AI = 一支开发团队。</summary>
@@ -275,9 +275,9 @@
     
     <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
-    <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
-    
     <category term="Office工具" scheme="https://onefly.top/tags/Office%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
     
   </entry>
   
@@ -298,11 +298,11 @@
     
     <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
+    <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
+    
     <category term="绘图工具" scheme="https://onefly.top/tags/%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7/"/>
     
     <category term="资源软件" scheme="https://onefly.top/tags/%E8%B5%84%E6%BA%90%E8%BD%AF%E4%BB%B6/"/>
-    
-    <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
     
   </entry>
   

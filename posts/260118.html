@@ -34,9 +34,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>    
     <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
 </head>
 
 
@@ -563,12 +563,14 @@
 <p><strong>Agents（代理）就像请来的专业厨师。</strong> 比如 code-reviewer agent 就像一位专门负责品鉴的大厨，他有自己的评判标准、专业术语、沟通方式。你把做好的菜交给他，他会按照自己的专业标准给出反馈。Agent 和主 Claude 是分开的，就像主厨和品鉴师是两个人。</p>
 <p><strong>Subagents（子代理）就像临时工。</strong> 比如你要做 10 道菜，每道菜都叫一个新的临时厨师来做，做完这道菜他就走了，下一道菜再叫一个新的。为什么这样？因为每个临时工只专注做一道菜，不会被之前的菜影响判断，也不会把上一道菜的调料带到下一道菜里。</p>
 <h3 id="它们怎么配合？"><a href="#它们怎么配合？" class="headerlink" title="它们怎么配合？"></a>它们怎么配合？</h3><p>你（Claude Code 主实例）手里拿着菜谱（Skills），决定今天做什么菜。需要专业意见时，请来大厨（Agent）。需要批量做菜时，雇一堆临时工（Subagents），每人做一道。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232826746-1500154580.jpg" alt="Skills、Agents、Subagents 协作示意图"></p>
 <hr>
 <h2 id="第三部分：Claude-Code-在背后做了什么？"><a href="#第三部分：Claude-Code-在背后做了什么？" class="headerlink" title="第三部分：Claude Code 在背后做了什么？"></a>第三部分：Claude Code 在背后做了什么？</h2><h3 id="为什么在-Claude-Code-中“很简单”？"><a href="#为什么在-Claude-Code-中“很简单”？" class="headerlink" title="为什么在 Claude Code 中“很简单”？"></a>为什么在 Claude Code 中“很简单”？</h3><p>现在你可能会问：既然 Skills 只是 Markdown 文档，为什么它们在 Claude Code 中能自动工作，离开就不行了？</p>
 <p>答案是：<strong>Claude Code 在背后做了大量“脏活累活”。</strong></p>
 <h4 id="第一件事：自动加载和触发"><a href="#第一件事：自动加载和触发" class="headerlink" title="第一件事：自动加载和触发"></a>第一件事：自动加载和触发</h4><p>你把 skill 文件放到 <code>.claude/skills/</code> 目录，Claude Code 会自动扫描、解析、在合适的时机触发。就像你把菜谱放进菜谱架，厨房系统会自动识别“哦，今天要做新菜，应该先看看这份’准备工作菜谱’”。</p>
 <p><strong>举例</strong>：我的 brainstorming skill 文件开头写着 <code>description: "You MUST use this before any creative work"</code>，Claude Code 看到我要创建新功能，就自动把这份 skill 的内容注入到对话中。我不需要手动说“请使用 brainstorming skill”。</p>
-<h4 id="第二件事：提供工具箱"><a href="#第二件事：提供工具箱" class="headerlink" title="第二件事：提供工具箱"></a>第二件事：提供工具箱</h4><p>Claude Code 内置了一堆工具：读文件（Read）、写文件（Edit）、执行命令（Execute）、搜索代码（Grep）等等。我的“发布公众号 skill”能工作，是因为它可以调用这些工具——读取文章内容、调用发布 API、保存结果。</p>
+<h4 id="第二件事：提供工具箱"><a href="#第二件事：提供工具箱" class="headerlink" title="第二件事：提供工具箱"></a>第二件事：提供工具箱</h4><p>Claude Code 内置了一堆工具：读文件（Read）、写文件（Edit）、执行命令（Execute）、搜索代码（Grep）等等。我的”发布公众号 skill”能工作，是因为它可以调用这些工具——读取文章内容、调用发布 API、保存结果。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232824891-1701345939.jpg" alt="Claude Code 提供的工具箱"></p>
 <h4 id="第三件事：管理上下文"><a href="#第三件事：管理上下文" class="headerlink" title="第三件事：管理上下文"></a>第三件事：管理上下文</h4><p>所有 skills 共享同一个“工作台”：同样的文件系统、同样的 git 仓库、同样的对话历史。我的“写文章 skill”生成的内容，“生成配图 skill”可以直接读取，“发布公众号 skill”可以直接使用。就像所有厨师在同一个厨房工作，食材、调料、工具都共享。</p>
 <hr>
 <h2 id="第四部分：Claude-Agent-SDK-架构深度解析"><a href="#第四部分：Claude-Agent-SDK-架构深度解析" class="headerlink" title="第四部分：Claude Agent SDK 架构深度解析"></a>第四部分：Claude Agent SDK 架构深度解析</h2><h3 id="Claude-Agent-SDK-是什么？"><a href="#Claude-Agent-SDK-是什么？" class="headerlink" title="Claude Agent SDK 是什么？"></a>Claude Agent SDK 是什么？</h3><p><strong>Claude Agent SDK 是 Anthropic 官方提供的 Agent 开发框架。</strong> 它的核心理念很简单：给 Claude 一台计算机。</p>
@@ -578,6 +580,8 @@
 <p><strong>第二层：编排层</strong> - 这是“大脑”。主 Agent 在这里工作，它的任务是：听懂你要什么、决定该调用哪些 skills、协调它们的执行顺序、管理整个过程的上下文（记住之前发生了什么）。Skills 也在这一层，它们是“工作手册”，告诉 Agent 该怎么做事。</p>
 <p><strong>第三层：执行层</strong> - 这是“手脚”。Subagents 在这里干具体的活：写文件、调用 API、生成图片、发布内容。Tools（工具函数）也在这里，它们是具体的能力。还有文件系统，作为工作空间存放中间结果。</p>
 <p><strong>简单说</strong>：用户层接需求，编排层做决策，执行层干活。就像你去餐厅点菜（用户层），经理安排厨师和流程（编排层），厨师做菜（执行层）。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232828060-1107868320.jpg" alt="三层架构示意图"></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232827609-708613120.jpg" alt="餐厅场景类比"></p>
 <hr>
 <h2 id="第五部分：Skills、Agents、Subagents-的分工"><a href="#第五部分：Skills、Agents、Subagents-的分工" class="headerlink" title="第五部分：Skills、Agents、Subagents 的分工"></a>第五部分：Skills、Agents、Subagents 的分工</h2><h3 id="为什么需要三个角色？"><a href="#为什么需要三个角色？" class="headerlink" title="为什么需要三个角色？"></a>为什么需要三个角色？</h3><p>在 Claude Agent SDK 中，Skills、Agents、Subagents 各司其职，缺一不可。让我用一个完整的例子来说明。</p>
 <p><strong>场景：你要写一篇文章并发布到公众号</strong></p>
@@ -609,7 +613,8 @@
 <li><strong>发布 Subagent</strong>：负责调用公众号 API，完成发布</li>
 </ul>
 <p><strong>每个 Subagent 只关注自己的任务，完成后就消失。</strong> 为什么要这样？因为上下文隔离。写作 Subagent 不需要知道配图的细节，配图 Subagent 不需要知道发布的逻辑。这样每个任务都是“干净”的，不会互相干扰。</p>
-<h3 id="三者的协作关系"><a href="#三者的协作关系" class="headerlink" title="三者的协作关系"></a>三者的协作关系</h3><p><strong>Skills 定义流程 → Agent 执行调度 → Subagents 完成任务</strong></p>
+<h3 id="三者的协作关系"><a href="#三者的协作关系" class="headerlink" title="三者的协作关系"></a>三者的协作关系</h3><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232827157-1521216086.jpg" alt="Skills、Agents、Subagents 分工协作"></p>
+<p><strong>Skills 定义流程 → Agent 执行调度 → Subagents 完成任务</strong></p>
 <p>用餐厅的例子：</p>
 <ul>
 <li><strong>Skills</strong> = 菜谱（定义做菜流程）</li>
@@ -618,7 +623,8 @@
 </ul>
 <p><strong>关键点</strong>：这种分工让系统既灵活又可控。你可以随时修改 Skills（换菜谱），Agent 会按新流程执行。你可以增加新的 Tools 给 Subagents 用（添加新厨具）。整个系统是模块化的。</p>
 <hr>
-<h2 id="第六部分：解耦的挑战"><a href="#第六部分：解耦的挑战" class="headerlink" title="第六部分：解耦的挑战"></a>第六部分：解耦的挑战</h2><h3 id="离开-Claude-Code-后，你需要自己做什么？"><a href="#离开-Claude-Code-后，你需要自己做什么？" class="headerlink" title="离开 Claude Code 后，你需要自己做什么？"></a>离开 Claude Code 后，你需要自己做什么？</h3><p>现在问题来了：如果你想把 skills 搬到 Web 或 API 环境，Claude Code 帮你做的那些事，你都得自己做。</p>
+<h2 id="第六部分：解耦的挑战"><a href="#第六部分：解耦的挑战" class="headerlink" title="第六部分：解耦的挑战"></a>第六部分：解耦的挑战</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232825308-400750841.jpg" alt="解耦的挑战"></p>
+<h3 id="离开-Claude-Code-后，你需要自己做什么？"><a href="#离开-Claude-Code-后，你需要自己做什么？" class="headerlink" title="离开 Claude Code 后，你需要自己做什么？"></a>离开 Claude Code 后，你需要自己做什么？</h3><p>现在问题来了：如果你想把 skills 搬到 Web 或 API 环境，Claude Code 帮你做的那些事，你都得自己做。</p>
 <p>具体来说四件事：</p>
 <ol>
 <li><strong>Skill 加载和触发</strong> - 读取 skill 文件，判断什么时候用哪个 skill</li>
@@ -665,8 +671,10 @@
 </ul>
 <p><strong>优点</strong>：标准化、可复用、生态丰富。<br><strong>缺点</strong>：需要运行多个服务进程，架构相对重。</p>
 <p><strong>适合场景</strong>：构建开放生态，让其他人也能用你的 skills，追求标准化。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232824469-2105794574.jpg" alt="三种解耦方案选择"></p>
 <hr>
-<h2 id="第八部分：方案一实施细节"><a href="#第八部分：方案一实施细节" class="headerlink" title="第八部分：方案一实施细节"></a>第八部分：方案一实施细节</h2><h3 id="第一步：理解你的-Skills-需要改造什么"><a href="#第一步：理解你的-Skills-需要改造什么" class="headerlink" title="第一步：理解你的 Skills 需要改造什么"></a>第一步：理解你的 Skills 需要改造什么</h3><p>你现在的 skills 是为 Claude Code 设计的 Markdown 文件。要用 Agent SDK，需要把它们转换成 SDK 能理解的格式。</p>
+<h2 id="第八部分：方案一实施细节"><a href="#第八部分：方案一实施细节" class="headerlink" title="第八部分：方案一实施细节"></a>第八部分：方案一实施细节</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232825896-522723187.jpg" alt="实施细节：理解需要改造什么"></p>
+<h3 id="第一步：理解你的-Skills-需要改造什么"><a href="#第一步：理解你的-Skills-需要改造什么" class="headerlink" title="第一步：理解你的 Skills 需要改造什么"></a>第一步：理解你的 Skills 需要改造什么</h3><p>你现在的 skills 是为 Claude Code 设计的 Markdown 文件。要用 Agent SDK，需要把它们转换成 SDK 能理解的格式。</p>
 <p><strong>改造重点</strong>：</p>
 <ol>
 <li><strong>Skills 变成 System Prompt</strong>：你的 skill 文件内容会成为 Agent 的 system prompt 的一部分，告诉 Agent 该如何工作。</li>
@@ -751,7 +759,8 @@
 <li>使用 SDK 的 compact 功能，自动压缩历史对话。</li>
 </ul>
 <hr>
-<h2 id="第九部分：总结"><a href="#第九部分：总结" class="headerlink" title="第九部分：总结"></a>第九部分：总结</h2><h3 id="从困惑到清晰"><a href="#从困惑到清晰" class="headerlink" title="从困惑到清晰"></a>从困惑到清晰</h3><p>这篇文章从一个实际困惑出发：我在 Claude Code 中构建了丰富的 skills 生态，但如何让它们脱离 Claude Code 环境，实现自动化和开放使用？</p>
+<h2 id="第九部分：总结"><a href="#第九部分：总结" class="headerlink" title="第九部分：总结"></a>第九部分：总结</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260120232826324-1565355607.jpg" alt="前方的路"></p>
+<h3 id="从困惑到清晰"><a href="#从困惑到清晰" class="headerlink" title="从困惑到清晰"></a>从困惑到清晰</h3><p>这篇文章从一个实际困惑出发：我在 Claude Code 中构建了丰富的 skills 生态，但如何让它们脱离 Claude Code 环境，实现自动化和开放使用？</p>
 <p><strong>答案的关键在于理解 Claude Agent SDK 的架构</strong>：</p>
 <ul>
 <li><strong>三层架构</strong>：用户层接收需求，编排层做决策，执行层干活。</li>

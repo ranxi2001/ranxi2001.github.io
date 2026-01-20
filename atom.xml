@@ -44,7 +44,7 @@
     <link href="https://onefly.top/posts/260118.html"/>
     <id>https://onefly.top/posts/260118.html</id>
     <published>2026-01-18T06:15:00.000Z</published>
-    <updated>2026-01-19T18:54:26.803Z</updated>
+    <updated>2026-01-20T15:39:14.072Z</updated>
     
     
     <summary type="html">深度解析 Claude Code 的 Skills、Agents、Subagents 体系架构，详解如何将 Claude Code 中的 skills 解耦到 Web API 环境，实现自动化和开放使用。从架构理解到实施方案，一文掌握 AI Agent 开发的核心原理。</summary>
@@ -414,9 +414,9 @@
     
     <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
     
-    <category term="VC" scheme="https://onefly.top/tags/VC/"/>
-    
     <category term="Binance Alpha" scheme="https://onefly.top/tags/Binance-Alpha/"/>
+    
+    <category term="VC" scheme="https://onefly.top/tags/VC/"/>
     
   </entry>
   
@@ -501,9 +501,9 @@
     
     <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
     
-    <category term="Binance Alpha" scheme="https://onefly.top/tags/Binance-Alpha/"/>
-    
     <category term="RWA" scheme="https://onefly.top/tags/RWA/"/>
+    
+    <category term="Binance Alpha" scheme="https://onefly.top/tags/Binance-Alpha/"/>
     
   </entry>
   

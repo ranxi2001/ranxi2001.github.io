@@ -122,6 +122,131 @@
       </tags>
   </entry>
   <entry>
+    <title>Github和git使用指南：以PyCharm为例</title>
+    <url>/posts/16889.html</url>
+    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;"></p>
+<p>注册按照引导完成就可以了</p>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png" alt=""></p>
+<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png" alt=""></p>
+<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;"></p>
+<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png" alt=""></p>
+<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;"></p>
+<p>克隆项目代码：</p>
+<blockquote>
+<p>前置条件：安装Git</p>
+</blockquote>
+<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
+<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
+<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
+<p> 进入cmd</p>
+<p> <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;"></p>
+<p> 然后输入<code>git clone 项目地址</code></p>
+<p> <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;"></p>
+<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
+<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
+<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;"></p>
+<p>填写github仓库地址，然后点击clone</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;"></p>
+<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;"></p>
+<p>下载完项目仓库后会弹出一个对话框，自选</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;"></p>
+<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;"></p>
+<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;"></p>
+<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png" alt=""></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;"></p>
+<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
+<p>接受邀请后就可以push了</p>
+<p>push之前需要在ide登录自己的github账号</p>
+<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
+<p>也就是File-setting配置git和github账号</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;"></p>
+<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;"></p>
+<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png" alt=""></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png" alt=""></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;"></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png" alt=""></p>
+<p>在Pycahrm中登录</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;"></p>
+<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;"></p>
+<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;"></p>
+<p>解决方法有</p>
+<ol>
+<li>关闭重启编辑器ide</li>
+<li>关闭或打开clash代理</li>
+<li>在终端中输入以下代码</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其实更加有用的解决方案是：</p>
+<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KMS Office365/2019/2021 永久免费破解激活工具 Office破解版</title>
+    <url>/posts/241016.html</url>
+    <content><![CDATA[<h1 id="KMS-Office365-2019-2021-永久免费破解激活工具-Office破解版"><a href="#KMS-Office365-2019-2021-永久免费破解激活工具-Office破解版" class="headerlink" title="KMS Office365/2019/2021 永久免费破解激活工具 Office破解版"></a>KMS Office365/2019/2021 永久免费破解激活工具 Office破解版</h1><p><strong>HEU KMS Activator</strong> 激活工具，从第一个版本到现在已经十多年，这次又更新了，内置了前几天<strong>更新的 Ohook Office 永久激活 和 Windows 最新的数字激活。</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150127236-1115904983.png" style="zoom:50%;"></p>
+<blockquote>
+<p><strong>[2024.10.11] v42.3.0 更新说明：</strong></p>
+<p>1.Office 2024同时包含RTM和Preview许可证的情况下，激活为RTM版（不显示Preview）。</p>
+<p>2.新增Office 2024许可证书管理功能。</p>
+<p>3.新增Windows Server 2025的OEM激活。</p>
+<p>4.新增IoTEnterpriseK版本的KMS38激活(自动转为Enterprise版本)。</p>
+<p>5.移除Office卸载功能（功能不如其他软件做得好，有点鸡肋，聚焦激活功能，删除不相关的功能）。</p>
+</blockquote>
+<h2 id="使用介绍"><a href="#使用介绍" class="headerlink" title="使用介绍"></a>使用介绍</h2><p>①如果不知道该怎么使用，只要点击<strong>开始按钮</strong>，程序将按照<strong>数字许可证激活&gt;KMS38&gt;OEM&gt;KMS</strong>的优先级激活Windows。以 <strong>Ohook&gt;KMS</strong> 的顺序激活Office。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150253377-1766568207.png" style="zoom:50%;"></p>
+<p>②如果自动激活失败，也可以选择<strong>KMS手动激活</strong>，<strong>将鼠标悬浮到按钮上，即可显示使用说明。</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150328876-680586164.png" style="zoom:50%;"></p>
+<p>③<strong>Win10和Win11可以使用数字激活</strong>，不同于KMS的180天重复激活，数字激活可以永久激活，<strong>Win7则可以OEM激活。</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150421429-712536126.png" style="zoom:50%;"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150440365-628618481.png" style="zoom:50%;"></p>
+<p>④如果Office提示”<strong>你可能是盗版软件的受害者</strong>“，选择<strong>Fix_Banner</strong>并运行，如果打开Office以后有多个版本信息，可以选择<strong>Clean_License</strong>，清理许可证<strong>再重新激活</strong>，还可以转换Windows版本，如果要取消 Ohook 激活，可以选择 <strong>Ohook</strong> 再点开始。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150500977-1960022405.png" style="zoom:50%;"></p>
+<p>⑤点上面的皮肤按钮，可以更换皮肤。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150539019-984183347.png" style="zoom:50%;"></p>
+<h2 id="软件支持"><a href="#软件支持" class="headerlink" title="软件支持"></a>软件支持</h2><p><strong>Windows：</strong>XP、Vista、7、8、8.1、10、11、Sever版、LTSC版，各种家庭版教育版专业版旗舰版都可以使用。</p>
+<p><strong>Office：</strong>2010、2013、2016、2019、2021、2024、365，以及Visio、Project等工具。</p>
+<p><strong>设备：</strong>支持x86、x64、ARM64设备。</p>
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><blockquote>
+<p>左侧 <strong><a href="https://www.cnblogs.com/ranxi169/p/18456954">进群</a></strong> 5分钟完成注册任务可领<strong>100元</strong>微信红包，<strong>童叟无欺</strong>！</p>
+</blockquote>
+<p>HEU KMS Activator下载：<br> 地址1：<a href="https://wwi.lanzoup.com/b05gumbe">https://wwi.lanzoup.com/b05gumbe</a> 密码:9xum </p>
+<p>地址2：<a href="https://pan.baidu.com/s/14U3zIG4tG6ZdMBrHaPaLzw?pwd=c65c">https://pan.baidu.com/s/14U3zIG4tG6ZdMBrHaPaLzw?pwd=c65c</a></p>
+<p>地址3：<a href="https://github.com/zbezj/HEU_KMS_Activator/releases">https://github.com/zbezj/HEU_KMS_Activator/releases</a> </p>
+<p>蓝奏云链接经常会失效，把链接中的lanzoup修改为：lanzouh、lanzous、lanzousi、lanzoux、lanzouw、lanzouo、lanzouy，多尝试几个，就能打开了。</p>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>破解</tag>
+        <tag>Office</tag>
+        <tag>激活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ</title>
     <url>/posts/241114.html</url>
     <content><![CDATA[<h1 id="Dune-Query-入门教程及Sol钱包转账追踪实践Ⅰ"><a href="#Dune-Query-入门教程及Sol钱包转账追踪实践Ⅰ" class="headerlink" title="Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ"></a>Dune Query 入门教程及Sol钱包转账追踪实践Ⅰ</h1><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Dune Analytics 是一个用于分析并发现区块链数据的强大工具。它使用 SQL 语言来查询链上数据，使用者可以将这些数据转换为有用的分析。这篇博客将介绍 Dune 查询的基础用法，并通过一个 Solana 链上链下链监控实践项目来帮助你学会实践中的基础查询技术。</p>
@@ -223,87 +348,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>Web3</tag>
         <tag>sol</tag>
         <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github和git使用指南：以PyCharm为例</title>
-    <url>/posts/16889.html</url>
-    <content><![CDATA[<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>github一般在白天是可以直接访问的，不需要挂梯子，晚上一般需要vpn才能打开。</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028220559829-1152733958.png" alt="" style="zoom:80%;"></p>
-<p>注册按照引导完成就可以了</p>
-<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>主页功能和布局</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221006171-743174652.png" alt=""></p>
-<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="仓库视图"><a href="#仓库视图" class="headerlink" title="仓库视图"></a>仓库视图</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221134829-1693496522.png" alt=""></p>
-<h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221350538-55724732.png" alt="" style="zoom:67%;"></p>
-<h3 id="仓库主页"><a href="#仓库主页" class="headerlink" title="仓库主页"></a>仓库主页</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221749777-1044325588.png" alt=""></p>
-<h3 id="如何克隆项目代码"><a href="#如何克隆项目代码" class="headerlink" title="如何克隆项目代码"></a>如何克隆项目代码</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028221857033-1672524206.png" alt="" style="zoom:50%;"></p>
-<p>克隆项目代码：</p>
-<blockquote>
-<p>前置条件：安装Git</p>
-</blockquote>
-<p><code>git下载</code>链接：<a href="https://wwp.lanzoub.com/iZj1H0erefja">Git-2.38.1-64-bit.exe - 蓝奏云 (lanzoub.com)</a></p>
-<p> <code>git安装配置</code>教程：<a href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）</a></p>
-<p> <code>图解git原理</code>：<a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git (marklodato.github.io)</a></p>
-<p> 进入cmd</p>
-<p> <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222357121-312629687.png" alt="" style="zoom:50%;"></p>
-<p> 然后输入<code>git clone 项目地址</code></p>
-<p> <img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221028222449229-753777455.png" alt="" style="zoom:67%;"></p>
-<p> <code>上传代码和文件到github</code>参考教程：<a href="https://www.cnblogs.com/ranxi169/p/16717225.html">Git将本地仓库上传到github - 孤飞 - 博客园 (cnblogs.com)</a></p>
-<h2 id="导入项目到IDE"><a href="#导入项目到IDE" class="headerlink" title="导入项目到IDE"></a>导入项目到<strong>IDE</strong></h2><p>以JetBrain的PyCharm为例：</p>
-<h3 id="在起始页面下"><a href="#在起始页面下" class="headerlink" title="在起始页面下"></a>在起始页面下</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100526155-1605600821.png" alt="" style="zoom:50%;"></p>
-<p>填写github仓库地址，然后点击clone</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029100805192-274045963.png" alt="" style="zoom: 50%;"></p>
-<h3 id="项目内页"><a href="#项目内页" class="headerlink" title="项目内页"></a>项目内页</h3><p>在<code>VCS</code>-<code>Get from Version Control</code>导入github项目</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101409506-1968971885.png" alt="" style="zoom:50%;"></p>
-<p>下载完项目仓库后会弹出一个对话框，自选</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029101705918-852571062.png" alt="" style="zoom:50%;"></p>
-<p>如果初始化或者导入为一个github项目之后就可以使用版本控制工具了</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102213782-1729938436.png" alt="" style="zoom:50%;"></p>
-<p>在IDE集成开发环境中就不需要用命令行提交代码了，直接点击就好</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102411820-86730732.png" alt="" style="zoom: 67%;"></p>
-<h2 id="关于协作"><a href="#关于协作" class="headerlink" title="关于协作"></a>关于协作</h2><h3 id="添加合作者"><a href="#添加合作者" class="headerlink" title="添加合作者"></a>添加合作者</h3><p>在github打开指定项目进入<code>setting</code></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102623122-291804960.png" alt=""></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102742971-1054957020.png" alt="" style="zoom:80%;"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029102834346-1533711273.png" alt="" style="zoom:80%;"></p>
-<p>被邀请者需要进入这个github仓库网页【项目仓库主页顶部一行蓝色的邀请函】选择<code>接受邀请</code></p>
-<p>接受邀请后就可以push了</p>
-<p>push之前需要在ide登录自己的github账号</p>
-<p>教程：<a href="https://blog.csdn.net/lxd13699/article/details/80375038">Pycharm+github上传及提交代码_你是太阳暖人心的博客-CSDN博客</a></p>
-<p>也就是File-setting配置git和github账号</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103348325-1377369698.png" alt="" style="zoom: 67%;"></p>
-<h3 id="其中git配置"><a href="#其中git配置" class="headerlink" title="其中git配置"></a>其中git配置</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103432765-1705655237.png" alt="" style="zoom:67%;"></p>
-<h3 id="其中Github登录"><a href="#其中Github登录" class="headerlink" title="其中Github登录"></a>其中Github登录</h3><p>在github个人主页中选择Setting</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103702211-1141201815.png" alt="" style="zoom: 67%;"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103804838-56805198.png" alt=""></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103952162-657527512.png" alt=""></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104054155-1404753885.png" alt="" style="zoom:80%;"></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029104424210-625718386.png" alt=""></p>
-<p>在Pycahrm中登录</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029103517201-381822925.png" alt="" style="zoom:67%;"></p>
-<p>直接点击<code>Generate</code>也可以获取相应权限登Token，而且更快</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221221160054524-486268715.png" style="zoom: 67%;"></p>
-<h2 id="使用github和git的常见问题"><a href="#使用github和git的常见问题" class="headerlink" title="使用github和git的常见问题"></a>使用github和git的常见问题</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>push失败一般是由于github连接超时导致的</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202210/2910984-20221029105106245-328292962.png" alt="" style="zoom:67%;"></p>
-<p>解决方法有</p>
-<ol>
-<li>关闭重启编辑器ide</li>
-<li>关闭或打开clash代理</li>
-<li>在终端中输入以下代码</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> http.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> https.sslVerify <span class="token string">"false"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy 
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其实更加有用的解决方案是：</p>
-<p><a href="https://www.cnblogs.com/ranxi169/p/16956050.html">彻底解决github update push超时 - 孤飞 - 博客园 (cnblogs.com)</a></p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>git</tag>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -2266,95 +2310,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
-    <title>MEME市场擒龙术（三）：“庄”画像描述及认知明晰</title>
-    <url>/posts/241222.html</url>
-    <content><![CDATA[<h1 id="MEME市场擒龙术（三）：“庄”画像描述及认知明晰"><a href="#MEME市场擒龙术（三）：“庄”画像描述及认知明晰" class="headerlink" title="MEME市场擒龙术（三）：“庄”画像描述及认知明晰"></a>MEME市场擒龙术（三）：“庄”画像描述及认知明晰</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1866505117962502504">https://x.com/Shanks_A9z/status/1866505117962502504</a></p>
-<blockquote>
-<p>转载仅供收藏和方便阅读</p>
-</blockquote>
-<p>这两天链上行情又冷了点，所以我又有点空了。话说我是不是行情的晴雨表啊精力有限，行情好时我都跑去打狗了。所以再接着更新擒龙术系列吧，今天先写这第三篇写写认知，看能否对大家有帮助。至于第二篇《MEME市场擒龙术二：到底该如何具体的抓庄》，明后两天内就会更新（绝对不会鸽)。 </p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文旨在于帮助你提升认知和描述“庄”的画像以及上一篇帖子下面的一些问题的系统性阐述。</p>
-<p>请记住，你来到MEME市场是来投机的。<strong>投机，是一门技术，是需要严肃且认真对待的事业。</strong>对于我来说，我在这个市场，只在乎是否有机会从中攫取利润。至于什么社区，阴谋，叙事，社区对抗阴谋云云，我不关心。在我这里，这所有的因素，会具体量化为影响MEME价格的因子来辅助我进行判断。<strong>请抓住主要矛盾，不要让自己落入到其他因素的陷阱中。</strong></p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>一、庄家一切的行为都是要为终极目的服务：把所有的货以尽可能高的价格全部都塞进对手（散户）嘴里，获利了结</strong> </p>
-<p>如果真的清晰理解了这一点，你就能明白一件事，把时间尺度拉长，在单一MEME上来说，一个周期结束后，他的结局一定是归0（明白这一点我觉得能减缓大家没打到金狗的焦虑）。利润到了，一定会毫不留情的全塞给你，如果暂时没有塞，那仅仅只是因为没到利润点而已，与其他任何的因素无关。<strong>请抓住主要矛盾，不要让自己落入到其他因素的陷阱中。</strong></p>
-<p><strong>二、在MEME市场中，只有两个角色，那就是庄家与散户，没有第三个</strong> </p>
-<p>既然只有两个角色，那就是相当于1V1的对战关系。在进行交易时，就是你死我活。要么我从你兜里掏出钱来，要么你从我的兜里掏出钱来。</p>
-<p><strong>三、庄家的地址们具有统一性。通常以“组”为单位</strong></p>
-<p>庄家的地址是成组，分批的在进行操作，都是在用专业的工具。你可能不知道，拉盘砸盘这些操作可以通过工具来自动化的实现。所以在交易中表现为多个钱包在同一个时间段内交易，且金额相差不会太大。知道这一点，在看交易记录时，你就明白到底该看什么样子的交易记录了。我只是见过工具长什么样，以下是工具的拉盘界面十分简单的大概样子。在这里我就不截图了，就描画一个表格方便理解（其余无关问题不要问我，而且这只是天宫一角，不要动歪心思哦）。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214203956-2004829478.png" alt=""></p>
-<p><strong>四、庄家在获利时会毫不犹豫的短时间内迅速撤退，大多数情况下请抛弃幻想</strong> </p>
-<p>对于庄来说，风险同样也不小。弄不好没有流动性自己会出现大幅的亏损，所以他们也是一样的，有润且没后续了就一溜烟跑了，慢了就变成纸面财富。</p>
-<p><strong>五、叙事和社区等只是为庄家服务的工具</strong> </p>
-<p>叙事，只是一个可以很好的降低资金成本的，性价比高的产物，因为好故事可以更多更容易的拉拢holder，通过后续的筛选确认这部分坚定的holder，实际上相当于是软性的锁仓筹码。 至于社区，本质上也只是庄家的一个手段，用于方便讲故事和降低资金磨损成本的一个性价比高的产物。 </p>
-<p><strong>六、短期热点meme的模式只有一个，没有什么吸筹的阶段</strong> </p>
-<p>吸筹是大市值已跑通的MEME在长期的盘整阶段出现的操作（具体方法在下一篇会举例细讲） 流程是这样的：部署—在最开始的极短时间内多个钱包拿走至少70%的筹码（捆绑）—花钱直接拉盘吸引注意力。 有钱有格局—不跑路继续拉盘，图谋更大。 没钱没格局—1.流动性不足，请好的黑嘴caller开call，多笔多钱包卖出撤退。2.流动性不错，断头瞬间全部砸完。 </p>
-<p><strong>七、短期热点盘中，判断是否有庄在的简单迅速方法</strong> </p>
-<p>在短期热点盘中，前排的地址们一定不约而同的有超高的倍数和盈利且没走（是锁定的供应量）。这个方法非常的简单有效。 </p>
-<p><strong>八、短期热点盘中，如何判断庄家是在洗盘还是在砸盘跑路</strong> </p>
-<p>庄家洗盘和砸盘的都是在砸代币的价格。区别在于：洗盘时砸出的筹码会用另一批地址买回来（俗称<strong>对倒下压</strong>），他们<strong>绝不会平白丢掉这些筹码</strong>。而砸盘跑路则不会出现这种情况。 找到一些时常活跃，热点盘冲锋在前的地址或者KOL们。通常热点盘至少能看到一个在前50内。过程中观察持仓排行，比如他原本在第40名，如果他的排名逐渐靠前，上升到了35名，那就说明前面的地址（如果倍数非常高，大概率是庄的早期狙击地址）走掉了，请开始提高警惕。如图，这就是一个短期热点捆绑盘的典型，在这过程中他们的排名一直在上升。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214405100-1855203621.png" alt=""></p>
-<p>在他们的排名刚开始上升时（此时超1.5M市值的盘子，刚开始价格不会有太大幅度的变化。如果你很慌乱觉得这有点滞后，请使用我擒龙术一中所讲的盈利办法直接跑路）迅速点开资金流出排行，观察这些家伙出了多少数量的筹码，记录好时间，假如是在3分钟<strong>前（20:00）</strong>。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214421960-448998771.png" style="zoom:50%;"></p>
-<p>在知道有这些数量的筹码流出后，再点资金流入排行，观察这个排名情况，点开看买入时间是否在20:00之后的几分钟内，且这两个排行的靠前地址的筹码数量是否大体能对上。如果数量能对上，时间<strong>在20:00后</strong>。那么你就明白了，<strong>前面砸出的筹码在砸出时的短时间内，这些地址又买回来</strong>。大概率就是在<strong>对倒洗盘</strong>。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214444991-1214948918.png" style="zoom:50%;"></p>
-<h2 id="结言"><a href="#结言" class="headerlink" title="结言"></a><strong>结言</strong></h2><p>真的不会鸽了，由于我自己平时常在交易打狗，所以没有很多时间来写文章。具体捉庄地址的工具和详尽办法——《MEME市场擒龙术二：到底该如何具体的抓庄》，明后两天一定会更新，敬请期待。 </p>
-<p>对了，有人问我有没有群，我目前还没有。想问问大家的意见，如果想进，请告诉我，人多的话我会考虑开一个，里面能一起吹水讨论我觉得也挺好的。这样我平时注意到的一些事情或者庄家地址可以直接在群里分享，如果人不多就还是暂时不开了。 </p>
-<p>由于我没有收费群和吃返佣，纯靠爱发电。如果觉得对你有帮助，点赞收藏转发，是我持续更新的动力！</p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>meme</tag>
-        <tag>sol</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KMS Office365/2019/2021 永久免费破解激活工具 Office破解版</title>
-    <url>/posts/241016.html</url>
-    <content><![CDATA[<h1 id="KMS-Office365-2019-2021-永久免费破解激活工具-Office破解版"><a href="#KMS-Office365-2019-2021-永久免费破解激活工具-Office破解版" class="headerlink" title="KMS Office365/2019/2021 永久免费破解激活工具 Office破解版"></a>KMS Office365/2019/2021 永久免费破解激活工具 Office破解版</h1><p><strong>HEU KMS Activator</strong> 激活工具，从第一个版本到现在已经十多年，这次又更新了，内置了前几天<strong>更新的 Ohook Office 永久激活 和 Windows 最新的数字激活。</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150127236-1115904983.png" style="zoom:50%;"></p>
-<blockquote>
-<p><strong>[2024.10.11] v42.3.0 更新说明：</strong></p>
-<p>1.Office 2024同时包含RTM和Preview许可证的情况下，激活为RTM版（不显示Preview）。</p>
-<p>2.新增Office 2024许可证书管理功能。</p>
-<p>3.新增Windows Server 2025的OEM激活。</p>
-<p>4.新增IoTEnterpriseK版本的KMS38激活(自动转为Enterprise版本)。</p>
-<p>5.移除Office卸载功能（功能不如其他软件做得好，有点鸡肋，聚焦激活功能，删除不相关的功能）。</p>
-</blockquote>
-<h2 id="使用介绍"><a href="#使用介绍" class="headerlink" title="使用介绍"></a>使用介绍</h2><p>①如果不知道该怎么使用，只要点击<strong>开始按钮</strong>，程序将按照<strong>数字许可证激活&gt;KMS38&gt;OEM&gt;KMS</strong>的优先级激活Windows。以 <strong>Ohook&gt;KMS</strong> 的顺序激活Office。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150253377-1766568207.png" style="zoom:50%;"></p>
-<p>②如果自动激活失败，也可以选择<strong>KMS手动激活</strong>，<strong>将鼠标悬浮到按钮上，即可显示使用说明。</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150328876-680586164.png" style="zoom:50%;"></p>
-<p>③<strong>Win10和Win11可以使用数字激活</strong>，不同于KMS的180天重复激活，数字激活可以永久激活，<strong>Win7则可以OEM激活。</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150421429-712536126.png" style="zoom:50%;"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150440365-628618481.png" style="zoom:50%;"></p>
-<p>④如果Office提示”<strong>你可能是盗版软件的受害者</strong>“，选择<strong>Fix_Banner</strong>并运行，如果打开Office以后有多个版本信息，可以选择<strong>Clean_License</strong>，清理许可证<strong>再重新激活</strong>，还可以转换Windows版本，如果要取消 Ohook 激活，可以选择 <strong>Ohook</strong> 再点开始。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150500977-1960022405.png" style="zoom:50%;"></p>
-<p>⑤点上面的皮肤按钮，可以更换皮肤。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241016150539019-984183347.png" style="zoom:50%;"></p>
-<h2 id="软件支持"><a href="#软件支持" class="headerlink" title="软件支持"></a>软件支持</h2><p><strong>Windows：</strong>XP、Vista、7、8、8.1、10、11、Sever版、LTSC版，各种家庭版教育版专业版旗舰版都可以使用。</p>
-<p><strong>Office：</strong>2010、2013、2016、2019、2021、2024、365，以及Visio、Project等工具。</p>
-<p><strong>设备：</strong>支持x86、x64、ARM64设备。</p>
-<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><blockquote>
-<p>左侧 <strong><a href="https://www.cnblogs.com/ranxi169/p/18456954">进群</a></strong> 5分钟完成注册任务可领<strong>100元</strong>微信红包，<strong>童叟无欺</strong>！</p>
-</blockquote>
-<p>HEU KMS Activator下载：<br> 地址1：<a href="https://wwi.lanzoup.com/b05gumbe">https://wwi.lanzoup.com/b05gumbe</a> 密码:9xum </p>
-<p>地址2：<a href="https://pan.baidu.com/s/14U3zIG4tG6ZdMBrHaPaLzw?pwd=c65c">https://pan.baidu.com/s/14U3zIG4tG6ZdMBrHaPaLzw?pwd=c65c</a></p>
-<p>地址3：<a href="https://github.com/zbezj/HEU_KMS_Activator/releases">https://github.com/zbezj/HEU_KMS_Activator/releases</a> </p>
-<p>蓝奏云链接经常会失效，把链接中的lanzoup修改为：lanzouh、lanzous、lanzousi、lanzoux、lanzouw、lanzouo、lanzouy，多尝试几个，就能打开了。</p>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>破解</tag>
-        <tag>Office</tag>
-        <tag>激活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MEME市场擒龙术（一）：短期抄底及如何盈利</title>
     <url>/posts/241220.html</url>
     <content><![CDATA[<h1 id="MEME市场擒龙术（一）：短期抄底及如何盈利"><a href="#MEME市场擒龙术（一）：短期抄底及如何盈利" class="headerlink" title="MEME市场擒龙术（一）：短期抄底及如何盈利"></a>MEME市场擒龙术（一）：短期抄底及如何盈利</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1864627114752004552">https://x.com/Shanks_A9z/status/1864627114752004552</a></p>
@@ -2418,6 +2373,51 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
 <h2 id="评论区出现的笔记"><a href="#评论区出现的笔记" class="headerlink" title="评论区出现的笔记"></a>评论区出现的笔记</h2><p>看了下参数设置, 似乎用于1-5m的时间级别、sol链上的meme会更为合适, 因为短期波动大</p>
 <p>如果用同样的方法去分析当天的$ai16z 有点难 我觉得可以搭配四小时和日线的ma/ema 20、30线去看</p>
 <p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221223137668-734747365.png" style="zoom:67%;"></p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>meme</tag>
+        <tag>sol</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MEME市场擒龙术（三）：“庄”画像描述及认知明晰</title>
+    <url>/posts/241222.html</url>
+    <content><![CDATA[<h1 id="MEME市场擒龙术（三）：“庄”画像描述及认知明晰"><a href="#MEME市场擒龙术（三）：“庄”画像描述及认知明晰" class="headerlink" title="MEME市场擒龙术（三）：“庄”画像描述及认知明晰"></a>MEME市场擒龙术（三）：“庄”画像描述及认知明晰</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1866505117962502504">https://x.com/Shanks_A9z/status/1866505117962502504</a></p>
+<blockquote>
+<p>转载仅供收藏和方便阅读</p>
+</blockquote>
+<p>这两天链上行情又冷了点，所以我又有点空了。话说我是不是行情的晴雨表啊精力有限，行情好时我都跑去打狗了。所以再接着更新擒龙术系列吧，今天先写这第三篇写写认知，看能否对大家有帮助。至于第二篇《MEME市场擒龙术二：到底该如何具体的抓庄》，明后两天内就会更新（绝对不会鸽)。 </p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文旨在于帮助你提升认知和描述“庄”的画像以及上一篇帖子下面的一些问题的系统性阐述。</p>
+<p>请记住，你来到MEME市场是来投机的。<strong>投机，是一门技术，是需要严肃且认真对待的事业。</strong>对于我来说，我在这个市场，只在乎是否有机会从中攫取利润。至于什么社区，阴谋，叙事，社区对抗阴谋云云，我不关心。在我这里，这所有的因素，会具体量化为影响MEME价格的因子来辅助我进行判断。<strong>请抓住主要矛盾，不要让自己落入到其他因素的陷阱中。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>一、庄家一切的行为都是要为终极目的服务：把所有的货以尽可能高的价格全部都塞进对手（散户）嘴里，获利了结</strong> </p>
+<p>如果真的清晰理解了这一点，你就能明白一件事，把时间尺度拉长，在单一MEME上来说，一个周期结束后，他的结局一定是归0（明白这一点我觉得能减缓大家没打到金狗的焦虑）。利润到了，一定会毫不留情的全塞给你，如果暂时没有塞，那仅仅只是因为没到利润点而已，与其他任何的因素无关。<strong>请抓住主要矛盾，不要让自己落入到其他因素的陷阱中。</strong></p>
+<p><strong>二、在MEME市场中，只有两个角色，那就是庄家与散户，没有第三个</strong> </p>
+<p>既然只有两个角色，那就是相当于1V1的对战关系。在进行交易时，就是你死我活。要么我从你兜里掏出钱来，要么你从我的兜里掏出钱来。</p>
+<p><strong>三、庄家的地址们具有统一性。通常以“组”为单位</strong></p>
+<p>庄家的地址是成组，分批的在进行操作，都是在用专业的工具。你可能不知道，拉盘砸盘这些操作可以通过工具来自动化的实现。所以在交易中表现为多个钱包在同一个时间段内交易，且金额相差不会太大。知道这一点，在看交易记录时，你就明白到底该看什么样子的交易记录了。我只是见过工具长什么样，以下是工具的拉盘界面十分简单的大概样子。在这里我就不截图了，就描画一个表格方便理解（其余无关问题不要问我，而且这只是天宫一角，不要动歪心思哦）。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214203956-2004829478.png" alt=""></p>
+<p><strong>四、庄家在获利时会毫不犹豫的短时间内迅速撤退，大多数情况下请抛弃幻想</strong> </p>
+<p>对于庄来说，风险同样也不小。弄不好没有流动性自己会出现大幅的亏损，所以他们也是一样的，有润且没后续了就一溜烟跑了，慢了就变成纸面财富。</p>
+<p><strong>五、叙事和社区等只是为庄家服务的工具</strong> </p>
+<p>叙事，只是一个可以很好的降低资金成本的，性价比高的产物，因为好故事可以更多更容易的拉拢holder，通过后续的筛选确认这部分坚定的holder，实际上相当于是软性的锁仓筹码。 至于社区，本质上也只是庄家的一个手段，用于方便讲故事和降低资金磨损成本的一个性价比高的产物。 </p>
+<p><strong>六、短期热点meme的模式只有一个，没有什么吸筹的阶段</strong> </p>
+<p>吸筹是大市值已跑通的MEME在长期的盘整阶段出现的操作（具体方法在下一篇会举例细讲） 流程是这样的：部署—在最开始的极短时间内多个钱包拿走至少70%的筹码（捆绑）—花钱直接拉盘吸引注意力。 有钱有格局—不跑路继续拉盘，图谋更大。 没钱没格局—1.流动性不足，请好的黑嘴caller开call，多笔多钱包卖出撤退。2.流动性不错，断头瞬间全部砸完。 </p>
+<p><strong>七、短期热点盘中，判断是否有庄在的简单迅速方法</strong> </p>
+<p>在短期热点盘中，前排的地址们一定不约而同的有超高的倍数和盈利且没走（是锁定的供应量）。这个方法非常的简单有效。 </p>
+<p><strong>八、短期热点盘中，如何判断庄家是在洗盘还是在砸盘跑路</strong> </p>
+<p>庄家洗盘和砸盘的都是在砸代币的价格。区别在于：洗盘时砸出的筹码会用另一批地址买回来（俗称<strong>对倒下压</strong>），他们<strong>绝不会平白丢掉这些筹码</strong>。而砸盘跑路则不会出现这种情况。 找到一些时常活跃，热点盘冲锋在前的地址或者KOL们。通常热点盘至少能看到一个在前50内。过程中观察持仓排行，比如他原本在第40名，如果他的排名逐渐靠前，上升到了35名，那就说明前面的地址（如果倍数非常高，大概率是庄的早期狙击地址）走掉了，请开始提高警惕。如图，这就是一个短期热点捆绑盘的典型，在这过程中他们的排名一直在上升。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214405100-1855203621.png" alt=""></p>
+<p>在他们的排名刚开始上升时（此时超1.5M市值的盘子，刚开始价格不会有太大幅度的变化。如果你很慌乱觉得这有点滞后，请使用我擒龙术一中所讲的盈利办法直接跑路）迅速点开资金流出排行，观察这些家伙出了多少数量的筹码，记录好时间，假如是在3分钟<strong>前（20:00）</strong>。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214421960-448998771.png" style="zoom:50%;"></p>
+<p>在知道有这些数量的筹码流出后，再点资金流入排行，观察这个排名情况，点开看买入时间是否在20:00之后的几分钟内，且这两个排行的靠前地址的筹码数量是否大体能对上。如果数量能对上，时间<strong>在20:00后</strong>。那么你就明白了，<strong>前面砸出的筹码在砸出时的短时间内，这些地址又买回来</strong>。大概率就是在<strong>对倒洗盘</strong>。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221214444991-1214948918.png" style="zoom:50%;"></p>
+<h2 id="结言"><a href="#结言" class="headerlink" title="结言"></a><strong>结言</strong></h2><p>真的不会鸽了，由于我自己平时常在交易打狗，所以没有很多时间来写文章。具体捉庄地址的工具和详尽办法——《MEME市场擒龙术二：到底该如何具体的抓庄》，明后两天一定会更新，敬请期待。 </p>
+<p>对了，有人问我有没有群，我目前还没有。想问问大家的意见，如果想进，请告诉我，人多的话我会考虑开一个，里面能一起吹水讨论我觉得也挺好的。这样我平时注意到的一些事情或者庄家地址可以直接在群里分享，如果人不多就还是暂时不开了。 </p>
+<p>由于我没有收费群和吃返佣，纯靠爱发电。如果觉得对你有帮助，点赞收藏转发，是我持续更新的动力！</p>
 ]]></content>
       <categories>
         <category>Web3</category>
@@ -2514,6 +2514,66 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
+    <title>Matlab R2024a For Mac 苹果M1/2/3芯片中文破解版</title>
+    <url>/posts/24430.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Matlab R2024a 是一个高级的<strong>数学计算软件</strong>，广泛应用于工程、科学研究和经济统计等领域。该版本专为<strong>苹果 M1、M2 和 M3 芯片的 Mac 设备优化</strong>，提供了更好的性能和更高的计算效率。Matlab R2024a 支持多种编程语言，包括 MATLAB 自身的语言、C++、Python 等，使得用户可以方便地进行算法开发、数据分析和数值计算。此外，本版本还包括各种工具箱，支持图像处理、信号分析、机器学习等多种应用，是科研和工程设计的强大工具。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p><strong>已经修复在Sonoma 系统出现打开一分钟后崩溃的问题</strong>。</p>
+<p>小编亲自安装测试于 Macbook Pro <strong>M1</strong> 2021 设备macOS <strong>Sonoma 14.4.1</strong>系统。</p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>1.打开下载的安装包，再打开matlab_R2024a_macOSxxxxProcessor.dmg，对着“Install” 右键 ，然后选择“打开”，打开后提示输入密码的请输入你的Mac开机密码确定；</p>
+<p>2.进入到如下图的界面后，点击右上角的“高级选项”，选择“我有文件安装密钥”继续；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626999-1243608753.png" style="zoom:50%;"></p>
+<p>3.到了下图界面，勾选“是”，然后点击“下一步”继续；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627637-2139944504.png" style="zoom:50%;"></p>
+<p>4.到了下图界面后先放在一边不管它，打开安装说明文件把里面的安装密钥拷贝粘贴到输入框，然后点击“下一步”继续；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626273-1996866138.png" style="zoom:50%;"></p>
+<p>5.到了选择 许可证文件界面，直接点击“下一步”继续；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626058-339982714.png" style="zoom:50%;"></p>
+<p>6.选择目标文件夹，保持默认继续；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626251-109142825.png" style="zoom:50%;"></p>
+<p>取消 “向MathWorks 发送用户体验信息来帮助改进MATLAB” 勾选，下一步；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626274-979692388.png" style="zoom:50%;"></p>
+<p>7.到了选择组件界面，这里默认全部安装；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626303-1344473947.png" style="zoom:50%;"></p>
+<p>下一步继续，最后点击开始安装；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626467-1892057042.png" style="zoom:50%;"></p>
+<p>安装过程会比较费时间，请耐心等待即可。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626490-226745071.png" style="zoom:50%;"></p>
+<p>8.等提示 安装完毕之后，点击关闭即可。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626630-452701039.png" style="zoom:50%;"></p>
+<p>9.最后回到dmg安装包，双击里面的“R2024a 补丁.pkg”运行默认安装；</p>
+<p>【注：如果<strong>打不开</strong>或打开软件显示<strong>没有证书而闪退</strong>，错误error报 <code>-5</code> 那么转第<strong>11</strong>步解决】</p>
+<p>10.然后打开 Matlab R2024a 出现 “MathWorks Product Activation”激活界面后，点击 “高级选项” – “我要使用许可证文件”；</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626858-1285969756.png" style="zoom:50%;"></p>
+<p>然后浏览安装包里面的“license.lic”文件并点击“激活”按钮即可完成激活。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627077-907847392.png" style="zoom:50%;"></p>
+<p>11.如果软件闪退，我们可以手动为软件添加证书，如此可以<strong>替代第10步</strong>顺利完成软件激活！首先进入访达的应用程序中，右键选择<code>显示包内容</code>。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627135-1860486702.png" style="zoom:50%;"></p>
+<p>然后把之前的证书文件<code>license.lic</code>复制到<code>licenses</code>文件夹，软件即可激活并打开不再闪退。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627312-1656127817.png" style="zoom:50%;"></p>
+<p>12.附注：<strong>激活后打不开</strong>的请打开终端工具运行下面的命令<strong>签名</strong>即可。</p>
+<ul>
+<li>ARM机型（M芯片）</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">codesign <span class="token parameter variable">--verbose</span> <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">-s</span> - /Applications/MATLAB_R2024a.app/bin/maca64/matlab_startup_plugins/lmgrimpl/libmwlmgrimpl.dylib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>intel机型（老款x86芯片 i7等）</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">codesign <span class="token parameter variable">--verbose</span> <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">-s</span> - /Applications/MATLAB_R2024a.app/bin/maci64/matlab_startup_plugins/lmgrimpl/libmwlmgrimpl.dylib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><blockquote>
+<p>左侧 <strong><a href="https://www.cnblogs.com/ranxi169/p/18456954">进群</a></strong> 5分钟完成注册任务可领<strong>100元</strong>微信红包，<strong>童叟无欺</strong>！</p>
+</blockquote>
+<p>链接:<a href="https://pan.baidu.com/s/1UotHTN2TNmL8zitPl_Iiaw?pwd=3bde">https://pan.baidu.com/s/1UotHTN2TNmL8zitPl_Iiaw?pwd=3bde</a><br>提取码:3bde</p>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>破解</tag>
+        <tag>编程</tag>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪</title>
     <url>/posts/241221.html</url>
     <content><![CDATA[<h1 id="MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪"><a href="#MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪" class="headerlink" title="MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪"></a>MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1867174974534094875">https://x.com/Shanks_A9z/status/1867174974534094875</a></p>
@@ -2584,66 +2644,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>Web3</tag>
         <tag>meme</tag>
         <tag>sol</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab R2024a For Mac 苹果M1/2/3芯片中文破解版</title>
-    <url>/posts/24430.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Matlab R2024a 是一个高级的<strong>数学计算软件</strong>，广泛应用于工程、科学研究和经济统计等领域。该版本专为<strong>苹果 M1、M2 和 M3 芯片的 Mac 设备优化</strong>，提供了更好的性能和更高的计算效率。Matlab R2024a 支持多种编程语言，包括 MATLAB 自身的语言、C++、Python 等，使得用户可以方便地进行算法开发、数据分析和数值计算。此外，本版本还包括各种工具箱，支持图像处理、信号分析、机器学习等多种应用，是科研和工程设计的强大工具。</p>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p><strong>已经修复在Sonoma 系统出现打开一分钟后崩溃的问题</strong>。</p>
-<p>小编亲自安装测试于 Macbook Pro <strong>M1</strong> 2021 设备macOS <strong>Sonoma 14.4.1</strong>系统。</p>
-<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>1.打开下载的安装包，再打开matlab_R2024a_macOSxxxxProcessor.dmg，对着“Install” 右键 ，然后选择“打开”，打开后提示输入密码的请输入你的Mac开机密码确定；</p>
-<p>2.进入到如下图的界面后，点击右上角的“高级选项”，选择“我有文件安装密钥”继续；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626999-1243608753.png" style="zoom:50%;"></p>
-<p>3.到了下图界面，勾选“是”，然后点击“下一步”继续；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627637-2139944504.png" style="zoom:50%;"></p>
-<p>4.到了下图界面后先放在一边不管它，打开安装说明文件把里面的安装密钥拷贝粘贴到输入框，然后点击“下一步”继续；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626273-1996866138.png" style="zoom:50%;"></p>
-<p>5.到了选择 许可证文件界面，直接点击“下一步”继续；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626058-339982714.png" style="zoom:50%;"></p>
-<p>6.选择目标文件夹，保持默认继续；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626251-109142825.png" style="zoom:50%;"></p>
-<p>取消 “向MathWorks 发送用户体验信息来帮助改进MATLAB” 勾选，下一步；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626274-979692388.png" style="zoom:50%;"></p>
-<p>7.到了选择组件界面，这里默认全部安装；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626303-1344473947.png" style="zoom:50%;"></p>
-<p>下一步继续，最后点击开始安装；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626467-1892057042.png" style="zoom:50%;"></p>
-<p>安装过程会比较费时间，请耐心等待即可。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626490-226745071.png" style="zoom:50%;"></p>
-<p>8.等提示 安装完毕之后，点击关闭即可。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626630-452701039.png" style="zoom:50%;"></p>
-<p>9.最后回到dmg安装包，双击里面的“R2024a 补丁.pkg”运行默认安装；</p>
-<p>【注：如果<strong>打不开</strong>或打开软件显示<strong>没有证书而闪退</strong>，错误error报 <code>-5</code> 那么转第<strong>11</strong>步解决】</p>
-<p>10.然后打开 Matlab R2024a 出现 “MathWorks Product Activation”激活界面后，点击 “高级选项” – “我要使用许可证文件”；</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230626858-1285969756.png" style="zoom:50%;"></p>
-<p>然后浏览安装包里面的“license.lic”文件并点击“激活”按钮即可完成激活。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627077-907847392.png" style="zoom:50%;"></p>
-<p>11.如果软件闪退，我们可以手动为软件添加证书，如此可以<strong>替代第10步</strong>顺利完成软件激活！首先进入访达的应用程序中，右键选择<code>显示包内容</code>。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627135-1860486702.png" style="zoom:50%;"></p>
-<p>然后把之前的证书文件<code>license.lic</code>复制到<code>licenses</code>文件夹，软件即可激活并打开不再闪退。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202404/2910984-20240430230627312-1656127817.png" style="zoom:50%;"></p>
-<p>12.附注：<strong>激活后打不开</strong>的请打开终端工具运行下面的命令<strong>签名</strong>即可。</p>
-<ul>
-<li>ARM机型（M芯片）</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">codesign <span class="token parameter variable">--verbose</span> <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">-s</span> - /Applications/MATLAB_R2024a.app/bin/maca64/matlab_startup_plugins/lmgrimpl/libmwlmgrimpl.dylib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>intel机型（老款x86芯片 i7等）</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">codesign <span class="token parameter variable">--verbose</span> <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">-s</span> - /Applications/MATLAB_R2024a.app/bin/maci64/matlab_startup_plugins/lmgrimpl/libmwlmgrimpl.dylib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><blockquote>
-<p>左侧 <strong><a href="https://www.cnblogs.com/ranxi169/p/18456954">进群</a></strong> 5分钟完成注册任务可领<strong>100元</strong>微信红包，<strong>童叟无欺</strong>！</p>
-</blockquote>
-<p>链接:<a href="https://pan.baidu.com/s/1UotHTN2TNmL8zitPl_Iiaw?pwd=3bde">https://pan.baidu.com/s/1UotHTN2TNmL8zitPl_Iiaw?pwd=3bde</a><br>提取码:3bde</p>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>破解</tag>
-        <tag>编程</tag>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -2752,30 +2752,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
-    <title>OKX Web3钱包入门教程，区块链钱包介绍</title>
-    <url>/posts/24228.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/24219.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
-<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
-<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png" alt=""></p>
-<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
-<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png" alt=""></p>
-<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png" alt=""></p>
-<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>web3</tag>
-        <tag>区块链钱包</tag>
-        <tag>交易所</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Office Tool Plus，一键部署visio,office2021的神器</title>
     <url>/posts/241015.html</url>
     <content><![CDATA[<h1 id="Office-Tool-Plus，一键部署visio-office2021的神器"><a href="#Office-Tool-Plus，一键部署visio-office2021的神器" class="headerlink" title="Office Tool Plus，一键部署visio,office2021的神器"></a>Office Tool Plus，一键部署visio,office2021的神器</h1><h2 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h2><p>Office Tool Plus 是一个用于部署 Office, Visio 和 Project 的小工具。</p>
@@ -2813,6 +2789,30 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>破解</tag>
         <tag>Office</tag>
         <tag>激活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OKX Web3钱包入门教程，区块链钱包介绍</title>
+    <url>/posts/24228.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/24219.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
+<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
+<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png" alt=""></p>
+<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
+<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png" alt=""></p>
+<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png" alt=""></p>
+<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>web3</tag>
+        <tag>区块链钱包</tag>
+        <tag>交易所</tag>
       </tags>
   </entry>
   <entry>
@@ -2893,62 +2893,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>chatgpt</tag>
         <tag>visa</tag>
         <tag>信用卡</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenAI推出超神Chatgpt注册教程来了|Gmail外国手机短信验证码接码</title>
-    <url>/posts/16890.html</url>
-    <content><![CDATA[<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206113426088-1538964752.png" alt=""></p>
-<p>前几天，OpenAI 推出超神 ChatGPT，非常火爆。但是呢，因为不可抗力原因，大部分人无法体验到。这里我分享一下注册的攻略。</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
-<li>首先能能访问 Google（前置条件，不能明确说，懂得都懂）<ul>
-<li>——<a href="https://blog.onefly.top/posts/16888.html">访问谷歌</a></li>
-</ul>
-</li>
-<li>你得有一个国外手机号，GV 号肯定不行。<ul>
-<li>如果你没有国外手机号，推荐sms-activate.org</li>
-</ul>
-</li>
-</ul>
-<h3 id="注册短信平台并充值"><a href="#注册短信平台并充值" class="headerlink" title="注册短信平台并充值"></a>注册短信平台并充值</h3><ul>
-<li>先行注册<a href="https://sms-activate.org/cn?ref=2713386">在线接受短信的虚拟号码 - SMS-Activate</a></li>
-<li>注册好之后进行对应的充值</li>
-</ul>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206205019057-724465341.png" alt=""></p>
-<p> 接码费用一次为 10.5 卢布，大约1.2 人民币。因为充值默认为美元，可以选择充值 1 美元进去，</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c507b1564d1442d8dfab0ebc8d481e1~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?" alt=""></p>
-<h3 id="注册OpenAI账号"><a href="#注册OpenAI账号" class="headerlink" title="注册OpenAI账号"></a>注册OpenAI账号</h3><ul>
-<li><p>打开</p>
-<p><a href="http://beta.openai.com/signup">openai 注册</a>页面进行相应的注册。</p>
-<ul>
-<li>这里同样需要你能访问Google且 ip 不是香港，最好是<strong>韩国</strong>、美国、新加坡等等，不然会提示不能在当前国家服务。</li>
-</ul>
-</li>
-<li><p>注册成功进入下面填写手机号的页面</p>
-<ul>
-<li><strong>填写手机号要去掉国家区号</strong>，区号是直接通过选择国家输入的，比如印度的91</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206113639579-526919807.png" alt="" style="zoom:50%;"></p>
-<h3 id="准备接码"><a href="#准备接码" class="headerlink" title="准备接码"></a>准备接码</h3><blockquote>
-<p>这里需要注意下的就是，只有巴西和印度、印度尼西亚剩余的手机号较多，可以支持了，之前我选的印尼，是可以收到码的。</p>
-</blockquote>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206121459513-617669672.png" alt="" style="zoom: 67%;"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206210059526-792187119.png" alt=""></p>
-<ul>
-<li>然后再刚刚填写手机号码的页面填入申请的手机号</li>
-</ul>
-<h3 id="开始使用ChatGPT"><a href="#开始使用ChatGPT" class="headerlink" title="开始使用ChatGPT"></a>开始使用ChatGPT</h3><p>注册完后，我们去ChatGPT网站去登陆。<a href="https://link.juejin.cn/?target=https%3A%2F%2Fchat.openai.com%2Fauth%2Flogin">chat.openai.com/auth/login</a></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206113849817-1245117364.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>chatgpt</tag>
-        <tag>接码</tag>
-        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -3176,9 +3120,65 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>数据分析</category>
       </categories>
       <tags>
-        <tag>数据分析</tag>
         <tag>python</tag>
+        <tag>数据分析</tag>
         <tag>numpy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenAI推出超神Chatgpt注册教程来了|Gmail外国手机短信验证码接码</title>
+    <url>/posts/16890.html</url>
+    <content><![CDATA[<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206113426088-1538964752.png" alt=""></p>
+<p>前几天，OpenAI 推出超神 ChatGPT，非常火爆。但是呢，因为不可抗力原因，大部分人无法体验到。这里我分享一下注册的攻略。</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li>首先能能访问 Google（前置条件，不能明确说，懂得都懂）<ul>
+<li>——<a href="https://blog.onefly.top/posts/16888.html">访问谷歌</a></li>
+</ul>
+</li>
+<li>你得有一个国外手机号，GV 号肯定不行。<ul>
+<li>如果你没有国外手机号，推荐sms-activate.org</li>
+</ul>
+</li>
+</ul>
+<h3 id="注册短信平台并充值"><a href="#注册短信平台并充值" class="headerlink" title="注册短信平台并充值"></a>注册短信平台并充值</h3><ul>
+<li>先行注册<a href="https://sms-activate.org/cn?ref=2713386">在线接受短信的虚拟号码 - SMS-Activate</a></li>
+<li>注册好之后进行对应的充值</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206205019057-724465341.png" alt=""></p>
+<p> 接码费用一次为 10.5 卢布，大约1.2 人民币。因为充值默认为美元，可以选择充值 1 美元进去，</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c507b1564d1442d8dfab0ebc8d481e1~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?" alt=""></p>
+<h3 id="注册OpenAI账号"><a href="#注册OpenAI账号" class="headerlink" title="注册OpenAI账号"></a>注册OpenAI账号</h3><ul>
+<li><p>打开</p>
+<p><a href="http://beta.openai.com/signup">openai 注册</a>页面进行相应的注册。</p>
+<ul>
+<li>这里同样需要你能访问Google且 ip 不是香港，最好是<strong>韩国</strong>、美国、新加坡等等，不然会提示不能在当前国家服务。</li>
+</ul>
+</li>
+<li><p>注册成功进入下面填写手机号的页面</p>
+<ul>
+<li><strong>填写手机号要去掉国家区号</strong>，区号是直接通过选择国家输入的，比如印度的91</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206113639579-526919807.png" alt="" style="zoom:50%;"></p>
+<h3 id="准备接码"><a href="#准备接码" class="headerlink" title="准备接码"></a>准备接码</h3><blockquote>
+<p>这里需要注意下的就是，只有巴西和印度、印度尼西亚剩余的手机号较多，可以支持了，之前我选的印尼，是可以收到码的。</p>
+</blockquote>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206121459513-617669672.png" alt="" style="zoom: 67%;"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206210059526-792187119.png" alt=""></p>
+<ul>
+<li>然后再刚刚填写手机号码的页面填入申请的手机号</li>
+</ul>
+<h3 id="开始使用ChatGPT"><a href="#开始使用ChatGPT" class="headerlink" title="开始使用ChatGPT"></a>开始使用ChatGPT</h3><p>注册完后，我们去ChatGPT网站去登陆。<a href="https://link.juejin.cn/?target=https%3A%2F%2Fchat.openai.com%2Fauth%2Flogin">chat.openai.com/auth/login</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202212/2910984-20221206113849817-1245117364.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>chatgpt</tag>
+        <tag>接码</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -3234,78 +3234,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       <tags>
         <tag>破解</tag>
         <tag>spss</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Solana 土狗交易机器人使用教程【Sol Trading Bot中文教程】 &amp; Base ETH</title>
-    <url>/posts/231224.html</url>
-    <content><![CDATA[<p>众所周知，swap工具不仅有滑点，还十分考验手速，慢一点价格又变了，根本不能成功交易，那么有没有一种方法能够丝滑交易呢，那就是交易机器人！</p>
-<h2 id="更多土狗机器人推荐"><a href="#更多土狗机器人推荐" class="headerlink" title="更多土狗机器人推荐"></a>更多土狗机器人推荐</h2><p><strong>Sol\ETH\Base\BSC土狗tg交流群</strong>：<a href="https://t.me/onefly_sol">https://t.me/onefly_sol</a></p>
-<p>以下机器人按个人<strong>喜好推荐顺序排列</strong>：</p>
-<h5 id="（一）Sol土狗机器人："><a href="#（一）Sol土狗机器人：" class="headerlink" title="（一）Sol土狗机器人："></a>（一）<strong>Sol</strong>土狗机器人：</h5><p><strong>1.Dbot土狗机器人［SOL］（有中文）（有教程-强烈推荐）</strong>：<br><a href="https://t.me/sol_dbot?start=ref_31817628">https://t.me/sol_dbot?start=ref_31817628</a></p>
-<p><strong>2.Sol土狗英文机器人STB</strong>（<strong>本文教程-强烈推荐</strong>）：</p>
-<p><a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<p>3.全中文<strong>pepe</strong>机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/pepeboost_sol_bot?start=ref_0oldsx">https://t.me/pepeboost_sol_bot?start=ref_0oldsx</a></p>
-<p>4.<strong>Unibot</strong>土狗交易机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/solana_unibot?start=r-jack_fly317186">https://t.me/solana_unibot?start=r-jack_fly317186</a></p>
-<p>5.Sol三链<strong>龙狙</strong>机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/dragun69_bot?start=richb425ddf7f6c9">https://t.me/dragun69_bot?start=richb425ddf7f6c9</a></p>
-<p>6.<strong>Rebotech</strong> Sol土狗交易机器人（<strong>有中文</strong>）</p>
-<p><a href="https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY">https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY</a></p>
-<h5 id="（二）ETH和以太二层链土狗机器人："><a href="#（二）ETH和以太二层链土狗机器人：" class="headerlink" title="（二）ETH和以太二层链土狗机器人："></a>（二）ETH和以太二层链土狗机器人：</h5><p><strong>1.Dbot土狗机器人［ETH base］（有中文）（有教程-强烈推荐）</strong>：<br><a href="https://t.me/dex_dbot?start=ref_31817628">https://t.me/dex_dbot?start=ref_31817628</a><br><a href="https://t.me/base_dbot?start=ref_31817628">https://t.me/base_dbot?start=ref_31817628</a></p>
-<p>2.<strong>unibot</strong>土狗机器人［<strong>arb base</strong>］（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/unibotsniper_bot?start=oneflyeth">https://t.me/unibotsniper_bot?start=oneflyeth</a></p>
-<p>3.<strong>pepe ETH</strong>土狗交易全中文机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/pepeboost_swap_bot?start=ref_08tucl">https://t.me/pepeboost_swap_bot?start=ref_08tucl</a></p>
-<p>4.<strong>pepe Base</strong>链专用机器人（有中文）：</p>
-<p><a href="https://t.me/PepeboostBase_bot?start=ref_0pxl4e">https://t.me/PepeboostBase_bot?start=ref_0pxl4e</a></p>
-<p>5.<strong>Sigma</strong> 主攻<strong>base</strong>链机器人（<strong>有中文</strong>）：</p>
-<p><a href="https://t.me/SigmaTrading4_bot?start=ref=1794496608">https://t.me/SigmaTrading4_bot?start=ref=1794496608</a></p>
-<p>6.<strong>Memebest</strong>主攻<strong>Base</strong>链机器人（<strong>有中文</strong>）</p>
-<p><a href="https://t.me/MemeBestBase_bot?start=ref_luZSdX">https://t.me/MemeBestBase_bot?start=ref_luZSdX</a></p>
-<h5 id="（三）BSC土狗交易机器人："><a href="#（三）BSC土狗交易机器人：" class="headerlink" title="（三）BSC土狗交易机器人："></a>（三）<strong>BSC</strong>土狗交易机器人：</h5><p>1.<strong>Dbot bsc</strong>机器人（<strong>有中文</strong>）</p>
-<p><a href="https://t.me/bsc_dbot?start=ref_31817628">https://t.me/bsc_dbot?start=ref_31817628</a></p>
-<h5 id="（四）Ton土狗交易机器人："><a href="#（四）Ton土狗交易机器人：" class="headerlink" title="（四）Ton土狗交易机器人："></a>（四）Ton土狗交易机器人：</h5><p>1.<strong>TonTradingbot</strong>机器人（<strong>有中文</strong>）<br><a href="https://t.me/tontrade?start=toKkQDKL">https://t.me/tontrade?start=toKkQDKL</a></p>
-<p>2.<strong>Stonks</strong>机器人</p>
-<p><a href="https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78">https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78</a></p>
-<h5 id="（五）多链小众机器人："><a href="#（五）多链小众机器人：" class="headerlink" title="（五）多链小众机器人："></a>（五）多链小众机器人：</h5><p>1.Shuriken国外人少机器人<br><a href="https://t.me/ShurikenTradeBot?start=ref-onefly">https://t.me/ShurikenTradeBot?start=ref-onefly</a></p>
-<p>下面是一篇完整的<strong>第一个sol链上STB交易机器人使用教程</strong>【含翻译】： </p>
-<p>【<strong>安全声明</strong>：交易机器人与本人无关，只提供使用教程，使用机器人造成的一切损失自负】</p>
-<h2 id="1-开始使用机器人"><a href="#1-开始使用机器人" class="headerlink" title="1.开始使用机器人"></a>1.开始使用机器人</h2><p>直接点击机器人链接，或在支持跳转telegram的浏览器打开下面的机器人链接，或者复制链接到tg聊天发送给任意对象再点击链接打开。</p>
-<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114651851-1104401959.jpg" style="zoom:50%;"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114719167-626787221.jpg" style="zoom:50%;"></p>
-<h2 id="2-机器人基本菜单介绍"><a href="#2-机器人基本菜单介绍" class="headerlink" title="2.机器人基本菜单介绍"></a>2.机器人基本菜单介绍</h2><p>对应的基本功能见翻译，快捷命令菜单和图中按钮面板一致，不会英文的请熟记以下几个单词，buy是买，sell是卖。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114841303-1858318205.jpg" style="zoom:50%;"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114858659-1344250239.jpg" style="zoom:50%;"></p>
-<h2 id="3-机器人钱包系统介绍"><a href="#3-机器人钱包系统介绍" class="headerlink" title="3.机器人钱包系统介绍"></a>3.机器人钱包系统介绍</h2><p>建议不要告诉机器人自己的私钥，而是创建一个新钱包，然后用自己的钱包给机器人转账，为什么要用机器人是因为机器人能够秒买秒卖，但是有一定安全风险，所以赚多了可以提出来，机器人会告诉你钱包的公钥和私钥，你可以把私钥添加到自己的钱包插件中，这样方便后面监控操作。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114952964-1330364325.jpg" style="zoom:50%;"></p>
-<h2 id="4-机器人买卖币系统介绍"><a href="#4-机器人买卖币系统介绍" class="headerlink" title="4.机器人买卖币系统介绍"></a>4.机器人买卖币系统介绍</h2><p>直接给机器人发送代币合约地址即可开始买卖，机器人首先会回复你币种基本信息，然后下面是买卖功能菜单面板。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115102492-902648871.jpg" style="zoom:50%;"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115135278-892642567.jpg" style="zoom:50%;"></p>
-<h2 id="5-机器人自动买卖和自定义按钮介绍"><a href="#5-机器人自动买卖和自定义按钮介绍" class="headerlink" title="5.机器人自动买卖和自定义按钮介绍"></a>5.机器人自动买卖和自定义按钮介绍</h2><p>bot提供了简单的自动买卖功能，以及一个购买数量的快捷按钮设置，一个适合自己的冲土狗数量快捷单位。 自动买卖指给机器让发送合约地址就会自动买卖，可以选开启自动买还是自动卖。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115226190-537804814.jpg" style="zoom:50%;"></p>
-<h2 id="6-机器人狙击新币功能介绍"><a href="#6-机器人狙击新币功能介绍" class="headerlink" title="6.机器人狙击新币功能介绍"></a>6.机器人狙击新币功能介绍</h2><p>直接给机器人发送还没开盘，即没有加池子的合约地址，机器人默认选择狙击模式，设置好大额滑点和贿赂矿工的gas，选择买入数量，抢跑以求在最低点开盘就狙击买入！</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142025210-825027281.png" style="zoom:50%;"></p>
-<h2 id="7-机器人参数设置讲解"><a href="#7-机器人参数设置讲解" class="headerlink" title="7.机器人参数设置讲解"></a>7.机器人参数设置讲解</h2><p>关闭自动买卖，这样发送合约才能狙击。参数可以按照自己仓位来设置，狙击滑点设大一点，买卖滑点小一点，贿赂小费gas按照买卖仓位来设置，别亏gas。贿赂gas越高，滑点就可以设得越低，这样不容易去山顶。滑点10000就表示开盘100倍以内的涨幅都要追进去！</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142154021-1234853139.png" style="zoom:50%;"></p>
-<h2 id="8-机器人交易收益追踪介绍"><a href="#8-机器人交易收益追踪介绍" class="headerlink" title="8.机器人交易收益追踪介绍"></a>8.机器人交易收益追踪介绍</h2><p>在菜单中选择trade就能看最近10笔订单的收益情况，但是图表，蜡烛图才是交易员的归宿，所以可以用下面的网站链接钱包查看。</p>
-<p><a href="https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana">https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana</a></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115426681-390263752.jpg" style="zoom:50%;"></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115606171-455902962.jpg" alt=""></p>
-<blockquote>
-<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
-<p>原文链接：<a href="https://x.com/onefly/status/1738755042335985853?s=20">https://x.com/onefly/status/1738755042335985853?s=20</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>sol</tag>
-        <tag>web3</tag>
-        <tag>bot</tag>
       </tags>
   </entry>
   <entry>
@@ -3457,9 +3385,130 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>数据分析</category>
       </categories>
       <tags>
-        <tag>数据分析</tag>
         <tag>python</tag>
+        <tag>数据分析</tag>
         <tag>pandas</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Solana 土狗交易机器人使用教程【Sol Trading Bot中文教程】 &amp; Base ETH</title>
+    <url>/posts/231224.html</url>
+    <content><![CDATA[<p>众所周知，swap工具不仅有滑点，还十分考验手速，慢一点价格又变了，根本不能成功交易，那么有没有一种方法能够丝滑交易呢，那就是交易机器人！</p>
+<h2 id="更多土狗机器人推荐"><a href="#更多土狗机器人推荐" class="headerlink" title="更多土狗机器人推荐"></a>更多土狗机器人推荐</h2><p><strong>Sol\ETH\Base\BSC土狗tg交流群</strong>：<a href="https://t.me/onefly_sol">https://t.me/onefly_sol</a></p>
+<p>以下机器人按个人<strong>喜好推荐顺序排列</strong>：</p>
+<h5 id="（一）Sol土狗机器人："><a href="#（一）Sol土狗机器人：" class="headerlink" title="（一）Sol土狗机器人："></a>（一）<strong>Sol</strong>土狗机器人：</h5><p><strong>1.Dbot土狗机器人［SOL］（有中文）（有教程-强烈推荐）</strong>：<br><a href="https://t.me/sol_dbot?start=ref_31817628">https://t.me/sol_dbot?start=ref_31817628</a></p>
+<p><strong>2.Sol土狗英文机器人STB</strong>（<strong>本文教程-强烈推荐</strong>）：</p>
+<p><a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<p>3.全中文<strong>pepe</strong>机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/pepeboost_sol_bot?start=ref_0oldsx">https://t.me/pepeboost_sol_bot?start=ref_0oldsx</a></p>
+<p>4.<strong>Unibot</strong>土狗交易机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/solana_unibot?start=r-jack_fly317186">https://t.me/solana_unibot?start=r-jack_fly317186</a></p>
+<p>5.Sol三链<strong>龙狙</strong>机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/dragun69_bot?start=richb425ddf7f6c9">https://t.me/dragun69_bot?start=richb425ddf7f6c9</a></p>
+<p>6.<strong>Rebotech</strong> Sol土狗交易机器人（<strong>有中文</strong>）</p>
+<p><a href="https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY">https://t.me/SOL_RoboTechLab_bot?start=ZfkGXkIgSf2JT8lY</a></p>
+<h5 id="（二）ETH和以太二层链土狗机器人："><a href="#（二）ETH和以太二层链土狗机器人：" class="headerlink" title="（二）ETH和以太二层链土狗机器人："></a>（二）ETH和以太二层链土狗机器人：</h5><p><strong>1.Dbot土狗机器人［ETH base］（有中文）（有教程-强烈推荐）</strong>：<br><a href="https://t.me/dex_dbot?start=ref_31817628">https://t.me/dex_dbot?start=ref_31817628</a><br><a href="https://t.me/base_dbot?start=ref_31817628">https://t.me/base_dbot?start=ref_31817628</a></p>
+<p>2.<strong>unibot</strong>土狗机器人［<strong>arb base</strong>］（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/unibotsniper_bot?start=oneflyeth">https://t.me/unibotsniper_bot?start=oneflyeth</a></p>
+<p>3.<strong>pepe ETH</strong>土狗交易全中文机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/pepeboost_swap_bot?start=ref_08tucl">https://t.me/pepeboost_swap_bot?start=ref_08tucl</a></p>
+<p>4.<strong>pepe Base</strong>链专用机器人（有中文）：</p>
+<p><a href="https://t.me/PepeboostBase_bot?start=ref_0pxl4e">https://t.me/PepeboostBase_bot?start=ref_0pxl4e</a></p>
+<p>5.<strong>Sigma</strong> 主攻<strong>base</strong>链机器人（<strong>有中文</strong>）：</p>
+<p><a href="https://t.me/SigmaTrading4_bot?start=ref=1794496608">https://t.me/SigmaTrading4_bot?start=ref=1794496608</a></p>
+<p>6.<strong>Memebest</strong>主攻<strong>Base</strong>链机器人（<strong>有中文</strong>）</p>
+<p><a href="https://t.me/MemeBestBase_bot?start=ref_luZSdX">https://t.me/MemeBestBase_bot?start=ref_luZSdX</a></p>
+<h5 id="（三）BSC土狗交易机器人："><a href="#（三）BSC土狗交易机器人：" class="headerlink" title="（三）BSC土狗交易机器人："></a>（三）<strong>BSC</strong>土狗交易机器人：</h5><p>1.<strong>Dbot bsc</strong>机器人（<strong>有中文</strong>）</p>
+<p><a href="https://t.me/bsc_dbot?start=ref_31817628">https://t.me/bsc_dbot?start=ref_31817628</a></p>
+<h5 id="（四）Ton土狗交易机器人："><a href="#（四）Ton土狗交易机器人：" class="headerlink" title="（四）Ton土狗交易机器人："></a>（四）Ton土狗交易机器人：</h5><p>1.<strong>TonTradingbot</strong>机器人（<strong>有中文</strong>）<br><a href="https://t.me/tontrade?start=toKkQDKL">https://t.me/tontrade?start=toKkQDKL</a></p>
+<p>2.<strong>Stonks</strong>机器人</p>
+<p><a href="https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78">https://t.me/stonks_sniper_bot?start=0xefffcdc3d9fd1ee08475fc3e1c7e9a78</a></p>
+<h5 id="（五）多链小众机器人："><a href="#（五）多链小众机器人：" class="headerlink" title="（五）多链小众机器人："></a>（五）多链小众机器人：</h5><p>1.Shuriken国外人少机器人<br><a href="https://t.me/ShurikenTradeBot?start=ref-onefly">https://t.me/ShurikenTradeBot?start=ref-onefly</a></p>
+<p>下面是一篇完整的<strong>第一个sol链上STB交易机器人使用教程</strong>【含翻译】： </p>
+<p>【<strong>安全声明</strong>：交易机器人与本人无关，只提供使用教程，使用机器人造成的一切损失自负】</p>
+<h2 id="1-开始使用机器人"><a href="#1-开始使用机器人" class="headerlink" title="1.开始使用机器人"></a>1.开始使用机器人</h2><p>直接点击机器人链接，或在支持跳转telegram的浏览器打开下面的机器人链接，或者复制链接到tg聊天发送给任意对象再点击链接打开。</p>
+<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114651851-1104401959.jpg" style="zoom:50%;"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114719167-626787221.jpg" style="zoom:50%;"></p>
+<h2 id="2-机器人基本菜单介绍"><a href="#2-机器人基本菜单介绍" class="headerlink" title="2.机器人基本菜单介绍"></a>2.机器人基本菜单介绍</h2><p>对应的基本功能见翻译，快捷命令菜单和图中按钮面板一致，不会英文的请熟记以下几个单词，buy是买，sell是卖。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114841303-1858318205.jpg" style="zoom:50%;"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114858659-1344250239.jpg" style="zoom:50%;"></p>
+<h2 id="3-机器人钱包系统介绍"><a href="#3-机器人钱包系统介绍" class="headerlink" title="3.机器人钱包系统介绍"></a>3.机器人钱包系统介绍</h2><p>建议不要告诉机器人自己的私钥，而是创建一个新钱包，然后用自己的钱包给机器人转账，为什么要用机器人是因为机器人能够秒买秒卖，但是有一定安全风险，所以赚多了可以提出来，机器人会告诉你钱包的公钥和私钥，你可以把私钥添加到自己的钱包插件中，这样方便后面监控操作。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224114952964-1330364325.jpg" style="zoom:50%;"></p>
+<h2 id="4-机器人买卖币系统介绍"><a href="#4-机器人买卖币系统介绍" class="headerlink" title="4.机器人买卖币系统介绍"></a>4.机器人买卖币系统介绍</h2><p>直接给机器人发送代币合约地址即可开始买卖，机器人首先会回复你币种基本信息，然后下面是买卖功能菜单面板。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115102492-902648871.jpg" style="zoom:50%;"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115135278-892642567.jpg" style="zoom:50%;"></p>
+<h2 id="5-机器人自动买卖和自定义按钮介绍"><a href="#5-机器人自动买卖和自定义按钮介绍" class="headerlink" title="5.机器人自动买卖和自定义按钮介绍"></a>5.机器人自动买卖和自定义按钮介绍</h2><p>bot提供了简单的自动买卖功能，以及一个购买数量的快捷按钮设置，一个适合自己的冲土狗数量快捷单位。 自动买卖指给机器让发送合约地址就会自动买卖，可以选开启自动买还是自动卖。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115226190-537804814.jpg" style="zoom:50%;"></p>
+<h2 id="6-机器人狙击新币功能介绍"><a href="#6-机器人狙击新币功能介绍" class="headerlink" title="6.机器人狙击新币功能介绍"></a>6.机器人狙击新币功能介绍</h2><p>直接给机器人发送还没开盘，即没有加池子的合约地址，机器人默认选择狙击模式，设置好大额滑点和贿赂矿工的gas，选择买入数量，抢跑以求在最低点开盘就狙击买入！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142025210-825027281.png" style="zoom:50%;"></p>
+<h2 id="7-机器人参数设置讲解"><a href="#7-机器人参数设置讲解" class="headerlink" title="7.机器人参数设置讲解"></a>7.机器人参数设置讲解</h2><p>关闭自动买卖，这样发送合约才能狙击。参数可以按照自己仓位来设置，狙击滑点设大一点，买卖滑点小一点，贿赂小费gas按照买卖仓位来设置，别亏gas。贿赂gas越高，滑点就可以设得越低，这样不容易去山顶。滑点10000就表示开盘100倍以内的涨幅都要追进去！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202403/2910984-20240318142154021-1234853139.png" style="zoom:50%;"></p>
+<h2 id="8-机器人交易收益追踪介绍"><a href="#8-机器人交易收益追踪介绍" class="headerlink" title="8.机器人交易收益追踪介绍"></a>8.机器人交易收益追踪介绍</h2><p>在菜单中选择trade就能看最近10笔订单的收益情况，但是图表，蜡烛图才是交易员的归宿，所以可以用下面的网站链接钱包查看。</p>
+<p><a href="https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana">https://birdeye.so/token/7mmXL6Et4SbpDs2iXoZQ3oPEeXeAiyETxh1QjDNi5qnV?chain=solana</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115426681-390263752.jpg" style="zoom:50%;"></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202312/2910984-20231224115606171-455902962.jpg" alt=""></p>
+<blockquote>
+<p>机器人链接：<a href="https://t.me/SolanaTradingBot?start=FBcf8IMCf">https://t.me/SolanaTradingBot?start=FBcf8IMCf</a></p>
+<p>原文链接：<a href="https://x.com/onefly/status/1738755042335985853?s=20">https://x.com/onefly/status/1738755042335985853?s=20</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>sol</tag>
+        <tag>web3</tag>
+        <tag>bot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora 1.6.7 安装包下载及安装教程 | typora最新版破解教程</title>
+    <url>/posts/23701.html</url>
+    <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称: <strong>Typora 1.6.7 永久激活包</strong></p>
+<p>软件大小: 80.3 MB</p>
+<p>安装环境]: Win11/Win 10/Win 7</p>
+<blockquote>
+<p>左侧 <strong><a href="https://www.cnblogs.com/ranxi169/p/18456954">进群</a></strong> 5分钟完成注册任务可领<strong>100元</strong>微信红包，<strong>童叟无欺</strong>！</p>
+</blockquote>
+<p>下载链接: <a href="https://wwke.lanzoub.com/i6UZw10z9fde">Typora 1.6.7.zip - 蓝奏云 (lanzoub.com)</a></p>
+<p>软件介绍：Typora是一款简洁的Markdown编辑器,支持即时渲染技术,使用起来也是十分方便。使用Typora可以日常记录笔记,代码学习,界面层级清晰,用于日常工作可以提高效率</p>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>1.选中下载的安装包，鼠标右键选择解压到“Typora 1.6.7“文件夹</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205504020-1956921260.png" alt=""></p>
+<p>2.选中“Typora 1.6.7.exe”鼠标右键选择以管理员身份运行</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205456406-1815227489.png" alt=""></p>
+<p>3.点击“Install for all users (recommended)”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205448052-1527644165.png" alt=""></p>
+<p>4.选择安装位置，点击“Next”（建议和我的路径保持一致）</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205440634-269826617.png" alt=""></p>
+<p>5.勾选”Create a desktop shortcut”，点击“Next”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205434094-821299412.png" alt=""></p>
+<p>6.点击“Install“</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205421584-1170530835.png" alt=""></p>
+<p>7.软件正在安装中，请耐心等待安装完成</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205407822-1415242824.png" alt=""></p>
+<p>8.取消勾选“Launch Typora“，点击“Finish“</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205403222-1532128650.png" alt=""></p>
+<p>9打开安装包，复制“winmm.dll”文件</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205358091-1872128224.png" alt=""></p>
+<p>10.鼠标放在软件上，鼠标右键点击“打开文件所在位置”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205352329-549941236.png" alt=""></p>
+<p>11.鼠标放在空白处右键“粘贴”</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205348297-967587077.png" alt=""></p>
+<p>12.双击打开软件</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205343398-579212640.png" alt=""></p>
+<p>13.激活成功</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205336294-786732545.png" alt=""></p>
+<p>14.软件安装完成</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205327655-1547912110.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>破解</tag>
+        <tag>typora</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -3533,55 +3582,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>chatgpt</tag>
         <tag>美国</tag>
         <tag>微软商店</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Typora 1.6.7 安装包下载及安装教程 | typora最新版破解教程</title>
-    <url>/posts/23701.html</url>
-    <content><![CDATA[<h2 id="资源简介"><a href="#资源简介" class="headerlink" title="资源简介"></a>资源简介</h2><p>软件名称: <strong>Typora 1.6.7 永久激活包</strong></p>
-<p>软件大小: 80.3 MB</p>
-<p>安装环境]: Win11/Win 10/Win 7</p>
-<blockquote>
-<p>左侧 <strong><a href="https://www.cnblogs.com/ranxi169/p/18456954">进群</a></strong> 5分钟完成注册任务可领<strong>100元</strong>微信红包，<strong>童叟无欺</strong>！</p>
-</blockquote>
-<p>下载链接: <a href="https://wwke.lanzoub.com/i6UZw10z9fde">Typora 1.6.7.zip - 蓝奏云 (lanzoub.com)</a></p>
-<p>软件介绍：Typora是一款简洁的Markdown编辑器,支持即时渲染技术,使用起来也是十分方便。使用Typora可以日常记录笔记,代码学习,界面层级清晰,用于日常工作可以提高效率</p>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>1.选中下载的安装包，鼠标右键选择解压到“Typora 1.6.7“文件夹</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205504020-1956921260.png" alt=""></p>
-<p>2.选中“Typora 1.6.7.exe”鼠标右键选择以管理员身份运行</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205456406-1815227489.png" alt=""></p>
-<p>3.点击“Install for all users (recommended)”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205448052-1527644165.png" alt=""></p>
-<p>4.选择安装位置，点击“Next”（建议和我的路径保持一致）</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205440634-269826617.png" alt=""></p>
-<p>5.勾选”Create a desktop shortcut”，点击“Next”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205434094-821299412.png" alt=""></p>
-<p>6.点击“Install“</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205421584-1170530835.png" alt=""></p>
-<p>7.软件正在安装中，请耐心等待安装完成</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205407822-1415242824.png" alt=""></p>
-<p>8.取消勾选“Launch Typora“，点击“Finish“</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205403222-1532128650.png" alt=""></p>
-<p>9打开安装包，复制“winmm.dll”文件</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205358091-1872128224.png" alt=""></p>
-<p>10.鼠标放在软件上，鼠标右键点击“打开文件所在位置”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205352329-549941236.png" alt=""></p>
-<p>11.鼠标放在空白处右键“粘贴”</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205348297-967587077.png" alt=""></p>
-<p>12.双击打开软件</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205343398-579212640.png" alt=""></p>
-<p>13.激活成功</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205336294-786732545.png" alt=""></p>
-<p>14.软件安装完成</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202307/2910984-20230701205327655-1547912110.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>破解</tag>
-        <tag>typora</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -3759,6 +3759,33 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>北大区块链博士XQ哥的Sol pump内盘土狗扫链秘籍</title>
+    <url>/posts/241108.html</url>
+    <content><![CDATA[<h1 id="XQ哥的内盘扫链秘籍"><a href="#XQ哥的内盘扫链秘籍" class="headerlink" title="XQ哥的内盘扫链秘籍"></a>XQ哥的内盘扫链秘籍</h1><blockquote>
+<p>原文索引：<a href="https://x.com/0xXQ1/status/1854874880535310510">https://x.com/0xXQ1/status/1854874880535310510</a></p>
+</blockquote>
+<p>准备开始更一些教程，一来一天到晚一点干货不输出不合适，二来也想整理一下自己的方法论。如果你对扫链有兴趣，本篇thread将会是一个新手向的扫链教程。虽然我并不经常扫链，但是扫链可以帮助你第一时间接触到一级的新项目，获取早期的信息差和成本优势。纯教程，不放邀请码，不构成投资建议。</p>
+<h2 id="电脑工具"><a href="#电脑工具" class="headerlink" title="电脑工具"></a>电脑工具</h2><p>电脑工具 pump最直观的看板是官方的看板 <a href="https://pump.fun/board">https://pump.fun/board</a> ，但是ui设计的比较反人类，一般只在找同名OG盘或搜索带空格的ticker名的时候用。 最好还是使用其他的一些看板工具，<a href="https://gmgn.ai/new-pair/cLf0ZwzZ?chain=sol">gmgn</a> ，abot，<a href="https://t.me/BullxBetaBot?start=access_EK3XEQCDFHB">绿牛</a>，<a href="https://photon-sol.tinyastro.io/@onefly">光子</a>等工具都提供了相似的看板，可以快捷的进行操作。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241108215302915-1755173477.png" alt=""></p>
+<h2 id="手机端工具"><a href="#手机端工具" class="headerlink" title="手机端工具"></a>手机端工具</h2><p>gmgn等工具还提供了手机端的 <a href="https://t.me/GMGN_sol_bot?start=i_cLf0ZwzZ">tg群组</a> ，实时推送pump的新盘信息。不过如果你只有手机，我建议你放弃在低市值pvp，一方面你没办法看到完整的筹码结构，另一方面你在时间差方面也会落后于电脑玩家。</p>
+<h2 id="内盘的现状"><a href="#内盘的现状" class="headerlink" title="内盘的现状"></a>内盘的现状</h2><p>个人估计pump内盘里，50个有一个是可能发射的，剩下30个是没角度的，15个是假网站诈骗，剩下的都是老鼠仓分发一下给人砸没的。所以每个项目都看会很费精力。这里建议对早期项目进行筛选。可以排除掉一个社媒都没有的盘子，也可以设定一定阈值来排除掉市值过低的盘子。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241108215617643-1476693462.png" alt=""></p>
+<h2 id="扫链我该看什么？"><a href="#扫链我该看什么？" class="headerlink" title="扫链我该看什么？"></a>扫链我该看什么？</h2><p>当你开始新的一天准备扫链的时候，你首先要了解当前的叙事是什么主线。方法是去看当天有哪些盘子市值上M，哪些盘子交易量较大。例如当天的主线是ai，那你扫脸的时候就要格外关注新ai盘，看哪些是有产品的有真人在做的，这样你就能吃到当天叙事的beta。</p>
+<p>如何吃到alpha呢？当你看到短时间内出现大量的同名盘，说明大概率是有新的热点事件发生，这个时候你就要注意是什么事件以及找到第一个或增长最快的一个塞进去。另外，你也需要足够了解当前热点盘的起飞原因，如果有各方面都超过当前热点盘的，那恭喜你有可能找到了新的alpha。</p>
+<h2 id="什么时候应该扫链？"><a href="#什么时候应该扫链？" class="headerlink" title="什么时候应该扫链？"></a>什么时候应该扫链？</h2><p>这个问题取决于你的策略和时间。如果你是全职玩家，那你每时每刻都应该在扫链（可以根据热点的轮换时区来调整重心，例如本月的大部分金狗都出现在美国时区，因此东八区的下午就可以稍微休息休息） 不过我的策略是不会主动扫链，因为这种主动接收信息的方式会非常耗费精力。</p>
+<p>如果你想偷懒，那你要做的就是功夫花在平时。只要你监控足够多的热点博主和信息源，当热点事件发生以后再去扫链，会大大降低你的时间和精力成本。后面会详细讲如何建立自己的监控体系和如何“偷懒”。当然，这些全看个人策略，偷懒可能错过一些底部和盘子，但我的时间更加宝贵。</p>
+<h2 id="下注策略"><a href="#下注策略" class="headerlink" title="下注策略"></a>下注策略</h2><p>扫链的一大优势是可以获取极低成本的筹码，但是劣势是你会面临较大的风险和不确定性。这意味着你每个盘子并不需要在早期投入太多，同时如果你进入的足够早，你的亏损是有下界的。但不确定的盘子请一定要注意及时出本。同时及时观察筹码，避开dev持仓过多和老鼠仓过多的盘子，让你更加安全</p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>sol</tag>
+        <tag>土狗</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>北大区块链博士XQ哥的Sol土狗角度秘籍</title>
     <url>/posts/241110.html</url>
     <content><![CDATA[<h1 id="XQ哥的土狗角度秘籍"><a href="#XQ哥的土狗角度秘籍" class="headerlink" title="XQ哥的土狗角度秘籍"></a>XQ哥的土狗角度秘籍</h1><blockquote>
@@ -3818,33 +3845,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>免费</tag>
         <tag>电子书</tag>
         <tag>zlibrary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>北大区块链博士XQ哥的Sol pump内盘土狗扫链秘籍</title>
-    <url>/posts/241108.html</url>
-    <content><![CDATA[<h1 id="XQ哥的内盘扫链秘籍"><a href="#XQ哥的内盘扫链秘籍" class="headerlink" title="XQ哥的内盘扫链秘籍"></a>XQ哥的内盘扫链秘籍</h1><blockquote>
-<p>原文索引：<a href="https://x.com/0xXQ1/status/1854874880535310510">https://x.com/0xXQ1/status/1854874880535310510</a></p>
-</blockquote>
-<p>准备开始更一些教程，一来一天到晚一点干货不输出不合适，二来也想整理一下自己的方法论。如果你对扫链有兴趣，本篇thread将会是一个新手向的扫链教程。虽然我并不经常扫链，但是扫链可以帮助你第一时间接触到一级的新项目，获取早期的信息差和成本优势。纯教程，不放邀请码，不构成投资建议。</p>
-<h2 id="电脑工具"><a href="#电脑工具" class="headerlink" title="电脑工具"></a>电脑工具</h2><p>电脑工具 pump最直观的看板是官方的看板 <a href="https://pump.fun/board">https://pump.fun/board</a> ，但是ui设计的比较反人类，一般只在找同名OG盘或搜索带空格的ticker名的时候用。 最好还是使用其他的一些看板工具，<a href="https://gmgn.ai/new-pair/cLf0ZwzZ?chain=sol">gmgn</a> ，abot，<a href="https://t.me/BullxBetaBot?start=access_EK3XEQCDFHB">绿牛</a>，<a href="https://photon-sol.tinyastro.io/@onefly">光子</a>等工具都提供了相似的看板，可以快捷的进行操作。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241108215302915-1755173477.png" alt=""></p>
-<h2 id="手机端工具"><a href="#手机端工具" class="headerlink" title="手机端工具"></a>手机端工具</h2><p>gmgn等工具还提供了手机端的 <a href="https://t.me/GMGN_sol_bot?start=i_cLf0ZwzZ">tg群组</a> ，实时推送pump的新盘信息。不过如果你只有手机，我建议你放弃在低市值pvp，一方面你没办法看到完整的筹码结构，另一方面你在时间差方面也会落后于电脑玩家。</p>
-<h2 id="内盘的现状"><a href="#内盘的现状" class="headerlink" title="内盘的现状"></a>内盘的现状</h2><p>个人估计pump内盘里，50个有一个是可能发射的，剩下30个是没角度的，15个是假网站诈骗，剩下的都是老鼠仓分发一下给人砸没的。所以每个项目都看会很费精力。这里建议对早期项目进行筛选。可以排除掉一个社媒都没有的盘子，也可以设定一定阈值来排除掉市值过低的盘子。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241108215617643-1476693462.png" alt=""></p>
-<h2 id="扫链我该看什么？"><a href="#扫链我该看什么？" class="headerlink" title="扫链我该看什么？"></a>扫链我该看什么？</h2><p>当你开始新的一天准备扫链的时候，你首先要了解当前的叙事是什么主线。方法是去看当天有哪些盘子市值上M，哪些盘子交易量较大。例如当天的主线是ai，那你扫脸的时候就要格外关注新ai盘，看哪些是有产品的有真人在做的，这样你就能吃到当天叙事的beta。</p>
-<p>如何吃到alpha呢？当你看到短时间内出现大量的同名盘，说明大概率是有新的热点事件发生，这个时候你就要注意是什么事件以及找到第一个或增长最快的一个塞进去。另外，你也需要足够了解当前热点盘的起飞原因，如果有各方面都超过当前热点盘的，那恭喜你有可能找到了新的alpha。</p>
-<h2 id="什么时候应该扫链？"><a href="#什么时候应该扫链？" class="headerlink" title="什么时候应该扫链？"></a>什么时候应该扫链？</h2><p>这个问题取决于你的策略和时间。如果你是全职玩家，那你每时每刻都应该在扫链（可以根据热点的轮换时区来调整重心，例如本月的大部分金狗都出现在美国时区，因此东八区的下午就可以稍微休息休息） 不过我的策略是不会主动扫链，因为这种主动接收信息的方式会非常耗费精力。</p>
-<p>如果你想偷懒，那你要做的就是功夫花在平时。只要你监控足够多的热点博主和信息源，当热点事件发生以后再去扫链，会大大降低你的时间和精力成本。后面会详细讲如何建立自己的监控体系和如何“偷懒”。当然，这些全看个人策略，偷懒可能错过一些底部和盘子，但我的时间更加宝贵。</p>
-<h2 id="下注策略"><a href="#下注策略" class="headerlink" title="下注策略"></a>下注策略</h2><p>扫链的一大优势是可以获取极低成本的筹码，但是劣势是你会面临较大的风险和不确定性。这意味着你每个盘子并不需要在早期投入太多，同时如果你进入的足够早，你的亏损是有下界的。但不确定的盘子请一定要注意及时出本。同时及时观察筹码，避开dev持仓过多和老鼠仓过多的盘子，让你更加安全</p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>sol</tag>
-        <tag>土狗</tag>
       </tags>
   </entry>
   <entry>
@@ -4005,6 +4005,89 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>web3</tag>
         <tag>土狗</tag>
         <tag>eth</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Photoshop 2025 Mac版下载与安装教程｜Adobe PS 中文版功能详解与错误修复指南</title>
+    <url>/posts/251011.html</url>
+    <content><![CDATA[<h1 id="🎨-Photoshop-2025-Mac版下载与安装教程"><a href="#🎨-Photoshop-2025-Mac版下载与安装教程" class="headerlink" title="🎨 Photoshop 2025 Mac版下载与安装教程"></a>🎨 Photoshop 2025 Mac版下载与安装教程</h1><blockquote>
+<p><strong>从 Photoshop 开始，惊艳随之而来。</strong><br>从社交媒体帖子到相片修饰，从设计横幅到网站视觉，Photoshop 让每一次创作更精彩。</p>
+</blockquote>
+<hr>
+<h2 id="🌟-一、Photoshop-2025-简介"><a href="#🌟-一、Photoshop-2025-简介" class="headerlink" title="🌟 一、Photoshop 2025 简介"></a>🌟 一、Photoshop 2025 简介</h2><p><strong>Adobe Photoshop 2025</strong> 是全球最受欢迎的图像编辑与平面设计软件之一。<br>无论是照片后期、海报设计、UI 绘制、艺术插画，还是品牌内容创作，Photoshop 都能提供全面的专业支持。</p>
+<p>该版本完美兼容 <strong>macOS Sequoia 15.6</strong> 及以上系统，支持 <strong>Intel 与 Apple Silicon M系列</strong>处理器。<br>同时新增多项 AI 功能，如 <strong>生成式填充（Generative Fill）</strong>、<strong>智能修复（Smart Retouch）</strong> 等，让创意更高效。</p>
+<hr>
+<h2 id="✨-二、Photoshop-能做什么？"><a href="#✨-二、Photoshop-能做什么？" class="headerlink" title="✨ 二、Photoshop 能做什么？"></a>✨ 二、Photoshop 能做什么？</h2><h3 id="1-打造创意视觉作品"><a href="#1-打造创意视觉作品" class="headerlink" title="1. 打造创意视觉作品"></a>1. 打造创意视觉作品</h3><ul>
+<li>支持海报、宣传页、社交媒体内容的快速设计；</li>
+<li>完整的色彩管理系统，轻松处理不同风格照片；</li>
+<li>提供上百种滤镜与 AI 工具，轻松实现艺术风格化。</li>
+</ul>
+<h3 id="2-修饰与合成相片"><a href="#2-修饰与合成相片" class="headerlink" title="2. 修饰与合成相片"></a>2. 修饰与合成相片</h3><p>摄影师可使用 <strong>蒙版、修补工具、图层混合模式</strong> 等功能，创造出完美视觉效果。<br>例如，摄影组合 <strong>Tropico Photo</strong> 借助 Photoshop 让每张作品都充满光影与层次。</p>
+<h3 id="3-设计广告与商业视觉"><a href="#3-设计广告与商业视觉" class="headerlink" title="3. 设计广告与商业视觉"></a>3. 设计广告与商业视觉</h3><p>陶艺师 <strong>Chinzalée Sonami</strong> 使用 Photoshop 设计宣传物料与艺术展览海报，实现品牌视觉统一。</p>
+<h3 id="4-餐饮与社交媒体营销"><a href="#4-餐饮与社交媒体营销" class="headerlink" title="4. 餐饮与社交媒体营销"></a>4. 餐饮与社交媒体营销</h3><p>纽约人气餐厅 <strong>Nice Day Chinese Takeout</strong> 利用 Photoshop 打造诱人美食图，提升社交平台点击率。</p>
+<h3 id="5-插画创作与个性表达"><a href="#5-插画创作与个性表达" class="headerlink" title="5. 插画创作与个性表达"></a>5. 插画创作与个性表达</h3><p>设计师 <strong>Aries Moross</strong> 使用 Photoshop 笔刷上色，将文字与形象结合，表达独特视觉语言。</p>
+<hr>
+<h2 id="💾-三、Photoshop-2025-Mac版下载地址"><a href="#💾-三、Photoshop-2025-Mac版下载地址" class="headerlink" title="💾 三、Photoshop 2025 Mac版下载地址"></a>💾 三、Photoshop 2025 Mac版下载地址</h2><p>📦 <strong>百度网盘下载：</strong><br><a href="https://pan.baidu.com/share/init?surl=i1bK4fc0RXQ0ed6Pu-b-Uw">https://pan.baidu.com/share/init?surl=i1bK4fc0RXQ0ed6Pu-b-Uw</a><br>提取码：<code>65rs</code></p>
+<blockquote>
+<p>⚠️ 建议安装前先 彻底卸载旧版本。</p>
+</blockquote>
+<hr>
+<h2 id="⚙️-四、详细步骤"><a href="#⚙️-四、详细步骤" class="headerlink" title="⚙️ 四、详细步骤"></a>⚙️ 四、详细步骤</h2><h3 id="步骤-1：准备安装文件"><a href="#步骤-1：准备安装文件" class="headerlink" title="步骤 1：准备安装文件"></a>步骤 1：准备安装文件</h3><ol>
+<li><p>打开下载好的 <code>.dmg</code> 文件；  </p>
+</li>
+<li><p>将其中的 <strong>AntiCC</strong>、<strong>install.pkg</strong> 等所有文件拖拽到桌面。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225220837-293713206.png" alt=""></p>
+</li>
+</ol>
+<h3 id="步骤-2：运行安装程序"><a href="#步骤-2：运行安装程序" class="headerlink" title="步骤 2：运行安装程序"></a>步骤 2：运行安装程序</h3><ol>
+<li><p>对着 <code>install.pkg</code> 文件右键 → 选择“打开”； (需在设置的安全与隐私性中选择“仍要打开”，即可顺利打开“install.pkg”)</p>
+</li>
+<li><p>根据提示完成安装。<br>安装完成后，即可在 “应用程序” 文件夹中找到 <strong>Adobe Photoshop 2025</strong>。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225256617-1870868252.png" alt=""></p>
+</li>
+</ol>
+<h3 id="步骤-3：首次启动"><a href="#步骤-3：首次启动" class="headerlink" title="步骤 3：首次启动"></a>步骤 3：首次启动</h3><p>安装完成后即可直接打开使用。<br>如果提示：</p>
+<blockquote>
+<p><em>Please read and accept the Adobe General Terms of Use</em> 或 <em>非正版提示</em>，<br>请参考下方防火墙设置步骤。</p>
+</blockquote>
+<p>1.安装Lulu防火墙，打开LULU防火墙软件，根据提示点击打开系统设置 设置允许Lulu网络扩展；</p>
+<p>2.设置完成后，点击系统菜单上的Lulu防火墙图标，选择 规则 - 新增；</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225301763-1137058815.png" alt=""></p>
+<p>3然后浏览应用程序Adobe Photoshop 2025文件夹里面的Adobe Photoshop 2025程序 - 打开；选择阻止按钮，在点击 新增按钮完成即可；</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225406350-1870166546.png" alt=""></p>
+<p>4.重新打开PS即可享受。</p>
+<hr>
+<h2 id="🧰-五、常见问题与解决方案"><a href="#🧰-五、常见问题与解决方案" class="headerlink" title="🧰 五、常见问题与解决方案"></a>🧰 五、常见问题与解决方案</h2><h3 id="🧩-问题-1：安装包显示“已损坏，无法打开”"><a href="#🧩-问题-1：安装包显示“已损坏，无法打开”" class="headerlink" title="🧩 问题 1：安装包显示“已损坏，无法打开”"></a>🧩 问题 1：安装包显示“已损坏，无法打开”</h3><p><strong>解决方法：</strong></p>
+<p>打开终端输入 <code>sudo xattr -d com.apple.quarantine</code>   空格</p>
+<p>然后把桌面的<code>install</code>拖入，然后按回车键运行即可解决已损坏问题。</p>
+<h3 id="🧩-问题-2：安装后打不开的"><a href="#🧩-问题-2：安装后打不开的" class="headerlink" title="🧩 问题 2：安装后打不开的"></a>🧩 问题 2：安装后打不开的</h3><p>打开终端工具，分别运行下面的命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xattr <span class="token parameter variable">-cr</span> <span class="token string">'/Applications/Adobe Photoshop 2025/Adobe Photoshop 2025.app'</span>
+
+<span class="token function">sudo</span> codesign <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">--sign</span> - <span class="token string">'/Applications/Adobe Photoshop 2025/Adobe Photoshop 2025.app'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="🧩-问题-3：语言切换"><a href="#🧩-问题-3：语言切换" class="headerlink" title="🧩 问题 3：语言切换"></a>🧩 问题 3：语言切换</h3><p>如果安装好打开Photoshop 2025是英文的，请按照下面的操作设置语言。</p>
+<p>点击左上角菜单 <code>Adobe Photoshop 2025 - Preferences - Interface</code>… - <code>Presentation</code> -<code>Ul Language</code> ，下拉选择 简体中文 ，然后点击 OK，最后重新打开PS就是中文了。</p>
+<h3 id="🧩-问题-4：报错-Failed-with-error-code-131"><a href="#🧩-问题-4：报错-Failed-with-error-code-131" class="headerlink" title="🧩 问题 4：报错 Failed with error code 131"></a>🧩 问题 4：报错 Failed with error code 131</h3><p>卸载之前安装过的旧版本PS即可解决。</p>
+<h2 id="📘-六、总结与结语"><a href="#📘-六、总结与结语" class="headerlink" title="📘 六、总结与结语"></a><strong>📘 六、总结与结语</strong></h2><p>无论你是：</p>
+<ul>
+<li>🎨 平面设计师</li>
+<li>📷 摄影师</li>
+<li>🧑‍💻 自媒体创作者</li>
+<li>🧑‍🎓 设计学生</li>
+</ul>
+<p><strong>Photoshop 2025 for Mac</strong> 都是最强大的视觉创作工具之一。</p>
+<p>它不仅带来了更智能的 AI 功能、极致的运行效率，还提供中英文自由切换的灵活体验。</p>
+<blockquote>
+<p>✨ 立即下载并安装 Photoshop 2025，让你的灵感，从此有迹可循。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>Adobe</tag>
+        <tag>破解软件</tag>
+        <tag>PS</tag>
+        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
@@ -4202,106 +4285,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>苹果Bandizip Mac版下载｜免费高速压缩解压工具推荐</title>
-    <url>/posts/251010.html</url>
-    <content><![CDATA[<h1 id="Bandizip-Mac版下载与使用指南｜免费高速压缩解压工具推荐"><a href="#Bandizip-Mac版下载与使用指南｜免费高速压缩解压工具推荐" class="headerlink" title="Bandizip Mac版下载与使用指南｜免费高速压缩解压工具推荐"></a>Bandizip Mac版下载与使用指南｜免费高速压缩解压工具推荐</h1><p><strong>Bandizip</strong> 是一款专为 <strong>macOS 平台</strong> 打造的强大压缩包管理器，拥有 <strong>极速压缩、批量解压、AES256 加密</strong> 等专业功能。无论是日常文件整理还是处理大型项目压缩，Bandizip 都能提供流畅高效的体验。</p>
-<p>Bandizip 是一款适用于 macOS 的高性能压缩解压软件，支持 RAR、7Z、ZIP 等 30 多种格式。提供 AES256 加密、分卷压缩、多核加速等功能，是 WinRAR 的优质替代品。Mac免费压缩软件,Bandizip 下载,Bandizip Mac 版,解压工具, RAR ZIP 7Z, WinRAR 替代品。</p>
-<hr>
-<h2 id="🚀-Bandizip-简介"><a href="#🚀-Bandizip-简介" class="headerlink" title="🚀 Bandizip 简介"></a>🚀 Bandizip 简介</h2><p>Bandizip 支持超过 <strong>30 种压缩格式</strong>，包括但不限于：<code>RAR</code>、<code>RAR5</code>、<code>7Z</code>、<code>ZIP</code>、<code>TAR</code> 等主流格式。<br>采用 <strong>多核并行压缩技术</strong>，在多线程 CPU 环境下性能提升可达 <strong>6 倍</strong>。  </p>
-<p>适用于 macOS Sierra (10.12) 及以上版本，兼容 <strong>Apple M1/M2 芯片</strong> 与 <strong>Intel 处理器</strong>。<br>内置 <strong>简体中文界面</strong>，操作直观、上手极快，是 Mac 用户常用的 <strong>免费压缩解压软件</strong>。</p>
-<hr>
-<h2 id="🧩-主要功能一览"><a href="#🧩-主要功能一览" class="headerlink" title="🧩 主要功能一览"></a>🧩 主要功能一览</h2><h3 id="💼-全能压缩与解压管理"><a href="#💼-全能压缩与解压管理" class="headerlink" title="💼 全能压缩与解压管理"></a>💼 全能压缩与解压管理</h3><ul>
-<li>集压缩、解压、浏览、编辑于一体的多功能工具  </li>
-<li>支持 macOS High Sierra (10.13) 至 Ventura (13.0)  </li>
-<li>支持 30+ 格式文件提取（RAR / RAR5 / 7Z / ZIP 等）  </li>
-</ul>
-<hr>
-<h2 id="🔒-压缩功能详解"><a href="#🔒-压缩功能详解" class="headerlink" title="🔒 压缩功能详解"></a>🔒 压缩功能详解</h2><ul>
-<li>支持压缩为 <code>ZIP</code>、<code>7Z</code>、<code>TAR</code>、<code>GZ</code>、<code>TGZ</code> 等格式  </li>
-<li>可直接 <strong>修改 ZIP 文件</strong>（添加 / 删除 / 重命名）  </li>
-<li>启用多核压缩后，速度比 macOS 自带 Finder <strong>快达 6 倍</strong>  </li>
-<li>创建 <strong>加密压缩包</strong>，支持 <strong>AES256 安全算法</strong>  </li>
-<li>支持 <strong>4GB 以上大文件压缩</strong>  </li>
-<li>完全支持 ZIP 格式的 <strong>Unicode 与多字节文件名</strong>  </li>
-<li>支持创建 <strong>分卷压缩包（ZIP/7Z 多卷）</strong></li>
-</ul>
-<hr>
-<h2 id="📂-解压功能详解"><a href="#📂-解压功能详解" class="headerlink" title="📂 解压功能详解"></a>📂 解压功能详解</h2><h3 id="✅-支持的文件格式"><a href="#✅-支持的文件格式" class="headerlink" title="✅ 支持的文件格式"></a>✅ 支持的文件格式</h3><p><code>7Z, ACE, AES, ALZ, ARJ, BH, BIN, BR, BZ, BZ2, CAB, MSI, DEB, EGG, GZ, IMG, ISO, ISZ, LHA, LZH, LZMA, PMA, RAR, RAR5, SFX, TAR, TBZ, TGZ, TLZ, TXZ, UDF, UUE, WIM, XPI, XXE, XZ, Z, ZIP, ZIPX, ZPAQ, ZST</code></p>
-<h3 id="🌟-解压特色功能"><a href="#🌟-解压特色功能" class="headerlink" title="🌟 解压特色功能"></a>🌟 解压特色功能</h3><ul>
-<li>轻松查看归档文件内容  </li>
-<li>支持 <strong>选定文件单独提取</strong>，也可通过 <strong>拖放解压</strong>  </li>
-<li>ZIP 与 RAR 文件 <strong>支持归档注释</strong>  </li>
-<li>一键解压 <strong>TGZ / TBZ / TXZ</strong> 等多层压缩格式  </li>
-</ul>
-<hr>
-<h2 id="💡-为什么选择-Bandizip？"><a href="#💡-为什么选择-Bandizip？" class="headerlink" title="💡 为什么选择 Bandizip？"></a>💡 为什么选择 Bandizip？</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>Bandizip</th>
-<th>WinRAR</th>
-<th>The Unarchiver</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>多核压缩</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>AES256 加密</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>分卷压缩</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>超大文件支持</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>macOS 原生支持</td>
-<td>✅</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>👉 如果你正在寻找 <strong>WinRAR 的 Mac 替代品</strong>，Bandizip 是目前最优秀的选择之一。</p>
-<hr>
-<h2 id="❓-常见问题（FAQ）"><a href="#❓-常见问题（FAQ）" class="headerlink" title="❓ 常见问题（FAQ）"></a>❓ 常见问题（FAQ）</h2><h3 id="Q1：Bandizip-是否完全免费？"><a href="#Q1：Bandizip-是否完全免费？" class="headerlink" title="Q1：Bandizip 是否完全免费？"></a>Q1：Bandizip 是否完全免费？</h3><p>是的，Bandizip 对个人用户完全免费，无广告、不强制付费功能。</p>
-<h3 id="Q2：支持哪些系统版本？"><a href="#Q2：支持哪些系统版本？" class="headerlink" title="Q2：支持哪些系统版本？"></a>Q2：支持哪些系统版本？</h3><p>支持 macOS 10.12 及以上版本，兼容 Intel 与 Apple Silicon 芯片。</p>
-<h3 id="Q3：能解压-Windows-上的-RAR-文件吗？"><a href="#Q3：能解压-Windows-上的-RAR-文件吗？" class="headerlink" title="Q3：能解压 Windows 上的 RAR 文件吗？"></a>Q3：能解压 Windows 上的 RAR 文件吗？</h3><p>可以，Bandizip 支持包括 RAR、RAR5、ZIP、7Z 等主流压缩格式的读取与解压。</p>
-<h3 id="Q4：是否支持中文文件名？"><a href="#Q4：是否支持中文文件名？" class="headerlink" title="Q4：是否支持中文文件名？"></a>Q4：是否支持中文文件名？</h3><p>支持，Bandizip 可无乱码识别 Unicode 与多字节字符文件名。</p>
-<hr>
-<h2 id="🔗-立即下载-Bandizip-Mac-版"><a href="#🔗-立即下载-Bandizip-Mac-版" class="headerlink" title="🔗 立即下载 Bandizip Mac 版"></a>🔗 立即下载 Bandizip Mac 版</h2><p>👉 <strong>夸克云盘</strong>：<a href="https://pan.quark.cn/s/4662e3c95be0">https://pan.quark.cn/s/4662e3c95be0</a><br>👉 <strong>百度网盘</strong>：<a href="https://pan.baidu.com/s/1q9Frr0vgqvoTG4Jrk5Bw9Q">https://pan.baidu.com/s/1q9Frr0vgqvoTG4Jrk5Bw9Q</a>  （提取码：<code>upso</code>）</p>
-<hr>
-<h2 id="📚-结语"><a href="#📚-结语" class="headerlink" title="📚 结语"></a>📚 结语</h2><p>无论你是需要批量压缩文件，还是解压各种格式的归档包，<strong>Bandizip for Mac</strong> 都能提供轻量、高效且稳定的体验。<br>它是目前最值得推荐的 <strong>Mac 免费压缩解压软件</strong> 之一。  </p>
-<blockquote>
-<p>立即下载体验 Bandizip，让你的文件管理更高效、更安全。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>破解软件</tag>
-        <tag>解压缩</tag>
-        <tag>MacOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Xmind Mac版下载与安装教程｜思维导图软件首选（含功能亮点与关闭更新提示）</title>
     <url>/posts/251014.html</url>
     <content><![CDATA[<h1 id="🧠-Xmind-Mac版下载与安装教程｜专业思维导图软件"><a href="#🧠-Xmind-Mac版下载与安装教程｜专业思维导图软件" class="headerlink" title="🧠 Xmind Mac版下载与安装教程｜专业思维导图软件"></a>🧠 Xmind Mac版下载与安装教程｜专业思维导图软件</h1><p><strong>Xmind</strong> 是一款聚焦思维整理与逻辑结构构建的专业级思维导图工具，支持 <strong>ZEN 全屏模式、结构混排、Markdown 导入导出、演说展示模式、手绘风格图表、一键导图模板套用</strong>，适合 <strong>学生、项目经理、研究人员、内容创作者、产品经理</strong> 使用。</p>
@@ -4407,89 +4390,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>Photoshop 2025 Mac版下载与安装教程｜Adobe PS 中文版功能详解与错误修复指南</title>
-    <url>/posts/251011.html</url>
-    <content><![CDATA[<h1 id="🎨-Photoshop-2025-Mac版下载与安装教程"><a href="#🎨-Photoshop-2025-Mac版下载与安装教程" class="headerlink" title="🎨 Photoshop 2025 Mac版下载与安装教程"></a>🎨 Photoshop 2025 Mac版下载与安装教程</h1><blockquote>
-<p><strong>从 Photoshop 开始，惊艳随之而来。</strong><br>从社交媒体帖子到相片修饰，从设计横幅到网站视觉，Photoshop 让每一次创作更精彩。</p>
-</blockquote>
-<hr>
-<h2 id="🌟-一、Photoshop-2025-简介"><a href="#🌟-一、Photoshop-2025-简介" class="headerlink" title="🌟 一、Photoshop 2025 简介"></a>🌟 一、Photoshop 2025 简介</h2><p><strong>Adobe Photoshop 2025</strong> 是全球最受欢迎的图像编辑与平面设计软件之一。<br>无论是照片后期、海报设计、UI 绘制、艺术插画，还是品牌内容创作，Photoshop 都能提供全面的专业支持。</p>
-<p>该版本完美兼容 <strong>macOS Sequoia 15.6</strong> 及以上系统，支持 <strong>Intel 与 Apple Silicon M系列</strong>处理器。<br>同时新增多项 AI 功能，如 <strong>生成式填充（Generative Fill）</strong>、<strong>智能修复（Smart Retouch）</strong> 等，让创意更高效。</p>
-<hr>
-<h2 id="✨-二、Photoshop-能做什么？"><a href="#✨-二、Photoshop-能做什么？" class="headerlink" title="✨ 二、Photoshop 能做什么？"></a>✨ 二、Photoshop 能做什么？</h2><h3 id="1-打造创意视觉作品"><a href="#1-打造创意视觉作品" class="headerlink" title="1. 打造创意视觉作品"></a>1. 打造创意视觉作品</h3><ul>
-<li>支持海报、宣传页、社交媒体内容的快速设计；</li>
-<li>完整的色彩管理系统，轻松处理不同风格照片；</li>
-<li>提供上百种滤镜与 AI 工具，轻松实现艺术风格化。</li>
-</ul>
-<h3 id="2-修饰与合成相片"><a href="#2-修饰与合成相片" class="headerlink" title="2. 修饰与合成相片"></a>2. 修饰与合成相片</h3><p>摄影师可使用 <strong>蒙版、修补工具、图层混合模式</strong> 等功能，创造出完美视觉效果。<br>例如，摄影组合 <strong>Tropico Photo</strong> 借助 Photoshop 让每张作品都充满光影与层次。</p>
-<h3 id="3-设计广告与商业视觉"><a href="#3-设计广告与商业视觉" class="headerlink" title="3. 设计广告与商业视觉"></a>3. 设计广告与商业视觉</h3><p>陶艺师 <strong>Chinzalée Sonami</strong> 使用 Photoshop 设计宣传物料与艺术展览海报，实现品牌视觉统一。</p>
-<h3 id="4-餐饮与社交媒体营销"><a href="#4-餐饮与社交媒体营销" class="headerlink" title="4. 餐饮与社交媒体营销"></a>4. 餐饮与社交媒体营销</h3><p>纽约人气餐厅 <strong>Nice Day Chinese Takeout</strong> 利用 Photoshop 打造诱人美食图，提升社交平台点击率。</p>
-<h3 id="5-插画创作与个性表达"><a href="#5-插画创作与个性表达" class="headerlink" title="5. 插画创作与个性表达"></a>5. 插画创作与个性表达</h3><p>设计师 <strong>Aries Moross</strong> 使用 Photoshop 笔刷上色，将文字与形象结合，表达独特视觉语言。</p>
-<hr>
-<h2 id="💾-三、Photoshop-2025-Mac版下载地址"><a href="#💾-三、Photoshop-2025-Mac版下载地址" class="headerlink" title="💾 三、Photoshop 2025 Mac版下载地址"></a>💾 三、Photoshop 2025 Mac版下载地址</h2><p>📦 <strong>百度网盘下载：</strong><br><a href="https://pan.baidu.com/share/init?surl=i1bK4fc0RXQ0ed6Pu-b-Uw">https://pan.baidu.com/share/init?surl=i1bK4fc0RXQ0ed6Pu-b-Uw</a><br>提取码：<code>65rs</code></p>
-<blockquote>
-<p>⚠️ 建议安装前先 彻底卸载旧版本。</p>
-</blockquote>
-<hr>
-<h2 id="⚙️-四、详细步骤"><a href="#⚙️-四、详细步骤" class="headerlink" title="⚙️ 四、详细步骤"></a>⚙️ 四、详细步骤</h2><h3 id="步骤-1：准备安装文件"><a href="#步骤-1：准备安装文件" class="headerlink" title="步骤 1：准备安装文件"></a>步骤 1：准备安装文件</h3><ol>
-<li><p>打开下载好的 <code>.dmg</code> 文件；  </p>
-</li>
-<li><p>将其中的 <strong>AntiCC</strong>、<strong>install.pkg</strong> 等所有文件拖拽到桌面。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225220837-293713206.png" alt=""></p>
-</li>
-</ol>
-<h3 id="步骤-2：运行安装程序"><a href="#步骤-2：运行安装程序" class="headerlink" title="步骤 2：运行安装程序"></a>步骤 2：运行安装程序</h3><ol>
-<li><p>对着 <code>install.pkg</code> 文件右键 → 选择“打开”； (需在设置的安全与隐私性中选择“仍要打开”，即可顺利打开“install.pkg”)</p>
-</li>
-<li><p>根据提示完成安装。<br>安装完成后，即可在 “应用程序” 文件夹中找到 <strong>Adobe Photoshop 2025</strong>。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225256617-1870868252.png" alt=""></p>
-</li>
-</ol>
-<h3 id="步骤-3：首次启动"><a href="#步骤-3：首次启动" class="headerlink" title="步骤 3：首次启动"></a>步骤 3：首次启动</h3><p>安装完成后即可直接打开使用。<br>如果提示：</p>
-<blockquote>
-<p><em>Please read and accept the Adobe General Terms of Use</em> 或 <em>非正版提示</em>，<br>请参考下方防火墙设置步骤。</p>
-</blockquote>
-<p>1.安装Lulu防火墙，打开LULU防火墙软件，根据提示点击打开系统设置 设置允许Lulu网络扩展；</p>
-<p>2.设置完成后，点击系统菜单上的Lulu防火墙图标，选择 规则 - 新增；</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225301763-1137058815.png" alt=""></p>
-<p>3然后浏览应用程序Adobe Photoshop 2025文件夹里面的Adobe Photoshop 2025程序 - 打开；选择阻止按钮，在点击 新增按钮完成即可；</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251010225406350-1870166546.png" alt=""></p>
-<p>4.重新打开PS即可享受。</p>
-<hr>
-<h2 id="🧰-五、常见问题与解决方案"><a href="#🧰-五、常见问题与解决方案" class="headerlink" title="🧰 五、常见问题与解决方案"></a>🧰 五、常见问题与解决方案</h2><h3 id="🧩-问题-1：安装包显示“已损坏，无法打开”"><a href="#🧩-问题-1：安装包显示“已损坏，无法打开”" class="headerlink" title="🧩 问题 1：安装包显示“已损坏，无法打开”"></a>🧩 问题 1：安装包显示“已损坏，无法打开”</h3><p><strong>解决方法：</strong></p>
-<p>打开终端输入 <code>sudo xattr -d com.apple.quarantine</code>   空格</p>
-<p>然后把桌面的<code>install</code>拖入，然后按回车键运行即可解决已损坏问题。</p>
-<h3 id="🧩-问题-2：安装后打不开的"><a href="#🧩-问题-2：安装后打不开的" class="headerlink" title="🧩 问题 2：安装后打不开的"></a>🧩 问题 2：安装后打不开的</h3><p>打开终端工具，分别运行下面的命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xattr <span class="token parameter variable">-cr</span> <span class="token string">'/Applications/Adobe Photoshop 2025/Adobe Photoshop 2025.app'</span>
-
-<span class="token function">sudo</span> codesign <span class="token parameter variable">--force</span> <span class="token parameter variable">--deep</span> <span class="token parameter variable">--sign</span> - <span class="token string">'/Applications/Adobe Photoshop 2025/Adobe Photoshop 2025.app'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="🧩-问题-3：语言切换"><a href="#🧩-问题-3：语言切换" class="headerlink" title="🧩 问题 3：语言切换"></a>🧩 问题 3：语言切换</h3><p>如果安装好打开Photoshop 2025是英文的，请按照下面的操作设置语言。</p>
-<p>点击左上角菜单 <code>Adobe Photoshop 2025 - Preferences - Interface</code>… - <code>Presentation</code> -<code>Ul Language</code> ，下拉选择 简体中文 ，然后点击 OK，最后重新打开PS就是中文了。</p>
-<h3 id="🧩-问题-4：报错-Failed-with-error-code-131"><a href="#🧩-问题-4：报错-Failed-with-error-code-131" class="headerlink" title="🧩 问题 4：报错 Failed with error code 131"></a>🧩 问题 4：报错 Failed with error code 131</h3><p>卸载之前安装过的旧版本PS即可解决。</p>
-<h2 id="📘-六、总结与结语"><a href="#📘-六、总结与结语" class="headerlink" title="📘 六、总结与结语"></a><strong>📘 六、总结与结语</strong></h2><p>无论你是：</p>
-<ul>
-<li>🎨 平面设计师</li>
-<li>📷 摄影师</li>
-<li>🧑‍💻 自媒体创作者</li>
-<li>🧑‍🎓 设计学生</li>
-</ul>
-<p><strong>Photoshop 2025 for Mac</strong> 都是最强大的视觉创作工具之一。</p>
-<p>它不仅带来了更智能的 AI 功能、极致的运行效率，还提供中英文自由切换的灵活体验。</p>
-<blockquote>
-<p>✨ 立即下载并安装 Photoshop 2025，让你的灵感，从此有迹可循。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>Adobe</tag>
-        <tag>破解软件</tag>
-        <tag>MacOS</tag>
-        <tag>PS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Wondershare PDFelement 万兴PDF编辑器 Mac &amp; Win 下载与安装教程｜PDF编辑/OCR/转换工具推荐破解版</title>
     <url>/posts/251013.html</url>
     <content><![CDATA[<h1 id="📄-Wondershare-PDFelement-万兴PDF编辑器-Mac-amp-Win-版下载"><a href="#📄-Wondershare-PDFelement-万兴PDF编辑器-Mac-amp-Win-版下载" class="headerlink" title="📄 Wondershare PDFelement 万兴PDF编辑器 Mac &amp; Win 版下载"></a>📄 Wondershare PDFelement 万兴PDF编辑器 Mac &amp; Win 版下载</h1><p><strong>Wondershare PDFelement（万兴PDF编辑器）</strong> 是一款专业级 PDF 编辑与转换软件，具备 <strong>PDF编辑 / PDF转Word / OCR 识别 / 批量处理 / PDF签名 / 扫描件识别转可编辑文档</strong> 等功能，被广泛视为 <strong>Adobe Acrobat 的高效替代工具</strong>，适用于 <strong>Mac 与 Windows 双平台办公用户</strong>。</p>
@@ -4577,124 +4477,103 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>美国 Apple ID 注册教程（2025 全新版）｜手把手图文指南，小白也能轻松注册美区账号</title>
-    <url>/posts/251029.html</url>
-    <content><![CDATA[<h1 id="🍎-美国-Apple-ID-注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App"><a href="#🍎-美国-Apple-ID-注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App" class="headerlink" title="🍎 美国 Apple ID 注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App"></a>🍎 美国 Apple ID 注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App</h1><p>想要下载美区 App Store 独占的应用（如 ChatGPT、Midjourney、TestFlight 等），必须注册一个 <strong>美国地区 Apple ID</strong>。<br>本教程将带你从零开始完成 <strong>邮箱验证、手机号验证、免税州地址填写、App Store 切换</strong> 全流程，让你轻松注册成功。</p>
+    <title>苹果Bandizip Mac版下载｜免费高速压缩解压工具推荐</title>
+    <url>/posts/251010.html</url>
+    <content><![CDATA[<h1 id="Bandizip-Mac版下载与使用指南｜免费高速压缩解压工具推荐"><a href="#Bandizip-Mac版下载与使用指南｜免费高速压缩解压工具推荐" class="headerlink" title="Bandizip Mac版下载与使用指南｜免费高速压缩解压工具推荐"></a>Bandizip Mac版下载与使用指南｜免费高速压缩解压工具推荐</h1><p><strong>Bandizip</strong> 是一款专为 <strong>macOS 平台</strong> 打造的强大压缩包管理器，拥有 <strong>极速压缩、批量解压、AES256 加密</strong> 等专业功能。无论是日常文件整理还是处理大型项目压缩，Bandizip 都能提供流畅高效的体验。</p>
+<p>Bandizip 是一款适用于 macOS 的高性能压缩解压软件，支持 RAR、7Z、ZIP 等 30 多种格式。提供 AES256 加密、分卷压缩、多核加速等功能，是 WinRAR 的优质替代品。Mac免费压缩软件,Bandizip 下载,Bandizip Mac 版,解压工具, RAR ZIP 7Z, WinRAR 替代品。</p>
 <hr>
-<h2 id="🧩-Step-1：打开苹果账户注册页面"><a href="#🧩-Step-1：打开苹果账户注册页面" class="headerlink" title="🧩 Step 1：打开苹果账户注册页面"></a>🧩 Step 1：打开苹果账户注册页面</h2><p>访问 Apple 官方注册入口：</p>
-<p>👉 <a href="https://account.apple.com/account">https://account.apple.com/account</a></p>
-<p>填写注册信息时请注意：</p>
-<ul>
-<li><strong>国家或地区</strong>：务必选择 <strong>美国（United States）</strong></li>
-<li>其他个人信息可正常填写</li>
-<li><strong>邮箱</strong>：必须能正常接收验证码（后续邮箱验证用）</li>
-<li><strong>手机号</strong>：可使用中国大陆手机号，能接收短信即可</li>
+<h2 id="🚀-Bandizip-简介"><a href="#🚀-Bandizip-简介" class="headerlink" title="🚀 Bandizip 简介"></a>🚀 Bandizip 简介</h2><p>Bandizip 支持超过 <strong>30 种压缩格式</strong>，包括但不限于：<code>RAR</code>、<code>RAR5</code>、<code>7Z</code>、<code>ZIP</code>、<code>TAR</code> 等主流格式。<br>采用 <strong>多核并行压缩技术</strong>，在多线程 CPU 环境下性能提升可达 <strong>6 倍</strong>。  </p>
+<p>适用于 macOS Sierra (10.12) 及以上版本，兼容 <strong>Apple M1/M2 芯片</strong> 与 <strong>Intel 处理器</strong>。<br>内置 <strong>简体中文界面</strong>，操作直观、上手极快，是 Mac 用户常用的 <strong>免费压缩解压软件</strong>。</p>
+<hr>
+<h2 id="🧩-主要功能一览"><a href="#🧩-主要功能一览" class="headerlink" title="🧩 主要功能一览"></a>🧩 主要功能一览</h2><h3 id="💼-全能压缩与解压管理"><a href="#💼-全能压缩与解压管理" class="headerlink" title="💼 全能压缩与解压管理"></a>💼 全能压缩与解压管理</h3><ul>
+<li>集压缩、解压、浏览、编辑于一体的多功能工具  </li>
+<li>支持 macOS High Sierra (10.13) 至 Ventura (13.0)  </li>
+<li>支持 30+ 格式文件提取（RAR / RAR5 / 7Z / ZIP 等）  </li>
 </ul>
-<p>📸 <em>填写页面示例：</em></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205647931-667888116.png" alt=""></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205654022-501124654.png" alt=""></p>
 <hr>
-<h2 id="✉️-Step-2：验证邮箱与手机号"><a href="#✉️-Step-2：验证邮箱与手机号" class="headerlink" title="✉️ Step 2：验证邮箱与手机号"></a>✉️ Step 2：验证邮箱与手机号</h2><p>注册完成后，系统会依次要求验证邮箱与手机号：</p>
-<ol>
-<li><p><strong>邮箱验证</strong>：前往邮箱查收 Apple 验证码  </p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205659375-1630884591.png" alt=""></p>
-</li>
-<li><p><strong>手机号验证</strong>：手机收到短信验证码后输入即可  </p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205715826-2002124440.png" alt=""></p>
-</li>
-</ol>
-<p>验证成功后，将出现 Apple 账户创建成功页面。</p>
-<p>📸 <em>验证页面示例：</em></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205721530-252143602.png" alt=""></p>
-<hr>
-<h2 id="📦-Step-3：添加美国配送地址"><a href="#📦-Step-3：添加美国配送地址" class="headerlink" title="📦 Step 3：添加美国配送地址"></a>📦 Step 3：添加美国配送地址</h2><p>注册完成后，进入账户后台：</p>
-<p>👉 打开 <strong>「付款与配送」</strong> → 点击 <strong>「添加地址」</strong></p>
-<p>此时需要生成一份有效的美国地址。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205726812-2119401357.png" alt=""></p>
-<h3 id="🏠-地址生成网站："><a href="#🏠-地址生成网站：" class="headerlink" title="🏠 地址生成网站："></a>🏠 地址生成网站：</h3><p>👉 <a href="https://www.shenfendaquan.com/">https://www.shenfendaquan.com/</a></p>
-<p>在网站中选择以下 <strong>免税州之一</strong>（可避免后续购买应用时税费）：</p>
-<ul>
-<li>🟢 Alaska（阿拉斯加州）  </li>
-<li>🟢 Montana（蒙大拿州）  </li>
-<li>🟢 Oregon（俄勒冈州）  </li>
-<li>🟢 Delaware（特拉华州）</li>
+<h2 id="🔒-压缩功能详解"><a href="#🔒-压缩功能详解" class="headerlink" title="🔒 压缩功能详解"></a>🔒 压缩功能详解</h2><ul>
+<li>支持压缩为 <code>ZIP</code>、<code>7Z</code>、<code>TAR</code>、<code>GZ</code>、<code>TGZ</code> 等格式  </li>
+<li>可直接 <strong>修改 ZIP 文件</strong>（添加 / 删除 / 重命名）  </li>
+<li>启用多核压缩后，速度比 macOS 自带 Finder <strong>快达 6 倍</strong>  </li>
+<li>创建 <strong>加密压缩包</strong>，支持 <strong>AES256 安全算法</strong>  </li>
+<li>支持 <strong>4GB 以上大文件压缩</strong>  </li>
+<li>完全支持 ZIP 格式的 <strong>Unicode 与多字节文件名</strong>  </li>
+<li>支持创建 <strong>分卷压缩包（ZIP/7Z 多卷）</strong></li>
 </ul>
-<blockquote>
-<p>📌 <em>建议使用 Alaska 地址，最稳定且无税收。</em></p>
-</blockquote>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205731876-778679687.png" alt=""></p>
-<p>填写完毕后点击 <strong>「保存更改」</strong> 即可。</p>
-<p>📸 <em>地址填写示例：</em></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205737919-469876508.png" alt=""></p>
 <hr>
-<h2 id="🔑-Step-4：登录新的美区-Apple-ID"><a href="#🔑-Step-4：登录新的美区-Apple-ID" class="headerlink" title="🔑 Step 4：登录新的美区 Apple ID"></a>🔑 Step 4：登录新的美区 Apple ID</h2><p>在 Mac 或 iPhone 上退出原有账户：</p>
-<ol>
-<li><p>前往「设置」 → 「Apple ID」 → 「退出登录」  </p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205744028-1753597198.png" alt=""></p>
-</li>
-<li><p>使用刚注册好的 <strong>美区 Apple ID</strong> 登录  </p>
-</li>
-</ol>
-<p>📸 <em>登录界面示例：</em></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205749139-726001410.png" alt=""></p>
+<h2 id="📂-解压功能详解"><a href="#📂-解压功能详解" class="headerlink" title="📂 解压功能详解"></a>📂 解压功能详解</h2><h3 id="✅-支持的文件格式"><a href="#✅-支持的文件格式" class="headerlink" title="✅ 支持的文件格式"></a>✅ 支持的文件格式</h3><p><code>7Z, ACE, AES, ALZ, ARJ, BH, BIN, BR, BZ, BZ2, CAB, MSI, DEB, EGG, GZ, IMG, ISO, ISZ, LHA, LZH, LZMA, PMA, RAR, RAR5, SFX, TAR, TBZ, TGZ, TLZ, TXZ, UDF, UUE, WIM, XPI, XXE, XZ, Z, ZIP, ZIPX, ZPAQ, ZST</code></p>
+<h3 id="🌟-解压特色功能"><a href="#🌟-解压特色功能" class="headerlink" title="🌟 解压特色功能"></a>🌟 解压特色功能</h3><ul>
+<li>轻松查看归档文件内容  </li>
+<li>支持 <strong>选定文件单独提取</strong>，也可通过 <strong>拖放解压</strong>  </li>
+<li>ZIP 与 RAR 文件 <strong>支持归档注释</strong>  </li>
+<li>一键解压 <strong>TGZ / TBZ / TXZ</strong> 等多层压缩格式  </li>
+</ul>
 <hr>
-<h2 id="🛒-Step-5：打开-App-Store，进入美区应用商店"><a href="#🛒-Step-5：打开-App-Store，进入美区应用商店" class="headerlink" title="🛒 Step 5：打开 App Store，进入美区应用商店"></a>🛒 Step 5：打开 App Store，进入美区应用商店</h2><p>完成登录后，打开 App Store，你将看到 <strong>美区应用页面</strong>。<br>此时即可自由下载 ChatGPT、Perplexity、TestFlight、Midjourney Viewer 等海外独占 App。</p>
-<p>📸 <em>美区 App Store 页面示例：</em></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205754868-1190621831.png" alt=""></p>
-<hr>
-<h2 id="🧠-常见问题（FAQ）"><a href="#🧠-常见问题（FAQ）" class="headerlink" title="🧠 常见问题（FAQ）"></a>🧠 常见问题（FAQ）</h2><div class="table-container">
+<h2 id="💡-为什么选择-Bandizip？"><a href="#💡-为什么选择-Bandizip？" class="headerlink" title="💡 为什么选择 Bandizip？"></a>💡 为什么选择 Bandizip？</h2><div class="table-container">
 <table>
 <thead>
 <tr>
-<th>问题</th>
-<th>解决方法</th>
+<th>功能</th>
+<th>Bandizip</th>
+<th>WinRAR</th>
+<th>The Unarchiver</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>🇨🇳 是否可以用中国手机号注册？</td>
-<td>✅ 可以，确保能接收短信验证码即可。</td>
+<td>多核压缩</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
 </tr>
 <tr>
-<td>📧 邮箱必须用 Gmail 吗？</td>
-<td>非必须，163/Outlook/QQ 邮箱都可。</td>
+<td>AES256 加密</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
-<td>💳 需要绑定信用卡吗？</td>
-<td>不需要，可选择「无支付方式」。</td>
+<td>分卷压缩</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
-<td>📍 地址必须真实有效吗？</td>
-<td>是的，建议使用生成器提供的免税州地址。</td>
+<td>超大文件支持</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
-<td>🔄 如何切回国区账号？</td>
-<td>在设置中退出美区账号，再登录原中国区 ID。</td>
+<td>macOS 原生支持</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>👉 如果你正在寻找 <strong>WinRAR 的 Mac 替代品</strong>，Bandizip 是目前最优秀的选择之一。</p>
 <hr>
-<h2 id="✅-结语｜一键解锁美区App世界"><a href="#✅-结语｜一键解锁美区App世界" class="headerlink" title="✅ 结语｜一键解锁美区App世界"></a>✅ 结语｜一键解锁美区App世界</h2><blockquote>
-<p><strong>美国 Apple ID = 打开全球 App Store 的钥匙。</strong></p>
+<h2 id="❓-常见问题（FAQ）"><a href="#❓-常见问题（FAQ）" class="headerlink" title="❓ 常见问题（FAQ）"></a>❓ 常见问题（FAQ）</h2><h3 id="Q1：Bandizip-是否完全免费？"><a href="#Q1：Bandizip-是否完全免费？" class="headerlink" title="Q1：Bandizip 是否完全免费？"></a>Q1：Bandizip 是否完全免费？</h3><p>是的，Bandizip 对个人用户完全免费，无广告、不强制付费功能。</p>
+<h3 id="Q2：支持哪些系统版本？"><a href="#Q2：支持哪些系统版本？" class="headerlink" title="Q2：支持哪些系统版本？"></a>Q2：支持哪些系统版本？</h3><p>支持 macOS 10.12 及以上版本，兼容 Intel 与 Apple Silicon 芯片。</p>
+<h3 id="Q3：能解压-Windows-上的-RAR-文件吗？"><a href="#Q3：能解压-Windows-上的-RAR-文件吗？" class="headerlink" title="Q3：能解压 Windows 上的 RAR 文件吗？"></a>Q3：能解压 Windows 上的 RAR 文件吗？</h3><p>可以，Bandizip 支持包括 RAR、RAR5、ZIP、7Z 等主流压缩格式的读取与解压。</p>
+<h3 id="Q4：是否支持中文文件名？"><a href="#Q4：是否支持中文文件名？" class="headerlink" title="Q4：是否支持中文文件名？"></a>Q4：是否支持中文文件名？</h3><p>支持，Bandizip 可无乱码识别 Unicode 与多字节字符文件名。</p>
+<hr>
+<h2 id="🔗-立即下载-Bandizip-Mac-版"><a href="#🔗-立即下载-Bandizip-Mac-版" class="headerlink" title="🔗 立即下载 Bandizip Mac 版"></a>🔗 立即下载 Bandizip Mac 版</h2><p>👉 <strong>夸克云盘</strong>：<a href="https://pan.quark.cn/s/4662e3c95be0">https://pan.quark.cn/s/4662e3c95be0</a><br>👉 <strong>百度网盘</strong>：<a href="https://pan.baidu.com/s/1q9Frr0vgqvoTG4Jrk5Bw9Q">https://pan.baidu.com/s/1q9Frr0vgqvoTG4Jrk5Bw9Q</a>  （提取码：<code>upso</code>）</p>
+<hr>
+<h2 id="📚-结语"><a href="#📚-结语" class="headerlink" title="📚 结语"></a>📚 结语</h2><p>无论你是需要批量压缩文件，还是解压各种格式的归档包，<strong>Bandizip for Mac</strong> 都能提供轻量、高效且稳定的体验。<br>它是目前最值得推荐的 <strong>Mac 免费压缩解压软件</strong> 之一。  </p>
+<blockquote>
+<p>立即下载体验 Bandizip，让你的文件管理更高效、更安全。</p>
 </blockquote>
-<p>如果你想：</p>
-<ul>
-<li>✅ 下载 ChatGPT、TestFlight、Midjourney 等仅限美区的应用  </li>
-<li>✅ 提前体验 App 上架版本或公测应用  </li>
-<li>✅ 使用美元区订阅服务（如 Apple One、Apple Music US）  </li>
-<li>✅ 访问更多开发者资源与海外教育优惠  </li>
-</ul>
-<p>👉 那么 <strong>注册一个美国 Apple ID 是必经之路。</strong><br>操作简单、免费、安全，整个过程不到 10 分钟即可完成。</p>
 ]]></content>
       <categories>
-        <category>账号注册</category>
+        <category>资源分享</category>
       </categories>
       <tags>
+        <tag>破解软件</tag>
         <tag>MacOS</tag>
-        <tag>美区Apple ID</tag>
-        <tag>iPhone</tag>
-        <tag>教程</tag>
+        <tag>解压缩</tag>
       </tags>
   </entry>
   <entry>
@@ -4841,6 +4720,127 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>Windows</tag>
         <tag>绘图工具</tag>
         <tag>资源软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>美国 Apple ID 注册教程（2025 全新版）｜手把手图文指南，小白也能轻松注册美区账号</title>
+    <url>/posts/251029.html</url>
+    <content><![CDATA[<h1 id="🍎-美国-Apple-ID-注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App"><a href="#🍎-美国-Apple-ID-注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App" class="headerlink" title="🍎 美国 Apple ID 注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App"></a>🍎 美国 Apple ID 注册图文教程（2025最新版）｜手把手注册美区账号，轻松下载海外App</h1><p>想要下载美区 App Store 独占的应用（如 ChatGPT、Midjourney、TestFlight 等），必须注册一个 <strong>美国地区 Apple ID</strong>。<br>本教程将带你从零开始完成 <strong>邮箱验证、手机号验证、免税州地址填写、App Store 切换</strong> 全流程，让你轻松注册成功。</p>
+<hr>
+<h2 id="🧩-Step-1：打开苹果账户注册页面"><a href="#🧩-Step-1：打开苹果账户注册页面" class="headerlink" title="🧩 Step 1：打开苹果账户注册页面"></a>🧩 Step 1：打开苹果账户注册页面</h2><p>访问 Apple 官方注册入口：</p>
+<p>👉 <a href="https://account.apple.com/account">https://account.apple.com/account</a></p>
+<p>填写注册信息时请注意：</p>
+<ul>
+<li><strong>国家或地区</strong>：务必选择 <strong>美国（United States）</strong></li>
+<li>其他个人信息可正常填写</li>
+<li><strong>邮箱</strong>：必须能正常接收验证码（后续邮箱验证用）</li>
+<li><strong>手机号</strong>：可使用中国大陆手机号，能接收短信即可</li>
+</ul>
+<p>📸 <em>填写页面示例：</em></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205647931-667888116.png" alt=""></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205654022-501124654.png" alt=""></p>
+<hr>
+<h2 id="✉️-Step-2：验证邮箱与手机号"><a href="#✉️-Step-2：验证邮箱与手机号" class="headerlink" title="✉️ Step 2：验证邮箱与手机号"></a>✉️ Step 2：验证邮箱与手机号</h2><p>注册完成后，系统会依次要求验证邮箱与手机号：</p>
+<ol>
+<li><p><strong>邮箱验证</strong>：前往邮箱查收 Apple 验证码  </p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205659375-1630884591.png" alt=""></p>
+</li>
+<li><p><strong>手机号验证</strong>：手机收到短信验证码后输入即可  </p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205715826-2002124440.png" alt=""></p>
+</li>
+</ol>
+<p>验证成功后，将出现 Apple 账户创建成功页面。</p>
+<p>📸 <em>验证页面示例：</em></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205721530-252143602.png" alt=""></p>
+<hr>
+<h2 id="📦-Step-3：添加美国配送地址"><a href="#📦-Step-3：添加美国配送地址" class="headerlink" title="📦 Step 3：添加美国配送地址"></a>📦 Step 3：添加美国配送地址</h2><p>注册完成后，进入账户后台：</p>
+<p>👉 打开 <strong>「付款与配送」</strong> → 点击 <strong>「添加地址」</strong></p>
+<p>此时需要生成一份有效的美国地址。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205726812-2119401357.png" alt=""></p>
+<h3 id="🏠-地址生成网站："><a href="#🏠-地址生成网站：" class="headerlink" title="🏠 地址生成网站："></a>🏠 地址生成网站：</h3><p>👉 <a href="https://www.shenfendaquan.com/">https://www.shenfendaquan.com/</a></p>
+<p>在网站中选择以下 <strong>免税州之一</strong>（可避免后续购买应用时税费）：</p>
+<ul>
+<li>🟢 Alaska（阿拉斯加州）  </li>
+<li>🟢 Montana（蒙大拿州）  </li>
+<li>🟢 Oregon（俄勒冈州）  </li>
+<li>🟢 Delaware（特拉华州）</li>
+</ul>
+<blockquote>
+<p>📌 <em>建议使用 Alaska 地址，最稳定且无税收。</em></p>
+</blockquote>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205731876-778679687.png" alt=""></p>
+<p>填写完毕后点击 <strong>「保存更改」</strong> 即可。</p>
+<p>📸 <em>地址填写示例：</em></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205737919-469876508.png" alt=""></p>
+<hr>
+<h2 id="🔑-Step-4：登录新的美区-Apple-ID"><a href="#🔑-Step-4：登录新的美区-Apple-ID" class="headerlink" title="🔑 Step 4：登录新的美区 Apple ID"></a>🔑 Step 4：登录新的美区 Apple ID</h2><p>在 Mac 或 iPhone 上退出原有账户：</p>
+<ol>
+<li><p>前往「设置」 → 「Apple ID」 → 「退出登录」  </p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205744028-1753597198.png" alt=""></p>
+</li>
+<li><p>使用刚注册好的 <strong>美区 Apple ID</strong> 登录  </p>
+</li>
+</ol>
+<p>📸 <em>登录界面示例：</em></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205749139-726001410.png" alt=""></p>
+<hr>
+<h2 id="🛒-Step-5：打开-App-Store，进入美区应用商店"><a href="#🛒-Step-5：打开-App-Store，进入美区应用商店" class="headerlink" title="🛒 Step 5：打开 App Store，进入美区应用商店"></a>🛒 Step 5：打开 App Store，进入美区应用商店</h2><p>完成登录后，打开 App Store，你将看到 <strong>美区应用页面</strong>。<br>此时即可自由下载 ChatGPT、Perplexity、TestFlight、Midjourney Viewer 等海外独占 App。</p>
+<p>📸 <em>美区 App Store 页面示例：</em></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202510/2910984-20251029205754868-1190621831.png" alt=""></p>
+<hr>
+<h2 id="🧠-常见问题（FAQ）"><a href="#🧠-常见问题（FAQ）" class="headerlink" title="🧠 常见问题（FAQ）"></a>🧠 常见问题（FAQ）</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🇨🇳 是否可以用中国手机号注册？</td>
+<td>✅ 可以，确保能接收短信验证码即可。</td>
+</tr>
+<tr>
+<td>📧 邮箱必须用 Gmail 吗？</td>
+<td>非必须，163/Outlook/QQ 邮箱都可。</td>
+</tr>
+<tr>
+<td>💳 需要绑定信用卡吗？</td>
+<td>不需要，可选择「无支付方式」。</td>
+</tr>
+<tr>
+<td>📍 地址必须真实有效吗？</td>
+<td>是的，建议使用生成器提供的免税州地址。</td>
+</tr>
+<tr>
+<td>🔄 如何切回国区账号？</td>
+<td>在设置中退出美区账号，再登录原中国区 ID。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="✅-结语｜一键解锁美区App世界"><a href="#✅-结语｜一键解锁美区App世界" class="headerlink" title="✅ 结语｜一键解锁美区App世界"></a>✅ 结语｜一键解锁美区App世界</h2><blockquote>
+<p><strong>美国 Apple ID = 打开全球 App Store 的钥匙。</strong></p>
+</blockquote>
+<p>如果你想：</p>
+<ul>
+<li>✅ 下载 ChatGPT、TestFlight、Midjourney 等仅限美区的应用  </li>
+<li>✅ 提前体验 App 上架版本或公测应用  </li>
+<li>✅ 使用美元区订阅服务（如 Apple One、Apple Music US）  </li>
+<li>✅ 访问更多开发者资源与海外教育优惠  </li>
+</ul>
+<p>👉 那么 <strong>注册一个美国 Apple ID 是必经之路。</strong><br>操作简单、免费、安全，整个过程不到 10 分钟即可完成。</p>
+]]></content>
+      <categories>
+        <category>账号注册</category>
+      </categories>
+      <tags>
+        <tag>MacOS</tag>
+        <tag>美区Apple ID</tag>
+        <tag>iPhone</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -6557,6 +6557,74 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
+    <title>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</title>
+    <url>/posts/260112.html</url>
+    <content><![CDATA[<h1 id="如何在一天内修复你的整个人生：DAN-KOE的2026最新方法"><a href="#如何在一天内修复你的整个人生：DAN-KOE的2026最新方法" class="headerlink" title="如何在一天内修复你的整个人生：DAN KOE的2026最新方法"></a>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</h1><p>如果你和我一样，你会觉得新年决心是愚蠢的。</p>
+<p>为什么？因为大多数人改变生活的方式完全错误。他们制定这些决心只是因为其他人都在这么做——但这种方式从根本上就注定失败。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822199-1792776152.jpg" alt="DAN KOE 关于生活改变的核心理念"></p>
+<h2 id="传统新年决心为什么会失败"><a href="#传统新年决心为什么会失败" class="headerlink" title="传统新年决心为什么会失败"></a>传统新年决心为什么会失败</h2><p>大多数人在新年时制定雄心勃勃的目标：</p>
+<ul>
+<li>减肥50斤</li>
+<li>学习一门新语言</li>
+<li>开始创业</li>
+<li>建立健康习惯</li>
+</ul>
+<p>但到了二月，这些决心就已经被抛在脑后。问题不在于你的意志力，而在于<strong>方法本身就是错的</strong>。</p>
+<h2 id="正确的改变方式：一天修复你的整个人生"><a href="#正确的改变方式：一天修复你的整个人生" class="headerlink" title="正确的改变方式：一天修复你的整个人生"></a>正确的改变方式：一天修复你的整个人生</h2><h3 id="1-停止制定“决心”，开始设计系统"><a href="#1-停止制定“决心”，开始设计系统" class="headerlink" title="1. 停止制定“决心”，开始设计系统"></a>1. 停止制定“决心”，开始设计系统</h3><p>决心是一个结果，而系统是达成结果的过程。不要说“我要减肥”，而是建立一个每天都能执行的系统。</p>
+<p><strong>关键原则：</strong></p>
+<ul>
+<li>关注过程，而非结果</li>
+<li>建立可持续的日常习惯</li>
+<li>让改变变得不可避免</li>
+</ul>
+<h3 id="2-重新定义你的身份"><a href="#2-重新定义你的身份" class="headerlink" title="2. 重新定义你的身份"></a>2. 重新定义你的身份</h3><p>你不是在“尝试”成为某个人——你<strong>已经是</strong>那个人了。这种身份转变会立即改变你的行为模式。</p>
+<blockquote>
+<p>💡 提示：不要说“我想成为健康的人”，而是说“我是一个重视健康的人”。</p>
+</blockquote>
+<h3 id="3-一天之内完成的根本性转变"><a href="#3-一天之内完成的根本性转变" class="headerlink" title="3. 一天之内完成的根本性转变"></a>3. 一天之内完成的根本性转变</h3><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822964-309957013.jpg" alt="实施改变的行动步骤"></p>
+<p><strong>今天就可以做的事情：</strong></p>
+<ol>
+<li><strong>清理你的环境</strong> - 移除所有阻碍你目标的事物</li>
+<li><strong>重新设计你的一天</strong> - 创建一个支持新身份的日程表</li>
+<li><strong>建立问责机制</strong> - 公开承诺或找到问责伙伴</li>
+<li><strong>立即采取行动</strong> - 不要等到“完美时机”</li>
+</ol>
+<h3 id="4-从“动机”到“势头”"><a href="#4-从“动机”到“势头”" class="headerlink" title="4. 从“动机”到“势头”"></a>4. 从“动机”到“势头”</h3><p>动机是短暂的，但势头是可持续的。一旦你开始行动，持续下去会变得越来越容易。</p>
+<p><strong>创建势头的关键：</strong></p>
+<ul>
+<li>从极小的胜利开始</li>
+<li>每天都要有进展，无论多小</li>
+<li>庆祝过程中的每一步</li>
+</ul>
+<h2 id="为什么这种方法有效"><a href="#为什么这种方法有效" class="headerlink" title="为什么这种方法有效"></a>为什么这种方法有效</h2><p>这不是关于意志力或自律的神话故事。这是关于：</p>
+<ol>
+<li><strong>设计环境</strong>让正确的选择成为唯一的选择</li>
+<li><strong>重塑身份</strong>让行为成为自然表达</li>
+<li><strong>建立系统</strong>让成功成为必然结果</li>
+</ol>
+<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 (FAQ)"></a>常见问题 (FAQ)</h2><p><strong>Q: 我真的能在一天内改变我的整个人生吗？</strong><br>A: 你可以在一天内做出改变整个人生轨迹的决定和行动。转变是瞬间的，但结果需要时间显现。</p>
+<p><strong>Q: 如果我失败了怎么办？</strong><br>A: 失败是系统的一部分。关键是建立一个能够容纳失败并继续前进的系统。</p>
+<p><strong>Q: 这和传统的新年决心有什么不同？</strong><br>A: 传统决心关注结果和意志力；这种方法关注系统和身份转变。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>停止等待新的一年、新的一月，甚至新的一周。<strong>今天就是那一天</strong>。</p>
+<p>你不需要更多的动机、更多的时间或更好的环境。你只需要正确的方法和立即行动的决心。</p>
+<p>改变不是发生在未来的某个时刻——它发生在你决定成为不同的人的那一刻。</p>
+<p>那一刻就是现在。</p>
+<hr>
+<p><strong>原文作者</strong>: DAN KOE (<a href="https://x.com/thedankoe">@thedankoe</a>)<br><strong>原文链接</strong>: <a href="https://x.com/thedankoe/status/2010751592346030461">Twitter Article</a></p>
+<blockquote>
+<p>📌 本文基于 DAN KOE 的 Twitter 长文整理和扩展，旨在帮助更多人找到正确的生活改变方法。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>个人成长</category>
+      </categories>
+      <tags>
+        <tag>个人成长</tag>
+        <tag>自我提升</tag>
+        <tag>目标设定</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【免费 | 多端同步】X推特账号设置备注篡改猴浏览器插件</title>
     <url>/posts/241024.html</url>
     <content><![CDATA[<h1 id="【免费-多端同步】X推特账号备注篡改猴插件"><a href="#【免费-多端同步】X推特账号备注篡改猴插件" class="headerlink" title="【免费 | 多端同步】X推特账号备注篡改猴插件"></a>【免费 | 多端同步】X推特账号备注篡改猴插件</h1><blockquote>
@@ -6612,6 +6680,201 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
         <tag>Web3</tag>
         <tag>推特</tag>
         <tag>网盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学生白嫖5年 Office 365 Premium 含 Copilot 完整教程（2026最新）</title>
+    <url>/posts/260121.html</url>
+    <content><![CDATA[<h1 id="大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程"><a href="#大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程" class="headerlink" title="大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程"></a>大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程</h1><blockquote>
+<p>原文作者：Rina (@Fire1000x)<br>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Microsoft 365 Premium 是微软最高级的订阅服务，包含：</p>
+<ul>
+<li><strong>Microsoft Copilot</strong> - AI 智能助手</li>
+<li><strong>1TB OneDrive</strong> 云存储空间</li>
+<li><strong>Word、Excel、PowerPoint、Outlook</strong> 等全套 Office 应用</li>
+<li><strong>5 台设备</strong>同时登录使用</li>
+<li><strong>图片和视频编辑工具</strong></li>
+<li><strong>数据和设备安全保护</strong></li>
+</ul>
+<p>正常订阅价格约 $4.99/月，但通过学生优惠渠道，可以<strong>完全免费</strong>获得长达 <strong>5 年</strong>的订阅！</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021136925-1727547049.jpg" alt="最终效果：订阅到期日期 2031 年"></p>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在开始之前，你需要准备：</p>
+<ol>
+<li><strong>edu 学生邮箱</strong> - 必须是有效的教育机构邮箱</li>
+<li><strong>微软账号</strong> - 用于绑定订阅</li>
+<li><strong>Google Pay 或 Apple Pay</strong> - 用于验证（不会实际扣款）</li>
+<li><strong>浏览器无痕模式</strong> - 避免缓存干扰</li>
+</ol>
+<hr>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="第一步：获取基础-1-年-Office-365-学生版"><a href="#第一步：获取基础-1-年-Office-365-学生版" class="headerlink" title="第一步：获取基础 1 年 Office 365 学生版"></a>第一步：获取基础 1 年 Office 365 学生版</h3><ol>
+<li><p>打开浏览器的<strong>无痕模式</strong>（Chrome: Ctrl+Shift+N / Edge: Ctrl+Shift+P）</p>
+</li>
+<li><p>切换ip为美国IP 家宽节点最佳</p>
+</li>
+<li><p>访问以下链接：</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol>
+<li><p>登录你想要绑定的<strong>微软账号</strong></p>
+</li>
+<li><p>选择 <strong>Google Pay</strong> 作为支付方式（成功率更高）</p>
+</li>
+<li><p>输入你的 <strong>edu 学生邮箱</strong>进行验证</p>
+</li>
+<li><p>点击 <strong>Verify student email</strong> 验证学生身份</p>
+</li>
+<li><p>去邮箱接收验证链接，复制回来打开</p>
+</li>
+<li><p>最后验证付款 <strong>0 元</strong>即可</p>
+</li>
+</ol>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021138201-800132641.jpg" alt="操作步骤示意图"></p>
+<h3 id="第二步：升级到-Premium-版本"><a href="#第二步：升级到-Premium-版本" class="headerlink" title="第二步：升级到 Premium 版本"></a>第二步：升级到 Premium 版本</h3><p>完成第一步后，继续访问以下链接升级到 Premium：</p>
+<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>重复相同的验证流程即可。</p>
+<h3 id="第三步：查询订阅状态"><a href="#第三步：查询订阅状态" class="headerlink" title="第三步：查询订阅状态"></a>第三步：查询订阅状态</h3><p>完成后，访问以下链接查看你的订阅信息：</p>
+<pre class="line-numbers language-none"><code class="language-none">https://account.microsoft.com/services/microsoft365/details<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021137821-2087432330.jpg" alt="三个关键链接"></p>
+<hr>
+<h2 id="关键链接汇总"><a href="#关键链接汇总" class="headerlink" title="关键链接汇总"></a>关键链接汇总</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>链接1：订阅会员</td>
+<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M">StudentFree12M</a></td>
+</tr>
+<tr>
+<td>链接2：升级 Premium</td>
+<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M">StudentPremiumFree12M</a></td>
+</tr>
+<tr>
+<td>链接3：查询订阅</td>
+<td><a href="https://account.microsoft.com/services/microsoft365/details">Microsoft 365 Details</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><strong>必须使用无痕模式</strong>，避免之前的登录状态干扰</li>
+<li><strong>Google Pay 成功率更高</strong>，推荐优先使用</li>
+<li><strong>不会实际扣款</strong>，只是用于验证支付方式</li>
+<li><strong>edu 邮箱必须有效</strong>，过期的学生邮箱可能无法验证</li>
+<li><strong>每年可以续期</strong>，理论上可以一直白嫖</li>
+<li><strong>⚠️ 重要：使用美国 IP 可获得 5 年订阅，香港等其他地区 IP 可能只有 2 年或 1 年</strong>，建议使用 VPN 切换到美国节点后再操作</li>
+</ol>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>Q: 没有 edu 邮箱怎么办？</strong><br>A: 可以尝试申请一些提供免费 edu 邮箱的项目，或者联系学校 IT 部门获取。</p>
+<p><strong>Q: 验证失败怎么办？</strong><br>A: 尝试更换浏览器、清除缓存、使用 VPN 切换到美国 IP。</p>
+<p><strong>Q: 订阅到期后会自动扣款吗？</strong><br>A: 记得在订阅管理页面关闭”自动续订”，或者在到期前取消订阅。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，你可以免费获得价值数百美元的 Microsoft 365 Premium 订阅，享受包括 Copilot AI 在内的全部高级功能。这是微软官方的学生优惠渠道，完全合法合规。</p>
+<p>赶紧趁着还有效，去领取你的 5 年免费订阅吧！</p>
+<hr>
+<p><strong>相关链接</strong>：</p>
+<ul>
+<li>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>Office 365</tag>
+        <tag>Microsoft</tag>
+        <tag>学生优惠</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个100%立即获得New bing资格的方法教程-点击就送bing chat</title>
+    <url>/posts/16891.html</url>
+    <content><![CDATA[<p>之前加入waitlist的账号一个多月过去了还没有任何反应，但是身边朋友却“点击就送”？</p>
+<p>深入调查后发现原来是IP的影响，相信说到这里就已经有人知道该怎么做了</p>
+<p>方法：</p>
+<ol>
+<li>将节点IP更换为日本全局（不会换ip的看这个<a href="https://blog.onefly.top/posts/16888.html">简易教程</a>)</li>
+</ol>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113249267-1194007670.png" alt=""></p>
+<ol>
+<li>进入new bing 申请网站点击立即加入</li>
+</ol>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113536042-1695660571.png" alt=""></p>
+<p>之后就可以直接在bing搜索中开启聊天了<br><a href="https://www.bing.com/?/ai">https://www.bing.com/?/ai</a><br>其他建议：先退账号，删除注册表，vpn登录国外邮箱，现在秒成功<br>其他方案：<a href="https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A">https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A</a></p>
+]]></content>
+      <categories>
+        <category>前沿技术</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>技术分享</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下</title>
+    <url>/posts/241101.html</url>
+    <content><![CDATA[<h1 id="一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下"><a href="#一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下" class="headerlink" title="一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下"></a>一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下</h1><p>这次讲完以后阴毛盘的难度恐怕又要提高了，文章后面用Doggo作为实例讲一下为什么我在他第一波砸盘砸的所有人都恐慌割肉的情况下，仍然这么笃定还会有反转（除了叙事够好这一个“主观因素”之外）。</p>
+<h2 id="一、-先讲讲庄的钱包类型"><a href="#一、-先讲讲庄的钱包类型" class="headerlink" title="一、 先讲讲庄的钱包类型"></a>一、 先讲讲庄的钱包类型</h2><p><strong>一级的庄钱包可以大致分为5种：</strong></p>
+<p>1.狙击钱包</p>
+<p>2.囤货钱包</p>
+<p>3.主力操盘钱包、有的还会配上</p>
+<p>4.刷交易量的钱包</p>
+<p>5.打散筹码的中转钱包。</p>
+<p>尤其是阴毛盘，一定要去花时间把至少前三种钱包揪出来，把庄的皮给扒了才有机会能长期在这种盘子里赚到钱。</p>
+<h3 id="1-先说狙击钱包"><a href="#1-先说狙击钱包" class="headerlink" title="1. 先说狙击钱包"></a><strong>1. 先说狙击钱包</strong></h3><p>庄在开盘的时候会捆绑狙击最早期的筹码，这种开盘你是不可能拿到比庄更便宜的筹码的，所以很多盘子你会看到开盘第一秒钟直接去了五百到一千万，这个逻辑跟二级做市商做高FDV的开盘价是一样的，上方没有卖单的情况下，他想定价多少就定价多少，他的每一分拉盘的钱都没有被浪费，因为没人比他的筹码更便宜去砸他。</p>
+<p>一般情况下我看到有盘子狙的市值过高，我也就不会去玩了，因为留给散户的盈利空间太小，而庄的利润又过大，冲的人多了庄很容易就倒你头上了（好好反思一下为什么你看一级开盘很高的盘子你不愿意冲，而上了币安的VC meme盘你又在10亿美金嘎嘎冲？庄的操盘手法本质上没有任何区别，只是一个给了交易所上币费，一个给dexscreener冲了300 u的展示费）。在狙击了第一批货之后有的庄会去把狙击钱包里的筹码直接通过中转钱包打散到其他钱包里，这样很多时候小白就追踪不到这批货的去向了，这种中转过后的存货钱包我仍然称为狙击钱包。</p>
+<p><strong>所以狙击钱包怎么去识别呢？</strong></p>
+<p>开盘最早交易的钱包就是狙击钱包，都在同一个区块里，很好找直接把交易拉到最前面就能看到，如果中转过也不难识别，各个一级的dashboard都会显示是转来的，你搜一下holder排名，哪个地址的筹码是没有成本的就知道是庄的狙击钱包转过来的了。最近经过社区反阴毛的运动之后，我发现最近的几个阴毛盘子的狙击钱包一般会在上涨第一波的时候就逐步出掉，但是价格仍然在涨，然后一堆新钱包在接，说明出掉的钱都被他自己的接货钱包吃掉了，所以本质上庄做了个左手倒右手，他的筹码还在，看起来新钱包是付出了成本，但实际上没有，也洗掉了表面阴毛的皮，下面是怎么识别这类接货钱包。</p>
+<h3 id="2-接货钱包"><a href="#2-接货钱包" class="headerlink" title="2. 接货钱包"></a><strong>2. 接货钱包</strong></h3><p>这类钱包大部分时候是新钱包，如果你看到一个新钱包只交易了这一个标的，且一直在接货出货，每笔两三千u的碎单，这种基本就是接货钱包没跑了，哪个新人进来只玩这一个盘子？这种钱包有3个作用，一个是左手倒右手接狙击钱包的货，一个是顶部慢慢出货用的，最后是在砸盘完成盘整的过程中接散户割肉的货用的。（后面我再用doggo的例子展开讲）</p>
+<h3 id="3-主力操盘钱包"><a href="#3-主力操盘钱包" class="headerlink" title="3. 主力操盘钱包"></a><strong>3. 主力操盘钱包</strong></h3><p>这种本质上是庄拿来画线用的，每笔交易都至少1wu以上，经常连续多笔，然后在关键阻力位的时候推一把，在关键支撑位的时候扶一把，准备出货的时候也会做第一批盖帽的，所以识别这个钱包是关键。</p>
+<h3 id="4-刷量钱包"><a href="#4-刷量钱包" class="headerlink" title="4. 刷量钱包"></a><strong>4. 刷量钱包</strong></h3><p>是为了把土狗能刷到各个平台的trending栏前排而存在的，比如如果你交易量很大，你在dexscreener里就会被排到前排，有的盘有，有的盘没有。</p>
+<h3 id="5-中转钱包"><a href="#5-中转钱包" class="headerlink" title="5. 中转钱包"></a><strong>5. 中转钱包</strong></h3><p>是为了打散筹码时让筹码追溯更难而存在的，有的盘有有的盘没有，大Neiro的就有，可以去自己看一下</p>
+<h2 id="二、下面我来讲讲doggo这个阴毛盘的案例"><a href="#二、下面我来讲讲doggo这个阴毛盘的案例" class="headerlink" title="二、下面我来讲讲doggo这个阴毛盘的案例"></a>二、下面我来讲讲doggo这个阴毛盘的案例</h2><h3 id="1-操盘钱包"><a href="#1-操盘钱包" class="headerlink" title="1.操盘钱包"></a>1.操盘钱包</h3><p>先说明，俩个doggo都是阴毛盘，这个你千万别自我洗脑，我之前写doggo这篇逻辑贴的时候也明确跟大家指出了，我讨厌阴毛盘，但我不介意有交易机会的时候进去赚钱。<strong>首先，我们来跟一个庄主操盘钱包来进入他的视角讲讲为什么我当时认为Dev跑是假的，大概率会有反转，钱包地址是：</strong></p>
+<p>0xa7c74f0564d292aa6414b70de43625480d45f31d</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142330624-1303790534.png" alt=""></p>
+<p>看一下上图这个钱包的交易点位，就问你牛逼吗？一个新钱包在刚开盘的土狗就打进去了1.3wu，然后就算从高点市值的20M跌到5M，所有狙击钱包在狂砸散户全都Fud的情况下还能在5m精准抄底把下引线瞬间拉回来，在关键的支撑位和阻力位都起到了推波助澜的作用，然后在第二波高点的时候直接盖帽砸了13WU，以下是他的部分交易记录，建议大家直接去你常用的dashboard直接搜他的地址去自己跟着看。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142151767-312540510.png" alt=""></p>
+<p>doggo的主力操盘钱包不止这一个，当你把庄的主力操盘钱包找出来以后，你就明白局部的高点和低点大致在哪里了（也会有散户追高把价格推更高的情况，但庄一般都会砸下来，画线一定要自己来画），所以当时tg里社区都在说dev跑了，盘子要归零了，但如果盘子真的被dev放弃了，为什么他的主操盘钱包还在接货，然后还在底部做拉升？这就是为什么我那天觉得doggo有反转的“客观”依据，而不仅是这个叙事不错的“主观”依据。</p>
+<p>庄的操盘钱包在第二波的高点开始出货13wu的时候，这里其实留给你了半天多的时间跟着庄跑或者至少出本。所以如果你玩阴毛庄盘，当你发现你追踪的主力操盘钱包都在出货了，然后他的囤货钱包也开始在出了，你难道连个本都不出，还幻想着你的社区帮你推的更高吗？</p>
+<h3 id="1-囤货钱包"><a href="#1-囤货钱包" class="headerlink" title="1.囤货钱包"></a>1.囤货钱包</h3><p><strong>下面我们看一下囤货钱包，这种钱包一般长这样：</strong></p>
+<p>0x345b629908fdc2b8caf87a7ded876ff0c90ce444 0x4422ba9d6278836cbcef6df2114ce488d19f0c1e</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142122207-1143092395.png" alt=""></p>
+<p>囤货钱包的特征是大多是新钱包，大部分时候每笔交易金额在1-2e，去看囤货钱包的意义在于：</p>
+<ol>
+<li>你可以知道庄有没有第二波的打算（如果砸盘之后你发现你找不到囤货钱包收筹码的痕迹，那很明显没有第二波了）</li>
+<li>大致判断什么位置庄开始出货了，但很多时候庄会一点一点出，所以别一看有囤货钱包在出就跑，但如果你发现一个位置到了关键点位（比如doggo就是30M左右，你发现涨不咋上去了，庄的操盘钱包已经出了，囤货钱包也在一笔笔出而不是接，那这个位置基本就是局部高点）</li>
+<li>同理，你也别看庄的囤货钱包开始接了，你就跟着接，因为人家收筹码也需要一个过程，人家本来就是用盈利收，而你是拿本金收。</li>
+</ol>
+<h3 id="3-狙击钱包"><a href="#3-狙击钱包" class="headerlink" title="3.狙击钱包"></a>3.狙击钱包</h3><p>盯狙击钱包一般去判断第一波高点是最有效的，下图标出的是狙击钱包的砸盘交易，你看到狙击钱包开始大笔多笔的砸盘的时候，这个时候你一定要跟着跑，就算之后还有第二波，你等下去能接到的成本也会低不少。看下图第一波高点那里红点最多的位置就是大家在说的“Dev跑了”。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142439802-85714917.png" alt=""></p>
+<h2 id="三、最后总结一些关键点和小技巧"><a href="#三、最后总结一些关键点和小技巧" class="headerlink" title="三、最后总结一些关键点和小技巧"></a>三、最后总结一些关键点和小技巧</h2><ol>
+<li>识别庄钱包：狙击钱包是第一个块捆绑狙击的交易钱包；主操盘钱包是大开大合在关键点位大笔交易的钱包，去按大金额筛选通常能找到；主囤货钱包通常是多笔1-2e交易额的新钱包。所有情况下，新钱包且交易很多的基本都是庄的钱包。</li>
+<li>任何盘子一定要去找出来狙击钱包、主操盘钱包、主囤货钱包都是哪些，尤其是阴毛盘，如果是老币，你找不出来主操盘钱包和囤货钱包，说明这个盘子废了里面没有庄。 </li>
+<li>跟着主操盘钱包走大部分时候是能喝上一口汤的。</li>
+<li>你想判断什么时候第一波该跑了，一定要盯紧狙击钱包什么时候开始多笔大笔的砸盘。 </li>
+<li>你想判断什么时候第二波一定要跑或者至少出本了，一定要盯紧什么时候主操盘钱包在砸盘，或者囤货钱包在多笔的砸盘。</li>
+<li>如果砸盘过程中没有囤货钱包在接，那说明庄没想要搞第二波，或者现在价格离他想收筹的位置还很远。 </li>
+<li>主囤货钱包很多时候是左手倒右手，所以你很难判断他们的成本价实际是多少，所以你想跟庄更该看主操盘钱包，而囤货钱包更多在看的是庄屯了多少筹码、筹码是否握的比较紧。 </li>
+<li>个人经验上，也要谨慎庄的骚操作，有时候他主操盘钱包会拉一大波，引诱看到涨了很多然后追多的人，这个时候你就要关注一下他的囤货钱包的动向了，比如他拉完以后，囤货钱包一直在不断出货，那这种基本就是庄没想马上拉，这里是局部震荡位，或者更差，庄会直接把追高的人全都埋了。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>sol</tag>
+        <tag>土狗</tag>
+        <tag>eth</tag>
       </tags>
   </entry>
   <entry>
@@ -6863,267 +7126,6 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
-    <title>大学生白嫖5年 Office 365 Premium 含 Copilot 完整教程（2026最新）</title>
-    <url>/posts/260121.html</url>
-    <content><![CDATA[<h1 id="大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程"><a href="#大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程" class="headerlink" title="大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程"></a>大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程</h1><blockquote>
-<p>原文作者：Rina (@Fire1000x)<br>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Microsoft 365 Premium 是微软最高级的订阅服务，包含：</p>
-<ul>
-<li><strong>Microsoft Copilot</strong> - AI 智能助手</li>
-<li><strong>1TB OneDrive</strong> 云存储空间</li>
-<li><strong>Word、Excel、PowerPoint、Outlook</strong> 等全套 Office 应用</li>
-<li><strong>5 台设备</strong>同时登录使用</li>
-<li><strong>图片和视频编辑工具</strong></li>
-<li><strong>数据和设备安全保护</strong></li>
-</ul>
-<p>正常订阅价格约 $4.99/月，但通过学生优惠渠道，可以<strong>完全免费</strong>获得长达 <strong>5 年</strong>的订阅！</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021136925-1727547049.jpg" alt="最终效果：订阅到期日期 2031 年"></p>
-<hr>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在开始之前，你需要准备：</p>
-<ol>
-<li><strong>edu 学生邮箱</strong> - 必须是有效的教育机构邮箱</li>
-<li><strong>微软账号</strong> - 用于绑定订阅</li>
-<li><strong>Google Pay 或 Apple Pay</strong> - 用于验证（不会实际扣款）</li>
-<li><strong>浏览器无痕模式</strong> - 避免缓存干扰</li>
-</ol>
-<hr>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="第一步：获取基础-1-年-Office-365-学生版"><a href="#第一步：获取基础-1-年-Office-365-学生版" class="headerlink" title="第一步：获取基础 1 年 Office 365 学生版"></a>第一步：获取基础 1 年 Office 365 学生版</h3><ol>
-<li><p>打开浏览器的<strong>无痕模式</strong>（Chrome: Ctrl+Shift+N / Edge: Ctrl+Shift+P）</p>
-</li>
-<li><p>访问以下链接：</p>
-</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ol>
-<li><p>登录你想要绑定的<strong>微软账号</strong></p>
-</li>
-<li><p>选择 <strong>Google Pay</strong> 作为支付方式（成功率更高）</p>
-</li>
-<li><p>输入你的 <strong>edu 学生邮箱</strong>进行验证</p>
-</li>
-<li><p>点击 <strong>Verify student email</strong> 验证学生身份</p>
-</li>
-<li><p>去邮箱接收验证链接，复制回来打开</p>
-</li>
-<li><p>最后验证付款 <strong>0 元</strong>即可</p>
-</li>
-</ol>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021138201-800132641.jpg" alt="操作步骤示意图"></p>
-<h3 id="第二步：升级到-Premium-版本"><a href="#第二步：升级到-Premium-版本" class="headerlink" title="第二步：升级到 Premium 版本"></a>第二步：升级到 Premium 版本</h3><p>完成第一步后，继续访问以下链接升级到 Premium：</p>
-<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>重复相同的验证流程即可。</p>
-<h3 id="第三步：查询订阅状态"><a href="#第三步：查询订阅状态" class="headerlink" title="第三步：查询订阅状态"></a>第三步：查询订阅状态</h3><p>完成后，访问以下链接查看你的订阅信息：</p>
-<pre class="line-numbers language-none"><code class="language-none">https://account.microsoft.com/services/microsoft365/details<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021137821-2087432330.jpg" alt="三个关键链接"></p>
-<hr>
-<h2 id="关键链接汇总"><a href="#关键链接汇总" class="headerlink" title="关键链接汇总"></a>关键链接汇总</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>用途</th>
-<th>链接</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>链接1：订阅会员</td>
-<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M">StudentFree12M</a></td>
-</tr>
-<tr>
-<td>链接2：升级 Premium</td>
-<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M">StudentPremiumFree12M</a></td>
-</tr>
-<tr>
-<td>链接3：查询订阅</td>
-<td><a href="https://account.microsoft.com/services/microsoft365/details">Microsoft 365 Details</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><strong>必须使用无痕模式</strong>，避免之前的登录状态干扰</li>
-<li><strong>Google Pay 成功率更高</strong>，推荐优先使用</li>
-<li><strong>不会实际扣款</strong>，只是用于验证支付方式</li>
-<li><strong>edu 邮箱必须有效</strong>，过期的学生邮箱可能无法验证</li>
-<li><strong>每年可以续期</strong>，理论上可以一直白嫖</li>
-<li><strong>⚠️ 重要：使用美国 IP 可获得 5 年订阅，香港等其他地区 IP 可能只有 2 年或 1 年</strong>，建议使用 VPN 切换到美国节点后再操作</li>
-</ol>
-<hr>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>Q: 没有 edu 邮箱怎么办？</strong><br>A: 可以尝试申请一些提供免费 edu 邮箱的项目，或者联系学校 IT 部门获取。</p>
-<p><strong>Q: 验证失败怎么办？</strong><br>A: 尝试更换浏览器、清除缓存、使用 VPN 切换到美国 IP。</p>
-<p><strong>Q: 订阅到期后会自动扣款吗？</strong><br>A: 记得在订阅管理页面关闭”自动续订”，或者在到期前取消订阅。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，你可以免费获得价值数百美元的 Microsoft 365 Premium 订阅，享受包括 Copilot AI 在内的全部高级功能。这是微软官方的学生优惠渠道，完全合法合规。</p>
-<p>赶紧趁着还有效，去领取你的 5 年免费订阅吧！</p>
-<hr>
-<p><strong>相关链接</strong>：</p>
-<ul>
-<li>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>Office 365</tag>
-        <tag>Microsoft</tag>
-        <tag>学生优惠</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个100%立即获得New bing资格的方法教程-点击就送bing chat</title>
-    <url>/posts/16891.html</url>
-    <content><![CDATA[<p>之前加入waitlist的账号一个多月过去了还没有任何反应，但是身边朋友却“点击就送”？</p>
-<p>深入调查后发现原来是IP的影响，相信说到这里就已经有人知道该怎么做了</p>
-<p>方法：</p>
-<ol>
-<li>将节点IP更换为日本全局（不会换ip的看这个<a href="https://blog.onefly.top/posts/16888.html">简易教程</a>)</li>
-</ol>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113249267-1194007670.png" alt=""></p>
-<ol>
-<li>进入new bing 申请网站点击立即加入</li>
-</ol>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113536042-1695660571.png" alt=""></p>
-<p>之后就可以直接在bing搜索中开启聊天了<br><a href="https://www.bing.com/?/ai">https://www.bing.com/?/ai</a><br>其他建议：先退账号，删除注册表，vpn登录国外邮箱，现在秒成功<br>其他方案：<a href="https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A">https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A</a></p>
-]]></content>
-      <categories>
-        <category>前沿技术</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
-        <tag>技术分享</tag>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</title>
-    <url>/posts/260112.html</url>
-    <content><![CDATA[<h1 id="如何在一天内修复你的整个人生：DAN-KOE的2026最新方法"><a href="#如何在一天内修复你的整个人生：DAN-KOE的2026最新方法" class="headerlink" title="如何在一天内修复你的整个人生：DAN KOE的2026最新方法"></a>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</h1><p>如果你和我一样，你会觉得新年决心是愚蠢的。</p>
-<p>为什么？因为大多数人改变生活的方式完全错误。他们制定这些决心只是因为其他人都在这么做——但这种方式从根本上就注定失败。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822199-1792776152.jpg" alt="DAN KOE 关于生活改变的核心理念"></p>
-<h2 id="传统新年决心为什么会失败"><a href="#传统新年决心为什么会失败" class="headerlink" title="传统新年决心为什么会失败"></a>传统新年决心为什么会失败</h2><p>大多数人在新年时制定雄心勃勃的目标：</p>
-<ul>
-<li>减肥50斤</li>
-<li>学习一门新语言</li>
-<li>开始创业</li>
-<li>建立健康习惯</li>
-</ul>
-<p>但到了二月，这些决心就已经被抛在脑后。问题不在于你的意志力，而在于<strong>方法本身就是错的</strong>。</p>
-<h2 id="正确的改变方式：一天修复你的整个人生"><a href="#正确的改变方式：一天修复你的整个人生" class="headerlink" title="正确的改变方式：一天修复你的整个人生"></a>正确的改变方式：一天修复你的整个人生</h2><h3 id="1-停止制定“决心”，开始设计系统"><a href="#1-停止制定“决心”，开始设计系统" class="headerlink" title="1. 停止制定“决心”，开始设计系统"></a>1. 停止制定“决心”，开始设计系统</h3><p>决心是一个结果，而系统是达成结果的过程。不要说“我要减肥”，而是建立一个每天都能执行的系统。</p>
-<p><strong>关键原则：</strong></p>
-<ul>
-<li>关注过程，而非结果</li>
-<li>建立可持续的日常习惯</li>
-<li>让改变变得不可避免</li>
-</ul>
-<h3 id="2-重新定义你的身份"><a href="#2-重新定义你的身份" class="headerlink" title="2. 重新定义你的身份"></a>2. 重新定义你的身份</h3><p>你不是在“尝试”成为某个人——你<strong>已经是</strong>那个人了。这种身份转变会立即改变你的行为模式。</p>
-<blockquote>
-<p>💡 提示：不要说“我想成为健康的人”，而是说“我是一个重视健康的人”。</p>
-</blockquote>
-<h3 id="3-一天之内完成的根本性转变"><a href="#3-一天之内完成的根本性转变" class="headerlink" title="3. 一天之内完成的根本性转变"></a>3. 一天之内完成的根本性转变</h3><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822964-309957013.jpg" alt="实施改变的行动步骤"></p>
-<p><strong>今天就可以做的事情：</strong></p>
-<ol>
-<li><strong>清理你的环境</strong> - 移除所有阻碍你目标的事物</li>
-<li><strong>重新设计你的一天</strong> - 创建一个支持新身份的日程表</li>
-<li><strong>建立问责机制</strong> - 公开承诺或找到问责伙伴</li>
-<li><strong>立即采取行动</strong> - 不要等到“完美时机”</li>
-</ol>
-<h3 id="4-从“动机”到“势头”"><a href="#4-从“动机”到“势头”" class="headerlink" title="4. 从“动机”到“势头”"></a>4. 从“动机”到“势头”</h3><p>动机是短暂的，但势头是可持续的。一旦你开始行动，持续下去会变得越来越容易。</p>
-<p><strong>创建势头的关键：</strong></p>
-<ul>
-<li>从极小的胜利开始</li>
-<li>每天都要有进展，无论多小</li>
-<li>庆祝过程中的每一步</li>
-</ul>
-<h2 id="为什么这种方法有效"><a href="#为什么这种方法有效" class="headerlink" title="为什么这种方法有效"></a>为什么这种方法有效</h2><p>这不是关于意志力或自律的神话故事。这是关于：</p>
-<ol>
-<li><strong>设计环境</strong>让正确的选择成为唯一的选择</li>
-<li><strong>重塑身份</strong>让行为成为自然表达</li>
-<li><strong>建立系统</strong>让成功成为必然结果</li>
-</ol>
-<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 (FAQ)"></a>常见问题 (FAQ)</h2><p><strong>Q: 我真的能在一天内改变我的整个人生吗？</strong><br>A: 你可以在一天内做出改变整个人生轨迹的决定和行动。转变是瞬间的，但结果需要时间显现。</p>
-<p><strong>Q: 如果我失败了怎么办？</strong><br>A: 失败是系统的一部分。关键是建立一个能够容纳失败并继续前进的系统。</p>
-<p><strong>Q: 这和传统的新年决心有什么不同？</strong><br>A: 传统决心关注结果和意志力；这种方法关注系统和身份转变。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>停止等待新的一年、新的一月，甚至新的一周。<strong>今天就是那一天</strong>。</p>
-<p>你不需要更多的动机、更多的时间或更好的环境。你只需要正确的方法和立即行动的决心。</p>
-<p>改变不是发生在未来的某个时刻——它发生在你决定成为不同的人的那一刻。</p>
-<p>那一刻就是现在。</p>
-<hr>
-<p><strong>原文作者</strong>: DAN KOE (<a href="https://x.com/thedankoe">@thedankoe</a>)<br><strong>原文链接</strong>: <a href="https://x.com/thedankoe/status/2010751592346030461">Twitter Article</a></p>
-<blockquote>
-<p>📌 本文基于 DAN KOE 的 Twitter 长文整理和扩展，旨在帮助更多人找到正确的生活改变方法。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>个人成长</category>
-      </categories>
-      <tags>
-        <tag>个人成长</tag>
-        <tag>自我提升</tag>
-        <tag>目标设定</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下</title>
-    <url>/posts/241101.html</url>
-    <content><![CDATA[<h1 id="一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下"><a href="#一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下" class="headerlink" title="一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下"></a>一文看懂币圈一级阴毛盘那些事，拿捏狗庄不在话下</h1><p>这次讲完以后阴毛盘的难度恐怕又要提高了，文章后面用Doggo作为实例讲一下为什么我在他第一波砸盘砸的所有人都恐慌割肉的情况下，仍然这么笃定还会有反转（除了叙事够好这一个“主观因素”之外）。</p>
-<h2 id="一、-先讲讲庄的钱包类型"><a href="#一、-先讲讲庄的钱包类型" class="headerlink" title="一、 先讲讲庄的钱包类型"></a>一、 先讲讲庄的钱包类型</h2><p><strong>一级的庄钱包可以大致分为5种：</strong></p>
-<p>1.狙击钱包</p>
-<p>2.囤货钱包</p>
-<p>3.主力操盘钱包、有的还会配上</p>
-<p>4.刷交易量的钱包</p>
-<p>5.打散筹码的中转钱包。</p>
-<p>尤其是阴毛盘，一定要去花时间把至少前三种钱包揪出来，把庄的皮给扒了才有机会能长期在这种盘子里赚到钱。</p>
-<h3 id="1-先说狙击钱包"><a href="#1-先说狙击钱包" class="headerlink" title="1. 先说狙击钱包"></a><strong>1. 先说狙击钱包</strong></h3><p>庄在开盘的时候会捆绑狙击最早期的筹码，这种开盘你是不可能拿到比庄更便宜的筹码的，所以很多盘子你会看到开盘第一秒钟直接去了五百到一千万，这个逻辑跟二级做市商做高FDV的开盘价是一样的，上方没有卖单的情况下，他想定价多少就定价多少，他的每一分拉盘的钱都没有被浪费，因为没人比他的筹码更便宜去砸他。</p>
-<p>一般情况下我看到有盘子狙的市值过高，我也就不会去玩了，因为留给散户的盈利空间太小，而庄的利润又过大，冲的人多了庄很容易就倒你头上了（好好反思一下为什么你看一级开盘很高的盘子你不愿意冲，而上了币安的VC meme盘你又在10亿美金嘎嘎冲？庄的操盘手法本质上没有任何区别，只是一个给了交易所上币费，一个给dexscreener冲了300 u的展示费）。在狙击了第一批货之后有的庄会去把狙击钱包里的筹码直接通过中转钱包打散到其他钱包里，这样很多时候小白就追踪不到这批货的去向了，这种中转过后的存货钱包我仍然称为狙击钱包。</p>
-<p><strong>所以狙击钱包怎么去识别呢？</strong></p>
-<p>开盘最早交易的钱包就是狙击钱包，都在同一个区块里，很好找直接把交易拉到最前面就能看到，如果中转过也不难识别，各个一级的dashboard都会显示是转来的，你搜一下holder排名，哪个地址的筹码是没有成本的就知道是庄的狙击钱包转过来的了。最近经过社区反阴毛的运动之后，我发现最近的几个阴毛盘子的狙击钱包一般会在上涨第一波的时候就逐步出掉，但是价格仍然在涨，然后一堆新钱包在接，说明出掉的钱都被他自己的接货钱包吃掉了，所以本质上庄做了个左手倒右手，他的筹码还在，看起来新钱包是付出了成本，但实际上没有，也洗掉了表面阴毛的皮，下面是怎么识别这类接货钱包。</p>
-<h3 id="2-接货钱包"><a href="#2-接货钱包" class="headerlink" title="2. 接货钱包"></a><strong>2. 接货钱包</strong></h3><p>这类钱包大部分时候是新钱包，如果你看到一个新钱包只交易了这一个标的，且一直在接货出货，每笔两三千u的碎单，这种基本就是接货钱包没跑了，哪个新人进来只玩这一个盘子？这种钱包有3个作用，一个是左手倒右手接狙击钱包的货，一个是顶部慢慢出货用的，最后是在砸盘完成盘整的过程中接散户割肉的货用的。（后面我再用doggo的例子展开讲）</p>
-<h3 id="3-主力操盘钱包"><a href="#3-主力操盘钱包" class="headerlink" title="3. 主力操盘钱包"></a><strong>3. 主力操盘钱包</strong></h3><p>这种本质上是庄拿来画线用的，每笔交易都至少1wu以上，经常连续多笔，然后在关键阻力位的时候推一把，在关键支撑位的时候扶一把，准备出货的时候也会做第一批盖帽的，所以识别这个钱包是关键。</p>
-<h3 id="4-刷量钱包"><a href="#4-刷量钱包" class="headerlink" title="4. 刷量钱包"></a><strong>4. 刷量钱包</strong></h3><p>是为了把土狗能刷到各个平台的trending栏前排而存在的，比如如果你交易量很大，你在dexscreener里就会被排到前排，有的盘有，有的盘没有。</p>
-<h3 id="5-中转钱包"><a href="#5-中转钱包" class="headerlink" title="5. 中转钱包"></a><strong>5. 中转钱包</strong></h3><p>是为了打散筹码时让筹码追溯更难而存在的，有的盘有有的盘没有，大Neiro的就有，可以去自己看一下</p>
-<h2 id="二、下面我来讲讲doggo这个阴毛盘的案例"><a href="#二、下面我来讲讲doggo这个阴毛盘的案例" class="headerlink" title="二、下面我来讲讲doggo这个阴毛盘的案例"></a>二、下面我来讲讲doggo这个阴毛盘的案例</h2><h3 id="1-操盘钱包"><a href="#1-操盘钱包" class="headerlink" title="1.操盘钱包"></a>1.操盘钱包</h3><p>先说明，俩个doggo都是阴毛盘，这个你千万别自我洗脑，我之前写doggo这篇逻辑贴的时候也明确跟大家指出了，我讨厌阴毛盘，但我不介意有交易机会的时候进去赚钱。<strong>首先，我们来跟一个庄主操盘钱包来进入他的视角讲讲为什么我当时认为Dev跑是假的，大概率会有反转，钱包地址是：</strong></p>
-<p>0xa7c74f0564d292aa6414b70de43625480d45f31d</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142330624-1303790534.png" alt=""></p>
-<p>看一下上图这个钱包的交易点位，就问你牛逼吗？一个新钱包在刚开盘的土狗就打进去了1.3wu，然后就算从高点市值的20M跌到5M，所有狙击钱包在狂砸散户全都Fud的情况下还能在5m精准抄底把下引线瞬间拉回来，在关键的支撑位和阻力位都起到了推波助澜的作用，然后在第二波高点的时候直接盖帽砸了13WU，以下是他的部分交易记录，建议大家直接去你常用的dashboard直接搜他的地址去自己跟着看。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142151767-312540510.png" alt=""></p>
-<p>doggo的主力操盘钱包不止这一个，当你把庄的主力操盘钱包找出来以后，你就明白局部的高点和低点大致在哪里了（也会有散户追高把价格推更高的情况，但庄一般都会砸下来，画线一定要自己来画），所以当时tg里社区都在说dev跑了，盘子要归零了，但如果盘子真的被dev放弃了，为什么他的主操盘钱包还在接货，然后还在底部做拉升？这就是为什么我那天觉得doggo有反转的“客观”依据，而不仅是这个叙事不错的“主观”依据。</p>
-<p>庄的操盘钱包在第二波的高点开始出货13wu的时候，这里其实留给你了半天多的时间跟着庄跑或者至少出本。所以如果你玩阴毛庄盘，当你发现你追踪的主力操盘钱包都在出货了，然后他的囤货钱包也开始在出了，你难道连个本都不出，还幻想着你的社区帮你推的更高吗？</p>
-<h3 id="1-囤货钱包"><a href="#1-囤货钱包" class="headerlink" title="1.囤货钱包"></a>1.囤货钱包</h3><p><strong>下面我们看一下囤货钱包，这种钱包一般长这样：</strong></p>
-<p>0x345b629908fdc2b8caf87a7ded876ff0c90ce444 0x4422ba9d6278836cbcef6df2114ce488d19f0c1e</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142122207-1143092395.png" alt=""></p>
-<p>囤货钱包的特征是大多是新钱包，大部分时候每笔交易金额在1-2e，去看囤货钱包的意义在于：</p>
-<ol>
-<li>你可以知道庄有没有第二波的打算（如果砸盘之后你发现你找不到囤货钱包收筹码的痕迹，那很明显没有第二波了）</li>
-<li>大致判断什么位置庄开始出货了，但很多时候庄会一点一点出，所以别一看有囤货钱包在出就跑，但如果你发现一个位置到了关键点位（比如doggo就是30M左右，你发现涨不咋上去了，庄的操盘钱包已经出了，囤货钱包也在一笔笔出而不是接，那这个位置基本就是局部高点）</li>
-<li>同理，你也别看庄的囤货钱包开始接了，你就跟着接，因为人家收筹码也需要一个过程，人家本来就是用盈利收，而你是拿本金收。</li>
-</ol>
-<h3 id="3-狙击钱包"><a href="#3-狙击钱包" class="headerlink" title="3.狙击钱包"></a>3.狙击钱包</h3><p>盯狙击钱包一般去判断第一波高点是最有效的，下图标出的是狙击钱包的砸盘交易，你看到狙击钱包开始大笔多笔的砸盘的时候，这个时候你一定要跟着跑，就算之后还有第二波，你等下去能接到的成本也会低不少。看下图第一波高点那里红点最多的位置就是大家在说的“Dev跑了”。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241102142439802-85714917.png" alt=""></p>
-<h2 id="三、最后总结一些关键点和小技巧"><a href="#三、最后总结一些关键点和小技巧" class="headerlink" title="三、最后总结一些关键点和小技巧"></a>三、最后总结一些关键点和小技巧</h2><ol>
-<li>识别庄钱包：狙击钱包是第一个块捆绑狙击的交易钱包；主操盘钱包是大开大合在关键点位大笔交易的钱包，去按大金额筛选通常能找到；主囤货钱包通常是多笔1-2e交易额的新钱包。所有情况下，新钱包且交易很多的基本都是庄的钱包。</li>
-<li>任何盘子一定要去找出来狙击钱包、主操盘钱包、主囤货钱包都是哪些，尤其是阴毛盘，如果是老币，你找不出来主操盘钱包和囤货钱包，说明这个盘子废了里面没有庄。 </li>
-<li>跟着主操盘钱包走大部分时候是能喝上一口汤的。</li>
-<li>你想判断什么时候第一波该跑了，一定要盯紧狙击钱包什么时候开始多笔大笔的砸盘。 </li>
-<li>你想判断什么时候第二波一定要跑或者至少出本了，一定要盯紧什么时候主操盘钱包在砸盘，或者囤货钱包在多笔的砸盘。</li>
-<li>如果砸盘过程中没有囤货钱包在接，那说明庄没想要搞第二波，或者现在价格离他想收筹的位置还很远。 </li>
-<li>主囤货钱包很多时候是左手倒右手，所以你很难判断他们的成本价实际是多少，所以你想跟庄更该看主操盘钱包，而囤货钱包更多在看的是庄屯了多少筹码、筹码是否握的比较紧。 </li>
-<li>个人经验上，也要谨慎庄的骚操作，有时候他主操盘钱包会拉一大波，引诱看到涨了很多然后追多的人，这个时候你就要关注一下他的囤货钱包的动向了，比如他拉完以后，囤货钱包一直在不断出货，那这种基本就是庄没想马上拉，这里是局部震荡位，或者更差，庄会直接把追高的人全都埋了。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>sol</tag>
-        <tag>土狗</tag>
-        <tag>eth</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>兼容性最高的Git push推送到Github仓库的SSH设置方法</title>
     <url>/posts/241007.html</url>
     <content><![CDATA[<p>使用 SSH 方式推送项目到 GitHub 是一种安全且方便的方式，尤其在频繁推送代码时不需要每次都输入用户名和密码。以下是详细的步骤教程，涵盖从创建 SSH 密钥到配置 GitHub、推送项目的整个流程。</p>
@@ -7351,6 +7353,25 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
         <tag>web3</tag>
         <tag>交易所</tag>
         <tag>strk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>投资学博迪第十版.pdf下载</title>
+    <url>/posts/15785.html</url>
+    <content><![CDATA[<p>作者：（美）滋维·博迪（Zvi Bodie）,（美）亚历克斯·凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
+<p></p><p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p><br>格式: PDF<p></p>
+<p>封面：</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png" alt=""></p>
+<p>下载链接：</p>
+<p>链接:<a href="https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq">https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq</a><br>提取码:hdiq</p>
+<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>经管</tag>
       </tags>
   </entry>
   <entry>
@@ -7962,22 +7983,89 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
-    <title>投资学博迪第十版.pdf下载</title>
-    <url>/posts/15785.html</url>
-    <content><![CDATA[<p>作者：（美）滋维·博迪（Zvi Bodie）,（美）亚历克斯·凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
-<p></p><p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p><br>格式: PDF<p></p>
-<p>封面：</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png" alt=""></p>
-<p>下载链接：</p>
-<p>链接:<a href="https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq">https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq</a><br>提取码:hdiq</p>
-<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
+    <title>探秘比特币：数字黄金还是黄粱一梦？</title>
+    <url>/posts/24218.html</url>
+    <content><![CDATA[<p>在金融科技的飞速发展下，比特币作为第一个也是最著名的加密货币，自2009年问世以来，一直是争议和讨论的焦点。它被一些人视为数字时代的黄金，而被另一些人批评为现代版的庞氏骗局。本文将深入探讨比特币的本质、投资价值、加密货币交易所的角色，以及与法币兑换相关的风险。</p>
+<h2 id="1-比特币是不是庞氏骗局？"><a href="#1-比特币是不是庞氏骗局？" class="headerlink" title="1. 比特币是不是庞氏骗局？"></a>1. 比特币是不是庞氏骗局？</h2><p>庞氏骗局是一种投资诈骗，新投资者的资金用于支付早期投资者的回报，而不是通过合法业务活动或投资收益。比特币的工作原理与此不同。它基于区块链技术——一个去中心化、分布式的账本，记录所有交易。比特币的价值不是由支付早期投资者的后来者资金支撑，而是由市场需求、有限的供应（总量上限为2100万），以及挖矿成本（即生成新比特币的电脑算力成本）决定的。</p>
+<blockquote>
+<p>比特币与历史上著名的郁金香泡沫之间存在显著的区别，尽管两者都被用作投机泡沫的例证。为了更深入地理解这些区别，我们需要回顾郁金香泡沫的历史背景，并与比特币的当前情况进行对比。</p>
+<h3 id="郁金香泡沫简介"><a href="#郁金香泡沫简介" class="headerlink" title="郁金香泡沫简介"></a>郁金香泡沫简介</h3><p>郁金香泡沫（1634-1637年）是历史上最早的经济泡沫之一，发生在荷兰的黄金时代。当时，郁金香球茎成为了极度炒作的投机对象，其价格在短时间内飙升至荒谬的高位，后来突然崩溃，给投资者带来了巨大的财务损失。</p>
+<h3 id="比特币简介"><a href="#比特币简介" class="headerlink" title="比特币简介"></a>比特币简介</h3><p>比特币是2009年由一个化名为中本聪的人或团体创造的数字加密货币。它基于去中心化的区块链技术，使用户能够在没有中央权威机构的情况下进行交易。</p>
+<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ol>
+<li><p><strong>基础资产的性质</strong>：</p>
+<ul>
+<li><strong>郁金香泡沫</strong>：基于实体商品——郁金香球茎。其价值本质上受限于物理属性和实际用途。</li>
+<li><strong>比特币</strong>：基于数字技术和数学原理。它作为一种去中心化的货币和价值储存手段，其价值不仅仅取决于市场供需，还涉及其作为技术创新的潜力。</li>
+</ul>
+</li>
+<li><p><strong>市场参与者的范围</strong>：</p>
+<ul>
+<li>郁金香泡沫主要局限于荷兰，影响相对有限。</li>
+<li>比特币是全球性的，影响广泛，涉及全球各地的投资者和用户。</li>
+</ul>
+</li>
+<li><p><strong>持久性和应用</strong>：</p>
+<ul>
+<li>郁金香的狂热是短暂的，且主要是基于物理商品的美学价值和稀有性。</li>
+<li>比特币及其背后的区块链技术有着更广泛的应用前景，包括金融、法律、物流等领域，其技术创新为其价值提供了持续的支撑。</li>
+</ul>
+</li>
+<li><p><strong>经济影响</strong>：</p>
+<ul>
+<li>郁金香泡沫的崩溃对当时的荷兰经济造成了影响，但其影响相对局限。</li>
+<li>比特币的波动性及其对全球金融市场的潜在影响更为广泛，同时也引发了对加密货币监管的全球性讨论。</li>
+</ul>
+</li>
+<li><p><strong>技术与创新</strong>：</p>
+<ul>
+<li>郁金香泡沫缺乏持续的技术或创新支撑。</li>
+<li>比特币代表了区块链技术的突破，这是一种具有革命性的技术创新，可能改变多个行业的运作方式。</li>
+</ul>
+</li>
+</ol>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>虽然比特币的价格波动和郁金香泡沫在某些方面看似相似，但比较两者的基础、影响范围、应用前景和技术背景揭示了它们之间的本质区别。比特币及其区块链技术的出现不仅仅是一场简单的投机狂</p>
+<p>热，而是一次可能对全球经济和社会产生深远影响的技术革新。尽管如此，比特币的未来仍充满不确定性，其作为一种投资和价值储存手段的真正潜力有待市场和时间的检验。</p>
+</blockquote>
+<p>尽管比特币不符合传统庞氏骗局的定义，但它的价格波动极大，且受到投机行为的影响，因此一些批评者认为它具有类似风险。</p>
+<h2 id="2-比特币有没有投资价值？"><a href="#2-比特币有没有投资价值？" class="headerlink" title="2. 比特币有没有投资价值？"></a>2. 比特币有没有投资价值？</h2><p>比特币被许多投资者视为一种“数字黄金”，具有对冲通货膨胀和货币贬值的潜力。与传统金融资产相比，比特币具有几个独特优势：供应量上限固定、去中心化、全球可接入性等。然而，它的价格波动性高，投资风险也相应较大。投资比特币要求对市场动态有深入了解，并且能够承受可能的资本损失。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218183520256-1443590482.png" style="zoom: 67%;"></p>
+<p>从2022年底开始，比特币从15600一路涨上52800美元，同时若按照人民币计价，当前价格已达最高点（69000 usd）的90%分位。在过去的10年中，比特币作为一种投资标的涨幅一直是位列第一的（要么是涨幅第一，要么是跌幅第一），但是我们只要在跌幅最大的一年年底购买并持有3年，那么至少会有4倍收益。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218184323982-241807225.png" style="zoom:67%;"></p>
+<p><strong>2024年1月24日，美国证券交易委员会（SEC）批准比特币现货ETF</strong>（交易所交易基金）是加密货币领域的重大里程碑，对比特币的投资价值及其与黄金关系的影响深远。比特币ETF的批准意味着投资者可以通过传统的投资渠道参与比特币投资，无需直接购买和持有比特币，从而降低了投资门槛和复杂性。这一举措不仅增强了比特币作为投资工具的合法性，也提高了其对主流投资者的吸引力。</p>
+<blockquote>
+<h3 id="比特币ETF对比特币投资价值的影响"><a href="#比特币ETF对比特币投资价值的影响" class="headerlink" title="比特币ETF对比特币投资价值的影响"></a>比特币ETF对比特币投资价值的影响</h3><ol>
+<li><strong>增加流动性和可接入性</strong>：比特币ETF使得投资比特币像购买股票一样简单，通过增加流动性和可接入性，吸引了更多的个人和机构投资者。</li>
+<li><strong>提高认可度</strong>：SEC的批准是对比特币及其底层技术的一种认可，增强了投资者对比特币作为一种投资类别合法性的信心。</li>
+<li><strong>市场成熟</strong>：比特币ETF的存在表明加密货币市场正在成熟，有助于减少市场波动性，提高价格稳定性。</li>
+</ol>
+<h3 id="比特币现货ETF与黄金ETF价格关系"><a href="#比特币现货ETF与黄金ETF价格关系" class="headerlink" title="比特币现货ETF与黄金ETF价格关系"></a>比特币现货ETF与黄金ETF价格关系</h3><p>比特币ETF批准后，观察到黄金ETF的价格出现下跌，这可能反映了投资者在两种资产之间重新分配资金。这种现象指向了比特币和黄金之间的几个关键关系：</p>
+<ol>
+<li><strong>投资多样化</strong>：一些投资者可能将比特币视为黄金的现代替代品，用于对冲通货膨胀和货币贬值。随着比特币ETF的推出，这些投资者可能转向比特币，寻求更高的回报率，从而对黄金ETF的需求产生影响。</li>
+<li><strong>风险偏好变化</strong>：比特币通常被视为更高风险、更高回报的投资。比特币ETF的批准可能吸引了寻求高风险投资的投资者，这部分资本的流入可能部分来源于原本投资于黄金的资金。</li>
+<li><strong>市场认知变化</strong>：随着比特币成为主流投资选项，其与黄金作为“避险资产”的竞争地位可能会增强。投资者可能重新评估这两种资产在投资组合中的角色，导致资金流向的变化。</li>
+</ol>
+<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>比特币ETF的批准不仅提升了比特币的投资价值，也可能改变了其与黄金的关系。作为数字黄金，比特币提供了一种新的避险机制和价值储存方式，可能在某些投资者心中取代或补充传统的黄金投资。然而，比特币与黄金仍然有着本质的不同，包括其波动性、市场成熟度以及被接受的程度。因此，虽然比特币可能会对黄金ETF的价格产生影响，但两者都可能在多样化的投资组合中发挥重要作用，满足不同投资者的需求和风险偏好。在未来，随着市场的进一步发展和成熟，投资者将更加深入地理解如何在这两种资产之间做出最佳配置决策。</p>
+</blockquote>
+<h2 id="3-什么是加密货币交易所？"><a href="#3-什么是加密货币交易所？" class="headerlink" title="3. 什么是加密货币交易所？"></a>3. 什么是加密货币交易所？</h2><p>加密货币交易所是允许买家和卖家交易加密货币的平台，如比特币、以太坊等。它们为用户提供了将加密货币兑换成其他加密货币或法币（如美元、欧元）的服务。这些交易所可以是中心化的，由特定公司运营，也可以是去中心化的，依靠自动化的智能合约直接在用户之间进行交易。选择一个可靠、安全的交易所对于保护投资者资金至关重要。</p>
+<p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。但是下载交易所有一定的门槛，建议寻求值得信任的有经验的朋友辅导。</p>
+<h2 id="4-虚拟货币和法币兑换的风险"><a href="#4-虚拟货币和法币兑换的风险" class="headerlink" title="4. 虚拟货币和法币兑换的风险"></a>4. 虚拟货币和法币兑换的风险</h2><p>虚拟货币与法币兑换带来了多重风险，包括但不限于市场风险、流动性风险、法律和监管风险。市场波动可能导致投资者在兑换过程中遭受重大损失。此外，虽然加密货币交易日益增加，但相对于传统市场，它们的流动性仍然较低，这可能导致兑换成本增加。法律和监管的不确定性也是一个重要因素，不同国家对加密货币的态度和政策各不相同。</p>
+<p>由于在中国，从事虚拟货币和人民币的兑换属于非法金融活动，请不要私下和他人买卖比特币，以防上当受骗和冻卡。如果你投资比特币获得相当的收益可前往香港兑换成人民币，或者直接在上述3种交易所内选择值得信任的OTC出入金。</p>
+<h2 id="5-如何购买或注册交易所？"><a href="#5-如何购买或注册交易所？" class="headerlink" title="5.如何购买或注册交易所？"></a>5.如何购买或注册交易所？</h2><p><strong>详细注册和使用教程见另一博客</strong>：</p>
+<p><a href="https://onefly.top/posts/24219.html">简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例 | 孤飞的博客 (onefly.top)</a></p>
+<p>以下是官方注册渠道：【强烈建议看<strong>上方注册和使用教程</strong>的博客】</p>
+<p><strong>OKX</strong>【国内IP】：<a href="https://www.nuancebot.com/cn/join/8385429">https://www.nuancebot.com/cn/join/8385429</a></p>
+<p><strong>OKX</strong>【国外IP】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
+<p><strong>Bitget</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
+<p><strong>Binance</strong>：<a href="https://www.suitechsui.io/zh-CN/join?ref=170981146">https://www.suitechsui.io/zh-CN/join?ref=170981146</a></p>
+<p>欢迎关注我的最新博客！</p>
 ]]></content>
       <categories>
-        <category>电子书</category>
+        <category>Web3</category>
       </categories>
       <tags>
-        <tag>电子书</tag>
-        <tag>经管</tag>
+        <tag>web3</tag>
+        <tag>虚拟货币</tag>
+        <tag>比特币</tag>
       </tags>
   </entry>
   <entry>
@@ -8157,89 +8245,28 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
-    <title>探秘比特币：数字黄金还是黄粱一梦？</title>
-    <url>/posts/24218.html</url>
-    <content><![CDATA[<p>在金融科技的飞速发展下，比特币作为第一个也是最著名的加密货币，自2009年问世以来，一直是争议和讨论的焦点。它被一些人视为数字时代的黄金，而被另一些人批评为现代版的庞氏骗局。本文将深入探讨比特币的本质、投资价值、加密货币交易所的角色，以及与法币兑换相关的风险。</p>
-<h2 id="1-比特币是不是庞氏骗局？"><a href="#1-比特币是不是庞氏骗局？" class="headerlink" title="1. 比特币是不是庞氏骗局？"></a>1. 比特币是不是庞氏骗局？</h2><p>庞氏骗局是一种投资诈骗，新投资者的资金用于支付早期投资者的回报，而不是通过合法业务活动或投资收益。比特币的工作原理与此不同。它基于区块链技术——一个去中心化、分布式的账本，记录所有交易。比特币的价值不是由支付早期投资者的后来者资金支撑，而是由市场需求、有限的供应（总量上限为2100万），以及挖矿成本（即生成新比特币的电脑算力成本）决定的。</p>
-<blockquote>
-<p>比特币与历史上著名的郁金香泡沫之间存在显著的区别，尽管两者都被用作投机泡沫的例证。为了更深入地理解这些区别，我们需要回顾郁金香泡沫的历史背景，并与比特币的当前情况进行对比。</p>
-<h3 id="郁金香泡沫简介"><a href="#郁金香泡沫简介" class="headerlink" title="郁金香泡沫简介"></a>郁金香泡沫简介</h3><p>郁金香泡沫（1634-1637年）是历史上最早的经济泡沫之一，发生在荷兰的黄金时代。当时，郁金香球茎成为了极度炒作的投机对象，其价格在短时间内飙升至荒谬的高位，后来突然崩溃，给投资者带来了巨大的财务损失。</p>
-<h3 id="比特币简介"><a href="#比特币简介" class="headerlink" title="比特币简介"></a>比特币简介</h3><p>比特币是2009年由一个化名为中本聪的人或团体创造的数字加密货币。它基于去中心化的区块链技术，使用户能够在没有中央权威机构的情况下进行交易。</p>
-<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ol>
-<li><p><strong>基础资产的性质</strong>：</p>
-<ul>
-<li><strong>郁金香泡沫</strong>：基于实体商品——郁金香球茎。其价值本质上受限于物理属性和实际用途。</li>
-<li><strong>比特币</strong>：基于数字技术和数学原理。它作为一种去中心化的货币和价值储存手段，其价值不仅仅取决于市场供需，还涉及其作为技术创新的潜力。</li>
-</ul>
-</li>
-<li><p><strong>市场参与者的范围</strong>：</p>
-<ul>
-<li>郁金香泡沫主要局限于荷兰，影响相对有限。</li>
-<li>比特币是全球性的，影响广泛，涉及全球各地的投资者和用户。</li>
-</ul>
-</li>
-<li><p><strong>持久性和应用</strong>：</p>
-<ul>
-<li>郁金香的狂热是短暂的，且主要是基于物理商品的美学价值和稀有性。</li>
-<li>比特币及其背后的区块链技术有着更广泛的应用前景，包括金融、法律、物流等领域，其技术创新为其价值提供了持续的支撑。</li>
-</ul>
-</li>
-<li><p><strong>经济影响</strong>：</p>
-<ul>
-<li>郁金香泡沫的崩溃对当时的荷兰经济造成了影响，但其影响相对局限。</li>
-<li>比特币的波动性及其对全球金融市场的潜在影响更为广泛，同时也引发了对加密货币监管的全球性讨论。</li>
-</ul>
-</li>
-<li><p><strong>技术与创新</strong>：</p>
-<ul>
-<li>郁金香泡沫缺乏持续的技术或创新支撑。</li>
-<li>比特币代表了区块链技术的突破，这是一种具有革命性的技术创新，可能改变多个行业的运作方式。</li>
-</ul>
-</li>
-</ol>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>虽然比特币的价格波动和郁金香泡沫在某些方面看似相似，但比较两者的基础、影响范围、应用前景和技术背景揭示了它们之间的本质区别。比特币及其区块链技术的出现不仅仅是一场简单的投机狂</p>
-<p>热，而是一次可能对全球经济和社会产生深远影响的技术革新。尽管如此，比特币的未来仍充满不确定性，其作为一种投资和价值储存手段的真正潜力有待市场和时间的检验。</p>
-</blockquote>
-<p>尽管比特币不符合传统庞氏骗局的定义，但它的价格波动极大，且受到投机行为的影响，因此一些批评者认为它具有类似风险。</p>
-<h2 id="2-比特币有没有投资价值？"><a href="#2-比特币有没有投资价值？" class="headerlink" title="2. 比特币有没有投资价值？"></a>2. 比特币有没有投资价值？</h2><p>比特币被许多投资者视为一种“数字黄金”，具有对冲通货膨胀和货币贬值的潜力。与传统金融资产相比，比特币具有几个独特优势：供应量上限固定、去中心化、全球可接入性等。然而，它的价格波动性高，投资风险也相应较大。投资比特币要求对市场动态有深入了解，并且能够承受可能的资本损失。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218183520256-1443590482.png" style="zoom: 67%;"></p>
-<p>从2022年底开始，比特币从15600一路涨上52800美元，同时若按照人民币计价，当前价格已达最高点（69000 usd）的90%分位。在过去的10年中，比特币作为一种投资标的涨幅一直是位列第一的（要么是涨幅第一，要么是跌幅第一），但是我们只要在跌幅最大的一年年底购买并持有3年，那么至少会有4倍收益。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240218184323982-241807225.png" style="zoom:67%;"></p>
-<p><strong>2024年1月24日，美国证券交易委员会（SEC）批准比特币现货ETF</strong>（交易所交易基金）是加密货币领域的重大里程碑，对比特币的投资价值及其与黄金关系的影响深远。比特币ETF的批准意味着投资者可以通过传统的投资渠道参与比特币投资，无需直接购买和持有比特币，从而降低了投资门槛和复杂性。这一举措不仅增强了比特币作为投资工具的合法性，也提高了其对主流投资者的吸引力。</p>
-<blockquote>
-<h3 id="比特币ETF对比特币投资价值的影响"><a href="#比特币ETF对比特币投资价值的影响" class="headerlink" title="比特币ETF对比特币投资价值的影响"></a>比特币ETF对比特币投资价值的影响</h3><ol>
-<li><strong>增加流动性和可接入性</strong>：比特币ETF使得投资比特币像购买股票一样简单，通过增加流动性和可接入性，吸引了更多的个人和机构投资者。</li>
-<li><strong>提高认可度</strong>：SEC的批准是对比特币及其底层技术的一种认可，增强了投资者对比特币作为一种投资类别合法性的信心。</li>
-<li><strong>市场成熟</strong>：比特币ETF的存在表明加密货币市场正在成熟，有助于减少市场波动性，提高价格稳定性。</li>
-</ol>
-<h3 id="比特币现货ETF与黄金ETF价格关系"><a href="#比特币现货ETF与黄金ETF价格关系" class="headerlink" title="比特币现货ETF与黄金ETF价格关系"></a>比特币现货ETF与黄金ETF价格关系</h3><p>比特币ETF批准后，观察到黄金ETF的价格出现下跌，这可能反映了投资者在两种资产之间重新分配资金。这种现象指向了比特币和黄金之间的几个关键关系：</p>
-<ol>
-<li><strong>投资多样化</strong>：一些投资者可能将比特币视为黄金的现代替代品，用于对冲通货膨胀和货币贬值。随着比特币ETF的推出，这些投资者可能转向比特币，寻求更高的回报率，从而对黄金ETF的需求产生影响。</li>
-<li><strong>风险偏好变化</strong>：比特币通常被视为更高风险、更高回报的投资。比特币ETF的批准可能吸引了寻求高风险投资的投资者，这部分资本的流入可能部分来源于原本投资于黄金的资金。</li>
-<li><strong>市场认知变化</strong>：随着比特币成为主流投资选项，其与黄金作为“避险资产”的竞争地位可能会增强。投资者可能重新评估这两种资产在投资组合中的角色，导致资金流向的变化。</li>
-</ol>
-<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>比特币ETF的批准不仅提升了比特币的投资价值，也可能改变了其与黄金的关系。作为数字黄金，比特币提供了一种新的避险机制和价值储存方式，可能在某些投资者心中取代或补充传统的黄金投资。然而，比特币与黄金仍然有着本质的不同，包括其波动性、市场成熟度以及被接受的程度。因此，虽然比特币可能会对黄金ETF的价格产生影响，但两者都可能在多样化的投资组合中发挥重要作用，满足不同投资者的需求和风险偏好。在未来，随着市场的进一步发展和成熟，投资者将更加深入地理解如何在这两种资产之间做出最佳配置决策。</p>
-</blockquote>
-<h2 id="3-什么是加密货币交易所？"><a href="#3-什么是加密货币交易所？" class="headerlink" title="3. 什么是加密货币交易所？"></a>3. 什么是加密货币交易所？</h2><p>加密货币交易所是允许买家和卖家交易加密货币的平台，如比特币、以太坊等。它们为用户提供了将加密货币兑换成其他加密货币或法币（如美元、欧元）的服务。这些交易所可以是中心化的，由特定公司运营，也可以是去中心化的，依靠自动化的智能合约直接在用户之间进行交易。选择一个可靠、安全的交易所对于保护投资者资金至关重要。</p>
-<p>加密货币交易所提供了除比特币，ETH外的许多货币类型供用户购买，一般不建议新手购买非主流货币，这也是网络诈骗的高发地。目前对于中国用户合规的交易所有OKX（欧易）、Binance（币安）、Bitget等，其他野鸡交易所容易上当受骗请勿下载。如果你希望投资比特币，你可以选择以上知名交易所或者直接在美股市场购买比特币ETF。但是下载交易所有一定的门槛，建议寻求值得信任的有经验的朋友辅导。</p>
-<h2 id="4-虚拟货币和法币兑换的风险"><a href="#4-虚拟货币和法币兑换的风险" class="headerlink" title="4. 虚拟货币和法币兑换的风险"></a>4. 虚拟货币和法币兑换的风险</h2><p>虚拟货币与法币兑换带来了多重风险，包括但不限于市场风险、流动性风险、法律和监管风险。市场波动可能导致投资者在兑换过程中遭受重大损失。此外，虽然加密货币交易日益增加，但相对于传统市场，它们的流动性仍然较低，这可能导致兑换成本增加。法律和监管的不确定性也是一个重要因素，不同国家对加密货币的态度和政策各不相同。</p>
-<p>由于在中国，从事虚拟货币和人民币的兑换属于非法金融活动，请不要私下和他人买卖比特币，以防上当受骗和冻卡。如果你投资比特币获得相当的收益可前往香港兑换成人民币，或者直接在上述3种交易所内选择值得信任的OTC出入金。</p>
-<h2 id="5-如何购买或注册交易所？"><a href="#5-如何购买或注册交易所？" class="headerlink" title="5.如何购买或注册交易所？"></a>5.如何购买或注册交易所？</h2><p><strong>详细注册和使用教程见另一博客</strong>：</p>
-<p><a href="https://onefly.top/posts/24219.html">简易比特币（虚拟加密货币）交易所使用教程，以OKX欧易为例 | 孤飞的博客 (onefly.top)</a></p>
-<p>以下是官方注册渠道：【强烈建议看<strong>上方注册和使用教程</strong>的博客】</p>
-<p><strong>OKX</strong>【国内IP】：<a href="https://www.nuancebot.com/cn/join/8385429">https://www.nuancebot.com/cn/join/8385429</a></p>
-<p><strong>OKX</strong>【国外IP】：<a href="https://okx.com/join/8385429">https://okx.com/join/8385429</a></p>
-<p><strong>Bitget</strong>：<a href="https://partner.bitget.fit/bg/YEQHQG">https://partner.bitget.fit/bg/YEQHQG</a></p>
-<p><strong>Binance</strong>：<a href="https://www.suitechsui.io/zh-CN/join?ref=170981146">https://www.suitechsui.io/zh-CN/join?ref=170981146</a></p>
-<p>欢迎关注我的最新博客！</p>
+    <title>查询推特账号是否改名的教程——防止冲web3项目被假号rug</title>
+    <url>/posts/241031.html</url>
+    <content><![CDATA[<h1 id="查询推特账号是否改名的教程——防止冲web3项目被假号rug"><a href="#查询推特账号是否改名的教程——防止冲web3项目被假号rug" class="headerlink" title="查询推特账号是否改名的教程——防止冲web3项目被假号rug"></a>查询推特账号是否改名的教程——防止冲web3项目被假号rug</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>在WEB3冲Alpha项目，鉴于很多人fomo冲了推特改名盘（伪装名人发币）被收割的情况，今天出个<strong>如何查询推特是否改名</strong>教程，希望能尽量避免更多的朋友被明显的rug盘欺骗</p>
+<p>免费查询工具，官网 <a href="https://discover.beta.getmoni.io/checker">https://discover.beta.getmoni.io/checker</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241112112345448-1562412978.png" alt=""></p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p>举例说明：搜索这个推特账号：<code>@BorisTranSOL</code></p>
+<p>示例：<a href="https://discover.beta.getmoni.io/BorisTranSOL">https://discover.beta.getmoni.io/BorisTranSOL</a></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241112112413077-533741670.png" alt=""></p>
+<h2 id="配套插件"><a href="#配套插件" class="headerlink" title="配套插件"></a>配套插件</h2><p>免费查询工具discover的插件下载链接：</p>
+<p><a href="https://chromewebstore.google.com/detail/moni-discover-twitter-che/bgooiolaoinoncegoopcmincbomphmhi?hl=zh-CN&amp;utm_source=ext_sidebar">https://chromewebstore.google.com/detail/moni-discover-twitter-che/bgooiolaoinoncegoopcmincbomphmhi?hl=zh-CN&amp;utm_source=ext_sidebar</a></p>
+<p>下载安装后，登录，然后刷新推特页面，可以直接在页面上看见一个小眼睛，点击小眼睛就能更快速的查看该推特的基本信息，有无改名，改签名！其他功能，自己研究哦！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241112112448188-44288638.png" alt=""></p>
+<p>参考文献：</p>
+<p>[1] <a href="https://x.com/Cryptoxiaodd">小叮当</a> —— <a href="https://x.com/Cryptoxiaodd/status/1851466215249818060">https://x.com/Cryptoxiaodd/status/1851466215249818060</a></p>
 ]]></content>
       <categories>
         <category>Web3</category>
       </categories>
       <tags>
-        <tag>web3</tag>
-        <tag>虚拟货币</tag>
-        <tag>比特币</tag>
+        <tag>Web3</tag>
+        <tag>Alpha</tag>
+        <tag>推特</tag>
       </tags>
   </entry>
   <entry>
@@ -8316,31 +8343,6 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       <tags>
         <tag>电子书</tag>
         <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查询推特账号是否改名的教程——防止冲web3项目被假号rug</title>
-    <url>/posts/241031.html</url>
-    <content><![CDATA[<h1 id="查询推特账号是否改名的教程——防止冲web3项目被假号rug"><a href="#查询推特账号是否改名的教程——防止冲web3项目被假号rug" class="headerlink" title="查询推特账号是否改名的教程——防止冲web3项目被假号rug"></a>查询推特账号是否改名的教程——防止冲web3项目被假号rug</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>在WEB3冲Alpha项目，鉴于很多人fomo冲了推特改名盘（伪装名人发币）被收割的情况，今天出个<strong>如何查询推特是否改名</strong>教程，希望能尽量避免更多的朋友被明显的rug盘欺骗</p>
-<p>免费查询工具，官网 <a href="https://discover.beta.getmoni.io/checker">https://discover.beta.getmoni.io/checker</a></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241112112345448-1562412978.png" alt=""></p>
-<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p>举例说明：搜索这个推特账号：<code>@BorisTranSOL</code></p>
-<p>示例：<a href="https://discover.beta.getmoni.io/BorisTranSOL">https://discover.beta.getmoni.io/BorisTranSOL</a></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241112112413077-533741670.png" alt=""></p>
-<h2 id="配套插件"><a href="#配套插件" class="headerlink" title="配套插件"></a>配套插件</h2><p>免费查询工具discover的插件下载链接：</p>
-<p><a href="https://chromewebstore.google.com/detail/moni-discover-twitter-che/bgooiolaoinoncegoopcmincbomphmhi?hl=zh-CN&amp;utm_source=ext_sidebar">https://chromewebstore.google.com/detail/moni-discover-twitter-che/bgooiolaoinoncegoopcmincbomphmhi?hl=zh-CN&amp;utm_source=ext_sidebar</a></p>
-<p>下载安装后，登录，然后刷新推特页面，可以直接在页面上看见一个小眼睛，点击小眼睛就能更快速的查看该推特的基本信息，有无改名，改签名！其他功能，自己研究哦！</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202411/2910984-20241112112448188-44288638.png" alt=""></p>
-<p>参考文献：</p>
-<p>[1] <a href="https://x.com/Cryptoxiaodd">小叮当</a> —— <a href="https://x.com/Cryptoxiaodd/status/1851466215249818060">https://x.com/Cryptoxiaodd/status/1851466215249818060</a></p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>Alpha</tag>
-        <tag>推特</tag>
       </tags>
   </entry>
   <entry>

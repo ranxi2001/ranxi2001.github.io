@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-01-20T18:14:53.259Z</updated>
+  <updated>2026-01-20T18:40:45.884Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/260121.html"/>
     <id>https://onefly.top/posts/260121.html</id>
     <published>2026-01-21T02:00:00.000Z</published>
-    <updated>2026-01-20T18:14:53.259Z</updated>
+    <updated>2026-01-20T18:40:45.884Z</updated>
     
     
     <summary type="html">手把手教大学生如何免费获取 5 年 Microsoft 365 Premium 订阅，包含 Copilot AI 助手、1TB OneDrive 云存储等全部高级功能，只需 edu 邮箱即可验证。</summary>
@@ -298,9 +298,9 @@
     
     <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
-    <category term="Office工具" scheme="https://onefly.top/tags/Office%E5%B7%A5%E5%85%B7/"/>
-    
     <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
+    
+    <category term="Office工具" scheme="https://onefly.top/tags/Office%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -321,11 +321,11 @@
     
     <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
-    <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
-    
     <category term="绘图工具" scheme="https://onefly.top/tags/%E7%BB%98%E5%9B%BE%E5%B7%A5%E5%85%B7/"/>
     
     <category term="资源软件" scheme="https://onefly.top/tags/%E8%B5%84%E6%BA%90%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
     
   </entry>
   
@@ -437,9 +437,9 @@
     
     <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
     
-    <category term="Binance Alpha" scheme="https://onefly.top/tags/Binance-Alpha/"/>
-    
     <category term="VC" scheme="https://onefly.top/tags/VC/"/>
+    
+    <category term="Binance Alpha" scheme="https://onefly.top/tags/Binance-Alpha/"/>
     
   </entry>
   
@@ -524,9 +524,9 @@
     
     <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
     
-    <category term="RWA" scheme="https://onefly.top/tags/RWA/"/>
-    
     <category term="Binance Alpha" scheme="https://onefly.top/tags/Binance-Alpha/"/>
+    
+    <category term="RWA" scheme="https://onefly.top/tags/RWA/"/>
     
   </entry>
   

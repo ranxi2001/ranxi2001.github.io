@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-02-09T10:08:22.773Z</updated>
+  <updated>2026-02-09T12:41:35.599Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/260209.html"/>
     <id>https://onefly.top/posts/260209.html</id>
     <published>2026-02-08T19:00:00.000Z</published>
-    <updated>2026-02-09T10:08:22.773Z</updated>
+    <updated>2026-02-09T12:41:35.599Z</updated>
     
     
     <summary type="html">2026年2月最新OpenClaw部署教程，专为小白打造。0基础手把手教学，从服务器购买到Bot配置全流程图文解析。</summary>
@@ -46,7 +46,7 @@
     <link href="https://onefly.top/posts/260203.html"/>
     <id>https://onefly.top/posts/260203.html</id>
     <published>2026-02-03T04:00:00.000Z</published>
-    <updated>2026-02-02T17:08:09.931Z</updated>
+    <updated>2026-02-09T13:06:53.829Z</updated>
     
     
       
@@ -77,7 +77,7 @@
     <link href="https://onefly.top/posts/260126.html"/>
     <id>https://onefly.top/posts/260126.html</id>
     <published>2026-01-25T16:00:00.000Z</published>
-    <updated>2026-02-02T16:43:42.124Z</updated>
+    <updated>2026-02-09T13:06:08.888Z</updated>
     
     
     <summary type="html">Clawdbot 是一个开源的本地优先 AI 代理，支持 WhatsApp、Telegram、Discord 等多渠道接入，能自动化操作电脑、浏览器、文件等任务。本文详细介绍 AWS 免费套餐、Mac Mini、VPS 等多种部署方式及完整配置流程。</summary>
@@ -100,7 +100,7 @@
     <link href="https://onefly.top/posts/260121.html"/>
     <id>https://onefly.top/posts/260121.html</id>
     <published>2026-01-21T02:00:00.000Z</published>
-    <updated>2026-02-02T16:43:42.126Z</updated>
+    <updated>2026-02-09T12:58:28.808Z</updated>
     
     
     <summary type="html">手把手教大学生如何免费获取 5 年 Microsoft 365 Premium 订阅，包含 Copilot AI 助手、1TB OneDrive 云存储等全部高级功能，只需 edu 邮箱即可验证。</summary>
@@ -123,7 +123,7 @@
     <link href="https://onefly.top/posts/260120.html"/>
     <id>https://onefly.top/posts/260120.html</id>
     <published>2026-01-20T02:00:00.000Z</published>
-    <updated>2026-01-19T18:54:26.805Z</updated>
+    <updated>2026-02-09T16:10:00.360Z</updated>
     
     
     <summary type="html">Vercel 推出 Skills 命令行工具，打造 AI 技能的 npm，通过 npx skills 一键安装 AI 代理技能扩展。</summary>
@@ -146,7 +146,7 @@
     <link href="https://onefly.top/posts/260118.html"/>
     <id>https://onefly.top/posts/260118.html</id>
     <published>2026-01-18T06:15:00.000Z</published>
-    <updated>2026-01-20T15:39:14.072Z</updated>
+    <updated>2026-02-09T16:10:34.768Z</updated>
     
     
     <summary type="html">深度解析 Claude Code 的 Skills、Agents、Subagents 体系架构，详解如何将 Claude Code 中的 skills 解耦到 Web API 环境，实现自动化和开放使用。从架构理解到实施方案，一文掌握 AI Agent 开发的核心原理。</summary>
@@ -169,7 +169,7 @@
     <link href="https://onefly.top/posts/260112.html"/>
     <id>https://onefly.top/posts/260112.html</id>
     <published>2026-01-12T08:31:52.000Z</published>
-    <updated>2026-01-19T18:54:26.809Z</updated>
+    <updated>2026-02-09T16:11:59.925Z</updated>
     
     
     <summary type="html">DAN KOE分享如何在一天内彻底改变你的生活。摆脱传统新年决心的陷阱，采用正确的方式实现真正的人生转变。</summary>
@@ -192,7 +192,7 @@
     <link href="https://onefly.top/posts/260104.html"/>
     <id>https://onefly.top/posts/260104.html</id>
     <published>2026-01-04T00:25:14.000Z</published>
-    <updated>2026-01-19T18:54:26.807Z</updated>
+    <updated>2026-02-09T16:09:06.866Z</updated>
     
     
     <summary type="html">使用 tmux 让多个 AI 终端互相感知、通讯和控制，实现蜂群式自动协作编程。一个人 + N 个 AI = 一支开发团队。</summary>
@@ -227,9 +227,9 @@
     
     <category term="教程" scheme="https://onefly.top/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
-    
     <category term="OKX" scheme="https://onefly.top/tags/OKX/"/>
+    
+    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
     
     <category term="返佣" scheme="https://onefly.top/tags/%E8%BF%94%E4%BD%A3/"/>
     
@@ -250,13 +250,13 @@
     <category term="金融工具" scheme="https://onefly.top/categories/%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/"/>
     
     
+    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
+    
     <category term="WiseCard" scheme="https://onefly.top/tags/WiseCard/"/>
     
     <category term="港卡" scheme="https://onefly.top/tags/%E6%B8%AF%E5%8D%A1/"/>
     
     <category term="美股银行卡" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1%E9%93%B6%E8%A1%8C%E5%8D%A1/"/>
-    
-    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
     
   </entry>
   
@@ -350,11 +350,11 @@
     
     <category term="思维导图" scheme="https://onefly.top/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
+    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
+    
     <category term="Xmind" scheme="https://onefly.top/tags/Xmind/"/>
     
     <category term="效率工具" scheme="https://onefly.top/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
   </entry>
   
@@ -427,9 +427,9 @@
     
     <category term="破解软件" scheme="https://onefly.top/tags/%E7%A0%B4%E8%A7%A3%E8%BD%AF%E4%BB%B6/"/>
     
-    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
-    
     <category term="PS" scheme="https://onefly.top/tags/PS/"/>
+    
+    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
   </entry>
   

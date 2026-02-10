@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-02-10T15:58:40.086Z</updated>
+  <updated>2026-02-10T16:06:04.582Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>如何给 OpenClaw 搭建一套「永不失忆」的记忆系统</title>
-    <link href="https://onefly.top/posts/260210.html"/>
-    <id>https://onefly.top/posts/260210.html</id>
+    <link href="https://onefly.top/posts/260211.html"/>
+    <id>https://onefly.top/posts/260211.html</id>
     <published>2026-02-10T14:26:54.000Z</published>
-    <updated>2026-02-10T15:58:40.086Z</updated>
+    <updated>2026-02-10T16:06:04.582Z</updated>
     
     
     <summary type="html">从丢失两天记忆到三层自动化架构，一个完整的 AI Agent 记忆系统搭建教程。包含 Daily Sync、Weekly Compound、Hourly Micro-Sync 和语义搜索四层设计。</summary>

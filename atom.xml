@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-02-10T14:56:16.951Z</updated>
+  <updated>2026-02-10T15:58:40.086Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何给 OpenClaw 搭建一套「永不失忆」的记忆系统</title>
+    <link href="https://onefly.top/posts/260210.html"/>
+    <id>https://onefly.top/posts/260210.html</id>
+    <published>2026-02-10T14:26:54.000Z</published>
+    <updated>2026-02-10T15:58:40.086Z</updated>
+    
+    
+    <summary type="html">从丢失两天记忆到三层自动化架构，一个完整的 AI Agent 记忆系统搭建教程。包含 Daily Sync、Weekly Compound、Hourly Micro-Sync 和语义搜索四层设计。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="自动化" scheme="https://onefly.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
+    
+    <category term="记忆系统" scheme="https://onefly.top/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>日结真经：P小将熊市的生存指南（2026最新）</title>
@@ -484,37 +509,6 @@
     <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
     <category term="解压缩" scheme="https://onefly.top/tags/%E8%A7%A3%E5%8E%8B%E7%BC%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>0xSun 的 A9 成长之路：从 NFT 到 Meme 再到方法论</title>
-    <link href="https://onefly.top/posts/0xsun-a9-growth.html"/>
-    <id>https://onefly.top/posts/0xsun-a9-growth.html</id>
-    <published>2025-09-28T04:00:00.000Z</published>
-    <updated>2025-11-22T10:26:27.407Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;0xSun的A9成长之路：从NFT到Meme再到方法论&quot;&gt;&lt;a href=&quot;#0xSun的A9成长之路：从NFT到Meme再到方法论&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="投研复盘" scheme="https://onefly.top/categories/%E6%8A%95%E7%A0%94%E5%A4%8D%E7%9B%98/"/>
-    
-    
-    <category term="Alpha" scheme="https://onefly.top/tags/Alpha/"/>
-    
-    <category term="NFT" scheme="https://onefly.top/tags/NFT/"/>
-    
-    <category term="Meme" scheme="https://onefly.top/tags/Meme/"/>
-    
-    <category term="方法论" scheme="https://onefly.top/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
   </entry>
   

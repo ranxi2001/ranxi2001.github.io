@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-02-10T16:09:33.278Z</updated>
+  <updated>2026-02-10T17:07:22.297Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/260211.html"/>
     <id>https://onefly.top/posts/260211.html</id>
     <published>2026-02-11T14:26:54.000Z</published>
-    <updated>2026-02-10T16:09:33.278Z</updated>
+    <updated>2026-02-10T17:07:22.297Z</updated>
     
     
     <summary type="html">从丢失两天记忆到三层自动化架构，一个完整的 AI Agent 记忆系统搭建教程。包含 Daily Sync、Weekly Compound、Hourly Micro-Sync 和语义搜索四层设计。</summary>
@@ -275,13 +275,13 @@
     <category term="加密货币" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
     
     
-    <category term="OKX" scheme="https://onefly.top/tags/OKX/"/>
+    <category term="教程" scheme="https://onefly.top/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
     
-    <category term="返佣" scheme="https://onefly.top/tags/%E8%BF%94%E4%BD%A3/"/>
+    <category term="OKX" scheme="https://onefly.top/tags/OKX/"/>
     
-    <category term="教程" scheme="https://onefly.top/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="返佣" scheme="https://onefly.top/tags/%E8%BF%94%E4%BD%A3/"/>
     
   </entry>
   
@@ -300,13 +300,13 @@
     <category term="金融工具" scheme="https://onefly.top/categories/%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
-    
     <category term="WiseCard" scheme="https://onefly.top/tags/WiseCard/"/>
     
     <category term="港卡" scheme="https://onefly.top/tags/%E6%B8%AF%E5%8D%A1/"/>
     
     <category term="美股银行卡" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1%E9%93%B6%E8%A1%8C%E5%8D%A1/"/>
+    
+    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
     
   </entry>
   
@@ -375,11 +375,11 @@
     
     <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
-    <category term="教程" scheme="https://onefly.top/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="美区Apple ID" scheme="https://onefly.top/tags/%E7%BE%8E%E5%8C%BAApple-ID/"/>
     
     <category term="iPhone" scheme="https://onefly.top/tags/iPhone/"/>
+    
+    <category term="教程" scheme="https://onefly.top/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

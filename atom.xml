@@ -31,9 +31,9 @@
     <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="自动化" scheme="https://onefly.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    
     <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="自动化" scheme="https://onefly.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
     
     <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
     
@@ -425,11 +425,11 @@
     
     <category term="思维导图" scheme="https://onefly.top/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
+    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
+    
     <category term="Xmind" scheme="https://onefly.top/tags/Xmind/"/>
     
     <category term="效率工具" scheme="https://onefly.top/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
   </entry>
   
@@ -502,9 +502,9 @@
     
     <category term="Adobe" scheme="https://onefly.top/tags/Adobe/"/>
     
-    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
-    
     <category term="PS" scheme="https://onefly.top/tags/PS/"/>
+    
+    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
   </entry>
   

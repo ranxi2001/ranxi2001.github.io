@@ -9136,7 +9136,6 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </categories>
       <tags>
         <tag>AI Agent</tag>
-        <tag>框架选型</tag>
         <tag>LangGraph</tag>
         <tag>Claude Agent SDK</tag>
       </tags>

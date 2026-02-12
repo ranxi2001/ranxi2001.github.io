@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-02-12T07:34:42.078Z</updated>
+  <updated>2026-02-12T07:48:05.558Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/260212.html"/>
     <id>https://onefly.top/posts/260212.html</id>
     <published>2026-02-12T10:00:00.000Z</published>
-    <updated>2026-02-12T07:34:42.078Z</updated>
+    <updated>2026-02-12T07:48:05.558Z</updated>
     
     
     <summary type="html">基于2026年最新社区讨论，深度对比LangGraph、CrewAI、AutoGen、Claude Agent SDK等主流AI Agent开发框架，帮你找到最适合的选型方案。</summary>
@@ -32,8 +32,6 @@
     
     
     <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
-    
-    <category term="框架选型" scheme="https://onefly.top/tags/%E6%A1%86%E6%9E%B6%E9%80%89%E5%9E%8B/"/>
     
     <category term="LangGraph" scheme="https://onefly.top/tags/LangGraph/"/>
     

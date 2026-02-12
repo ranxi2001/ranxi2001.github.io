@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
 
     <script src="/libs/jquery/jquery.min.js"></script>    
     <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
@@ -439,10 +440,10 @@
 
 
 
-<main class="content">
-    <div class="main-content" style="display: flex;">
+<main class="content" style="position: relative;">
+    <div class="main-content">
         <!-- 正文内容开始 -->
-        <div style="flex: 1.1;">
+        <div>
 
         
         <div id="indexCard" class="index-card">
@@ -1187,41 +1188,11 @@ Mac m
         </article>
         </div>
         <!-- 正文内容结束 -->
-        <!-- 侧边栏开始 -->
-        <div id="sidebar" style="width: 308px; position: fixed; top: 50%; right: 50px; transform: translateY(-50%); height: auto;">
-            <!-- sidebar.ejs -->
+    </div>
 
-<style>
-    .sidebar {
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 15px;    /* 四角圆弧形边框 */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加轻微的阴影效果 */
-    }
-
-    .profile .profile-pic {
-        width: 270px;
-        height: 100px;
-        border-radius: 0;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .sidebar-nav ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .sidebar-nav li {
-        margin: 10px 0; 
-    }
-
-    .sidebar-nav a {
-        text-decoration: none;
-        color: #333;
-    }
-</style>
-
+    <!-- 侧边栏：绝对定位轨道，不影响主内容居中 -->
+    <div class="index-sidebar-track">
+        <!-- sidebar.ejs -->
 
 <aside class="sidebar" >
     <div class="profile">
@@ -1248,16 +1219,6 @@ Mac m
 <!--        100% { background-position: 100% 50%; }-->
 <!--    }-->
 <!--</style>-->
-
-        </div>
-        <!-- 侧边栏结束 -->
-
-        <script>
-            var isMobile = /mobile/i.test(navigator.userAgent);
-            if (isMobile) {
-                document.getElementById('sidebar').style.display = 'none';
-            }
-        </script>
 
     </div>
 

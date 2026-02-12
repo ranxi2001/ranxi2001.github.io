@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
 
     <script src="/libs/jquery/jquery.min.js"></script>    
     <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
@@ -295,10 +296,10 @@
 </div>
 
 
-<main class="content">
-    <div class="main-content" style="display: flex;">
+<main class="content" style="position: relative;">
+    <div class="main-content">
         <!-- 正文内容开始 -->
-        <div style="flex: 1.1;">
+        <div>
 
         
 
@@ -307,59 +308,6 @@
         <!-- 所有文章卡片 -->
         <article id="articles" class="container articles">
             <div class="row article-row">
-                
-                <div class="article col s12 m6 l4" data-aos="zoom-in">
-                    <div class="card">
-                        <a href="/posts/43427.html">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="第一行代码Android（第3版）pdf">
-                                
-                                <span class="card-title">第一行代码Android（第3版）pdf</span>
-                            </div>
-                        </a>
-
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    2020年人民邮电出版社出版的图书《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。
-封面：
-内容简介：《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-09-14
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E7%94%B5%E5%AD%90%E4%B9%A6/" class="post-category">
-                                        电子书
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
-                                <span class="chip bg-color">电子书</span>
-                            </a>
-                            
-                            <a href="/tags/%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">开发</span>
-                            </a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
                 
                 <div class="article col s12 m6 l4" data-aos="zoom-in">
                     <div class="card">
@@ -417,45 +365,68 @@
                     </div>
                 </div>
                 
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="/posts/43427.html">
+                            <div class="card-image">
+                                
+                                
+                                <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="第一行代码Android（第3版）pdf">
+                                
+                                <span class="card-title">第一行代码Android（第3版）pdf</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    2020年人民邮电出版社出版的图书《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。
+封面：
+内容简介：《第一行代码 Android 第3版》被Android开发者誉为“Android学习第一书”。
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2022-09-14
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/%E7%94%B5%E5%AD%90%E4%B9%A6/" class="post-category">
+                                        电子书
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                                <span class="chip bg-color">电子书</span>
+                            </a>
+                            
+                            <a href="/tags/%E5%BC%80%E5%8F%91/">
+                                <span class="chip bg-color">开发</span>
+                            </a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
             </div>
         </article>
         </div>
         <!-- 正文内容结束 -->
-        <!-- 侧边栏开始 -->
-        <div id="sidebar" style="width: 308px; position: fixed; top: 50%; right: 50px; transform: translateY(-50%); height: auto;">
-            <!-- sidebar.ejs -->
+    </div>
 
-<style>
-    .sidebar {
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 15px;    /* 四角圆弧形边框 */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加轻微的阴影效果 */
-    }
-
-    .profile .profile-pic {
-        width: 270px;
-        height: 100px;
-        border-radius: 0;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .sidebar-nav ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .sidebar-nav li {
-        margin: 10px 0; 
-    }
-
-    .sidebar-nav a {
-        text-decoration: none;
-        color: #333;
-    }
-</style>
-
+    <!-- 侧边栏：绝对定位轨道，不影响主内容居中 -->
+    <div class="index-sidebar-track">
+        <!-- sidebar.ejs -->
 
 <aside class="sidebar" >
     <div class="profile">
@@ -482,16 +453,6 @@
 <!--        100% { background-position: 100% 50%; }-->
 <!--    }-->
 <!--</style>-->
-
-        </div>
-        <!-- 侧边栏结束 -->
-
-        <script>
-            var isMobile = /mobile/i.test(navigator.userAgent);
-            if (isMobile) {
-                document.getElementById('sidebar').style.display = 'none';
-            }
-        </script>
 
     </div>
 

@@ -1,0 +1,128 @@
+/* ============================================
+   Page Layout System
+   ============================================ */
+
+/* ---- 文章页：Flex 三栏布局 ---- */
+.page-layout {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 覆盖 post-container 的宽度限制，三栏需要更宽 */
+.post-container.content:has(.page-layout) {
+    width: 100%;
+    max-width: none;
+}
+
+.page-layout__main {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.page-layout__sidebar {
+    width: 310px;
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+.page-layout__sidebar .sidebar {
+    position: sticky;
+    top: 80px;
+}
+
+.page-layout__toc {
+    width: 345px;
+    flex-shrink: 0;
+}
+
+.page-layout__toc .toc-widget {
+    position: sticky;
+    top: 64px;
+}
+
+/* ---- 首页：≥1400px 主内容右移让出侧边栏空间 ---- */
+@media screen and (min-width: 1400px) {
+    .content>.main-content {
+        padding-right: 80px;
+    }
+}
+
+/* ---- 首页：侧边栏绝对定位轨道，不影响主内容居中 ---- */
+.index-sidebar-track {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    width: 310px;
+    pointer-events: none;
+    /* 轨道本身不拦截点击 */
+}
+
+.index-sidebar-track>* {
+    pointer-events: auto;
+    /* 侧边栏内容可点击 */
+}
+
+.index-sidebar-track .sidebar {
+    position: sticky;
+    top: 80px;
+}
+
+/* ============================================
+   Sidebar 通用内部样式
+   ============================================ */
+.sidebar {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .profile .profile-pic {
+    width: 270px;
+    height: 100px;
+    border-radius: 0;
+    display: block;
+    margin: 0 auto;
+}
+
+.sidebar .sidebar-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar .sidebar-nav li {
+    margin: 10px 0;
+}
+
+.sidebar .sidebar-nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* ============================================
+   响应式断点
+   ============================================ */
+
+/* 首页：<1400px 隐藏侧边栏 */
+@media screen and (max-width: 1399px) {
+    .index-sidebar-track {
+        display: none;
+    }
+}
+
+/* 文章页：<1700px 隐藏左侧边栏（右侧 TOC 仍显示） */
+@media screen and (max-width: 1699px) {
+    .page-layout--post .page-layout__sidebar {
+        display: none;
+    }
+}
+
+/* 平板及以下：隐藏 TOC */
+@media screen and (max-width: 767px) {
+    .page-layout__toc {
+        display: none;
+    }
+}

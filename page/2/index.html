@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
 
     <script src="/libs/jquery/jquery.min.js"></script>    
     <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
@@ -295,10 +296,10 @@
 </div>
 
 
-<main class="content">
-    <div class="main-content" style="display: flex;">
+<main class="content" style="position: relative;">
+    <div class="main-content">
         <!-- 正文内容开始 -->
-        <div style="flex: 1.1;">
+        <div>
 
         
 
@@ -404,10 +405,6 @@
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/Crypto/">
-                                <span class="chip bg-color">Crypto</span>
-                            </a>
-                            
                             <a href="/tags/WiseCard/">
                                 <span class="chip bg-color">WiseCard</span>
                             </a>
@@ -418,6 +415,10 @@
                             
                             <a href="/tags/%E7%BE%8E%E8%82%A1%E9%93%B6%E8%A1%8C%E5%8D%A1/">
                                 <span class="chip bg-color">美股银行卡</span>
+                            </a>
+                            
+                            <a href="/tags/Crypto/">
+                                <span class="chip bg-color">Crypto</span>
                             </a>
                             
                         </div>
@@ -636,16 +637,16 @@
                                 <span class="chip bg-color">思维导图</span>
                             </a>
                             
+                            <a href="/tags/MacOS/">
+                                <span class="chip bg-color">MacOS</span>
+                            </a>
+                            
                             <a href="/tags/Xmind/">
                                 <span class="chip bg-color">Xmind</span>
                             </a>
                             
                             <a href="/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">
                                 <span class="chip bg-color">效率工具</span>
-                            </a>
-                            
-                            <a href="/tags/MacOS/">
-                                <span class="chip bg-color">MacOS</span>
                             </a>
                             
                         </div>
@@ -818,12 +819,12 @@
                                 <span class="chip bg-color">Adobe</span>
                             </a>
                             
-                            <a href="/tags/MacOS/">
-                                <span class="chip bg-color">MacOS</span>
-                            </a>
-                            
                             <a href="/tags/PS/">
                                 <span class="chip bg-color">PS</span>
+                            </a>
+                            
+                            <a href="/tags/MacOS/">
+                                <span class="chip bg-color">MacOS</span>
                             </a>
                             
                         </div>
@@ -1004,41 +1005,11 @@
         </article>
         </div>
         <!-- 正文内容结束 -->
-        <!-- 侧边栏开始 -->
-        <div id="sidebar" style="width: 308px; position: fixed; top: 50%; right: 50px; transform: translateY(-50%); height: auto;">
-            <!-- sidebar.ejs -->
+    </div>
 
-<style>
-    .sidebar {
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 15px;    /* 四角圆弧形边框 */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加轻微的阴影效果 */
-    }
-
-    .profile .profile-pic {
-        width: 270px;
-        height: 100px;
-        border-radius: 0;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .sidebar-nav ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .sidebar-nav li {
-        margin: 10px 0; 
-    }
-
-    .sidebar-nav a {
-        text-decoration: none;
-        color: #333;
-    }
-</style>
-
+    <!-- 侧边栏：绝对定位轨道，不影响主内容居中 -->
+    <div class="index-sidebar-track">
+        <!-- sidebar.ejs -->
 
 <aside class="sidebar" >
     <div class="profile">
@@ -1065,16 +1036,6 @@
 <!--        100% { background-position: 100% 50%; }-->
 <!--    }-->
 <!--</style>-->
-
-        </div>
-        <!-- 侧边栏结束 -->
-
-        <script>
-            var isMobile = /mobile/i.test(navigator.userAgent);
-            if (isMobile) {
-                document.getElementById('sidebar').style.display = 'none';
-            }
-        </script>
 
     </div>
 

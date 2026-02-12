@@ -348,13 +348,13 @@
     <category term="金融工具" scheme="https://onefly.top/categories/%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
-    
     <category term="WiseCard" scheme="https://onefly.top/tags/WiseCard/"/>
     
     <category term="港卡" scheme="https://onefly.top/tags/%E6%B8%AF%E5%8D%A1/"/>
     
     <category term="美股银行卡" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1%E9%93%B6%E8%A1%8C%E5%8D%A1/"/>
+    
+    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
     
   </entry>
   
@@ -448,11 +448,11 @@
     
     <category term="思维导图" scheme="https://onefly.top/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
+    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
+    
     <category term="Xmind" scheme="https://onefly.top/tags/Xmind/"/>
     
     <category term="效率工具" scheme="https://onefly.top/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
     
   </entry>
   

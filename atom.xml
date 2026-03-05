@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-03-04T18:41:03.184Z</updated>
+  <updated>2026-03-05T19:15:55.221Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的</title>
+    <link href="https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html"/>
+    <id>https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html</id>
+    <published>2026-03-06T10:00:00.000Z</published>
+    <updated>2026-03-05T19:15:55.221Z</updated>
+    
+    
+    <summary type="html">深度拆解 OpenClaw Agent 的 System Prompt 9 层架构，用最通俗的语言讲清楚一个 AI 助手背后的设计逻辑，以及你能用哪些方式来定制它。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
+    
+    <category term="System Prompt" scheme="https://onefly.top/tags/System-Prompt/"/>
+    
+  </entry>
   
   <entry>
     <title>台湾谷歌账户注册与Gemini Pro订阅家庭组共享教程</title>
@@ -471,36 +494,11 @@
     
     <category term="思维导图" scheme="https://onefly.top/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
+    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
+    
     <category term="Xmind" scheme="https://onefly.top/tags/Xmind/"/>
     
     <category term="效率工具" scheme="https://onefly.top/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Wondershare PDFelement 万兴PDF编辑器 Mac &amp; Win 下载与安装教程｜PDF编辑/OCR/转换工具推荐破解版</title>
-    <link href="https://onefly.top/posts/251013.html"/>
-    <id>https://onefly.top/posts/251013.html</id>
-    <published>2025-10-13T09:45:51.000Z</published>
-    <updated>2026-03-04T18:16:50.000Z</updated>
-    
-    
-    <summary type="html">Wondershare PDFelement（万兴PDF编辑器）Mac 与 Windows 多平台下载，支持PDF编辑、OCR识别、批量转换、PDF转Word/Excel/图片等功能，附激活教程和下载提取码。</summary>
-    
-    
-    
-    <category term="资源分享" scheme="https://onefly.top/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="MacOS" scheme="https://onefly.top/tags/MacOS/"/>
-    
-    <category term="PDF" scheme="https://onefly.top/tags/PDF/"/>
-    
-    <category term="Windows" scheme="https://onefly.top/tags/Windows/"/>
-    
-    <category term="Office工具" scheme="https://onefly.top/tags/Office%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

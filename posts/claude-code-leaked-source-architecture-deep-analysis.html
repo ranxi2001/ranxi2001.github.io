@@ -1,0 +1,2004 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="Claude Code, 源码泄露, Anthropic, AI编程助手, TypeScript, React Ink, Agent架构, 工具系统, MCP协议, 源码分析">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Claude Code 源码泄露深度剖析：Anthropic AI 编程助手的架构全解密 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260331204653425-1676219879.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Claude Code 源码泄露深度剖析：Anthropic AI 编程助手的架构全解密</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<aside class="sidebar" >
+    <div class="profile">
+        <div class="profile_avatar" style="display: flex; align-items: center;">
+            <img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg" alt="头像" style="width: 70px; height: 70px; border-radius: 50%;">
+            <h3 style="margin-left: 15px;height: 42px;">孤飞</h3>
+            <img src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193719187-1816407375.png" alt="二维码" style="width: 70px; height: 70px; border-radius: 0%; margin-left: 20px;">
+        </div>
+        <p>点击加入【☞ <a href="https://www.cnblogs.com/ranxi169/p/18456954" target="_blank"><strong>WEB3新人交流群</strong></a> ☜】</p>
+        <div style="margin-top: 10px;">
+            <a href="https://www.cnblogs.com/ranxi169/p/18456954"><span style="font-size: 16px; font-weight: bold; background: linear-gradient(45deg, #ff00cc, #3333ff); -webkit-background-clip: text; color: transparent; animation: rainbow-text 2s infinite; display: inline-block;">加群注册就给你发100元微信红包 ↑</span></a>
+        </div>
+        <p><strong style="color: #f0890c;">加密货币交易所</strong> 购买比特币教程：<a href="https://onefly.top/posts/okx-bitcoin-trading-guide.html" target="_blank">https://onefly.top/posts/okx-bitcoin-trading-guide.html</a></p>
+        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国内ip】</strong>：<a href="https://onefly.top/posts/8888.html">https://onefly.top/posts/8888.html</a></p>
+        <p><strong><span style="color: red;">OKX </span></strong>是<strong>安全</strong>的<strong>比特币交易所【国外ip】</strong>：<a href="https://www.okx.com/zh-hans/join/45175356">https://okx.com/cn/join/45175356</a></p>
+        <p>视频网盘等会员和自媒体刷粉：<a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">https://hy.huoyuan.xyz/a/b/c///</a></p>
+
+    </div>
+</aside>
+
+<!--<style>-->
+<!--    @keyframes rainbow-text {-->
+<!--        0% { background-position: 0% 50%; }-->
+<!--        100% { background-position: 100% 50%; }-->
+<!--    }-->
+<!--</style>-->
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">AI编程</span>
+                            </a>
+                        
+                            <a href="/tags/Claude-Code/">
+                                <span class="chip bg-color">Claude Code</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">源码分析</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                AI工具
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-03-31
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Claude-Code-源码泄露深度剖析：Anthropic-AI-编程助手的架构全解密"><a href="#Claude-Code-源码泄露深度剖析：Anthropic-AI-编程助手的架构全解密" class="headerlink" title="Claude Code 源码泄露深度剖析：Anthropic AI 编程助手的架构全解密"></a>Claude Code 源码泄露深度剖析：Anthropic AI 编程助手的架构全解密</h1><p>2026 年 3 月 31 日，安全研究员 <a href="https://x.com/Fried_rice">Chaofan Shou (@Fried_rice)</a> 发现 Anthropic 的 npm 包中暴露了 <code>.map</code> 文件，意外泄露了 Claude Code CLI 工具的<strong>完整 TypeScript 源码</strong>。这份源码被迅速归档到 GitHub 仓库 <a href="https://github.com/instructkr/claude-code">instructkr/claude-code</a>，短短数小时内便获得了近 600 Stars 和 900+ Forks。</p>
+<blockquote>
+<p>“Claude code source code has been leaked via a map file in their npm registry!”<br>— @Fried_rice, 2026-03-31</p>
+</blockquote>
+<p>作为一个每天都在使用 Claude Code 的重度用户，我第一时间深入研究了这份泄露的源码。本文将从<strong>项目架构、核心系统设计、技术栈选型</strong>三个维度，全面拆解 Anthropic 是如何构建这个 <strong>51 万行代码</strong> 的 AI 编程 CLI 工具的。</p>
+<hr>
+<h2 id="一、泄露始末：一个-Source-Map-引发的”事故”"><a href="#一、泄露始末：一个-Source-Map-引发的”事故”" class="headerlink" title="一、泄露始末：一个 Source Map 引发的”事故”"></a>一、泄露始末：一个 Source Map 引发的”事故”</h2><h3 id="怎么泄露的？"><a href="#怎么泄露的？" class="headerlink" title="怎么泄露的？"></a>怎么泄露的？</h3><p>npm 发布的包中包含了一个 <code>.map</code> 文件（Source Map），该文件包含了指向完整、未混淆的 TypeScript 源码的引用。更关键的是，源码 zip 包直接托管在 Anthropic 的 R2 存储桶上，任何人都可以下载。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260331180631613-766084880.png" style="zoom:33%;" alt="npm 包 @anthropic-ai/claude-code 中暴露的 cli.js.map 文件（59.8 MB）"></p>
+<p>如上图所示，<code>@anthropic-ai/claude-code</code> 包的 2.1.88 版本中，<code>cli.js.map</code> 文件高达 <strong>59.8 MB</strong>——这个 Source Map 文件包含了完整的源码映射，使得任何人都能还原出原始的 TypeScript 代码。</p>
+<h3 id="泄露的规模"><a href="#泄露的规模" class="headerlink" title="泄露的规模"></a>泄露的规模</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件数量</td>
+<td>~1,900 个文件</td>
+</tr>
+<tr>
+<td>代码行数</td>
+<td>512,000+ 行</td>
+</tr>
+<tr>
+<td>语言</td>
+<td>TypeScript (strict)</td>
+</tr>
+<tr>
+<td>运行时</td>
+<td>Bun</td>
+</tr>
+<tr>
+<td>UI 框架</td>
+<td>React + Ink (终端 UI)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这不是一个简单的 CLI 工具——这是一个<strong>完整的、复杂的多层架构系统</strong>。</p>
+<hr>
+<h2 id="二、整体架构一览"><a href="#二、整体架构一览" class="headerlink" title="二、整体架构一览"></a>二、整体架构一览</h2><pre class="line-numbers language-none"><code class="language-none">src/
+├── main.tsx                 # CLI 入口（Commander.js 解析器）
+├── QueryEngine.ts           # 对话引擎核心（~46K 行）
+├── Tool.ts                  # 工具类型定义（~29K 行）
+├── commands.ts              # 命令注册中心（~25K 行）
+├── query.ts                 # 查询执行循环
+├── context.ts               # 系统/用户上下文构建
+├── cost-tracker.ts          # Token 费用追踪
+│
+├── tools/                   # 40+ 内置工具实现
+├── commands/                # 50+ 斜杠命令实现
+├── components/              # 144 个 React/Ink UI 组件
+├── hooks/                   # 80+ React Hooks
+├── services/                # 外部服务集成层
+├── bridge/                  # IDE 桥接层（VS Code/JetBrains）
+├── coordinator/             # 多 Agent 协调器
+├── skills/                  # 技能系统
+├── plugins/                 # 插件系统
+├── state/                   # 全局状态管理
+├── vim/                     # Vim 模式
+├── voice/                   # 语音输入
+├── remote/                  # 远程会话
+├── server/                  # 服务器模式
+├── memdir/                  # 持久化记忆系统
+├── tasks/                   # 任务管理
+├── screens/                 # 全屏 UI（Doctor、REPL、Resume）
+├── schemas/                 # Zod 配置校验
+└── entrypoints/             # 多入口初始化逻辑<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来逐一深入每个核心子系统。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260331180632467-1925418494.jpg" style="zoom:40%;" alt="Claude Code 分层架构示意图"></p>
+<hr>
+<h2 id="三、核心系统深度剖析"><a href="#三、核心系统深度剖析" class="headerlink" title="三、核心系统深度剖析"></a>三、核心系统深度剖析</h2><h3 id="3-1-工具系统（Tool-System）—-一切能力的基石"><a href="#3-1-工具系统（Tool-System）—-一切能力的基石" class="headerlink" title="3.1 工具系统（Tool System）— 一切能力的基石"></a>3.1 工具系统（Tool System）— 一切能力的基石</h3><p>Claude Code 的所有”能力”都通过<strong>工具（Tool）</strong>暴露给 LLM。每个工具都是一个自包含的模块，定义了输入 Schema、权限模型和执行逻辑。</p>
+<p><code>src/tools/</code> 目录下共有 <strong>40+ 个工具实现</strong>：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>工具分类</th>
+<th>工具名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文件操作</strong></td>
+<td><code>FileReadTool</code></td>
+<td>读取文件（支持图片、PDF、Notebook）</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FileWriteTool</code></td>
+<td>创建/覆写文件</td>
+</tr>
+<tr>
+<td></td>
+<td><code>FileEditTool</code></td>
+<td>局部文件修改（字符串替换）</td>
+</tr>
+<tr>
+<td><strong>搜索</strong></td>
+<td><code>GlobTool</code></td>
+<td>文件模式匹配搜索</td>
+</tr>
+<tr>
+<td></td>
+<td><code>GrepTool</code></td>
+<td>基于 ripgrep 的内容搜索</td>
+</tr>
+<tr>
+<td><strong>执行</strong></td>
+<td><code>BashTool</code></td>
+<td>Shell 命令执行</td>
+</tr>
+<tr>
+<td></td>
+<td><code>PowerShellTool</code></td>
+<td>Windows PowerShell 执行</td>
+</tr>
+<tr>
+<td></td>
+<td><code>REPLTool</code></td>
+<td>交互式 REPL</td>
+</tr>
+<tr>
+<td><strong>网络</strong></td>
+<td><code>WebFetchTool</code></td>
+<td>URL 内容抓取</td>
+</tr>
+<tr>
+<td></td>
+<td><code>WebSearchTool</code></td>
+<td>网页搜索</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td><code>AgentTool</code></td>
+<td>子 Agent 生成</td>
+</tr>
+<tr>
+<td></td>
+<td><code>SendMessageTool</code></td>
+<td>Agent 间消息传递</td>
+</tr>
+<tr>
+<td></td>
+<td><code>TeamCreateTool/TeamDeleteTool</code></td>
+<td>团队 Agent 管理</td>
+</tr>
+<tr>
+<td><strong>协议</strong></td>
+<td><code>MCPTool</code></td>
+<td>MCP 服务器工具调用</td>
+</tr>
+<tr>
+<td></td>
+<td><code>LSPTool</code></td>
+<td>语言服务器协议集成</td>
+</tr>
+<tr>
+<td><strong>任务</strong></td>
+<td><code>TaskCreateTool/TaskUpdateTool</code></td>
+<td>任务创建与管理</td>
+</tr>
+<tr>
+<td></td>
+<td><code>TaskGetTool/TaskListTool</code></td>
+<td>任务查询</td>
+</tr>
+<tr>
+<td><strong>模式</strong></td>
+<td><code>EnterPlanModeTool/ExitPlanModeTool</code></td>
+<td>计划模式切换</td>
+</tr>
+<tr>
+<td></td>
+<td><code>EnterWorktreeTool/ExitWorktreeTool</code></td>
+<td>Git Worktree 隔离</td>
+</tr>
+<tr>
+<td><strong>其他</strong></td>
+<td><code>SkillTool</code></td>
+<td>技能执行</td>
+</tr>
+<tr>
+<td></td>
+<td><code>ScheduleCronTool</code></td>
+<td>定时任务调度</td>
+</tr>
+<tr>
+<td></td>
+<td><code>SleepTool</code></td>
+<td>主动模式等待</td>
+</tr>
+<tr>
+<td></td>
+<td><code>SyntheticOutputTool</code></td>
+<td>结构化输出生成</td>
+</tr>
+<tr>
+<td></td>
+<td><code>ToolSearchTool</code></td>
+<td>延迟工具发现</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>架构亮点</strong>：每个工具都是<strong>声明式的</strong>——通过 Schema 定义输入、通过权限模型定义安全边界、通过独立模块实现逻辑。这种设计使得新增工具的成本极低，同时确保了 LLM 能准确理解每个工具的能力边界。</p>
+<h3 id="3-2-命令系统（Command-System）—-用户交互的前门"><a href="#3-2-命令系统（Command-System）—-用户交互的前门" class="headerlink" title="3.2 命令系统（Command System）— 用户交互的前门"></a>3.2 命令系统（Command System）— 用户交互的前门</h3><p><code>src/commands/</code> 目录下有 <strong>50+ 个斜杠命令</strong>，涵盖开发工作流的方方面面：</p>
+<p><strong>核心开发命令</strong>：</p>
+<ul>
+<li><code>/commit</code> — Git 提交</li>
+<li><code>/diff</code> — 查看变更</li>
+<li><code>/review</code> — 代码审查</li>
+<li><code>/compact</code> — 上下文压缩</li>
+</ul>
+<p><strong>配置与管理</strong>：</p>
+<ul>
+<li><code>/config</code> — 设置管理</li>
+<li><code>/mcp</code> — MCP 服务器管理</li>
+<li><code>/memory</code> — 持久化记忆管理</li>
+<li><code>/skills</code> — 技能管理</li>
+<li><code>/hooks</code> — 钩子配置</li>
+</ul>
+<p><strong>高级功能</strong>：</p>
+<ul>
+<li><code>/vim</code> — Vim 模式切换</li>
+<li><code>/doctor</code> — 环境诊断</li>
+<li><code>/cost</code> — 使用费用查看</li>
+<li><code>/context</code> — 上下文可视化</li>
+<li><code>/desktop</code> / <code>/mobile</code> — 跨平台交接</li>
+</ul>
+<p><strong>有趣的发现</strong>：源码中还有一些未公开的命令，比如 <code>good-claude</code>（给 Claude 正向反馈？）、<code>buddy</code>（伴侣精灵，一个彩蛋功能）、<code>bughunter</code>（自动化 Bug 搜索）、<code>chrome</code>（Chrome 扩展集成）等。</p>
+<h3 id="3-3-QueryEngine-—-对话引擎的心脏"><a href="#3-3-QueryEngine-—-对话引擎的心脏" class="headerlink" title="3.3 QueryEngine — 对话引擎的心脏"></a>3.3 QueryEngine — 对话引擎的心脏</h3><p><code>QueryEngine.ts</code> 是整个 Claude Code 最核心的文件，<strong>约 46,000 行代码</strong>。它负责：</p>
+<ul>
+<li><strong>流式响应处理</strong>：与 Anthropic API 的流式通信</li>
+<li><strong>工具调用循环</strong>：LLM 输出 → 解析工具调用 → 执行工具 → 结果回传 → LLM 继续</li>
+<li><strong>Thinking 模式</strong>：Extended Thinking（扩展思考）的启用与管理</li>
+<li><strong>重试逻辑</strong>：API 错误的优雅降级与重试</li>
+<li><strong>Token 计数</strong>：精确的 Token 使用量追踪</li>
+</ul>
+<p>这是一个经典的 <strong>Agent Loop</strong> 实现——LLM 不断”思考-行动-观察”，直到任务完成或需要用户输入。</p>
+<h3 id="3-4-权限系统（Permission-System）—-安全的守门人"><a href="#3-4-权限系统（Permission-System）—-安全的守门人" class="headerlink" title="3.4 权限系统（Permission System）— 安全的守门人"></a>3.4 权限系统（Permission System）— 安全的守门人</h3><p><code>src/hooks/toolPermission/</code> 实现了一套<strong>多层权限模型</strong>。每次工具调用都会经过权限检查：</p>
+<pre class="line-numbers language-none"><code class="language-none">工具调用请求 → 权限检查 → [自动通过 | 提示用户 | 拒绝]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>支持多种权限模式：</p>
+<ul>
+<li><code>default</code> — 默认模式，危险操作需确认</li>
+<li><code>plan</code> — 计划模式，仅允许只读操作</li>
+<li><code>auto</code> — 自动模式，信任所有操作</li>
+<li><code>bypassPermissions</code> — 跳过权限（开发/测试用）</li>
+</ul>
+<p><strong>这解释了为什么 Claude Code 在执行文件写入、Shell 命令等操作前会弹出确认提示</strong>——不是 LLM 在”犹豫”，而是权限系统在拦截。</p>
+<h3 id="3-5-Bridge-系统-—-IDE-集成的桥梁"><a href="#3-5-Bridge-系统-—-IDE-集成的桥梁" class="headerlink" title="3.5 Bridge 系统 — IDE 集成的桥梁"></a>3.5 Bridge 系统 — IDE 集成的桥梁</h3><p><code>src/bridge/</code> 实现了 CLI 与 IDE 扩展之间的<strong>双向通信层</strong>：</p>
+<ul>
+<li><code>bridgeMain.ts</code> — 桥接主循环</li>
+<li><code>bridgeMessaging.ts</code> — 消息协议</li>
+<li><code>bridgePermissionCallbacks.ts</code> — 权限回调</li>
+<li><code>replBridge.ts</code> — REPL 会话桥接</li>
+<li><code>jwtUtils.ts</code> — JWT 认证</li>
+<li><code>sessionRunner.ts</code> — 会话执行管理</li>
+</ul>
+<p>这套 Bridge 系统使得 VS Code 和 JetBrains 插件能够与底层的 Claude Code CLI 共享同一个会话和上下文，实现了<strong>“一个引擎，多个前端”</strong>的架构。</p>
+<h3 id="3-6-Agent-协调系统-—-从单-Agent-到多-Agent"><a href="#3-6-Agent-协调系统-—-从单-Agent-到多-Agent" class="headerlink" title="3.6 Agent 协调系统 — 从单 Agent 到多 Agent"></a>3.6 Agent 协调系统 — 从单 Agent 到多 Agent</h3><p><code>src/coordinator/</code> 虽然目前只有一个 <code>coordinatorMode.ts</code> 文件，但结合 <code>AgentTool</code>、<code>SendMessageTool</code>、<code>TeamCreateTool</code> 等工具，可以看出 Claude Code 已经构建了一套<strong>多 Agent 协调机制</strong>：</p>
+<ul>
+<li><strong>AgentTool</strong>：生成子 Agent 处理独立子任务</li>
+<li><strong>SendMessageTool</strong>：Agent 间通信</li>
+<li><strong>TeamCreateTool</strong>：创建 Agent 团队并行处理</li>
+<li><code>useSwarmInitialization.ts</code> / <code>useSwarmPermissionPoller.ts</code> — Swarm 模式初始化与权限轮询</li>
+</ul>
+<p>这意味着 Claude Code 可以同时启动多个 Agent 并行工作，类似于一个<strong>软件工程团队</strong>的分工协作模式。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260331180633729-409689601.jpg" style="zoom:40%;" alt="Agent 多智能体协调系统"></p>
+<hr>
+<h2 id="四、服务层架构"><a href="#四、服务层架构" class="headerlink" title="四、服务层架构"></a>四、服务层架构</h2><p><code>src/services/</code> 是外部依赖集成的汇聚点：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>服务</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api/</code></td>
+<td>Anthropic API 客户端、文件 API、Bootstrap</td>
+</tr>
+<tr>
+<td><code>mcp/</code></td>
+<td>Model Context Protocol 服务器连接管理</td>
+</tr>
+<tr>
+<td><code>oauth/</code></td>
+<td>OAuth 2.0 认证流程</td>
+</tr>
+<tr>
+<td><code>lsp/</code></td>
+<td>Language Server Protocol 管理器</td>
+</tr>
+<tr>
+<td><code>analytics/</code></td>
+<td>GrowthBook 特性标志与分析</td>
+</tr>
+<tr>
+<td><code>plugins/</code></td>
+<td>插件加载器</td>
+</tr>
+<tr>
+<td><code>compact/</code></td>
+<td>对话上下文压缩</td>
+</tr>
+<tr>
+<td><code>extractMemories/</code></td>
+<td>自动记忆提取</td>
+</tr>
+<tr>
+<td><code>tokenEstimation.ts</code></td>
+<td>Token 数量估算</td>
+</tr>
+<tr>
+<td><code>teamMemorySync/</code></td>
+<td>团队记忆同步</td>
+</tr>
+<tr>
+<td><code>policyLimits/</code></td>
+<td>组织策略限制</td>
+</tr>
+<tr>
+<td><code>remoteManagedSettings/</code></td>
+<td>远程托管设置</td>
+</tr>
+<tr>
+<td><code>MagicDocs/</code></td>
+<td>智能文档</td>
+</tr>
+<tr>
+<td><code>PromptSuggestion/</code></td>
+<td>提示词建议</td>
+</tr>
+<tr>
+<td><code>autoDream/</code></td>
+<td>自动梦境（？神秘功能）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>特别值得关注的是 <code>extractMemories</code> 服务</strong>——Claude Code 的记忆系统不仅仅是被动存储，还能主动从对话中提取有价值的信息并持久化。这解释了为什么 Claude Code 用久了会越来越”懂你”。</p>
+<hr>
+<h2 id="五、UI-组件体系-—-终端里的-React"><a href="#五、UI-组件体系-—-终端里的-React" class="headerlink" title="五、UI 组件体系 — 终端里的 React"></a>五、UI 组件体系 — 终端里的 React</h2><p>Claude Code 使用 <strong>React + Ink</strong> 构建终端 UI，这是整个项目最”意外”的技术选型之一。<code>src/components/</code> 下有 <strong>144 个 UI 组件</strong>，这几乎是一个<strong>中型 Web 前端应用</strong>的规模。</p>
+<p>部分关键组件：</p>
+<ul>
+<li><code>App.tsx</code> — 应用根组件</li>
+<li><code>CoordinatorAgentStatus.tsx</code> — 多 Agent 状态展示</li>
+<li><code>ContextVisualization.tsx</code> — 上下文可视化</li>
+<li><code>ContextSuggestions.tsx</code> — 上下文建议</li>
+<li><code>DiagnosticsDisplay.tsx</code> — 诊断信息展示</li>
+<li><code>AutoUpdater.tsx</code> — 自动更新</li>
+<li><code>ConsoleOAuthFlow.tsx</code> — OAuth 认证流程</li>
+<li><code>DevBar.tsx</code> — 开发者工具栏</li>
+</ul>
+<p>配套的 <strong>80+ React Hooks</strong> 覆盖了几乎所有状态管理场景：</p>
+<ul>
+<li><code>useVimInput.ts</code> — Vim 模式输入处理</li>
+<li><code>useVoice.ts</code> / <code>useVoiceIntegration.tsx</code> — 语音输入集成</li>
+<li><code>useSwarmInitialization.ts</code> — Swarm 模式初始化</li>
+<li><code>useScheduledTasks.ts</code> — 定时任务调度</li>
+<li><code>useMemoryUsage.ts</code> — 内存使用监控</li>
+<li><code>useTerminalSize.ts</code> — 终端尺寸自适应</li>
+<li><code>useVirtualScroll.ts</code> — 虚拟滚动（性能优化）</li>
+</ul>
+<hr>
+<h2 id="六、技术栈深度解析"><a href="#六、技术栈深度解析" class="headerlink" title="六、技术栈深度解析"></a>六、技术栈深度解析</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>技术</th>
+<th>选型理由分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运行时</td>
+<td>Bun</td>
+<td>极快的启动速度 + 原生 TypeScript 支持</td>
+</tr>
+<tr>
+<td>语言</td>
+<td>TypeScript (strict)</td>
+<td>类型安全，512K 行代码必须强类型</td>
+</tr>
+<tr>
+<td>终端 UI</td>
+<td>React + Ink</td>
+<td>声明式 UI，组件复用，开发效率高</td>
+</tr>
+<tr>
+<td>CLI 解析</td>
+<td>Commander.js</td>
+<td>成熟的 CLI 参数解析框架</td>
+</tr>
+<tr>
+<td>Schema 校验</td>
+<td>Zod v4</td>
+<td>运行时类型校验 + TypeScript 类型推断</td>
+</tr>
+<tr>
+<td>代码搜索</td>
+<td>ripgrep</td>
+<td>极快的代码搜索引擎</td>
+</tr>
+<tr>
+<td>协议</td>
+<td>MCP SDK + LSP</td>
+<td>标准化的工具/语言服务器协议</td>
+</tr>
+<tr>
+<td>API</td>
+<td>Anthropic SDK</td>
+<td>官方 SDK</td>
+</tr>
+<tr>
+<td>遥测</td>
+<td>OpenTelemetry + gRPC</td>
+<td>标准化可观测性</td>
+</tr>
+<tr>
+<td>特性标志</td>
+<td>GrowthBook</td>
+<td>A/B 测试与灰度发布</td>
+</tr>
+<tr>
+<td>认证</td>
+<td>OAuth 2.0 + JWT + macOS Keychain</td>
+<td>多层认证体系</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="为什么选-Bun-而不是-Node-js？"><a href="#为什么选-Bun-而不是-Node-js？" class="headerlink" title="为什么选 Bun 而不是 Node.js？"></a>为什么选 Bun 而不是 Node.js？</h3><p>Bun 提供了几个关键优势：</p>
+<ol>
+<li><strong>启动速度</strong>：比 Node.js 快数倍，CLI 工具对冷启动时间敏感</li>
+<li><strong>原生 TypeScript</strong>：无需编译步骤</li>
+<li><strong>Bundle 特性标志</strong>：<code>bun:bundle</code> 的 <code>feature()</code> 机制实现了<strong>编译时死代码消除</strong></li>
+</ol>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> feature <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'bun:bundle'</span>
+
+<span class="token comment">// 未启用的功能代码在构建时被完全移除</span>
+<span class="token keyword">const</span> voiceCommand <span class="token operator">=</span> <span class="token function">feature</span><span class="token punctuation">(</span><span class="token string">'VOICE_MODE'</span><span class="token punctuation">)</span>
+  <span class="token operator">?</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'./commands/voice/index.js'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>default
+  <span class="token operator">:</span> <span class="token keyword">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>目前已知的特性标志：<code>PROACTIVE</code>、<code>KAIROS</code>、<code>BRIDGE_MODE</code>、<code>DAEMON</code>、<code>VOICE_MODE</code>、<code>AGENT_TRIGGERS</code>、<code>MONITOR_TOOL</code>。</p>
+<h3 id="为什么用-React-写终端-UI？"><a href="#为什么用-React-写终端-UI？" class="headerlink" title="为什么用 React 写终端 UI？"></a>为什么用 React 写终端 UI？</h3><p>这看似反直觉，但有深层考量：</p>
+<ol>
+<li><strong>声明式渲染</strong>：终端 UI 的状态管理同样复杂（权限弹窗、多 Agent 状态、流式输出），React 的声明式模型大大降低了复杂度</li>
+<li><strong>组件复用</strong>：144 个组件之间存在大量复用关系</li>
+<li><strong>Hooks 生态</strong>：80+ 自定义 Hooks 实现了关注点分离</li>
+<li><strong>Bridge 复用</strong>：同一套组件逻辑可以通过 Bridge 在 IDE 中复用</li>
+</ol>
+<hr>
+<h2 id="七、启动优化-—-毫秒级的细节打磨"><a href="#七、启动优化-—-毫秒级的细节打磨" class="headerlink" title="七、启动优化 — 毫秒级的细节打磨"></a>七、启动优化 — 毫秒级的细节打磨</h2><p>Claude Code 的启动序列经过精心优化：</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// main.tsx — 在其他模块加载之前就作为副作用触发</span>
+<span class="token function">startMdmRawRead</span><span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token comment">// 预读 MDM 设置</span>
+<span class="token function">startKeychainPrefetch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 预取 Keychain 凭据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>并行预取策略</strong>：MDM 设置读取、Keychain 访问、API 预连接和 GrowthBook 初始化全部并行执行，避免串行等待。</p>
+<p><strong>懒加载策略</strong>：重模块（OpenTelemetry ~400KB、gRPC ~700KB）通过动态 <code>import()</code> 延迟加载，只在实际需要时才引入。</p>
+<hr>
+<h2 id="八、几个有趣的发现"><a href="#八、几个有趣的发现" class="headerlink" title="八、几个有趣的发现"></a>八、几个有趣的发现</h2><h3 id="1-Buddy-系统（彩蛋）"><a href="#1-Buddy-系统（彩蛋）" class="headerlink" title="1. Buddy 系统（彩蛋）"></a>1. Buddy 系统（彩蛋）</h3><p><code>src/buddy/</code> 目录——一个”伴侣精灵”系统。虽然目前看起来是个彩蛋功能，但谁知道 Anthropic 会不会把它变成一个正式功能？</p>
+<h3 id="2-autoDream-服务"><a href="#2-autoDream-服务" class="headerlink" title="2. autoDream 服务"></a>2. autoDream 服务</h3><p><code>src/services/autoDream/</code> ——“自动梦境”？名字非常神秘。可能与 Claude 的后台思考或记忆整理相关。</p>
+<h3 id="3-隐藏命令"><a href="#3-隐藏命令" class="headerlink" title="3. 隐藏命令"></a>3. 隐藏命令</h3><p>源码中存在许多未公开的命令：</p>
+<ul>
+<li><code>good-claude</code> — 给 Claude 正向反馈</li>
+<li><code>bughunter</code> — 自动化 Bug 猎手</li>
+<li><code>chrome</code> — Chrome 浏览器集成</li>
+<li><code>btw</code> — 顺便说一下（?）</li>
+<li><code>ant-trace</code> — Anthropic 内部追踪</li>
+<li><code>mock-limits</code> — 模拟速率限制（测试用）</li>
+<li><code>heapdump</code> — 堆内存快照</li>
+</ul>
+<h3 id="4-KAIROS-特性标志"><a href="#4-KAIROS-特性标志" class="headerlink" title="4. KAIROS 特性标志"></a>4. KAIROS 特性标志</h3><p>在特性标志中出现的 <code>KAIROS</code> 是什么？Kairos 在希腊语中意为”恰当的时机”——可能是某个与时间相关的高级 Agent 调度功能。</p>
+<hr>
+<h2 id="九、架构设计的核心思想总结"><a href="#九、架构设计的核心思想总结" class="headerlink" title="九、架构设计的核心思想总结"></a>九、架构设计的核心思想总结</h2><p>经过深入分析，Claude Code 的架构体现了几个核心设计理念：</p>
+<h3 id="1-工具即能力（Tools-as-Capabilities）"><a href="#1-工具即能力（Tools-as-Capabilities）" class="headerlink" title="1. 工具即能力（Tools as Capabilities）"></a>1. 工具即能力（Tools as Capabilities）</h3><p>LLM 的所有交互能力都通过标准化的 Tool 接口暴露，每个工具都是自描述的（Schema + 权限 + 执行逻辑）。这种设计使得：</p>
+<ul>
+<li>新增能力 = 新增一个工具模块</li>
+<li>LLM 能通过 Schema 精确理解工具的输入输出</li>
+<li>权限系统能细粒度控制每个工具的执行</li>
+</ul>
+<h3 id="2-Agent-是一等公民"><a href="#2-Agent-是一等公民" class="headerlink" title="2. Agent 是一等公民"></a>2. Agent 是一等公民</h3><p>Agent 不是一个事后想法，而是从架构层面就支持的核心概念。子 Agent 生成、Agent 间通信、团队协作都有专门的工具和服务支撑。</p>
+<h3 id="3-声明式优于命令式"><a href="#3-声明式优于命令式" class="headerlink" title="3. 声明式优于命令式"></a>3. 声明式优于命令式</h3><p>从 React/Ink 的 UI 渲染到 Zod Schema 的类型校验，再到工具定义的声明式接口，整个项目都倾向于<strong>声明式编程范式</strong>。</p>
+<h3 id="4-性能是设计约束"><a href="#4-性能是设计约束" class="headerlink" title="4. 性能是设计约束"></a>4. 性能是设计约束</h3><p>Bun 运行时、并行预取、懒加载、编译时死代码消除——这些优化不是事后补丁，而是从技术选型阶段就考虑在内的设计决策。</p>
+<hr>
+<h2 id="十、写在最后"><a href="#十、写在最后" class="headerlink" title="十、写在最后"></a>十、写在最后</h2><p>Claude Code 是目前市面上<strong>最复杂的 AI 编程 CLI 工具</strong>之一。51 万行 TypeScript 代码、40+ 工具、50+ 命令、144 个 UI 组件——这不是一个简单的”API 包装器”，而是一个<strong>完整的软件工程平台</strong>。</p>
+<p>这次源码泄露让我们得以窥见 Anthropic 在 AI 工具链上的工程投入之深。对于开发者而言，这份源码是学习大型 TypeScript 项目架构、Agent 系统设计、终端 UI 开发的绝佳教材。</p>
+<blockquote>
+<p><strong>注意</strong>：本文仅作技术分析用途。源码的所有权归属 Anthropic，请勿将其用于商业目的。</p>
+</blockquote>
+<hr>
+<p><strong>参考链接</strong>：</p>
+<ul>
+<li><a href="https://x.com/Fried_rice/status/2038894956459290963">泄露 Tweet — @Fried_rice</a></li>
+<li><a href="https://github.com/instructkr/claude-code">源码归档仓库 — instructkr/claude-code</a></li>
+<li><a href="https://www.anthropic.com">Anthropic 官方</a></li>
+<li><a href="https://github.com/vadimdemedes/ink">Ink — React for CLI</a></li>
+<li><a href="https://bun.sh">Bun Runtime</a></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/claude-code-leaked-source-architecture-deep-analysis.html">https://onefly.top/posts/claude-code-leaked-source-architecture-deep-analysis.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">AI编程</span>
+                                </a>
+                            
+                                <a href="/tags/Claude-Code/">
+                                    <span class="chip bg-color">Claude Code</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">源码分析</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260407180815925-2016459560.jpg" class="responsive-img" alt="Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比">
+                        
+                        <span class="card-title">Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-04-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    AI工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI-Agent/">
+                        <span class="chip bg-color">AI Agent</span>
+                    </a>
+                    
+                    <a href="/tags/OpenClaw/">
+                        <span class="chip bg-color">OpenClaw</span>
+                    </a>
+                    
+                    <a href="/tags/Hermes/">
+                        <span class="chip bg-color">Hermes</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">开源工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/cloudflare-email-routing-unlimited-mailbox-guide.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330180141242-931886693.jpg" class="responsive-img" alt="Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册">
+                        
+                        <span class="card-title">Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    实用工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Cloudflare/">
+                        <span class="chip bg-color">Cloudflare</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%82%AE%E7%AE%B1%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">邮箱工具</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E8%B4%A6%E5%8F%B7/">
+                        <span class="chip bg-color">AI账号</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">实用教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

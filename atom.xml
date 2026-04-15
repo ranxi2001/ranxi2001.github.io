@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-04-15T13:22:27.897Z</updated>
+  <updated>2026-04-15T13:35:47.234Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/zero2agent-programmer-agent-engineering-tutorial-interview-guide.html"/>
     <id>https://onefly.top/posts/zero2agent-programmer-agent-engineering-tutorial-interview-guide.html</id>
     <published>2026-04-15T10:00:00.000Z</published>
-    <updated>2026-04-15T13:22:27.897Z</updated>
+    <updated>2026-04-15T13:35:47.234Z</updated>
     
     
     <summary type="html">zero2Agent 是一个面向程序员的开源 Agent 工程教程，覆盖 70+ 篇文章、9 大模块，从 Agent 核心概念到框架拆解、手写 Coding Agent、大厂面试真题，帮你系统构建 Agent 工程能力。</summary>
@@ -36,8 +36,6 @@
     <category term="大厂面试" scheme="https://onefly.top/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E8%AF%95/"/>
     
     <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="开源教程" scheme="https://onefly.top/tags/%E5%BC%80%E6%BA%90%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

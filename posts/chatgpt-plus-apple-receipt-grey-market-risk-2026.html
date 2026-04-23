@@ -1,0 +1,1936 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="GPT Plus 代充, ChatGPT Plus 漏洞, OpenAI 订阅校验, Apple 内购收据, iOS receipt, StoreKit, 收据重放, API 补单, 灰产技术分析">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>GPT Plus 代充漏洞技术解构：iOS 收据校验缺陷与灰产套利链路全拆解 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260416191135636-503458308.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">GPT Plus 代充漏洞技术解构：iOS 收据校验缺陷与灰产套利链路全拆解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            🚀 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/okx-bitcoin-trading-guide.html" target="_blank">
+                    <span class="link-icon">₿</span>
+                    <span class="link-text">比特币购买入门教程</span>
+                    <span class="link-badge">新手必看</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ChatGPT-Plus/">
+                                <span class="chip bg-color">ChatGPT Plus</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AE%A2%E9%98%85%E5%AE%89%E5%85%A8/">
+                                <span class="chip bg-color">订阅安全</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">逆向工程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                AI工具
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-04-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="GPT-Plus-代充漏洞技术解构：iOS-收据校验缺陷与灰产套利链路全拆解"><a href="#GPT-Plus-代充漏洞技术解构：iOS-收据校验缺陷与灰产套利链路全拆解" class="headerlink" title="GPT Plus 代充漏洞技术解构：iOS 收据校验缺陷与灰产套利链路全拆解"></a>GPT Plus 代充漏洞技术解构：iOS 收据校验缺陷与灰产套利链路全拆解</h1><p>2026 年 4 月 16 日，X 用户 <a href="https://x.com/xkajon/status/2044720426392363505">Kai (@xkajon)</a> 发布了一篇长推文，把”GPT 代充”背后的完整技术链路摊开在公众面前。同日，<a href="https://x.com/zaunist/status/2044605901517316414">阿杰鲁 (@zaunist)</a> 提到 Telegram 上已经出现了能白嫖 ChatGPT Plus 和 Pro 的机器人，并感慨”大概率没几天这个渠道就会被玩死”。</p>
+<p>本文基于 Kai 原帖内容，从技术角度完整还原这条漏洞链路。</p>
+<hr>
+<h2 id="一、漏洞核心：OpenAI-不校验-Apple-ID-归属关系"><a href="#一、漏洞核心：OpenAI-不校验-Apple-ID-归属关系" class="headerlink" title="一、漏洞核心：OpenAI 不校验 Apple ID 归属关系"></a>一、漏洞核心：OpenAI 不校验 Apple ID 归属关系</h2><p>Kai 原文一句话点破了问题本质：</p>
+<blockquote>
+<p><strong>OpenAI 验票的时候，根本不看这张收据是你 Apple ID 买的，还是隔壁老王 Apple ID 买的。它只看两样东西：收据合法不合法，以及你传过来的那个 ChatGPT auth token 是不是活的。</strong></p>
+</blockquote>
+<p>换成技术语言：<strong>收据合法 + token 有效 = 任意账号变 Plus</strong>。Apple ID 绑定、账号对应关系，全不查。</p>
+<p>这就好比你拿着别人的购物小票去柜台领东西，柜员只看小票真假，不看你身份证。</p>
+<hr>
+<h2 id="二、正常-iOS-内购链路-vs-漏洞利用点"><a href="#二、正常-iOS-内购链路-vs-漏洞利用点" class="headerlink" title="二、正常 iOS 内购链路 vs 漏洞利用点"></a>二、正常 iOS 内购链路 vs 漏洞利用点</h2><h3 id="正常链路"><a href="#正常链路" class="headerlink" title="正常链路"></a>正常链路</h3><p>一笔正常的 iOS 订阅发放过程如下：</p>
+<ol>
+<li>用户在 iPhone 上点击付款</li>
+<li>App Store 扣钱，Apple 生成购买收据（receipt）写入本机沙盒</li>
+<li>ChatGPT App 自动拾取收据，连同当前登录账号的 auth token 一起打包发给 OpenAI</li>
+<li>OpenAI 服务端向 Apple 校验收据真伪</li>
+<li>校验通过，给该 auth token 对应的账号开通 Plus</li>
+</ol>
+<pre class="mermaid">flowchart TD
+    A["iPhone 内购付款"] --&gt; B["App Store 扣钱 + 生成 receipt"]
+    B --&gt; C["ChatGPT App 拾取 receipt"]
+    C --&gt; D["App 将 receipt + auth token 发给 OpenAI"]
+    D --&gt; E["OpenAI 向 Apple 验证 receipt 真伪"]
+    E --&gt; F{"是否同时校验 Apple ID 归属？"}
+    F --&gt;|"正常应该校验"| G["仅允许原购买者账号获得权益"]
+    F --&gt;|"实际未校验"| H["任何持有有效 auth token 的账号均可获得 Plus"]</pre>
+
+<h3 id="漏洞利用点"><a href="#漏洞利用点" class="headerlink" title="漏洞利用点"></a>漏洞利用点</h3><p>问题出在第 4→5 步之间。OpenAI 的订阅校验接口实际只做了<strong>一层判断</strong>（收据真伪），缺失了<strong>第二层判断</strong>（收据与请求账号的归属关系）。</p>
+<p>正如 Kai 所说：</p>
+<blockquote>
+<p>三端订阅管理都是交给第三方 API 处理的，iOS 系统框架允许 App 把内购凭据往第三方服务器发，这本是正常开发逻辑。但 OpenAI 在这条链路上偷了懒——或者说，压根没想过有人会卡这个环节。</p>
+</blockquote>
+<hr>
+<h2 id="三、完整操作链路：四步拆解"><a href="#三、完整操作链路：四步拆解" class="headerlink" title="三、完整操作链路：四步拆解"></a>三、完整操作链路：四步拆解</h2><p>以下内容忠实还原 Kai 原帖技术描述。</p>
+<h3 id="第一步：获取低价区-Apple-ID"><a href="#第一步：获取低价区-Apple-ID" class="headerlink" title="第一步：获取低价区 Apple ID"></a>第一步：获取低价区 Apple ID</h3><p>土耳其区 ChatGPT Plus 标价 <strong>499 里拉/月</strong>，折合人民币约 <strong>85 元</strong>。国内 iOS 定价约 <strong>145 元</strong>。差价本身就构成了第一层套利空间。</p>
+<p>操作：注册或购买一个土耳其区 Apple ID，充入礼品卡余额。</p>
+<h3 id="第二步：拦截收据，阻止自动提交"><a href="#第二步：拦截收据，阻止自动提交" class="headerlink" title="第二步：拦截收据，阻止自动提交"></a>第二步：拦截收据，阻止自动提交</h3><p>在 iPhone 上打开 ChatGPT App，<strong>不登录目标账号</strong>（登临时号或不登录）。</p>
+<p>关键操作：<strong>在内购付款前配置网络拦截，阻止 ChatGPT App 将收据自动发送给 OpenAI 服务端。</strong></p>
+<p>此时 App Store 正常扣款，Apple 正常将收据写入本机沙盒目录（<code>appStoreReceiptURL</code>），但因为网络拦截，这张收据不会被 App 自动提交给 OpenAI，而是停留在本地等待手动提取。</p>
+<h3 id="第三步：导出收据"><a href="#第三步：导出收据" class="headerlink" title="第三步：导出收据"></a>第三步：导出收据</h3><p>Kai 原帖列出了三种主流方法：</p>
+<p><strong>方法 A：端点本地映射（无需越狱）</strong></p>
+<p>用 DNS 劫持或本地代理，将 ChatGPT App 发往 OpenAI 的请求重定向到本地服务器。请求体中本身就携带 Base64 编码的收据，到本地后直接保存。</p>
+<p>工具链：<code>mitmproxy</code>、<code>Charles Proxy</code>、自建 HTTPS 代理 + 自签证书。</p>
+<p>Kai 原话：<strong>“不用越狱，门槛低得令人发指。”</strong></p>
+<p><strong>方法 B：越狱设备 + Hook（iOS）</strong></p>
+<p>在越狱设备上使用 Frida 或 Flex，直接 hook StoreKit 框架，截取 <code>SKPaymentTransaction</code> 的 <code>transactionReceipt</code>，或读取 <code>appStoreReceiptURL</code> 对应的收据文件。</p>
+<p><strong>方法 C：Android + Xposed Hook</strong></p>
+<p>Android 路径使用 Xposed 框架 hook 对应支付回调，逻辑与 iOS 类似。</p>
+<h3 id="第四步：API-补单——把收据打到任意账号"><a href="#第四步：API-补单——把收据打到任意账号" class="headerlink" title="第四步：API 补单——把收据打到任意账号"></a>第四步：API 补单——把收据打到任意账号</h3><p>收据到手后，直接向 OpenAI 的订阅接口发送请求：</p>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http">POST https://ios.chat.openai.com/backend-api/mobile/apple/post_receipt
+<span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span>
+<span class="token header"><span class="token header-name keyword">Authorization</span><span class="token punctuation">:</span> <span class="token header-value">Bearer &lt;目标账号的 auth token&gt;</span></span>
+<span class="token application-json">
+<span class="token punctuation">{</span>
+  <span class="token string-property property">"receipt"</span><span class="token operator">:</span> <span class="token string">"&lt;Base64 编码的 iOS 收据&gt;"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"platform"</span><span class="token operator">:</span> <span class="token string">"ios"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"product_id"</span><span class="token operator">:</span> <span class="token string">"com.openai.chatgptplus"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"device_info"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"model"</span><span class="token operator">:</span> <span class="token string">"iPhone14,2"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"os_version"</span><span class="token operator">:</span> <span class="token string">"17.0"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"timezone"</span><span class="token operator">:</span> <span class="token string">"Asia/Shanghai"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>注意这里的关键点</strong>：<code>Authorization</code> 头使用的是<strong>目标用户</strong>的 auth token，而不是购买者的。这就是漏洞的核心利用方式——用 A 的收据给 B 开通 Plus。</p>
+<hr>
+<h2 id="四、为什么能”一票多充”：重放攻击的经济模型"><a href="#四、为什么能”一票多充”：重放攻击的经济模型" class="headerlink" title="四、为什么能”一票多充”：重放攻击的经济模型"></a>四、为什么能”一票多充”：重放攻击的经济模型</h2><p>Kai 原帖最后点破了灰产的商业逻辑：</p>
+<blockquote>
+<p><strong>一张土耳其收据八十五块人民币成本，能给无数个账号开 Plus。闲鱼上那些二三十块钱一个月的 GPT Plus 代充，就是这么来的。你以为人家做慈善？人家是拿一张票反复上车。</strong></p>
+</blockquote>
+<p>整个经济模型非常清晰：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>成本/收入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单张土耳其区收据</td>
+<td>~85 元人民币</td>
+</tr>
+<tr>
+<td>代充售价（闲鱼/TG）</td>
+<td>20-50 元/账号</td>
+</tr>
+<tr>
+<td>如果收据可重放 N 次</td>
+<td>第 2 单起边际成本 ≈ 0</td>
+</tr>
+<tr>
+<td>毛利</td>
+<td>第 2 单起几乎 100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>操作闭环：买家提供自己的 ChatGPT auth token（短期有效、权限有限），卖家用收据调 API 完成开通，买家立刻改密码。卖家拿同一张收据继续充下一个。</p>
+<p>第二条推文还提到了更极端的玩法：<strong>使用日本或英国地区节点 + 抓包拦截，直接 0 元获取 ChatGPT Plus</strong>——暗示某些地区可能存在更深层的支付校验绕过。</p>
+<hr>
+<h2 id="五、技术归因：OpenAI-在哪一步偷了懒？"><a href="#五、技术归因：OpenAI-在哪一步偷了懒？" class="headerlink" title="五、技术归因：OpenAI 在哪一步偷了懒？"></a>五、技术归因：OpenAI 在哪一步偷了懒？</h2><p>从服务端设计角度看，这个漏洞的根因可以精确定位：</p>
+<h3 id="缺失-1：收据-→-账号绑定校验"><a href="#缺失-1：收据-→-账号绑定校验" class="headerlink" title="缺失 1：收据 → 账号绑定校验"></a>缺失 1：收据 → 账号绑定校验</h3><p>Apple 的 Server-to-Server 验票接口（<code>verifyReceipt</code> 或 App Store Server API v2）返回的数据中包含 <code>original_transaction_id</code>，可以唯一标识一笔购买。正常做法是：</p>
+<pre class="line-numbers language-none"><code class="language-none">收据验证通过后：
+IF original_transaction_id 已绑定其他平台账号 → 拒绝
+ELSE → 绑定当前请求账号，发放权益<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>OpenAI 的实现显然跳过了这一步。</p>
+<h3 id="缺失-2：重放拦截"><a href="#缺失-2：重放拦截" class="headerlink" title="缺失 2：重放拦截"></a>缺失 2：重放拦截</h3><p>同一张收据（同一个 <code>original_transaction_id</code>）被多个不同的 auth token 提交时，服务端没有去重逻辑。这是一个经典的<strong>收据重放（receipt replay）</strong>漏洞。</p>
+<h3 id="缺失-3：请求特征风控"><a href="#缺失-3：请求特征风控" class="headerlink" title="缺失 3：请求特征风控"></a>缺失 3：请求特征风控</h3><p>批量补单通常具有明显的异常特征：</p>
+<ul>
+<li>短时间内大量不同 auth token 使用相同 <code>original_transaction_id</code></li>
+<li>请求 IP / 设备指纹高度集中</li>
+<li><code>device_info</code> 字段千篇一律（如统一 <code>iPhone14,2</code>）</li>
+</ul>
+<p>这些模式没有触发任何风控拦截。</p>
+<h3 id="归因总结"><a href="#归因总结" class="headerlink" title="归因总结"></a>归因总结</h3><pre class="line-numbers language-none"><code class="language-none">正常设计：  验真伪 → 验归属 → 验重放 → 风控拦截 → 发放权益
+OpenAI 实际：验真伪 → （跳过）→ （跳过）→ （跳过）→ 发放权益<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="六、同类漏洞的行业对比"><a href="#六、同类漏洞的行业对比" class="headerlink" title="六、同类漏洞的行业对比"></a>六、同类漏洞的行业对比</h2><p>这类 iOS 内购收据校验缺陷并非 OpenAI 独有。在移动支付生态中，类似问题有过多次先例：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>平台/场景</th>
+<th>漏洞类型</th>
+<th>核心原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期手游</td>
+<td>收据重放刷道具</td>
+<td>服务端未记录 <code>transaction_id</code> 去重</td>
+</tr>
+<tr>
+<td>SaaS 订阅服务</td>
+<td>跨账号恢复购买</td>
+<td><code>Restore Purchases</code> 未绑定平台账号</td>
+</tr>
+<tr>
+<td>流媒体平台</td>
+<td>家庭共享滥用</td>
+<td>共享组权益边界未隔离</td>
+</tr>
+<tr>
+<td><strong>OpenAI (本案)</strong></td>
+<td><strong>收据重放 + 跨账号补单</strong></td>
+<td><strong>未校验 Apple ID 归属 + 未做 transaction_id 去重</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Apple 自身的 StoreKit 2 和 App Store Server API v2 已经提供了 <code>JWSTransaction</code> 签名验证、<code>original_transaction_id</code> 绑定、Server Notification V2 等完善的校验基础设施。问题不在 Apple 侧，而在 OpenAI 的服务端没有用好这些能力。</p>
+<hr>
+<h2 id="七、如果要修，怎么修？"><a href="#七、如果要修，怎么修？" class="headerlink" title="七、如果要修，怎么修？"></a>七、如果要修，怎么修？</h2><p>从技术实现角度，修补路径很明确：</p>
+<h3 id="1-收据-→-账号强绑定"><a href="#1-收据-→-账号强绑定" class="headerlink" title="1. 收据 → 账号强绑定"></a>1. 收据 → 账号强绑定</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 伪代码</span>
+<span class="token keyword">def</span> <span class="token function">process_receipt</span><span class="token punctuation">(</span>auth_token<span class="token punctuation">,</span> receipt_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    verification <span class="token operator">=</span> verify_with_apple<span class="token punctuation">(</span>receipt_data<span class="token punctuation">)</span>
+    txn_id <span class="token operator">=</span> verification<span class="token punctuation">.</span>original_transaction_id
+    
+    existing_binding <span class="token operator">=</span> db<span class="token punctuation">.</span>query<span class="token punctuation">(</span>txn_id<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> existing_binding <span class="token keyword">and</span> existing_binding<span class="token punctuation">.</span>account_id <span class="token operator">!=</span> auth_token<span class="token punctuation">.</span>account_id<span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> Error<span class="token punctuation">(</span><span class="token string">"此收据已绑定其他账号"</span><span class="token punctuation">)</span>
+    
+    db<span class="token punctuation">.</span>bind<span class="token punctuation">(</span>txn_id<span class="token punctuation">,</span> auth_token<span class="token punctuation">.</span>account_id<span class="token punctuation">)</span>
+    grant_plus<span class="token punctuation">(</span>auth_token<span class="token punctuation">.</span>account_id<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-transaction-id-全局去重"><a href="#2-transaction-id-全局去重" class="headerlink" title="2. transaction_id 全局去重"></a>2. transaction_id 全局去重</h3><p>维护一张 <code>(original_transaction_id, account_id)</code> 的映射表，写入即锁定，拒绝同一 transaction_id 的二次绑定。</p>
+<h3 id="3-请求级风控"><a href="#3-请求级风控" class="headerlink" title="3. 请求级风控"></a>3. 请求级风控</h3><ul>
+<li>同一 receipt 被不同 auth token 提交 → 立即拒绝并告警</li>
+<li>同一 IP/设备指纹短时间内大量补单 → 触发人工审计</li>
+<li><code>device_info</code> 字段与实际请求环境不符 → 标记风险</li>
+</ul>
+<h3 id="4-迁移到-App-Store-Server-API-v2"><a href="#4-迁移到-App-Store-Server-API-v2" class="headerlink" title="4. 迁移到 App Store Server API v2"></a>4. 迁移到 App Store Server API v2</h3><p>使用 Apple 的 JWS 签名事务替代传统的 <code>verifyReceipt</code>，获得更细粒度的事务状态和撤销通知。</p>
+<hr>
+<h2 id="八、Kai-的评价与灰产生态"><a href="#八、Kai-的评价与灰产生态" class="headerlink" title="八、Kai 的评价与灰产生态"></a>八、Kai 的评价与灰产生态</h2><p>Kai 原帖最后两段尤其值得注意：</p>
+<blockquote>
+<p><strong>这套流程，技术含量不高，但信息差极高。外面那些收费几千教人”GPT 代充技术”的，教的就是这几步。我今天直接摊开写，省得你们再去交智商税。</strong></p>
+</blockquote>
+<p>这揭示了一个典型的灰产生态结构：</p>
+<ol>
+<li><strong>漏洞发现层</strong>：少数人发现并验证漏洞</li>
+<li><strong>工具化层</strong>：封装成 TG 机器人、自动化脚本（阿杰鲁提到的”白嫖机器人”）</li>
+<li><strong>信息差变现层</strong>：把已知流程包装成”付费教程”，收费数千元转售</li>
+<li><strong>终端用户层</strong>：闲鱼/TG 上 20-50 元的”代充”服务</li>
+</ol>
+<p>每一层都在吃信息差的红利。Kai 把技术细节公开，本质上是在压缩第 3 层的信息差利润空间。</p>
+<hr>
+<h2 id="九、对用户的实际影响"><a href="#九、对用户的实际影响" class="headerlink" title="九、对用户的实际影响"></a>九、对用户的实际影响</h2><h3 id="对代充买家"><a href="#对代充买家" class="headerlink" title="对代充买家"></a>对代充买家</h3><ul>
+<li>auth token 在交付过程中需要暴露给卖家，即使短期有效，仍存在会话劫持窗口</li>
+<li>OpenAI 如果事后修复并回溯异常订阅，通过灰产开通的 Plus 权益可能被批量撤销</li>
+<li>账号可能被标记为异常，影响后续正常使用</li>
+</ul>
+<h3 id="对-OpenAI"><a href="#对-OpenAI" class="headerlink" title="对 OpenAI"></a>对 OpenAI</h3><ul>
+<li>订阅收入直接损失（一份收据对应的付款被 N 个账号消费）</li>
+<li>信任成本：当漏洞公开后，灰产规模会迅速放大（阿杰鲁所言”没几天就会被玩死”）</li>
+<li>修复紧迫性：Kai 帖子获得大量传播后，漏洞的存续时间窗口急剧缩短</li>
+</ul>
+<h3 id="对开发者的启示"><a href="#对开发者的启示" class="headerlink" title="对开发者的启示"></a>对开发者的启示</h3><p>任何涉及 iOS 内购的服务端，都应该回头检查自己的收据校验链路：</p>
+<ol>
+<li>是否只做了真伪校验而跳过了归属校验？</li>
+<li>是否对 <code>original_transaction_id</code> 做了去重？</li>
+<li><code>Restore Purchases</code> 路径是否有独立的绑定校验？</li>
+<li>是否接入了 App Store Server Notifications 来处理退款和撤销？</li>
+</ol>
+<hr>
+<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 FAQ"></a>常见问题 FAQ</h2><p><strong>Q：这个漏洞截至发文时是否仍然有效？</strong><br>A：Kai 发帖时间为 2026 年 4 月 16 日，原文表述为”OpenAI 至今没补这个窟窿”。但考虑到帖子传播速度，修复可能随时发生。本文关注的是技术原理而非可利用性。</p>
+<p><strong>Q：为什么 OpenAI 会犯这种看起来很基础的错误？</strong><br>A：Kai 原帖的判断是：”不是补不了，是优先级不够，或者说，他们根本不在乎这点订阅收入的漏洞。毕竟大头在企业 API 那边。” 从工程视角看，订阅校验通常由支付中台团队负责，如果团队只关注”不让假收据通过”而忽视了”同一收据的跨账号重放”，这种遗漏是有可能发生的。</p>
+<p><strong>Q：方法 A（代理拦截）真的不需要越狱吗？</strong><br>A：是的。mitmproxy 或 Charles Proxy 配合自签根证书，在非越狱 iOS 设备上就能拦截 HTTPS 流量。这也是 Kai 说”门槛低得令人发指”的原因。</p>
+<p><strong>Q：代充买家提供 auth token 有多大风险？</strong><br>A：ChatGPT 的 auth token（通常是 JWT）具有时效性，但在有效期内持有者可以访问该账号的对话历史、设置、文件等。即使事后改密码使 token 失效，在交付窗口期内信息已可能被读取。</p>
+<p><strong>Q：0 元方案（日本/英国节点 + 抓包）是怎么回事？</strong><br>A：Kai 的第三条推文提到这一方案但未展开细节。推测可能涉及特定地区的免费试用政策或支付流程差异，配合抓包拦截实现零成本获取收据。</p>
+<hr>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><ul>
+<li><a href="https://x.com/xkajon/status/2044720426392363505">Kai (@xkajon) 的原帖</a></li>
+<li><a href="https://x.com/zaunist/status/2044605901517316414">阿杰鲁 (@zaunist) 的相关原帖</a></li>
+<li><a href="https://help.openai.com/en/articles/8346573">OpenAI Help：Restoring a ChatGPT subscription purchased in the Apple App Store</a></li>
+<li><a href="https://developer.apple.com/documentation/appstoreserverapi">Apple Developer：App Store Server API v2</a></li>
+<li><a href="https://developer.apple.com/storekit/">Apple Developer：StoreKit 2</a></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/chatgpt-plus-apple-receipt-grey-market-risk-2026.html">https://onefly.top/posts/chatgpt-plus-apple-receipt-grey-market-risk-2026.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ChatGPT-Plus/">
+                                    <span class="chip bg-color">ChatGPT Plus</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%A2%E9%98%85%E5%AE%89%E5%85%A8/">
+                                    <span class="chip bg-color">订阅安全</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">逆向工程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/ai-agent-news-trading-crypto-2026.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420124921783-1663907103.jpg" class="responsive-img" alt="AI Agent 新闻交易崛起：2026年加密市场的新范式革命">
+                        
+                        <span class="card-title">AI Agent 新闻交易崛起：2026年加密市场的新范式革命</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-04-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/" class="post-category">
+                                    加密投研
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/">
+                        <span class="chip bg-color">加密货币</span>
+                    </a>
+                    
+                    <a href="/tags/Agent/">
+                        <span class="chip bg-color">Agent</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E4%BA%A4%E6%98%93/">
+                        <span class="chip bg-color">AI交易</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%96%B0%E9%97%BB%E4%BA%A4%E6%98%93/">
+                        <span class="chip bg-color">新闻交易</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/zero2agent-programmer-agent-engineering-tutorial-interview-guide.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260415210300480-463984051.jpg" class="responsive-img" alt="zero2Agent：面向大厂面试的Agent工程教程，从概念到生产的完整学习路线">
+                        
+                        <span class="card-title">zero2Agent：面向大厂面试的Agent工程教程，从概念到生产的完整学习路线</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    AI工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI-Agent/">
+                        <span class="chip bg-color">AI Agent</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">大厂面试</span>
+                    </a>
+                    
+                    <a href="/tags/Agent%E5%B7%A5%E7%A8%8B/">
+                        <span class="chip bg-color">Agent工程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

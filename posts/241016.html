@@ -511,6 +511,123 @@
     50%       { transform: scale(1.1); }
 }
 
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
 /* 分割线 */
 .sidebar-divider {
     border: none;
@@ -595,21 +712,30 @@
         <a class="join-group-btn"
            href="https://vlink.cc/tosky?s=C5vWZIpho7"
            target="_blank">
-            🚀 加入 Web3 新人交流群
+            💬 加入 Web3 新人交流群
             <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
         </a>
 
         <hr class="sidebar-divider">
 
         <!-- 快捷链接 -->
         <ul class="sidebar-links">
-            <li>
-                <a href="https://onefly.top/posts/okx-bitcoin-trading-guide.html" target="_blank">
-                    <span class="link-icon">₿</span>
-                    <span class="link-text">比特币购买入门教程</span>
-                    <span class="link-badge">新手必看</span>
-                </a>
-            </li>
             <li>
                 <a href="https://onefly.top/posts/8888.html" target="_blank">
                     <span class="link-icon">🇨🇳</span>

@@ -3718,6 +3718,65 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>最新Parallels破解版 Mac v19.4.0 PD19虚拟机中文版支持M1/M2/M3一键安装激活</title>
+    <url>/posts/24708.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Parallels Desktop 19 for Mac：在 Mac 上无缝运行 Windows</p>
+<p>Parallels Desktop 19 for Mac 是一款强大而简单的软件，让您能在 Mac 上运行 Windows 系统及其应用程序。它已获得 Microsoft 授权，为用户提供超过 200,000 款 Windows 应用，满足工作、开发、学习、测试和游戏需求。</p>
+<p>主要特点：</p>
+<ol>
+<li>简易安装：只需双击即可下载、安装和配置 Windows 11。</li>
+<li>优化性能：针对 macOS Sonoma 进行优化，提供最佳性能和无缝交互。</li>
+<li>增强打印：通过互联网打印协议（IPP）提供增强打印选项。</li>
+<li>完美协同：与 Windows 共享 Mac 的摄像头、麦克风、触控板等硬件。</li>
+<li>灵活视图：选择 Coherence™ 模式隐藏 Windows 桌面，或使用全屏模式。</li>
+<li>文件共享：在 Mac 和 Windows 之间轻松共享和访问文件。</li>
+<li>拖放功能：在 Windows 和 Mac 应用之间拖放文件和图像。</li>
+<li>游戏支持：在 Mac 上畅玩 Windows 专属游戏。</li>
+</ol>
+<p>Parallels Desktop 19 让 macOS 和 Windows 的协作变得简单、强大且无缝，显著提升您的工作效率。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202407/2910984-20240708202508733-468396441.png" style="zoom:50%;"></p>
+<h2 id="安装激活说明"><a href="#安装激活说明" class="headerlink" title="安装激活说明"></a>安装激活说明</h2><p>安装测试于macOS Sonoma 14.3系统，SIP为关闭状态。本激活工具为代码激活，无加密，无任何后门。</p>
+<blockquote>
+<p><strong>1.打开 ParallelsDesktop-19.3.0-54924.dmg ，双击安装开始安装，安装好之后先不要去打开虚拟机或者安装Win系统！</strong></p>
+<p><strong>2.把 PDCARK 文件夹 拖到桌面来，然后进入文件夹里面，根据电脑机型双击 INTEL激活 或ARM激活 开始激活虚拟机即可。</strong></p>
+<p>最新安装说明请参考安装包内的安装说明来操作！</p>
+</blockquote>
+<h2 id="激活必备权限"><a href="#激活必备权限" class="headerlink" title="激活必备权限"></a>激活必备权限</h2><p>1.Xcode Command Line Tools(命令行开发者工具) 必须要先安装才能运行上面的命令，如果没有安装的请在终端运行下面的命令安装！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xcode-select <span class="token parameter variable">--install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.终端机必须有权限</p>
+<blockquote>
+<p>打开“系统偏好设置 — &gt; 隐私与安全性 — &gt; 完全磁盘访问权限 –&gt; 找到“终端” ，可以看到终端后面的开关没有打开，我们打开它，然后会提示输入你的Mac开机密码，输入密码确认即可开启，这个时候可能会提示你退出终端，这个时候要记得点击退出，不然设置无效！</p>
+<p>如果你在 “系统偏好设置 — &gt; 隐私与安全性 — &gt; 完全磁盘访问权限 –&gt; ” 里面没有找到 终端 的选项，那么打开 “访达” — &gt; “应用程序” — &gt; “实用程序” 里面找到 “终端” APP后，直接把它往 “完全磁盘访问权限” 窗口里面拖入即可设置开启选项。</p>
+</blockquote>
+<h2 id="跳过更新提示"><a href="#跳过更新提示" class="headerlink" title="跳过更新提示"></a>跳过更新提示</h2><blockquote>
+<p>如果提示更新的话，点击左上角红色按钮关闭更新提示，在弹出“我们建议安装新的版本。”提示，直接点击“不，使用现有的”，跳过更新。如果没有提示更新就忽略这一步操作！</p>
+</blockquote>
+<h2 id="启动时出现不能启动虚拟机提示？"><a href="#启动时出现不能启动虚拟机提示？" class="headerlink" title="启动时出现不能启动虚拟机提示？"></a>启动时出现不能启动虚拟机提示？</h2><blockquote>
+<p>如果是ARM机型打开PD虚拟机时候一直提示正在启动…解决方法：</p>
+<p>1.首先退出PD虚拟机；</p>
+<p>2.打开访达 – 应用程序 – 找到 Parallels Desktop图标，对着Parallels Desktop 鼠标右键 – 打开，打开即可。</p>
+<p>Parallels Desktop 虚拟机由于临界误差，不能启动虚拟机。解决方法：</p>
+<ol>
+<li>退出 Parallels Desktop。</li>
+<li>打开启动台 – 其他 打开活动监视器(Activity Monitor) ，并确保退出 <em>prl_disp_service</em> 、prl_client_app进程。如果没有退出，请单击<strong>齿轮</strong>图标，然后选择<strong>退出</strong>。</li>
+<li>打开 Parallels Desktop 并启动虚拟机。</li>
+</ol>
+</blockquote>
+<h2 id="如何查看PD虚拟机是否激活成功？"><a href="#如何查看PD虚拟机是否激活成功？" class="headerlink" title="如何查看PD虚拟机是否激活成功？"></a>如何查看PD虚拟机是否激活成功？</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h3><p>打开 Parallels Desktop 后，点击最左上角的菜单：Parallels Desktop -&gt; 关于 Parallels Desktop -&gt; 授权信息：Parallels Desktop已经激活。</p>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h3><p>打开 Parallels Desktop 后，点击最左上角的菜单：Parallels Desktop -&gt; 账户和许可证… -&gt; 激活许可证：永久许可证。</p>
+<p>就是激活成功了。</p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>链接:<a href="https://pan.baidu.com/s/1BFzcJMd1K00YDw5YXABcUA?pwd=74r8">https://pan.baidu.com/s/1BFzcJMd1K00YDw5YXABcUA?pwd=74r8</a><br>提取码:74r8</p>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>破解</tag>
+        <tag>Mac</tag>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SOL ETH Web3土狗打狗棒法：如何在一级市场实力淘金</title>
     <url>/posts/240920.html</url>
     <content><![CDATA[<h2 id="欢迎加入Web3土狗交流群：https-t-me-onefly-sol"><a href="#欢迎加入Web3土狗交流群：https-t-me-onefly-sol" class="headerlink" title="欢迎加入Web3土狗交流群：https://t.me/onefly_sol"></a><strong>欢迎加入Web3土狗交流群：<a href="https://t.me/onefly_sol">https://t.me/onefly_sol</a></strong></h2><h3 id="本文谷歌文档版：惠姐经书"><a href="#本文谷歌文档版：惠姐经书" class="headerlink" title="本文谷歌文档版：惠姐经书"></a><strong>本文谷歌文档版：<a href="https://docs.google.com/document/d/1bL-Gjk56w6UE0npSy3i8e-zblwBTHBCI_L1vCYgzOZM/edit?tab=t.82qm80pigzw2">惠姐经书</a></strong></h3><h2 id="《如何在一级市场里淘金-by-0xmagnolia》"><a href="#《如何在一级市场里淘金-by-0xmagnolia》" class="headerlink" title="《如何在一级市场里淘金  by @0xmagnolia》"></a>《如何在一级市场里淘金  by @0xmagnolia》</h2><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>具体包括以下内容： </p>
@@ -4095,65 +4154,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>chatgpt</tag>
         <tag>美国</tag>
         <tag>微软商店</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最新Parallels破解版 Mac v19.4.0 PD19虚拟机中文版支持M1/M2/M3一键安装激活</title>
-    <url>/posts/24708.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Parallels Desktop 19 for Mac：在 Mac 上无缝运行 Windows</p>
-<p>Parallels Desktop 19 for Mac 是一款强大而简单的软件，让您能在 Mac 上运行 Windows 系统及其应用程序。它已获得 Microsoft 授权，为用户提供超过 200,000 款 Windows 应用，满足工作、开发、学习、测试和游戏需求。</p>
-<p>主要特点：</p>
-<ol>
-<li>简易安装：只需双击即可下载、安装和配置 Windows 11。</li>
-<li>优化性能：针对 macOS Sonoma 进行优化，提供最佳性能和无缝交互。</li>
-<li>增强打印：通过互联网打印协议（IPP）提供增强打印选项。</li>
-<li>完美协同：与 Windows 共享 Mac 的摄像头、麦克风、触控板等硬件。</li>
-<li>灵活视图：选择 Coherence™ 模式隐藏 Windows 桌面，或使用全屏模式。</li>
-<li>文件共享：在 Mac 和 Windows 之间轻松共享和访问文件。</li>
-<li>拖放功能：在 Windows 和 Mac 应用之间拖放文件和图像。</li>
-<li>游戏支持：在 Mac 上畅玩 Windows 专属游戏。</li>
-</ol>
-<p>Parallels Desktop 19 让 macOS 和 Windows 的协作变得简单、强大且无缝，显著提升您的工作效率。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202407/2910984-20240708202508733-468396441.png" style="zoom:50%;"></p>
-<h2 id="安装激活说明"><a href="#安装激活说明" class="headerlink" title="安装激活说明"></a>安装激活说明</h2><p>安装测试于macOS Sonoma 14.3系统，SIP为关闭状态。本激活工具为代码激活，无加密，无任何后门。</p>
-<blockquote>
-<p><strong>1.打开 ParallelsDesktop-19.3.0-54924.dmg ，双击安装开始安装，安装好之后先不要去打开虚拟机或者安装Win系统！</strong></p>
-<p><strong>2.把 PDCARK 文件夹 拖到桌面来，然后进入文件夹里面，根据电脑机型双击 INTEL激活 或ARM激活 开始激活虚拟机即可。</strong></p>
-<p>最新安装说明请参考安装包内的安装说明来操作！</p>
-</blockquote>
-<h2 id="激活必备权限"><a href="#激活必备权限" class="headerlink" title="激活必备权限"></a>激活必备权限</h2><p>1.Xcode Command Line Tools(命令行开发者工具) 必须要先安装才能运行上面的命令，如果没有安装的请在终端运行下面的命令安装！</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xcode-select <span class="token parameter variable">--install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>2.终端机必须有权限</p>
-<blockquote>
-<p>打开“系统偏好设置 — &gt; 隐私与安全性 — &gt; 完全磁盘访问权限 –&gt; 找到“终端” ，可以看到终端后面的开关没有打开，我们打开它，然后会提示输入你的Mac开机密码，输入密码确认即可开启，这个时候可能会提示你退出终端，这个时候要记得点击退出，不然设置无效！</p>
-<p>如果你在 “系统偏好设置 — &gt; 隐私与安全性 — &gt; 完全磁盘访问权限 –&gt; ” 里面没有找到 终端 的选项，那么打开 “访达” — &gt; “应用程序” — &gt; “实用程序” 里面找到 “终端” APP后，直接把它往 “完全磁盘访问权限” 窗口里面拖入即可设置开启选项。</p>
-</blockquote>
-<h2 id="跳过更新提示"><a href="#跳过更新提示" class="headerlink" title="跳过更新提示"></a>跳过更新提示</h2><blockquote>
-<p>如果提示更新的话，点击左上角红色按钮关闭更新提示，在弹出“我们建议安装新的版本。”提示，直接点击“不，使用现有的”，跳过更新。如果没有提示更新就忽略这一步操作！</p>
-</blockquote>
-<h2 id="启动时出现不能启动虚拟机提示？"><a href="#启动时出现不能启动虚拟机提示？" class="headerlink" title="启动时出现不能启动虚拟机提示？"></a>启动时出现不能启动虚拟机提示？</h2><blockquote>
-<p>如果是ARM机型打开PD虚拟机时候一直提示正在启动…解决方法：</p>
-<p>1.首先退出PD虚拟机；</p>
-<p>2.打开访达 – 应用程序 – 找到 Parallels Desktop图标，对着Parallels Desktop 鼠标右键 – 打开，打开即可。</p>
-<p>Parallels Desktop 虚拟机由于临界误差，不能启动虚拟机。解决方法：</p>
-<ol>
-<li>退出 Parallels Desktop。</li>
-<li>打开启动台 – 其他 打开活动监视器(Activity Monitor) ，并确保退出 <em>prl_disp_service</em> 、prl_client_app进程。如果没有退出，请单击<strong>齿轮</strong>图标，然后选择<strong>退出</strong>。</li>
-<li>打开 Parallels Desktop 并启动虚拟机。</li>
-</ol>
-</blockquote>
-<h2 id="如何查看PD虚拟机是否激活成功？"><a href="#如何查看PD虚拟机是否激活成功？" class="headerlink" title="如何查看PD虚拟机是否激活成功？"></a>如何查看PD虚拟机是否激活成功？</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h3><p>打开 Parallels Desktop 后，点击最左上角的菜单：Parallels Desktop -&gt; 关于 Parallels Desktop -&gt; 授权信息：Parallels Desktop已经激活。</p>
-<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h3><p>打开 Parallels Desktop 后，点击最左上角的菜单：Parallels Desktop -&gt; 账户和许可证… -&gt; 激活许可证：永久许可证。</p>
-<p>就是激活成功了。</p>
-<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>链接:<a href="https://pan.baidu.com/s/1BFzcJMd1K00YDw5YXABcUA?pwd=74r8">https://pan.baidu.com/s/1BFzcJMd1K00YDw5YXABcUA?pwd=74r8</a><br>提取码:74r8</p>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>破解</tag>
-        <tag>Mac</tag>
-        <tag>虚拟机</tag>
       </tags>
   </entry>
   <entry>
@@ -4784,6 +4784,79 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
+    <title>MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪</title>
+    <url>/posts/241221.html</url>
+    <content><![CDATA[<h1 id="MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪"><a href="#MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪" class="headerlink" title="MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪"></a>MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1867174974534094875">https://x.com/Shanks_A9z/status/1867174974534094875</a></p>
+<blockquote>
+<p>转载目的仅为方便阅读与收藏</p>
+</blockquote>
+<p>看到本文的有福了，如果你想提升，想在MEME市场中明晰该如何做，而不是被情绪操纵，可以认真的看完本文，看完后应该能让你在交易时清晰不少。本文的方法还是比较面向小白的。 </p>
+<p>本文讲的方法是追踪吸筹的方式之一，优点是十分的简洁高效，缺点是抓不住所有的狗庄和狗庄的所有动向（当然了，能抓住全部几乎不可能的）。这可是我压箱底的绝活之一，今天直接掏出来给你们完全讲解清楚！ 在以具体例子讲解方法前，先介绍所用到的工具及非常重要的Jupiter这个交易工具的功能逻辑。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>ArkHam</strong>：分析资金流向的工具，筛选交易记录的功能很强，地址追踪功能十分好用。链接：<a href="https://intel.arkm.com/">https://intel.arkm.com/</a></p>
+<p><strong>SolScan</strong>：查询资金流向的工具，简洁好用。链接：<a href="https://t.co/GmnEWl17dZ">https://solscan.io</a> </p>
+<p><strong>Cielo</strong>：观察地址工具，尤其是能一键列出相关联地址功能，十分好用。链接：<a href="https://t.co/oVUzCH5c6S">https://app.cielo.finance/feed</a></p>
+<h2 id="Jupiter介绍及其功能逻辑"><a href="#Jupiter介绍及其功能逻辑" class="headerlink" title="Jupiter介绍及其功能逻辑"></a>Jupiter介绍及其功能逻辑</h2><p>Jupiter：是一个去中心化的交易平台，在SOL上十分的常用。有很多功能，比如可以挂单，可使用DCA策略买卖，也可使用VA策略买卖。使用这些策略可以让你不用再一直盯着K线和价格，自动帮你完成操作。实际上，SOL上的一些巨鲸，狗庄都很喜欢用这个工具慢吸货。链接：<a href="https://t.co/q4wDVF7NUE">https://jup.ag/zh-SG</a></p>
+<p>DCA（定投）：固定金额，固定时间买入，不考虑价格波动。 VA（价值平均投资法）：动态调整，可理解为此策略是自动的在低位多买，高位少买，更聪明灵活。</p>
+<p>Jupiter工具使用逻辑（如果看不明白，就理解清楚一点：<strong>使用了Jup的地址，会向Jup的一个固定不变的地址发送手续费</strong>）如图，假设那个主地址就是你自己的地址，这是你在使用Jup时的过程。 </p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221205612337-1393295830.png" alt=""></p>
+<p><strong>以下是Jupiter的VA功能的界面。VA功能非常适合长期慢吸筹</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221205806229-2012334657.png" alt=""></p>
+<h2 id="追踪方法"><a href="#追踪方法" class="headerlink" title="追踪方法"></a>追踪方法</h2><p>现在你知道了，在使用Jupiter时，会向使用者收取手续费。假设手续费是1%，也就是在使用后，会从你的地址里扣除1%的对应操作代币或者SOL，被扣除的会发送给Jupiter的手续费收取地址。</p>
+<p>而且，Jup的手续费收取地址，一直固定不变的只有一个：CpoD6tWAsMDeyvVG2q2rD1JbDY6d4AujnvAn2NdrhZV2</p>
+<p>那么，什么样的人会频繁的使用Jup呢？前面说过，因为Jup很安全，有自动化的优势和科学的策略，很多巨鲸和狗庄会频繁的使用。（因为在玩长期MEME中，为了安全和哪有那么多精力7*24h的盯着代币进行操作）</p>
+<p>然后你是否意识到了什么？没错，我直接查询Jup的手续费地址，筛选对应代币，我不就能看到对应代币下的，所有使用Jup的地址了么？其中肯定就有狗庄和利益相关的巨鲸，范围大大缩小，并且能看的十分清晰。这个方法十分的简洁高效，但同样的，不是适合所有的代币和所有的狗庄。但是可以看到一部分主要的，有了主要的流向，你在长期MEME的交易上就能够游刃有余了。</p>
+<p>以SELFIE（自拍狗）这个几次大幅波动的MEME为例。注：本文仅作讲解用例，非投资建议，dyor。自己不要看了后跑去买还是怎么样的。他是一个洗盘-吸筹-拉高-出货砸盘-吸筹。循环往复的经典强支撑老MEME。SELFIE的CA：9WPTUkh8fKuCnepRWoPYLH3aK9gSjPHFDenBq2X1Czdp</p>
+<p>OK，明白这些（不明白也没事，跟着我实践就逐渐理解了）后，实操如下：</p>
+<p><strong>1、打开ArkHam，在上方搜索栏输入Jup手续费收取地址：</strong></p>
+<p>CpoD6tWAsMDeyvVG2q2rD1JbDY6d4AujnvAn2NdrhZV2</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210033320-508502156.png" alt=""></p>
+<p><strong>2、 进入后即可看到所有的Jup手续费记录。记得关闭该条件。</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210051179-1937675371.png" alt=""></p>
+<p><strong>3、ArkHam强大的地方来了，能够进行筛选，并看到对应代币的手续费记录。筛选SELFIE的CA并点击。</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210117364-423179504.png" alt=""></p>
+<p>4、进入筛选后的界面，你就能看到在SELFIE这个代币上，使用Jup的所有家伙的记录和地址了。点击时间左边的那个时钟图标，能看到具体的时间。这个页面展示的信息的意思是：黄框内的地址向Jup的手续费收取地址，发送手续费的交易记录。非常的清晰，全列出来了，而且<strong>其中绝对有狗庄和与狗庄有联系的巨鲸地址。</strong></p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210129331-1353578309.png" alt=""></p>
+<p>5、有了这些记录后，去看看SELFIE的K线，由于其时间很长，切换的日线来看。目的是找到疑似吸筹的时间点。如图，在蓝框的位置能看到，价格一直没有跌破过，与前低基本持平。从止跌的起始日期，能确立是在<strong>11月21号</strong>开始进入了吸筹并进一步磨人洗盘的阶段。 </p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210157837-1706431241.png" alt=""></p>
+<p>6、明确了时间点后，回到ArkHam，找寻确立的时间段内的交易记录。在翻页查看的过程中，着重看哪些地址出现的频率异常的高，意味着使用Jup的次数很多。这里就举一个巨鲸的例子，在翻页查看后，会发现有一个地址：8KqyquzJhcxv5iWo2AZstVM59meU1EdVTLnfqqm4qM3W。在11/29日前后两天，给Jup地址发送手续费的次数非常非常的多，交易记录占了十几页。那么就需要重点查看他了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210231535-2049871991.png" alt=""></p>
+<p>7、按住Ctrl+左键点击该地址，能另起一个页面单独看他的记录。看时间倒序列表，显示出他使用Jup的第一笔记录。第一笔记录的意思就是，这个主地址开始使用Jup开始吸筹了，数量为200个SOL，随后开始吸筹，将这200SOL发送给了此次吸筹过程建立的中转地址。200SOL，这家伙，真是大手笔了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210436481-2017082028.png" alt=""></p>
+<p>8、复制他的Jup中转地址8KqyquzJhcxv5iWo2AZstVM59meU1EdVTLnfqqm4qM3W，去solscan搜索，然后点击Transfers（转移记录），就能看到究竟干了些什么。在11/29号，低位吸了4万刀的SELFIE。如图是使用Jup的一次吸筹过程。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210507090-528575538.png" alt=""></p>
+<p>9、看到记录后，直接去查他的主地址</p>
+<p>Ep9kruaFMzC85cZGtnDtcKaVQW6FtarYHgfjX6DhLPsE。能看到，他居然是持有大几十万刀的GIGA、Ai16z、PopCat等的巨鲸。地址总价值超400多万刀。就只是这个地址就在低位慢吸了4万刀的SELFIE，结合他持有的其他代币，耐人寻味。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210546909-100473920.png" alt=""></p>
+<p>10、至此，你已经精准迅速的抓住了一个在吸筹的家伙，而且是个超级巨鲸地址。他在那个位置，那个时间点吸筹，你该如何做，想必已经有了方向吧。如想继续追查这个地址的关联地址，去Cielo搜索该地址，并点击Related Wallets（相关地址）就能看到所有与该地址有着直接资金来源的其他地址了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210608174-187602122.png" alt=""></p>
+<p>11、同时，在看了这个方法后，应该解答你很多很多的疑惑。比如，你在GMGN上看交易记录，能看到有的后面有一个机器人标识，以前你是否根本不清楚这是什么意思？会用这个方法后，你就明白了，这不就是Jup的购买机器人嘛，直接交易记录中筛选出来看，也能直观的看到这些隐藏起来的巨鲸地址在做什么了，如图（喜欢藏是吧）</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210637978-1448716685.png" alt=""></p>
+<p>12、经过这一次的实操后，你抓住了一个吸筹的家伙。而且这只是其中的一个地址而已。你再继续这个方法查找吸筹的地址们，整合观察。那你就能非常清晰的看到这个代币上主要资金的流向了。该不该格局，要不要卖，你就清晰了。</p>
+<h2 id="结言"><a href="#结言" class="headerlink" title="结言"></a>结言</h2><p>本文讲的方法是追踪吸筹的十分简单有效的方式。但是此方法抓不住所有的狗庄，但是能高效地抓到其中一部分。 </p>
+<p>抓到后，你能明白一个信息：有哪些地址在低位吸筹，吸了多少。有了这些具体切实的参考，玩这种长期MEME时，应该不再迷茫了，该如何做，你自己应该有了答案。如果想深入调查，使用Cielo和ArkHam的地址追踪器是非常好用的。 </p>
+<p>哦对了，你是不是以为我教完了，没活了？NO NO NO，我还有压箱底的绝活。这里剧透下两篇的名称，点个关注，敬请期待~ </p>
+<p>MEME市场擒龙术四-查出指定一人的全部地址（如AnSem的全部地址）</p>
+<p><strong>MEME市场擒龙术五-庄家操盘MEME全流程举例详解</strong> </p>
+<p>还有还有，这擒龙术二还有第二部分：<strong>擒龙术二：2.拉盘及砸盘追踪（判别大概何时，以何种方式拉盘-何时，以何种方式砸盘）</strong> </p>
+<p>下一次你们想先看哪一篇？可以在评论区告诉我。 本文全部为我原创，如引用请注明是我的文章。</p>
+<blockquote>
+<p>已在文章开头注明来源：<a href="https://x.com/Shanks_A9z">https://x.com/Shanks_A9z</a> </p>
+</blockquote>
+<p>哦对了，最后的最后，能看到这的都是认真的人。 </p>
+<p>提醒一下，文中举例的Jup的手续费收取地址是Jupiter的DCA功能的手续费收取地址。</p>
+<p>举一反三下，可以自己找找Jupiter的VA功能的手续费收取地址是哪个哦，或许使用VA策略的会更巧一些。 </p>
+<p>在这里我就不直接贴出了，稍微费点心思找找，或者直接自己使用VA，然后观察自己的地址有哪些记录。</p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>sol</tag>
+        <tag>Web3</tag>
+        <tag>meme</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MEME市场擒龙术（四）：庄家坐庄全流程举例详解</title>
     <url>/posts/241231.html</url>
     <content><![CDATA[<h1 id="MEME市场擒龙术（四）：庄家坐庄全流程举例详解"><a href="#MEME市场擒龙术（四）：庄家坐庄全流程举例详解" class="headerlink" title="MEME市场擒龙术（四）：庄家坐庄全流程举例详解"></a>MEME市场擒龙术（四）：庄家坐庄全流程举例详解</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1872232952962457643">https://x.com/Shanks_A9z/status/1872232952962457643</a></p>
@@ -4899,79 +4972,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
 <h2 id="5-市场热点盘（高风险也有可能高收益）"><a href="#5-市场热点盘（高风险也有可能高收益）" class="headerlink" title="5.市场热点盘（高风险也有可能高收益）"></a>5.市场热点盘（高风险也有可能高收益）</h2><p>马斯克/trump/x发的推里面含有的单词，新闻上线出现的币名，电影出现的币名，看起来稍微meme的，都会有人去投机炒作，如果被野庄看上，可能会有高收益。</p>
 <h2 id="6-叙事盘（可能会有抄不完的底）"><a href="#6-叙事盘（可能会有抄不完的底）" class="headerlink" title="6.叙事盘（可能会有抄不完的底）"></a>6.叙事盘（可能会有抄不完的底）</h2><p>主要是玩二段，即便是优质代币，也总会有部分获利者选择离场，导致价格出现回调。但如果项目的叙事足够强，估值仍有上升空间，那么回调后往往会出现第二波上涨。结合K线走势和估值水平，判断是否值得入场。</p>
 <h2 id="7-新概念-新台子（盈亏比高-信息获取难）"><a href="#7-新概念-新台子（盈亏比高-信息获取难）" class="headerlink" title="7.新概念/新台子（盈亏比高 信息获取难）"></a>7.新概念/新台子（盈亏比高 信息获取难）</h2><p>拥抱新概念，新的东西总是会有人踏空，属于是蓝海市场，一旦有人涌入就是增量资金，高盈亏比，对信息的要求较高。</p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>sol</tag>
-        <tag>Web3</tag>
-        <tag>meme</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪</title>
-    <url>/posts/241221.html</url>
-    <content><![CDATA[<h1 id="MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪"><a href="#MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪" class="headerlink" title="MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪"></a>MEME市场擒龙术（二）：如何具体的找“庄”——吸筹追踪</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1867174974534094875">https://x.com/Shanks_A9z/status/1867174974534094875</a></p>
-<blockquote>
-<p>转载目的仅为方便阅读与收藏</p>
-</blockquote>
-<p>看到本文的有福了，如果你想提升，想在MEME市场中明晰该如何做，而不是被情绪操纵，可以认真的看完本文，看完后应该能让你在交易时清晰不少。本文的方法还是比较面向小白的。 </p>
-<p>本文讲的方法是追踪吸筹的方式之一，优点是十分的简洁高效，缺点是抓不住所有的狗庄和狗庄的所有动向（当然了，能抓住全部几乎不可能的）。这可是我压箱底的绝活之一，今天直接掏出来给你们完全讲解清楚！ 在以具体例子讲解方法前，先介绍所用到的工具及非常重要的Jupiter这个交易工具的功能逻辑。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>ArkHam</strong>：分析资金流向的工具，筛选交易记录的功能很强，地址追踪功能十分好用。链接：<a href="https://intel.arkm.com/">https://intel.arkm.com/</a></p>
-<p><strong>SolScan</strong>：查询资金流向的工具，简洁好用。链接：<a href="https://t.co/GmnEWl17dZ">https://solscan.io</a> </p>
-<p><strong>Cielo</strong>：观察地址工具，尤其是能一键列出相关联地址功能，十分好用。链接：<a href="https://t.co/oVUzCH5c6S">https://app.cielo.finance/feed</a></p>
-<h2 id="Jupiter介绍及其功能逻辑"><a href="#Jupiter介绍及其功能逻辑" class="headerlink" title="Jupiter介绍及其功能逻辑"></a>Jupiter介绍及其功能逻辑</h2><p>Jupiter：是一个去中心化的交易平台，在SOL上十分的常用。有很多功能，比如可以挂单，可使用DCA策略买卖，也可使用VA策略买卖。使用这些策略可以让你不用再一直盯着K线和价格，自动帮你完成操作。实际上，SOL上的一些巨鲸，狗庄都很喜欢用这个工具慢吸货。链接：<a href="https://t.co/q4wDVF7NUE">https://jup.ag/zh-SG</a></p>
-<p>DCA（定投）：固定金额，固定时间买入，不考虑价格波动。 VA（价值平均投资法）：动态调整，可理解为此策略是自动的在低位多买，高位少买，更聪明灵活。</p>
-<p>Jupiter工具使用逻辑（如果看不明白，就理解清楚一点：<strong>使用了Jup的地址，会向Jup的一个固定不变的地址发送手续费</strong>）如图，假设那个主地址就是你自己的地址，这是你在使用Jup时的过程。 </p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221205612337-1393295830.png" alt=""></p>
-<p><strong>以下是Jupiter的VA功能的界面。VA功能非常适合长期慢吸筹</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221205806229-2012334657.png" alt=""></p>
-<h2 id="追踪方法"><a href="#追踪方法" class="headerlink" title="追踪方法"></a>追踪方法</h2><p>现在你知道了，在使用Jupiter时，会向使用者收取手续费。假设手续费是1%，也就是在使用后，会从你的地址里扣除1%的对应操作代币或者SOL，被扣除的会发送给Jupiter的手续费收取地址。</p>
-<p>而且，Jup的手续费收取地址，一直固定不变的只有一个：CpoD6tWAsMDeyvVG2q2rD1JbDY6d4AujnvAn2NdrhZV2</p>
-<p>那么，什么样的人会频繁的使用Jup呢？前面说过，因为Jup很安全，有自动化的优势和科学的策略，很多巨鲸和狗庄会频繁的使用。（因为在玩长期MEME中，为了安全和哪有那么多精力7*24h的盯着代币进行操作）</p>
-<p>然后你是否意识到了什么？没错，我直接查询Jup的手续费地址，筛选对应代币，我不就能看到对应代币下的，所有使用Jup的地址了么？其中肯定就有狗庄和利益相关的巨鲸，范围大大缩小，并且能看的十分清晰。这个方法十分的简洁高效，但同样的，不是适合所有的代币和所有的狗庄。但是可以看到一部分主要的，有了主要的流向，你在长期MEME的交易上就能够游刃有余了。</p>
-<p>以SELFIE（自拍狗）这个几次大幅波动的MEME为例。注：本文仅作讲解用例，非投资建议，dyor。自己不要看了后跑去买还是怎么样的。他是一个洗盘-吸筹-拉高-出货砸盘-吸筹。循环往复的经典强支撑老MEME。SELFIE的CA：9WPTUkh8fKuCnepRWoPYLH3aK9gSjPHFDenBq2X1Czdp</p>
-<p>OK，明白这些（不明白也没事，跟着我实践就逐渐理解了）后，实操如下：</p>
-<p><strong>1、打开ArkHam，在上方搜索栏输入Jup手续费收取地址：</strong></p>
-<p>CpoD6tWAsMDeyvVG2q2rD1JbDY6d4AujnvAn2NdrhZV2</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210033320-508502156.png" alt=""></p>
-<p><strong>2、 进入后即可看到所有的Jup手续费记录。记得关闭该条件。</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210051179-1937675371.png" alt=""></p>
-<p><strong>3、ArkHam强大的地方来了，能够进行筛选，并看到对应代币的手续费记录。筛选SELFIE的CA并点击。</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210117364-423179504.png" alt=""></p>
-<p>4、进入筛选后的界面，你就能看到在SELFIE这个代币上，使用Jup的所有家伙的记录和地址了。点击时间左边的那个时钟图标，能看到具体的时间。这个页面展示的信息的意思是：黄框内的地址向Jup的手续费收取地址，发送手续费的交易记录。非常的清晰，全列出来了，而且<strong>其中绝对有狗庄和与狗庄有联系的巨鲸地址。</strong></p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210129331-1353578309.png" alt=""></p>
-<p>5、有了这些记录后，去看看SELFIE的K线，由于其时间很长，切换的日线来看。目的是找到疑似吸筹的时间点。如图，在蓝框的位置能看到，价格一直没有跌破过，与前低基本持平。从止跌的起始日期，能确立是在<strong>11月21号</strong>开始进入了吸筹并进一步磨人洗盘的阶段。 </p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210157837-1706431241.png" alt=""></p>
-<p>6、明确了时间点后，回到ArkHam，找寻确立的时间段内的交易记录。在翻页查看的过程中，着重看哪些地址出现的频率异常的高，意味着使用Jup的次数很多。这里就举一个巨鲸的例子，在翻页查看后，会发现有一个地址：8KqyquzJhcxv5iWo2AZstVM59meU1EdVTLnfqqm4qM3W。在11/29日前后两天，给Jup地址发送手续费的次数非常非常的多，交易记录占了十几页。那么就需要重点查看他了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210231535-2049871991.png" alt=""></p>
-<p>7、按住Ctrl+左键点击该地址，能另起一个页面单独看他的记录。看时间倒序列表，显示出他使用Jup的第一笔记录。第一笔记录的意思就是，这个主地址开始使用Jup开始吸筹了，数量为200个SOL，随后开始吸筹，将这200SOL发送给了此次吸筹过程建立的中转地址。200SOL，这家伙，真是大手笔了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210436481-2017082028.png" alt=""></p>
-<p>8、复制他的Jup中转地址8KqyquzJhcxv5iWo2AZstVM59meU1EdVTLnfqqm4qM3W，去solscan搜索，然后点击Transfers（转移记录），就能看到究竟干了些什么。在11/29号，低位吸了4万刀的SELFIE。如图是使用Jup的一次吸筹过程。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210507090-528575538.png" alt=""></p>
-<p>9、看到记录后，直接去查他的主地址</p>
-<p>Ep9kruaFMzC85cZGtnDtcKaVQW6FtarYHgfjX6DhLPsE。能看到，他居然是持有大几十万刀的GIGA、Ai16z、PopCat等的巨鲸。地址总价值超400多万刀。就只是这个地址就在低位慢吸了4万刀的SELFIE，结合他持有的其他代币，耐人寻味。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210546909-100473920.png" alt=""></p>
-<p>10、至此，你已经精准迅速的抓住了一个在吸筹的家伙，而且是个超级巨鲸地址。他在那个位置，那个时间点吸筹，你该如何做，想必已经有了方向吧。如想继续追查这个地址的关联地址，去Cielo搜索该地址，并点击Related Wallets（相关地址）就能看到所有与该地址有着直接资金来源的其他地址了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210608174-187602122.png" alt=""></p>
-<p>11、同时，在看了这个方法后，应该解答你很多很多的疑惑。比如，你在GMGN上看交易记录，能看到有的后面有一个机器人标识，以前你是否根本不清楚这是什么意思？会用这个方法后，你就明白了，这不就是Jup的购买机器人嘛，直接交易记录中筛选出来看，也能直观的看到这些隐藏起来的巨鲸地址在做什么了，如图（喜欢藏是吧）</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241221210637978-1448716685.png" alt=""></p>
-<p>12、经过这一次的实操后，你抓住了一个吸筹的家伙。而且这只是其中的一个地址而已。你再继续这个方法查找吸筹的地址们，整合观察。那你就能非常清晰的看到这个代币上主要资金的流向了。该不该格局，要不要卖，你就清晰了。</p>
-<h2 id="结言"><a href="#结言" class="headerlink" title="结言"></a>结言</h2><p>本文讲的方法是追踪吸筹的十分简单有效的方式。但是此方法抓不住所有的狗庄，但是能高效地抓到其中一部分。 </p>
-<p>抓到后，你能明白一个信息：有哪些地址在低位吸筹，吸了多少。有了这些具体切实的参考，玩这种长期MEME时，应该不再迷茫了，该如何做，你自己应该有了答案。如果想深入调查，使用Cielo和ArkHam的地址追踪器是非常好用的。 </p>
-<p>哦对了，你是不是以为我教完了，没活了？NO NO NO，我还有压箱底的绝活。这里剧透下两篇的名称，点个关注，敬请期待~ </p>
-<p>MEME市场擒龙术四-查出指定一人的全部地址（如AnSem的全部地址）</p>
-<p><strong>MEME市场擒龙术五-庄家操盘MEME全流程举例详解</strong> </p>
-<p>还有还有，这擒龙术二还有第二部分：<strong>擒龙术二：2.拉盘及砸盘追踪（判别大概何时，以何种方式拉盘-何时，以何种方式砸盘）</strong> </p>
-<p>下一次你们想先看哪一篇？可以在评论区告诉我。 本文全部为我原创，如引用请注明是我的文章。</p>
-<blockquote>
-<p>已在文章开头注明来源：<a href="https://x.com/Shanks_A9z">https://x.com/Shanks_A9z</a> </p>
-</blockquote>
-<p>哦对了，最后的最后，能看到这的都是认真的人。 </p>
-<p>提醒一下，文中举例的Jup的手续费收取地址是Jupiter的DCA功能的手续费收取地址。</p>
-<p>举一反三下，可以自己找找Jupiter的VA功能的手续费收取地址是哪个哦，或许使用VA策略的会更巧一些。 </p>
-<p>在这里我就不直接贴出了，稍微费点心思找找，或者直接自己使用VA，然后观察自己的地址有哪些记录。</p>
 ]]></content>
       <categories>
         <category>Web3</category>
@@ -8741,6 +8741,169 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
+    <title>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</title>
+    <url>/posts/260212.html</url>
+    <content><![CDATA[<h1 id="2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？"><a href="#2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？" class="headerlink" title="2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？"></a>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</h1><p>AI Agent开发框架已从简单的RAG管道进化到多代理协作、状态管理和工具集成的复杂生态。2026年初，社区围绕”最优Agent框架”的讨论持续升温。本文基于X（Twitter）上AI从业者和开发者的最新分享，梳理主流框架的定位、优劣和适用场景，帮你做出明智的选型决策。</p>
+<h2 id="2026年Agent框架的核心趋势"><a href="#2026年Agent框架的核心趋势" class="headerlink" title="2026年Agent框架的核心趋势"></a>2026年Agent框架的核心趋势</h2><p>从社区讨论中可以提炼出几个关键趋势：</p>
+<ul>
+<li><strong>从单代理到多代理协作</strong>：框架需要支持多个Agent角色分工、协同完成复杂任务</li>
+<li><strong>状态管理与长期记忆</strong>：Agent不再是无状态的一次性调用，需要持久化上下文</li>
+<li><strong>人类干预（Human-in-the-loop）</strong>：生产级Agent系统必须支持人类审核和介入</li>
+<li><strong>自托管与隐私</strong>：越来越多开发者倾向于本地部署，掌控数据主权</li>
+<li><strong>工具集成深度</strong>：框架与外部工具、API的集成能力成为核心竞争力</li>
+</ul>
+<blockquote>
+<p>没有单一的”最优”框架——选择取决于你的用例是企业自动化、软件开发还是多代理协作。</p>
+</blockquote>
+<h2 id="主流框架深度对比"><a href="#主流框架深度对比" class="headerlink" title="主流框架深度对比"></a>主流框架深度对比</h2><h3 id="LangGraph（LangChain生态）"><a href="#LangGraph（LangChain生态）" class="headerlink" title="LangGraph（LangChain生态）"></a>LangGraph（LangChain生态）</h3><p><strong>核心优势</strong>：图基状态管理、循环工作流、细粒度控制和内存持久化，支持多代理和人类干预。</p>
+<p><strong>适用场景</strong>：复杂企业系统、动态数据共享、长期运行任务。</p>
+<p><strong>局限</strong>：学习曲线陡峭，需要较多开发经验。</p>
+<p><strong>社区评价</strong>：被多位开发者视为”控制层”的首选，尤其在需要精细状态管理的场景下。@pvergadia 的框架备忘单将其定位为”控制和状态”的代表，@BharukaShraddha 建议将其与n8n互补使用——n8n处理工具集成，LangGraph管理复杂推理。</p>
+<p><strong>推荐指数</strong>：⭐⭐⭐⭐⭐</p>
+<hr>
+<h3 id="CrewAI"><a href="#CrewAI" class="headerlink" title="CrewAI"></a>CrewAI</h3><p><strong>核心优势</strong>：角色基协作、进程管理、多代理团队模拟，直观的输出链式任务编排。</p>
+<p><strong>适用场景</strong>：内容管道、市场研究、业务逻辑自动化。</p>
+<p><strong>局限</strong>：更适合进程驱动的场景，在复杂推理上不如LangGraph灵活。</p>
+<p><strong>社区评价</strong>：常与LangGraph并提，作为”协作首选”。@Khulood_Almani 强调CrewAI/AutoGen在2026 Agentic AI栈中承担多代理协作层的角色。</p>
+<p><strong>推荐指数</strong>：⭐⭐⭐⭐⭐</p>
+<hr>
+<h3 id="Claude-Agent-SDK（Anthropic）"><a href="#Claude-Agent-SDK（Anthropic）" class="headerlink" title="Claude Agent SDK（Anthropic）"></a>Claude Agent SDK（Anthropic）</h3><p><strong>核心优势</strong>：内置代理循环（agent loop）、丰富的工具集成（bash、文件操作、web搜索、代码编辑）、多代理团队支持，易于Python/TypeScript集成。</p>
+<p><strong>适用场景</strong>：编码代理、自动化工作流、非编码任务（如浏览器代理）。</p>
+<p><strong>局限</strong>：非开源，内存占用较高，问题修复依赖官方。</p>
+<p><strong>社区评价</strong>：两极分化。@skull8888888888 称其”强大且被低估，可重现整个初创公司功能”；@_aj 测试多种框架后认为Claude Agent SDK胜过LangChain和自定义循环。但 @geek_bing 警告不要盲目选择——非开源性质可能带来维护难题，建议考虑AI SDK、Mastra AI或LangGraph替代。</p>
+<p><strong>下载量数据</strong>：周下载从10万增长到500万（5倍增长），势头强劲。</p>
+<p><strong>推荐指数</strong>：⭐⭐⭐⭐</p>
+<hr>
+<h3 id="AutoGen（Microsoft生态）"><a href="#AutoGen（Microsoft生态）" class="headerlink" title="AutoGen（Microsoft生态）"></a>AutoGen（Microsoft生态）</h3><p><strong>核心优势</strong>：代理间对话、迭代推理、代码执行与测试，灵活的协作问题解决。</p>
+<p><strong>适用场景</strong>：交互助手、Bug修复、知识工作。</p>
+<p><strong>局限</strong>：依赖Microsoft工具链，较少强调视觉集成。</p>
+<p><strong>推荐指数</strong>：⭐⭐⭐⭐</p>
+<hr>
+<h3 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h3><p><strong>核心优势</strong>：SOP集成、端到端软件自动化（PRD → 设计 → 代码仓库）。</p>
+<p><strong>适用场景</strong>：产品构建、软件生命周期自动化。</p>
+<p><strong>局限</strong>：焦点较窄，主要面向软件开发，不适合通用自动化。</p>
+<p><strong>推荐指数</strong>：⭐⭐⭐</p>
+<hr>
+<h3 id="n8n"><a href="#n8n" class="headerlink" title="n8n"></a>n8n</h3><p><strong>核心优势</strong>：视觉化构建、无/低代码集成700+工具、业务自动化友好。</p>
+<p><strong>适用场景</strong>：工具连接、客户支持、快速部署。</p>
+<p><strong>局限</strong>：缺乏深度推理能力，需与LangGraph等框架结合使用。</p>
+<p><strong>推荐指数</strong>：⭐⭐⭐（作为互补工具）</p>
+<hr>
+<h3 id="新兴选手：OpenClaw-amp-Agent0ai"><a href="#新兴选手：OpenClaw-amp-Agent0ai" class="headerlink" title="新兴选手：OpenClaw &amp; Agent0ai"></a>新兴选手：OpenClaw &amp; Agent0ai</h3><ul>
+<li><strong>OpenClaw</strong>：自托管、本地运行、安全控制，强调隐私和数据主权。@sairahulxGTM 分享其作为自托管代理的日常使用经验，实现5x效率提升。2026年新兴推荐。</li>
+<li><strong>Agent0ai</strong>：被 @unrev 推荐为”最versatile、私有和capable的框架”，但社区验证较少，需进一步观察。</li>
+</ul>
+<h2 id="框架选型速查表"><a href="#框架选型速查表" class="headerlink" title="框架选型速查表"></a>框架选型速查表</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>你的需求</th>
+<th>推荐框架</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>复杂企业系统，需要精细状态控制</td>
+<td><strong>LangGraph</strong></td>
+</tr>
+<tr>
+<td>多代理角色协作，内容/业务管道</td>
+<td><strong>CrewAI</strong></td>
+</tr>
+<tr>
+<td>快速构建编码代理/自动化工作流</td>
+<td><strong>Claude Agent SDK</strong></td>
+</tr>
+<tr>
+<td>代理间对话和迭代推理</td>
+<td><strong>AutoGen</strong></td>
+</tr>
+<tr>
+<td>端到端软件自动化</td>
+<td><strong>MetaGPT</strong></td>
+</tr>
+<tr>
+<td>无代码业务自动化+工具集成</td>
+<td><strong>n8n + LangGraph</strong></td>
+</tr>
+<tr>
+<td>自托管、隐私优先</td>
+<td><strong>OpenClaw</strong></td>
+</tr>
+<tr>
+<td>需要开源灵活性</td>
+<td><strong>LangGraph</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="SDK下载量趋势（2026年初）"><a href="#SDK下载量趋势（2026年初）" class="headerlink" title="SDK下载量趋势（2026年初）"></a>SDK下载量趋势（2026年初）</h2><p>从周下载量数据可以看出各框架的市场热度：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>周下载量</th>
+<th>增长倍数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vercel AI SDK</td>
+<td>650万</td>
+<td>6.5x</td>
+</tr>
+<tr>
+<td>Claude Agent SDK</td>
+<td>500万</td>
+<td>5x</td>
+</tr>
+<tr>
+<td>Google Gemini SDK</td>
+<td>470万</td>
+<td>2350x</td>
+</tr>
+<tr>
+<td>LangChain</td>
+<td>150万</td>
+<td>2x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>Vercel AI SDK下载量最高但偏向Web开发场景；Google Gemini SDK增长最猛但生态相对封闭；Claude Agent SDK在代理自治能力上更专注；LangChain/LangGraph在自定义和开源上保持优势。</p>
+</blockquote>
+<h2 id="实战建议：如何选择你的Agent栈"><a href="#实战建议：如何选择你的Agent栈" class="headerlink" title="实战建议：如何选择你的Agent栈"></a>实战建议：如何选择你的Agent栈</h2><h3 id="1-明确你的核心用例"><a href="#1-明确你的核心用例" class="headerlink" title="1. 明确你的核心用例"></a>1. 明确你的核心用例</h3><p>不要追求”最强”框架，而是找到”最适合”的：</p>
+<ul>
+<li><strong>如果你做企业级应用</strong>：LangGraph + CrewAI组合栈</li>
+<li><strong>如果你做编码辅助工具</strong>：Claude Agent SDK</li>
+<li><strong>如果你做业务流程自动化</strong>：n8n + LangGraph</li>
+<li><strong>如果你注重隐私和自托管</strong>：OpenClaw</li>
+</ul>
+<h3 id="2-考虑组合使用"><a href="#2-考虑组合使用" class="headerlink" title="2. 考虑组合使用"></a>2. 考虑组合使用</h3><p>2026年的趋势是”组合栈”而非单一框架：</p>
+<ul>
+<li><strong>LangGraph</strong>负责状态管理和推理控制</li>
+<li><strong>CrewAI</strong>负责多代理协作编排</li>
+<li><strong>n8n</strong>负责外部工具集成</li>
+<li><strong>Claude Agent SDK</strong>负责代码执行和任务自动化</li>
+</ul>
+<h3 id="3-关注开源-vs-闭源的权衡"><a href="#3-关注开源-vs-闭源的权衡" class="headerlink" title="3. 关注开源 vs 闭源的权衡"></a>3. 关注开源 vs 闭源的权衡</h3><p>@geek_bing 的提醒值得重视：闭源框架（如Claude Agent SDK）虽然上手快，但在遇到内存问题或Bug时完全依赖官方修复。如果你的项目需要长期维护和深度定制，开源方案（LangGraph、Mastra AI）可能更稳妥。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>2026年的AI Agent框架生态正在快速成熟。<strong>LangGraph</strong>凭借其图基状态管理和开源灵活性，仍然是通用场景的首选；<strong>Claude Agent SDK</strong>以其强大的代理循环和快速增长的社区，成为编码代理领域的有力竞争者；<strong>CrewAI</strong>则在多代理协作上表现突出。</p>
+<p>没有银弹，最佳策略是根据具体需求测试组合栈。建议持续关注X上的社区讨论（搜索”AI agent frameworks 2026”），以及时了解框架的最新进展和实战经验。</p>
+<hr>
+<p><em>本文内容基于X（Twitter）社区2025年底至2026年初的公开讨论整理，引用了 @Khulood_Almani、@pvergadia、@BharukaShraddha、@andreihasna、@geek_bing、@omarsar0 等开发者的观点。</em></p>
+]]></content>
+      <categories>
+        <category>AI工具</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>LangGraph</tag>
+        <tag>Claude Agent SDK</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</title>
     <url>/posts/okx-2026-spring-festival-collect-five-blessings-guide.html</url>
     <content><![CDATA[<h1 id="OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"><a href="#OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤" class="headerlink" title="OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"></a>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</h1><blockquote>
@@ -9076,169 +9239,6 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
       </tags>
   </entry>
   <entry>
-    <title>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</title>
-    <url>/posts/260212.html</url>
-    <content><![CDATA[<h1 id="2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？"><a href="#2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？" class="headerlink" title="2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？"></a>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</h1><p>AI Agent开发框架已从简单的RAG管道进化到多代理协作、状态管理和工具集成的复杂生态。2026年初，社区围绕”最优Agent框架”的讨论持续升温。本文基于X（Twitter）上AI从业者和开发者的最新分享，梳理主流框架的定位、优劣和适用场景，帮你做出明智的选型决策。</p>
-<h2 id="2026年Agent框架的核心趋势"><a href="#2026年Agent框架的核心趋势" class="headerlink" title="2026年Agent框架的核心趋势"></a>2026年Agent框架的核心趋势</h2><p>从社区讨论中可以提炼出几个关键趋势：</p>
-<ul>
-<li><strong>从单代理到多代理协作</strong>：框架需要支持多个Agent角色分工、协同完成复杂任务</li>
-<li><strong>状态管理与长期记忆</strong>：Agent不再是无状态的一次性调用，需要持久化上下文</li>
-<li><strong>人类干预（Human-in-the-loop）</strong>：生产级Agent系统必须支持人类审核和介入</li>
-<li><strong>自托管与隐私</strong>：越来越多开发者倾向于本地部署，掌控数据主权</li>
-<li><strong>工具集成深度</strong>：框架与外部工具、API的集成能力成为核心竞争力</li>
-</ul>
-<blockquote>
-<p>没有单一的”最优”框架——选择取决于你的用例是企业自动化、软件开发还是多代理协作。</p>
-</blockquote>
-<h2 id="主流框架深度对比"><a href="#主流框架深度对比" class="headerlink" title="主流框架深度对比"></a>主流框架深度对比</h2><h3 id="LangGraph（LangChain生态）"><a href="#LangGraph（LangChain生态）" class="headerlink" title="LangGraph（LangChain生态）"></a>LangGraph（LangChain生态）</h3><p><strong>核心优势</strong>：图基状态管理、循环工作流、细粒度控制和内存持久化，支持多代理和人类干预。</p>
-<p><strong>适用场景</strong>：复杂企业系统、动态数据共享、长期运行任务。</p>
-<p><strong>局限</strong>：学习曲线陡峭，需要较多开发经验。</p>
-<p><strong>社区评价</strong>：被多位开发者视为”控制层”的首选，尤其在需要精细状态管理的场景下。@pvergadia 的框架备忘单将其定位为”控制和状态”的代表，@BharukaShraddha 建议将其与n8n互补使用——n8n处理工具集成，LangGraph管理复杂推理。</p>
-<p><strong>推荐指数</strong>：⭐⭐⭐⭐⭐</p>
-<hr>
-<h3 id="CrewAI"><a href="#CrewAI" class="headerlink" title="CrewAI"></a>CrewAI</h3><p><strong>核心优势</strong>：角色基协作、进程管理、多代理团队模拟，直观的输出链式任务编排。</p>
-<p><strong>适用场景</strong>：内容管道、市场研究、业务逻辑自动化。</p>
-<p><strong>局限</strong>：更适合进程驱动的场景，在复杂推理上不如LangGraph灵活。</p>
-<p><strong>社区评价</strong>：常与LangGraph并提，作为”协作首选”。@Khulood_Almani 强调CrewAI/AutoGen在2026 Agentic AI栈中承担多代理协作层的角色。</p>
-<p><strong>推荐指数</strong>：⭐⭐⭐⭐⭐</p>
-<hr>
-<h3 id="Claude-Agent-SDK（Anthropic）"><a href="#Claude-Agent-SDK（Anthropic）" class="headerlink" title="Claude Agent SDK（Anthropic）"></a>Claude Agent SDK（Anthropic）</h3><p><strong>核心优势</strong>：内置代理循环（agent loop）、丰富的工具集成（bash、文件操作、web搜索、代码编辑）、多代理团队支持，易于Python/TypeScript集成。</p>
-<p><strong>适用场景</strong>：编码代理、自动化工作流、非编码任务（如浏览器代理）。</p>
-<p><strong>局限</strong>：非开源，内存占用较高，问题修复依赖官方。</p>
-<p><strong>社区评价</strong>：两极分化。@skull8888888888 称其”强大且被低估，可重现整个初创公司功能”；@_aj 测试多种框架后认为Claude Agent SDK胜过LangChain和自定义循环。但 @geek_bing 警告不要盲目选择——非开源性质可能带来维护难题，建议考虑AI SDK、Mastra AI或LangGraph替代。</p>
-<p><strong>下载量数据</strong>：周下载从10万增长到500万（5倍增长），势头强劲。</p>
-<p><strong>推荐指数</strong>：⭐⭐⭐⭐</p>
-<hr>
-<h3 id="AutoGen（Microsoft生态）"><a href="#AutoGen（Microsoft生态）" class="headerlink" title="AutoGen（Microsoft生态）"></a>AutoGen（Microsoft生态）</h3><p><strong>核心优势</strong>：代理间对话、迭代推理、代码执行与测试，灵活的协作问题解决。</p>
-<p><strong>适用场景</strong>：交互助手、Bug修复、知识工作。</p>
-<p><strong>局限</strong>：依赖Microsoft工具链，较少强调视觉集成。</p>
-<p><strong>推荐指数</strong>：⭐⭐⭐⭐</p>
-<hr>
-<h3 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h3><p><strong>核心优势</strong>：SOP集成、端到端软件自动化（PRD → 设计 → 代码仓库）。</p>
-<p><strong>适用场景</strong>：产品构建、软件生命周期自动化。</p>
-<p><strong>局限</strong>：焦点较窄，主要面向软件开发，不适合通用自动化。</p>
-<p><strong>推荐指数</strong>：⭐⭐⭐</p>
-<hr>
-<h3 id="n8n"><a href="#n8n" class="headerlink" title="n8n"></a>n8n</h3><p><strong>核心优势</strong>：视觉化构建、无/低代码集成700+工具、业务自动化友好。</p>
-<p><strong>适用场景</strong>：工具连接、客户支持、快速部署。</p>
-<p><strong>局限</strong>：缺乏深度推理能力，需与LangGraph等框架结合使用。</p>
-<p><strong>推荐指数</strong>：⭐⭐⭐（作为互补工具）</p>
-<hr>
-<h3 id="新兴选手：OpenClaw-amp-Agent0ai"><a href="#新兴选手：OpenClaw-amp-Agent0ai" class="headerlink" title="新兴选手：OpenClaw &amp; Agent0ai"></a>新兴选手：OpenClaw &amp; Agent0ai</h3><ul>
-<li><strong>OpenClaw</strong>：自托管、本地运行、安全控制，强调隐私和数据主权。@sairahulxGTM 分享其作为自托管代理的日常使用经验，实现5x效率提升。2026年新兴推荐。</li>
-<li><strong>Agent0ai</strong>：被 @unrev 推荐为”最versatile、私有和capable的框架”，但社区验证较少，需进一步观察。</li>
-</ul>
-<h2 id="框架选型速查表"><a href="#框架选型速查表" class="headerlink" title="框架选型速查表"></a>框架选型速查表</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>你的需求</th>
-<th>推荐框架</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>复杂企业系统，需要精细状态控制</td>
-<td><strong>LangGraph</strong></td>
-</tr>
-<tr>
-<td>多代理角色协作，内容/业务管道</td>
-<td><strong>CrewAI</strong></td>
-</tr>
-<tr>
-<td>快速构建编码代理/自动化工作流</td>
-<td><strong>Claude Agent SDK</strong></td>
-</tr>
-<tr>
-<td>代理间对话和迭代推理</td>
-<td><strong>AutoGen</strong></td>
-</tr>
-<tr>
-<td>端到端软件自动化</td>
-<td><strong>MetaGPT</strong></td>
-</tr>
-<tr>
-<td>无代码业务自动化+工具集成</td>
-<td><strong>n8n + LangGraph</strong></td>
-</tr>
-<tr>
-<td>自托管、隐私优先</td>
-<td><strong>OpenClaw</strong></td>
-</tr>
-<tr>
-<td>需要开源灵活性</td>
-<td><strong>LangGraph</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="SDK下载量趋势（2026年初）"><a href="#SDK下载量趋势（2026年初）" class="headerlink" title="SDK下载量趋势（2026年初）"></a>SDK下载量趋势（2026年初）</h2><p>从周下载量数据可以看出各框架的市场热度：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>框架</th>
-<th>周下载量</th>
-<th>增长倍数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Vercel AI SDK</td>
-<td>650万</td>
-<td>6.5x</td>
-</tr>
-<tr>
-<td>Claude Agent SDK</td>
-<td>500万</td>
-<td>5x</td>
-</tr>
-<tr>
-<td>Google Gemini SDK</td>
-<td>470万</td>
-<td>2350x</td>
-</tr>
-<tr>
-<td>LangChain</td>
-<td>150万</td>
-<td>2x</td>
-</tr>
-</tbody>
-</table>
-</div>
-<blockquote>
-<p>Vercel AI SDK下载量最高但偏向Web开发场景；Google Gemini SDK增长最猛但生态相对封闭；Claude Agent SDK在代理自治能力上更专注；LangChain/LangGraph在自定义和开源上保持优势。</p>
-</blockquote>
-<h2 id="实战建议：如何选择你的Agent栈"><a href="#实战建议：如何选择你的Agent栈" class="headerlink" title="实战建议：如何选择你的Agent栈"></a>实战建议：如何选择你的Agent栈</h2><h3 id="1-明确你的核心用例"><a href="#1-明确你的核心用例" class="headerlink" title="1. 明确你的核心用例"></a>1. 明确你的核心用例</h3><p>不要追求”最强”框架，而是找到”最适合”的：</p>
-<ul>
-<li><strong>如果你做企业级应用</strong>：LangGraph + CrewAI组合栈</li>
-<li><strong>如果你做编码辅助工具</strong>：Claude Agent SDK</li>
-<li><strong>如果你做业务流程自动化</strong>：n8n + LangGraph</li>
-<li><strong>如果你注重隐私和自托管</strong>：OpenClaw</li>
-</ul>
-<h3 id="2-考虑组合使用"><a href="#2-考虑组合使用" class="headerlink" title="2. 考虑组合使用"></a>2. 考虑组合使用</h3><p>2026年的趋势是”组合栈”而非单一框架：</p>
-<ul>
-<li><strong>LangGraph</strong>负责状态管理和推理控制</li>
-<li><strong>CrewAI</strong>负责多代理协作编排</li>
-<li><strong>n8n</strong>负责外部工具集成</li>
-<li><strong>Claude Agent SDK</strong>负责代码执行和任务自动化</li>
-</ul>
-<h3 id="3-关注开源-vs-闭源的权衡"><a href="#3-关注开源-vs-闭源的权衡" class="headerlink" title="3. 关注开源 vs 闭源的权衡"></a>3. 关注开源 vs 闭源的权衡</h3><p>@geek_bing 的提醒值得重视：闭源框架（如Claude Agent SDK）虽然上手快，但在遇到内存问题或Bug时完全依赖官方修复。如果你的项目需要长期维护和深度定制，开源方案（LangGraph、Mastra AI）可能更稳妥。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>2026年的AI Agent框架生态正在快速成熟。<strong>LangGraph</strong>凭借其图基状态管理和开源灵活性，仍然是通用场景的首选；<strong>Claude Agent SDK</strong>以其强大的代理循环和快速增长的社区，成为编码代理领域的有力竞争者；<strong>CrewAI</strong>则在多代理协作上表现突出。</p>
-<p>没有银弹，最佳策略是根据具体需求测试组合栈。建议持续关注X上的社区讨论（搜索”AI agent frameworks 2026”），以及时了解框架的最新进展和实战经验。</p>
-<hr>
-<p><em>本文内容基于X（Twitter）社区2025年底至2026年初的公开讨论整理，引用了 @Khulood_Almani、@pvergadia、@BharukaShraddha、@andreihasna、@geek_bing、@omarsar0 等开发者的观点。</em></p>
-]]></content>
-      <categories>
-        <category>AI工具</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>LangGraph</tag>
-        <tag>Claude Agent SDK</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路</title>
     <url>/posts/260203.html</url>
     <content><![CDATA[<h1 id="揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路"><a href="#揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路" class="headerlink" title="揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路"></a>揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260203010435590-1362194860.jpg" style="zoom:50%;"></p>
@@ -9522,90 +9522,6 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
         <tag>交易策略</tag>
         <tag>Meme币</tag>
         <tag>PVP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册</title>
-    <url>/posts/cloudflare-email-routing-unlimited-mailbox-guide.html</url>
-    <content><![CDATA[<h1 id="Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册"><a href="#Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册" class="headerlink" title="Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册"></a>Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165337776-510476225.jpg" style="zoom:33%;" alt="Cloudflare免费无限邮箱"></p>
-<p>注册AI账号，发现邮箱不够用？其实你早就有一个无限邮箱，只是没人告诉你而已。</p>
-<p><strong>一个域名 + 无限邮箱 + 统一收件</strong>，既可以注册 ChatGPT、Claude、Gemini，又可以注册各API账号，随开随用。</p>
-<p>下面我们用3分钟搞定。</p>
-<h2 id="一、前置条件"><a href="#一、前置条件" class="headerlink" title="一、前置条件"></a>一、前置条件</h2><p>你需要拥有一个<strong>托管在 Cloudflare 的域名</strong>。如果没有，可以直接在 Cloudflare 注册一个。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165354117-1060957333.jpg" style="zoom:33%;" alt="Cloudflare注册域名"></p>
-<h2 id="二、操作步骤"><a href="#二、操作步骤" class="headerlink" title="二、操作步骤"></a>二、操作步骤</h2><h3 id="2-1-进入电子邮件路由"><a href="#2-1-进入电子邮件路由" class="headerlink" title="2.1 进入电子邮件路由"></a>2.1 进入电子邮件路由</h3><p>Cloudflare 控制台 → 选择你的域名 → 左侧菜单「电子邮件」→「电子邮件路由」→ 点击「开始使用」。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165503278-86056909.jpg" style="zoom:33%;" alt="进入电子邮件路由"></p>
-<h3 id="2-2-创建自定义邮件地址"><a href="#2-2-创建自定义邮件地址" class="headerlink" title="2.2 创建自定义邮件地址"></a>2.2 创建自定义邮件地址</h3><p>进入「路由规则」页面，点击「创建地址」：</p>
-<ul>
-<li><strong>自定义地址</strong>：填你想要的邮箱前缀，比如 <code>james.anderson</code>，完整地址就是 <code>james.anderson@yourdomain.com</code></li>
-<li><strong>目标地址</strong>：填你真实的收件邮箱（Gmail、Outlook 都行）</li>
-</ul>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165618960-28633708.jpg" style="zoom:33%;" alt="创建自定义邮件地址"></p>
-<blockquote>
-<p>这里的逻辑：凡是发到 <code>james.anderson@yourdomain.com</code> 的邮件，都会被转发到你的真实邮箱。</p>
-</blockquote>
-<h3 id="2-3-验证目标邮箱"><a href="#2-3-验证目标邮箱" class="headerlink" title="2.3 验证目标邮箱"></a>2.3 验证目标邮箱</h3><p>Cloudflare 会向你的目标邮箱发一封验证邮件，去收件箱点击确认即可。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165504342-494180053.jpg" style="zoom:33%;" alt="验证目标地址"></p>
-<p>在 Gmail 中收到验证邮件，点击「验证电子邮件地址」：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165503783-280373059.jpg" style="zoom:33%;" alt="Gmail验证邮件"></p>
-<p>验证成功后点击「转到电子邮件路由」：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165504863-535464751.jpg" style="zoom:33%;" alt="验证成功"></p>
-<h3 id="2-4-启用电子邮件路由"><a href="#2-4-启用电子邮件路由" class="headerlink" title="2.4 启用电子邮件路由"></a>2.4 启用电子邮件路由</h3><p>首次启用时，Cloudflare 会提示你需要添加几条 MX 记录。直接点「添加记录并启用」，Cloudflare 自动帮你配好。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165436980-673047727.jpg" style="zoom:33%;" alt="添加MX记录并启用"></p>
-<p>启用后的电子邮件路由概述页面：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165439774-1377541991.jpg" style="zoom:33%;" alt="电子邮件路由概述"></p>
-<h3 id="2-5-开启-Catch-All（核心技巧）"><a href="#2-5-开启-Catch-All（核心技巧）" class="headerlink" title="2.5 开启 Catch-All（核心技巧）"></a>2.5 开启 Catch-All（核心技巧）</h3><blockquote>
-<p>路径：电子邮件 → 电子邮件路由 → 路由规则 → Catch-All 规则</p>
-</blockquote>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165617724-1978241535.jpg" style="zoom:33%;" alt="开启Catch-All规则"></p>
-<p><strong>一旦你开启了 Catch-All，就不需要再一个个添加邮箱路由。</strong> 注册任意平台，随便编一个前缀直接用就行——<code>任意名字@yourdomain.com</code> 的邮件全部转发到你的收件箱。</p>
-<h2 id="三、实战演示：注册-ChatGPT-账号"><a href="#三、实战演示：注册-ChatGPT-账号" class="headerlink" title="三、实战演示：注册 ChatGPT 账号"></a>三、实战演示：注册 ChatGPT 账号</h2><p>打开 <a href="https://chatgpt.com/">chatgpt.com</a> 点击注册：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165505374-220244375.jpg" style="zoom:33%;" alt="ChatGPT注册页面"></p>
-<p>在注册页面，邮箱直接填 <code>james.anderson@yourdomain.com</code>：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165618410-481063920.jpg" style="zoom:33%;" alt="填写邮箱地址"></p>
-<blockquote>
-<p>名字可以用AI生成，比如让ChatGPT”生成500个不同性别种族年龄的美国人的名字”。</p>
-</blockquote>
-<p>设置密码后，验证码会发到你的真实收件箱：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165502716-590237212.jpg" style="zoom:33%;" alt="输入验证码"></p>
-<p>填写用户名和生日，完成注册：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165438603-1313780473.jpg" style="zoom:33%;" alt="确认年龄信息"></p>
-<p>新的 ChatGPT 账号创建完成：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165437657-808189133.jpg" style="zoom:33%;" alt="ChatGPT注册完成"></p>
-<h2 id="四、进阶玩法：Email-Workers-自动提取验证码"><a href="#四、进阶玩法：Email-Workers-自动提取验证码" class="headerlink" title="四、进阶玩法：Email Workers 自动提取验证码"></a>四、进阶玩法：Email Workers 自动提取验证码</h2><p>Cloudflare Email Workers 可以用代码拦截并处理每封收到的邮件。下面这个示例实现：<strong>收到邮件 → 自动提取验证码 → 推送到你的 Telegram</strong>。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
-<li><strong>创建 Telegram Bot</strong>：在 Telegram 搜索 <code>@BotFather</code> → 发送 <code>/newbot</code> → 按提示完成 → 拿到 Bot Token</li>
-<li><strong>获取你的 Chat ID</strong>：搜索 <code>@userinfobot</code> → 发送任意消息 → 它会回复你的 Chat ID</li>
-<li><strong>记下你的 Cloudflare Zone ID</strong>：控制台首页 → 你的域名 → 右侧点开可以看到</li>
-</ol>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165439213-1694298283.jpg" style="zoom:33%;" alt="获取Cloudflare Zone ID"></p>
-<h3 id="创建-Email-Worker"><a href="#创建-Email-Worker" class="headerlink" title="创建 Email Worker"></a>创建 Email Worker</h3><p>Cloudflare 控制台 → 电子邮件 → 电子邮件路由 → Email Workers → 创建 Worker → 选「Custom」跳过模板 → 粘贴代码 → 保存部署。</p>
-<p>进入编辑器后，点击右上角设置 → 环境变量，添加两个变量：</p>
-<ul>
-<li><code>TG_BOT_TOKEN</code> = 你的 Bot Token</li>
-<li><code>TG_CHAT_ID</code> = 你的 Chat ID</li>
-</ul>
-<h3 id="启用-Worker"><a href="#启用-Worker" class="headerlink" title="启用 Worker"></a>启用 Worker</h3><p>保存并部署后，回到 Cloudflare 控制台，在 <strong>Catch-All 规则</strong>里把操作改为「发送到 Worker」。</p>
-<p>这样在注册 ChatGPT 时填 <code>name@yourdomain.com</code>，验证码邮件到达后，Worker 自动解析出验证码，几秒内推送到你的 Telegram，不用再去翻收件箱。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里，你已经可以用一个域名撑起你所有平台的账号注册：</p>
-<ul>
-<li><strong>一个域名</strong> = 无限邮箱地址</li>
-<li><strong>Catch-All</strong> = 任意前缀都能收件</li>
-<li><strong>Email Workers</strong> = 验证码自动推送到 Telegram</li>
-</ul>
-<p>再也不用为注册 ChatGPT、Claude、Gemini 等AI服务发愁邮箱不够用了。</p>
-<blockquote>
-<p>本文内容参考自 <a href="https://x.com/laozhang2579/status/2038508389148631348">@laozhang2579</a> 的推文，感谢原作者分享。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>实用工具</category>
-      </categories>
-      <tags>
-        <tag>Cloudflare</tag>
-        <tag>邮箱工具</tag>
-        <tag>AI账号</tag>
-        <tag>实用教程</tag>
       </tags>
   </entry>
   <entry>
@@ -10126,6 +10042,90 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
         <tag>AI编程</tag>
         <tag>Claude Code</tag>
         <tag>源码分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册</title>
+    <url>/posts/cloudflare-email-routing-unlimited-mailbox-guide.html</url>
+    <content><![CDATA[<h1 id="Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册"><a href="#Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册" class="headerlink" title="Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册"></a>Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165337776-510476225.jpg" style="zoom:33%;" alt="Cloudflare免费无限邮箱"></p>
+<p>注册AI账号，发现邮箱不够用？其实你早就有一个无限邮箱，只是没人告诉你而已。</p>
+<p><strong>一个域名 + 无限邮箱 + 统一收件</strong>，既可以注册 ChatGPT、Claude、Gemini，又可以注册各API账号，随开随用。</p>
+<p>下面我们用3分钟搞定。</p>
+<h2 id="一、前置条件"><a href="#一、前置条件" class="headerlink" title="一、前置条件"></a>一、前置条件</h2><p>你需要拥有一个<strong>托管在 Cloudflare 的域名</strong>。如果没有，可以直接在 Cloudflare 注册一个。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165354117-1060957333.jpg" style="zoom:33%;" alt="Cloudflare注册域名"></p>
+<h2 id="二、操作步骤"><a href="#二、操作步骤" class="headerlink" title="二、操作步骤"></a>二、操作步骤</h2><h3 id="2-1-进入电子邮件路由"><a href="#2-1-进入电子邮件路由" class="headerlink" title="2.1 进入电子邮件路由"></a>2.1 进入电子邮件路由</h3><p>Cloudflare 控制台 → 选择你的域名 → 左侧菜单「电子邮件」→「电子邮件路由」→ 点击「开始使用」。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165503278-86056909.jpg" style="zoom:33%;" alt="进入电子邮件路由"></p>
+<h3 id="2-2-创建自定义邮件地址"><a href="#2-2-创建自定义邮件地址" class="headerlink" title="2.2 创建自定义邮件地址"></a>2.2 创建自定义邮件地址</h3><p>进入「路由规则」页面，点击「创建地址」：</p>
+<ul>
+<li><strong>自定义地址</strong>：填你想要的邮箱前缀，比如 <code>james.anderson</code>，完整地址就是 <code>james.anderson@yourdomain.com</code></li>
+<li><strong>目标地址</strong>：填你真实的收件邮箱（Gmail、Outlook 都行）</li>
+</ul>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165618960-28633708.jpg" style="zoom:33%;" alt="创建自定义邮件地址"></p>
+<blockquote>
+<p>这里的逻辑：凡是发到 <code>james.anderson@yourdomain.com</code> 的邮件，都会被转发到你的真实邮箱。</p>
+</blockquote>
+<h3 id="2-3-验证目标邮箱"><a href="#2-3-验证目标邮箱" class="headerlink" title="2.3 验证目标邮箱"></a>2.3 验证目标邮箱</h3><p>Cloudflare 会向你的目标邮箱发一封验证邮件，去收件箱点击确认即可。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165504342-494180053.jpg" style="zoom:33%;" alt="验证目标地址"></p>
+<p>在 Gmail 中收到验证邮件，点击「验证电子邮件地址」：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165503783-280373059.jpg" style="zoom:33%;" alt="Gmail验证邮件"></p>
+<p>验证成功后点击「转到电子邮件路由」：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165504863-535464751.jpg" style="zoom:33%;" alt="验证成功"></p>
+<h3 id="2-4-启用电子邮件路由"><a href="#2-4-启用电子邮件路由" class="headerlink" title="2.4 启用电子邮件路由"></a>2.4 启用电子邮件路由</h3><p>首次启用时，Cloudflare 会提示你需要添加几条 MX 记录。直接点「添加记录并启用」，Cloudflare 自动帮你配好。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165436980-673047727.jpg" style="zoom:33%;" alt="添加MX记录并启用"></p>
+<p>启用后的电子邮件路由概述页面：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165439774-1377541991.jpg" style="zoom:33%;" alt="电子邮件路由概述"></p>
+<h3 id="2-5-开启-Catch-All（核心技巧）"><a href="#2-5-开启-Catch-All（核心技巧）" class="headerlink" title="2.5 开启 Catch-All（核心技巧）"></a>2.5 开启 Catch-All（核心技巧）</h3><blockquote>
+<p>路径：电子邮件 → 电子邮件路由 → 路由规则 → Catch-All 规则</p>
+</blockquote>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165617724-1978241535.jpg" style="zoom:33%;" alt="开启Catch-All规则"></p>
+<p><strong>一旦你开启了 Catch-All，就不需要再一个个添加邮箱路由。</strong> 注册任意平台，随便编一个前缀直接用就行——<code>任意名字@yourdomain.com</code> 的邮件全部转发到你的收件箱。</p>
+<h2 id="三、实战演示：注册-ChatGPT-账号"><a href="#三、实战演示：注册-ChatGPT-账号" class="headerlink" title="三、实战演示：注册 ChatGPT 账号"></a>三、实战演示：注册 ChatGPT 账号</h2><p>打开 <a href="https://chatgpt.com/">chatgpt.com</a> 点击注册：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165505374-220244375.jpg" style="zoom:33%;" alt="ChatGPT注册页面"></p>
+<p>在注册页面，邮箱直接填 <code>james.anderson@yourdomain.com</code>：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165618410-481063920.jpg" style="zoom:33%;" alt="填写邮箱地址"></p>
+<blockquote>
+<p>名字可以用AI生成，比如让ChatGPT”生成500个不同性别种族年龄的美国人的名字”。</p>
+</blockquote>
+<p>设置密码后，验证码会发到你的真实收件箱：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165502716-590237212.jpg" style="zoom:33%;" alt="输入验证码"></p>
+<p>填写用户名和生日，完成注册：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165438603-1313780473.jpg" style="zoom:33%;" alt="确认年龄信息"></p>
+<p>新的 ChatGPT 账号创建完成：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165437657-808189133.jpg" style="zoom:33%;" alt="ChatGPT注册完成"></p>
+<h2 id="四、进阶玩法：Email-Workers-自动提取验证码"><a href="#四、进阶玩法：Email-Workers-自动提取验证码" class="headerlink" title="四、进阶玩法：Email Workers 自动提取验证码"></a>四、进阶玩法：Email Workers 自动提取验证码</h2><p>Cloudflare Email Workers 可以用代码拦截并处理每封收到的邮件。下面这个示例实现：<strong>收到邮件 → 自动提取验证码 → 推送到你的 Telegram</strong>。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li><strong>创建 Telegram Bot</strong>：在 Telegram 搜索 <code>@BotFather</code> → 发送 <code>/newbot</code> → 按提示完成 → 拿到 Bot Token</li>
+<li><strong>获取你的 Chat ID</strong>：搜索 <code>@userinfobot</code> → 发送任意消息 → 它会回复你的 Chat ID</li>
+<li><strong>记下你的 Cloudflare Zone ID</strong>：控制台首页 → 你的域名 → 右侧点开可以看到</li>
+</ol>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202603/2910984-20260330165439213-1694298283.jpg" style="zoom:33%;" alt="获取Cloudflare Zone ID"></p>
+<h3 id="创建-Email-Worker"><a href="#创建-Email-Worker" class="headerlink" title="创建 Email Worker"></a>创建 Email Worker</h3><p>Cloudflare 控制台 → 电子邮件 → 电子邮件路由 → Email Workers → 创建 Worker → 选「Custom」跳过模板 → 粘贴代码 → 保存部署。</p>
+<p>进入编辑器后，点击右上角设置 → 环境变量，添加两个变量：</p>
+<ul>
+<li><code>TG_BOT_TOKEN</code> = 你的 Bot Token</li>
+<li><code>TG_CHAT_ID</code> = 你的 Chat ID</li>
+</ul>
+<h3 id="启用-Worker"><a href="#启用-Worker" class="headerlink" title="启用 Worker"></a>启用 Worker</h3><p>保存并部署后，回到 Cloudflare 控制台，在 <strong>Catch-All 规则</strong>里把操作改为「发送到 Worker」。</p>
+<p>这样在注册 ChatGPT 时填 <code>name@yourdomain.com</code>，验证码邮件到达后，Worker 自动解析出验证码，几秒内推送到你的 Telegram，不用再去翻收件箱。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里，你已经可以用一个域名撑起你所有平台的账号注册：</p>
+<ul>
+<li><strong>一个域名</strong> = 无限邮箱地址</li>
+<li><strong>Catch-All</strong> = 任意前缀都能收件</li>
+<li><strong>Email Workers</strong> = 验证码自动推送到 Telegram</li>
+</ul>
+<p>再也不用为注册 ChatGPT、Claude、Gemini 等AI服务发愁邮箱不够用了。</p>
+<blockquote>
+<p>本文内容参考自 <a href="https://x.com/laozhang2579/status/2038508389148631348">@laozhang2579</a> 的推文，感谢原作者分享。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>实用工具</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>邮箱工具</tag>
+        <tag>AI账号</tag>
+        <tag>实用教程</tag>
       </tags>
   </entry>
   <entry>
@@ -12363,7 +12363,6 @@ bundle <span class="token builtin class-name">exec</span> jekyll serve
         <tag>AI Agent</tag>
         <tag>LobeHub</tag>
         <tag>Harness</tag>
-        <tag>Agent Tracing</tag>
       </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-05-27T14:33:00.918Z</updated>
+  <updated>2026-05-27T17:24:36.385Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/self-evolving-harness-lobehub-agent-runtime-2026.html"/>
     <id>https://onefly.top/posts/self-evolving-harness-lobehub-agent-runtime-2026.html</id>
     <published>2026-05-27T10:56:04.000Z</published>
-    <updated>2026-05-27T14:33:00.918Z</updated>
+    <updated>2026-05-27T17:24:36.385Z</updated>
     
     
     <summary type="html">深度解读 LobeHub 提出的 Self-Evolving Harness：为什么模型不是产品，模型加运行时才是产品；Tracing 如何成为 Agent Harness 自进化的黑匣子；Error Pattern 自动巡检如何把 Agent 成功率从约 75% 提升到 95% 以上。</summary>
@@ -30,8 +30,6 @@
     
     <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
     
-    
-    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
     
     <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
     

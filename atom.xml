@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>孤飞的博客</title>
+  
+  <subtitle>Onefly&#39;s Blog</subtitle>
+  <link href="https://onefly.top/atom.xml" rel="self"/>
+  
+  <link href="https://onefly.top/"/>
+  <updated>2026-05-27T14:33:00.918Z</updated>
+  <id>https://onefly.top/</id>
+  
+  <author>
+    <name>Onefly</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</title>
+    <link href="https://onefly.top/posts/self-evolving-harness-lobehub-agent-runtime-2026.html"/>
+    <id>https://onefly.top/posts/self-evolving-harness-lobehub-agent-runtime-2026.html</id>
+    <published>2026-05-27T10:56:04.000Z</published>
+    <updated>2026-05-27T14:33:00.918Z</updated>
+    
+    
+    <summary type="html">深度解读 LobeHub 提出的 Self-Evolving Harness：为什么模型不是产品，模型加运行时才是产品；Tracing 如何成为 Agent Harness 自进化的黑匣子；Error Pattern 自动巡检如何把 Agent 成功率从约 75% 提升到 95% 以上。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="LobeHub" scheme="https://onefly.top/tags/LobeHub/"/>
+    
+    <category term="Harness" scheme="https://onefly.top/tags/Harness/"/>
+    
+    <category term="Agent Tracing" scheme="https://onefly.top/tags/Agent-Tracing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GPT Plus 纯零撸：用谷歌无限邮箱批量薅免费试用账号教程（2026最新）</title>
+    <link href="https://onefly.top/posts/gpt-plus-free-trial-google-infinite-email-hack-2026.html"/>
+    <id>https://onefly.top/posts/gpt-plus-free-trial-google-infinite-email-hack-2026.html</id>
+    <published>2026-04-23T06:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">2026 最新 GPT Plus 零撸攻略：利用谷歌无限邮箱小技巧批量注册 ChatGPT Plus 免费试用账号，再通过反代自用，实现 AI 自由。附完整操作步骤与注意事项。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="ChatGPT" scheme="https://onefly.top/tags/ChatGPT/"/>
+    
+    <category term="薅羊毛" scheme="https://onefly.top/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI Agent 新闻交易崛起：2026年加密市场的新范式革命</title>
+    <link href="https://onefly.top/posts/ai-agent-news-trading-crypto-2026.html"/>
+    <id>https://onefly.top/posts/ai-agent-news-trading-crypto-2026.html</id>
+    <published>2026-04-20T04:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">深度解析2026年AI Agent与大模型能力提升背景下，加密货币新闻交易的最新发展态势。涵盖OKX Agent Trade Kit、newsliquid终端、vibe trading等前沿工具，结合真实案例与风险警示，为投资者提供全面的技术投研参考。</summary>
+    
+    
+    
+    <category term="加密投研" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
+    
+    
+    <category term="加密货币" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
+    
+    <category term="AI交易" scheme="https://onefly.top/tags/AI%E4%BA%A4%E6%98%93/"/>
+    
+    <category term="新闻交易" scheme="https://onefly.top/tags/%E6%96%B0%E9%97%BB%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GPT Plus 代充漏洞技术解构：iOS 收据校验缺陷与灰产套利链路全拆解</title>
+    <link href="https://onefly.top/posts/chatgpt-plus-apple-receipt-grey-market-risk-2026.html"/>
+    <id>https://onefly.top/posts/chatgpt-plus-apple-receipt-grey-market-risk-2026.html</id>
+    <published>2026-04-16T10:53:56.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">基于 X 平台 @xkajon 原帖，完整还原 GPT Plus iOS 内购收据漏洞的技术原理：OpenAI 订阅校验链路缺陷、收据拦截与导出方法、API 补单接口细节，以及灰产套利的经济模型。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="ChatGPT Plus" scheme="https://onefly.top/tags/ChatGPT-Plus/"/>
+    
+    <category term="订阅安全" scheme="https://onefly.top/tags/%E8%AE%A2%E9%98%85%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="逆向工程" scheme="https://onefly.top/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zero2Agent：面向大厂面试的Agent工程教程，从概念到生产的完整学习路线</title>
+    <link href="https://onefly.top/posts/zero2agent-programmer-agent-engineering-tutorial-interview-guide.html"/>
+    <id>https://onefly.top/posts/zero2agent-programmer-agent-engineering-tutorial-interview-guide.html</id>
+    <published>2026-04-15T10:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">zero2Agent 是一个面向程序员的开源 Agent 工程教程，覆盖 70+ 篇文章、9 大模块，从 Agent 核心概念到框架拆解、手写 Coding Agent、大厂面试真题，帮你系统构建 Agent 工程能力。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="大厂面试" scheme="https://onefly.top/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Claude Pro 订阅 87 元苹果尼日利亚区开通教程 + App Store 全球比价神器</title>
+    <link href="https://onefly.top/posts/claude-nigeria-apple-store-cheapest-subscription-guide-2026.html"/>
+    <id>https://onefly.top/posts/claude-nigeria-apple-store-cheapest-subscription-guide-2026.html</id>
+    <published>2026-04-10T06:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">2026 最新 Claude Code 订阅省钱攻略：苹果尼日利亚区 Pro 仅 87 元、Max5 580 元、Max20 1160 元，全球最低价。手把手教你注册尼日利亚 Apple ID、避免虚拟卡秒封账号、礼品卡充值兑换，附 App Store 各大软件全球比价神器 app.vbr.me。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Claude Code" scheme="https://onefly.top/tags/Claude-Code/"/>
+    
+    <category term="苹果低价区" scheme="https://onefly.top/tags/%E8%8B%B9%E6%9E%9C%E4%BD%8E%E4%BB%B7%E5%8C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比</title>
+    <link href="https://onefly.top/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html"/>
+    <id>https://onefly.top/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html</id>
+    <published>2026-04-07T10:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">深度对比 Hermes Agent 与 OpenClaw 两大开源 AI 助手框架，详解 Hermes 闭环自学习架构、四层记忆系统，帮你选出最适合的 AI Agent。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
+    
+    <category term="Hermes" scheme="https://onefly.top/tags/Hermes/"/>
+    
+    <category term="开源工具" scheme="https://onefly.top/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Claude Code 源码泄露深度剖析：Anthropic AI 编程助手的架构全解密</title>
+    <link href="https://onefly.top/posts/claude-code-leaked-source-architecture-deep-analysis.html"/>
+    <id>https://onefly.top/posts/claude-code-leaked-source-architecture-deep-analysis.html</id>
+    <published>2026-03-31T14:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">2026年3月31日 Claude Code 源码因 npm source map 文件泄露，本文深度剖析其 TypeScript + React Ink 架构、工具系统、Agent 调度、权限模型等核心设计，揭秘 Anthropic 如何构建一个 51万行代码的 AI 编程 CLI。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI编程" scheme="https://onefly.top/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://onefly.top/tags/Claude-Code/"/>
+    
+    <category term="源码分析" scheme="https://onefly.top/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册</title>
+    <link href="https://onefly.top/posts/cloudflare-email-routing-unlimited-mailbox-guide.html"/>
+    <id>https://onefly.top/posts/cloudflare-email-routing-unlimited-mailbox-guide.html</id>
+    <published>2026-03-30T09:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">利用Cloudflare Email Routing免费创建无限邮箱地址，轻松注册ChatGPT、Claude、Gemini等AI账号，附Catch-All配置和Email Workers自动提取验证码教程。</summary>
+    
+    
+    
+    <category term="实用工具" scheme="https://onefly.top/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Cloudflare" scheme="https://onefly.top/tags/Cloudflare/"/>
+    
+    <category term="邮箱工具" scheme="https://onefly.top/tags/%E9%82%AE%E7%AE%B1%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="AI账号" scheme="https://onefly.top/tags/AI%E8%B4%A6%E5%8F%B7/"/>
+    
+    <category term="实用教程" scheme="https://onefly.top/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的</title>
+    <link href="https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html"/>
+    <id>https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html</id>
+    <published>2026-03-06T10:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">深度拆解 OpenClaw Agent 的 System Prompt 9 层架构，用最通俗的语言讲清楚一个 AI 助手背后的设计逻辑，以及你能用哪些方式来定制它。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
+    
+    <category term="System Prompt" scheme="https://onefly.top/tags/System-Prompt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>台湾谷歌账户注册与Gemini Pro订阅家庭组共享教程</title>
+    <link href="https://onefly.top/posts/260305.html"/>
+    <id>https://onefly.top/posts/260305.html</id>
+    <published>2026-03-04T18:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.301Z</updated>
+    
+    
+    <summary type="html">详细讲解如何注册台湾谷歌账户，订阅Gemini Pro并通过Google家庭组实现6人共享，每人仅需3.3刀/月，使用Antigravity虚拟信用卡支付。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Gemini Pro" scheme="https://onefly.top/tags/Gemini-Pro/"/>
+    
+    <category term="谷歌账号" scheme="https://onefly.top/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/"/>
+    
+    <category term="家庭共享" scheme="https://onefly.top/tags/%E5%AE%B6%E5%BA%AD%E5%85%B1%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</title>
+    <link href="https://onefly.top/posts/260212.html"/>
+    <id>https://onefly.top/posts/260212.html</id>
+    <published>2026-02-12T10:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">基于2026年最新社区讨论，深度对比LangGraph、CrewAI、AutoGen、Claude Agent SDK等主流AI Agent开发框架，帮你找到最适合的选型方案。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="LangGraph" scheme="https://onefly.top/tags/LangGraph/"/>
+    
+    <category term="Claude Agent SDK" scheme="https://onefly.top/tags/Claude-Agent-SDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何给 OpenClaw 搭建一套「永不失忆」的记忆系统</title>
+    <link href="https://onefly.top/posts/260211.html"/>
+    <id>https://onefly.top/posts/260211.html</id>
+    <published>2026-02-11T14:26:54.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">从丢失两天记忆到三层自动化架构，一个完整的 AI Agent 记忆系统搭建教程。包含 Daily Sync、Weekly Compound、Hourly Micro-Sync 和语义搜索四层设计。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="自动化" scheme="https://onefly.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
+    
+    <category term="记忆系统" scheme="https://onefly.top/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</title>
+    <link href="https://onefly.top/posts/okx-2026-spring-festival-collect-five-blessings-guide.html"/>
+    <id>https://onefly.top/posts/okx-2026-spring-festival-collect-five-blessings-guide.html</id>
+    <published>2026-02-11T06:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">OKX 2026春节集五福活动全攻略，教你如何快速集齐福卡、合成财神福、瓜分28BTC奖池，冲击1BTC哈希锦鲤大奖。</summary>
+    
+    
+    
+    <category term="加密货币" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    
+    <category term="OKX" scheme="https://onefly.top/tags/OKX/"/>
+    
+    <category term="加密货币" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    <category term="春节活动" scheme="https://onefly.top/tags/%E6%98%A5%E8%8A%82%E6%B4%BB%E5%8A%A8/"/>
+    
+    <category term="BTC" scheme="https://onefly.top/tags/BTC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日结真经：P小将熊市的生存指南（2026最新）</title>
+    <link href="https://onefly.top/posts/260210.html"/>
+    <id>https://onefly.top/posts/260210.html</id>
+    <published>2026-02-09T17:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">一位PVP选手的链上生存哲学：本金是命、频率是术、仓位管理是道。从日结策略到终局思维，教你在Meme币市场活下来并积累财富。</summary>
+    
+    
+    
+    <category term="加密货币" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    
+    <category term="Crypto" scheme="https://onefly.top/tags/Crypto/"/>
+    
+    <category term="交易策略" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+    <category term="Meme币" scheme="https://onefly.top/tags/Meme%E5%B8%81/"/>
+    
+    <category term="PVP" scheme="https://onefly.top/tags/PVP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenClaw(Clawdbot)的超级完整部署教程 0基础教学</title>
+    <link href="https://onefly.top/posts/260209.html"/>
+    <id>https://onefly.top/posts/260209.html</id>
+    <published>2026-02-08T19:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">2026年2月最新OpenClaw部署教程，专为小白打造。0基础手把手教学，从服务器购买到Bot配置全流程图文解析。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI" scheme="https://onefly.top/tags/AI/"/>
+    
+    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
+    
+    <category term="Tutorial" scheme="https://onefly.top/tags/Tutorial/"/>
+    
+    <category term="0基础" scheme="https://onefly.top/tags/0%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路</title>
+    <link href="https://onefly.top/posts/260203.html"/>
+    <id>https://onefly.top/posts/260203.html</id>
+    <published>2026-02-03T04:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路&quot;&gt;&lt;a href=&quot;#揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Web3" scheme="https://onefly.top/categories/Web3/"/>
+    
+    
+    <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
+    
+    <category term="加密货币" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    <category term="骗局揭露" scheme="https://onefly.top/tags/%E9%AA%97%E5%B1%80%E6%8F%AD%E9%9C%B2/"/>
+    
+    <category term="KOL" scheme="https://onefly.top/tags/KOL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Clawdbot：你的永不休息的 AI 助手 - 完整部署与使用指南</title>
+    <link href="https://onefly.top/posts/260126.html"/>
+    <id>https://onefly.top/posts/260126.html</id>
+    <published>2026-01-25T16:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.299Z</updated>
+    
+    
+    <summary type="html">Clawdbot 是一个开源的本地优先 AI 代理，支持 WhatsApp、Telegram、Discord 等多渠道接入，能自动化操作电脑、浏览器、文件等任务。本文详细介绍 AWS 免费套餐、Mac Mini、VPS 等多种部署方式及完整配置流程。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="自动化" scheme="https://onefly.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+    <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大学生白嫖5年 Office 365 Premium 含 Copilot 完整教程（2026最新）</title>
+    <link href="https://onefly.top/posts/260121.html"/>
+    <id>https://onefly.top/posts/260121.html</id>
+    <published>2026-01-21T02:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+    <summary type="html">手把手教大学生如何免费获取 5 年 Microsoft 365 Premium 订阅，包含 Copilot AI 助手、1TB OneDrive 云存储等全部高级功能，只需 edu 邮箱即可验证。</summary>
+    
+    
+    
+    <category term="资源分享" scheme="https://onefly.top/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="Office 365" scheme="https://onefly.top/tags/Office-365/"/>
+    
+    <category term="Microsoft" scheme="https://onefly.top/tags/Microsoft/"/>
+    
+    <category term="学生优惠" scheme="https://onefly.top/tags/%E5%AD%A6%E7%94%9F%E4%BC%98%E6%83%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vercel Skills：AI 代理技能的 npm 包管理器（2026最新）</title>
+    <link href="https://onefly.top/posts/260120.html"/>
+    <id>https://onefly.top/posts/260120.html</id>
+    <published>2026-01-20T02:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.299Z</updated>
+    
+    
+    <summary type="html">Vercel 推出 Skills 命令行工具，打造 AI 技能的 npm，通过 npx skills 一键安装 AI 代理技能扩展。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Vercel" scheme="https://onefly.top/tags/Vercel/"/>
+    
+    <category term="前端开发" scheme="https://onefly.top/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+</feed>

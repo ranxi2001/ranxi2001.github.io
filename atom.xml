@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-05-27T19:21:25.363Z</updated>
+  <updated>2026-05-28T07:50:02.062Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>别再把 Claude Code 当一次性聊天框了：CLAUDE.md 与持久上下文工作流</title>
+    <link href="https://onefly.top/posts/claude-md-persistent-context-ai-workflow-2026.html"/>
+    <id>https://onefly.top/posts/claude-md-persistent-context-ai-workflow-2026.html</id>
+    <published>2026-05-28T07:31:46.000Z</published>
+    <updated>2026-05-28T07:50:02.062Z</updated>
+    
+    
+    <summary type="html">从一篇 X 长文出发，拆解 Claude Code 里的 CLAUDE.md 为什么重要：它不是神奇 Prompt，而是把个人偏好、项目约束、权限边界、错误经验沉淀为持久上下文的 AI 编程工作流。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="AI工作流" scheme="https://onefly.top/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
+    
+  </entry>
   
   <entry>
     <title>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</title>
@@ -472,29 +495,6 @@
     <category term="Microsoft" scheme="https://onefly.top/tags/Microsoft/"/>
     
     <category term="学生优惠" scheme="https://onefly.top/tags/%E5%AD%A6%E7%94%9F%E4%BC%98%E6%83%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vercel Skills：AI 代理技能的 npm 包管理器（2026最新）</title>
-    <link href="https://onefly.top/posts/260120.html"/>
-    <id>https://onefly.top/posts/260120.html</id>
-    <published>2026-01-20T02:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.299Z</updated>
-    
-    
-    <summary type="html">Vercel 推出 Skills 命令行工具，打造 AI 技能的 npm，通过 npx skills 一键安装 AI 代理技能扩展。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="Vercel" scheme="https://onefly.top/tags/Vercel/"/>
-    
-    <category term="前端开发" scheme="https://onefly.top/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   

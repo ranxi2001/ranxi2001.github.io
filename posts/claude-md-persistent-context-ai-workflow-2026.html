@@ -8,7 +8,7 @@
     <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
     <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
     <meta charset="utf-8">
-    <meta name="keywords" content="Self-Evolving Harness, Agent Harness, LobeHub, Agent Tracing, AI Agent, Model Runtime, Context Engine, Error Pattern, AI Native Product, 智能体运行时">
+    <meta name="keywords" content="CLAUDE.md, Claude Code, AI Agent, 持久上下文, AI工作流, Prompt Engineering, Memory, Claude配置, AI协作, Agent安全边界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践 | 孤飞的博客</title>
+    <title>别再把 Claude Code 当一次性聊天框了：CLAUDE.md 与持久上下文工作流 | 孤飞的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -256,12 +256,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527223243205-541295227.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528154907614-1176297498.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</h1>
+                    <h1 class="description center-align post-title">别再把 Claude Code 当一次性聊天框了：CLAUDE.md 与持久上下文工作流</h1>
                 </div>
             </div>
         </div>
@@ -773,16 +773,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/Claude/">
+                                <span class="chip bg-color">Claude</span>
+                            </a>
+                        
                             <a href="/tags/AI-Agent/">
                                 <span class="chip bg-color">AI Agent</span>
                             </a>
                         
-                            <a href="/tags/LobeHub/">
-                                <span class="chip bg-color">LobeHub</span>
-                            </a>
-                        
-                            <a href="/tags/Harness/">
-                                <span class="chip bg-color">Harness</span>
+                            <a href="/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+                                <span class="chip bg-color">AI工作流</span>
                             </a>
                         
                     </div>
@@ -806,7 +806,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-05-27
+                    2026-05-28
                 </div>
                 
 
@@ -815,14 +815,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    12 分
                 </div>
                 
 
@@ -840,295 +840,284 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="需要自进化的不是-Agent，而是-Harness：LobeHub-的-Self-Evolving-Runtime-实践"><a href="#需要自进化的不是-Agent，而是-Harness：LobeHub-的-Self-Evolving-Runtime-实践" class="headerlink" title="需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践"></a>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</h1><p>过去一年，AI Agent 圈子里最容易被高估的是“模型又强了多少”，最容易被低估的是：<strong>真正决定产品稳定性的，往往不是模型，而是包在模型外面的 Harness。</strong></p>
-<p>单独的模型已经不再是完整产品。真正被用户感知到的产品，是：</p>
-<blockquote>
-<p>模型 + 工具 + 上下文 + 权限 + 环境 + 错误恢复机制。</p>
-</blockquote>
-<p>这套把模型组织起来、让它能稳定完成任务的运行时，才是 Agent 产品的核心。LobeHub 最近这篇关于 <strong>Self-Evolving Harness</strong> 的文章，讲的正是这个变化：</p>
-<p><strong>未来需要自进化的不是单个 Agent，而是承载 Agent 的 Harness。</strong></p>
-<p>本文试着把原文的工程逻辑拆开讲清楚：为什么 Harness 会成为 AI-Native 产品的新护城河？为什么 Tracing 是自进化的起点？以及 LobeHub 的 Error Pattern 自动巡检为什么是一个很值得关注的生产案例。</p>
-<div style="text-align:center;">
-<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527223243205-541295227.png" style="zoom:33%;" alt="Self-Evolving Harness 博客封面图">
+                <h1 id="别再把-Claude-Code-当一次性聊天框了：CLAUDE-md-与持久上下文工作流"><a href="#别再把-Claude-Code-当一次性聊天框了：CLAUDE-md-与持久上下文工作流" class="headerlink" title="别再把 Claude Code 当一次性聊天框了：CLAUDE.md 与持久上下文工作流"></a>别再把 Claude Code 当一次性聊天框了：CLAUDE.md 与持久上下文工作流</h1><div style="text-align:center;">
+<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528154907614-1176297498.jpg" style="zoom:33%;" alt="CLAUDE.md 与持久上下文工作流博客封面图">
 </div>
 
+<p>最近刷到一篇关于 <strong>Claude Code 里的 CLAUDE.md</strong> 的 X 长文，标题很典型：“你一直都在用错 Claude，CLAUDE.md 可以修复一切。”</p>
+<p>营销味有点重，但它击中了一个真实问题：<strong>很多人不是不会用 AI，而是每次都在从零开始用 AI。</strong></p>
+<p>每开一个新会话，就重新解释：</p>
+<ul>
+<li>我是谁；</li>
+<li>我在做什么项目；</li>
+<li>我喜欢什么表达风格；</li>
+<li>哪些事情不要擅自改；</li>
+<li>哪些操作必须先问我；</li>
+<li>上次踩过什么坑；</li>
+<li>这套代码、文章、业务有什么固定约束。</li>
+</ul>
+<p>这不是 Prompt 不够好，而是上下文没有沉淀。</p>
+<p><code>CLAUDE.md</code> 的意义就在这里：它不是一个“万能咒语”，而是一份可以被 Claude 自动读取的长期工作说明书。它把你反复强调、反复纠正、反复补充的东西，变成项目级的持久上下文。</p>
 <hr>
-<h2 id="一、模型越来越强，为什么产品体验没有同比变强？"><a href="#一、模型越来越强，为什么产品体验没有同比变强？" class="headerlink" title="一、模型越来越强，为什么产品体验没有同比变强？"></a>一、模型越来越强，为什么产品体验没有同比变强？</h2><p>早期 AI 产品的竞争，主要是模型能力竞争。</p>
-<p>谁的 benchmark 更高，谁的上下文更长，谁的推理更快，谁就更容易获得体验优势。但到了 2026 年，这种优势开始边际递减。</p>
-<p>在很多真实任务里，用户感受到的差异已经不再只是“模型聪不聪明”，而是：</p>
+<h2 id="一、真正的问题：每次对话都从零开始"><a href="#一、真正的问题：每次对话都从零开始" class="headerlink" title="一、真正的问题：每次对话都从零开始"></a>一、真正的问题：每次对话都从零开始</h2><p>很多人使用 Claude Code、ChatGPT 或其他 AI 工具时，默认把它当成一个更聪明的聊天框。</p>
+<p>这会带来一个很隐蔽的效率损耗：<strong>AI 每次都不知道你是谁，也不知道你之前怎么工作。</strong></p>
+<p>于是你会不断遇到这些情况：</p>
 <ul>
-<li>它能不能记住任务约束？</li>
-<li>它能不能在第 50 步工具调用后仍然不跑偏？</li>
-<li>它能不能在工具失败后正确恢复，而不是编造结果？</li>
-<li>它能不能识别哪些错误该展示给用户，哪些错误应该系统内部消化？</li>
-<li>它能不能根据不同模型、不同 provider、不同环境自动调整执行策略？</li>
+<li>简单问题，它先来一段“Great question”式废话；</li>
+<li>让它改一段文字，它顺手重写了整篇；</li>
+<li>让它修一个 bug，它顺手重构了三个无关文件；</li>
+<li>让它总结资料，它编了几个看似合理但没来源的事实；</li>
+<li>让它写文案，它写得很流畅，但完全不像你；</li>
+<li>让它处理项目，它不知道哪些约束是历史原因，哪些可以调整。</li>
 </ul>
-<p>这就是 Phil Schmid 提到的 <strong>Durability</strong> 问题：模型在长链路、多工具、复杂环境中到底能坚持多久。</p>
-<p>一个模型在榜单上领先 1%，并不能保证它在真实 Agent 任务里不会误删文件、忘记权限边界、丢失上下文，或者把上游 API 报错解释成“任务完成”。</p>
-<p>所以，模型能力只是底座。真正把能力转化为稳定体验的，是 Harness。</p>
-<hr>
-<h2 id="二、什么是-Agent-Harness？"><a href="#二、什么是-Agent-Harness？" class="headerlink" title="二、什么是 Agent Harness？"></a>二、什么是 Agent Harness？</h2><p>如果把大模型看作 CPU，把上下文窗口看作 RAM，那么 <strong>Agent Harness 更像操作系统</strong>。</p>
-<p>它不等于 Agent 本身，却决定 Agent 能不能跑起来、跑多久、跑得稳不稳。</p>
-<p>一个成熟的 Harness 至少要处理这些事情：</p>
-<ul>
-<li><strong>Model Runtime</strong>：适配 OpenAI、Anthropic、DeepSeek、Gemini、MiniMax、Kimi 等不同模型和 provider</li>
-<li><strong>Agent Runtime</strong>：管理 Agent 的 step loop、工具调用、状态机、生命周期</li>
-<li><strong>Context Engine</strong>：决定哪些上下文应该进入窗口，哪些应该压缩，哪些应该从历史恢复</li>
-<li><strong>Environment</strong>：支持 Page、Task、Group、IM、CLI、浏览器等不同执行环境</li>
-<li><strong>Tool Orchestration</strong>：设计工具 schema，决定何时调用、失败后是否重试、如何重试</li>
-<li><strong>Error Handling</strong>：识别错误类型，区分用户侧问题和系统侧问题</li>
-<li><strong>Permission Boundary</strong>：限制危险操作，管理外部副作用和用户确认</li>
-</ul>
-<p>模型像发动机，Harness 像整辆车的传动、刹车、仪表盘和自动驾驶系统。</p>
-<p>发动机再猛，如果刹车不稳、仪表盘不准、导航乱跳，用户也不会觉得这辆车好开。</p>
-<div style="text-align:center;">
-<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527203254977-1778900783.png" style="zoom:40%;" alt="Agent Harness 运行时架构示意图">
-</div>
-
-<hr>
-<h2 id="三、Harness-为什么必须是“活的”？"><a href="#三、Harness-为什么必须是“活的”？" class="headerlink" title="三、Harness 为什么必须是“活的”？"></a>三、Harness 为什么必须是“活的”？</h2><p>传统软件里的运行时大多是静态的：工程师写好逻辑，用户使用，出了问题再修。</p>
-<p>但 Agent Harness 面对的是一个高速变化的环境：</p>
-<ul>
-<li>模型接口会变</li>
-<li>provider 错误格式会变</li>
-<li>工具 schema 会变</li>
-<li>用户任务会变</li>
-<li>上下文策略会过时</li>
-<li>reasoning / thinking 字段的行为会变化</li>
-<li>某个只在小流量下偶发的错误，会在用户增长后变成主要故障来源</li>
-</ul>
-<p>如果每一次变化都靠工程师手动发现、分类、修复，这套系统会越来越难维护。</p>
-<p>更麻烦的是，很多问题不是设计阶段能想出来的，而是只有在真实运行里才会暴露。</p>
-<p>比如：</p>
-<ul>
-<li>某个 provider 在余额不足时返回了非标准错误</li>
-<li>某个模型在 thinking mode 下丢了 reasoning_content</li>
-<li>某个工具 schema 对某类参数兼容性不好</li>
-<li>某个 context window 策略在长任务里把关键约束压没了</li>
-<li>某类用户任务经常在第 N 步触发同一种失败</li>
-</ul>
-<p>这些都是运行数据里长出来的问题。</p>
-<p>因此，Harness 不能只是被动执行环境。它需要能观察自己、理解自己、修复自己。</p>
-<p>这就是 Self-Evolving Harness 的核心：</p>
+<p>这类问题不是模型“笨”。很多时候是因为它缺少稳定上下文。</p>
+<p>模型不是你的同事。它不会天然记得你上周说过什么，也不会默认理解你的偏好。没有外部记忆机制，它每次醒来都是一个新实例。</p>
+<p>所以我们真正要解决的，不是“这一轮 prompt 怎么写得更长”，而是：</p>
 <blockquote>
-<p>进化的对象不是模型，而是模型外面的运行时系统。</p>
+<p>如何把稳定、重复、长期有效的信息，从临时对话里抽出来，变成 AI 每次工作前都能读取的上下文？</p>
 </blockquote>
+<p>这就是 <code>CLAUDE.md</code> 的价值。</p>
+<hr>
+<h2 id="二、CLAUDE-md-到底是什么？"><a href="#二、CLAUDE-md-到底是什么？" class="headerlink" title="二、CLAUDE.md 到底是什么？"></a>二、CLAUDE.md 到底是什么？</h2><p>简单说，<code>CLAUDE.md</code> 是 Claude Code 在项目目录里会自动读取的 Markdown 文件。</p>
+<p>你可以把它理解成项目里的“AI 协作说明书”。它通常放在项目根目录，用来告诉 Claude：</p>
+<ul>
+<li>当前项目是什么；</li>
+<li>技术栈是什么；</li>
+<li>用户偏好是什么；</li>
+<li>代码风格是什么；</li>
+<li>哪些目录不能碰；</li>
+<li>哪些命令可以运行；</li>
+<li>哪些操作必须确认；</li>
+<li>已知问题和历史决策是什么。</li>
+</ul>
+<p>它的价值不在于格式多高级，而在于它把“重复解释”变成“自动加载”。</p>
+<p>一次写好，多次复用。</p>
+<p>这件事很小，但会明显改变 AI 协作的手感。</p>
 <pre class="mermaid">flowchart TD
-    A[模型接口变化] --&gt; E[Harness 持续过时]
-    B[工具 schema 变化] --&gt; E
-    C[用户任务变化] --&gt; E
-    D[错误模式变化] --&gt; E
-    E --&gt; F[Tracing 记录真实执行]
-    F --&gt; G[识别失败模式]
-    G --&gt; H[更新上下文策略 / 工具编排 / 错误处理]
-    H --&gt; I[运行时变得更稳定]
-    I --&gt; F</pre>
+    A[临时 Prompt] --&gt; B[只影响当前会话]
+    C[CLAUDE.md] --&gt; D[每次进入项目自动读取]
+    D --&gt; E[稳定偏好]
+    D --&gt; F[项目约束]
+    D --&gt; G[权限边界]
+    D --&gt; H[历史经验]
+    E --&gt; I[更少重复解释]
+    F --&gt; I
+    G --&gt; I
+    H --&gt; I</pre>
 
+<p>当然，<code>CLAUDE.md</code> 最直接服务于 Claude Code，不是 Claude 网页聊天框独有的“魔法”。它背后的思想更通用：<strong>AI Agent 需要持久上下文层。</strong></p>
+<p>不管这个层叫 <code>CLAUDE.md</code>、<code>AGENTS.md</code>、<code>MEMORY.md</code>、skills，还是某种向量记忆系统，本质上都在做同一件事：让 AI 不再只依赖当前窗口里的几句话。</p>
 <hr>
-<h2 id="四、自进化的前提：Tracing-必须是一等公民"><a href="#四、自进化的前提：Tracing-必须是一等公民" class="headerlink" title="四、自进化的前提：Tracing 必须是一等公民"></a>四、自进化的前提：Tracing 必须是一等公民</h2><p>要让 Harness 自我改进，第一步不是让 Agent 自动写代码，而是让系统知道刚才到底发生了什么。</p>
-<p>也就是：<strong>Tracing。</strong></p>
-<p>每一次 Agent 执行，都应该留下完整记录：</p>
+<h2 id="三、我最认可的几类规则"><a href="#三、我最认可的几类规则" class="headerlink" title="三、我最认可的几类规则"></a>三、我最认可的几类规则</h2><p>那篇 X 长文列了 21 条适合放进 <code>CLAUDE.md</code> 的规则，内容不少。真正值得保留的，我认为主要是下面几类。</p>
+<h3 id="1-沟通风格：少废话，结论优先"><a href="#1-沟通风格：少废话，结论优先" class="headerlink" title="1. 沟通风格：少废话，结论优先"></a>1. 沟通风格：少废话，结论优先</h3><p>很多 AI 默认会把“礼貌”理解成一套固定话术：</p>
 <ul>
-<li>调用了哪个模型？</li>
-<li>每次 LLM 请求用了多少 token？</li>
-<li>花了多少钱？</li>
-<li>每一步是模型调用还是工具调用？</li>
-<li>每一步耗时多久？</li>
-<li>总共走了多少步？</li>
-<li>哪一步失败了？</li>
-<li>错误类型是什么？</li>
-<li>当时的上下文是什么？</li>
-<li>cache 命中率如何？</li>
-<li>工具输入输出是什么？</li>
+<li>“Great question!”</li>
+<li>“Of course!”</li>
+<li>“Certainly!”</li>
+<li>“I’d be happy to help!”</li>
 </ul>
-<p>没有这些数据，所谓 Self-Evolution 就只是口号。</p>
-<p>原文里有个判断很关键：行业里很多 Agent Framework 都在说 tracing 难做，不是因为大家不会用 OpenTelemetry，而是因为大多数 runtime 一开始就没有把 observability 当作一等公民。</p>
-<p>典型问题是：Tracing 是后加的。</p>
+<p>这些句子本身没有错，但在高频协作里很烦。尤其是你只是想要一个结果，它还要先表演一遍“我很乐意帮助你”。</p>
+<p>所以可以写进规则：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">少废话，结论优先。不要用“好问题”“当然可以”“我很乐意”等开场白。简单问题直接给答案，复杂任务再展开分析。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这类规则看似小，其实很影响工作流。因为 AI 的语气不是装饰，它会决定你和它协作时的摩擦感。</p>
+<h3 id="2-事实边界：不确定就明说"><a href="#2-事实边界：不确定就明说" class="headerlink" title="2. 事实边界：不确定就明说"></a>2. 事实边界：不确定就明说</h3><p>AI 最大的问题之一不是不知道，而是“很会装作知道”。</p>
+<p>尤其是日期、数据、论文引用、版本号、API 行为、历史事件这类信息，一旦它凭印象补全，用户很容易被带偏。</p>
+<p>所以这条规则应该长期存在：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">如果不确定某个事实、数字、日期、引用或 API 行为，必须明确说明不确定。不要用听起来合理的内容填补空白。能查证就先查证。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这条比“回答要专业”重要得多。</p>
+<p>专业不是语气自信，而是知道边界在哪里。</p>
+<h3 id="3-修改边界：只改被要求改的东西"><a href="#3-修改边界：只改被要求改的东西" class="headerlink" title="3. 修改边界：只改被要求改的东西"></a>3. 修改边界：只改被要求改的东西</h3><p>对于写作和代码来说，这是非常关键的一条。</p>
+<p>你让 AI 改一个段落，它可能顺手重排全文；你让它修一个函数，它可能顺手重构整个模块；你让它优化一句标题，它可能把原本的表达风格全改掉。</p>
+<p>这种“热心”在真实工作里很危险。</p>
+<p>更好的规则是：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">只修改用户明确要求修改的范围。不要擅自重写、重构、改名、移动文件或优化无关内容。如果发现其他值得改进的问题，单独列出建议，不要直接动手。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这条规则背后的原则是：<strong>AI 应该是精密工具，不是自动接管一切的实习生。</strong></p>
+<h3 id="4-权限边界：外部副作用必须确认"><a href="#4-权限边界：外部副作用必须确认" class="headerlink" title="4. 权限边界：外部副作用必须确认"></a>4. 权限边界：外部副作用必须确认</h3><p>当 AI 只是聊天时，错误最多是文字不准。</p>
+<p>但当 AI 接入工具之后，它可以：</p>
 <ul>
-<li>LangChain：callback 是可选的，忘了注册就没有 trace</li>
-<li>CrewAI：事件监听器挂在事件总线上，事件丢失 trace 就断</li>
-<li>OpenAI Agents SDK：需要显式创建 trace，不会天然传播</li>
-<li>AG2：middleware 是可选安装，不装就没有 tracing</li>
+<li>发邮件；</li>
+<li>发微博 / X；</li>
+<li>发小红书；</li>
+<li>删除文件；</li>
+<li>覆盖代码；</li>
+<li>部署服务；</li>
+<li>调用外部 API；</li>
+<li>操作数据库。</li>
 </ul>
-<p>这种架构下，trace 像外挂，不像系统血液。</p>
-<p>LobeHub 的做法则是把 Agent Runtime 设计成状态机，按“单步执行”原则拆成细粒度 step。每个 step 天然就是一个 trace event。</p>
+<p>这时“别乱动”就不是偏好，而是安全边界。</p>
+<p>适合写成硬规则：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">发送、发布、部署、删除、覆盖、数据库迁移、生产环境操作、不可逆外部 API 调用，必须在当前会话获得明确确认后才能执行。历史上下文或推测意图不算确认。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这条规则应该放在所有 Agent 系统的最前面。</p>
+<p>因为真正危险的不是 AI 不够聪明，而是它“聪明地误解了你”。</p>
+<hr>
+<h2 id="四、CLAUDE-md-不只是开发者工具"><a href="#四、CLAUDE-md-不只是开发者工具" class="headerlink" title="四、CLAUDE.md 不只是开发者工具"></a>四、CLAUDE.md 不只是开发者工具</h2><p>很多人一听 <code>CLAUDE.md</code>，会以为它只是 Claude Code 的开发者配置，或者只适合程序员。</p>
+<p>这其实把它看窄了。</p>
+<p>它更像一种“上下文工程”方法，可以迁移到很多场景。</p>
+<h3 id="写作者"><a href="#写作者" class="headerlink" title="写作者"></a>写作者</h3><p>写作者最需要沉淀的是声音和边界：</p>
+<ul>
+<li>我的文章语气是什么；</li>
+<li>句子长短偏好；</li>
+<li>哪些词不要用；</li>
+<li>标题风格；</li>
+<li>是否允许鸡汤；</li>
+<li>是否要保留个人表达痕迹；</li>
+<li>哪些观点是长期立场。</li>
+</ul>
+<p>没有这些，AI 写出来的东西往往是“正确但不像我”。</p>
+<h3 id="研究者"><a href="#研究者" class="headerlink" title="研究者"></a>研究者</h3><p>研究者需要沉淀的是信息结构：</p>
+<ul>
+<li>文献总结格式；</li>
+<li>引用要求；</li>
+<li>不确定性标注；</li>
+<li>对比维度；</li>
+<li>公式和术语解释深度；</li>
+<li>哪些领域知识不必过度解释。</li>
+</ul>
+<p>这样 AI 才不会每次都把摘要写成泛泛而谈的科普文。</p>
+<h3 id="产品和运营"><a href="#产品和运营" class="headerlink" title="产品和运营"></a>产品和运营</h3><p>产品、运营、市场类任务需要沉淀的是受众和业务约束：</p>
+<ul>
+<li>用户是谁；</li>
+<li>产品定位是什么；</li>
+<li>竞品有哪些；</li>
+<li>不能承诺什么；</li>
+<li>品牌语气是什么；</li>
+<li>哪些表述有合规风险。</li>
+</ul>
+<p>如果没有这些，AI 很容易写出“看起来很像营销文，但完全不贴业务”的内容。</p>
+<h3 id="开发者"><a href="#开发者" class="headerlink" title="开发者"></a>开发者</h3><p>开发者当然是 <code>CLAUDE.md</code> 最典型的受益者。</p>
+<p>它可以记录：</p>
+<ul>
+<li>技术栈；</li>
+<li>包管理器；</li>
+<li>测试命令；</li>
+<li>目录结构；</li>
+<li>代码风格；</li>
+<li>禁止改动的区域；</li>
+<li>部署和迁移权限；</li>
+<li>常见错误及修复方式。</li>
+</ul>
+<p>这会让 Claude Code 从“每次刚入职的新同事”，变成“至少看过项目 README 和踩坑记录的协作者”。</p>
+<hr>
+<h2 id="五、不要照抄-21-条规则，要按自己的工作流裁剪"><a href="#五、不要照抄-21-条规则，要按自己的工作流裁剪" class="headerlink" title="五、不要照抄 21 条规则，要按自己的工作流裁剪"></a>五、不要照抄 21 条规则，要按自己的工作流裁剪</h2><p>那篇推文最大的问题，是有些规则听起来都对，但放在一起会互相打架。</p>
+<p>比如它建议：</p>
+<blockquote>
+<p>任何重要任务开始前，都先给 2-3 个方案并等待用户选择。</p>
+</blockquote>
+<p>这在高风险任务里是对的，比如重构架构、迁移数据库、发布文章、改生产配置。</p>
+<p>但如果用户只是说“帮我读一下这篇文章总结”，还非要先列 3 种总结方式让用户选，那就很烦。</p>
+<p>所以规则不能机械照抄。更合理的做法是分层：</p>
+<pre class="mermaid">flowchart TD
+    A[用户请求] --&gt; B{是否有外部副作用或不可逆风险？}
+    B --&gt;|是| C[先说明影响范围并等待确认]
+    B --&gt;|否| D{是否存在明显默认做法？}
+    D --&gt;|是| E[直接执行]
+    D --&gt;|否| F[给 2-3 个方案让用户选择]</pre>
+
 <p>换句话说：</p>
-<blockquote>
-<p>Tracing 不是执行之后补一份日志，而是执行过程本身的副产品。</p>
-</blockquote>
-<p>这点非常重要。只有 trace 足够完整、稳定、可回放，后面的自动归因、自动修复、自动优化才有意义。</p>
-<pre class="mermaid">flowchart LR
-    U[用户任务] --&gt; R[Agent Runtime]
-    R --&gt; S1[Step 1: LLM 调用]
-    R --&gt; S2[Step 2: Tool 调用]
-    R --&gt; S3[Step 3: Context 更新]
-    R --&gt; S4[Step N: 错误或完成]
-    S1 --&gt; T[Trace Event]
-    S2 --&gt; T
-    S3 --&gt; T
-    S4 --&gt; T
-    T --&gt; ES[Execution Snapshot]
-    ES --&gt; A[回放 / 归因 / 对比 / 优化]</pre>
+<ul>
+<li>低风险、高确定性的任务：直接做；</li>
+<li>中风险、多路径的任务：先给方案；</li>
+<li>高风险、有外部副作用的任务：必须确认；</li>
+<li>不确定事实：先查证或标注不确定。</li>
+</ul>
+<p>这比“所有事情都先问”更适合真实协作。</p>
+<p>AI 协作最舒服的状态不是它永远谨慎，也不是它永远主动，而是它知道什么时候该大胆，什么时候该停手。</p>
+<hr>
+<h2 id="六、一个更实用的-CLAUDE-md-模板"><a href="#六、一个更实用的-CLAUDE-md-模板" class="headerlink" title="六、一个更实用的 CLAUDE.md 模板"></a>六、一个更实用的 CLAUDE.md 模板</h2><p>如果你不想写很长，可以从下面这个精简版开始。</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> CLAUDE.md</span>
 
-<hr>
-<h2 id="五、Trace-是-Harness-的黑匣子"><a href="#五、Trace-是-Harness-的黑匣子" class="headerlink" title="五、Trace 是 Harness 的黑匣子"></a>五、Trace 是 Harness 的黑匣子</h2><p>飞机出事故后，黑匣子不直接修飞机，但它能告诉你事故发生前到底经历了什么。</p>
-<p>Agent Harness 也是一样。</p>
-<p>一次失败任务如果只留下一句“调用失败”，工程师或者 Agent 都很难分析。但如果它保留了完整 Execution Snapshot，就能回放出：</p>
-<ul>
-<li>哪个 provider 出错</li>
-<li>是用户 API Key 问题，还是上游服务问题</li>
-<li>是 schema 不兼容，还是上下文溢出</li>
-<li>是模型 hallucination，还是工具返回异常</li>
-<li>是某一步重试策略不合理，还是错误提示对用户不友好</li>
-</ul>
-<p>这时，错误就不再是噪音，而是训练 Harness 的原料。</p>
-<p>原文把这点讲得很清楚：Trace 本身不解决问题，但它让问题第一次变得可以回放、归因和比较。</p>
-<p>对 AI-Native 产品来说，这可能是比单次模型调用更重要的数据资产。</p>
-<hr>
-<h2 id="六、生产案例：Error-Pattern-自动巡检"><a href="#六、生产案例：Error-Pattern-自动巡检" class="headerlink" title="六、生产案例：Error Pattern 自动巡检"></a>六、生产案例：Error Pattern 自动巡检</h2><p>LobeHub 的 Error Pattern 自动巡检，是 Self-Evolving Harness 最具体的落地案例。</p>
-<p>它的背景是：LobeHub Model Runtime 接入了 70 多个 AI Providers，每天承接大量 Agent 运行。每次模型调用失败，系统都会留下错误记录。</p>
-<p>这些错误大致可以分为两类。</p>
-<p>第一类是用户侧错误：</p>
-<ul>
-<li>API Key 过期</li>
-<li>余额不足</li>
-<li>触发速率限制</li>
-<li>权限不足</li>
-</ul>
-<p>第二类是 Harness 自身问题：</p>
-<ul>
-<li>Tool schema 不兼容</li>
-<li>负数 max_tokens</li>
-<li>DeepSeek reasoning_content 丢失</li>
-<li>Context Window 过载</li>
-<li>thinking mode 元数据处理异常</li>
-</ul>
-<p>传统做法是人定期看后台，人工分类，再手动修复。</p>
-<p>但在高频 Agent 系统里，这个办法很快失效。错误产生速度高于人工分类速度，未归类错误会不断堆积，用户看到的就是陌生、难懂、无法处理的报错。</p>
-<p>LobeHub 的做法是把失败 trace 的查询权限开放给 Agent，让 Agent 批量解析 tracing 数据：</p>
-<ol>
-<li>从后台拉取最近 error records</li>
-<li>按 provider、errorType、status code、message 多维分桶</li>
-<li>对照已有 ERROR_PATTERNS，找出未覆盖的新错误模式</li>
-<li>区分用户侧错误和 Harness 自身 bug</li>
-<li>对用户侧错误，自动更新匹配 Pattern</li>
-<li>commit、push、开 PR</li>
-<li>清理 Dashboard 中已被新 pattern 覆盖的历史噪音</li>
-<li>对 Harness 自身 bug，继续根因分析并创建修复任务</li>
-</ol>
-<p>这套机制已经运行了九轮，结果很有代表性：</p>
-<ul>
-<li>累计 Pattern 从 31 增长到 104 后趋于平稳</li>
-<li>新增 Pattern 从 31 持续下降到 0</li>
-<li>即使 error 日志量在 334 到 1158 之间波动，Pattern 库仍然趋于饱和</li>
-<li>Agent 自主发现了 20+ 个 Harness 自身缺陷</li>
-<li>Agent 成功率从早期约 75% 提升到 95% 以上</li>
-</ul>
-<p>这说明一件事：<strong>Harness 的错误认知能力可以随着使用增长而增长。</strong></p>
-<p>产品不是只在版本发布时变好，而是在每天的运行中变好。</p>
-<div style="text-align:center;">
-<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527203430006-1832913588.png" style="zoom:40%;" alt="Error Pattern 自动巡检闭环示意图">
-</div>
+<span class="token title important"><span class="token punctuation">##</span> 沟通风格</span>
 
-<hr>
-<h2 id="七、Harness-自进化的四个层次"><a href="#七、Harness-自进化的四个层次" class="headerlink" title="七、Harness 自进化的四个层次"></a>七、Harness 自进化的四个层次</h2><p>原文把 Harness 自进化理解成一个连续谱，而不是一步到位的“完全自动”。</p>
-<pre class="mermaid">flowchart LR
-    L1[L1 纯人工<br>人发现 / 人分析 / 人修复]
-    L2[L2 Agent 辅助<br>Agent 整理线索<br>人确认修复]
-    L3[L3 Agent 主导<br>采集 / 识别 / 修复 / PR / 验证]
-    L4[L4 Harness 主动优化<br>持续观察 / 提出修复 / 回归验证]
-    L1 --&gt; L2 --&gt; L3 --&gt; L4</pre>
+<span class="token list punctuation">-</span> 少废话，结论优先。
+<span class="token list punctuation">-</span> 不要用“Great question”“Of course”“当然可以”等开场白。
+<span class="token list punctuation">-</span> 简单问题短答，复杂任务再展开。
+<span class="token list punctuation">-</span> 不确定的事实必须标注，不要编。
 
-<h3 id="L1：纯人工"><a href="#L1：纯人工" class="headerlink" title="L1：纯人工"></a>L1：纯人工</h3><p>人发现问题，人分析问题，人修复问题。</p>
-<p>这是传统软件维护方式。可靠，但慢，且很难适应高频 Agent 执行环境。</p>
-<h3 id="L2：Agent-辅助"><a href="#L2：Agent-辅助" class="headerlink" title="L2：Agent 辅助"></a>L2：Agent 辅助</h3><p>Agent 帮人找可疑问题、整理日志、给出修复建议。</p>
-<p>人负责确认，再让 Agent 执行部分修复。</p>
-<h3 id="L3：Agent-主导"><a href="#L3：Agent-主导" class="headerlink" title="L3：Agent 主导"></a>L3：Agent 主导</h3><p>Agent 可以完成大部分流程：</p>
-<ul>
-<li>采集数据</li>
-<li>识别模式</li>
-<li>修改代码</li>
-<li>提交 PR</li>
-<li>跑验证</li>
-<li>清理历史噪音</li>
-</ul>
-<p>人仍然保留关键判断，比如根因归属、修复方向、是否影响用户体验。</p>
-<p>LobeHub 的 Error Pattern 巡检大致就在 L3。</p>
-<h3 id="L4：Harness-主动优化自己"><a href="#L4：Harness-主动优化自己" class="headerlink" title="L4：Harness 主动优化自己"></a>L4：Harness 主动优化自己</h3><p>更完整的形态是：Harness 持续观察自己的运行状态，发现可改进点，提出修复，经过人确认后执行并验证。</p>
-<p>未来它不只是处理错误，还能主动优化：</p>
-<ul>
-<li>Context Engine 策略</li>
-<li>Tool schema 兼容层</li>
-<li>provider 适配规则</li>
-<li>Prompt 和执行策略</li>
-<li>失败任务的 eval / replay / regression 流程</li>
-</ul>
-<p>人不需要盯每一条日志，而是设定目标、审查边界、处理少数高风险决策。</p>
+<span class="token title important"><span class="token punctuation">##</span> 工作原则</span>
+
+<span class="token list punctuation">-</span> 优先执行，不要把简单任务变成反复确认。
+<span class="token list punctuation">-</span> 如果存在明显默认做法，直接采用默认做法。
+<span class="token list punctuation">-</span> 如果任务有多种路线且结果差异明显，先给 2-3 个方案让我选。
+<span class="token list punctuation">-</span> 如果需要外部发送、发布、部署、删除、覆盖、数据库迁移或不可逆操作，必须先获得当前会话明确确认。
+
+<span class="token title important"><span class="token punctuation">##</span> 修改边界</span>
+
+<span class="token list punctuation">-</span> 只修改我明确要求修改的范围。
+<span class="token list punctuation">-</span> 不要擅自重构、改名、移动文件或优化无关内容。
+<span class="token list punctuation">-</span> 如果发现其他问题，列为建议，不要直接动手。
+<span class="token list punctuation">-</span> 完成后简要说明改了什么、验证了什么、还有什么风险。
+
+<span class="token title important"><span class="token punctuation">##</span> 项目上下文</span>
+
+<span class="token list punctuation">-</span> 项目名称：TODO
+<span class="token list punctuation">-</span> 项目目标：TODO
+<span class="token list punctuation">-</span> 技术栈：TODO
+<span class="token list punctuation">-</span> 包管理器：TODO
+<span class="token list punctuation">-</span> 测试命令：TODO
+<span class="token list punctuation">-</span> 禁止改动区域：TODO
+<span class="token list punctuation">-</span> 常见坑：TODO
+
+<span class="token title important"><span class="token punctuation">##</span> 写作风格</span>
+
+<span class="token list punctuation">-</span> 语气：TODO
+<span class="token list punctuation">-</span> 受众：TODO
+<span class="token list punctuation">-</span> 常用表达：TODO
+<span class="token list punctuation">-</span> 避免表达：TODO
+<span class="token list punctuation">-</span> 标题风格：TODO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个版本不追求全，而是先覆盖最容易反复纠错的部分。</p>
+<p>真正好的 <code>CLAUDE.md</code> 不是一次写完的，而是在使用过程中慢慢长出来的。</p>
+<p>每当你发现自己又对 AI 说了一遍“以后不要这样”，那句话就应该被沉淀进去。</p>
 <hr>
-<h2 id="八、为什么-Consumer-AI-Product-天然更适合-Self-Evolving？"><a href="#八、为什么-Consumer-AI-Product-天然更适合-Self-Evolving？" class="headerlink" title="八、为什么 Consumer AI Product 天然更适合 Self-Evolving？"></a>八、为什么 Consumer AI Product 天然更适合 Self-Evolving？</h2><p>这篇文章里一个比较尖锐的观点是：<strong>Consumer-Aimed Product 天然拥有信号密度优势。</strong></p>
-<p>自部署方案，比如 OpenClaw、Hermes 这类本地运行的助手，技术上可以很强，但它们天然有一个瓶颈：每个用户每天的 Agent 执行可能只有几条到几十条，而且数据分散在本地，应用开发方拿不到完整错误信号。</p>
-<p>这意味着：</p>
+<h2 id="七、从-CLAUDE-md-到更大的记忆系统"><a href="#七、从-CLAUDE-md-到更大的记忆系统" class="headerlink" title="七、从 CLAUDE.md 到更大的记忆系统"></a>七、从 CLAUDE.md 到更大的记忆系统</h2><p><code>CLAUDE.md</code> 解决的是项目级上下文，但它不是终点。</p>
+<p>更成熟的 AI 工作流，往往会把上下文分成几层：</p>
 <ul>
-<li>错误样本稀疏</li>
-<li>pattern 验证周期长</li>
-<li>很难知道某个修复是否真的覆盖了高频问题</li>
-<li>难以形成全局运行时优化闭环</li>
+<li><strong>身份层</strong>：我是谁，我的长期偏好是什么；</li>
+<li><strong>项目层</strong>：这个项目的目标、结构、技术栈、约束；</li>
+<li><strong>任务层</strong>：当前这次要完成什么，验收标准是什么；</li>
+<li><strong>经验层</strong>：过去踩过什么坑，哪些方法有效，哪些方法失败；</li>
+<li><strong>权限层</strong>：哪些动作可以直接做，哪些必须确认。</li>
 </ul>
-<p>而面向消费者的云产品不同。</p>
-<p>以 LobeHub 为例，每天有上万次 Agent 执行，Error 样本按分钟级积累。一个 Harness bug 上午触发，中午被巡检发现，下午就可能修复上线。</p>
-<p>反馈闭环越快，Harness 进化速度越快。</p>
-<p>这会带来一种新的护城河：</p>
+<p>这些层不一定都写在一个文件里。</p>
+<p>有的适合放 <code>CLAUDE.md</code>，有的适合放 <code>MEMORY.md</code>，有的适合写成项目 README，有的适合沉淀成 skills，有的适合由 Agent 系统自动管理。</p>
+<p>关键不是文件名，而是这套原则：</p>
 <blockquote>
-<p>模型是外部的、通用的、可替换的；Harness 中沉淀的上下文、pattern、trajectory，才是产品内部长期积累的数据资产。</p>
+<p>高频重复的信息，不应该永远留在临时对话里。<br>它应该进入一个可维护、可复用、可更新的上下文系统。</p>
 </blockquote>
-<p>传统 SaaS 的产品逻辑是：功能代码 + 用户数据。</p>
-<p>AI-Native 产品的逻辑则更像：</p>
-<blockquote>
-<p>Harness + 用户交互数据 + 进化能力。</p>
-</blockquote>
-<p>用户每一次使用，不只是消费产品，也在为产品提供进化信号。</p>
+<p>这也是为什么我觉得 <code>CLAUDE.md</code> 的意义被低估了。</p>
+<p>它不是 prompt 工程的小技巧，而是 Agent 工程的一块基础设施。</p>
 <hr>
-<h2 id="九、The-Bitter-Lesson-在-Agent-时代的新含义"><a href="#九、The-Bitter-Lesson-在-Agent-时代的新含义" class="headerlink" title="九、The Bitter Lesson 在 Agent 时代的新含义"></a>九、The Bitter Lesson 在 Agent 时代的新含义</h2><p>Rich Sutton 的《The Bitter Lesson》说的是：通用方法 + 算力，长期会战胜手工编码的领域知识。</p>
-<p>到了 Agent 时代，这条经验有了新版本：</p>
-<blockquote>
-<p>模型进步太快，手工写死的 Harness 逻辑随时会过时。</p>
-</blockquote>
-<p>LangChain 的 Open Deep Research Agent 一年内重构三次，Manus 的 Harness 六个月重构五次，Anthropic 也不断从 Claude Code Harness 中剥离过时逻辑。</p>
-<p>这些现象都指向同一个问题：昨天的最佳实践，今天可能变成负担。</p>
-<p>如果 Harness 只能靠人定期重构，它永远追不上模型和用户场景的变化。</p>
-<p>所以真正的解法不是写一个“完美 Harness”，而是构建一个能持续观察、持续验证、持续改进自己的 Harness。</p>
-<p>也就是原文最后那句话：</p>
-<blockquote>
-<p>Build a Harness That Builds Itself.</p>
-</blockquote>
-<hr>
-<h2 id="十、我的判断：Agent-产品的护城河会从模型迁移到运行时"><a href="#十、我的判断：Agent-产品的护城河会从模型迁移到运行时" class="headerlink" title="十、我的判断：Agent 产品的护城河会从模型迁移到运行时"></a>十、我的判断：Agent 产品的护城河会从模型迁移到运行时</h2><p>这篇文章最重要的启发，不是 LobeHub 做了一个 tracing 系统，而是它指出了 AI 产品竞争的下一层。</p>
-<p>过去我们习惯问：</p>
+<h2 id="八、它不能“修复一切”，但能修复大量重复摩擦"><a href="#八、它不能“修复一切”，但能修复大量重复摩擦" class="headerlink" title="八、它不能“修复一切”，但能修复大量重复摩擦"></a>八、它不能“修复一切”，但能修复大量重复摩擦</h2><p>回到那篇推文的标题：“CLAUDE.md fixes everything。”</p>
+<p>这句话显然夸张。</p>
+<p><code>CLAUDE.md</code> 不能让模型凭空变聪明，不能保证工具不报错，不能替代测试，也不能让 AI 永远理解你的真实意图。</p>
+<p>但它确实能修复很多高频摩擦：</p>
 <ul>
-<li>你接了哪个模型？</li>
-<li>你的上下文多长？</li>
-<li>你的 benchmark 多高？</li>
+<li>少解释一遍背景；</li>
+<li>少纠正一次语气；</li>
+<li>少发生一次擅自改动；</li>
+<li>少踩一次历史坑；</li>
+<li>少让 AI 编一次不确定事实；</li>
+<li>少在危险操作上赌一次“它应该懂”。</li>
 </ul>
-<p>接下来更应该问：</p>
-<ul>
-<li>你的 Harness 能不能记录每一次失败？</li>
-<li>你的错误 pattern 能不能自动增长？</li>
-<li>你的 context strategy 能不能根据真实任务优化？</li>
-<li>你的工具 schema 能不能从失败调用中自我修复？</li>
-<li>你的 Agent 成功率能不能随着使用量提高？</li>
-</ul>
-<p>这才是 AI-Native 产品和传统套壳产品的分水岭。</p>
-<p>真正优秀的 Agent 产品，不应该只是“调用模型的前端”，而应该是一套会自我学习的运行时。</p>
-<p>它观察每一次交互，从错误中学习，把失败变成 pattern，把 pattern 变成修复，把修复变成下一次更稳定的体验。</p>
-<p>模型会越来越通用，越来越可替换。</p>
-<p>但一个长期运行、持续积累真实 trajectory、error pattern、context strategy 的 Harness，会越来越难复制。</p>
-<p>这就是 Self-Evolving Harness 的价值：</p>
-<p><strong>不是让 Agent 看起来更聪明，而是让整个系统真的越用越稳。</strong></p>
+<p>这些单次看起来都很小，但叠加起来就是工作流质量的差距。</p>
+<p>真正的 AI 协作，不是每次都写一个更长、更复杂的 Prompt。</p>
+<p>而是把那些稳定有效的经验，一点点沉淀成系统。</p>
+<p><code>CLAUDE.md</code> 只是这个系统最朴素、最容易开始的一种形式。</p>
 <hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li>原文：空谷 Arvin Xu《需要自进化的不是 Agent，而是 Harness》</li>
-<li>LobeHub Agent Tracing：<a href="https://github.com/lobehub/lobehub/tree/canary/packages/agent-tracing">https://github.com/lobehub/lobehub/tree/canary/packages/agent-tracing</a></li>
+<h2 id="结语：把-AI-从“会话”升级成“工作系统”"><a href="#结语：把-AI-从“会话”升级成“工作系统”" class="headerlink" title="结语：把 AI 从“会话”升级成“工作系统”"></a>结语：把 AI 从“会话”升级成“工作系统”</h2><p>这篇推文真正值得带走的，不是那 21 条规则本身，而是背后的思路：</p>
+<p><strong>不要把 Claude Code 当成一次性聊天框，要把它接入你的工作系统。</strong></p>
+<p>聊天框只记得这一轮你说了什么。</p>
+<p>工作系统会记得：</p>
+<ul>
+<li>你是谁；</li>
+<li>你怎么写作；</li>
+<li>你怎么写代码；</li>
+<li>你不喜欢什么；</li>
+<li>你过去怎么决策；</li>
+<li>你踩过哪些坑；</li>
+<li>哪些事情必须停下来问你。</li>
 </ul>
+<p>当这些东西被稳定沉淀下来，AI 才会从“聪明但陌生的工具”，慢慢变成“熟悉你工作方式的协作者”。</p>
+<p>这才是 <code>CLAUDE.md</code> 真正有价值的地方。</p>
 
                 
             </div>
@@ -1155,7 +1144,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://onefly.top/posts/self-evolving-harness-lobehub-agent-runtime-2026.html">https://onefly.top/posts/self-evolving-harness-lobehub-agent-runtime-2026.html</a>
+                    <a href="https://onefly.top/posts/claude-md-persistent-context-ai-workflow-2026.html">https://onefly.top/posts/claude-md-persistent-context-ai-workflow-2026.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1193,16 +1182,16 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/Claude/">
+                                    <span class="chip bg-color">Claude</span>
+                                </a>
+                            
                                 <a href="/tags/AI-Agent/">
                                     <span class="chip bg-color">AI Agent</span>
                                 </a>
                             
-                                <a href="/tags/LobeHub/">
-                                    <span class="chip bg-color">LobeHub</span>
-                                </a>
-                            
-                                <a href="/tags/Harness/">
-                                    <span class="chip bg-color">Harness</span>
+                                <a href="/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+                                    <span class="chip bg-color">AI工作流</span>
                                 </a>
                             
                         </div>
@@ -1635,9 +1624,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/claude-md-persistent-context-ai-workflow-2026.html">
                     <div class="card-image">
@@ -1654,9 +1644,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-05-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-05-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1669,6 +1659,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1695,12 +1686,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/gpt-plus-free-trial-google-infinite-email-hack-2026.html">
+                <a href="/posts/self-evolving-harness-lobehub-agent-runtime-2026.html">
                     <div class="card-image">
                         
-                        <img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260424001608583-938650876.jpg" class="responsive-img" alt="GPT Plus 纯零撸：用谷歌无限邮箱批量薅免费试用账号教程（2026最新）">
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527223243205-541295227.png" class="responsive-img" alt="需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践">
                         
-                        <span class="card-title">GPT Plus 纯零撸：用谷歌无限邮箱批量薅免费试用账号教程（2026最新）</span>
+                        <span class="card-title">需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1711,7 +1702,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-05-27
                             </span>
                         <span class="publish-author">
                             
@@ -1728,16 +1719,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/AI%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">AI工具</span>
+                    <a href="/tags/AI-Agent/">
+                        <span class="chip bg-color">AI Agent</span>
                     </a>
                     
-                    <a href="/tags/ChatGPT/">
-                        <span class="chip bg-color">ChatGPT</span>
+                    <a href="/tags/LobeHub/">
+                        <span class="chip bg-color">LobeHub</span>
                     </a>
                     
-                    <a href="/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/">
-                        <span class="chip bg-color">薅羊毛</span>
+                    <a href="/tags/Harness/">
+                        <span class="chip bg-color">Harness</span>
                     </a>
                     
                 </div>

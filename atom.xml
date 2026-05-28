@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-05-28T07:50:02.062Z</updated>
+  <updated>2026-05-28T13:47:56.764Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>链上行为学：如何判断一个币是不是“假流动性”</title>
+    <link href="https://onefly.top/posts/onchain-fake-liquidity-token-checklist.html"/>
+    <id>https://onefly.top/posts/onchain-fake-liquidity-token-checklist.html</id>
+    <published>2026-05-28T13:20:04.000Z</published>
+    <updated>2026-05-28T13:47:56.764Z</updated>
+    
+    
+    <summary type="html">从 V2/V3 池子差异、模拟卖出滑点、LP 控制权、成交量与持有人匹配度四个维度，整理一套判断新币是否存在假流动性的链上检查清单。</summary>
+    
+    
+    
+    <category term="加密投研" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
+    
+    
+    <category term="Meme币" scheme="https://onefly.top/tags/Meme%E5%B8%81/"/>
+    
+    <category term="链上分析" scheme="https://onefly.top/tags/%E9%93%BE%E4%B8%8A%E5%88%86%E6%9E%90/"/>
+    
+    <category term="交易风控" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E9%A3%8E%E6%8E%A7/"/>
+    
+    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
+    
+  </entry>
   
   <entry>
     <title>别再把 Claude Code 当一次性聊天框了：CLAUDE.md 与持久上下文工作流</title>
@@ -472,29 +497,6 @@
     <category term="自动化" scheme="https://onefly.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
     
     <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大学生白嫖5年 Office 365 Premium 含 Copilot 完整教程（2026最新）</title>
-    <link href="https://onefly.top/posts/260121.html"/>
-    <id>https://onefly.top/posts/260121.html</id>
-    <published>2026-01-21T02:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.300Z</updated>
-    
-    
-    <summary type="html">手把手教大学生如何免费获取 5 年 Microsoft 365 Premium 订阅，包含 Copilot AI 助手、1TB OneDrive 云存储等全部高级功能，只需 edu 邮箱即可验证。</summary>
-    
-    
-    
-    <category term="资源分享" scheme="https://onefly.top/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="Office 365" scheme="https://onefly.top/tags/Office-365/"/>
-    
-    <category term="Microsoft" scheme="https://onefly.top/tags/Microsoft/"/>
-    
-    <category term="学生优惠" scheme="https://onefly.top/tags/%E5%AD%A6%E7%94%9F%E4%BC%98%E6%83%A0/"/>
     
   </entry>
   

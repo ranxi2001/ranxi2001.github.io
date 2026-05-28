@@ -257,10 +257,10 @@
     <link href="https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html"/>
     <id>https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html</id>
     <published>2026-03-06T10:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.301Z</updated>
+    <updated>2026-05-28T08:31:09.439Z</updated>
     
     
-    <summary type="html">深度拆解 OpenClaw Agent 的 System Prompt 9 层架构，用最通俗的语言讲清楚一个 AI 助手背后的设计逻辑，以及你能用哪些方式来定制它。</summary>
+    <summary type="html">从工程视角拆解 OpenClaw Agent 的 System Prompt 9 层架构：框架如何定义身份、工具、技能、记忆、动态上下文，以及普通用户真正能改哪些地方。</summary>
     
     
     

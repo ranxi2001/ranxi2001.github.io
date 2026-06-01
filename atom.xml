@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-01T07:45:04.234Z</updated>
+  <updated>2026-06-01T08:07:53.916Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>LLM 挖量化因子，真正的问题不是能不能挖，而是怎么防止自己骗自己</title>
+    <title>LLM 挖因子：别被漂亮回测骗了</title>
     <link href="https://onefly.top/posts/llm-quant-factor-mining-overfitting-risk.html"/>
     <id>https://onefly.top/posts/llm-quant-factor-mining-overfitting-risk.html</id>
     <published>2026-06-01T07:38:34.000Z</published>
-    <updated>2026-06-01T07:45:04.234Z</updated>
+    <updated>2026-06-01T08:07:53.916Z</updated>
     
     
     <summary type="html">从评论区争议出发，拆解 LLM 挖量化因子的价值边界：因子挖掘边际收益下降、过拟合、数据泄漏、传统搜索效率，以及真正值得投入的量化研究流程。</summary>

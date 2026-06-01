@@ -42,31 +42,6 @@
   </entry>
   
   <entry>
-    <title>CLAUDE.md：把 Claude 从“临时聊天”变成“长期工作伙伴”</title>
-    <link href="https://onefly.top/posts/claude-md-context-engine.html"/>
-    <id>https://onefly.top/posts/claude-md-context-engine.html</id>
-    <published>2026-05-31T13:57:04.000Z</published>
-    <updated>2026-05-31T14:00:45.989Z</updated>
-    
-    
-    <summary type="html">CLAUDE.md 不是一个只给程序员用的配置文件，而是一套让 Claude 记住你的偏好、边界、上下文和协作规则的长期工作协议。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
-    
-    <category term="Claude Code" scheme="https://onefly.top/tags/Claude-Code/"/>
-    
-    <category term="AI工作流" scheme="https://onefly.top/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
-    
-    <category term="提示词工程" scheme="https://onefly.top/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
     <title>链上行为学：如何判断一个币是不是“假流动性”</title>
     <link href="https://onefly.top/posts/onchain-fake-liquidity-token-checklist.html"/>
     <id>https://onefly.top/posts/onchain-fake-liquidity-token-checklist.html</id>
@@ -493,6 +468,37 @@
     <category term="Tutorial" scheme="https://onefly.top/tags/Tutorial/"/>
     
     <category term="0基础" scheme="https://onefly.top/tags/0%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路</title>
+    <link href="https://onefly.top/posts/260203.html"/>
+    <id>https://onefly.top/posts/260203.html</id>
+    <published>2026-02-03T04:00:00.000Z</published>
+    <updated>2026-05-27T10:30:43.300Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路&quot;&gt;&lt;a href=&quot;#揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Web3" scheme="https://onefly.top/categories/Web3/"/>
+    
+    
+    <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
+    
+    <category term="加密货币" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    <category term="骗局揭露" scheme="https://onefly.top/tags/%E9%AA%97%E5%B1%80%E6%8F%AD%E9%9C%B2/"/>
+    
+    <category term="KOL" scheme="https://onefly.top/tags/KOL/"/>
     
   </entry>
   

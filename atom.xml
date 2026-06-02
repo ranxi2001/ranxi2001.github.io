@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-01T14:50:27.952Z</updated>
+  <updated>2026-06-02T17:15:36.825Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>交易所都开始推美股了：币圈真正的对手是纳指</title>
+    <link href="https://onefly.top/posts/crypto-exchanges-push-us-stocks-nasdaq.html"/>
+    <id>https://onefly.top/posts/crypto-exchanges-push-us-stocks-nasdaq.html</id>
+    <published>2026-06-02T17:11:03.000Z</published>
+    <updated>2026-06-02T17:15:36.825Z</updated>
+    
+    
+    <summary type="html">当交易所 App 一边提示 NAS100 创历史新高，一边提示 ETH、BTC 跌破关键价位，加密市场正在发生更深层的资金迁移：交易所从币圈入口变成全球风险资产入口，而纯叙事山寨币正在失去注意力溢价。</summary>
+    
+    
+    
+    <category term="加密投研" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
+    
+    
+    <category term="交易所" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E6%89%80/"/>
+    
+    <category term="RWA" scheme="https://onefly.top/tags/RWA/"/>
+    
+    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
+    
+    <category term="美股" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1/"/>
+    
+    <category term="市场观察" scheme="https://onefly.top/tags/%E5%B8%82%E5%9C%BA%E8%A7%82%E5%AF%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>币安美股交易来了：用 USDT 买股票的新入口</title>
@@ -470,31 +497,6 @@
     <category term="Meme币" scheme="https://onefly.top/tags/Meme%E5%B8%81/"/>
     
     <category term="PVP" scheme="https://onefly.top/tags/PVP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenClaw(Clawdbot)的超级完整部署教程 0基础教学</title>
-    <link href="https://onefly.top/posts/260209.html"/>
-    <id>https://onefly.top/posts/260209.html</id>
-    <published>2026-02-08T19:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.300Z</updated>
-    
-    
-    <summary type="html">2026年2月最新OpenClaw部署教程，专为小白打造。0基础手把手教学，从服务器购买到Bot配置全流程图文解析。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI" scheme="https://onefly.top/tags/AI/"/>
-    
-    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
-    
-    <category term="Tutorial" scheme="https://onefly.top/tags/Tutorial/"/>
-    
-    <category term="0基础" scheme="https://onefly.top/tags/0%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

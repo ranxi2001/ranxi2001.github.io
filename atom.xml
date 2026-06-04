@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-04T15:21:59.599Z</updated>
+  <updated>2026-06-04T15:54:11.907Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/internet-risk-control-algorithm.html"/>
     <id>https://onefly.top/posts/internet-risk-control-algorithm.html</id>
     <published>2026-06-04T15:17:13.000Z</published>
-    <updated>2026-06-04T15:21:59.599Z</updated>
+    <updated>2026-06-04T15:54:11.907Z</updated>
     
     
     <summary type="html">一篇写给零基础同学的互联网风控算法入门指南：从账号安全、营销风控、广告反作弊、内容安全到大模型安全，理解业务场景、算法路线、工程链路与指标体系。</summary>
@@ -35,7 +35,9 @@
     
     <category term="算法" scheme="https://onefly.top/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="安全" scheme="https://onefly.top/tags/%E5%AE%89%E5%85%A8/"/>
+    <category term="账号安全" scheme="https://onefly.top/tags/%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="反作弊" scheme="https://onefly.top/tags/%E5%8F%8D%E4%BD%9C%E5%BC%8A/"/>
     
   </entry>
   

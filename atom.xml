@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-04T03:28:01.846Z</updated>
+  <updated>2026-06-04T05:33:10.722Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>量化心流：最爽的不是赚钱</title>
+    <link href="https://onefly.top/posts/quant-flow-state.html"/>
+    <id>https://onefly.top/posts/quant-flow-state.html</id>
+    <published>2026-06-04T05:26:51.000Z</published>
+    <updated>2026-06-04T05:33:10.722Z</updated>
+    
+    
+    <summary type="html">量化最爽的瞬间，不只是挖到因子或跑出收益，而是脏数据被清洗、优化问题被压成一行公式、数学推导让噪声世界突然安静下来的心流状态。</summary>
+    
+    
+    
+    <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    
+    
+    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
+    
+    <category term="Opt" scheme="https://onefly.top/tags/Opt/"/>
+    
+    <category term="心流" scheme="https://onefly.top/tags/%E5%BF%83%E6%B5%81/"/>
+    
+  </entry>
   
   <entry>
     <title>清算燃料耗尽：一个短线反转因子的拆解</title>
@@ -468,31 +491,6 @@
     <category term="LangGraph" scheme="https://onefly.top/tags/LangGraph/"/>
     
     <category term="Claude Agent SDK" scheme="https://onefly.top/tags/Claude-Agent-SDK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何给 OpenClaw 搭建一套「永不失忆」的记忆系统</title>
-    <link href="https://onefly.top/posts/260211.html"/>
-    <id>https://onefly.top/posts/260211.html</id>
-    <published>2026-02-11T14:26:54.000Z</published>
-    <updated>2026-05-27T10:30:43.300Z</updated>
-    
-    
-    <summary type="html">从丢失两天记忆到三层自动化架构，一个完整的 AI Agent 记忆系统搭建教程。包含 Daily Sync、Weekly Compound、Hourly Micro-Sync 和语义搜索四层设计。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="自动化" scheme="https://onefly.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    
-    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
-    
-    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
-    
-    <category term="记忆系统" scheme="https://onefly.top/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   

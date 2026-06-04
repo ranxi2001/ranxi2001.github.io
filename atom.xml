@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-04T05:33:10.722Z</updated>
+  <updated>2026-06-04T15:21:59.599Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>互联网风控算法入门：从账号安全到广告反作弊</title>
+    <link href="https://onefly.top/posts/internet-risk-control-algorithm.html"/>
+    <id>https://onefly.top/posts/internet-risk-control-algorithm.html</id>
+    <published>2026-06-04T15:17:13.000Z</published>
+    <updated>2026-06-04T15:21:59.599Z</updated>
+    
+    
+    <summary type="html">一篇写给零基础同学的互联网风控算法入门指南：从账号安全、营销风控、广告反作弊、内容安全到大模型安全，理解业务场景、算法路线、工程链路与指标体系。</summary>
+    
+    
+    
+    <category term="技术成长" scheme="https://onefly.top/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
+    
+    
+    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
+    
+    <category term="算法" scheme="https://onefly.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="安全" scheme="https://onefly.top/tags/%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>量化心流：最爽的不是赚钱</title>
@@ -468,29 +491,6 @@
     <category term="谷歌账号" scheme="https://onefly.top/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/"/>
     
     <category term="家庭共享" scheme="https://onefly.top/tags/%E5%AE%B6%E5%BA%AD%E5%85%B1%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</title>
-    <link href="https://onefly.top/posts/260212.html"/>
-    <id>https://onefly.top/posts/260212.html</id>
-    <published>2026-02-12T10:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.300Z</updated>
-    
-    
-    <summary type="html">基于2026年最新社区讨论，深度对比LangGraph、CrewAI、AutoGen、Claude Agent SDK等主流AI Agent开发框架，帮你找到最适合的选型方案。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
-    
-    <category term="LangGraph" scheme="https://onefly.top/tags/LangGraph/"/>
-    
-    <category term="Claude Agent SDK" scheme="https://onefly.top/tags/Claude-Agent-SDK/"/>
     
   </entry>
   

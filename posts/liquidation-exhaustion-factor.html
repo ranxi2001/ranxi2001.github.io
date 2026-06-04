@@ -1,0 +1,2106 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="清算反转因子, 价格跳跃, 成交额相关性, 合约爆仓, 量化交易, Freqtrade, 加密货币因子">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>清算燃料耗尽：一个短线反转因子的拆解 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260604111426268-703587844.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">清算燃料耗尽：一个短线反转因子的拆解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%87%8F%E5%8C%96/">
+                                <span class="chip bg-color">量化</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%88%E7%BA%A6/">
+                                <span class="chip bg-color">合约</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9B%A0%E5%AD%90/">
+                                <span class="chip bg-color">因子</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/" class="post-category">
+                                加密货币
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-04
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260604111426268-703587844.jpg" style="zoom:33%;" alt="清算燃料耗尽：一个短线反转因子的拆解封面图"></p>
+<h1 id="清算燃料耗尽：一个短线反转因子的拆解"><a href="#清算燃料耗尽：一个短线反转因子的拆解" class="headerlink" title="清算燃料耗尽：一个短线反转因子的拆解"></a>清算燃料耗尽：一个短线反转因子的拆解</h1><p>今天看到 YuCry 提到一个很有意思的因子：<strong>价格跳跃成交额相关性因子</strong>。</p>
+<p>原理并不复杂：当价格在某一分钟内剧烈跳动，同时成交额突然放大，我们可以把这一分钟视为一次潜在的清算冲击。合约市场里，价格短时间往一个方向极端运动，往往不是因为所有人突然达成共识，而是因为一批杠杆仓位被迫平仓，强平单变成了继续推动价格的燃料。</p>
+<p>但燃料不是无限的。</p>
+<p>当该爆的仓集中爆完，市场短时间内就可能进入“燃料枯竭”状态。如果没有新的主动趋势资金继续接力，价格就容易出现短线反向运动。</p>
+<p>这篇文章把这个因子拆成一个可以落地的量化框架。</p>
+<h2 id="一句话定义"><a href="#一句话定义" class="headerlink" title="一句话定义"></a>一句话定义</h2><p><strong>价格跳跃成交额相关性因子 = 用“短时间价格剧烈跳动 + 成交额异常放大”的共振，识别疑似清算/爆仓燃料耗尽点，做短线反向。</strong></p>
+<p>它不是趋势因子，而是一个典型的 <strong>清算后反转因子</strong>。</p>
+<p>更准确的英文名可以叫：</p>
+<blockquote>
+<p>Liquidation Exhaustion Reversal Factor</p>
+</blockquote>
+<p>中文可以叫：</p>
+<blockquote>
+<p>清算燃料耗尽反转因子</p>
+</blockquote>
+<h2 id="这个因子到底在捕捉什么？"><a href="#这个因子到底在捕捉什么？" class="headerlink" title="这个因子到底在捕捉什么？"></a>这个因子到底在捕捉什么？</h2><p>普通价格因子关注的是：价格涨了还是跌了。</p>
+<p>普通成交量因子关注的是：这一段有没有放量。</p>
+<p>但这个因子真正关心的是：</p>
+<blockquote>
+<p>这一分钟的价格运动，是不是被清算流强行推出来的？</p>
+</blockquote>
+<p>如果是，那么它隐含两个信息：</p>
+<ol>
+<li>方向性冲击已经发生；</li>
+<li>推动冲击的被动燃料可能快耗尽。</li>
+</ol>
+<p>所以它不是追突破，而是在找“杠杆链条断裂之后”的短线均值回归。</p>
+<pre class="mermaid">flowchart TD
+    A[价格短时间剧烈跳动] --&gt; C[疑似清算冲击]
+    B[成交额异常放大] --&gt; C
+    C --&gt; D[强平单推动价格单边运动]
+    D --&gt; E[爆仓燃料逐渐耗尽]
+    E --&gt; F[短线反向修复]</pre>
+
+<p>典型方向是：</p>
+<ul>
+<li><strong>急跌 + 高成交额 + 高价格跳跃</strong>：疑似多头清算，后续偏反弹；</li>
+<li><strong>急涨 + 高成交额 + 高价格跳跃</strong>：疑似空头清算，后续偏回落。</li>
+</ul>
+<h2 id="因子拆解：三个核心变量"><a href="#因子拆解：三个核心变量" class="headerlink" title="因子拆解：三个核心变量"></a>因子拆解：三个核心变量</h2><p>这个因子可以拆成三个部分：价格跳跃、成交额异常、二者共振。</p>
+<h3 id="1-价格跳跃：Price-Jump"><a href="#1-价格跳跃：Price-Jump" class="headerlink" title="1. 价格跳跃：Price Jump"></a>1. 价格跳跃：Price Jump</h3><p>最简单的跳跃定义是当前分钟的实体收益：</p>
+<script type="math/tex; mode=display">
+r_t = \frac{C_t}{O_t} - 1</script><script type="math/tex; mode=display">
+J^{body}_t = \frac{|C_t - O_t|}{O_t}</script><p>但清算场景里，单看实体不够。很多清算会表现为长上下影线，所以更推荐用振幅：</p>
+<script type="math/tex; mode=display">
+J^{range}_t = \frac{H_t - L_t}{O_t}</script><p>如果有逐笔成交数据，还可以用微观价格路径：</p>
+<script type="math/tex; mode=display">
+J^{micro}_t = \sum_{i=1}^{m} \frac{|P_i - P_{i-1}|}{P_{i-1}}</script><p>三者区别：</p>
+<ul>
+<li><code>jump_body</code> 更关注方向性；</li>
+<li><code>jump_range</code> 更适合捕捉插针和剧烈波动；</li>
+<li><code>micro_jump</code> 最适合捕捉“上下剧烈抖动”。</li>
+</ul>
+<p>如果只有 1m K 线，我会优先用 <code>jump_range</code>。</p>
+<h3 id="2-成交额异常：Turnover-Spike"><a href="#2-成交额异常：Turnover-Spike" class="headerlink" title="2. 成交额异常：Turnover Spike"></a>2. 成交额异常：Turnover Spike</h3><p>清算一定伴随成交。没有成交额配合的价格跳动，可能只是流动性薄或者报价跳变，不一定是系统性强平。</p>
+<p>成交额可以定义为：</p>
+<script type="math/tex; mode=display">
+T_t = QV_t</script><p>如果数据里只有 base volume，可以近似：</p>
+<script type="math/tex; mode=display">
+T_t \approx V_t \cdot VWAP_t</script><p>然后做标准化：</p>
+<script type="math/tex; mode=display">
+Z^T_t = \frac{T_t - \mu_T^{(N)}}{\sigma_T^{(N)}}</script><p>或者用更稳健的中位数倍数：</p>
+<script type="math/tex; mode=display">
+R^T_t = \frac{T_t}{\operatorname{median}(T_{t-N+1:t})}</script><p>常见窗口：</p>
+<ul>
+<li><code>N = 60</code>：过去 60 分钟，适合短线；</li>
+<li><code>N = 240</code>：过去 4 小时，更稳一点；</li>
+<li><code>N = 1440</code>：过去 1 天，适合日内统计。</li>
+</ul>
+<h3 id="3-跳跃-成交额共振：Shock"><a href="#3-跳跃-成交额共振：Shock" class="headerlink" title="3. 跳跃-成交额共振：Shock"></a>3. 跳跃-成交额共振：Shock</h3><p>推文里提到“价格跳跃成交额相关性”，严格做法可以计算滚动相关：</p>
+<script type="math/tex; mode=display">
+\rho_t = \operatorname{corr}(J_{t-N+1:t}, T_{t-N+1:t})</script><p>但实盘触发时，我更喜欢用当前分钟的冲击乘积：</p>
+<script type="math/tex; mode=display">
+Z^J_t = \frac{J^{range}_t - \mu_J^{(N)}}{\sigma_J^{(N)}}</script><script type="math/tex; mode=display">
+Z^T_t = \frac{T_t - \mu_T^{(N)}}{\sigma_T^{(N)}}</script><script type="math/tex; mode=display">
+S_t = Z^J_t \cdot Z^T_t</script><p>原因很简单：滚动相关更像状态变量，而 <code>shock_t</code> 更像触发变量。</p>
+<p>当 <code>jump_z_t</code> 和 <code>turnover_z_t</code> 同时很高，说明当前这根 1m K 线不仅波动大，而且成交额也异常大。它更像一次真实的冲击，而不是普通噪音。</p>
+<h2 id="最终因子公式"><a href="#最终因子公式" class="headerlink" title="最终因子公式"></a>最终因子公式</h2><p>有了冲击强度之后，还需要判断方向。方向可以用当前分钟收盘相对开盘的符号：</p>
+<script type="math/tex; mode=display">
+D_t = \operatorname{sign}(C_t - O_t)</script><p>最终反转因子可以写成：</p>
+<script type="math/tex; mode=display">
+F_t = -D_t \cdot S_t</script><p>展开就是：</p>
+<script type="math/tex; mode=display">
+F_t = -\operatorname{sign}(C_t - O_t) \cdot Z_N(\frac{H_t - L_t}{O_t}) \cdot Z_N(QV_t)</script><p>含义：</p>
+<ul>
+<li><code>factor_t &gt; 0</code>：偏多，通常对应急跌后的反弹；</li>
+<li><code>factor_t &lt; 0</code>：偏空，通常对应急涨后的回落。</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    A[1m OHLCV] --&gt; B[计算价格跳跃 jump]
+    A --&gt; C[计算成交额 turnover]
+    B --&gt; D[jump z-score]
+    C --&gt; E[turnover z-score]
+    D --&gt; F[shock = jump_z × turnover_z]
+    E --&gt; F
+    A --&gt; G[direction = sign close-open]
+    F --&gt; H[factor = -direction × shock]
+    G --&gt; H
+    H --&gt; I[短线反转信号]</pre>
+
+<h2 id="入场规则示例"><a href="#入场规则示例" class="headerlink" title="入场规则示例"></a>入场规则示例</h2><p>这个因子最好先用非常简单、可解释的规则验证，不要一开始就堆太多参数。</p>
+<h3 id="做多信号"><a href="#做多信号" class="headerlink" title="做多信号"></a>做多信号</h3><script type="math/tex; mode=display">
+r_t < -\theta_r, \quad Z^J_t > 2, \quad Z^T_t > 2, \quad S_t > \theta_S</script><p>翻译成人话：</p>
+<ul>
+<li>当前 1m 明显下跌；</li>
+<li>当前振幅异常；</li>
+<li>当前成交额异常；</li>
+<li>疑似多头被集中清算；</li>
+<li>做短线反弹。</li>
+</ul>
+<h3 id="做空信号"><a href="#做空信号" class="headerlink" title="做空信号"></a>做空信号</h3><script type="math/tex; mode=display">
+r_t > \theta_r, \quad Z^J_t > 2, \quad Z^T_t > 2, \quad S_t > \theta_S</script><p>翻译成人话：</p>
+<ul>
+<li>当前 1m 明显上涨；</li>
+<li>当前振幅异常；</li>
+<li>当前成交额异常；</li>
+<li>疑似空头被集中清算；</li>
+<li>做短线回落。</li>
+</ul>
+<p>最小可用版本可以直接写成：</p>
+<script type="math/tex; mode=display">
+S_t = Z_{240}(\frac{H_t - L_t}{O_t}) \cdot Z_{240}(QV_t)</script><script type="math/tex; mode=display">
+\text{LongReversal}: C_t < O_t,\ S_t > 4</script><script type="math/tex; mode=display">
+\text{ShortReversal}: C_t > O_t,\ S_t > 4</script><script type="math/tex; mode=display">
+\text{NoSignal}: \mathrm{otherwise}</script><h2 id="出场：别把微结构因子拿成趋势单"><a href="#出场：别把微结构因子拿成趋势单" class="headerlink" title="出场：别把微结构因子拿成趋势单"></a>出场：别把微结构因子拿成趋势单</h2><p>这个因子捕捉的是清算后的短线修复，不适合拿太久。它的优势通常集中在几分钟到十几分钟内。</p>
+<p>常见出场有三种。</p>
+<h3 id="1-固定持有时间"><a href="#1-固定持有时间" class="headerlink" title="1. 固定持有时间"></a>1. 固定持有时间</h3><p>最适合做因子验证：</p>
+<script type="math/tex; mode=display">
+\tau \in \{3, 5, 10, 15\}\ \mathrm{minutes}</script><p>先看不同持有期的未来收益分布，再决定策略化时用哪个窗口。</p>
+<h3 id="2-回到短线均值"><a href="#2-回到短线均值" class="headerlink" title="2. 回到短线均值"></a>2. 回到短线均值</h3><p>做多时：</p>
+<script type="math/tex; mode=display">
+P_t \ge VWAP_{5m,t} \quad \mathrm{or} \quad P_t \ge MA_{7,t}</script><p>做空时：</p>
+<script type="math/tex; mode=display">
+P_t \le VWAP_{5m,t} \quad \mathrm{or} \quad P_t \le MA_{7,t}</script><p>这对应的是“清算插针后修复到短线均值”的逻辑。</p>
+<h3 id="3-冲击-K-线失效止损"><a href="#3-冲击-K-线失效止损" class="headerlink" title="3. 冲击 K 线失效止损"></a>3. 冲击 K 线失效止损</h3><p>做多后，如果价格继续跌破冲击 K 线低点，说明这可能不是燃料耗尽，而是真趋势继续：</p>
+<script type="math/tex; mode=display">
+Stop^{long}_t = L^{shock}_t</script><p>做空后，如果价格继续突破冲击 K 线高点，也应该止损：</p>
+<script type="math/tex; mode=display">
+Stop^{short}_t = H^{shock}_t</script><h2 id="为什么它不是普通成交量因子？"><a href="#为什么它不是普通成交量因子？" class="headerlink" title="为什么它不是普通成交量因子？"></a>为什么它不是普通成交量因子？</h2><p>普通成交量因子经常会把“放量”理解成趋势确认。</p>
+<p>但这个因子的关键不是放量本身，而是：</p>
+<blockquote>
+<p>放量是否和价格跳跃同时发生。</p>
+</blockquote>
+<p>三种情况要分开：</p>
+<ul>
+<li><strong>只有放量，价格不动</strong>：更像换手，不一定有方向；</li>
+<li><strong>只有价格跳，成交额不大</strong>：可能只是流动性薄；</li>
+<li><strong>价格剧烈跳 + 成交额异常放大</strong>：更像清算冲击。</li>
+</ul>
+<p>所以这个因子真正捕捉的是“成交额驱动的价格冲击”。</p>
+<h2 id="最好用什么数据？"><a href="#最好用什么数据？" class="headerlink" title="最好用什么数据？"></a>最好用什么数据？</h2><h3 id="最好：逐笔成交-强平数据"><a href="#最好：逐笔成交-强平数据" class="headerlink" title="最好：逐笔成交 + 强平数据"></a>最好：逐笔成交 + 强平数据</h3><p>如果数据条件允许，最理想的数据组合是：</p>
+<ul>
+<li>Binance aggTrade；</li>
+<li>forceOrder liquidation stream；</li>
+<li>mark price / index price；</li>
+<li>orderbook imbalance；</li>
+<li>open interest。</li>
+</ul>
+<p>这样可以把“疑似清算”变成更接近“确认清算”。</p>
+<h3 id="次优：1m-OHLCV"><a href="#次优：1m-OHLCV" class="headerlink" title="次优：1m OHLCV"></a>次优：1m OHLCV</h3><p>如果没有强平流，1m K 线也可以做弱版本。</p>
+<p>最小字段是：</p>
+<script type="math/tex; mode=display">
+\{O_t, H_t, L_t, C_t, V_t, QV_t\}</script><p>但要记住：OHLCV 只能推断清算，不能证明清算。</p>
+<h3 id="不建议只用-3m-5m"><a href="#不建议只用-3m-5m" class="headerlink" title="不建议只用 3m/5m"></a>不建议只用 3m/5m</h3><p>推文里说的是“某一分钟”。</p>
+<p>3m 或 5m 会把清算瞬间摊平，信号会变钝，甚至把“冲击后反弹”合并到同一根 K 线里，导致因子失真。</p>
+<h2 id="可以加的过滤器"><a href="#可以加的过滤器" class="headerlink" title="可以加的过滤器"></a>可以加的过滤器</h2><h3 id="1-OI-下降过滤"><a href="#1-OI-下降过滤" class="headerlink" title="1. OI 下降过滤"></a>1. OI 下降过滤</h3><p>清算通常伴随 open interest 下降。</p>
+<script type="math/tex; mode=display">
+OI_t < OI_{t-1}</script><p>如果价格急跌、成交额巨大、OI 明显下降，更像多头被清掉；如果价格急涨、成交额巨大、OI 明显下降，更像空头被清掉。</p>
+<h3 id="2-Funding-Premium-过滤"><a href="#2-Funding-Premium-过滤" class="headerlink" title="2. Funding / Premium 过滤"></a>2. Funding / Premium 过滤</h3><p>如果 funding 长时间偏多后急跌，更容易出现多头清算后的反弹。</p>
+<p>如果 funding 长时间偏空后急涨，更容易出现空头清算后的回落。</p>
+<p>可以写成：</p>
+<script type="math/tex; mode=display">
+Funding_t > \theta_f^+ \quad \mathrm{and} \quad DownsideShock_t</script><script type="math/tex; mode=display">
+Funding_t < \theta_f^- \quad \mathrm{and} \quad UpsideShock_t</script><h3 id="3-大盘同步过滤"><a href="#3-大盘同步过滤" class="headerlink" title="3. 大盘同步过滤"></a>3. 大盘同步过滤</h3><p>如果 BTC、ETH 和主流山寨同时出现清算冲击，说明可能是全市场杠杆去化。</p>
+<p>这种情况下，单币种反转信号的质量往往更高，因为它不只是局部流动性问题。</p>
+<script type="math/tex; mode=display">
+S^{BTC}_t > \theta_S, \quad S^{ETH}_t > \theta_S, \quad S^{ALT}_t > \theta_S</script><h3 id="4-趋势过滤"><a href="#4-趋势过滤" class="headerlink" title="4. 趋势过滤"></a>4. 趋势过滤</h3><p>这个因子最怕把真趋势突破误判成清算反转。</p>
+<p>可以加一个简单过滤：</p>
+<ul>
+<li>大周期极强下跌时，少做急跌反弹；</li>
+<li>大周期极强上涨时，少做急涨回落；</li>
+<li>或者只允许极短持有，防止反转失败变成逆趋势硬扛。</li>
+</ul>
+<h2 id="最大风险：趋势接力"><a href="#最大风险：趋势接力" class="headerlink" title="最大风险：趋势接力"></a>最大风险：趋势接力</h2><p>这个因子最大的坑是：</p>
+<blockquote>
+<p>有些大成交 + 大跳跃不是清算尾声，而是趋势启动。</p>
+</blockquote>
+<p>比如重大新闻、交易所故障、宏观数据、ETF 流出、监管事件，都可能让大成交之后继续同向运动。</p>
+<p>解决方法有几个：</p>
+<ol>
+<li>等冲击 K 线收完再进，不追正在形成中的针；</li>
+<li>看后续 1-3 分钟是否继续同向放量；</li>
+<li>一旦突破冲击 K 线极值，立刻承认判断失败；</li>
+<li>不在重大新闻窗口机械做反转。</li>
+</ol>
+<h2 id="回测应该怎么看？"><a href="#回测应该怎么看？" class="headerlink" title="回测应该怎么看？"></a>回测应该怎么看？</h2><p>最关键不是看单个阈值收益，而是看 <code>shock</code> 分桶后的未来收益。</p>
+<p>例如把 <code>shock</code> 分成：</p>
+<ul>
+<li><code>0-1</code></li>
+<li><code>1-2</code></li>
+<li><code>2-3</code></li>
+<li><code>3-5</code></li>
+<li><code>&gt;5</code></li>
+</ul>
+<p>分别统计未来：</p>
+<ul>
+<li>3 分钟收益；</li>
+<li>5 分钟收益；</li>
+<li>10 分钟收益；</li>
+<li>15 分钟收益。</li>
+</ul>
+<p>然后分方向看：</p>
+<ul>
+<li>急跌 shock 后，未来收益是否为正；</li>
+<li>急涨 shock 后，未来收益是否为负。</li>
+</ul>
+<pre class="mermaid">flowchart TD
+    A[收集 1m OHLCV] --&gt; B[计算 jump_z / turnover_z / shock]
+    B --&gt; C[按 shock 强度分桶]
+    C --&gt; D[区分急涨冲击和急跌冲击]
+    D --&gt; E[统计未来 3/5/10/15m 收益]
+    E --&gt; F{高 shock 分桶是否稳定反向?}
+    F --&gt;|是| G[进入策略化]
+    F --&gt;|否| H[因子故事好听但 alpha 不足]</pre>
+
+<p>如果 <code>shock &gt; 3</code> 或 <code>shock &gt; 5</code> 之后，反向 5-15 分钟收益显著为正，这个因子才算真的站住。</p>
+<p>如果分桶越高，反向收益没有改善，甚至继续同向，那它就是一个看起来很合理、但市场不给钱的故事。</p>
+<h2 id="和现有策略池的结合"><a href="#和现有策略池的结合" class="headerlink" title="和现有策略池的结合"></a>和现有策略池的结合</h2><p>这个因子很适合接进 ETH/BTC 的短线策略池，尤其是已有以下数据链路时：</p>
+<ul>
+<li>aggTrade 成交流；</li>
+<li>liquidation 强平流；</li>
+<li>orderbook runtime；</li>
+<li>premium/funding feature；</li>
+<li>Freqtrade dry-run 框架。</li>
+</ul>
+<p>我的建议是先做两个版本：</p>
+<h3 id="版本-A：OHLCV-弱版本"><a href="#版本-A：OHLCV-弱版本" class="headerlink" title="版本 A：OHLCV 弱版本"></a>版本 A：OHLCV 弱版本</h3><p>只用 1m K 线：</p>
+<script type="math/tex; mode=display">
+F_t = -\operatorname{sign}(C_t - O_t) \cdot Z_{240}(\frac{H_t - L_t}{O_t}) \cdot Z_{240}(QV_t)</script><p>优点是简单，数据稳定，容易快速回测。</p>
+<h3 id="版本-B：强平确认版本"><a href="#版本-B：强平确认版本" class="headerlink" title="版本 B：强平确认版本"></a>版本 B：强平确认版本</h3><p>在版本 A 上增加：</p>
+<script type="math/tex; mode=display">
+Z^{liq}_t > \theta_{liq}, \quad \Delta OI_t < 0</script><p>也就是只有当强平额异常，并且 OI 下降时，才认为它是高质量清算冲击。</p>
+<p>这个版本信号更少，但质量应该更高。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>价格跳跃成交额相关性因子的核心，不是“放量就反向”，也不是“插针就抄底”。</p>
+<p>它真正的逻辑是：</p>
+<blockquote>
+<p>当价格冲击和成交额异常同时出现，市场可能正在经历一轮杠杆清算。清算推动了价格，但清算结束后，推动价格的燃料也可能暂时耗尽。</p>
+</blockquote>
+<p>所以它抓的是 <strong>清算后的短线修复</strong>。</p>
+<p>最终可以浓缩成一个公式：</p>
+<script type="math/tex; mode=display">
+F_t = -\operatorname{sign}(C_t - O_t) \cdot Z(J_t) \cdot Z(T_t)</script><p>如果要把它做成真正能跑的策略，重点不在公式本身，而在三个问题：</p>
+<ol>
+<li>数据粒度够不够细？</li>
+<li>能不能过滤真趋势？</li>
+<li>高 shock 分桶后的未来收益是否真的反向？</li>
+</ol>
+<p>这三个问题过了，它才不是一个好听的交易叙事，而是一个可用的微结构因子。</p>
+<p>原始推文：<a href="https://x.com/0xYuCry/status/2062369306504294619">https://x.com/0xYuCry/status/2062369306504294619</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/liquidation-exhaustion-factor.html">https://onefly.top/posts/liquidation-exhaustion-factor.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%87%8F%E5%8C%96/">
+                                    <span class="chip bg-color">量化</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%88%E7%BA%A6/">
+                                    <span class="chip bg-color">合约</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%A0%E5%AD%90/">
+                                    <span class="chip bg-color">因子</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/liquidation-exhaustion-factor.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260604111426268-703587844.jpg" class="responsive-img" alt="清算燃料耗尽：一个短线反转因子的拆解">
+                        
+                        <span class="card-title">清算燃料耗尽：一个短线反转因子的拆解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/" class="post-category">
+                                    加密货币
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%87%8F%E5%8C%96/">
+                        <span class="chip bg-color">量化</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%88%E7%BA%A6/">
+                        <span class="chip bg-color">合约</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%A0%E5%AD%90/">
+                        <span class="chip bg-color">因子</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/typora-mac-markdown-editor-2026.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260603150346821-738781193.jpg" class="responsive-img" alt="Typora For Mac：把 Markdown 写作变成一种专注体验">
+                        
+                        <span class="card-title">Typora For Mac：把 Markdown 写作变成一种专注体验</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    效率工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Mac/">
+                        <span class="chip bg-color">Mac</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%86%99%E4%BD%9C/">
+                        <span class="chip bg-color">写作</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

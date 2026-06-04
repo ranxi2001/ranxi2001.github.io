@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-03T07:05:36.812Z</updated>
+  <updated>2026-06-04T03:28:01.846Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>清算燃料耗尽：一个短线反转因子的拆解</title>
+    <link href="https://onefly.top/posts/liquidation-exhaustion-factor.html"/>
+    <id>https://onefly.top/posts/liquidation-exhaustion-factor.html</id>
+    <published>2026-06-04T03:12:32.000Z</published>
+    <updated>2026-06-04T03:28:01.846Z</updated>
+    
+    
+    <summary type="html">从价格跳跃成交额相关性出发，拆解一个识别合约清算、爆仓燃料耗尽与短线反转机会的量化因子，并给出可落地的公式、过滤器和回测框架。</summary>
+    
+    
+    
+    <category term="加密货币" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    
+    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
+    
+    <category term="合约" scheme="https://onefly.top/tags/%E5%90%88%E7%BA%A6/"/>
+    
+    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Typora For Mac：把 Markdown 写作变成一种专注体验</title>
     <link href="https://onefly.top/posts/typora-mac-markdown-editor-2026.html"/>
     <id>https://onefly.top/posts/typora-mac-markdown-editor-2026.html</id>
     <published>2026-06-03T07:01:46.000Z</published>
-    <updated>2026-06-03T07:05:36.812Z</updated>
+    <updated>2026-06-04T05:23:36.879Z</updated>
     
     
     <summary type="html">Typora For Mac 是一款简洁、高效、所见即所得的 Markdown 编辑器，适合博客写作、技术文档、学习笔记和日常知识管理。本文从界面体验、Markdown 能力、代码高亮、主题系统和下载安全角度做一次完整介绍。</summary>
@@ -470,31 +493,6 @@
     <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
     
     <category term="记忆系统" scheme="https://onefly.top/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</title>
-    <link href="https://onefly.top/posts/okx-2026-spring-festival-collect-five-blessings-guide.html"/>
-    <id>https://onefly.top/posts/okx-2026-spring-festival-collect-five-blessings-guide.html</id>
-    <published>2026-02-11T06:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.300Z</updated>
-    
-    
-    <summary type="html">OKX 2026春节集五福活动全攻略，教你如何快速集齐福卡、合成财神福、瓜分28BTC奖池，冲击1BTC哈希锦鲤大奖。</summary>
-    
-    
-    
-    <category term="加密货币" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
-    
-    
-    <category term="OKX" scheme="https://onefly.top/tags/OKX/"/>
-    
-    <category term="加密货币" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
-    
-    <category term="春节活动" scheme="https://onefly.top/tags/%E6%98%A5%E8%8A%82%E6%B4%BB%E5%8A%A8/"/>
-    
-    <category term="BTC" scheme="https://onefly.top/tags/BTC/"/>
     
   </entry>
   

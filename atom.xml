@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-04T15:54:11.907Z</updated>
+  <updated>2026-06-04T16:41:27.138Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>风控模型指标：别只盯着 AUC</title>
+    <link href="https://onefly.top/posts/risk-control-model-metrics.html"/>
+    <id>https://onefly.top/posts/risk-control-model-metrics.html</id>
+    <published>2026-06-04T16:30:24.000Z</published>
+    <updated>2026-06-04T16:41:27.138Z</updated>
+    
+    
+    <summary type="html">一篇写给算法同学和风控面试准备者的模型指标复习：用 TP/FP/TN/FN 理解 Precision、Recall、FPR、FNR、ROC-AUC、PR-AUC、KS 与 Precision@TopK，重点掌握“低误伤率下的黑样本召回”。</summary>
+    
+    
+    
+    <category term="技术成长" scheme="https://onefly.top/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
+    
+    
+    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
+    
+    <category term="指标" scheme="https://onefly.top/tags/%E6%8C%87%E6%A0%87/"/>
+    
+    <category term="AUC" scheme="https://onefly.top/tags/AUC/"/>
+    
+    <category term="误伤率" scheme="https://onefly.top/tags/%E8%AF%AF%E4%BC%A4%E7%8E%87/"/>
+    
+  </entry>
   
   <entry>
     <title>互联网风控算法入门：从账号安全到广告反作弊</title>
@@ -470,29 +495,6 @@
     <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
     
     <category term="System Prompt" scheme="https://onefly.top/tags/System-Prompt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>台湾谷歌账户注册与Gemini Pro订阅家庭组共享教程</title>
-    <link href="https://onefly.top/posts/260305.html"/>
-    <id>https://onefly.top/posts/260305.html</id>
-    <published>2026-03-04T18:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.301Z</updated>
-    
-    
-    <summary type="html">详细讲解如何注册台湾谷歌账户，订阅Gemini Pro并通过Google家庭组实现6人共享，每人仅需3.3刀/月，使用Antigravity虚拟信用卡支付。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Gemini Pro" scheme="https://onefly.top/tags/Gemini-Pro/"/>
-    
-    <category term="谷歌账号" scheme="https://onefly.top/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/"/>
-    
-    <category term="家庭共享" scheme="https://onefly.top/tags/%E5%AE%B6%E5%BA%AD%E5%85%B1%E4%BA%AB/"/>
     
   </entry>
   

@@ -1,0 +1,2215 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="风控模型指标, Precision, Recall, FPR, FNR, ROC-AUC, PR-AUC, KS, Precision@TopK, 低误伤召回, 机器学习指标">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>风控模型指标：别只盯着 AUC | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260605003308119-845943683.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">风控模型指标：别只盯着 AUC</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                                <span class="chip bg-color">风控</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%8C%87%E6%A0%87/">
+                                <span class="chip bg-color">指标</span>
+                            </a>
+                        
+                            <a href="/tags/AUC/">
+                                <span class="chip bg-color">AUC</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AF%AF%E4%BC%A4%E7%8E%87/">
+                                <span class="chip bg-color">误伤率</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/" class="post-category">
+                                技术成长
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-05
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="风控模型指标：别只盯着-AUC"><a href="#风控模型指标：别只盯着-AUC" class="headerlink" title="风控模型指标：别只盯着 AUC"></a>风控模型指标：别只盯着 AUC</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260605003308119-845943683.jpg" style="zoom:33%;" alt="风控模型指标封面图"></p>
+<p>如果你在准备风控算法面试，或者刚开始接触互联网风控，很容易把模型评估理解成一句话：</p>
+<blockquote>
+<p>AUC 越高，模型越好。</p>
+</blockquote>
+<p>这句话不算错，但在真实风控业务里远远不够。</p>
+<p>风控模型不是 Kaggle 排榜。它面对的是一个更拧巴的问题：<strong>正常用户很多，风险用户很少；误伤正常用户会伤体验，漏放风险用户会造成资损。</strong></p>
+<p>所以风控里最常见、也最接近业务的一句话其实是：</p>
+<blockquote>
+<p><strong>在误伤率不超过 1% 的情况下，黑样本召回率能做到多少？</strong></p>
+</blockquote>
+<p>这篇文章就围绕这句话，把 Precision、Recall、F1、ROC-AUC、PR-AUC、KS、FPR、FNR、Precision@TopK 这些指标重新串起来。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260605004015224-280054097.png" style="zoom:40%;" alt="风控模型指标总览：从混淆矩阵到低误伤召回"></p>
+<hr>
+<h2 id="一、先从混淆矩阵开始"><a href="#一、先从混淆矩阵开始" class="headerlink" title="一、先从混淆矩阵开始"></a>一、先从混淆矩阵开始</h2><p>风控二分类里，一般把：</p>
+<ul>
+<li><strong>黑样本 / 风险样本 / 欺诈样本</strong>：正类，记为 Positive；</li>
+<li><strong>白样本 / 正常样本</strong>：负类，记为 Negative。</li>
+</ul>
+<p>模型做完预测后，会出现四种结果。</p>
+<pre class="mermaid">flowchart TD
+    A[真实样本] --&gt; B{真实是否风险}
+    B --&gt;|真实风险| C{模型是否拦截}
+    B --&gt;|真实正常| D{模型是否拦截}
+    C --&gt;|拦截| TP[TP：抓对黑样本]
+    C --&gt;|放过| FN[FN：漏放黑样本]
+    D --&gt;|拦截| FP[FP：误伤正常用户]
+    D --&gt;|放过| TN[TN：正确放过正常用户]</pre>
+
+<p>四个格子分别是：</p>
+<ul>
+<li><strong>TP：True Positive</strong>，真实是黑，模型也判黑，抓对了；</li>
+<li><strong>FP：False Positive</strong>，真实是白，模型判黑，误伤了；</li>
+<li><strong>TN：True Negative</strong>，真实是白，模型也判白，放对了；</li>
+<li><strong>FN：False Negative</strong>，真实是黑，模型判白，漏放了。</li>
+</ul>
+<p>风控最怕两个问题：</p>
+<ul>
+<li><strong>FP 太多</strong>：正常用户被拦、登录失败、优惠券领不了、内容被误删；</li>
+<li><strong>FN 太多</strong>：黑产没被拦住，盗号、薅羊毛、刷量、广告作弊继续发生。</li>
+</ul>
+<hr>
+<h2 id="二、Precision：我拦的人里，有多少真的是坏人？"><a href="#二、Precision：我拦的人里，有多少真的是坏人？" class="headerlink" title="二、Precision：我拦的人里，有多少真的是坏人？"></a>二、Precision：我拦的人里，有多少真的是坏人？</h2><p>Precision 叫准确率、查准率，也可以理解成<strong>拦截命中率</strong>。</p>
+<p>公式：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = TP / (TP + FP)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它回答的问题是：</p>
+<blockquote>
+<p>模型判成风险的人里面，有多少真的有风险？</p>
+</blockquote>
+<p>比如模型拦了 100 个账号，其中 80 个是真黑号，20 个是正常用户。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = 80 / 100 = 80%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>业务含义就是：</p>
+<blockquote>
+<p>我这把刀砍出去，砍中的有多少是真坏人？</p>
+</blockquote>
+<p>Precision 高，说明误伤相对少，拦截队列比较干净。</p>
+<p>但它有一个明显问题：<strong>Precision 高，不代表抓得多。</strong></p>
+<p>如果模型只拦 10 个最明显的黑号，10 个全是黑号，Precision 是 100%。但如果真实黑号有 10000 个，它只抓住 10 个，业务上几乎没用。</p>
+<hr>
+<h2 id="三、Recall：真坏人里，我抓住了多少？"><a href="#三、Recall：真坏人里，我抓住了多少？" class="headerlink" title="三、Recall：真坏人里，我抓住了多少？"></a>三、Recall：真坏人里，我抓住了多少？</h2><p>Recall 叫召回率，也可以叫<strong>黑样本召回率</strong>。</p>
+<p>公式：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall = TP / (TP + FN)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它回答的问题是：</p>
+<blockquote>
+<p>真实风险样本里，有多少被模型拦住了？</p>
+</blockquote>
+<p>比如真实有 1000 个黑号，模型抓住了 700 个，漏掉 300 个。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall = 700 / 1000 = 70%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>业务含义就是：</p>
+<blockquote>
+<p>坏人来了，我能抓住多少？</p>
+</blockquote>
+<p>Recall 高，说明漏放少。</p>
+<p>但 Recall 也不能单独看。如果模型把所有人都判成风险，那么所有黑样本都被拦住，Recall = 100%。可正常用户也全被误伤，业务直接爆炸。</p>
+<hr>
+<h2 id="四、Precision-和-Recall-是一对拉扯"><a href="#四、Precision-和-Recall-是一对拉扯" class="headerlink" title="四、Precision 和 Recall 是一对拉扯"></a>四、Precision 和 Recall 是一对拉扯</h2><p>风控模型一般会输出一个风险分。阈值越高，模型越保守；阈值越低，模型越激进。</p>
+<pre class="mermaid">flowchart LR
+    A[提高阈值] --&gt; B[拦截更少]
+    B --&gt; C[Precision 往往更高]
+    B --&gt; D[Recall 往往更低]
+
+    E[降低阈值] --&gt; F[拦截更多]
+    F --&gt; G[Recall 往往更高]
+    F --&gt; H[Precision 往往更低]</pre>
+
+<p>这就是 Precision 和 Recall 的核心矛盾：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260605004027387-808088476.png" style="zoom:40%;" alt="风控阈值调节对 Precision、Recall 和误伤率的影响"></p>
+<ul>
+<li>阈值高：少拦，拦得准，但漏得多；</li>
+<li>阈值低：多拦，抓得多，但误伤也多。</li>
+</ul>
+<p>风控策略的难点不是“让某个指标最大”，而是<strong>在业务能接受的误伤、人审、资损约束下，找到合适阈值</strong>。</p>
+<hr>
+<h2 id="五、F1：一个折中指标，但不是风控终点"><a href="#五、F1：一个折中指标，但不是风控终点" class="headerlink" title="五、F1：一个折中指标，但不是风控终点"></a>五、F1：一个折中指标，但不是风控终点</h2><p>F1 是 Precision 和 Recall 的调和平均。</p>
+<p>公式：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">F1 = 2 * Precision * Recall / (Precision + Recall)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它的特点是：Precision 和 Recall 只要有一个很低，F1 就会被拖下去。</p>
+<p>比如：</p>
+<ul>
+<li>Precision = 90%，Recall = 10%，F1 不会好；</li>
+<li>Precision = 50%，Recall = 90%，F1 也不一定好。</li>
+</ul>
+<p>F1 适合做模型评估的参考，但在风控业务里，<strong>它通常不是最终决策指标</strong>。</p>
+<p>原因很简单：业务往往不是要一个“综合最优点”，而是有明确约束：</p>
+<ul>
+<li>登录风控：正常用户误伤率不能超过多少；</li>
+<li>广告反作弊：广告主资损要压到多少；</li>
+<li>内容安全：人审队列每天最多能处理多少；</li>
+<li>营销风控：优惠券拦截不能影响正常新用户转化。</li>
+</ul>
+<p>所以业务更常问：</p>
+<blockquote>
+<p>误伤率卡在 1% 以内时，黑样本召回能到多少？</p>
+</blockquote>
+<hr>
+<h2 id="六、FPR：好人里，我误伤了多少？"><a href="#六、FPR：好人里，我误伤了多少？" class="headerlink" title="六、FPR：好人里，我误伤了多少？"></a>六、FPR：好人里，我误伤了多少？</h2><p>FPR 是 False Positive Rate，误伤率。</p>
+<p>公式：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR = FP / (FP + TN)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它回答的问题是：</p>
+<blockquote>
+<p>真实正常用户里，有多少被模型误判成风险？</p>
+</blockquote>
+<p>比如真实有 100000 个正常用户，模型误伤了 1000 个。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR = 1000 / 100000 = 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这就是风控里常说的：</p>
+<blockquote>
+<p>误伤率不能超过 1%。</p>
+</blockquote>
+<p>为什么 FPR 在风控里这么重要？</p>
+<p>因为正常用户通常远多于风险用户。</p>
+<p>假设：</p>
+<ul>
+<li>正常用户：100 万；</li>
+<li>风险用户：1 万；</li>
+<li>FPR = 1%。</li>
+</ul>
+<p>那么误伤人数就是：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">100 万 * 1% = 1 万正常用户<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>1% 听起来很小，但放到大盘用户里可能就是一大批投诉、流失和转化损失。</p>
+<p>所以风控里不是单纯说模型 AUC 高，而是要看：</p>
+<blockquote>
+<p><strong>在 FPR 很低的时候，Recall 能不能做高。</strong></p>
+</blockquote>
+<hr>
+<h2 id="七、FNR：坏人里，我漏掉了多少？"><a href="#七、FNR：坏人里，我漏掉了多少？" class="headerlink" title="七、FNR：坏人里，我漏掉了多少？"></a>七、FNR：坏人里，我漏掉了多少？</h2><p>FNR 是 False Negative Rate，漏放率。</p>
+<p>公式：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FNR = FN / (TP + FN)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它回答的问题是：</p>
+<blockquote>
+<p>真实风险样本里，有多少逃过去了？</p>
+</blockquote>
+<p>FNR 和 Recall 是互补关系：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FNR = 1 - Recall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果 Recall = 80%，那么 FNR = 20%。</p>
+<p>在资损型场景里，比如盗号、支付欺诈、营销薅羊毛，FNR 往往直接对应漏放风险。漏放越高，意味着越多黑产进入后续业务链路。</p>
+<hr>
+<h2 id="八、ROC-AUC：整体排序能力"><a href="#八、ROC-AUC：整体排序能力" class="headerlink" title="八、ROC-AUC：整体排序能力"></a>八、ROC-AUC：整体排序能力</h2><p>ROC 曲线的横轴是 FPR，纵轴是 TPR，也就是 Recall。</p>
+<pre class="mermaid">flowchart LR
+    A[模型输出风险分] --&gt; B[不断调整阈值]
+    B --&gt; C[得到不同 FPR]
+    B --&gt; D[得到不同 Recall / TPR]
+    C --&gt; E[画出 ROC 曲线]
+    D --&gt; E
+    E --&gt; F[计算 ROC-AUC]</pre>
+
+<p>ROC-AUC 衡量的是整体排序能力。</p>
+<p>可以这样理解：</p>
+<blockquote>
+<p>随机拿一个黑样本和一个白样本，模型能不能把黑样本排在白样本前面。</p>
+</blockquote>
+<p>AUC 越高，说明模型整体区分能力越强。</p>
+<p>但它在风控里有一个问题：<strong>ROC-AUC 看的是整体区间，不一定关心低误伤区域。</strong></p>
+<p>比如业务只允许：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR &lt;= 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>那真正关心的是 ROC 曲线左侧那一小段。</p>
+<p>一个模型整体 AUC 很高，但在 FPR &lt; 1% 的区域表现一般，业务上未必好。</p>
+<hr>
+<h2 id="九、PR-AUC：黑样本很少时更敏感"><a href="#九、PR-AUC：黑样本很少时更敏感" class="headerlink" title="九、PR-AUC：黑样本很少时更敏感"></a>九、PR-AUC：黑样本很少时更敏感</h2><p>PR 曲线的横轴是 Recall，纵轴是 Precision。</p>
+<p>PR-AUC 是 Precision-Recall 曲线下面积。</p>
+<p>它更适合正负样本极不平衡的场景，而风控恰好经常是这种场景。</p>
+<p>比如：</p>
+<ul>
+<li>正常用户：100 万；</li>
+<li>风险用户：1 万；</li>
+<li>黑样本占比：1%。</li>
+</ul>
+<p>这种情况下，ROC-AUC 有时看起来不错，但 Precision 可能很低。</p>
+<p>比如模型拦了 10000 个，其中：</p>
+<ul>
+<li>真黑：1000；</li>
+<li>误伤：9000。</li>
+</ul>
+<p>那么：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = 1000 / 10000 = 10%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果后面接人工审核，审核同学会发现 10 个里面 9 个是正常人，队列质量很差。</p>
+<p>所以黑样本稀少时，要重点看：</p>
+<ul>
+<li>Precision；</li>
+<li>Recall；</li>
+<li>PR-AUC；</li>
+<li>Precision@TopK。</li>
+</ul>
+<hr>
+<h2 id="十、KS：金融风控常用的区分度指标"><a href="#十、KS：金融风控常用的区分度指标" class="headerlink" title="十、KS：金融风控常用的区分度指标"></a>十、KS：金融风控常用的区分度指标</h2><p>KS 在金融风控里很常见，用来衡量模型对好坏样本的区分能力。</p>
+<p>它看的不是单个阈值，而是好坏样本分数分布能不能拉开。</p>
+<pre class="mermaid">flowchart TD
+    A[模型风险分] --&gt; B[黑样本累计分布]
+    A --&gt; C[白样本累计分布]
+    B --&gt; D[计算两条累计分布的差值]
+    C --&gt; D
+    D --&gt; E[最大差值 = KS]</pre>
+
+<p>简单理解：</p>
+<blockquote>
+<p>如果模型好，黑样本的风险分应该整体更高，白样本的风险分应该整体更低。</p>
+</blockquote>
+<p>KS 越大，说明模型越能把好人和坏人分开。</p>
+<p>经验上可以粗略理解为：</p>
+<ul>
+<li>KS &lt; 0.2：区分能力偏弱；</li>
+<li>KS 0.2 - 0.4：有一定效果；</li>
+<li>KS 0.4 - 0.6：比较好；</li>
+<li>KS &gt; 0.6：很强，但也要警惕数据泄露或样本穿越。</li>
+</ul>
+<p>在互联网风控里，KS 也能看，但没有信贷评分卡场景里那么绝对核心。</p>
+<hr>
+<h2 id="十一、Precision-TopK：风险最高的一批，命中率如何？"><a href="#十一、Precision-TopK：风险最高的一批，命中率如何？" class="headerlink" title="十一、Precision@TopK：风险最高的一批，命中率如何？"></a>十一、Precision@TopK：风险最高的一批，命中率如何？</h2><p>很多风控场景不是直接全自动拦截，而是要接人工审核、运营复核或者高风险巡检。</p>
+<p>这时资源是有限的。</p>
+<p>比如每天只能审核 1000 个账号，那你关心的就是：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision@1000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>也就是：</p>
+<blockquote>
+<p>模型风险分最高的 1000 个账号里，有多少是真的风险？</p>
+</blockquote>
+<p>如果 Top 1000 里有 850 个真黑：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision@1000 = 85%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这个指标非常适合：</p>
+<ul>
+<li>人工审核队列；</li>
+<li>高风险账号巡检；</li>
+<li>广告作弊点击排序；</li>
+<li>内容安全优先审核；</li>
+<li>营销活动异常用户排查。</li>
+</ul>
+<p>它回答的是一个很业务的问题：</p>
+<blockquote>
+<p>我资源有限，优先处理最可疑的一批，命中率够不够高？</p>
+</blockquote>
+<hr>
+<h2 id="十二、最重要的业务表达：Recall-FPR-1"><a href="#十二、最重要的业务表达：Recall-FPR-1" class="headerlink" title="十二、最重要的业务表达：Recall @ FPR = 1%"></a>十二、最重要的业务表达：Recall @ FPR = 1%</h2><p>现在回到开头那句话：</p>
+<blockquote>
+<p>在误伤率不超过 1% 的情况下，黑样本召回率能做到多少？</p>
+</blockquote>
+<p>翻译成指标语言就是：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall @ FPR &lt;= 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或者：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">TPR @ FPR = 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>因为 TPR 本质上就是 Recall。</p>
+<p>这句话比“模型 AUC 是 0.94”更接近业务，因为它同时回答了两个问题：</p>
+<ul>
+<li>业务能接受多少误伤？</li>
+<li>在这个误伤约束下，模型能抓住多少风险？</li>
+</ul>
+<p>举个例子：</p>
+<ul>
+<li>模型 A：ROC-AUC = 0.96，FPR = 1% 时 Recall = 35%；</li>
+<li>模型 B：ROC-AUC = 0.94，FPR = 1% 时 Recall = 55%。</li>
+</ul>
+<p>如果只看整体 AUC，模型 A 更好。</p>
+<p>但如果业务明确要求误伤率不能超过 1%，模型 B 可能更有价值。因为它在同样误伤约束下，抓住了更多黑样本。</p>
+<hr>
+<h2 id="十三、一个完整数字例子"><a href="#十三、一个完整数字例子" class="headerlink" title="十三、一个完整数字例子"></a>十三、一个完整数字例子</h2><p>假设测试集里有：</p>
+<ul>
+<li>正常用户：100000；</li>
+<li>风险用户：10000。</li>
+</ul>
+<p>业务要求：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR &lt;= 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>也就是说：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FP &lt;= 100000 * 1% = 1000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>模型调阈值后，得到：</p>
+<ul>
+<li>TP = 6000；</li>
+<li>FP = 1000；</li>
+<li>FN = 4000；</li>
+<li>TN = 99000。</li>
+</ul>
+<p>那么：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = TP / (TP + FP)
+          = 6000 / (6000 + 1000)
+          = 85.7%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall = TP / (TP + FN)
+       = 6000 / (6000 + 4000)
+       = 60%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR = FP / (FP + TN)
+    = 1000 / (1000 + 99000)
+    = 1%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">FNR = FN / (TP + FN)
+    = 4000 / 10000
+    = 40%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>业务表达就是：</p>
+<blockquote>
+<p>在误伤率 1% 的约束下，黑样本召回率达到 60%，拦截准确率 85.7%。</p>
+</blockquote>
+<p>这句话比“模型 AUC 是 0.94”更能说明模型能不能上线。</p>
+<hr>
+<h2 id="十四、不同指标适合什么场景？"><a href="#十四、不同指标适合什么场景？" class="headerlink" title="十四、不同指标适合什么场景？"></a>十四、不同指标适合什么场景？</h2><pre class="mermaid">mindmap
+  root((风控指标选择))
+    整体排序能力
+      ROC-AUC
+      KS
+    黑样本稀少
+      PR-AUC
+      Precision
+      Recall
+    低误伤约束
+      FPR
+      Recall@FPR
+    人审队列
+      Precision@TopK
+      TopK召回
+    资损控制
+      FNR
+      漏放金额</pre>
+
+<p>如果是模型离线评估，可以看 ROC-AUC、PR-AUC、KS。</p>
+<p>如果是策略上线评估，就要进一步看：</p>
+<ul>
+<li>FPR 是否满足业务容忍度；</li>
+<li>Recall 是否足够覆盖风险；</li>
+<li>Precision 是否保证拦截质量；</li>
+<li>Precision@TopK 是否匹配人审容量；</li>
+<li>漏放金额、误伤投诉、转化损失是否可接受。</li>
+</ul>
+<hr>
+<h2 id="十五、面试里可以这样回答"><a href="#十五、面试里可以这样回答" class="headerlink" title="十五、面试里可以这样回答"></a>十五、面试里可以这样回答</h2><p>如果面试官问：</p>
+<blockquote>
+<p>风控模型你会看哪些指标？</p>
+</blockquote>
+<p>可以这样答：</p>
+<blockquote>
+<p>我不会只看 AUC。AUC 可以反映整体排序能力，但风控场景更关注业务约束下的效果，比如在 FPR 不超过 1% 或 0.5% 的情况下，黑样本 Recall 能做到多少。<br>如果后面接人工审核，我还会看 Precision@TopK，保证审核队列的命中率。<br>在黑样本极度稀少的情况下，我会更关注 PR-AUC、Precision、Recall，而不是只看 ROC-AUC。<br>最后还要结合业务成本，比如误伤正常用户的损失、漏放风险用户的资损、人审容量和策略拦截强度，选择合适阈值。</p>
+</blockquote>
+<p>这个回答的重点是：你不是只懂公式，而是知道指标背后的业务取舍。</p>
+<hr>
+<h2 id="十六、最后用一句话记住"><a href="#十六、最后用一句话记住" class="headerlink" title="十六、最后用一句话记住"></a>十六、最后用一句话记住</h2><p>风控模型评估的核心不是：</p>
+<blockquote>
+<p>AUC 有多高？</p>
+</blockquote>
+<p>而是：</p>
+<blockquote>
+<p><strong>在可接受误伤率下，能召回多少真实风险？</strong></p>
+</blockquote>
+<p>再压缩成一句面试金句：</p>
+<blockquote>
+<p><strong>风控不是单纯追求 AUC，而是在低误伤约束下最大化黑样本召回，同时兼顾拦截队列的 Precision。</strong></p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/risk-control-model-metrics.html">https://onefly.top/posts/risk-control-model-metrics.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                                    <span class="chip bg-color">风控</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%8C%87%E6%A0%87/">
+                                    <span class="chip bg-color">指标</span>
+                                </a>
+                            
+                                <a href="/tags/AUC/">
+                                    <span class="chip bg-color">AUC</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AF%AF%E4%BC%A4%E7%8E%87/">
+                                    <span class="chip bg-color">误伤率</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/risk-control-model-metrics.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260605003308119-845943683.jpg" class="responsive-img" alt="风控模型指标：别只盯着 AUC">
+                        
+                        <span class="card-title">风控模型指标：别只盯着 AUC</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/" class="post-category">
+                                    技术成长
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                        <span class="chip bg-color">风控</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8C%87%E6%A0%87/">
+                        <span class="chip bg-color">指标</span>
+                    </a>
+                    
+                    <a href="/tags/AUC/">
+                        <span class="chip bg-color">AUC</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%AF%E4%BC%A4%E7%8E%87/">
+                        <span class="chip bg-color">误伤率</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/internet-risk-control-algorithm.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260604232056241-363968275.jpg" class="responsive-img" alt="互联网风控算法入门：从账号安全到广告反作弊">
+                        
+                        <span class="card-title">互联网风控算法入门：从账号安全到广告反作弊</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/" class="post-category">
+                                    技术成长
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                        <span class="chip bg-color">风控</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">账号安全</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%8D%E4%BD%9C%E5%BC%8A/">
+                        <span class="chip bg-color">反作弊</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

@@ -888,14 +888,14 @@
 <hr>
 <h2 id="二、Precision：我拦的人里，有多少真的是坏人？"><a href="#二、Precision：我拦的人里，有多少真的是坏人？" class="headerlink" title="二、Precision：我拦的人里，有多少真的是坏人？"></a>二、Precision：我拦的人里，有多少真的是坏人？</h2><p>Precision 叫准确率、查准率，也可以理解成<strong>拦截命中率</strong>。</p>
 <p>公式：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = TP / (TP + FP)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>它回答的问题是：</p>
+<script type="math/tex; mode=display">
+Precision = \frac{TP}{TP + FP}</script><p>它回答的问题是：</p>
 <blockquote>
 <p>模型判成风险的人里面，有多少真的有风险？</p>
 </blockquote>
 <p>比如模型拦了 100 个账号，其中 80 个是真黑号，20 个是正常用户。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = 80 / 100 = 80%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>业务含义就是：</p>
+<script type="math/tex; mode=display">
+Precision = \frac{80}{100} = 80\%</script><p>业务含义就是：</p>
 <blockquote>
 <p>我这把刀砍出去，砍中的有多少是真坏人？</p>
 </blockquote>
@@ -905,14 +905,14 @@
 <hr>
 <h2 id="三、Recall：真坏人里，我抓住了多少？"><a href="#三、Recall：真坏人里，我抓住了多少？" class="headerlink" title="三、Recall：真坏人里，我抓住了多少？"></a>三、Recall：真坏人里，我抓住了多少？</h2><p>Recall 叫召回率，也可以叫<strong>黑样本召回率</strong>。</p>
 <p>公式：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall = TP / (TP + FN)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>它回答的问题是：</p>
+<script type="math/tex; mode=display">
+Recall = \frac{TP}{TP + FN}</script><p>它回答的问题是：</p>
 <blockquote>
 <p>真实风险样本里，有多少被模型拦住了？</p>
 </blockquote>
 <p>比如真实有 1000 个黑号，模型抓住了 700 个，漏掉 300 个。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall = 700 / 1000 = 70%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>业务含义就是：</p>
+<script type="math/tex; mode=display">
+Recall = \frac{700}{1000} = 70\%</script><p>业务含义就是：</p>
 <blockquote>
 <p>坏人来了，我能抓住多少？</p>
 </blockquote>
@@ -939,8 +939,8 @@
 <hr>
 <h2 id="五、F1：一个折中指标，但不是风控终点"><a href="#五、F1：一个折中指标，但不是风控终点" class="headerlink" title="五、F1：一个折中指标，但不是风控终点"></a>五、F1：一个折中指标，但不是风控终点</h2><p>F1 是 Precision 和 Recall 的调和平均。</p>
 <p>公式：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">F1 = 2 * Precision * Recall / (Precision + Recall)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>它的特点是：Precision 和 Recall 只要有一个很低，F1 就会被拖下去。</p>
+<script type="math/tex; mode=display">
+F1 = \frac{2 \cdot Precision \cdot Recall}{Precision + Recall}</script><p>它的特点是：Precision 和 Recall 只要有一个很低，F1 就会被拖下去。</p>
 <p>比如：</p>
 <ul>
 <li>Precision = 90%，Recall = 10%，F1 不会好；</li>
@@ -961,14 +961,14 @@
 <hr>
 <h2 id="六、FPR：好人里，我误伤了多少？"><a href="#六、FPR：好人里，我误伤了多少？" class="headerlink" title="六、FPR：好人里，我误伤了多少？"></a>六、FPR：好人里，我误伤了多少？</h2><p>FPR 是 False Positive Rate，误伤率。</p>
 <p>公式：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR = FP / (FP + TN)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>它回答的问题是：</p>
+<script type="math/tex; mode=display">
+FPR = \frac{FP}{FP + TN}</script><p>它回答的问题是：</p>
 <blockquote>
 <p>真实正常用户里，有多少被模型误判成风险？</p>
 </blockquote>
 <p>比如真实有 100000 个正常用户，模型误伤了 1000 个。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR = 1000 / 100000 = 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这就是风控里常说的：</p>
+<script type="math/tex; mode=display">
+FPR = \frac{1000}{100000} = 1\%</script><p>这就是风控里常说的：</p>
 <blockquote>
 <p>误伤率不能超过 1%。</p>
 </blockquote>
@@ -981,8 +981,8 @@
 <li>FPR = 1%。</li>
 </ul>
 <p>那么误伤人数就是：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">100 万 * 1% = 1 万正常用户<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>1% 听起来很小，但放到大盘用户里可能就是一大批投诉、流失和转化损失。</p>
+<script type="math/tex; mode=display">
+100\text{万} \times 1\% = 1\text{万正常用户}</script><p>1% 听起来很小，但放到大盘用户里可能就是一大批投诉、流失和转化损失。</p>
 <p>所以风控里不是单纯说模型 AUC 高，而是要看：</p>
 <blockquote>
 <p><strong>在 FPR 很低的时候，Recall 能不能做高。</strong></p>
@@ -990,14 +990,14 @@
 <hr>
 <h2 id="七、FNR：坏人里，我漏掉了多少？"><a href="#七、FNR：坏人里，我漏掉了多少？" class="headerlink" title="七、FNR：坏人里，我漏掉了多少？"></a>七、FNR：坏人里，我漏掉了多少？</h2><p>FNR 是 False Negative Rate，漏放率。</p>
 <p>公式：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FNR = FN / (TP + FN)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>它回答的问题是：</p>
+<script type="math/tex; mode=display">
+FNR = \frac{FN}{TP + FN}</script><p>它回答的问题是：</p>
 <blockquote>
 <p>真实风险样本里，有多少逃过去了？</p>
 </blockquote>
 <p>FNR 和 Recall 是互补关系：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FNR = 1 - Recall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果 Recall = 80%，那么 FNR = 20%。</p>
+<script type="math/tex; mode=display">
+FNR = 1 - Recall</script><p>如果 Recall = 80%，那么 FNR = 20%。</p>
 <p>在资损型场景里，比如盗号、支付欺诈、营销薅羊毛，FNR 往往直接对应漏放风险。漏放越高，意味着越多黑产进入后续业务链路。</p>
 <hr>
 <h2 id="八、ROC-AUC：整体排序能力"><a href="#八、ROC-AUC：整体排序能力" class="headerlink" title="八、ROC-AUC：整体排序能力"></a>八、ROC-AUC：整体排序能力</h2><p>ROC 曲线的横轴是 FPR，纵轴是 TPR，也就是 Recall。</p>
@@ -1017,8 +1017,8 @@
 <p>AUC 越高，说明模型整体区分能力越强。</p>
 <p>但它在风控里有一个问题：<strong>ROC-AUC 看的是整体区间，不一定关心低误伤区域。</strong></p>
 <p>比如业务只允许：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR &lt;= 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>那真正关心的是 ROC 曲线左侧那一小段。</p>
+<script type="math/tex; mode=display">
+FPR \le 1\%</script><p>那真正关心的是 ROC 曲线左侧那一小段。</p>
 <p>一个模型整体 AUC 很高，但在 FPR &lt; 1% 的区域表现一般，业务上未必好。</p>
 <hr>
 <h2 id="九、PR-AUC：黑样本很少时更敏感"><a href="#九、PR-AUC：黑样本很少时更敏感" class="headerlink" title="九、PR-AUC：黑样本很少时更敏感"></a>九、PR-AUC：黑样本很少时更敏感</h2><p>PR 曲线的横轴是 Recall，纵轴是 Precision。</p>
@@ -1037,8 +1037,8 @@
 <li>误伤：9000。</li>
 </ul>
 <p>那么：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = 1000 / 10000 = 10%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果后面接人工审核，审核同学会发现 10 个里面 9 个是正常人，队列质量很差。</p>
+<script type="math/tex; mode=display">
+Precision = \frac{1000}{10000} = 10\%</script><p>如果后面接人工审核，审核同学会发现 10 个里面 9 个是正常人，队列质量很差。</p>
 <p>所以黑样本稀少时，要重点看：</p>
 <ul>
 <li>Precision；</li>
@@ -1073,14 +1073,14 @@
 <h2 id="十一、Precision-TopK：风险最高的一批，命中率如何？"><a href="#十一、Precision-TopK：风险最高的一批，命中率如何？" class="headerlink" title="十一、Precision@TopK：风险最高的一批，命中率如何？"></a>十一、Precision@TopK：风险最高的一批，命中率如何？</h2><p>很多风控场景不是直接全自动拦截，而是要接人工审核、运营复核或者高风险巡检。</p>
 <p>这时资源是有限的。</p>
 <p>比如每天只能审核 1000 个账号，那你关心的就是：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision@1000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>也就是：</p>
+<script type="math/tex; mode=display">
+Precision@1000</script><p>也就是：</p>
 <blockquote>
 <p>模型风险分最高的 1000 个账号里，有多少是真的风险？</p>
 </blockquote>
 <p>如果 Top 1000 里有 850 个真黑：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision@1000 = 85%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这个指标非常适合：</p>
+<script type="math/tex; mode=display">
+Precision@1000 = 85\%</script><p>这个指标非常适合：</p>
 <ul>
 <li>人工审核队列；</li>
 <li>高风险账号巡检；</li>
@@ -1098,10 +1098,10 @@
 <p>在误伤率不超过 1% 的情况下，黑样本召回率能做到多少？</p>
 </blockquote>
 <p>翻译成指标语言就是：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall @ FPR &lt;= 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>或者：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">TPR @ FPR = 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>因为 TPR 本质上就是 Recall。</p>
+<script type="math/tex; mode=display">
+Recall \ @ \ FPR \le 1\%</script><p>或者：</p>
+<script type="math/tex; mode=display">
+TPR \ @ \ FPR = 1\%</script><p>因为 TPR 本质上就是 Recall。</p>
 <p>这句话比“模型 AUC 是 0.94”更接近业务，因为它同时回答了两个问题：</p>
 <ul>
 <li>业务能接受多少误伤？</li>
@@ -1121,10 +1121,10 @@
 <li>风险用户：10000。</li>
 </ul>
 <p>业务要求：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR &lt;= 1%<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>也就是说：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FP &lt;= 100000 * 1% = 1000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>模型调阈值后，得到：</p>
+<script type="math/tex; mode=display">
+FPR \le 1\%</script><p>也就是说：</p>
+<script type="math/tex; mode=display">
+FP \le 100000 \times 1\% = 1000</script><p>模型调阈值后，得到：</p>
 <ul>
 <li>TP = 6000；</li>
 <li>FP = 1000；</li>
@@ -1132,19 +1132,19 @@
 <li>TN = 99000。</li>
 </ul>
 <p>那么：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Precision = TP / (TP + FP)
-          = 6000 / (6000 + 1000)
-          = 85.7%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Recall = TP / (TP + FN)
-       = 6000 / (6000 + 4000)
-       = 60%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FPR = FP / (FP + TN)
-    = 1000 / (1000 + 99000)
-    = 1%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">FNR = FN / (TP + FN)
-    = 4000 / 10000
-    = 40%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>业务表达就是：</p>
+<script type="math/tex; mode=display">
+Precision = \frac{TP}{TP + FP}
+= \frac{6000}{6000 + 1000}
+= 85.7\%</script><script type="math/tex; mode=display">
+Recall = \frac{TP}{TP + FN}
+= \frac{6000}{6000 + 4000}
+= 60\%</script><script type="math/tex; mode=display">
+FPR = \frac{FP}{FP + TN}
+= \frac{1000}{1000 + 99000}
+= 1\%</script><script type="math/tex; mode=display">
+FNR = \frac{FN}{TP + FN}
+= \frac{4000}{10000}
+= 40\%</script><p>业务表达就是：</p>
 <blockquote>
 <p>在误伤率 1% 的约束下，黑样本召回率达到 60%，拦截准确率 85.7%。</p>
 </blockquote>

@@ -1513,15 +1513,6 @@
                 </a>
                 
                 
-                <a href="/tags/System-Prompt/" title="System Prompt: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="System Prompt" style="background-color: #FFF;">System Prompt
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/AI%E4%BA%A4%E6%98%93/" title="AI交易: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -1562,6 +1553,15 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="薅羊毛" style="background-color: #FEF9E7;">薅羊毛
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/System-Prompt/" title="System Prompt: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="System Prompt" style="background-color: #FFF;">System Prompt
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -2260,6 +2260,29 @@ $(function () {
         }
     </script>
     
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            startup: {
+                ready: function () {
+                    MathJax.startup.defaultReady();
+                    if (window.MathJax && MathJax.typesetPromise) {
+                        MathJax.typesetPromise();
+                    }
+                }
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
 

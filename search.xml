@@ -10536,445 +10536,6 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
       </tags>
   </entry>
   <entry>
-    <title>拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的</title>
-    <url>/posts/openclaw-agent-system-prompt-9-layers-architecture.html</url>
-    <content><![CDATA[<h1 id="拆解-OpenClaw-的大脑：一个-AI-助手的-System-Prompt-是怎么炼成的"><a href="#拆解-OpenClaw-的大脑：一个-AI-助手的-System-Prompt-是怎么炼成的" class="headerlink" title="拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的"></a>拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的</h1><p>很多人以为，AI 助手的差异主要来自模型：Claude、GPT、Gemini，谁更聪明，谁就更好用。</p>
-<p>但真正把一个“会聊天的模型”变成“能干活的助手”的，往往不是模型本身，而是它每次被调用前收到的那份 <strong>System Prompt</strong>。</p>
-<p>它像一份启动配置，也像一份人格说明书，更像一个运行时操作系统：定义这个助手是谁、能做什么、不能做什么、应该如何理解用户、有哪些工具、有哪些长期记忆、当下处在什么环境里。</p>
-<p>OpenClaw 的 System Prompt 有意思的地方在于：它不是一段孤零零的提示词，而是一套被分层组装出来的上下文工程。理解它，你就能理解一个现代 AI Agent 的“脑子”大概是怎么拼起来的。</p>
-<pre class="mermaid">flowchart LR
-    U[用户输入] --&gt; G[OpenClaw Gateway]
-    G --&gt; B[Prompt Builder]
-    B --&gt; S[System Prompt<br>9 层上下文]
-    S --&gt; M[LLM 推理]
-    M --&gt; T{需要工具吗}
-    T --&gt;|是| TOOL[工具 / Skills / 外部系统]
-    TOOL --&gt; M
-    T --&gt;|否| R[最终回复]
-    M --&gt; R</pre>
-
-<hr>
-<h2 id="先把话说透：System-Prompt-不是“咒语”，是运行时合同"><a href="#先把话说透：System-Prompt-不是“咒语”，是运行时合同" class="headerlink" title="先把话说透：System Prompt 不是“咒语”，是运行时合同"></a>先把话说透：System Prompt 不是“咒语”，是运行时合同</h2><p>普通提示词更像一句请求：</p>
-<blockquote>
-<p>请帮我总结这篇文章。</p>
-</blockquote>
-<p>System Prompt 则更像一份合同：</p>
-<ul>
-<li>你是谁；</li>
-<li>你的职责是什么；</li>
-<li>你能调用哪些工具；</li>
-<li>工具调用必须遵守什么格式；</li>
-<li>什么情况必须沉默，什么情况必须响应；</li>
-<li>哪些信息来自长期记忆，哪些信息来自当前会话；</li>
-<li>用户能改哪里，框架又锁死了哪里。</li>
-</ul>
-<p>所以，System Prompt 的核心价值不是“让模型变聪明”，而是 <strong>把模型的聪明约束成稳定、可复用、可协作的行为</strong>。</p>
-<p>这也是 Agent 工程和普通 Prompt Engineering 最大的区别：前者关心的是系统行为，后者更偏单次回答效果。</p>
-<hr>
-<h2 id="OpenClaw-的-9-层结构：不是越多越炫，而是职责隔离"><a href="#OpenClaw-的-9-层结构：不是越多越炫，而是职责隔离" class="headerlink" title="OpenClaw 的 9 层结构：不是越多越炫，而是职责隔离"></a>OpenClaw 的 9 层结构：不是越多越炫，而是职责隔离</h2><p>OpenClaw 的 System Prompt 可以拆成 9 层。</p>
-<pre class="mermaid">flowchart TB
-    subgraph F[框架控制层：稳定基线]
-        L1[Layer 1<br>框架核心：身份 / 规则 / 安全边界]
-        L2[Layer 2<br>工具定义：函数、参数、调用协议]
-        L3[Layer 3<br>技能注册：可复用任务手册]
-        L4[Layer 4<br>模型别名：模型切换入口]
-        L5[Layer 5<br>协议规范：沉默、心跳、群聊响应]
-        L6[Layer 6<br>运行时信息：时间、目录、环境]
-    end
-
-    subgraph U[用户可控层：个性化与项目知识]
-        L7["Layer 7<br>工作区文件：IDENTITY / AGENTS / MEMORY"]
-        L8[Layer 8<br>动态注入：Hook / Git 状态 / 外部数据]
-    end
-
-    subgraph C[会话现场层：每次消息动态生成]
-        L9["Layer 9<br>入站上下文：发送者 / 历史 / 平台 / @ 状态"]
-    end
-
-    F --&gt; U --&gt; C --&gt; P[最终组装成 System Prompt]</pre>
-
-<p>如果只看名字，9 层很容易显得玄乎。但它背后的逻辑其实很朴素：<strong>不同来源、不同更新频率、不同控制权限的上下文，不应该混在一起。</strong></p>
-<p>可以先记住这个分法：</p>
-<ul>
-<li><p><strong>Layer 1~6：框架层</strong><br>由 OpenClaw 自动生成，负责身份基线、工具协议、技能注册、模型配置、运行环境等基础设施。</p>
-</li>
-<li><p><strong>Layer 7~8：用户可控层</strong><br>用户真正能影响 Agent 行为的地方，包括工作区文件、记忆、额外文档、动态 Hook。</p>
-</li>
-<li><p><strong>Layer 9：会话现场层</strong><br>每次用户发消息时动态生成，包括当前发送者、消息历史、是否被提及等实时上下文。</p>
-</li>
-</ul>
-<p>也就是说，OpenClaw 并不是每次都把一大坨文本塞给模型，而是在调用前按层组装：稳定的放前面，动态的放后面；框架的归框架，用户的归用户。</p>
-<hr>
-<h2 id="Layer-1：框架核心层——先规定“你是什么东西”"><a href="#Layer-1：框架核心层——先规定“你是什么东西”" class="headerlink" title="Layer 1：框架核心层——先规定“你是什么东西”"></a>Layer 1：框架核心层——先规定“你是什么东西”</h2><p>第一层是 OpenClaw 自动生成的基础系统说明。</p>
-<pre class="mermaid">flowchart LR
-    A[框架核心层] --&gt; B[身份定义]
-    A --&gt; C[行为原则]
-    A --&gt; D[安全边界]
-    A --&gt; E[输出与工具调用规范]
-    B --&gt; F[统一行为底座]
-    C --&gt; F
-    D --&gt; F
-    E --&gt; F</pre>
-
-<p>这一层通常包含几类信息：</p>
-<ul>
-<li>Agent 的基础身份；</li>
-<li>核心行为原则；</li>
-<li>当前系统运行时间；</li>
-<li>基础安全边界；</li>
-<li>对输出格式和工具调用方式的底层要求。</li>
-</ul>
-<p>这层的作用不是给 Agent 加个“人设”，而是定调：它不是网页里的聊天框，而是一个运行在框架里的工具型智能体。</p>
-<p>我觉得这里最重要的一点是：<strong>身份定义不能写得太文学化。</strong></p>
-<p>很多人写 System Prompt 喜欢堆“你是世界顶级专家”“你无所不能”“你必须完美完成任务”。这种写法短期看很振奋，长期看很容易制造不稳定行为。一个好的 Agent 身份应该回答三个问题：</p>
-<ol>
-<li>你服务谁？</li>
-<li>你负责什么？</li>
-<li>遇到不确定时怎么处理？</li>
-</ol>
-<p>OpenClaw 把这部分放进框架层，就是为了保证所有 Agent 至少有一致的行为底座。</p>
-<hr>
-<h2 id="Layer-2：工具定义层——告诉模型“手上有哪些按钮”"><a href="#Layer-2：工具定义层——告诉模型“手上有哪些按钮”" class="headerlink" title="Layer 2：工具定义层——告诉模型“手上有哪些按钮”"></a>Layer 2：工具定义层——告诉模型“手上有哪些按钮”</h2><p>一个 Agent 和普通 Chatbot 的分水岭，通常就在工具调用。</p>
-<pre class="mermaid">flowchart LR
-    I[用户意图] --&gt; M[模型判断]
-    M --&gt; S[JSON Schema<br>工具名 / 参数 / 必填字段]
-    S --&gt; A[工具调用]
-    A --&gt; O[外部结果]
-    O --&gt; M
-    M --&gt; R[整合后回复]</pre>
-
-<p>这一层会把可用工具注入给模型，例如：</p>
-<ul>
-<li>读取文件；</li>
-<li>搜索资料；</li>
-<li>执行命令；</li>
-<li>调用浏览器；</li>
-<li>发送消息；</li>
-<li>写入记忆；</li>
-<li>触发其他自动化流程。</li>
-</ul>
-<p>每个工具一般都会带结构化参数说明，也就是 JSON Schema。它告诉模型：这个工具叫什么、什么时候该用、参数有哪些、哪些字段必填、返回结果大概是什么。</p>
-<p>这件事看起来很细，但非常关键。</p>
-<p>因为模型本身并不会“真的知道”外部世界。它需要通过工具把意图变成行动。工具定义越清晰，模型越不容易乱猜；工具边界越明确，系统越不容易出事故。</p>
-<p>一个简单判断标准是：<strong>如果一个工具说明写得让人类开发者都看不懂，那就别指望模型稳定调用它。</strong></p>
-<hr>
-<h2 id="Layer-3：技能注册表——把经验封装成可复用配方"><a href="#Layer-3：技能注册表——把经验封装成可复用配方" class="headerlink" title="Layer 3：技能注册表——把经验封装成可复用配方"></a>Layer 3：技能注册表——把经验封装成可复用配方</h2><p>工具解决“能做什么”，技能解决“怎么做得更好”。</p>
-<pre class="mermaid">flowchart TD
-    Q[用户任务] --&gt; D{命中技能吗}
-    D --&gt;|否| G[按通用流程处理]
-    D --&gt;|是| R[读取技能说明]
-    R --&gt; W[遵循固定工作流]
-    W --&gt; V[执行验证步骤]
-    V --&gt; O[交付结果]</pre>
-
-<p>OpenClaw 的 Skills 可以理解成一组任务手册：</p>
-<ul>
-<li>发小红书应该走什么流程；</li>
-<li>读 Twitter 长文怎么抓取；</li>
-<li>发布博客要检查哪些 front matter；</li>
-<li>生成封面图要避开什么坑；</li>
-<li>部署前要跑哪些命令。</li>
-</ul>
-<p>这比把所有规则都塞进一个巨大 System Prompt 更合理。因为技能天然有边界：只有当任务相关时才应该加载或引用。</p>
-<p>但这里也有一个代价：如果技能注册表注入得太重，会吃掉上下文窗口；如果技能描述太泛，又会让模型不知道什么时候该用。</p>
-<p>所以好的 Skill 不是“知识库全文”，而应该像菜谱索引：</p>
-<ul>
-<li>名字清楚；</li>
-<li>触发条件明确；</li>
-<li>描述短；</li>
-<li>真正复杂的内容放到需要时再加载。</li>
-</ul>
-<p>这也是 Agent 工程里一个很现实的取舍：<strong>可发现性和上下文成本永远在打架。</strong></p>
-<hr>
-<h2 id="Layer-4：模型别名层——把复杂配置变成可操作入口"><a href="#Layer-4：模型别名层——把复杂配置变成可操作入口" class="headerlink" title="Layer 4：模型别名层——把复杂配置变成可操作入口"></a>Layer 4：模型别名层——把复杂配置变成可操作入口</h2><p>模型别名层看起来不如工具和技能重要，但它解决的是使用体验问题。</p>
-<pre class="mermaid">flowchart LR
-    A["/model fast"] --&gt; B["低成本快速模型"]
-    C["/model opus"] --&gt; D["强推理模型"]
-    E["/model vision"] --&gt; F["多模态模型"]
-    B --&gt; T[任务路由]
-    D --&gt; T
-    F --&gt; T</pre>
-
-<p>实际使用中，模型 ID 往往很长：provider、模型名、版本、路由策略、API 兼容层，混在一起很难记。</p>
-<p>别名的意义就是让用户能用简单命令切换复杂配置：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/model glm-5
-/model opus
-/model fast<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>这不是单纯的快捷方式，而是在降低“模型能力编排”的门槛。</p>
-<p>一个 Agent 系统如果支持多模型，就必须面对一个问题：哪些任务用强模型，哪些任务用快模型，哪些任务用便宜模型？别名层让这种策略有了可读入口。</p>
-<hr>
-<h2 id="Layer-5：协议规范层——让-Agent-不只会说话，还会守规矩"><a href="#Layer-5：协议规范层——让-Agent-不只会说话，还会守规矩" class="headerlink" title="Layer 5：协议规范层——让 Agent 不只会说话，还会守规矩"></a>Layer 5：协议规范层——让 Agent 不只会说话，还会守规矩</h2><p>Agent 跑在聊天环境里时，最怕两件事：该回的时候不回，不该回的时候乱回。</p>
-<pre class="mermaid">flowchart TD
-    M[入站消息] --&gt; K{消息类型}
-    K --&gt;|用户明确请求| R[正常响应]
-    K --&gt;|收到 / OK| N[静默或最小回复]
-    K --&gt;|Heartbeat Poll| H[返回健康状态]
-    K --&gt;|群聊未 @| Q{是否需要介入}
-    Q --&gt;|否| S[不打扰]
-    Q --&gt;|需要介入| R</pre>
-
-<p>协议规范层就是为了解决这些边界问题，比如：</p>
-<ul>
-<li>用户只是说“收到”，Agent 是否应该沉默；</li>
-<li>系统发来心跳检查，Agent 应该返回什么；</li>
-<li>群聊里没有 @，Agent 是否应该插话；</li>
-<li>回复某条消息时，是否需要携带引用标签；</li>
-<li>工具调用和最终回复之间如何区分。</li>
-</ul>
-<p>这层很容易被低估。</p>
-<p>但对真正长期运行的助手来说，“不添乱”和“会干活”一样重要。一个 Agent 如果在群里乱插嘴、心跳消息乱回复、对系统事件当成用户请求处理，再聪明也会很烦。</p>
-<p>所以协议层本质上是在教模型一种“场合感”。</p>
-<hr>
-<h2 id="Layer-6：运行时信息层——让模型知道自己现在在哪里"><a href="#Layer-6：运行时信息层——让模型知道自己现在在哪里" class="headerlink" title="Layer 6：运行时信息层——让模型知道自己现在在哪里"></a>Layer 6：运行时信息层——让模型知道自己现在在哪里</h2><p>模型没有天然的“现在”。它不知道今天是哪天，也不知道自己运行在哪台机器、当前目录是什么、正在用哪个模型、有哪些环境限制。</p>
-<pre class="mermaid">flowchart LR
-    R[运行时信息] --&gt; T[当前时间]
-    R --&gt; M[当前模型]
-    R --&gt; D[工作目录]
-    R --&gt; O["操作系统 / Shell"]
-    R --&gt; P[消息平台]
-    T --&gt; C[减少错误假设]
-    M --&gt; C
-    D --&gt; C
-    O --&gt; C
-    P --&gt; C</pre>
-
-<p>所以 OpenClaw 会在请求时注入运行时信息，例如：</p>
-<ul>
-<li>当前日期和时间；</li>
-<li>当前模型；</li>
-<li>当前工作目录；</li>
-<li>操作系统；</li>
-<li>shell 环境；</li>
-<li>当前会话来源。</li>
-</ul>
-<p>这层的价值在于减少“幻觉式自信”。</p>
-<p>比如用户问“现在几点”，模型不能凭训练数据猜；用户问“这个文件在不在”，模型不能假装看过；用户让部署项目，模型需要知道当前目录、命令环境和可用工具。</p>
-<p>运行时信息不是为了让回答更华丽，而是为了让行动更接地。</p>
-<hr>
-<h2 id="Layer-7：工作区文件层——用户真正开始接管大脑"><a href="#Layer-7：工作区文件层——用户真正开始接管大脑" class="headerlink" title="Layer 7：工作区文件层——用户真正开始接管大脑"></a>Layer 7：工作区文件层——用户真正开始接管大脑</h2><p>前 6 层主要由框架控制。从 Layer 7 开始，用户终于能明显影响 Agent 的长期行为。</p>
-<pre class="mermaid">flowchart TD
-    W[工作区文件层] --&gt; I[IDENTITY.md<br>身份与沟通风格]
-    W --&gt; A[AGENTS.md<br>项目规则与协作约定]
-    W --&gt; M[MEMORY.md<br>稳定偏好与长期事实]
-    W --&gt; T[TOOLS.md<br>项目专属工具说明]
-    I --&gt; B[长期行为偏置]
-    A --&gt; B
-    M --&gt; B
-    T --&gt; B</pre>
-
-<p>典型文件包括：</p>
-<ul>
-<li><code>IDENTITY.md</code>：身份、语气、价值观；</li>
-<li><code>AGENTS.md</code>：项目内协作规则或子 Agent 说明；</li>
-<li><code>MEMORY.md</code>：长期记忆；</li>
-<li><code>TOOLS.md</code>：项目特定工具说明。</li>
-</ul>
-<p>这一层最像“给 AI 写员工手册”。</p>
-<p>但这里有个非常常见的误区：很多人把它写成了愿望清单。</p>
-<p>比如：</p>
-<blockquote>
-<p>你必须永远主动、完美、准确、聪明、优雅、无所不能。</p>
-</blockquote>
-<p>这类内容几乎没有工程价值。真正有用的是具体、稳定、可执行的偏好：</p>
-<ul>
-<li>用户喜欢中文回答，结论优先；</li>
-<li>项目使用 <code>pnpm</code>，不要用 <code>npm</code>；</li>
-<li>发布博客前必须跑 <code>npx hexo generate</code>；</li>
-<li>图片必须上传到 CNBlogs，不要引用本地路径；</li>
-<li>代码修改后先检查 diff，再提交。</li>
-</ul>
-<p>Layer 7 的黄金原则是：<strong>写事实，不写口号；写约束，不写鸡血。</strong></p>
-<hr>
-<h2 id="Layer-8：动态注入层——让上下文从“静态文档”变成“实时系统”"><a href="#Layer-8：动态注入层——让上下文从“静态文档”变成“实时系统”" class="headerlink" title="Layer 8：动态注入层——让上下文从“静态文档”变成“实时系统”"></a>Layer 8：动态注入层——让上下文从“静态文档”变成“实时系统”</h2><p>如果说 Layer 7 是静态记忆，那么 Layer 8 就是可编程记忆。</p>
-<pre class="mermaid">flowchart LR
-    H[动态 Hook] --&gt; G[Git 状态]
-    H --&gt; T[测试结果]
-    H --&gt; L[最新日志]
-    H --&gt; D[按需文档]
-    H --&gt; E[外部实时数据]
-    G --&gt; P[Prompt Builder]
-    T --&gt; P
-    L --&gt; P
-    D --&gt; P
-    E --&gt; P
-    P --&gt; C[更贴近现实的上下文]</pre>
-
-<p>它允许用户在构建 Prompt 前动态插入内容。典型场景包括：</p>
-<ul>
-<li>注入当前 Git 分支、未提交 diff、测试状态；</li>
-<li>注入项目 issue、TODO、CI 状态；</li>
-<li>注入最近的日志、监控告警、服务健康检查；</li>
-<li>根据当前任务选择性加载某份文档；</li>
-<li>根据用户身份或群聊场景切换响应策略。</li>
-</ul>
-<p>静态文件的问题是：它们会过期。动态 Hook 的价值就在于把“此刻”带进来。</p>
-<p>例如，用户问“帮我看看项目现在还能不能跑”，一个没有动态上下文的 Agent 可能只能建议你运行测试；但一个有 Hook 的 Agent 可以在 prompt 构建时已经拿到最近测试结果、服务状态和 git diff，回答会更像一个真的在线同事。</p>
-<p>当然，Layer 8 也最容易失控。我的建议是：</p>
-<ul>
-<li>动态注入要短，不要把日志全文塞进去；</li>
-<li>Hook 要快，不要让每次对话都等十几秒；</li>
-<li>注入内容要有标题和来源，方便模型判断可信度；</li>
-<li>能按需加载就别常驻；</li>
-<li>不要把敏感信息无脑注入给所有模型。</li>
-</ul>
-<p>动态上下文很强，但它本质上是在扩大 Agent 的感知范围。感知越多，治理越重要。</p>
-<hr>
-<h2 id="Layer-9：入站上下文层——当前这句话到底是谁在什么场景下说的"><a href="#Layer-9：入站上下文层——当前这句话到底是谁在什么场景下说的" class="headerlink" title="Layer 9：入站上下文层——当前这句话到底是谁在什么场景下说的"></a>Layer 9：入站上下文层——当前这句话到底是谁在什么场景下说的</h2><p>最后一层是每次消息进入时生成的现场上下文。</p>
-<pre class="mermaid">flowchart TD
-    I[入站上下文] --&gt; U[发送者是谁]
-    I --&gt; P[来自哪个平台]
-    I --&gt; H[最近消息历史]
-    I --&gt; A[是否被 @]
-    I --&gt; R[是否引用某条消息]
-    U --&gt; J[判断该不该回、怎么回]
-    P --&gt; J
-    H --&gt; J
-    A --&gt; J
-    R --&gt; J</pre>
-
-<p>它通常包含：</p>
-<ul>
-<li>当前消息内容；</li>
-<li>最近对话历史；</li>
-<li>发送者身份；</li>
-<li>消息来源平台；</li>
-<li>是否在群聊；</li>
-<li>是否被 @；</li>
-<li>是否需要引用回复。</li>
-</ul>
-<p>这层决定了 Agent 对“同一句话”的不同理解。</p>
-<p>比如“发一下”这三个字：</p>
-<ul>
-<li>在私聊里，可能是让 Agent 发送文件；</li>
-<li>在群聊里，可能需要先确认是不是对它说的；</li>
-<li>接在一段草稿后面，可能是发布；</li>
-<li>接在图片生成后面，可能是把媒体传给用户。</li>
-</ul>
-<p>所以，Agent 的智能并不只在模型参数里，也在它能否正确读懂“场景”。Layer 9 就是在补这件事。</p>
-<hr>
-<h2 id="这-9-层合起来，到底解决了什么问题？"><a href="#这-9-层合起来，到底解决了什么问题？" class="headerlink" title="这 9 层合起来，到底解决了什么问题？"></a>这 9 层合起来，到底解决了什么问题？</h2><p>如果用一句话概括：</p>
-<blockquote>
-<p>OpenClaw 的 9 层 System Prompt，把一个大模型包装成了一个有身份、有工具、有记忆、有场合感、能被用户定制的长期助手。</p>
-</blockquote>
-<p>更具体一点，它解决了五个工程问题。</p>
-<h3 id="1-身份稳定"><a href="#1-身份稳定" class="headerlink" title="1. 身份稳定"></a>1. 身份稳定</h3><p>Agent 不会每次都从零开始猜自己是谁，而是有固定的行为基线。</p>
-<h3 id="2-能力明确"><a href="#2-能力明确" class="headerlink" title="2. 能力明确"></a>2. 能力明确</h3><p>工具和技能被显式列出来，模型知道自己能做什么、怎么做。</p>
-<h3 id="3-上下文分层"><a href="#3-上下文分层" class="headerlink" title="3. 上下文分层"></a>3. 上下文分层</h3><p>静态规则、动态状态、用户消息不会混成一团，方便维护和优化。</p>
-<h3 id="4-用户可控"><a href="#4-用户可控" class="headerlink" title="4. 用户可控"></a>4. 用户可控</h3><p>用户不需要改框架源码，也能通过文件和 Hook 改变 Agent 行为。</p>
-<h3 id="5-长期演化"><a href="#5-长期演化" class="headerlink" title="5. 长期演化"></a>5. 长期演化</h3><p>记忆、技能、项目规则可以不断积累，让助手越用越贴合个人工作流。</p>
-<p>这其实就是 AI 助手从“玩具”走向“基础设施”的关键：不是回答一次问题，而是能长期稳定地嵌入你的生活和工作。</p>
-<hr>
-<h2 id="Token-成本：System-Prompt-不是免费的"><a href="#Token-成本：System-Prompt-不是免费的" class="headerlink" title="Token 成本：System Prompt 不是免费的"></a>Token 成本：System Prompt 不是免费的</h2><pre class="mermaid">flowchart LR
-    A[常驻短规则<br>身份 / 协议 / 安全] --&gt; K[适合固定注入]
-    B[长文档<br>项目说明 / API 文档] --&gt; L[适合按需检索]
-    C[实时状态<br>Git / 测试 / 日志] --&gt; M[适合动态 Hook]
-    D[重复信息<br>框架已知道的内容] --&gt; N[应该删除]
-
-    K --&gt; O[更低 Token 成本]
-    L --&gt; O
-    M --&gt; O
-    N --&gt; O</pre>
-
-<p>分层架构听起来很优雅，但它有一个现实成本：每一层都要占上下文窗口。</p>
-<p>尤其是：</p>
-<ul>
-<li>技能注册表越来越长；</li>
-<li>长期记忆越写越多；</li>
-<li>项目文档被整篇注入；</li>
-<li>Hook 把日志、状态、搜索结果全塞进去。</li>
-</ul>
-<p>最后就会出现一个尴尬局面：真正的用户问题还没开始，System Prompt 已经吃掉一大截上下文。</p>
-<p>所以，System Prompt 优化不是玄学，它很像系统性能优化：</p>
-<ul>
-<li>常用但短的内容，可以常驻；</li>
-<li>长而低频的内容，按需加载；</li>
-<li>会过期的内容，动态生成；</li>
-<li>可检索的内容，不要全文注入；</li>
-<li>重复信息，坚决删掉。</li>
-</ul>
-<p>一句话：<strong>Agent 的大脑不是越大越好，而是越干净越好。</strong></p>
-<hr>
-<h2 id="普通用户真正该改哪里？"><a href="#普通用户真正该改哪里？" class="headerlink" title="普通用户真正该改哪里？"></a>普通用户真正该改哪里？</h2><p>如果你只是 OpenClaw 用户，不需要把 9 层都背下来。真正值得动手的是 Layer 7 和 Layer 8。</p>
-<pre class="mermaid">flowchart TD
-    U[普通用户最该改的地方] --&gt; I[IDENTITY.md<br>稳定偏好]
-    U --&gt; A[AGENTS.md<br>项目约定]
-    U --&gt; M[长期记忆<br>只存稳定事实]
-    U --&gt; H[Hooks<br>注入变化信息]
-    I --&gt; R[更像你的助手]
-    A --&gt; R
-    M --&gt; R
-    H --&gt; R</pre>
-
-<h3 id="第一，先整理-IDENTITY-md"><a href="#第一，先整理-IDENTITY-md" class="headerlink" title="第一，先整理 IDENTITY.md"></a>第一，先整理 <code>IDENTITY.md</code></h3><p>不要写空泛人设，写稳定偏好：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">-</span> 用户主要用中文交流。
-<span class="token list punctuation">-</span> 回答优先给结论，再给步骤。
-<span class="token list punctuation">-</span> 涉及外部发布、转账、删库等操作前必须确认。
-<span class="token list punctuation">-</span> 代码任务默认先读项目文件，不要凭空猜测。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="第二，把项目规则放进-AGENTS-md"><a href="#第二，把项目规则放进-AGENTS-md" class="headerlink" title="第二，把项目规则放进 AGENTS.md"></a>第二，把项目规则放进 <code>AGENTS.md</code></h3><p>例如：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">-</span> 本项目使用 pnpm，不使用 npm。
-<span class="token list punctuation">-</span> 修改后运行 pnpm test。
-<span class="token list punctuation">-</span> API 类型定义在 src/types/。
-<span class="token list punctuation">-</span> 不要改 generated/ 目录下的文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这类信息对 Agent 极其有用，因为它能直接减少错误操作。</p>
-<h3 id="第三，谨慎维护长期记忆"><a href="#第三，谨慎维护长期记忆" class="headerlink" title="第三，谨慎维护长期记忆"></a>第三，谨慎维护长期记忆</h3><p>记忆应该保存稳定事实，而不是任务流水账。</p>
-<p>适合写入记忆的内容：</p>
-<ul>
-<li>用户偏好；</li>
-<li>固定路径；</li>
-<li>项目约定；</li>
-<li>反复出现的坑；</li>
-<li>已验证过的工作流。</li>
-</ul>
-<p>不适合写入记忆的内容：</p>
-<ul>
-<li>今天做到哪一步；</li>
-<li>某次临时搜索结果；</li>
-<li>一段过期日志；</li>
-<li>没验证过的猜测。</li>
-</ul>
-<h3 id="第四，用-Hook-注入“变化的信息”"><a href="#第四，用-Hook-注入“变化的信息”" class="headerlink" title="第四，用 Hook 注入“变化的信息”"></a>第四，用 Hook 注入“变化的信息”</h3><p>比如 Git 状态、最近测试结果、服务健康检查。这类东西不适合写进静态文件，但很适合动态注入。</p>
-<p>好的 Hook 输出应该像这样：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> Runtime Project State</span>
-<span class="token list punctuation">-</span> branch: feature/payment-refactor
-<span class="token list punctuation">-</span> git status: 3 modified files
-<span class="token list punctuation">-</span> last test: failed, 2 failing tests
-<span class="token list punctuation">-</span> server: running on port 3000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>短、准、有来源，模型就能用。</p>
-<hr>
-<h2 id="这套架构最值得借鉴的地方"><a href="#这套架构最值得借鉴的地方" class="headerlink" title="这套架构最值得借鉴的地方"></a>这套架构最值得借鉴的地方</h2><p>OpenClaw 这套 System Prompt 设计，最值得抄的不是“9 层”这个数字，而是它背后的几个原则。</p>
-<h3 id="原则一：把上下文当成工程资产"><a href="#原则一：把上下文当成工程资产" class="headerlink" title="原则一：把上下文当成工程资产"></a>原则一：把上下文当成工程资产</h3><p>System Prompt 不是随便写写的文案，而是会影响稳定性、成本、安全和用户体验的核心配置。</p>
-<h3 id="原则二：区分谁控制什么"><a href="#原则二：区分谁控制什么" class="headerlink" title="原则二：区分谁控制什么"></a>原则二：区分谁控制什么</h3><p>框架该锁死的锁死，用户该能改的开放。否则要么不安全，要么不可定制。</p>
-<h3 id="原则三：静态和动态分开"><a href="#原则三：静态和动态分开" class="headerlink" title="原则三：静态和动态分开"></a>原则三：静态和动态分开</h3><p>身份、偏好、项目规则是静态的；时间、状态、日志、会话是动态的。混在一起只会越来越乱。</p>
-<h3 id="原则四：让-Agent-学会少说话"><a href="#原则四：让-Agent-学会少说话" class="headerlink" title="原则四：让 Agent 学会少说话"></a>原则四：让 Agent 学会少说话</h3><p>会回答很重要，会沉默也重要。尤其在群聊、自动化、心跳场景里，不打扰本身就是能力。</p>
-<h3 id="原则五：用技能沉淀流程，而不是堆长-prompt"><a href="#原则五：用技能沉淀流程，而不是堆长-prompt" class="headerlink" title="原则五：用技能沉淀流程，而不是堆长 prompt"></a>原则五：用技能沉淀流程，而不是堆长 prompt</h3><p>长期助手真正的成长，不是 System Prompt 越写越长，而是把可复用流程变成技能，把稳定事实变成记忆，把实时状态交给 Hook。</p>
-<hr>
-<h2 id="结语：真正的大脑，是模型和上下文一起长出来的"><a href="#结语：真正的大脑，是模型和上下文一起长出来的" class="headerlink" title="结语：真正的大脑，是模型和上下文一起长出来的"></a>结语：真正的大脑，是模型和上下文一起长出来的</h2><p>OpenClaw 的 System Prompt 拆开看，是 9 层配置；合起来看，是一个 AI 助手的运行时人格。</p>
-<p>模型提供推理能力，工具提供行动能力，技能提供经验，记忆提供连续性，协议提供场合感，运行时上下文提供现实感。</p>
-<p>少了任何一块，助手都会退化：</p>
-<ul>
-<li>没有工具，它只是会聊天；</li>
-<li>没有记忆，它每次都像第一次见你；</li>
-<li>没有协议，它会在不该说话时乱说；</li>
-<li>没有动态上下文，它会对现实环境失明；</li>
-<li>没有用户可控层，它就很难真正成为“你的”助手。</li>
-</ul>
-<p>所以，一个 AI 助手的 System Prompt 不是一段神奇咒语，而是一套持续演化的上下文系统。</p>
-<p>你真正要打造的，也不是一份完美提示词，而是一个能被维护、能被压缩、能被扩展、能记住你、也知道什么时候该闭嘴的数字大脑。</p>
-<hr>
-<blockquote>
-<p>原文作者：<a href="https://x.com/servasyy_ai">@servasyy_ai</a>，版本 v2.1，更新时间 2026-03-05。本文为基于原文主题的重写与扩展整理。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>AI工具</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>OpenClaw</tag>
-        <tag>System Prompt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI Agent 新闻交易崛起：2026年加密市场的新范式革命</title>
     <url>/posts/ai-agent-news-trading-crypto-2026.html</url>
     <content><![CDATA[<blockquote>
@@ -11452,6 +11013,445 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
         <tag>AI工具</tag>
         <tag>ChatGPT</tag>
         <tag>薅羊毛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的</title>
+    <url>/posts/openclaw-agent-system-prompt-9-layers-architecture.html</url>
+    <content><![CDATA[<h1 id="拆解-OpenClaw-的大脑：一个-AI-助手的-System-Prompt-是怎么炼成的"><a href="#拆解-OpenClaw-的大脑：一个-AI-助手的-System-Prompt-是怎么炼成的" class="headerlink" title="拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的"></a>拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的</h1><p>很多人以为，AI 助手的差异主要来自模型：Claude、GPT、Gemini，谁更聪明，谁就更好用。</p>
+<p>但真正把一个“会聊天的模型”变成“能干活的助手”的，往往不是模型本身，而是它每次被调用前收到的那份 <strong>System Prompt</strong>。</p>
+<p>它像一份启动配置，也像一份人格说明书，更像一个运行时操作系统：定义这个助手是谁、能做什么、不能做什么、应该如何理解用户、有哪些工具、有哪些长期记忆、当下处在什么环境里。</p>
+<p>OpenClaw 的 System Prompt 有意思的地方在于：它不是一段孤零零的提示词，而是一套被分层组装出来的上下文工程。理解它，你就能理解一个现代 AI Agent 的“脑子”大概是怎么拼起来的。</p>
+<pre class="mermaid">flowchart LR
+    U[用户输入] --&gt; G[OpenClaw Gateway]
+    G --&gt; B[Prompt Builder]
+    B --&gt; S[System Prompt<br>9 层上下文]
+    S --&gt; M[LLM 推理]
+    M --&gt; T{需要工具吗}
+    T --&gt;|是| TOOL[工具 / Skills / 外部系统]
+    TOOL --&gt; M
+    T --&gt;|否| R[最终回复]
+    M --&gt; R</pre>
+
+<hr>
+<h2 id="先把话说透：System-Prompt-不是“咒语”，是运行时合同"><a href="#先把话说透：System-Prompt-不是“咒语”，是运行时合同" class="headerlink" title="先把话说透：System Prompt 不是“咒语”，是运行时合同"></a>先把话说透：System Prompt 不是“咒语”，是运行时合同</h2><p>普通提示词更像一句请求：</p>
+<blockquote>
+<p>请帮我总结这篇文章。</p>
+</blockquote>
+<p>System Prompt 则更像一份合同：</p>
+<ul>
+<li>你是谁；</li>
+<li>你的职责是什么；</li>
+<li>你能调用哪些工具；</li>
+<li>工具调用必须遵守什么格式；</li>
+<li>什么情况必须沉默，什么情况必须响应；</li>
+<li>哪些信息来自长期记忆，哪些信息来自当前会话；</li>
+<li>用户能改哪里，框架又锁死了哪里。</li>
+</ul>
+<p>所以，System Prompt 的核心价值不是“让模型变聪明”，而是 <strong>把模型的聪明约束成稳定、可复用、可协作的行为</strong>。</p>
+<p>这也是 Agent 工程和普通 Prompt Engineering 最大的区别：前者关心的是系统行为，后者更偏单次回答效果。</p>
+<hr>
+<h2 id="OpenClaw-的-9-层结构：不是越多越炫，而是职责隔离"><a href="#OpenClaw-的-9-层结构：不是越多越炫，而是职责隔离" class="headerlink" title="OpenClaw 的 9 层结构：不是越多越炫，而是职责隔离"></a>OpenClaw 的 9 层结构：不是越多越炫，而是职责隔离</h2><p>OpenClaw 的 System Prompt 可以拆成 9 层。</p>
+<pre class="mermaid">flowchart TB
+    subgraph F[框架控制层：稳定基线]
+        L1[Layer 1<br>框架核心：身份 / 规则 / 安全边界]
+        L2[Layer 2<br>工具定义：函数、参数、调用协议]
+        L3[Layer 3<br>技能注册：可复用任务手册]
+        L4[Layer 4<br>模型别名：模型切换入口]
+        L5[Layer 5<br>协议规范：沉默、心跳、群聊响应]
+        L6[Layer 6<br>运行时信息：时间、目录、环境]
+    end
+
+    subgraph U[用户可控层：个性化与项目知识]
+        L7["Layer 7<br>工作区文件：IDENTITY / AGENTS / MEMORY"]
+        L8[Layer 8<br>动态注入：Hook / Git 状态 / 外部数据]
+    end
+
+    subgraph C[会话现场层：每次消息动态生成]
+        L9["Layer 9<br>入站上下文：发送者 / 历史 / 平台 / @ 状态"]
+    end
+
+    F --&gt; U --&gt; C --&gt; P[最终组装成 System Prompt]</pre>
+
+<p>如果只看名字，9 层很容易显得玄乎。但它背后的逻辑其实很朴素：<strong>不同来源、不同更新频率、不同控制权限的上下文，不应该混在一起。</strong></p>
+<p>可以先记住这个分法：</p>
+<ul>
+<li><p><strong>Layer 1~6：框架层</strong><br>由 OpenClaw 自动生成，负责身份基线、工具协议、技能注册、模型配置、运行环境等基础设施。</p>
+</li>
+<li><p><strong>Layer 7~8：用户可控层</strong><br>用户真正能影响 Agent 行为的地方，包括工作区文件、记忆、额外文档、动态 Hook。</p>
+</li>
+<li><p><strong>Layer 9：会话现场层</strong><br>每次用户发消息时动态生成，包括当前发送者、消息历史、是否被提及等实时上下文。</p>
+</li>
+</ul>
+<p>也就是说，OpenClaw 并不是每次都把一大坨文本塞给模型，而是在调用前按层组装：稳定的放前面，动态的放后面；框架的归框架，用户的归用户。</p>
+<hr>
+<h2 id="Layer-1：框架核心层——先规定“你是什么东西”"><a href="#Layer-1：框架核心层——先规定“你是什么东西”" class="headerlink" title="Layer 1：框架核心层——先规定“你是什么东西”"></a>Layer 1：框架核心层——先规定“你是什么东西”</h2><p>第一层是 OpenClaw 自动生成的基础系统说明。</p>
+<pre class="mermaid">flowchart LR
+    A[框架核心层] --&gt; B[身份定义]
+    A --&gt; C[行为原则]
+    A --&gt; D[安全边界]
+    A --&gt; E[输出与工具调用规范]
+    B --&gt; F[统一行为底座]
+    C --&gt; F
+    D --&gt; F
+    E --&gt; F</pre>
+
+<p>这一层通常包含几类信息：</p>
+<ul>
+<li>Agent 的基础身份；</li>
+<li>核心行为原则；</li>
+<li>当前系统运行时间；</li>
+<li>基础安全边界；</li>
+<li>对输出格式和工具调用方式的底层要求。</li>
+</ul>
+<p>这层的作用不是给 Agent 加个“人设”，而是定调：它不是网页里的聊天框，而是一个运行在框架里的工具型智能体。</p>
+<p>我觉得这里最重要的一点是：<strong>身份定义不能写得太文学化。</strong></p>
+<p>很多人写 System Prompt 喜欢堆“你是世界顶级专家”“你无所不能”“你必须完美完成任务”。这种写法短期看很振奋，长期看很容易制造不稳定行为。一个好的 Agent 身份应该回答三个问题：</p>
+<ol>
+<li>你服务谁？</li>
+<li>你负责什么？</li>
+<li>遇到不确定时怎么处理？</li>
+</ol>
+<p>OpenClaw 把这部分放进框架层，就是为了保证所有 Agent 至少有一致的行为底座。</p>
+<hr>
+<h2 id="Layer-2：工具定义层——告诉模型“手上有哪些按钮”"><a href="#Layer-2：工具定义层——告诉模型“手上有哪些按钮”" class="headerlink" title="Layer 2：工具定义层——告诉模型“手上有哪些按钮”"></a>Layer 2：工具定义层——告诉模型“手上有哪些按钮”</h2><p>一个 Agent 和普通 Chatbot 的分水岭，通常就在工具调用。</p>
+<pre class="mermaid">flowchart LR
+    I[用户意图] --&gt; M[模型判断]
+    M --&gt; S[JSON Schema<br>工具名 / 参数 / 必填字段]
+    S --&gt; A[工具调用]
+    A --&gt; O[外部结果]
+    O --&gt; M
+    M --&gt; R[整合后回复]</pre>
+
+<p>这一层会把可用工具注入给模型，例如：</p>
+<ul>
+<li>读取文件；</li>
+<li>搜索资料；</li>
+<li>执行命令；</li>
+<li>调用浏览器；</li>
+<li>发送消息；</li>
+<li>写入记忆；</li>
+<li>触发其他自动化流程。</li>
+</ul>
+<p>每个工具一般都会带结构化参数说明，也就是 JSON Schema。它告诉模型：这个工具叫什么、什么时候该用、参数有哪些、哪些字段必填、返回结果大概是什么。</p>
+<p>这件事看起来很细，但非常关键。</p>
+<p>因为模型本身并不会“真的知道”外部世界。它需要通过工具把意图变成行动。工具定义越清晰，模型越不容易乱猜；工具边界越明确，系统越不容易出事故。</p>
+<p>一个简单判断标准是：<strong>如果一个工具说明写得让人类开发者都看不懂，那就别指望模型稳定调用它。</strong></p>
+<hr>
+<h2 id="Layer-3：技能注册表——把经验封装成可复用配方"><a href="#Layer-3：技能注册表——把经验封装成可复用配方" class="headerlink" title="Layer 3：技能注册表——把经验封装成可复用配方"></a>Layer 3：技能注册表——把经验封装成可复用配方</h2><p>工具解决“能做什么”，技能解决“怎么做得更好”。</p>
+<pre class="mermaid">flowchart TD
+    Q[用户任务] --&gt; D{命中技能吗}
+    D --&gt;|否| G[按通用流程处理]
+    D --&gt;|是| R[读取技能说明]
+    R --&gt; W[遵循固定工作流]
+    W --&gt; V[执行验证步骤]
+    V --&gt; O[交付结果]</pre>
+
+<p>OpenClaw 的 Skills 可以理解成一组任务手册：</p>
+<ul>
+<li>发小红书应该走什么流程；</li>
+<li>读 Twitter 长文怎么抓取；</li>
+<li>发布博客要检查哪些 front matter；</li>
+<li>生成封面图要避开什么坑；</li>
+<li>部署前要跑哪些命令。</li>
+</ul>
+<p>这比把所有规则都塞进一个巨大 System Prompt 更合理。因为技能天然有边界：只有当任务相关时才应该加载或引用。</p>
+<p>但这里也有一个代价：如果技能注册表注入得太重，会吃掉上下文窗口；如果技能描述太泛，又会让模型不知道什么时候该用。</p>
+<p>所以好的 Skill 不是“知识库全文”，而应该像菜谱索引：</p>
+<ul>
+<li>名字清楚；</li>
+<li>触发条件明确；</li>
+<li>描述短；</li>
+<li>真正复杂的内容放到需要时再加载。</li>
+</ul>
+<p>这也是 Agent 工程里一个很现实的取舍：<strong>可发现性和上下文成本永远在打架。</strong></p>
+<hr>
+<h2 id="Layer-4：模型别名层——把复杂配置变成可操作入口"><a href="#Layer-4：模型别名层——把复杂配置变成可操作入口" class="headerlink" title="Layer 4：模型别名层——把复杂配置变成可操作入口"></a>Layer 4：模型别名层——把复杂配置变成可操作入口</h2><p>模型别名层看起来不如工具和技能重要，但它解决的是使用体验问题。</p>
+<pre class="mermaid">flowchart LR
+    A["/model fast"] --&gt; B["低成本快速模型"]
+    C["/model opus"] --&gt; D["强推理模型"]
+    E["/model vision"] --&gt; F["多模态模型"]
+    B --&gt; T[任务路由]
+    D --&gt; T
+    F --&gt; T</pre>
+
+<p>实际使用中，模型 ID 往往很长：provider、模型名、版本、路由策略、API 兼容层，混在一起很难记。</p>
+<p>别名的意义就是让用户能用简单命令切换复杂配置：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/model glm-5
+/model opus
+/model fast<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>这不是单纯的快捷方式，而是在降低“模型能力编排”的门槛。</p>
+<p>一个 Agent 系统如果支持多模型，就必须面对一个问题：哪些任务用强模型，哪些任务用快模型，哪些任务用便宜模型？别名层让这种策略有了可读入口。</p>
+<hr>
+<h2 id="Layer-5：协议规范层——让-Agent-不只会说话，还会守规矩"><a href="#Layer-5：协议规范层——让-Agent-不只会说话，还会守规矩" class="headerlink" title="Layer 5：协议规范层——让 Agent 不只会说话，还会守规矩"></a>Layer 5：协议规范层——让 Agent 不只会说话，还会守规矩</h2><p>Agent 跑在聊天环境里时，最怕两件事：该回的时候不回，不该回的时候乱回。</p>
+<pre class="mermaid">flowchart TD
+    M[入站消息] --&gt; K{消息类型}
+    K --&gt;|用户明确请求| R[正常响应]
+    K --&gt;|收到 / OK| N[静默或最小回复]
+    K --&gt;|Heartbeat Poll| H[返回健康状态]
+    K --&gt;|群聊未 @| Q{是否需要介入}
+    Q --&gt;|否| S[不打扰]
+    Q --&gt;|需要介入| R</pre>
+
+<p>协议规范层就是为了解决这些边界问题，比如：</p>
+<ul>
+<li>用户只是说“收到”，Agent 是否应该沉默；</li>
+<li>系统发来心跳检查，Agent 应该返回什么；</li>
+<li>群聊里没有 @，Agent 是否应该插话；</li>
+<li>回复某条消息时，是否需要携带引用标签；</li>
+<li>工具调用和最终回复之间如何区分。</li>
+</ul>
+<p>这层很容易被低估。</p>
+<p>但对真正长期运行的助手来说，“不添乱”和“会干活”一样重要。一个 Agent 如果在群里乱插嘴、心跳消息乱回复、对系统事件当成用户请求处理，再聪明也会很烦。</p>
+<p>所以协议层本质上是在教模型一种“场合感”。</p>
+<hr>
+<h2 id="Layer-6：运行时信息层——让模型知道自己现在在哪里"><a href="#Layer-6：运行时信息层——让模型知道自己现在在哪里" class="headerlink" title="Layer 6：运行时信息层——让模型知道自己现在在哪里"></a>Layer 6：运行时信息层——让模型知道自己现在在哪里</h2><p>模型没有天然的“现在”。它不知道今天是哪天，也不知道自己运行在哪台机器、当前目录是什么、正在用哪个模型、有哪些环境限制。</p>
+<pre class="mermaid">flowchart LR
+    R[运行时信息] --&gt; T[当前时间]
+    R --&gt; M[当前模型]
+    R --&gt; D[工作目录]
+    R --&gt; O["操作系统 / Shell"]
+    R --&gt; P[消息平台]
+    T --&gt; C[减少错误假设]
+    M --&gt; C
+    D --&gt; C
+    O --&gt; C
+    P --&gt; C</pre>
+
+<p>所以 OpenClaw 会在请求时注入运行时信息，例如：</p>
+<ul>
+<li>当前日期和时间；</li>
+<li>当前模型；</li>
+<li>当前工作目录；</li>
+<li>操作系统；</li>
+<li>shell 环境；</li>
+<li>当前会话来源。</li>
+</ul>
+<p>这层的价值在于减少“幻觉式自信”。</p>
+<p>比如用户问“现在几点”，模型不能凭训练数据猜；用户问“这个文件在不在”，模型不能假装看过；用户让部署项目，模型需要知道当前目录、命令环境和可用工具。</p>
+<p>运行时信息不是为了让回答更华丽，而是为了让行动更接地。</p>
+<hr>
+<h2 id="Layer-7：工作区文件层——用户真正开始接管大脑"><a href="#Layer-7：工作区文件层——用户真正开始接管大脑" class="headerlink" title="Layer 7：工作区文件层——用户真正开始接管大脑"></a>Layer 7：工作区文件层——用户真正开始接管大脑</h2><p>前 6 层主要由框架控制。从 Layer 7 开始，用户终于能明显影响 Agent 的长期行为。</p>
+<pre class="mermaid">flowchart TD
+    W[工作区文件层] --&gt; I[IDENTITY.md<br>身份与沟通风格]
+    W --&gt; A[AGENTS.md<br>项目规则与协作约定]
+    W --&gt; M[MEMORY.md<br>稳定偏好与长期事实]
+    W --&gt; T[TOOLS.md<br>项目专属工具说明]
+    I --&gt; B[长期行为偏置]
+    A --&gt; B
+    M --&gt; B
+    T --&gt; B</pre>
+
+<p>典型文件包括：</p>
+<ul>
+<li><code>IDENTITY.md</code>：身份、语气、价值观；</li>
+<li><code>AGENTS.md</code>：项目内协作规则或子 Agent 说明；</li>
+<li><code>MEMORY.md</code>：长期记忆；</li>
+<li><code>TOOLS.md</code>：项目特定工具说明。</li>
+</ul>
+<p>这一层最像“给 AI 写员工手册”。</p>
+<p>但这里有个非常常见的误区：很多人把它写成了愿望清单。</p>
+<p>比如：</p>
+<blockquote>
+<p>你必须永远主动、完美、准确、聪明、优雅、无所不能。</p>
+</blockquote>
+<p>这类内容几乎没有工程价值。真正有用的是具体、稳定、可执行的偏好：</p>
+<ul>
+<li>用户喜欢中文回答，结论优先；</li>
+<li>项目使用 <code>pnpm</code>，不要用 <code>npm</code>；</li>
+<li>发布博客前必须跑 <code>npx hexo generate</code>；</li>
+<li>图片必须上传到 CNBlogs，不要引用本地路径；</li>
+<li>代码修改后先检查 diff，再提交。</li>
+</ul>
+<p>Layer 7 的黄金原则是：<strong>写事实，不写口号；写约束，不写鸡血。</strong></p>
+<hr>
+<h2 id="Layer-8：动态注入层——让上下文从“静态文档”变成“实时系统”"><a href="#Layer-8：动态注入层——让上下文从“静态文档”变成“实时系统”" class="headerlink" title="Layer 8：动态注入层——让上下文从“静态文档”变成“实时系统”"></a>Layer 8：动态注入层——让上下文从“静态文档”变成“实时系统”</h2><p>如果说 Layer 7 是静态记忆，那么 Layer 8 就是可编程记忆。</p>
+<pre class="mermaid">flowchart LR
+    H[动态 Hook] --&gt; G[Git 状态]
+    H --&gt; T[测试结果]
+    H --&gt; L[最新日志]
+    H --&gt; D[按需文档]
+    H --&gt; E[外部实时数据]
+    G --&gt; P[Prompt Builder]
+    T --&gt; P
+    L --&gt; P
+    D --&gt; P
+    E --&gt; P
+    P --&gt; C[更贴近现实的上下文]</pre>
+
+<p>它允许用户在构建 Prompt 前动态插入内容。典型场景包括：</p>
+<ul>
+<li>注入当前 Git 分支、未提交 diff、测试状态；</li>
+<li>注入项目 issue、TODO、CI 状态；</li>
+<li>注入最近的日志、监控告警、服务健康检查；</li>
+<li>根据当前任务选择性加载某份文档；</li>
+<li>根据用户身份或群聊场景切换响应策略。</li>
+</ul>
+<p>静态文件的问题是：它们会过期。动态 Hook 的价值就在于把“此刻”带进来。</p>
+<p>例如，用户问“帮我看看项目现在还能不能跑”，一个没有动态上下文的 Agent 可能只能建议你运行测试；但一个有 Hook 的 Agent 可以在 prompt 构建时已经拿到最近测试结果、服务状态和 git diff，回答会更像一个真的在线同事。</p>
+<p>当然，Layer 8 也最容易失控。我的建议是：</p>
+<ul>
+<li>动态注入要短，不要把日志全文塞进去；</li>
+<li>Hook 要快，不要让每次对话都等十几秒；</li>
+<li>注入内容要有标题和来源，方便模型判断可信度；</li>
+<li>能按需加载就别常驻；</li>
+<li>不要把敏感信息无脑注入给所有模型。</li>
+</ul>
+<p>动态上下文很强，但它本质上是在扩大 Agent 的感知范围。感知越多，治理越重要。</p>
+<hr>
+<h2 id="Layer-9：入站上下文层——当前这句话到底是谁在什么场景下说的"><a href="#Layer-9：入站上下文层——当前这句话到底是谁在什么场景下说的" class="headerlink" title="Layer 9：入站上下文层——当前这句话到底是谁在什么场景下说的"></a>Layer 9：入站上下文层——当前这句话到底是谁在什么场景下说的</h2><p>最后一层是每次消息进入时生成的现场上下文。</p>
+<pre class="mermaid">flowchart TD
+    I[入站上下文] --&gt; U[发送者是谁]
+    I --&gt; P[来自哪个平台]
+    I --&gt; H[最近消息历史]
+    I --&gt; A[是否被 @]
+    I --&gt; R[是否引用某条消息]
+    U --&gt; J[判断该不该回、怎么回]
+    P --&gt; J
+    H --&gt; J
+    A --&gt; J
+    R --&gt; J</pre>
+
+<p>它通常包含：</p>
+<ul>
+<li>当前消息内容；</li>
+<li>最近对话历史；</li>
+<li>发送者身份；</li>
+<li>消息来源平台；</li>
+<li>是否在群聊；</li>
+<li>是否被 @；</li>
+<li>是否需要引用回复。</li>
+</ul>
+<p>这层决定了 Agent 对“同一句话”的不同理解。</p>
+<p>比如“发一下”这三个字：</p>
+<ul>
+<li>在私聊里，可能是让 Agent 发送文件；</li>
+<li>在群聊里，可能需要先确认是不是对它说的；</li>
+<li>接在一段草稿后面，可能是发布；</li>
+<li>接在图片生成后面，可能是把媒体传给用户。</li>
+</ul>
+<p>所以，Agent 的智能并不只在模型参数里，也在它能否正确读懂“场景”。Layer 9 就是在补这件事。</p>
+<hr>
+<h2 id="这-9-层合起来，到底解决了什么问题？"><a href="#这-9-层合起来，到底解决了什么问题？" class="headerlink" title="这 9 层合起来，到底解决了什么问题？"></a>这 9 层合起来，到底解决了什么问题？</h2><p>如果用一句话概括：</p>
+<blockquote>
+<p>OpenClaw 的 9 层 System Prompt，把一个大模型包装成了一个有身份、有工具、有记忆、有场合感、能被用户定制的长期助手。</p>
+</blockquote>
+<p>更具体一点，它解决了五个工程问题。</p>
+<h3 id="1-身份稳定"><a href="#1-身份稳定" class="headerlink" title="1. 身份稳定"></a>1. 身份稳定</h3><p>Agent 不会每次都从零开始猜自己是谁，而是有固定的行为基线。</p>
+<h3 id="2-能力明确"><a href="#2-能力明确" class="headerlink" title="2. 能力明确"></a>2. 能力明确</h3><p>工具和技能被显式列出来，模型知道自己能做什么、怎么做。</p>
+<h3 id="3-上下文分层"><a href="#3-上下文分层" class="headerlink" title="3. 上下文分层"></a>3. 上下文分层</h3><p>静态规则、动态状态、用户消息不会混成一团，方便维护和优化。</p>
+<h3 id="4-用户可控"><a href="#4-用户可控" class="headerlink" title="4. 用户可控"></a>4. 用户可控</h3><p>用户不需要改框架源码，也能通过文件和 Hook 改变 Agent 行为。</p>
+<h3 id="5-长期演化"><a href="#5-长期演化" class="headerlink" title="5. 长期演化"></a>5. 长期演化</h3><p>记忆、技能、项目规则可以不断积累，让助手越用越贴合个人工作流。</p>
+<p>这其实就是 AI 助手从“玩具”走向“基础设施”的关键：不是回答一次问题，而是能长期稳定地嵌入你的生活和工作。</p>
+<hr>
+<h2 id="Token-成本：System-Prompt-不是免费的"><a href="#Token-成本：System-Prompt-不是免费的" class="headerlink" title="Token 成本：System Prompt 不是免费的"></a>Token 成本：System Prompt 不是免费的</h2><pre class="mermaid">flowchart LR
+    A[常驻短规则<br>身份 / 协议 / 安全] --&gt; K[适合固定注入]
+    B[长文档<br>项目说明 / API 文档] --&gt; L[适合按需检索]
+    C[实时状态<br>Git / 测试 / 日志] --&gt; M[适合动态 Hook]
+    D[重复信息<br>框架已知道的内容] --&gt; N[应该删除]
+
+    K --&gt; O[更低 Token 成本]
+    L --&gt; O
+    M --&gt; O
+    N --&gt; O</pre>
+
+<p>分层架构听起来很优雅，但它有一个现实成本：每一层都要占上下文窗口。</p>
+<p>尤其是：</p>
+<ul>
+<li>技能注册表越来越长；</li>
+<li>长期记忆越写越多；</li>
+<li>项目文档被整篇注入；</li>
+<li>Hook 把日志、状态、搜索结果全塞进去。</li>
+</ul>
+<p>最后就会出现一个尴尬局面：真正的用户问题还没开始，System Prompt 已经吃掉一大截上下文。</p>
+<p>所以，System Prompt 优化不是玄学，它很像系统性能优化：</p>
+<ul>
+<li>常用但短的内容，可以常驻；</li>
+<li>长而低频的内容，按需加载；</li>
+<li>会过期的内容，动态生成；</li>
+<li>可检索的内容，不要全文注入；</li>
+<li>重复信息，坚决删掉。</li>
+</ul>
+<p>一句话：<strong>Agent 的大脑不是越大越好，而是越干净越好。</strong></p>
+<hr>
+<h2 id="普通用户真正该改哪里？"><a href="#普通用户真正该改哪里？" class="headerlink" title="普通用户真正该改哪里？"></a>普通用户真正该改哪里？</h2><p>如果你只是 OpenClaw 用户，不需要把 9 层都背下来。真正值得动手的是 Layer 7 和 Layer 8。</p>
+<pre class="mermaid">flowchart TD
+    U[普通用户最该改的地方] --&gt; I[IDENTITY.md<br>稳定偏好]
+    U --&gt; A[AGENTS.md<br>项目约定]
+    U --&gt; M[长期记忆<br>只存稳定事实]
+    U --&gt; H[Hooks<br>注入变化信息]
+    I --&gt; R[更像你的助手]
+    A --&gt; R
+    M --&gt; R
+    H --&gt; R</pre>
+
+<h3 id="第一，先整理-IDENTITY-md"><a href="#第一，先整理-IDENTITY-md" class="headerlink" title="第一，先整理 IDENTITY.md"></a>第一，先整理 <code>IDENTITY.md</code></h3><p>不要写空泛人设，写稳定偏好：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">-</span> 用户主要用中文交流。
+<span class="token list punctuation">-</span> 回答优先给结论，再给步骤。
+<span class="token list punctuation">-</span> 涉及外部发布、转账、删库等操作前必须确认。
+<span class="token list punctuation">-</span> 代码任务默认先读项目文件，不要凭空猜测。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="第二，把项目规则放进-AGENTS-md"><a href="#第二，把项目规则放进-AGENTS-md" class="headerlink" title="第二，把项目规则放进 AGENTS.md"></a>第二，把项目规则放进 <code>AGENTS.md</code></h3><p>例如：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">-</span> 本项目使用 pnpm，不使用 npm。
+<span class="token list punctuation">-</span> 修改后运行 pnpm test。
+<span class="token list punctuation">-</span> API 类型定义在 src/types/。
+<span class="token list punctuation">-</span> 不要改 generated/ 目录下的文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这类信息对 Agent 极其有用，因为它能直接减少错误操作。</p>
+<h3 id="第三，谨慎维护长期记忆"><a href="#第三，谨慎维护长期记忆" class="headerlink" title="第三，谨慎维护长期记忆"></a>第三，谨慎维护长期记忆</h3><p>记忆应该保存稳定事实，而不是任务流水账。</p>
+<p>适合写入记忆的内容：</p>
+<ul>
+<li>用户偏好；</li>
+<li>固定路径；</li>
+<li>项目约定；</li>
+<li>反复出现的坑；</li>
+<li>已验证过的工作流。</li>
+</ul>
+<p>不适合写入记忆的内容：</p>
+<ul>
+<li>今天做到哪一步；</li>
+<li>某次临时搜索结果；</li>
+<li>一段过期日志；</li>
+<li>没验证过的猜测。</li>
+</ul>
+<h3 id="第四，用-Hook-注入“变化的信息”"><a href="#第四，用-Hook-注入“变化的信息”" class="headerlink" title="第四，用 Hook 注入“变化的信息”"></a>第四，用 Hook 注入“变化的信息”</h3><p>比如 Git 状态、最近测试结果、服务健康检查。这类东西不适合写进静态文件，但很适合动态注入。</p>
+<p>好的 Hook 输出应该像这样：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> Runtime Project State</span>
+<span class="token list punctuation">-</span> branch: feature/payment-refactor
+<span class="token list punctuation">-</span> git status: 3 modified files
+<span class="token list punctuation">-</span> last test: failed, 2 failing tests
+<span class="token list punctuation">-</span> server: running on port 3000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>短、准、有来源，模型就能用。</p>
+<hr>
+<h2 id="这套架构最值得借鉴的地方"><a href="#这套架构最值得借鉴的地方" class="headerlink" title="这套架构最值得借鉴的地方"></a>这套架构最值得借鉴的地方</h2><p>OpenClaw 这套 System Prompt 设计，最值得抄的不是“9 层”这个数字，而是它背后的几个原则。</p>
+<h3 id="原则一：把上下文当成工程资产"><a href="#原则一：把上下文当成工程资产" class="headerlink" title="原则一：把上下文当成工程资产"></a>原则一：把上下文当成工程资产</h3><p>System Prompt 不是随便写写的文案，而是会影响稳定性、成本、安全和用户体验的核心配置。</p>
+<h3 id="原则二：区分谁控制什么"><a href="#原则二：区分谁控制什么" class="headerlink" title="原则二：区分谁控制什么"></a>原则二：区分谁控制什么</h3><p>框架该锁死的锁死，用户该能改的开放。否则要么不安全，要么不可定制。</p>
+<h3 id="原则三：静态和动态分开"><a href="#原则三：静态和动态分开" class="headerlink" title="原则三：静态和动态分开"></a>原则三：静态和动态分开</h3><p>身份、偏好、项目规则是静态的；时间、状态、日志、会话是动态的。混在一起只会越来越乱。</p>
+<h3 id="原则四：让-Agent-学会少说话"><a href="#原则四：让-Agent-学会少说话" class="headerlink" title="原则四：让 Agent 学会少说话"></a>原则四：让 Agent 学会少说话</h3><p>会回答很重要，会沉默也重要。尤其在群聊、自动化、心跳场景里，不打扰本身就是能力。</p>
+<h3 id="原则五：用技能沉淀流程，而不是堆长-prompt"><a href="#原则五：用技能沉淀流程，而不是堆长-prompt" class="headerlink" title="原则五：用技能沉淀流程，而不是堆长 prompt"></a>原则五：用技能沉淀流程，而不是堆长 prompt</h3><p>长期助手真正的成长，不是 System Prompt 越写越长，而是把可复用流程变成技能，把稳定事实变成记忆，把实时状态交给 Hook。</p>
+<hr>
+<h2 id="结语：真正的大脑，是模型和上下文一起长出来的"><a href="#结语：真正的大脑，是模型和上下文一起长出来的" class="headerlink" title="结语：真正的大脑，是模型和上下文一起长出来的"></a>结语：真正的大脑，是模型和上下文一起长出来的</h2><p>OpenClaw 的 System Prompt 拆开看，是 9 层配置；合起来看，是一个 AI 助手的运行时人格。</p>
+<p>模型提供推理能力，工具提供行动能力，技能提供经验，记忆提供连续性，协议提供场合感，运行时上下文提供现实感。</p>
+<p>少了任何一块，助手都会退化：</p>
+<ul>
+<li>没有工具，它只是会聊天；</li>
+<li>没有记忆，它每次都像第一次见你；</li>
+<li>没有协议，它会在不该说话时乱说；</li>
+<li>没有动态上下文，它会对现实环境失明；</li>
+<li>没有用户可控层，它就很难真正成为“你的”助手。</li>
+</ul>
+<p>所以，一个 AI 助手的 System Prompt 不是一段神奇咒语，而是一套持续演化的上下文系统。</p>
+<p>你真正要打造的，也不是一份完美提示词，而是一个能被维护、能被压缩、能被扩展、能记住你、也知道什么时候该闭嘴的数字大脑。</p>
+<hr>
+<blockquote>
+<p>原文作者：<a href="https://x.com/servasyy_ai">@servasyy_ai</a>，版本 v2.1，更新时间 2026-03-05。本文为基于原文主题的重写与扩展整理。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>AI工具</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>OpenClaw</tag>
+        <tag>System Prompt</tag>
       </tags>
   </entry>
   <entry>

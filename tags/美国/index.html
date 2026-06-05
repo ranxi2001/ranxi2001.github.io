@@ -1441,15 +1441,6 @@
                 </a>
                 
                 
-                <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="源码分析: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="源码分析" style="background-color: #E8F8F5;">源码分析
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Cloudflare/" title="Cloudflare: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -1486,28 +1477,10 @@
                 </a>
                 
                 
-                <a href="/tags/Gemini-Pro/" title="Gemini Pro: 1">
+                <a href="/tags/System-Prompt/" title="System Prompt: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Gemini Pro" style="background-color: #85C1E9;">Gemini Pro
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/" title="谷歌账号: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="谷歌账号" style="background-color: #82E0AA;">谷歌账号
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%AE%B6%E5%BA%AD%E5%85%B1%E4%BA%AB/" title="家庭共享: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="家庭共享" style="background-color: #A3E4D7;">家庭共享
+                            data-tagname="System Prompt" style="background-color: #FFF;">System Prompt
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1558,10 +1531,28 @@
                 </a>
                 
                 
-                <a href="/tags/System-Prompt/" title="System Prompt: 1">
+                <a href="/tags/Gemini-Pro/" title="Gemini Pro: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="System Prompt" style="background-color: #FFF;">System Prompt
+                            data-tagname="Gemini Pro" style="background-color: #85C1E9;">Gemini Pro
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/" title="谷歌账号: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="谷歌账号" style="background-color: #82E0AA;">谷歌账号
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AE%B6%E5%BA%AD%E5%85%B1%E4%BA%AB/" title="家庭共享: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="家庭共享" style="background-color: #A3E4D7;">家庭共享
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1625,6 +1616,15 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="Agent工程" style="background-color: #F8C471;">Agent工程
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="源码分析: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="源码分析" style="background-color: #E8F8F5;">源码分析
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -2201,27 +2201,19 @@ $(function () {
     
 
     <!-- MathJax support for Hexo-rendered LaTeX formulas -->
-    <script>
-        window.MathJax = {
-            tex: {
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
             },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            },
-            startup: {
-                ready: function () {
-                    MathJax.startup.defaultReady();
-                    if (window.MathJax && MathJax.typesetPromise) {
-                        MathJax.typesetPromise();
-                    }
-                }
-            }
-        };
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
     </script>
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
 

@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-05T05:36:29.305Z</updated>
+  <updated>2026-06-08T18:20:57.878Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>因子的半衰期：量化策略真正的慢性失效</title>
+    <link href="https://onefly.top/posts/factor-half-life-quant-strategy-decay.html"/>
+    <id>https://onefly.top/posts/factor-half-life-quant-strategy-decay.html</id>
+    <published>2026-06-08T18:18:21.000Z</published>
+    <updated>2026-06-08T18:20:57.878Z</updated>
+    
+    
+    <summary type="html">因子不是永动机，它会被套利、被市场结构改变，也会因为过拟合而失效。本文系统拆解因子半衰期的成因、测量方法和因子库的新陈代谢机制。</summary>
+    
+    
+    
+    <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    
+    
+    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
+    
+    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
+    
+    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
+    
+    <category term="策略" scheme="https://onefly.top/tags/%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>风控模型指标：别只盯着 AUC</title>
@@ -106,9 +131,9 @@
     
     <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
     
-    <category term="合约" scheme="https://onefly.top/tags/%E5%90%88%E7%BA%A6/"/>
-    
     <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
+    
+    <category term="合约" scheme="https://onefly.top/tags/%E5%90%88%E7%BA%A6/"/>
     
   </entry>
   
@@ -231,11 +256,11 @@
     
     <category term="Meme币" scheme="https://onefly.top/tags/Meme%E5%B8%81/"/>
     
+    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
+    
     <category term="链上分析" scheme="https://onefly.top/tags/%E9%93%BE%E4%B8%8A%E5%88%86%E6%9E%90/"/>
     
     <category term="交易风控" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E9%A3%8E%E6%8E%A7/"/>
-    
-    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
     
   </entry>
   
@@ -472,29 +497,6 @@
     <category term="AI账号" scheme="https://onefly.top/tags/AI%E8%B4%A6%E5%8F%B7/"/>
     
     <category term="实用教程" scheme="https://onefly.top/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>拆解 OpenClaw 的大脑：一个 AI 助手的 System Prompt 是怎么炼成的</title>
-    <link href="https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html"/>
-    <id>https://onefly.top/posts/openclaw-agent-system-prompt-9-layers-architecture.html</id>
-    <published>2026-03-06T10:00:00.000Z</published>
-    <updated>2026-05-28T09:22:50.982Z</updated>
-    
-    
-    <summary type="html">从工程视角拆解 OpenClaw Agent 的 System Prompt 9 层架构：框架如何定义身份、工具、技能、记忆、动态上下文，以及普通用户真正能改哪些地方。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
-    
-    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
-    
-    <category term="System Prompt" scheme="https://onefly.top/tags/System-Prompt/"/>
     
   </entry>
   

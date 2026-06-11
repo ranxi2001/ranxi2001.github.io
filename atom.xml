@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-08T18:20:57.878Z</updated>
+  <updated>2026-06-11T15:45:12.210Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>国外 Quant 圈不只讲因子了</title>
+    <link href="https://onefly.top/posts/quant-risk-beyond-factors.html"/>
+    <id>https://onefly.top/posts/quant-risk-beyond-factors.html</id>
+    <published>2026-06-11T15:40:36.000Z</published>
+    <updated>2026-06-11T15:45:12.210Z</updated>
+    
+    
+    <summary type="html">从 Man AHL 的风险管理视频出发，讨论为什么成熟量化交易不应只停留在因子 IC、夏普和最大回撤，而要把流动性、容量、交易对手、托管和退出能力纳入策略设计。</summary>
+    
+    
+    
+    <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    
+    
+    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
+    
+    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
+    
+    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
+    
+    <category term="容量" scheme="https://onefly.top/tags/%E5%AE%B9%E9%87%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>因子的半衰期：量化策略真正的慢性失效</title>
@@ -256,11 +281,11 @@
     
     <category term="Meme币" scheme="https://onefly.top/tags/Meme%E5%B8%81/"/>
     
-    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
-    
     <category term="链上分析" scheme="https://onefly.top/tags/%E9%93%BE%E4%B8%8A%E5%88%86%E6%9E%90/"/>
     
     <category term="交易风控" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E9%A3%8E%E6%8E%A7/"/>
+    
+    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
     
   </entry>
   
@@ -472,31 +497,6 @@
     <category term="Claude Code" scheme="https://onefly.top/tags/Claude-Code/"/>
     
     <category term="源码分析" scheme="https://onefly.top/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cloudflare免费无限邮箱教程：一个域名搞定所有AI账号注册</title>
-    <link href="https://onefly.top/posts/cloudflare-email-routing-unlimited-mailbox-guide.html"/>
-    <id>https://onefly.top/posts/cloudflare-email-routing-unlimited-mailbox-guide.html</id>
-    <published>2026-03-30T09:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.300Z</updated>
-    
-    
-    <summary type="html">利用Cloudflare Email Routing免费创建无限邮箱地址，轻松注册ChatGPT、Claude、Gemini等AI账号，附Catch-All配置和Email Workers自动提取验证码教程。</summary>
-    
-    
-    
-    <category term="实用工具" scheme="https://onefly.top/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Cloudflare" scheme="https://onefly.top/tags/Cloudflare/"/>
-    
-    <category term="邮箱工具" scheme="https://onefly.top/tags/%E9%82%AE%E7%AE%B1%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="AI账号" scheme="https://onefly.top/tags/AI%E8%B4%A6%E5%8F%B7/"/>
-    
-    <category term="实用教程" scheme="https://onefly.top/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

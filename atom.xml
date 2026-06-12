@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-11T16:05:28.144Z</updated>
+  <updated>2026-06-12T03:29:31.462Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -17,27 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>国外 Quant 圈不只讲因子了</title>
-    <link href="https://onefly.top/posts/quant-risk-beyond-factors.html"/>
-    <id>https://onefly.top/posts/quant-risk-beyond-factors.html</id>
-    <published>2026-06-11T15:40:36.000Z</published>
-    <updated>2026-06-11T16:05:28.144Z</updated>
+    <title>FreshBench：我把 2026 高考数学做成了开源评测基准</title>
+    <link href="https://onefly.top/posts/freshbench-gaokao-math-2026.html"/>
+    <id>https://onefly.top/posts/freshbench-gaokao-math-2026.html</id>
+    <published>2026-06-12T03:25:40.000Z</published>
+    <updated>2026-06-12T03:29:31.462Z</updated>
     
     
-    <summary type="html">从 Man AHL 的风险管理视频出发，讨论为什么成熟量化交易不应只停留在因子 IC、夏普和最大回撤，而要把流动性、容量、交易对手、托管和退出能力纳入策略设计。</summary>
+    <summary type="html">2026 高考数学刚公开后，我整理了 FreshBench-GaokaoMath-2026：一个带时间戳、Schema、JSONL 和评测脚本的开源新题基准，用来观察大模型与 Agent 在真实新题上的数学推理能力。</summary>
     
     
     
-    <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
+    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
     
-    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
+    <category term="评测" scheme="https://onefly.top/tags/%E8%AF%84%E6%B5%8B/"/>
     
-    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
-    
-    <category term="容量" scheme="https://onefly.top/tags/%E5%AE%B9%E9%87%8F/"/>
+    <category term="高考数学" scheme="https://onefly.top/tags/%E9%AB%98%E8%80%83%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   

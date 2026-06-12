@@ -8,7 +8,7 @@
     <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
     <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
     <meta charset="utf-8">
-    <meta name="keywords" content="Man AHL,Man Group,量化风控,流动性风险,因子投资,策略容量,交易对手风险,VaR,Expected Shortfall,量化交易">
+    <meta name="keywords" content="FreshBench, 2026高考数学, 大模型评测, Agent评测, 数学推理, LLM Benchmark, 数据污染, 时间戳基准, 开源数据集">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>国外 Quant 圈不只讲因子了 | 孤飞的博客</title>
+    <title>FreshBench：我把 2026 高考数学做成了开源评测基准 | 孤飞的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -256,12 +256,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260612000451679-482644257.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/freshbench-gaokao-math-2026-cover.svg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">国外 Quant 圈不只讲因子了</h1>
+                    <h1 class="description center-align post-title">FreshBench：我把 2026 高考数学做成了开源评测基准</h1>
                 </div>
             </div>
         </div>
@@ -773,20 +773,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%A3%8E%E6%8E%A7/">
-                                <span class="chip bg-color">风控</span>
+                            <a href="/tags/Agent/">
+                                <span class="chip bg-color">Agent</span>
                             </a>
                         
-                            <a href="/tags/%E9%87%8F%E5%8C%96/">
-                                <span class="chip bg-color">量化</span>
+                            <a href="/tags/%E8%AF%84%E6%B5%8B/">
+                                <span class="chip bg-color">评测</span>
                             </a>
                         
-                            <a href="/tags/%E5%9B%A0%E5%AD%90/">
-                                <span class="chip bg-color">因子</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%AE%B9%E9%87%8F/">
-                                <span class="chip bg-color">容量</span>
+                            <a href="/tags/%E9%AB%98%E8%80%83%E6%95%B0%E5%AD%A6/">
+                                <span class="chip bg-color">高考数学</span>
                             </a>
                         
                     </div>
@@ -797,8 +793,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" class="post-category">
-                                量化交易
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                AI工具
                             </a>
                         
                     </div>
@@ -810,7 +806,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-06-11
+                    2026-06-12
                 </div>
                 
 
@@ -819,14 +815,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    7 分
                 </div>
                 
 
@@ -844,255 +840,153 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="国外-Quant-圈不只讲因子了"><a href="#国外-Quant-圈不只讲因子了" class="headerlink" title="国外 Quant 圈不只讲因子了"></a>国外 Quant 圈不只讲因子了</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260612000451679-482644257.jpg" style="zoom:33%;" alt="国外 Quant 圈不只讲因子了封面图"></p>
-<p>最近刷到一段关于 Man AHL 风控的视频整理，里面有句话很值得单独拎出来：成熟机构看风险，不只是看波动率、VaR、Expected Shortfall，也会看每个市场的流动性、头寸占平均成交量的比例、交易对手、托管银行、地缘政治这些不那么“因子化”的东西。</p>
-<p>这件事对很多做量化的人其实挺刺耳。</p>
-<p>因为中文量化社区里，讨论最热的仍然是因子：IC 多高、Rank IC 稳不稳定、分层收益漂不漂亮、截面 alpha 有没有衰减。不是说这些不重要，而是如果一个策略最后只能用“因子强度”解释，那它距离真实交易还差一大截。</p>
-<p>更成熟的量化系统，关心的问题会更土，也更要命：</p>
+                <p><img src="/images/freshbench-gaokao-math-2026-cover.svg" style="zoom:33%;" alt="FreshBench 2026 高考数学开源评测基准封面图"></p>
+<h1 id="FreshBench：我把-2026-高考数学做成了开源评测基准"><a href="#FreshBench：我把-2026-高考数学做成了开源评测基准" class="headerlink" title="FreshBench：我把 2026 高考数学做成了开源评测基准"></a>FreshBench：我把 2026 高考数学做成了开源评测基准</h1><p>这两天我找了一圈，发现一个挺有意思的空白：<strong>2026 高考数学试卷已经有很多讨论，但几乎没人把它整理成可复用、可校验、可跑评测的数据集。</strong></p>
+<p>所以我顺手做了一个开源项目：</p>
+<p><a href="https://github.com/ranxi2001/freshbench">FreshBench: A Time-Stamped Benchmark for Newly Released Tasks</a></p>
+<p>首个数据集是：<strong>FreshBench-GaokaoMath-2026</strong>。</p>
+<p>它不是单纯把题目复制进 Markdown，而是把“刚发布的新题”整理成一个适合大模型和 Agent 评测的基准：有原始 Markdown，有结构化 JSONL，有 JSON Schema，有校验脚本，也有简单的预测评估脚本。</p>
+<h2 id="为什么要做这个？"><a href="#为什么要做这个？" class="headerlink" title="为什么要做这个？"></a>为什么要做这个？</h2><p>现在做大模型数学评测，最大的问题之一不是“题够不够难”，而是：</p>
+<p><strong>这些题模型到底有没有提前见过？</strong></p>
+<p>很多经典 Benchmark 已经在互联网上存在多年。模型训练语料、指令微调数据、网页缓存、代码仓库、题库站点，都可能把题目和答案混进去。最后你看到的高分，可能既有推理能力，也有记忆能力，还可能有数据污染。</p>
+<p>高考数学这种刚公开、发布时间明确、社会关注度高的题目，正好适合做一类“新题评测”：</p>
 <ul>
-<li>这个信号能不能稳定下单？</li>
-<li>容量放大以后，收益会不会被冲击成本吃掉？</li>
-<li>真出事时，仓位几天能退出来？</li>
-<li>交易对手、券商、托管、保证金链条有没有脆弱点？</li>
-<li>市场制度变化、地缘事件、流动性断层，会不会让回测里的风险指标失真？</li>
+<li>发布时间相对清楚；</li>
+<li>题目有标准答案和解题过程；</li>
+<li>难度覆盖基础题、综合题、证明题；</li>
+<li>模型如果能稳定解出，至少更接近真实推理；</li>
+<li>如果不同时间窗口测出来差异明显，也能观察模型对新题的吸收速度。</li>
 </ul>
-<p>换句话说，因子回答的是“为什么可能赚钱”，风控回答的是“为什么不会死得太快”。</p>
-<hr>
-<h2 id="一、AHL-这段视频到底在说什么"><a href="#一、AHL-这段视频到底在说什么" class="headerlink" title="一、AHL 这段视频到底在说什么"></a>一、AHL 这段视频到底在说什么</h2><p>Man AHL 是 Man Group 旗下的系统化投资部门。Man Group 官网介绍，AHL 的投资项目基于一个长期理念：市场存在价格趋势、均值回复、carry 等可重复模式，这些模式可以通过系统化研究识别并交易。AHL Explains 系列里有一集专门讲 Risk，官方描述是：视频解释 Value at Risk 和 Expected Shortfall，并进一步讨论风险管理的多面性。</p>
-<p>这其实很典型。</p>
-<p>散户看风险，常常停在三件事：</p>
+<p>这就是 FreshBench 想做的事：<strong>把“新近发布、来源可追溯、整理时间明确”的任务，变成可持续更新的评测基准。</strong></p>
+<h2 id="FreshBench-GaokaoMath-2026-现在有什么？"><a href="#FreshBench-GaokaoMath-2026-现在有什么？" class="headerlink" title="FreshBench-GaokaoMath-2026 现在有什么？"></a>FreshBench-GaokaoMath-2026 现在有什么？</h2><p>当前项目里已经整理了一个初始版本：</p>
 <ul>
-<li>最大回撤；</li>
-<li>夏普比率；</li>
-<li>收益曲线是否平滑。</li>
+<li><strong>19 道 2026 高考数学题目</strong>；</li>
+<li><strong>19 份对应答案 / 解答记录</strong>；</li>
+<li>题型覆盖单选、多选、填空、解答、计算、证明；</li>
+<li>每道题保留题号、题型、答案、来源、采集时间、核验状态和标签；</li>
+<li>数据集状态明确标记为 <code>draft_unverified</code>，不伪装成最终权威版；</li>
+<li>提供 JSON Schema 校验，避免字段混乱和 ID 冲突；</li>
+<li>提供预测文件格式和简易评估脚本，方便模型跑分。</li>
 </ul>
-<p>稍微专业一点，会加上 VaR、Expected Shortfall、波动率目标、杠杆约束。但机构级风控不会停在这些“价格序列里能算出来”的指标上。</p>
-<p>因为真正让策略出问题的，经常不是模型里已经定义好的风险，而是模型外面的东西：</p>
+<p>题型分布大致如下：</p>
 <ul>
-<li>流动性突然消失；</li>
-<li>成交量不能承接你的仓位；</li>
-<li>交易对手信用变差；</li>
-<li>托管或清算链条出问题；</li>
-<li>某个市场因为监管、战争、制裁、假期或极端事件失去正常交易条件。</li>
+<li>单选题：8 道</li>
+<li>多选题：3 道</li>
+<li>填空题：3 道</li>
+<li>解答题：1 道</li>
+<li>计算题：2 道</li>
+<li>证明题：2 道</li>
 </ul>
-<p>这些东西不一定能优雅地进入一个因子回归模型，但它们会非常粗暴地进入你的真实账户。</p>
-<hr>
-<h2 id="二、因子-IC-解决不了“能不能退出”的问题"><a href="#二、因子-IC-解决不了“能不能退出”的问题" class="headerlink" title="二、因子 IC 解决不了“能不能退出”的问题"></a>二、因子 IC 解决不了“能不能退出”的问题</h2><p>国内量化讨论很喜欢 IC，这很合理。IC 是研究信号预测能力的基础语言。没有 IC，很多截面策略连第一步都站不住。</p>
-<p>但 IC 有一个天然局限：它主要描述“排序有没有预测力”，不直接描述“交易能不能完成”。</p>
-<p>一个因子可能有不错的 IC，但如果它集中在小票、冷门资产、低成交量合约上，实盘会遇到完全不同的问题：</p>
+<p>项目结构是这样的：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">freshbench/
+  data/gaokao_math_2026/
+    metadata.json
+    problems.jsonl
+    solutions.jsonl
+    assets/
+  raw-data/
+    2026-gaokao-math.md
+    2026-gaokao-math-questions.md
+  schemas/
+    problem.schema.json
+    solution.schema.json
+  scripts/
+    validate_dataset.py
+    evaluate_predictions.py
+  examples/
+    sample_predictions.jsonl
+  DATASET_CARD.md
+  CITATION.cff<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我比较在意的一点是：<strong>它不是“发一份题目”，而是“发一个基准项目”。</strong></p>
+<p>题面只是第一步，更重要的是后面的格式约束、版本记录、来源核验、预测提交和评估流程。</p>
+<h2 id="数据格式：让模型评测可以真正跑起来"><a href="#数据格式：让模型评测可以真正跑起来" class="headerlink" title="数据格式：让模型评测可以真正跑起来"></a>数据格式：让模型评测可以真正跑起来</h2><p>每道题会被整理成一条 JSONL 记录。核心字段包括：</p>
 <ul>
-<li>买入时把价格推上去；</li>
-<li>卖出时没人接盘；</li>
-<li>回测成交价过于理想；</li>
-<li>市场冲击成本随规模非线性上升；</li>
-<li>真正需要止损时，退出速度远慢于模型假设。</li>
+<li><code>id</code>：稳定题目 ID；</li>
+<li><code>dataset</code>：数据集名称；</li>
+<li><code>exam</code> / <code>year</code> / <code>subject</code>：考试元信息；</li>
+<li><code>question_number</code>：题号；</li>
+<li><code>question_type</code>：题型；</li>
+<li><code>question</code>：题面；</li>
+<li><code>options</code>：选项；</li>
+<li><code>answer</code>：标准答案；</li>
+<li><code>source</code>：来源信息；</li>
+<li><code>collected_at</code>：采集时间；</li>
+<li><code>verification_status</code>：核验状态；</li>
+<li><code>tags</code>：标签。</li>
 </ul>
-<p>所以成熟系统会问一个很朴素的问题：</p>
-<blockquote>
-<p>我的头寸，占这个市场平均日成交量的多少？</p>
-</blockquote>
-<p>这不是一个高级公式，但它很有杀伤力。</p>
-<p>如果某个头寸已经占到日均成交量的很大比例，那你账面上看到的收益和风险都不是真实的。因为你不是价格接受者，你已经变成了市场本身的一部分。这个时候，回测里“一键平仓”的假设就很危险。</p>
+<p>模型预测文件也很简单，每行一条：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span><span class="token property">"id"</span><span class="token operator">:</span><span class="token string">"fb-gm2026-national-unified-001"</span><span class="token punctuation">,</span><span class="token property">"answer"</span><span class="token operator">:</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token property">"reasoning"</span><span class="token operator">:</span><span class="token string">"可选的模型推理过程。"</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后可以用项目里的脚本做基础评估：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/ranxi2001/freshbench.git
+<span class="token builtin class-name">cd</span> freshbench
+python <span class="token parameter variable">-m</span> pip <span class="token function">install</span> <span class="token parameter variable">-e</span> <span class="token builtin class-name">.</span>
+python scripts/validate_dataset.py data/gaokao_math_2026
+python scripts/evaluate_predictions.py <span class="token punctuation">\</span>
+  <span class="token parameter variable">--problems</span> data/gaokao_math_2026/problems.jsonl <span class="token punctuation">\</span>
+  <span class="token parameter variable">--predictions</span> examples/sample_predictions.jsonl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果安装了 <code>jsonschema</code>，校验脚本会执行完整 JSON Schema 校验；没安装时，也会检查 JSONL 解析、必填字段、重复 ID 和解答引用关系。</p>
+<p>这听起来不复杂，但对一个 Benchmark 来说很关键：<strong>格式稳定，别人才能复现实验；字段明确，后续才能持续追加数据。</strong></p>
+<h2 id="我希望它解决的不是“刷分”，而是“新题能力观测”"><a href="#我希望它解决的不是“刷分”，而是“新题能力观测”" class="headerlink" title="我希望它解决的不是“刷分”，而是“新题能力观测”"></a>我希望它解决的不是“刷分”，而是“新题能力观测”</h2><p>FreshBench 的定位不是再造一个很大的数学题库。</p>
+<p>我更想把它做成一个“时间戳基准”：每一批题都有明确发布时间、整理时间、来源核验状态和版本记录。这样它能服务几个具体问题：</p>
 <pre class="mermaid">flowchart TD
-    A[因子信号有效] --&gt; B[组合开始建仓]
-    B --&gt; C[规模继续放大]
-    C --&gt; D{头寸占成交量比例}
-    D --&gt;|较低| E[交易成本可控]
-    D --&gt;|较高| F[冲击成本上升]
-    F --&gt; G[退出时间变长]
-    G --&gt; H[回撤被放大]
-    H --&gt; I[因子收益被风控问题吞掉]</pre>
+    A[新近公开题目] --&gt; B[人工整理与结构化]
+    B --&gt; C[记录来源和采集时间]
+    C --&gt; D[Schema 校验]
+    D --&gt; E[模型 / Agent 作答]
+    E --&gt; F[答案评估与错误分析]
+    F --&gt; G[观察真实新题推理能力]</pre>
 
-<p>因子研究关心的是 alpha；容量管理关心的是 alpha 能不能被你拿到手。</p>
-<hr>
-<h2 id="三、为什么海外量化社区更爱聊仓位和风控"><a href="#三、为什么海外量化社区更爱聊仓位和风控" class="headerlink" title="三、为什么海外量化社区更爱聊仓位和风控"></a>三、为什么海外量化社区更爱聊仓位和风控</h2><p>这几年如果你看英文量化论坛、CTA 讨论、系统化交易播客，会发现一个很明显的差异：成熟交易者很少只围绕“神奇因子”打转。他们更愿意聊：</p>
+<p>比如：</p>
+<ol>
+<li><strong>同一个模型，在题目刚发布后表现如何？</strong></li>
+<li><strong>过几天、几周后再测，分数是否明显提高？</strong></li>
+<li><strong>联网 Agent 和纯 LLM 的差距在哪里？</strong></li>
+<li><strong>模型是能完整推理，还是只会猜选择题？</strong></li>
+<li><strong>不同模型在证明题、计算题、填空题上的错误模式有什么差异？</strong></li>
+</ol>
+<p>这些问题，比单纯比较总分更有意思。</p>
+<p>尤其是 Agent 评测。高考数学题不只是答案匹配，还涉及读题、图形理解、公式推导、工具使用、长链路计算和自我校验。它天然适合观察 Agent 在真实任务里的失败点。</p>
+<h2 id="但我也不想把它包装得太满"><a href="#但我也不想把它包装得太满" class="headerlink" title="但我也不想把它包装得太满"></a>但我也不想把它包装得太满</h2><p>当前版本仍然是初始草稿，项目里已经明确写了：<code>draft_unverified</code>。</p>
+<p>这意味着：</p>
 <ul>
-<li>volatility targeting；</li>
-<li>position sizing；</li>
-<li>risk parity；</li>
-<li>portfolio construction；</li>
-<li>trend following 的危机 alpha；</li>
-<li>turnover 和 transaction cost；</li>
-<li>execution 与 slippage；</li>
-<li>capacity、liquidity、crowding。</li>
+<li>题面和答案还需要逐题核对；</li>
+<li>公开来源 URL 还需要补充；</li>
+<li>部分图形题需要更细致地管理图片资源；</li>
+<li>不同公开来源之间可能存在排版、答案记法或勘误差异；</li>
+<li>原始考试材料的版权和再分发边界需要尊重。</li>
 </ul>
-<p>原因也不复杂：很多成熟策略的信号本身并不神秘。</p>
-<p>趋势跟踪并不神秘，均线、突破、动量都很老。横截面动量、carry、价值、质量也早就被研究烂了。但为什么不同团队最后表现差很多？差异往往不在“是否知道这个因子”，而在：</p>
+<p>我不想把一个还在核验中的数据集说成“权威版本”。这对评测没有好处，对开源协作也没有好处。</p>
+<p>所以 FreshBench 里每条题目都有 <code>verification_status</code>，当前统一标记为 <code>needs_public_source_verification</code>。这不是缺点，而是我希望项目保持透明的地方：<strong>可信评测首先要承认数据还需要被核验。</strong></p>
+<h2 id="欢迎一起把它补完整"><a href="#欢迎一起把它补完整" class="headerlink" title="欢迎一起把它补完整"></a>欢迎一起把它补完整</h2><p>如果你也关心大模型数学推理、Agent 评测、数据污染、时间戳 Benchmark，欢迎来一起完善：</p>
+<p><a href="https://github.com/ranxi2001/freshbench">https://github.com/ranxi2001/freshbench</a></p>
+<p>目前最需要的贡献包括：</p>
 <ul>
-<li>如何组合多个弱信号；</li>
-<li>如何动态分配风险预算；</li>
-<li>如何控制换手和成本；</li>
-<li>如何在极端行情里降杠杆；</li>
-<li>如何避免同一类风险在组合里重复暴露；</li>
-<li>如何识别策略容量已经接近上限。</li>
+<li>补充可公开访问、可核验的题目来源；</li>
+<li>校对题面、公式、选项和答案；</li>
+<li>修正解析过程里的瑕疵；</li>
+<li>补充几何图、函数图、统计图等资源文件；</li>
+<li>跑不同模型的预测结果；</li>
+<li>提交更好的评估脚本，比如支持数值答案、LaTeX 等价、步骤评分；</li>
+<li>扩展更多“刚发布”的任务数据集。</li>
 </ul>
-<p>也就是说，海外讨论不是“不讲因子”，而是已经默认因子只是起点。</p>
-<p>一个因子从研究到实盘，中间至少要经过四层翻译。</p>
+<p>我理想中的 FreshBench，不是一个一次性项目，而是一套可以持续增长的新题评测框架：</p>
 <pre class="mermaid">graph LR
-    A[研究信号] --&gt; B[可交易规则]
-    B --&gt; C[组合权重]
-    C --&gt; D[执行算法]
-    D --&gt; E[风险监控]
-    E --&gt; F[真实收益]
+    A[高考数学] --&gt; F[FreshBench]
+    B[竞赛题] --&gt; F
+    C[新论文任务] --&gt; F
+    D[真实工具任务] --&gt; F
+    E[多模态新题] --&gt; F
+    F --&gt; G[时间戳评测]
+    F --&gt; H[Agent 能力分析]
+    F --&gt; I[数据污染研究]</pre>
 
-    A -.IC / Rank IC.-&gt; A1[预测力]
-    C -.风险预算.-&gt; C1[仓位]
-    D -.冲击成本.-&gt; D1[成交]
-    E -.流动性 / 对手方 / 极端事件.-&gt; E1[生存]</pre>
-
-<p>很多人卡在第一层，就误以为自己已经在做量化交易。</p>
-<hr>
-<h2 id="四、散户也需要机构式风控吗？需要，但要简化"><a href="#四、散户也需要机构式风控吗？需要，但要简化" class="headerlink" title="四、散户也需要机构式风控吗？需要，但要简化"></a>四、散户也需要机构式风控吗？需要，但要简化</h2><p>有人可能会说：机构资金大，才需要看流动性和交易对手；散户资金小，没必要搞这么复杂。</p>
-<p>这句话只对一半。</p>
-<p>如果你只交易大市值股票、主流 ETF、主力期货合约，资金体量也很小，那确实不需要把风控系统搞成机构版。但散户量化最容易踩坑的地方，恰恰不是这些最深的市场，而是：</p>
-<ul>
-<li>小市值股票；</li>
-<li>冷门行业 ETF；</li>
-<li>山寨币和新币；</li>
-<li>小交易所合约；</li>
-<li>低流动性期权；</li>
-<li>某些盘中成交稀疏的套利标的。</li>
-</ul>
-<p>这些市场里，散户虽然资金小，但市场也更脆。你以为自己是小资金，实际上对某个具体盘口来说，已经不小了。</p>
-<p>散户不需要复制 Man AHL 的完整系统，但至少应该加一个轻量版风控清单。</p>
-<h3 id="1-流动性检查"><a href="#1-流动性检查" class="headerlink" title="1. 流动性检查"></a>1. 流动性检查</h3><p>每个标的至少看：</p>
-<ul>
-<li>平均日成交额；</li>
-<li>买卖价差；</li>
-<li>盘口深度；</li>
-<li>你的单笔订单占盘口深度比例；</li>
-<li>你的总仓位占日均成交量比例。</li>
-</ul>
-<p>一个很实用的原则是：不要只问“今天能不能买进去”，还要问“最差的时候能不能卖出来”。</p>
-<h3 id="2-容量检查"><a href="#2-容量检查" class="headerlink" title="2. 容量检查"></a>2. 容量检查</h3><p>策略收益通常不是线性可放大的。</p>
-<p>资金从 10 万到 100 万，可能还正常；从 100 万到 1000 万，换手、冲击、滑点就开始吞噬收益；再往上，原本漂亮的因子可能直接变成交易成本生产机。</p>
-<p>所以回测时至少要做三组规模敏感性测试：</p>
-<ul>
-<li>当前资金规模；</li>
-<li>预期放大 3 倍；</li>
-<li>预期放大 10 倍。</li>
-</ul>
-<p>如果策略一放大就崩，说明它不是不能用，而是容量很小。容量小不是罪，误把小容量策略当大容量策略才是问题。</p>
-<h3 id="3-退出时间检查"><a href="#3-退出时间检查" class="headerlink" title="3. 退出时间检查"></a>3. 退出时间检查</h3><p>可以给每个标的估一个粗糙的退出天数：</p>
-<script type="math/tex; mode=display">
-退出天数 \approx \frac{目标平仓数量}{日均成交量 \times 可接受参与率}</script><p>比如你持有 100 万股，标的日均成交量 500 万股，你最多愿意占当天成交量的 10%，那理论退出时间就是：</p>
-<script type="math/tex; mode=display">
-\frac{100万}{500万 \times 10\%} = 2天</script><p>这还是正常市场条件下。极端行情里，成交量可能虚高但盘口质量变差，退出时间还会更长。</p>
-<h3 id="4-对手方与平台风险"><a href="#4-对手方与平台风险" class="headerlink" title="4. 对手方与平台风险"></a>4. 对手方与平台风险</h3><p>如果你做的是股票和期货，主要关注券商、期货公司、托管、保证金和交易权限。如果你做的是 crypto，还要额外关注：</p>
-<ul>
-<li>交易所储备和提现状态；</li>
-<li>合约资金费率异常；</li>
-<li>API 稳定性；</li>
-<li>强平规则；</li>
-<li>单一平台资产集中度；</li>
-<li>稳定币、跨链桥、托管钱包风险。</li>
-</ul>
-<p>很多 crypto 策略不是死于信号失效，而是死于平台风险、提现暂停、插针、流动性瞬间消失。</p>
-<hr>
-<h2 id="五、一个更完整的量化风控框架"><a href="#五、一个更完整的量化风控框架" class="headerlink" title="五、一个更完整的量化风控框架"></a>五、一个更完整的量化风控框架</h2><p>如果把风控从“指标面板”升级成“生存系统”，至少要分五层。</p>
-<pre class="mermaid">mindmap
-  root((量化风控))
-    价格风险
-      波动率
-      最大回撤
-      VaR
-      Expected Shortfall
-    流动性风险
-      成交额
-      盘口深度
-      买卖价差
-      退出天数
-    组合风险
-      行业暴露
-      因子暴露
-      相关性
-      拥挤度
-    执行风险
-      滑点
-      冲击成本
-      订单失败
-      API延迟
-    外部风险
-      交易对手
-      托管
-      监管
-      地缘政治</pre>
-
-<p>这里最容易被忽略的是后四层。</p>
-<p>价格风险最容易量化，所以大家都愿意看；外部风险最难量化，所以大家最容易假装它不存在。但市场不会因为你不好建模，就不发生这些事情。</p>
-<hr>
-<h2 id="六、真正的分歧不是国内外，而是研究阶段和实盘阶段"><a href="#六、真正的分歧不是国内外，而是研究阶段和实盘阶段" class="headerlink" title="六、真正的分歧不是国内外，而是研究阶段和实盘阶段"></a>六、真正的分歧不是国内外，而是研究阶段和实盘阶段</h2><p>“国外 quant 圈已经不讲因子了”这个说法有传播力，但严格说并不准确。</p>
-<p>国外当然还讲因子。AHL 自己也研究 momentum、cross-sectional momentum、signal diversification、volatility scaling、portfolio diversification。学术界和业界也一直在讨论因子拥挤、因子衰减、风险溢价、机器学习信号。</p>
-<p>真正的区别不是“讲不讲因子”，而是很多成熟讨论已经越过了最初级的问题：</p>
-<ul>
-<li>因子有没有预测力？</li>
-</ul>
-<p>然后进入更接近实盘的问题：</p>
-<ul>
-<li>预测力能不能交易？</li>
-<li>交易成本后还剩多少？</li>
-<li>放大后是否还成立？</li>
-<li>极端环境下能不能退出？</li>
-<li>和组合里其他风险是否重复？</li>
-<li>失效时有没有降权和熔断机制？</li>
-</ul>
-<p>国内讨论因子多，本身不是坏事。因子研究是量化的基本功。但如果长期停在 IC、分层、多空曲线，就容易把量化误解成“找公式”。</p>
-<p>真正的量化交易更像系统工程：研究只是入口，组合、执行、风控、监控、复盘才决定策略能活多久。</p>
-<hr>
-<h2 id="七、给散户量化的一张风控清单"><a href="#七、给散户量化的一张风控清单" class="headerlink" title="七、给散户量化的一张风控清单"></a>七、给散户量化的一张风控清单</h2><p>如果你已经有一个因子或策略，可以用下面这张清单快速自查。</p>
-<h3 id="研究层"><a href="#研究层" class="headerlink" title="研究层"></a>研究层</h3><ul>
-<li>信号是否有样本外验证？</li>
-<li>是否做过不同市场阶段的稳定性测试？</li>
-<li>是否检查过换手率和交易成本敏感性？</li>
-<li>是否区分了真实逻辑和数据挖掘幻觉？</li>
-</ul>
-<h3 id="组合层"><a href="#组合层" class="headerlink" title="组合层"></a>组合层</h3><ul>
-<li>单标的仓位上限是多少？</li>
-<li>单行业、单风格、单交易所暴露是否过高？</li>
-<li>策略之间是否在同一风险上重复下注？</li>
-<li>波动率上升时是否自动降杠杆？</li>
-</ul>
-<h3 id="流动性层"><a href="#流动性层" class="headerlink" title="流动性层"></a>流动性层</h3><ul>
-<li>单笔订单占盘口深度多少？</li>
-<li>总仓位占日均成交量多少？</li>
-<li>正常市场下几天能退出？</li>
-<li>极端市场下是否有强制降仓规则？</li>
-</ul>
-<h3 id="执行层"><a href="#执行层" class="headerlink" title="执行层"></a>执行层</h3><ul>
-<li>回测滑点是否过于乐观？</li>
-<li>是否统计实盘成交价和理论成交价偏差？</li>
-<li>API 或交易通道失败时如何处理？</li>
-<li>是否有重复下单、漏单、撤单失败保护？</li>
-</ul>
-<h3 id="外部层"><a href="#外部层" class="headerlink" title="外部层"></a>外部层</h3><ul>
-<li>资金是否过度集中在单一券商或交易所？</li>
-<li>是否有提现、托管、保证金、强平规则风险？</li>
-<li>是否关注监管、假期、地缘事件对交易的影响？</li>
-<li>是否有策略暂停和人工接管预案？</li>
-</ul>
-<p>这张清单不会让策略更性感，但会让策略更像真实世界里的东西。</p>
-<hr>
-<h2 id="结语：别把量化做成漂亮回测收藏夹"><a href="#结语：别把量化做成漂亮回测收藏夹" class="headerlink" title="结语：别把量化做成漂亮回测收藏夹"></a>结语：别把量化做成漂亮回测收藏夹</h2><p>因子研究很迷人，因为它给人一种秩序感：混乱市场里，似乎存在一组可以被发现、被排序、被交易的规律。</p>
-<p>但真实交易不只奖励“发现规律”的人，也奖励“知道规律什么时候不能用”的人。</p>
-<p>AHL 这类机构的风控提醒我们：量化不是把收益曲线画漂亮，也不是把 IC 表格填满，而是把一个策略放进真实市场里，问它能不能承受交易成本、流动性、容量、对手方、托管、制度和极端事件的共同挤压。</p>
-<p>如果一个策略只能在回测里赚钱，不能在压力里退出，那它不是策略，只是一个漂亮故事。</p>
-<p>所以，下一次评估策略时，别只问：</p>
-<blockquote>
-<p>这个因子强不强？</p>
-</blockquote>
-<p>还要问：</p>
-<blockquote>
-<p>它能交易多大？出事时几天能跑？谁会在我最需要卖出时接盘？</p>
-</blockquote>
-<p>这几个问题不好看，但很值钱。</p>
-<hr>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li>Man Group: Man AHL, <a href="https://www.man.com/ahl">https://www.man.com/ahl</a></li>
-<li>Man Institute: AHL Explains, <a href="https://www.man.com/maninstitute/ahl-explains">https://www.man.com/maninstitute/ahl-explains</a></li>
-<li>Man Group: Man AHL Explains - Risk, <a href="https://www.man.com/insights/ahl-explains-risk">https://www.man.com/insights/ahl-explains-risk</a></li>
-<li>YouTube: AHL Explains - Risk, <a href="https://www.youtube.com/watch?v=oYPY8oBnSvU">https://www.youtube.com/watch?v=oYPY8oBnSvU</a></li>
-<li>Investopedia: Average Daily Trading Volume, <a href="https://www.investopedia.com/terms/a/averagedailytradingvolume.asp">https://www.investopedia.com/terms/a/averagedailytradingvolume.asp</a></li>
-</ul>
+<p>2026 高考数学只是第一步。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>大模型评测不缺榜单，但缺少足够干净、足够新、足够可追溯的任务。</p>
+<p>FreshBench 想做的事情很朴素：<strong>把新发布的真实题目整理好，把时间戳和来源记录清楚，把格式做成别人能复现的样子。</strong></p>
+<p>如果这个项目对你有用，欢迎 Star、提 Issue、交 PR，或者直接拿去测你关心的模型。</p>
+<p>项目地址：</p>
+<p><a href="https://github.com/ranxi2001/freshbench">https://github.com/ranxi2001/freshbench</a></p>
+<p>也欢迎把你的模型结果发出来。我们一起看看，2026 年的新高考数学题，今天的大模型到底会不会做。</p>
 
                 
             </div>
@@ -1119,7 +1013,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://onefly.top/posts/quant-risk-beyond-factors.html">https://onefly.top/posts/quant-risk-beyond-factors.html</a>
+                    <a href="https://onefly.top/posts/freshbench-gaokao-math-2026.html">https://onefly.top/posts/freshbench-gaokao-math-2026.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1157,20 +1051,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%A3%8E%E6%8E%A7/">
-                                    <span class="chip bg-color">风控</span>
+                                <a href="/tags/Agent/">
+                                    <span class="chip bg-color">Agent</span>
                                 </a>
                             
-                                <a href="/tags/%E9%87%8F%E5%8C%96/">
-                                    <span class="chip bg-color">量化</span>
+                                <a href="/tags/%E8%AF%84%E6%B5%8B/">
+                                    <span class="chip bg-color">评测</span>
                                 </a>
                             
-                                <a href="/tags/%E5%9B%A0%E5%AD%90/">
-                                    <span class="chip bg-color">因子</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%AE%B9%E9%87%8F/">
-                                    <span class="chip bg-color">容量</span>
+                                <a href="/tags/%E9%AB%98%E8%80%83%E6%95%B0%E5%AD%A6/">
+                                    <span class="chip bg-color">高考数学</span>
                                 </a>
                             
                         </div>
@@ -1608,12 +1498,12 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/posts/quant-risk-beyond-factors.html">
+                <a href="/posts/freshbench-gaokao-math-2026.html">
                     <div class="card-image">
                         
-                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260612000451679-482644257.jpg" class="responsive-img" alt="国外 Quant 圈不只讲因子了">
+                        <img src="/images/freshbench-gaokao-math-2026-cover.svg" class="responsive-img" alt="FreshBench：我把 2026 高考数学做成了开源评测基准">
                         
-                        <span class="card-title">国外 Quant 圈不只讲因子了</span>
+                        <span class="card-title">FreshBench：我把 2026 高考数学做成了开源评测基准</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1624,14 +1514,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" class="post-category">
-                                    量化交易
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    AI工具
                                 </a>
                             
                             
@@ -1642,20 +1532,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%A3%8E%E6%8E%A7/">
-                        <span class="chip bg-color">风控</span>
+                    <a href="/tags/Agent/">
+                        <span class="chip bg-color">Agent</span>
                     </a>
                     
-                    <a href="/tags/%E9%87%8F%E5%8C%96/">
-                        <span class="chip bg-color">量化</span>
+                    <a href="/tags/%E8%AF%84%E6%B5%8B/">
+                        <span class="chip bg-color">评测</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%A0%E5%AD%90/">
-                        <span class="chip bg-color">因子</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%B9%E9%87%8F/">
-                        <span class="chip bg-color">容量</span>
+                    <a href="/tags/%E9%AB%98%E8%80%83%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">高考数学</span>
                     </a>
                     
                 </div>

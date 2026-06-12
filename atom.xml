@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-12T03:29:31.462Z</updated>
+  <updated>2026-06-12T16:25:31.551Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Agent Harness：从 Demo 到工程系统的 10 层架构</title>
+    <link href="https://onefly.top/posts/agent-harness-engineering-architecture.html"/>
+    <id>https://onefly.top/posts/agent-harness-engineering-architecture.html</id>
+    <published>2026-06-12T16:23:38.000Z</published>
+    <updated>2026-06-12T16:25:31.551Z</updated>
+    
+    
+    <summary type="html">一篇面向工程实践的 AI Agent Harness 架构指南：从 Tools、Skills、Memory、Context、Permission 到 Sub-agent、Hook、Session 和 Query Engine，讲清楚 Agent 从 Demo 走向可用系统需要补齐哪些层。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
+    
+    <category term="架构" scheme="https://onefly.top/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+    <category term="工程" scheme="https://onefly.top/tags/%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="LLM" scheme="https://onefly.top/tags/LLM/"/>
+    
+  </entry>
   
   <entry>
     <title>FreshBench：我把 2026 高考数学做成了开源评测基准</title>
@@ -256,9 +281,9 @@
     
     <category term="量化交易" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
     
-    <category term="因子研究" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90%E7%A0%94%E7%A9%B6/"/>
-    
     <category term="LLM" scheme="https://onefly.top/tags/LLM/"/>
+    
+    <category term="因子研究" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90%E7%A0%94%E7%A9%B6/"/>
     
   </entry>
   
@@ -472,29 +497,6 @@
     <category term="Hermes" scheme="https://onefly.top/tags/Hermes/"/>
     
     <category term="开源工具" scheme="https://onefly.top/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Claude Code 源码泄露深度剖析：Anthropic AI 编程助手的架构全解密</title>
-    <link href="https://onefly.top/posts/claude-code-leaked-source-architecture-deep-analysis.html"/>
-    <id>https://onefly.top/posts/claude-code-leaked-source-architecture-deep-analysis.html</id>
-    <published>2026-03-31T14:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.300Z</updated>
-    
-    
-    <summary type="html">2026年3月31日 Claude Code 源码因 npm source map 文件泄露，本文深度剖析其 TypeScript + React Ink 架构、工具系统、Agent 调度、权限模型等核心设计，揭秘 Anthropic 如何构建一个 51万行代码的 AI 编程 CLI。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI编程" scheme="https://onefly.top/tags/AI%E7%BC%96%E7%A8%8B/"/>
-    
-    <category term="Claude Code" scheme="https://onefly.top/tags/Claude-Code/"/>
-    
-    <category term="源码分析" scheme="https://onefly.top/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
     
   </entry>
   

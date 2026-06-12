@@ -1,0 +1,2197 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="AI Agent, Agent Harness, Agent Runtime, Tools, Skills, Memory, Context Engineering, Sub-agent, LangGraph, Agent工程">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Agent Harness：从 Demo 到工程系统的 10 层架构 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/agent-harness-engineering-architecture-cover.svg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Agent Harness：从 Demo 到工程系统的 10 层架构</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Agent/">
+                                <span class="chip bg-color">Agent</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9E%B6%E6%9E%84/">
+                                <span class="chip bg-color">架构</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">工程</span>
+                            </a>
+                        
+                            <a href="/tags/LLM/">
+                                <span class="chip bg-color">LLM</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                AI工具
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-13
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    14 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="/images/agent-harness-engineering-architecture-cover.svg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
+<h1 id="Agent-Harness：从-Demo-到工程系统的-10-层架构"><a href="#Agent-Harness：从-Demo-到工程系统的-10-层架构" class="headerlink" title="Agent Harness：从 Demo 到工程系统的 10 层架构"></a>Agent Harness：从 Demo 到工程系统的 10 层架构</h1><p>很多人第一次做 AI Agent，容易把问题想简单：</p>
+<p>“接一个 LLM，再给它几个工具，不就能干活了吗？”</p>
+<p>做 Demo 的时候确实可以。一个 system prompt，一个 tool calling，一个文件读写工具，一个搜索工具，就能跑出很漂亮的视频。</p>
+<p>但只要你让它进入真实任务，问题马上出现：上下文爆了怎么办？工具报错怎么办？模型限流怎么办？它要写文件时怎么拦？它记住了什么、忘掉了什么？用户中断后怎么恢复？多任务能不能拆给子 Agent？一次危险命令是不是要人确认？</p>
+<p>这时候你会发现：<strong>Agent 的核心不是模型，而是模型外面的 Harness。</strong></p>
+<p>LLM 提供推理和生成能力，Harness 负责把它变成一个可执行、可恢复、可扩展、可治理的工程系统。</p>
+<h2 id="一句话定义：Harness-是-Agent-的操作系统"><a href="#一句话定义：Harness-是-Agent-的操作系统" class="headerlink" title="一句话定义：Harness 是 Agent 的操作系统"></a>一句话定义：Harness 是 Agent 的操作系统</h2><p>如果把 LLM 看成“大脑”，那 Agent Harness 更像一个小型操作系统：</p>
+<ul>
+<li>给模型提供工具和技能；</li>
+<li>管理上下文、记忆和会话；</li>
+<li>控制权限、风险和人工确认；</li>
+<li>处理模型 API 的流式响应、重试、限流和缓存；</li>
+<li>支持命令、Hook 和子 Agent 编排；</li>
+<li>把一次聊天变成一个可持续运行的任务系统。</li>
+</ul>
+<p>可以把它理解成下面这张分层图：</p>
+<pre class="mermaid">flowchart TD
+    User[用户 / 任务入口] --&gt; Command[Command 命令层]
+    User --&gt; Session[Sessions 会话层]
+    Command --&gt; Runtime[Agent Runtime]
+    Session --&gt; Runtime
+
+    Runtime --&gt; Context[Context 上下文管理]
+    Runtime --&gt; Memory[Memory 记忆系统]
+    Runtime --&gt; Permission[Permission 权限治理]
+    Runtime --&gt; Skills[Skills 任务级能力]
+    Runtime --&gt; Tools[Tools 原子工具]
+    Runtime --&gt; SubAgent[Sub-agent 多 Agent 编排]
+    Runtime --&gt; Hooks[Hooks 执行扩展点]
+
+    Runtime --&gt; Query[Query Engine 模型调用层]
+    Query --&gt; LLM[LLM Providers]
+
+    Tools --&gt; Files[文件 / 命令 / 网络]
+    Skills --&gt; Workflows[PDF / 搜索 / 发布 / 评测等流程]
+    Memory --&gt; Store[(SQLite FTS / 向量库 / Profile)]</pre>
+
+<p>真正成熟的 Agent，不是“一个 prompt 加几个函数”，而是这些层的组合。</p>
+<h2 id="第-1-层：Tools，Agent-的原子行动能力"><a href="#第-1-层：Tools，Agent-的原子行动能力" class="headerlink" title="第 1 层：Tools，Agent 的原子行动能力"></a>第 1 层：Tools，Agent 的原子行动能力</h2><p>Tools 是 Agent 最底层的行动接口。它们通常很小，只做一件明确的事：</p>
+<ul>
+<li><code>read_file</code>：读取文件；</li>
+<li><code>write_file</code>：写入文件；</li>
+<li><code>exec</code>：执行 shell 命令；</li>
+<li><code>run_python</code>：运行 Python 脚本；</li>
+<li><code>web_search</code>：搜索网页；</li>
+<li><code>web_fetch</code>：抓取网页内容。</li>
+</ul>
+<p>Tools 的设计重点不是“多”，而是三个字：<strong>可控、可审计、可组合</strong>。</p>
+<p>一个好的工具层至少要回答这些问题：</p>
+<ol>
+<li>参数 schema 是否明确？</li>
+<li>返回值是否稳定、结构化？</li>
+<li>错误是否可恢复，而不是只抛一段日志？</li>
+<li>是否能被权限系统拦截？</li>
+<li>是否记录调用历史，方便 debug？</li>
+</ol>
+<p>很多 Agent 项目做不稳，是因为 tool 只是“把系统能力裸露给模型”。模型一旦传错参数、路径、命令，整个流程就变成玄学。</p>
+<p>更好的做法是：<strong>工具要像内部 API，而不是像随便暴露的脚本。</strong></p>
+<h2 id="第-2-层：Skills，把工具组合成任务能力"><a href="#第-2-层：Skills，把工具组合成任务能力" class="headerlink" title="第 2 层：Skills，把工具组合成任务能力"></a>第 2 层：Skills，把工具组合成任务能力</h2><p>Tools 偏原子操作，Skills 偏任务级能力。</p>
+<p>举个例子：</p>
+<ul>
+<li><code>read_file</code> 是 Tool；</li>
+<li>“读取 PDF，抽取摘要，生成 Markdown 笔记”是 Skill。</li>
+</ul>
+<p>Skills 往往包含一段可复用流程：什么时候用、先调用什么工具、失败怎么处理、结果怎么验证、有什么坑。</p>
+<pre class="mermaid">graph LR
+    T1[read_file] --&gt; S[PDF 阅读技能]
+    T2[web_fetch] --&gt; S
+    T3[run_python] --&gt; S
+    S --&gt; O[结构化笔记 / 摘要 / 引用]
+
+    A[原子工具] --&gt; B[任务流程]
+    B --&gt; C[可复用能力]</pre>
+
+<p>工程上，Skills 层至少需要四个能力：</p>
+<ul>
+<li><code>get_skills</code>：知道系统里有哪些技能；</li>
+<li><code>find-skills</code>：按任务语义检索相关技能；</li>
+<li><code>load_skill</code>：把技能说明加载进当前上下文；</li>
+<li><code>skill-creator</code>：在完成复杂任务后沉淀新技能。</li>
+</ul>
+<p>这层的价值很大：它让 Agent 不只是“每次从零思考”，而是能复用过去验证过的流程。</p>
+<p><strong>Tools 让 Agent 能动手，Skills 让 Agent 会做事。</strong></p>
+<h2 id="第-3-层：Query-Engine，稳定性和成本控制的核心"><a href="#第-3-层：Query-Engine，稳定性和成本控制的核心" class="headerlink" title="第 3 层：Query Engine，稳定性和成本控制的核心"></a>第 3 层：Query Engine，稳定性和成本控制的核心</h2><p>很多人会把模型调用写成一行：</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> model<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>messages<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这对 Demo 没问题，但生产环境不够。</p>
+<p>真实的 Query Engine 至少要处理：</p>
+<ul>
+<li><code>API</code>：多模型、多供应商接入；</li>
+<li><code>stream</code>：流式输出；</li>
+<li><code>cache</code>：缓存重复请求或中间结果；</li>
+<li><code>error</code>：统一错误分类；</li>
+<li><code>retry</code>：可配置重试策略；</li>
+<li><code>rate-limit</code>：限流与排队；</li>
+<li><code>token-limit</code>：上下文长度与输出长度控制。</li>
+</ul>
+<pre class="mermaid">sequenceDiagram
+    participant R as Agent Runtime
+    participant Q as Query Engine
+    participant C as Cache
+    participant L as LLM Provider
+
+    R-&gt;&gt;Q: messages + tools + config
+    Q-&gt;&gt;C: 查询缓存
+    alt 命中缓存
+        C--&gt;&gt;Q: cached response
+        Q--&gt;&gt;R: 返回结果
+    else 未命中
+        Q-&gt;&gt;L: stream request
+        L--&gt;&gt;Q: tokens / tool call / error
+        alt 可重试错误
+            Q-&gt;&gt;L: retry with backoff
+        end
+        Q-&gt;&gt;C: 写入缓存或日志
+        Q--&gt;&gt;R: normalized response
+    end</pre>
+
+<p>Query Engine 是 Agent 的可靠性边界。没有这一层，模型 API 的任何抖动都会直接变成用户体验问题。</p>
+<p>而且它还决定成本。一次任务如果需要 30 次模型调用，缓存、压缩、截断、模型路由都会直接影响账单。</p>
+<h2 id="第-4-层：Context，不是把所有东西都塞进去"><a href="#第-4-层：Context，不是把所有东西都塞进去" class="headerlink" title="第 4 层：Context，不是把所有东西都塞进去"></a>第 4 层：Context，不是把所有东西都塞进去</h2><p>Context Engineering 是 Agent 工程里最容易被低估的一层。</p>
+<p>很多失败不是模型不聪明，而是上下文被污染了：</p>
+<ul>
+<li>系统提示太长，关键约束被淹没；</li>
+<li>工具输出太多，占满窗口；</li>
+<li>历史对话无差别塞入，导致注意力漂移；</li>
+<li>长任务中间状态丢失，模型开始瞎编；</li>
+<li>成本不可控，越跑越贵。</li>
+</ul>
+<p>所以 Context 层要做的不只是“拼 messages”，而是持续管理信息密度：</p>
+<ul>
+<li><code>system prompt</code>：稳定行为边界；</li>
+<li><code>micro-compact</code>：小范围压缩当前推理链路；</li>
+<li><code>tool-compact</code>：压缩工具输出，只保留关键证据；</li>
+<li><code>auto-compact</code>：上下文接近阈值时自动总结；</li>
+<li><code>token &amp; cost</code>：实时追踪 token 与成本。</li>
+</ul>
+<p>一个实用原则是：<strong>上下文里不应该放“所有信息”，只应该放“当前决策需要的信息”。</strong></p>
+<h2 id="第-5-层：Memory，让-Agent-不再每次失忆"><a href="#第-5-层：Memory，让-Agent-不再每次失忆" class="headerlink" title="第 5 层：Memory，让 Agent 不再每次失忆"></a>第 5 层：Memory，让 Agent 不再每次失忆</h2><p>Memory 解决的是跨轮、跨任务、跨会话的连续性问题。</p>
+<p>它通常可以分成三类：</p>
+<ul>
+<li><code>short-term</code>：当前任务中的工作记忆；</li>
+<li><code>long-term</code>：长期可复用事实、偏好、环境信息；</li>
+<li><code>profile</code>：用户画像和稳定偏好。</li>
+</ul>
+<p>底层可以很简单，比如 <code>sqlite FTS</code> 全文检索；也可以更复杂，比如向量库、知识图谱、时间线索引。</p>
+<p>关键不在数据库选型，而在两个动作：</p>
+<ul>
+<li><code>m-create</code>：什么时候写入记忆；</li>
+<li><code>m-retrieve</code>：什么时候召回记忆。</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    Event[任务事件] --&gt; Judge{是否值得长期保存?}
+    Judge --&gt;|否| Drop[不写入]
+    Judge --&gt;|是| Create[m-create]
+    Create --&gt; Store[(Memory Store)]
+
+    NewTask[新任务] --&gt; Retrieve[m-retrieve]
+    Store --&gt; Retrieve
+    Retrieve --&gt; Context[注入当前上下文]</pre>
+
+<p>我倾向于把 Memory 设计得克制一点。不要把每个过程日志都塞进去，否则长期记忆会变成噪声仓库。真正应该保存的是稳定偏好、环境约定、项目惯例和反复会用到的事实。</p>
+<h2 id="第-6-层：Permission，Agent-工程的安全底座"><a href="#第-6-层：Permission，Agent-工程的安全底座" class="headerlink" title="第 6 层：Permission，Agent 工程的安全底座"></a>第 6 层：Permission，Agent 工程的安全底座</h2><p>Agent 越能干，越危险。</p>
+<p>它能读文件、写文件、执行命令、访问网络、调用外部 API，就必须有权限系统。</p>
+<p>Permission 层至少要覆盖：</p>
+<ul>
+<li><code>read</code>：哪些路径可读；</li>
+<li><code>write</code>：哪些路径可写；</li>
+<li><code>exec</code>：哪些命令可执行；</li>
+<li><code>network</code>：哪些网络请求允许；</li>
+<li><code>dangerous-path</code>：敏感路径识别；</li>
+<li><code>safe-cmd</code>：安全命令白名单或风险分级；</li>
+<li><code>human-in-the-loop</code>：高风险动作需要人确认。</li>
+</ul>
+<p>这层不是为了限制 Agent，而是为了让 Agent 可以放心地做更多事。</p>
+<pre class="mermaid">flowchart TD
+    Action[Agent 请求执行动作] --&gt; Classify{风险分类}
+    Classify --&gt;|低风险 read| Allow[直接允许]
+    Classify --&gt;|中风险 write| Policy[策略检查]
+    Classify --&gt;|高风险 exec / network| Human[人工确认]
+    Policy --&gt;|通过| Allow
+    Policy --&gt;|拒绝| Block[阻断并解释]
+    Human --&gt;|确认| Allow
+    Human --&gt;|拒绝| Block
+    Allow --&gt; Audit[记录审计日志]
+    Block --&gt; Audit</pre>
+
+<p>没有 Permission 的 Agent，只适合玩具场景；有 Permission 的 Agent，才有机会进入真实电脑、真实仓库和真实业务流程。</p>
+<h2 id="第-7-层：Sessions，让任务可恢复、可回滚"><a href="#第-7-层：Sessions，让任务可恢复、可回滚" class="headerlink" title="第 7 层：Sessions，让任务可恢复、可回滚"></a>第 7 层：Sessions，让任务可恢复、可回滚</h2><p>聊天记录不是 Session 管理。</p>
+<p>真正的 Session 至少需要支持：</p>
+<ul>
+<li><code>create</code>：创建任务会话；</li>
+<li><code>list</code>：查看历史会话；</li>
+<li><code>rewind</code>：回滚到某个状态；</li>
+<li>保存消息、工具调用、文件变更、模型配置和关键中间结果。</li>
+</ul>
+<p>这对长任务尤其重要。</p>
+<p>比如一个 Agent 正在改代码，跑到一半发现方向错了，如果没有 Session 快照，只能靠人肉回忆；如果有 rewind，就可以回到某个工具调用前重新分支。</p>
+<p>这也是 Agent 从“聊天界面”走向“工作台”的关键。</p>
+<h2 id="第-8-层：Command，给自然语言配一条确定性通道"><a href="#第-8-层：Command，给自然语言配一条确定性通道" class="headerlink" title="第 8 层：Command，给自然语言配一条确定性通道"></a>第 8 层：Command，给自然语言配一条确定性通道</h2><p>自然语言很灵活，但不适合所有操作。</p>
+<p>很多 Agent 产品都会引入命令层：</p>
+<ul>
+<li><code>slash-command</code>：例如 <code>/reset</code>、<code>/compact</code>、<code>/status</code>、<code>/model</code>；</li>
+<li><code>system-cmd</code>：系统内部命令，例如切换模式、导出日志、清理缓存。</li>
+</ul>
+<p>Command 的价值是确定性。</p>
+<p>用户不需要解释“请帮我把上下文压缩一下”，直接 <code>/compact</code>；开发者也不需要让模型猜“用户是不是要清空会话”，直接把命令解析成明确动作。</p>
+<p>好的 Agent 交互应该是：<strong>自然语言负责表达意图，命令负责执行确定性操作。</strong></p>
+<h2 id="第-9-层：Hook，把治理和扩展插进执行链"><a href="#第-9-层：Hook，把治理和扩展插进执行链" class="headerlink" title="第 9 层：Hook，把治理和扩展插进执行链"></a>第 9 层：Hook，把治理和扩展插进执行链</h2><p>Hook 是 Harness 的扩展点。</p>
+<p>最常见的是：</p>
+<ul>
+<li><code>pre-tool</code>：工具调用前执行；</li>
+<li><code>post-tool</code>：工具调用后执行。</li>
+</ul>
+<p>它能做很多事：</p>
+<ul>
+<li>权限检查；</li>
+<li>参数改写；</li>
+<li>敏感信息过滤；</li>
+<li>调用日志记录；</li>
+<li>结果摘要压缩；</li>
+<li>自动写入记忆；</li>
+<li>失败重试或降级；</li>
+<li>指标统计和 tracing。</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    A[模型产生 tool call] --&gt; B[pre-tool hooks]
+    B --&gt; C[权限 / 参数 / 审计]
+    C --&gt; D[执行工具]
+    D --&gt; E[post-tool hooks]
+    E --&gt; F[压缩 / 记忆 / 指标 / 错误处理]
+    F --&gt; G[返回 Agent Runtime]</pre>
+
+<p>如果没有 Hook，所有治理逻辑都会散落在业务代码里；有了 Hook，Harness 才能变成可插拔平台。</p>
+<h2 id="第-10-层：Sub-agent，从单-Agent-到-Agent-Team"><a href="#第-10-层：Sub-agent，从单-Agent-到-Agent-Team" class="headerlink" title="第 10 层：Sub-agent，从单 Agent 到 Agent Team"></a>第 10 层：Sub-agent，从单 Agent 到 Agent Team</h2><p>Sub-agent 是 Agent 架构从单体走向协作的关键。</p>
+<p>一个主 Agent 不一定要自己做所有事。它可以把任务拆给不同子 Agent：</p>
+<ul>
+<li>代码审查 Agent；</li>
+<li>搜索研究 Agent；</li>
+<li>测试验证 Agent；</li>
+<li>文档整理 Agent；</li>
+<li>数据分析 Agent。</li>
+</ul>
+<p>Sub-agent 需要的不只是“再开一个模型调用”，而是一套完整协议：</p>
+<ul>
+<li><code>agent-tool</code>：子 Agent 可以被包装成工具；</li>
+<li><code>invoke</code>：主 Agent 调用子 Agent；</li>
+<li><code>tools</code>：子 Agent 拥有哪些工具；</li>
+<li><code>skills</code>：子 Agent 加载哪些技能；</li>
+<li><code>context</code>：传给子 Agent 的上下文边界；</li>
+<li><code>agent team</code>：多个 Agent 的协作关系。</li>
+</ul>
+<pre class="mermaid">graph TD
+    Lead[主 Agent / Orchestrator] --&gt; Research[研究 Agent]
+    Lead --&gt; Coder[编码 Agent]
+    Lead --&gt; Reviewer[审查 Agent]
+    Lead --&gt; Tester[验证 Agent]
+
+    Research --&gt; ROut[资料摘要]
+    Coder --&gt; COut[代码补丁]
+    Reviewer --&gt; VOut[风险意见]
+    Tester --&gt; TOut[测试结果]
+
+    ROut --&gt; Lead
+    COut --&gt; Lead
+    VOut --&gt; Lead
+    TOut --&gt; Lead
+    Lead --&gt; Final[汇总决策 / 最终交付]</pre>
+
+<p>这里最容易犯的错是：给子 Agent 太多上下文，导致它和主 Agent 一样混乱。</p>
+<p>更好的做法是：<strong>子 Agent 只拿完成子任务需要的信息，产出可验证的结果。</strong></p>
+<h2 id="技术栈：Node-js-TypeScript-是很自然的选择"><a href="#技术栈：Node-js-TypeScript-是很自然的选择" class="headerlink" title="技术栈：Node.js + TypeScript 是很自然的选择"></a>技术栈：Node.js + TypeScript 是很自然的选择</h2><p>如果从工程实现角度看，一个 Agent Harness 可以用很多技术栈做。</p>
+<p>截图里的组合很典型：</p>
+<ul>
+<li><code>Nodejs</code>：运行时；</li>
+<li><code>pnpm</code>：包管理；</li>
+<li><code>Typescript</code>：类型系统和工程约束；</li>
+<li><code>LangChain</code>：模型调用、工具抽象、链式流程；</li>
+<li><code>LangGraph</code>：状态图、循环、分支、多 Agent 编排；</li>
+<li><code>Commanderjs</code>：CLI 命令入口；</li>
+<li><code>sqlite</code>：本地会话、记忆、索引和审计日志；</li>
+<li><code>kimi</code> / <code>deepseek</code>：模型供应商接入。</li>
+</ul>
+<p>但技术栈不是重点。重点是边界要清楚：</p>
+<pre class="mermaid">graph TD
+    CLI[Commander.js CLI] --&gt; Runtime[Agent Runtime]
+    Runtime --&gt; Graph[LangGraph 状态图]
+    Runtime --&gt; LC[LangChain 工具 / 模型抽象]
+    Runtime --&gt; DB[(SQLite: sessions / memory / audit)]
+    Runtime --&gt; Providers[LLM Providers: Kimi / DeepSeek / Others]
+    Runtime --&gt; FS[Filesystem / Shell / Network]</pre>
+
+<p>如果模块边界设计得好，底层模型、数据库、工具框架都可以替换；如果边界设计得差，换一个模型都要重写半个系统。</p>
+<h2 id="一个最小可用-Harness-应该先做什么？"><a href="#一个最小可用-Harness-应该先做什么？" class="headerlink" title="一个最小可用 Harness 应该先做什么？"></a>一个最小可用 Harness 应该先做什么？</h2><p>如果你不是要一口气做完整平台，我建议按这个顺序迭代：</p>
+<ol>
+<li><strong>Query Engine</strong>：先把模型调用、stream、retry、error 处理稳定下来；</li>
+<li><strong>Tools</strong>：提供少量高质量工具，不要一开始暴露太多能力；</li>
+<li><strong>Permission</strong>：读写执行网络都要有风险分级；</li>
+<li><strong>Context</strong>：实现工具输出压缩和自动 compact；</li>
+<li><strong>Sessions</strong>：保存任务过程，支持恢复和回滚；</li>
+<li><strong>Skills</strong>：把反复做的任务沉淀成可加载流程；</li>
+<li><strong>Memory</strong>：只保存稳定事实，不保存流水账；</li>
+<li><strong>Hooks</strong>：把权限、审计、压缩、记忆写入做成扩展点；</li>
+<li><strong>Command</strong>：提供确定性控制入口；</li>
+<li><strong>Sub-agent</strong>：最后再做多 Agent 编排。</li>
+</ol>
+<p>顺序很重要。</p>
+<p>很多团队一上来就做 multi-agent，结果基础的错误处理、权限控制、上下文压缩都没有，最后只是多个不稳定 Agent 互相放大噪声。</p>
+<p><strong>先把单 Agent 做稳，再让它长出团队。</strong></p>
+<h2 id="常见坑：Agent-Demo-为什么难进生产？"><a href="#常见坑：Agent-Demo-为什么难进生产？" class="headerlink" title="常见坑：Agent Demo 为什么难进生产？"></a>常见坑：Agent Demo 为什么难进生产？</h2><p>我见过不少 Agent Demo，演示时很惊艳，上线后很痛苦。常见问题基本逃不出这几类：</p>
+<h3 id="1-工具太自由"><a href="#1-工具太自由" class="headerlink" title="1. 工具太自由"></a>1. 工具太自由</h3><p>模型可以随便写路径、随便执行命令、随便联网。短期看起来能力强，长期一定出事故。</p>
+<h3 id="2-上下文无治理"><a href="#2-上下文无治理" class="headerlink" title="2. 上下文无治理"></a>2. 上下文无治理</h3><p>所有历史、所有工具输出、所有错误日志都塞给模型。上下文越来越长，质量越来越差。</p>
+<h3 id="3-没有可恢复状态"><a href="#3-没有可恢复状态" class="headerlink" title="3. 没有可恢复状态"></a>3. 没有可恢复状态</h3><p>任务跑到一半失败，只能重来。用户不知道 Agent 做到哪一步，开发者也不知道怎么复盘。</p>
+<h3 id="4-记忆变成垃圾桶"><a href="#4-记忆变成垃圾桶" class="headerlink" title="4. 记忆变成垃圾桶"></a>4. 记忆变成垃圾桶</h3><p>什么都记，最后召回的都是噪声。Memory 的难点不是存储，而是判断“什么值得存”。</p>
+<h3 id="5-没有权限分层"><a href="#5-没有权限分层" class="headerlink" title="5. 没有权限分层"></a>5. 没有权限分层</h3><p>读文件、写文件、执行命令、发消息、调用外部 API 都是同一个风险级别。最后只能在“完全放开”和“完全禁用”之间摇摆。</p>
+<h3 id="6-过早-multi-agent"><a href="#6-过早-multi-agent" class="headerlink" title="6. 过早 multi-agent"></a>6. 过早 multi-agent</h3><p>主 Agent 自己还不稳，就开始拆子 Agent。结果上下文传递、职责边界、结果验证都失控。</p>
+<h2 id="结语：Agent-工程的主战场在-Harness"><a href="#结语：Agent-工程的主战场在-Harness" class="headerlink" title="结语：Agent 工程的主战场在 Harness"></a>结语：Agent 工程的主战场在 Harness</h2><p>未来模型会越来越强，但这不意味着 Harness 会变得不重要。</p>
+<p>恰恰相反：模型越强，能执行的动作越复杂，越需要一个可靠的工程外壳来管理它。</p>
+<p>一个真正可用的 Agent 系统，至少要同时回答四个问题：</p>
+<ul>
+<li><strong>能做什么？</strong> Tools 和 Skills。</li>
+<li><strong>知道什么？</strong> Context、Memory 和 Sessions。</li>
+<li><strong>能不能安全地做？</strong> Permission 和 human-in-the-loop。</li>
+<li><strong>能不能长期稳定扩展？</strong> Query Engine、Hook、Command 和 Sub-agent。</li>
+</ul>
+<p>所以我更愿意把 Agent Harness 看成 AI 时代的新型运行时：它不只是调用模型，而是把模型放进一个能工作、能恢复、能审计、能演进的系统里。</p>
+<p>如果你想从 0 开发一个 AI Agent，不要先问“用哪个模型”。</p>
+<p>先问：<strong>我的 Harness 准备好了吗？</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/agent-harness-engineering-architecture.html">https://onefly.top/posts/agent-harness-engineering-architecture.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Agent/">
+                                    <span class="chip bg-color">Agent</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9E%B6%E6%9E%84/">
+                                    <span class="chip bg-color">架构</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">工程</span>
+                                </a>
+                            
+                                <a href="/tags/LLM/">
+                                    <span class="chip bg-color">LLM</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/agent-harness-engineering-architecture.html">
+                    <div class="card-image">
+                        
+                        <img src="/images/agent-harness-engineering-architecture-cover.svg" class="responsive-img" alt="Agent Harness：从 Demo 到工程系统的 10 层架构">
+                        
+                        <span class="card-title">Agent Harness：从 Demo 到工程系统的 10 层架构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    AI工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent/">
+                        <span class="chip bg-color">Agent</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9E%B6%E6%9E%84/">
+                        <span class="chip bg-color">架构</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E7%A8%8B/">
+                        <span class="chip bg-color">工程</span>
+                    </a>
+                    
+                    <a href="/tags/LLM/">
+                        <span class="chip bg-color">LLM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/freshbench-gaokao-math-2026.html">
+                    <div class="card-image">
+                        
+                        <img src="/images/freshbench-gaokao-math-2026-cover.svg" class="responsive-img" alt="FreshBench：我把 2026 高考数学做成了开源评测基准">
+                        
+                        <span class="card-title">FreshBench：我把 2026 高考数学做成了开源评测基准</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    AI工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent/">
+                        <span class="chip bg-color">Agent</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%84%E6%B5%8B/">
+                        <span class="chip bg-color">评测</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%AB%98%E8%80%83%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">高考数学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

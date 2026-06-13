@@ -13002,7 +13002,7 @@ bundle <span class="token builtin class-name">exec</span> jekyll serve
   <entry>
     <title>Agent Harness：从 Demo 到工程系统的 10 层架构</title>
     <url>/posts/agent-harness-engineering-architecture.html</url>
-    <content><![CDATA[<p><img src="/images/agent-harness-engineering-architecture-cover.svg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
+    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613134736914-1133492937.jpg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
 <h1 id="Agent-Harness：从-Demo-到工程系统的-10-层架构"><a href="#Agent-Harness：从-Demo-到工程系统的-10-层架构" class="headerlink" title="Agent Harness：从 Demo 到工程系统的 10 层架构"></a>Agent Harness：从 Demo 到工程系统的 10 层架构</h1><p>很多人第一次做 AI Agent，容易把问题想简单：</p>
 <p>“接一个 LLM，再给它几个工具，不就能干活了吗？”</p>
 <p>做 Demo 的时候确实可以。一个 system prompt，一个 tool calling，一个文件读写工具，一个搜索工具，就能跑出很漂亮的视频。</p>
@@ -13018,28 +13018,8 @@ bundle <span class="token builtin class-name">exec</span> jekyll serve
 <li>支持命令、Hook 和子 Agent 编排；</li>
 <li>把一次聊天变成一个可持续运行的任务系统。</li>
 </ul>
-<p>可以把它理解成下面这张分层图：</p>
-<pre class="mermaid">flowchart TD
-    User[用户 / 任务入口] --&gt; Command[Command 命令层]
-    User --&gt; Session[Sessions 会话层]
-    Command --&gt; Runtime[Agent Runtime]
-    Session --&gt; Runtime
-
-    Runtime --&gt; Context[Context 上下文管理]
-    Runtime --&gt; Memory[Memory 记忆系统]
-    Runtime --&gt; Permission[Permission 权限治理]
-    Runtime --&gt; Skills[Skills 任务级能力]
-    Runtime --&gt; Tools[Tools 原子工具]
-    Runtime --&gt; SubAgent[Sub-agent 多 Agent 编排]
-    Runtime --&gt; Hooks[Hooks 执行扩展点]
-
-    Runtime --&gt; Query[Query Engine 模型调用层]
-    Query --&gt; LLM[LLM Providers]
-
-    Tools --&gt; Files[文件 / 命令 / 网络]
-    Skills --&gt; Workflows[PDF / 搜索 / 发布 / 评测等流程]
-    Memory --&gt; Store[(SQLite FTS / 向量库 / Profile)]</pre>
-
+<p>可以把它理解成下面这张 10 模块结构图：</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135017462-1380717034.png" style="width:100%; border-radius:12px;" alt="AI Agent 10 模块结构图"></p>
 <p>真正成熟的 Agent，不是“一个 prompt 加几个函数”，而是这些层的组合。</p>
 <h2 id="第-1-层：Tools，Agent-的原子行动能力"><a href="#第-1-层：Tools，Agent-的原子行动能力" class="headerlink" title="第 1 层：Tools，Agent 的原子行动能力"></a>第 1 层：Tools，Agent 的原子行动能力</h2><p>Tools 是 Agent 最底层的行动接口。它们通常很小，只做一件明确的事：</p>
 <ul>

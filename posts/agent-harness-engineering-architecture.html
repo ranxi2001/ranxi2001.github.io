@@ -256,7 +256,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135557666-283571046.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/agent-harness-engineering-architecture-cover.svg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -819,7 +819,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.9k
                 </div>
                 
 
@@ -844,7 +844,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135557666-283571046.jpg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
+                <p><img src="/images/agent-harness-engineering-architecture-cover.svg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
 <h1 id="Agent-Harness：从-Demo-到工程系统的-10-层架构"><a href="#Agent-Harness：从-Demo-到工程系统的-10-层架构" class="headerlink" title="Agent Harness：从 Demo 到工程系统的 10 层架构"></a>Agent Harness：从 Demo 到工程系统的 10 层架构</h1><p>很多人第一次做 AI Agent，容易把问题想简单：</p>
 <p>“接一个 LLM，再给它几个工具，不就能干活了吗？”</p>
 <p>做 Demo 的时候确实可以。一个 system prompt，一个 tool calling，一个文件读写工具，一个搜索工具，就能跑出很漂亮的视频。</p>
@@ -860,8 +860,28 @@
 <li>支持命令、Hook 和子 Agent 编排；</li>
 <li>把一次聊天变成一个可持续运行的任务系统。</li>
 </ul>
-<p>可以把它理解成下面这张 10 模块结构图：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135017462-1380717034.png" style="width:100%; border-radius:12px;" alt="AI Agent 10 模块结构图"></p>
+<p>可以把它理解成下面这张分层图：</p>
+<pre class="mermaid">flowchart TD
+    User[用户 / 任务入口] --&gt; Command[Command 命令层]
+    User --&gt; Session[Sessions 会话层]
+    Command --&gt; Runtime[Agent Runtime]
+    Session --&gt; Runtime
+
+    Runtime --&gt; Context[Context 上下文管理]
+    Runtime --&gt; Memory[Memory 记忆系统]
+    Runtime --&gt; Permission[Permission 权限治理]
+    Runtime --&gt; Skills[Skills 任务级能力]
+    Runtime --&gt; Tools[Tools 原子工具]
+    Runtime --&gt; SubAgent[Sub-agent 多 Agent 编排]
+    Runtime --&gt; Hooks[Hooks 执行扩展点]
+
+    Runtime --&gt; Query[Query Engine 模型调用层]
+    Query --&gt; LLM[LLM Providers]
+
+    Tools --&gt; Files[文件 / 命令 / 网络]
+    Skills --&gt; Workflows[PDF / 搜索 / 发布 / 评测等流程]
+    Memory --&gt; Store[(SQLite FTS / 向量库 / Profile)]</pre>
+
 <p>真正成熟的 Agent，不是“一个 prompt 加几个函数”，而是这些层的组合。</p>
 <h2 id="第-1-层：Tools，Agent-的原子行动能力"><a href="#第-1-层：Tools，Agent-的原子行动能力" class="headerlink" title="第 1 层：Tools，Agent 的原子行动能力"></a>第 1 层：Tools，Agent 的原子行动能力</h2><p>Tools 是 Agent 最底层的行动接口。它们通常很小，只做一件明确的事：</p>
 <ul>
@@ -1662,17 +1682,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/agent-harness-engineering-architecture.html">
+                <a href="/posts/loop-engineering-ai-memory.html">
                     <div class="card-image">
                         
-                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135557666-283571046.jpg" class="responsive-img" alt="Agent Harness：从 Demo 到工程系统的 10 层架构">
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260617002143238-457129225.png" class="responsive-img" alt="Loop Engineering：让 AI 自己沉淀上下文">
                         
-                        <span class="card-title">Agent Harness：从 Demo 到工程系统的 10 层架构</span>
+                        <span class="card-title">Loop Engineering：让 AI 自己沉淀上下文</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1682,9 +1701,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-06-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1697,7 +1716,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1705,16 +1723,12 @@
                         <span class="chip bg-color">Agent</span>
                     </a>
                     
-                    <a href="/tags/%E6%9E%B6%E6%9E%84/">
-                        <span class="chip bg-color">架构</span>
+                    <a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">
+                        <span class="chip bg-color">上下文</span>
                     </a>
                     
-                    <a href="/tags/%E5%B7%A5%E7%A8%8B/">
-                        <span class="chip bg-color">工程</span>
-                    </a>
-                    
-                    <a href="/tags/LLM/">
-                        <span class="chip bg-color">LLM</span>
+                    <a href="/tags/%E6%8A%80%E8%83%BD/">
+                        <span class="chip bg-color">技能</span>
                     </a>
                     
                 </div>

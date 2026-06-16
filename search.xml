@@ -13002,7 +13002,7 @@ bundle <span class="token builtin class-name">exec</span> jekyll serve
   <entry>
     <title>Agent Harness：从 Demo 到工程系统的 10 层架构</title>
     <url>/posts/agent-harness-engineering-architecture.html</url>
-    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135557666-283571046.jpg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
+    <content><![CDATA[<p><img src="/images/agent-harness-engineering-architecture-cover.svg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
 <h1 id="Agent-Harness：从-Demo-到工程系统的-10-层架构"><a href="#Agent-Harness：从-Demo-到工程系统的-10-层架构" class="headerlink" title="Agent Harness：从 Demo 到工程系统的 10 层架构"></a>Agent Harness：从 Demo 到工程系统的 10 层架构</h1><p>很多人第一次做 AI Agent，容易把问题想简单：</p>
 <p>“接一个 LLM，再给它几个工具，不就能干活了吗？”</p>
 <p>做 Demo 的时候确实可以。一个 system prompt，一个 tool calling，一个文件读写工具，一个搜索工具，就能跑出很漂亮的视频。</p>
@@ -13018,8 +13018,28 @@ bundle <span class="token builtin class-name">exec</span> jekyll serve
 <li>支持命令、Hook 和子 Agent 编排；</li>
 <li>把一次聊天变成一个可持续运行的任务系统。</li>
 </ul>
-<p>可以把它理解成下面这张 10 模块结构图：</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135017462-1380717034.png" style="width:100%; border-radius:12px;" alt="AI Agent 10 模块结构图"></p>
+<p>可以把它理解成下面这张分层图：</p>
+<pre class="mermaid">flowchart TD
+    User[用户 / 任务入口] --&gt; Command[Command 命令层]
+    User --&gt; Session[Sessions 会话层]
+    Command --&gt; Runtime[Agent Runtime]
+    Session --&gt; Runtime
+
+    Runtime --&gt; Context[Context 上下文管理]
+    Runtime --&gt; Memory[Memory 记忆系统]
+    Runtime --&gt; Permission[Permission 权限治理]
+    Runtime --&gt; Skills[Skills 任务级能力]
+    Runtime --&gt; Tools[Tools 原子工具]
+    Runtime --&gt; SubAgent[Sub-agent 多 Agent 编排]
+    Runtime --&gt; Hooks[Hooks 执行扩展点]
+
+    Runtime --&gt; Query[Query Engine 模型调用层]
+    Query --&gt; LLM[LLM Providers]
+
+    Tools --&gt; Files[文件 / 命令 / 网络]
+    Skills --&gt; Workflows[PDF / 搜索 / 发布 / 评测等流程]
+    Memory --&gt; Store[(SQLite FTS / 向量库 / Profile)]</pre>
+
 <p>真正成熟的 Agent，不是“一个 prompt 加几个函数”，而是这些层的组合。</p>
 <h2 id="第-1-层：Tools，Agent-的原子行动能力"><a href="#第-1-层：Tools，Agent-的原子行动能力" class="headerlink" title="第 1 层：Tools，Agent 的原子行动能力"></a>第 1 层：Tools，Agent 的原子行动能力</h2><p>Tools 是 Agent 最底层的行动接口。它们通常很小，只做一件明确的事：</p>
 <ul>
@@ -13758,6 +13778,250 @@ python scripts/evaluate_predictions.py <span class="token punctuation">\</span>
         <tag>量化交易</tag>
         <tag>LLM</tag>
         <tag>因子研究</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Loop Engineering：让 AI 自己沉淀上下文</title>
+    <url>/posts/loop-engineering-ai-memory.html</url>
+    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260617002143238-457129225.png" style="zoom:33%;" alt="Loop Engineering：让 AI 自己沉淀上下文封面图"></p>
+<h1 id="Loop-Engineering：让-AI-自己沉淀上下文"><a href="#Loop-Engineering：让-AI-自己沉淀上下文" class="headerlink" title="Loop Engineering：让 AI 自己沉淀上下文"></a>Loop Engineering：让 AI 自己沉淀上下文</h1><p>这两天 X 上关于 <strong>Loop Engineering</strong> 的讨论突然热了起来。</p>
+<p>先是数字生命卡兹克那条“Prompt 该退环境了，未来属于 Loop Engineering”刷屏，顺带把 Khazix Skills 这个项目带火了。后面又有人继续补充：别再只写提示词，要去设计循环；最小可用的 Loop，甚至只需要几份配置，就能让 Claude 自己跑测试、读错误、修 Bug、再跑测试。</p>
+<p>我看完之后，感觉这不是一个新概念硬炒。</p>
+<p>它其实讲中了我日常用 AI 最重要的一件事：<strong>不要只优化单次对话，要优化下一次对话开始时，AI 已经知道什么、会自己检查什么、能自动沉淀什么。</strong></p>
+<p>我现在越来越少把 AI 当成一个“问一句答一句”的聊天窗口。更准确地说，我是在养一个长期工作的系统：它会读上下文，会查历史，会调用工具，会把有价值的对话沉淀成 memory / skill / 项目文档，下次遇到类似任务，不需要我从头解释。</p>
+<p>这就是我理解的 Loop Engineering。</p>
+<h2 id="Prompt-没死，只是降级了"><a href="#Prompt-没死，只是降级了" class="headerlink" title="Prompt 没死，只是降级了"></a>Prompt 没死，只是降级了</h2><p>Prompt Engineering 当然还有用。</p>
+<p>一个清楚的任务描述、边界、输出格式，依然能显著提高模型表现。问题是，Prompt 解决的是“这一轮怎么说清楚”，不是“这个系统如何越用越顺”。</p>
+<p>以前我们使用 AI 的方式大概是这样：</p>
+<pre class="mermaid">sequenceDiagram
+    participant U as 用户
+    participant A as AI
+    U-&gt;&gt;A: 写一个任务 Prompt
+    A--&gt;&gt;U: 给出结果
+    U-&gt;&gt;A: 复制报错 / 补充背景 / 提修改意见
+    A--&gt;&gt;U: 再改一版
+    U-&gt;&gt;A: 下次重新解释一遍</pre>
+
+<p>这里最大的问题不是 AI 不聪明，而是<strong>每次会话都像临时工入职</strong>。</p>
+<p>你要重新介绍项目结构，重新解释个人偏好，重新说明哪些坑踩过，重新告诉它“别再这么做”。Prompt 能把当前这次任务做得更好，但很难让系统本身变得更懂你。</p>
+<p>所以后面大家开始讲 Context Engineering。</p>
+<p>不是只写一句 prompt，而是给 AI 准备更好的上下文：项目文件、规范、历史记录、工具说明、运行环境、错误日志。</p>
+<p>再往后是 Harness Engineering：给 Agent 配工具、权限、测试、回滚、子任务调度，让它不只是“会说”，而是真的能在系统里干活。</p>
+<p>Loop Engineering 再往上走一层。</p>
+<p>它关心的是：<strong>Agent 做完一件事之后，系统如何继续运行、验证、更新自己。</strong></p>
+<h2 id="一个-Loop-到底由什么组成"><a href="#一个-Loop-到底由什么组成" class="headerlink" title="一个 Loop 到底由什么组成"></a>一个 Loop 到底由什么组成</h2><p>卡牌大师崔斯特那篇补充文章里，把 Addy Osmani 对 Loop 的拆解讲得很清楚：一个能跑起来的循环，通常由六类零件组合出来。</p>
+<ul>
+<li><strong>Automation</strong>：定时任务、hook、webhook，让任务不必等你开口</li>
+<li><strong>Worktree</strong>：隔离并行 Agent，避免互相踩文件</li>
+<li><strong>Skill</strong>：让 Agent 自己读操作手册，而不是每次从零解释</li>
+<li><strong>Connector</strong>：连接 GitHub、Slack、浏览器、数据库、X、文件系统等外部世界</li>
+<li><strong>Sub-agent</strong>：把写代码、检查、修复、研究拆给不同上下文</li>
+<li><strong>Memory</strong>：把跨运行仍然有价值的状态留在磁盘上</li>
+</ul>
+<p>所以 Loop Engineering 不是“写一个更长的 prompt”。</p>
+<p>它更像是在设计一个小型操作系统：触发器负责启动，工具负责执行，检查器负责验收，记忆文件负责跨轮延续，skill 负责复用经验，worktree 负责隔离并行工作。</p>
+<p>可以画成这样：</p>
+<pre class="mermaid">flowchart TD
+    A[Automation<br>定时 / Hook / Webhook] --&gt; B[Agent 读取上下文]
+    B --&gt; C[Skill<br>加载操作手册]
+    B --&gt; D[Memory<br>读取状态文件]
+    C --&gt; E[Connector<br>调用工具和外部系统]
+    D --&gt; E
+    E --&gt; F[Sub-agent / Worktree<br>并行执行]
+    F --&gt; G[Evaluator<br>测试 / Lint / 类型检查]
+    G --&gt; H{停止条件满足?}
+    H --&gt;|否| B
+    H --&gt;|是| I[写回 Memory / Skill / Docs]</pre>
+
+<p>这里最关键的一点是：<strong>Agent 会忘，但文件不会。</strong></p>
+<p>模型的上下文窗口会结束，会压缩，会丢掉细节。但一个 <code>PROGRESS.md</code>、<code>STATE.md</code>、<code>AGENTS.md</code>、<code>SKILL.md</code>，只要维护得好，就能让下一次循环从上一次的经验继续，而不是从零开始。</p>
+<h2 id="最小-Loop：先让-AI-自己跑测试"><a href="#最小-Loop：先让-AI-自己跑测试" class="headerlink" title="最小 Loop：先让 AI 自己跑测试"></a>最小 Loop：先让 AI 自己跑测试</h2><p>老金那篇“最小 Loop”给了一个很好的落地例子。</p>
+<p>很多人用 Claude Code 写代码时，真实流程是这样的：</p>
+<pre class="mermaid">flowchart LR
+    A[Claude 写代码] --&gt; B[你跑测试]
+    B --&gt; C[你复制报错]
+    C --&gt; D[Claude 修复]
+    D --&gt; B</pre>
+
+<p>这个流程里，人其实变成了一根 USB 线。</p>
+<p>Claude 写代码，你跑测试；Claude 等结果，你粘错误；它再修，你再跑。你做的不是判断，而是搬运。</p>
+<p>最小 Loop 要做的，就是把这条直线弯成循环：</p>
+<pre class="mermaid">flowchart TD
+    A[写变更] --&gt; B[运行检查]
+    B --&gt; C{有失败?}
+    C --&gt;|有| D[读取错误并定位根因]
+    D --&gt; E[修复代码]
+    E --&gt; B
+    C --&gt;|无| F[报告完成并附通过输出]
+    D --&gt; G{同一错误重复?}
+    G --&gt;|是| H[停止，不再猜]</pre>
+
+<p>这个 Loop 的价值不在于高级，而在于它够硬。</p>
+<p>你不再允许 Agent 在没有检查输出的情况下说“完成”。你也不允许它通过删测试、弱化断言、跳过错误来制造绿色结果。完成的定义从“我写完了”变成“检查通过了”。</p>
+<p>这一步非常关键。</p>
+<p>因为 Agent 最大的问题之一，不是不会干活，而是太容易提前乐观。它会把“代码看起来像完成了”当成“任务完成了”。Loop Engineering 要做的，就是给它一个不会被语言糊弄的停止条件。</p>
+<h2 id="Evaluator-必须有硬闸门"><a href="#Evaluator-必须有硬闸门" class="headerlink" title="Evaluator 必须有硬闸门"></a>Evaluator 必须有硬闸门</h2><p>这里有个坑：很多人会加一个“检查 Agent”，但只是让它“帮我审一下”。</p>
+<p>这不够。</p>
+<p>一个只被要求“审一下”的第二 Agent，很容易变成另一个乐观主义者。它会用语言判断语言，然后大家一起觉得差不多了。</p>
+<p>真正有效的 evaluator-optimizer 模式，必须有客观失败信号：</p>
+<ul>
+<li>测试是否通过</li>
+<li>类型检查是否通过</li>
+<li>Linter 是否通过</li>
+<li>构建是否成功</li>
+<li>页面是否真的渲染</li>
+<li>API 是否返回预期字段</li>
+<li>生成文件是否存在且内容包含关键短语</li>
+</ul>
+<p>也就是说，Evaluator 不应该只是“发表意见”。它应该站在一道硬闸门前。</p>
+<pre class="mermaid">flowchart LR
+    A[Generator<br>生成方案] --&gt; B[Evaluator<br>运行硬检查]
+    B --&gt; C{检查通过?}
+    C --&gt;|否| D[返回失败证据]
+    D --&gt; A
+    C --&gt;|是| E[允许完成]</pre>
+
+<p>这也是我自己用 AI 时很在意的一点：<strong>结论必须带证据，完成必须有验证。</strong></p>
+<p>如果没有验证输出，它说“好了”没有意义。</p>
+<h2 id="让-AI-自己沉淀对话内容"><a href="#让-AI-自己沉淀对话内容" class="headerlink" title="让 AI 自己沉淀对话内容"></a>让 AI 自己沉淀对话内容</h2><p>我日常用 Agent，最看重的不是它一次性回答得多漂亮，而是它做完之后会不会更新自己的上下文资产。</p>
+<p>每次任务结束，我希望它自动判断三件事：</p>
+<ol>
+<li>这次任务里有没有稳定事实？</li>
+<li>有没有以后还会复用的流程？</li>
+<li>有没有项目文档或技能需要更新？</li>
+</ol>
+<p>如果有，就不要等我手动整理。</p>
+<p>比如：</p>
+<ul>
+<li>我纠正过一次沟通风格，它应该写进长期偏好</li>
+<li>某个仓库的部署命令、目录约定、测试坑点，应该写进项目规则或 memory</li>
+<li>某类任务跑通了 5 步以上，应该沉淀成 skill</li>
+<li>某个旧 skill 过期了，应该当场 patch，而不是下次继续踩坑</li>
+<li>某次问题只是临时进度，就不要污染长期记忆</li>
+</ul>
+<p>这就是“AI 自己沉淀对话内容”的价值。</p>
+<p>它不是把所有聊天记录都塞进记忆。那样只会制造噪音。真正重要的是分类：什么是长期事实，什么是流程经验，什么只是本次任务状态。</p>
+<p>我现在更喜欢把 AI 的知识沉淀拆成四层。</p>
+<pre class="mermaid">flowchart LR
+    A[对话内容] --&gt; B{是否值得沉淀}
+    B --&gt;|用户偏好 / 稳定事实| C[Memory]
+    B --&gt;|可复用流程 / 踩坑经验| D[Skill]
+    B --&gt;|项目内协作规范| E[AGENTS.md / README / Docs]
+    B --&gt;|临时进度| F[Session History / PROGRESS.md]
+
+    C --&gt; G[下次自动知道你是谁]
+    D --&gt; H[下次自动知道怎么做]
+    E --&gt; I[同一项目所有 Agent 都能遵守]
+    F --&gt; J[当前循环继续推进]</pre>
+
+<p>这几层不能混。</p>
+<p>Memory 适合存偏好和稳定事实。Skill 适合存步骤、命令、坑点、验证方式。项目文档适合约束同一个仓库里的所有 Agent。临时进度则应该放在 session history 或 <code>PROGRESS.md</code> 里。</p>
+<p>如果你把所有东西都塞进长期记忆，系统会越来越吵。记忆不是存档，记忆是索引。它应该保存能改变未来行为的东西，而不是保存“今天做了什么”。</p>
+<h2 id="PROGRESS-md-模式：给循环一个短记忆"><a href="#PROGRESS-md-模式：给循环一个短记忆" class="headerlink" title="PROGRESS.md 模式：给循环一个短记忆"></a>PROGRESS.md 模式：给循环一个短记忆</h2><p>Loop 里最容易被低估的是状态文件。</p>
+<p>一个 <code>PROGRESS.md</code> 或 <code>STATE.md</code>，看起来很土，但非常有用。</p>
+<p>它解决的是“Agent 两次运行之间会忘”的问题。每次循环开始时，先读它；每次循环结束时，再把关键状态写回去。</p>
+<p>但这里有一个原则：<strong>短。</strong></p>
+<p>一个让 Agent 每次都读 2000 行的记忆文件，比没有记忆更糟。好的状态文件应该只回答几个问题：</p>
+<ul>
+<li>上一轮做了什么</li>
+<li>当前卡在哪里</li>
+<li>已经排除过什么</li>
+<li>下一步要试什么</li>
+<li>停止条件是什么</li>
+</ul>
+<p>比如可以长这样：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> PROGRESS.md</span>
+
+<span class="token title important"><span class="token punctuation">##</span> Goal</span>
+修复登录页在移动端无法提交的问题。
+
+<span class="token title important"><span class="token punctuation">##</span> Last Run</span>
+<span class="token list punctuation">-</span> 已确认不是按钮 disabled 状态导致
+<span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`LoginForm.tsx`</span> 的 submit handler 没触发
+<span class="token list punctuation">-</span> 怀疑外层 form 被样式层遮挡
+
+<span class="token title important"><span class="token punctuation">##</span> Next</span>
+<span class="token list punctuation">-</span> 检查移动端 CSS z-index
+<span class="token list punctuation">-</span> 跑 <span class="token code-snippet code keyword">`npm test -- LoginForm`</span>
+<span class="token list punctuation">-</span> 如果同一错误再出现 2 次，停止并请求人工判断<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这不是为了写日报，而是为了让循环下一轮不用从零开始。</p>
+<h2 id="Skill-比-Memory-更像“程序”"><a href="#Skill-比-Memory-更像“程序”" class="headerlink" title="Skill 比 Memory 更像“程序”"></a>Skill 比 Memory 更像“程序”</h2><p>Memory 适合存事实，但流程不应该塞进 memory。</p>
+<p>如果你发现某件事有固定步骤、有依赖、有坑点、有验证方法，那它更适合写成 Skill。</p>
+<p>比如“从 X 线程写成 Hexo 博客”就不是一句记忆能解决的，它至少包含：</p>
+<ul>
+<li>读取 X 原帖、Article、引用、配图</li>
+<li>判断是否需要保留原图</li>
+<li>生成符合 Hexo 的 front matter</li>
+<li>用 Mermaid 或插图增强文章</li>
+<li>生成封面并上传图床</li>
+<li><code>npx hexo generate</code> 校验</li>
+<li>只交付草稿，不擅自部署</li>
+</ul>
+<p>这就是 Skill 的价值：它把一次经验变成可复用的操作系统能力。</p>
+<p>对 Agent 来说，Memory 像“我知道你偏好什么”，Skill 像“我知道这类事该怎么做”。两者都重要，但混在一起就会出问题。</p>
+<h2 id="Worktree-和-Sub-agent：别让并行变成互相踩脚"><a href="#Worktree-和-Sub-agent：别让并行变成互相踩脚" class="headerlink" title="Worktree 和 Sub-agent：别让并行变成互相踩脚"></a>Worktree 和 Sub-agent：别让并行变成互相踩脚</h2><p>Loop 一旦开始自动化，迟早会遇到并行问题。</p>
+<p>一个 Agent 修测试，另一个 Agent 改页面，第三个 Agent 做重构。如果它们都在同一个工作目录里改文件，很容易互相覆盖、互相污染。</p>
+<p>所以 worktree 是 Loop 里的基础设施，不是高级玩法。</p>
+<p>每个 Agent 拿一个隔离工作区，做完后再合并结果。这样并行才是真的并行，不是几个人挤在同一张桌子上改同一份稿子。</p>
+<p>Sub-agent 的意义也类似。</p>
+<p>主 Agent 不应该什么都自己做。它可以让一个子 Agent 研究方案，让另一个子 Agent 做实现，让第三个子 Agent 按测试和规范做审查。尤其是当主会话已经连续失败几轮时，一个干净上下文的 fixer 往往比继续在原窗口里硬修更有效。</p>
+<p>这也是 Loop Engineering 和普通自动化脚本的区别：它不只是重复执行命令，而是在设计不同上下文之间的协作方式。</p>
+<h2 id="一个可执行的沉淀规则"><a href="#一个可执行的沉淀规则" class="headerlink" title="一个可执行的沉淀规则"></a>一个可执行的沉淀规则</h2><p>如果你也想这样用 AI，可以先从一个很简单的规则开始。</p>
+<p>每次任务结束前，让 Agent 做一次自检：</p>
+<blockquote>
+<p>这次任务有没有任何信息，能让未来同类任务少解释一次？</p>
+</blockquote>
+<p>如果有，再判断放哪里：</p>
+<ul>
+<li><strong>用户偏好、稳定身份、长期环境事实</strong>：写 Memory</li>
+<li><strong>5 步以上的可复用流程、复杂排错路径</strong>：写 Skill</li>
+<li><strong>只对当前项目有效的规范</strong>：写 AGENTS.md / README / docs</li>
+<li><strong>当前循环推进状态</strong>：写 <code>PROGRESS.md</code> / session history</li>
+<li><strong>一次性结果和临时进度</strong>：不要写长期记忆</li>
+</ul>
+<p>这个规则非常朴素，但已经能让 AI 的使用体验发生变化。</p>
+<p>你会发现，真正省时间的不是它某一次回答快了 10 秒，而是它不再反复问你同样的问题。</p>
+<h2 id="Prompt-会变成循环里的一个节点"><a href="#Prompt-会变成循环里的一个节点" class="headerlink" title="Prompt 会变成循环里的一个节点"></a>Prompt 会变成循环里的一个节点</h2><p>所以我不太会说“Prompt 退环境了”。</p>
+<p>更准确地说，Prompt 正在从主角变成节点。</p>
+<p>以前我们把所有希望都压在一句 prompt 上：写得越完整越好，越结构化越好，越像说明书越好。</p>
+<p>但在 Agent 工作流里，prompt 只是循环的一部分：</p>
+<ul>
+<li>它触发任务</li>
+<li>它指定目标</li>
+<li>它约束输出</li>
+<li>它提供必要背景</li>
+</ul>
+<p>然后系统继续往下走：读文件、查历史、调用工具、验证结果、修正错误、沉淀经验。</p>
+<p>如果只盯着 prompt，等于只盯着流水线入口。真正决定产能的是整条线怎么转、哪里质检、哪里返工、哪里把经验固化成制度。</p>
+<p>这才是 Loop Engineering 值得关注的地方。</p>
+<h2 id="结语：把-AI-从“聪明回复”养成“长期系统”"><a href="#结语：把-AI-从“聪明回复”养成“长期系统”" class="headerlink" title="结语：把 AI 从“聪明回复”养成“长期系统”"></a>结语：把 AI 从“聪明回复”养成“长期系统”</h2><p>Khazix Skills 这类项目火起来，我觉得不是偶然。</p>
+<p>它击中了一个真实需求：大家已经不满足于“AI 回答得不错”了。我们开始希望 AI 能带着工具、带着记忆、带着流程，持续参与自己的工作系统。</p>
+<p>Prompt 仍然重要，但它不再是全部。</p>
+<p>下一阶段真正重要的是：</p>
+<ul>
+<li>你有没有给 Agent 足够好的上下文</li>
+<li>你有没有给它可靠的工具和边界</li>
+<li>你有没有让它验证自己的结果</li>
+<li>你有没有让它把可复用经验沉淀下来</li>
+</ul>
+<p>如果没有这些，AI 再聪明，也只是一次性对话。</p>
+<p>如果这些循环跑起来，它就开始变成一个会自我更新的工作伙伴。</p>
+<p>这大概就是我理解的 Loop Engineering：<strong>不是让 AI 替你多说几句话，而是让它在每次工作后，都比上一次更懂你的系统。</strong></p>
+<p>参考：</p>
+<ul>
+<li>X 原帖：<a href="https://x.com/Khazix0918/status/2066394718519656909">https://x.com/Khazix0918/status/2066394718519656909</a></li>
+<li>补充材料：<a href="https://x.com/cuisitekp/status/2066823370138677651">https://x.com/cuisitekp/status/2066823370138677651</a></li>
+<li>最小 Loop 示例：<a href="https://x.com/freeman1266/status/2066677040238227843">https://x.com/freeman1266/status/2066677040238227843</a></li>
+<li>Khazix Skills：<a href="https://github.com/KKKKhazix/khazix-skills">https://github.com/KKKKhazix/khazix-skills</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>AI工具</category>
+      </categories>
+      <tags>
+        <tag>Agent</tag>
+        <tag>上下文</tag>
+        <tag>技能</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-13T05:56:04.152Z</updated>
+  <updated>2026-06-16T16:21:57.820Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Loop Engineering：让 AI 自己沉淀上下文</title>
+    <link href="https://onefly.top/posts/loop-engineering-ai-memory.html"/>
+    <id>https://onefly.top/posts/loop-engineering-ai-memory.html</id>
+    <published>2026-06-16T16:18:00.000Z</published>
+    <updated>2026-06-16T16:21:57.820Z</updated>
+    
+    
+    <summary type="html">Prompt 不是没用了，而是不够了。真正能把 AI Agent 用顺的人，正在从写提示词，转向设计循环、检查闸门和可复用的长期上下文。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
+    
+    <category term="上下文" scheme="https://onefly.top/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
+    
+    <category term="技能" scheme="https://onefly.top/tags/%E6%8A%80%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Agent Harness：从 Demo 到工程系统的 10 层架构</title>
     <link href="https://onefly.top/posts/agent-harness-engineering-architecture.html"/>
     <id>https://onefly.top/posts/agent-harness-engineering-architecture.html</id>
     <published>2026-06-12T16:23:38.000Z</published>
-    <updated>2026-06-13T05:56:04.152Z</updated>
+    <updated>2026-06-16T16:54:31.148Z</updated>
     
     
     <summary type="html">一篇面向工程实践的 AI Agent Harness 架构指南：从 Tools、Skills、Memory、Context、Permission 到 Sub-agent、Hook、Session 和 Query Engine，讲清楚 Agent 从 Demo 走向可用系统需要补齐哪些层。</summary>
@@ -472,31 +495,6 @@
     <category term="Claude Code" scheme="https://onefly.top/tags/Claude-Code/"/>
     
     <category term="苹果低价区" scheme="https://onefly.top/tags/%E8%8B%B9%E6%9E%9C%E4%BD%8E%E4%BB%B7%E5%8C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比</title>
-    <link href="https://onefly.top/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html"/>
-    <id>https://onefly.top/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html</id>
-    <published>2026-04-07T10:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.301Z</updated>
-    
-    
-    <summary type="html">深度对比 Hermes Agent 与 OpenClaw 两大开源 AI 助手框架，详解 Hermes 闭环自学习架构、四层记忆系统，帮你选出最适合的 AI Agent。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
-    
-    <category term="OpenClaw" scheme="https://onefly.top/tags/OpenClaw/"/>
-    
-    <category term="Hermes" scheme="https://onefly.top/tags/Hermes/"/>
-    
-    <category term="开源工具" scheme="https://onefly.top/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

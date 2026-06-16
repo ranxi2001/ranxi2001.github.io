@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://onefly.top/posts/agent-harness-engineering-architecture.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://onefly.top/posts/loop-engineering-ai-memory.html</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
     <loc>https://onefly.top/posts/freshbench-gaokao-math-2026.html</loc>

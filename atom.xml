@@ -44,7 +44,7 @@
     <link href="https://onefly.top/posts/agent-harness-engineering-architecture.html"/>
     <id>https://onefly.top/posts/agent-harness-engineering-architecture.html</id>
     <published>2026-06-12T16:23:38.000Z</published>
-    <updated>2026-06-16T16:59:36.430Z</updated>
+    <updated>2026-06-16T17:01:12.754Z</updated>
     
     
     <summary type="html">一篇面向工程实践的 AI Agent Harness 架构指南：从 Tools、Skills、Memory、Context、Permission 到 Sub-agent、Hook、Session 和 Query Engine，讲清楚 Agent 从 Demo 走向可用系统需要补齐哪些层。</summary>

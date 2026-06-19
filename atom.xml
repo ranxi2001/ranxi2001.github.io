@@ -94,7 +94,7 @@
     <link href="https://onefly.top/posts/freshbench-gaokao-math-2026.html"/>
     <id>https://onefly.top/posts/freshbench-gaokao-math-2026.html</id>
     <published>2026-06-12T03:25:40.000Z</published>
-    <updated>2026-06-12T03:29:31.462Z</updated>
+    <updated>2026-06-19T09:32:26.207Z</updated>
     
     
     <summary type="html">2026 高考数学刚公开后，我整理了 FreshBench-GaokaoMath-2026：一个带时间戳、Schema、JSONL 和评测脚本的开源新题基准，用来观察大模型与 Agent 在真实新题上的数学推理能力。</summary>
@@ -375,9 +375,9 @@
     <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
-    
     <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
+    
+    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
     
     <category term="AI工作流" scheme="https://onefly.top/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     

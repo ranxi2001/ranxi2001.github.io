@@ -1,0 +1,2171 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="AI代码审查, PR Review, Kubernetes, 云原生, IaC, 分布式系统, 测试工程, 开源基础设施, 代码合入">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>AI代码合入哲学：大型基础设施不能只追求生成速度 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260619170259768-585809877.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">AI代码合入哲学：大型基础设施不能只追求生成速度</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/AI%E5%AE%A1%E6%9F%A5/">
+                                <span class="chip bg-color">AI审查</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9F%BA%E5%BB%BA/">
+                                <span class="chip bg-color">基建</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">测试</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%88%E5%85%A5/">
+                                <span class="chip bg-color">合入</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                AI工程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-19
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    19 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260619170259768-585809877.jpg" style="zoom:33%;" alt="AI代码合入哲学封面图"></p>
+<blockquote>
+<p>AI 真正改变软件工程的地方，不是“代码写得更快”，而是让我们第一次正面撞上一个更棘手的问题：代码生产速度已经超过了代码验证速度。</p>
+</blockquote>
+<p>这件事在普通应用里已经足够麻烦，在 Kubernetes、云原生平台、IaC、分布式存储、Service Mesh、调度系统、数据库、中间件这类大型基础设施项目里，则会直接变成生产事故。</p>
+<p>因为基础设施代码有一个残酷特点：<strong>基础测试通过，不代表生产环境安全。</strong></p>
+<p>单元测试能覆盖函数逻辑，集成测试能覆盖已知链路，CI 能拦住格式错误和一部分回归。但真正让客户线上崩溃的，往往不是 happy path，而是那些测试环境很难复现的缝隙：并发竞态、资源泄漏、权限差异、配置漂移、网络抖动、灰度期间的版本不一致、Helm/Terraform 渲染后的真实运行时行为、跨组件协议细节、历史兼容性、以及某个老 maintainer 脑子里的 tribal knowledge。</p>
+<p>AI 代码生成让这个问题被放大了。</p>
+<p>过去一个工程师写一天代码，提交一个 PR，reviewer 至少还能跟上阅读节奏。现在一句“帮我重构这个模块”，几秒钟生成上千行改动。代码产出变快了几十倍，但人类理解代码的速度没有变。更危险的是，AI 写出的代码常常不是一眼就错的代码，而是<strong>看起来很正确、结构很完整、命名很规范、注释也很体面的代码</strong>。</p>
+<p>这类代码最难审。</p>
+<p>它可能不是 bug，而是“正确的废话”：多余的抽象、多余的异常处理、多余的封装、多余的 fallback、多余的配置项。它们不会立刻炸掉 CI，却会让系统复杂度上升，让未来的 review、排障和演进成本变高。更麻烦的是，AI 生成代码时的推理过程已经消失了。人类 reviewer 看到的是结果，却不知道它为什么存在、权衡过什么方案、忽略了哪些约束。</p>
+<p>所以，大型基础设施项目面对 AI，不应该只讨论“能不能让 AI 写代码”，而应该讨论另一件更关键的事：<strong>AI 时代，代码应该如何被测试、审查和合入。</strong></p>
+<h2 id="一、基础设施项目的失败，不常发生在测试覆盖到的地方"><a href="#一、基础设施项目的失败，不常发生在测试覆盖到的地方" class="headerlink" title="一、基础设施项目的失败，不常发生在测试覆盖到的地方"></a>一、基础设施项目的失败，不常发生在测试覆盖到的地方</h2><p>大型基础设施项目和普通业务系统不一样。它们不是只服务一条明确业务链路，而是作为其他系统的地基存在。</p>
+<p>一个 Kubernetes Operator 的小改动，可能影响 CRD reconcile 行为；一个 Terraform module 的默认值变化，可能让生产集群权限扩大；一个调度器策略调整，可能在小规模测试集群里表现良好，却在客户真实负载下造成资源饥饿；一个重试逻辑看似增强了韧性，却可能在下游故障时制造雪崩。</p>
+<p>这类问题基础测试很难拦住，原因很具体：</p>
+<ul>
+<li><strong>边缘 case 不可穷举</strong>：基础设施项目面对的是组合爆炸，不是固定业务流程。</li>
+<li><strong>并发问题依赖时序</strong>：race condition、锁粒度、watch/cache 不一致，通常只在特定压力下出现。</li>
+<li><strong>资源问题依赖环境</strong>：CPU、内存、FD、连接池、磁盘 IO、API Server QPS，在 dev 环境和 prod 环境完全不同。</li>
+<li><strong>IaC 的真实行为发生在渲染之后</strong>：YAML、Helm、Kustomize、Terraform plan/apply 之后才暴露实际权限、网络策略和资源限制。</li>
+<li><strong>分布式系统失败不是单点错误</strong>：真正的问题常来自重试、超时、幂等、降级、版本兼容和跨服务依赖。</li>
+<li><strong>历史约束不在代码里</strong>：很多“为什么不能这样改”的原因藏在过去的 incident、issue、PR 争论和 maintainer 经验里。</li>
+</ul>
+<p>AI 的加入会进一步增加这些盲区。它擅长补全局部模式，却不天然理解系统历史；它能写出看似完整的错误处理，却不一定知道这个项目里某个错误码必须透传；它能生成漂亮的 Terraform 模块，却不一定理解目标云厂商 IAM、网络和配额的生产限制。</p>
+<p>因此，“测试通过”在基础设施项目里只能说明一件事：这个改动没有破坏已知检查。它不能证明这个改动在真实生产拓扑里安全。</p>
+<h2 id="二、AI-代码最大的风险，不是幻觉，而是验证债务"><a href="#二、AI-代码最大的风险，不是幻觉，而是验证债务" class="headerlink" title="二、AI 代码最大的风险，不是幻觉，而是验证债务"></a>二、AI 代码最大的风险，不是幻觉，而是验证债务</h2><p>很多人谈 AI 编程，第一反应是幻觉。幻觉当然存在，但在严肃工程里，更系统性的风险是验证债务。</p>
+<p>所谓验证债务，就是代码生成得越快，需要被理解、证明和维护的东西越多。PR diff 增大，reviewer 疲劳；抽象层数增多，未来排障困难；测试没有同步增加，CI 仍然绿；最终风险被推迟到生产环境兑现。</p>
+<p>AI 代码还有一个特殊问题：<strong>缺少可追责的决策过程</strong>。</p>
+<p>实习生写错代码，你可以问他为什么加这把锁、为什么选择这个缓存策略、为什么吞掉这个错误。答案也许不成熟，但至少存在一个可以被追问、被教育、被修正的人。AI 生成的代码不一样。它给你的是最终产物，不给你可靠的设计动机。reviewer 被迫做逆向工程：从一堆看起来合理的实现里反推它到底想解决什么问题。</p>
+<p>这会让 Code Review 从“协作理解”变成“代码法医”。</p>
+<p>在基础设施项目里，这尤其危险。因为真正重要的不是某一行代码是否语法正确，而是它是否改变了系统契约：</p>
+<ul>
+<li>是否改变了默认行为？</li>
+<li>是否影响升级兼容性？</li>
+<li>是否破坏了已有配置语义？</li>
+<li>是否增加了控制面压力？</li>
+<li>是否改变了失败模式？</li>
+<li>是否把局部失败扩大成全局失败？</li>
+<li>是否让用户在生产环境里更难回滚？</li>
+</ul>
+<p>这些问题不是 lint 能完全回答的，也不是基础单测能完整证明的。它们需要上下文、经验和系统推理。</p>
+<p>所以 AI 时代的合入哲学不能是“让 AI 多写，人类少看”。正确方向应该是：<strong>让机器承担可机械化验证，让人类回到真正高价值的判断。</strong></p>
+<h2 id="三、AI-Review-不是替代人类，而是第一道自动化防线"><a href="#三、AI-Review-不是替代人类，而是第一道自动化防线" class="headerlink" title="三、AI Review 不是替代人类，而是第一道自动化防线"></a>三、AI Review 不是替代人类，而是第一道自动化防线</h2><p>合理使用 AI 做 PR Review，最好的定位不是“AI 批准合并”，而是“AI 帮人类提前扫雷”。</p>
+<p>对于大型开源基础设施项目，更适合采用多层 review：传统工具先做确定性检查，AI agent 再做语义和上下文检查，人类 maintainer 最后判断架构、风险和项目方向。</p>
+<p>一个较合理的流水线可以长这样：</p>
+<pre class="mermaid">flowchart TD
+    A[PR 提交] --&gt; B[格式 / Lint / 类型检查]
+    B --&gt; C[单元测试 / 集成测试 / E2E]
+    C --&gt; D[安全扫描 / 依赖扫描]
+    D --&gt; E[IaC / K8s Policy 检查]
+    E --&gt; F[多 Agent AI Review]
+    F --&gt; G[风险摘要与阻塞建议]
+    G --&gt; H[Maintainer 人工 Review]
+    H --&gt; I{是否高风险变更}
+    I --&gt;|否| J[合入]
+    I --&gt;|是| K[额外测试 / 设计记录 / 多人批准]
+    K --&gt; J</pre>
+
+<p>这里有两个关键点。</p>
+<p>第一，AI 不应该替代 Semgrep、Bandit、Trivy、Checkov、OPA/Gatekeeper、依赖漏洞扫描、类型检查、单测和 E2E。传统工具的优势是确定性、可复现、可解释。能用规则稳定发现的问题，就不要浪费大模型 token。</p>
+<p>第二，AI 应该做传统工具不擅长的事：读 diff、读上下文、理解意图、识别跨文件影响、追问缺失测试、指出潜在失败模式、总结风险，让 maintainer 更快进入高价值判断。</p>
+<p>这也是 Cloudflare 这类大规模工程团队实践里值得借鉴的方向：不是让一个通用 AI 评论 PR，而是把 review 拆成多个专业 agent，再由协调层去重、分级、决定哪些意见值得阻塞。</p>
+<h2 id="四、面向基础设施的多-Agent-Review-应该怎么分工"><a href="#四、面向基础设施的多-Agent-Review-应该怎么分工" class="headerlink" title="四、面向基础设施的多 Agent Review 应该怎么分工"></a>四、面向基础设施的多 Agent Review 应该怎么分工</h2><p>大型基础设施项目的 AI Review 不应该只有一个“代码质量机器人”。一个通用 agent 很容易变成会说漂亮废话的 reviewer：指出命名、建议注释、重复 lint 的发现，却没有抓住真正危险的地方。</p>
+<p>更好的方式是按风险域拆分。</p>
+<h3 id="1-Security-Agent"><a href="#1-Security-Agent" class="headerlink" title="1. Security Agent"></a>1. Security Agent</h3><p>重点看权限、注入、secret、认证授权、供应链、依赖升级、容器镜像、Kubernetes RBAC、Terraform IAM、网络策略。</p>
+<p>它应该问：</p>
+<ul>
+<li>是否扩大了默认权限？</li>
+<li>是否把 secret 写进日志、配置或错误信息？</li>
+<li>是否引入了不安全默认值？</li>
+<li>是否让低权限用户影响高权限资源？</li>
+<li>是否绕过了现有 policy？</li>
+</ul>
+<h3 id="2-Resilience-Agent"><a href="#2-Resilience-Agent" class="headerlink" title="2. Resilience Agent"></a>2. Resilience Agent</h3><p>重点看错误处理、超时、重试、幂等、降级、熔断、回滚、部分失败。</p>
+<p>它应该问：</p>
+<ul>
+<li>下游超时时会发生什么？</li>
+<li>重试是否可能放大故障？</li>
+<li>reconcile 是否幂等？</li>
+<li>中途失败会不会留下脏状态？</li>
+<li>错误是否被吞掉，导致用户以为操作成功？</li>
+</ul>
+<h3 id="3-Concurrency-Agent"><a href="#3-Concurrency-Agent" class="headerlink" title="3. Concurrency Agent"></a>3. Concurrency Agent</h3><p>重点看锁、goroutine、channel、watch/cache、共享状态、异步任务、竞态窗口。</p>
+<p>它应该问：</p>
+<ul>
+<li>是否存在读写竞态？</li>
+<li>锁粒度是否导致死锁或性能瓶颈？</li>
+<li>goroutine 生命周期是否可控？</li>
+<li>context cancel 是否被正确传播？</li>
+<li>informer/cache 延迟是否会导致错误决策？</li>
+</ul>
+<h3 id="4-IaC-Runtime-Agent"><a href="#4-IaC-Runtime-Agent" class="headerlink" title="4. IaC / Runtime Agent"></a>4. IaC / Runtime Agent</h3><p>重点看 YAML、Helm、Kustomize、Terraform、Kubernetes manifest 的运行时后果。</p>
+<p>它应该问：</p>
+<ul>
+<li>渲染后的资源限制是否合理？</li>
+<li>默认值是否适合生产环境？</li>
+<li>是否缺少 readiness/liveness/startup probe？</li>
+<li>PodDisruptionBudget、affinity、toleration 是否符合高可用目标？</li>
+<li>plan/apply 后是否会破坏已有资源？</li>
+</ul>
+<h3 id="5-Compatibility-Agent"><a href="#5-Compatibility-Agent" class="headerlink" title="5. Compatibility Agent"></a>5. Compatibility Agent</h3><p>重点看 API 兼容、配置兼容、数据迁移、版本升级、灰度发布、回滚。</p>
+<p>它应该问：</p>
+<ul>
+<li>是否改变了公开 API 或 CRD schema？</li>
+<li>旧配置是否仍然可用？</li>
+<li>升级路径是否明确？</li>
+<li>新旧版本混跑会怎样？</li>
+<li>回滚是否安全？</li>
+</ul>
+<h3 id="6-Test-Gap-Agent"><a href="#6-Test-Gap-Agent" class="headerlink" title="6. Test Gap Agent"></a>6. Test Gap Agent</h3><p>重点不在“生成更多测试”，而在发现缺失的测试类型。</p>
+<p>它应该问：</p>
+<ul>
+<li>这个 PR 改变了哪个失败路径？</li>
+<li>是否有负向测试？</li>
+<li>是否覆盖了并发和资源限制？</li>
+<li>是否需要 fuzz、chaos、load、upgrade/downgrade 测试？</li>
+<li>是否需要基于历史 incident 增加回归用例？</li>
+</ul>
+<p>最后由一个 Coordinator Agent 统一去重、聚合严重性、给出 blocking / non-blocking / question 三类结论。否则多个 agent 会把 PR 评论区变成噪音场。</p>
+<pre class="mermaid">flowchart LR
+    D[PR Diff + Repo Context] --&gt; S[Security]
+    D --&gt; R[Resilience]
+    D --&gt; C[Concurrency]
+    D --&gt; I[IaC Runtime]
+    D --&gt; P[Performance]
+    D --&gt; T[Test Gap]
+    S --&gt; O[Coordinator]
+    R --&gt; O
+    C --&gt; O
+    I --&gt; O
+    P --&gt; O
+    T --&gt; O
+    O --&gt; M[结构化 Review 报告]</pre>
+
+<h2 id="五、AI-Review-必须吃到“强上下文”"><a href="#五、AI-Review-必须吃到“强上下文”" class="headerlink" title="五、AI Review 必须吃到“强上下文”"></a>五、AI Review 必须吃到“强上下文”</h2><p>没有上下文的 AI Review，只是一个会讲工程常识的陌生人。</p>
+<p>它可能说得都对，但不一定对这个项目有用。对于大型基础设施项目，AI 必须接入项目上下文，否则很容易误报、漏报，或者提出违反项目历史设计的建议。</p>
+<p>上下文至少应该包括：</p>
+<ul>
+<li>仓库根目录的 <code>AGENTS.md</code> 或等价工程约定。</li>
+<li>构建、测试、lint、E2E、release 命令。</li>
+<li>架构文档和模块边界。</li>
+<li>公开 API / CRD / 配置语义。</li>
+<li>历史 incident 和 postmortem。</li>
+<li>过去被拒绝的设计方案。</li>
+<li>关键 maintainer 的 review 评论模式。</li>
+<li>已知兼容性约束和弃用策略。</li>
+<li>生产环境 SLO、资源限制、部署拓扑。</li>
+</ul>
+<p>我会强烈建议开源基础设施项目在仓库根目录维护一个 <code>AGENTS.md</code>。它不是给人看的 README 替代品，而是给 AI agent 的操作边界：怎么跑测试、哪些目录不能乱改、哪些变更必须写设计文档、哪些 API 不能破坏兼容、哪些文件生成后不能手改、什么情况必须请求 maintainer 人工判断。</p>
+<p>一个最小可用版本可以包含：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> AGENTS.md</span>
+
+<span class="token title important"><span class="token punctuation">##</span> Required Checks</span>
+<span class="token list punctuation">-</span> Run unit tests for touched packages.
+<span class="token list punctuation">-</span> Run integration tests when controller/reconcile logic changes.
+<span class="token list punctuation">-</span> Run IaC policy checks when manifests, Helm charts, or Terraform files change.
+
+<span class="token title important"><span class="token punctuation">##</span> High Risk Changes</span>
+Require human maintainer approval when changing:
+<span class="token list punctuation">-</span> Public APIs, CRDs, config defaults, auth/RBAC, upgrade logic.
+<span class="token list punctuation">-</span> Retry, timeout, cache, reconciliation, scheduling, failover behavior.
+
+<span class="token title important"><span class="token punctuation">##</span> Review Focus</span>
+AI reviewers must check:
+<span class="token list punctuation">-</span> Failure paths, concurrency, resource leaks, rollback safety.
+<span class="token list punctuation">-</span> Backward compatibility and production runtime impact.
+<span class="token list punctuation">-</span> Missing tests for edge cases and negative cases.
+
+<span class="token title important"><span class="token punctuation">##</span> Forbidden Patterns</span>
+<span class="token list punctuation">-</span> Silent fallback that hides user-visible failures.
+<span class="token list punctuation">-</span> Broad permissions as default.
+<span class="token list punctuation">-</span> Unbounded retries or goroutines without cancellation.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这类文件越具体，AI Review 越不容易飘。</p>
+<h2 id="六、测试哲学也要升级：从覆盖率转向失败模式"><a href="#六、测试哲学也要升级：从覆盖率转向失败模式" class="headerlink" title="六、测试哲学也要升级：从覆盖率转向失败模式"></a>六、测试哲学也要升级：从覆盖率转向失败模式</h2><p>AI 可以帮助补测试，但“让 AI 多写测试”本身不是答案。大型基础设施项目真正需要的是从覆盖率思维转向失败模式思维。</p>
+<p>覆盖率回答的是：哪些代码被执行过？</p>
+<p>失败模式回答的是：系统在什么条件下会坏？坏的时候是否可控？用户是否能理解？能否自动恢复？能否安全回滚？</p>
+<p>对于基础设施项目，PR 模板和 AI Review 都应该要求作者说明测试覆盖了哪些失败模式，而不是只贴一句“tests passed”。</p>
+<pre class="mermaid">mindmap
+  root((基础设施 PR 测试))
+    正常路径
+      单元测试
+      集成测试
+      E2E
+    失败路径
+      下游超时
+      权限不足
+      配置缺失
+      部分资源创建失败
+    并发路径
+      多实例 reconcile
+      watch 延迟
+      竞态窗口
+    资源路径
+      内存限制
+      API QPS
+      连接池耗尽
+    升级路径
+      旧版本到新版本
+      新旧混跑
+      回滚
+    IaC 路径
+      plan diff
+      policy-as-code
+      渲染后 manifest</pre>
+
+<p>AI Review 在这里的价值很大。它可以根据 diff 自动生成一份“测试缺口报告”：这个 PR 改了哪些行为，已有测试覆盖了哪些路径，还缺哪些 negative case、并发 case、升级 case、IaC runtime case。</p>
+<p>但最终是否必须补测试，仍然应该由人类 maintainer 根据风险决定。</p>
+<p>低风险文档改动不需要重型流程；核心调度逻辑、鉴权、升级、数据一致性、IaC 默认值变化，则必须提高门槛。</p>
+<h2 id="七、合入哲学：PR-不只提交代码，还要提交决策"><a href="#七、合入哲学：PR-不只提交代码，还要提交决策" class="headerlink" title="七、合入哲学：PR 不只提交代码，还要提交决策"></a>七、合入哲学：PR 不只提交代码，还要提交决策</h2><p>AI 时代，高质量 PR 的定义要变。</p>
+<p>过去一个 PR 只要代码清晰、测试通过、review 通过，就可以合入。未来在大型基础设施项目里，这不够。尤其当 PR 明显使用 AI 大量生成或重构时，它还应该提交“决策材料”。</p>
+<p>至少包括四件事：</p>
+<ol>
+<li><strong>Intent：这个 PR 到底解决什么问题？</strong></li>
+<li><strong>Alternatives：为什么不选择其他方案？</strong></li>
+<li><strong>Risk：最可能出问题的地方在哪里？</strong></li>
+<li><strong>Validation：用什么证据证明它不会破坏生产？</strong></li>
+</ol>
+<p>这不是形式主义。它是在弥补 AI 代码缺失推理过程的问题。</p>
+<p>一个基础设施 PR 模板可以这样设计：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> Intent</span>
+What production/user problem does this PR solve?
+
+<span class="token title important"><span class="token punctuation">##</span> Design Decision</span>
+Why this approach? What alternatives were rejected?
+
+<span class="token title important"><span class="token punctuation">##</span> Risk Surface</span>
+<span class="token list punctuation">-</span> Runtime behavior changed:
+<span class="token list punctuation">-</span> Compatibility impact:
+<span class="token list punctuation">-</span> Security/IaC impact:
+<span class="token list punctuation">-</span> Rollback risk:
+
+<span class="token title important"><span class="token punctuation">##</span> Validation</span>
+<span class="token list punctuation">-</span> Unit tests:
+<span class="token list punctuation">-</span> Integration/E2E tests:
+<span class="token list punctuation">-</span> Failure-path tests:
+<span class="token list punctuation">-</span> Upgrade/rollback tests:
+<span class="token list punctuation">-</span> Manual verification:
+
+<span class="token title important"><span class="token punctuation">##</span> AI Usage</span>
+Was AI used for code generation or refactoring?
+If yes, summarize what was generated and what was manually verified.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我不太喜欢那种“AI 生成代码必须羞耻标记”的做法。问题不在于是不是 AI 写的，而在于有没有被验证、有没有解释、有没有人为最终判断负责。</p>
+<p>但我支持高风险 PR 披露 AI 使用范围。因为这能提醒 reviewer：这里可能存在大段看似合理但缺少历史上下文的改动，需要更关注设计动机和失败路径。</p>
+<h2 id="八、人类-reviewer-的价值会变高，不会变低"><a href="#八、人类-reviewer-的价值会变高，不会变低" class="headerlink" title="八、人类 reviewer 的价值会变高，不会变低"></a>八、人类 reviewer 的价值会变高，不会变低</h2><p>AI Review 做得越好，人类 reviewer 越不应该再花大量时间挑格式、重复 lint、问“这里为什么没判空”这种低级问题。</p>
+<p>人类应该专注更难的判断：</p>
+<ul>
+<li>这个方向是否符合项目长期架构？</li>
+<li>这个抽象是否值得引入？</li>
+<li>这个默认值是否会伤害生产用户？</li>
+<li>这个行为是否和项目承诺的兼容性冲突？</li>
+<li>这个改动是否让系统更容易解释、运维和回滚？</li>
+<li>这个复杂度是否真的换来了足够收益？</li>
+</ul>
+<p>换句话说，AI 不是让 maintainer 失去价值，而是逼 maintainer 从“代码校对员”升级为“系统风险判断者”。</p>
+<p>这对开源项目尤其重要。大型基础设施项目的 maintainer 本来就长期过载：PR 多、issue 多、用户环境复杂、贡献者水平差异大。AI 如果只是制造更多 PR，会加重 burnout；但如果 AI 能先过滤低质量改动、压缩 review 噪音、总结风险、指出测试缺口，它就能真正帮 maintainer 把精力放回关键决策。</p>
+<h2 id="九、一个可落地的三阶段路线"><a href="#九、一个可落地的三阶段路线" class="headerlink" title="九、一个可落地的三阶段路线"></a>九、一个可落地的三阶段路线</h2><p>如果我是一个大型开源基础设施项目的 maintainer，我不会一上来就自建复杂多 agent 平台。更现实的路径是分三步。</p>
+<h3 id="阶段一：先把确定性防线补齐"><a href="#阶段一：先把确定性防线补齐" class="headerlink" title="阶段一：先把确定性防线补齐"></a>阶段一：先把确定性防线补齐</h3><p>目标不是炫技，而是先减少低级风险。</p>
+<ul>
+<li>补 <code>AGENTS.md</code>，明确 AI 和贡献者的工程边界。</li>
+<li>强化 PR 模板，要求说明 intent、risk、validation。</li>
+<li>接入 lint、type check、unit/integration/e2e。</li>
+<li>接入 Semgrep、Trivy、Checkov、OPA/Gatekeeper 等确定性工具。</li>
+<li>对 IaC、K8s manifest、RBAC、secret、镜像依赖建立 baseline policy。</li>
+<li>要求 AI 生成的大 PR 拆小，否则不 review。</li>
+</ul>
+<p>这一阶段的核心哲学是：<strong>不要让 AI Review 替你补工程卫生。</strong></p>
+<h3 id="阶段二：引入-AI-作为语义审查层"><a href="#阶段二：引入-AI-作为语义审查层" class="headerlink" title="阶段二：引入 AI 作为语义审查层"></a>阶段二：引入 AI 作为语义审查层</h3><p>当确定性检查稳定后，再引入 AI Review。</p>
+<ul>
+<li>先从非阻塞评论开始，不直接卡合入。</li>
+<li>让 AI 输出结构化报告，而不是散乱评论。</li>
+<li>重点检查 failure path、concurrency、resource、compatibility、test gap。</li>
+<li>对误报/漏报做反馈闭环，持续调整 prompt 和上下文。</li>
+<li>大 PR、高风险目录、AI-generated PR 使用更强模型或更多 agent。</li>
+</ul>
+<p>这一阶段的核心哲学是：<strong>AI 先做 reviewer 的助手，不做 merge gate 的主人。</strong></p>
+<h3 id="阶段三：接入生产反馈，形成闭环"><a href="#阶段三：接入生产反馈，形成闭环" class="headerlink" title="阶段三：接入生产反馈，形成闭环"></a>阶段三：接入生产反馈，形成闭环</h3><p>真正高级的 AI Review，不只是看代码，还要看生产事实。</p>
+<ul>
+<li>将 Sentry、日志、告警、性能回归、incident、postmortem 关联到 PR。</li>
+<li>让 AI Review 参考历史事故：类似改动过去是否导致过问题？</li>
+<li>对生产事故反推测试缺口，自动生成回归测试建议。</li>
+<li>对高风险模块建立专门 agent：调度、鉴权、IaC、升级、存储一致性等。</li>
+<li>用指标衡量 AI Review：真实 bug 命中率、误报率、review 时间、事故减少情况。</li>
+</ul>
+<p>这一阶段的核心哲学是：<strong>让生产经验回流到合入前。</strong></p>
+<h2 id="十、我认为最终会形成的新规则"><a href="#十、我认为最终会形成的新规则" class="headerlink" title="十、我认为最终会形成的新规则"></a>十、我认为最终会形成的新规则</h2><p>AI 时代的大型基础设施工程，最终大概率会形成几条新规则。</p>
+<p>第一，<strong>代码生成不是稀缺能力，验证才是稀缺能力。</strong></p>
+<p>能写出代码的人和工具会越来越多，但能证明这段代码在复杂生产环境里安全的人会越来越少。</p>
+<p>第二，<strong>PR 的最小单元不再是 diff，而是 diff + decision + validation。</strong></p>
+<p>只给代码不给决策过程的 PR，会越来越难被信任。</p>
+<p>第三，<strong>AI Review 的价值不在“评论更多”，而在“让人类少看无价值信息”。</strong></p>
+<p>如果 AI 让 PR 评论区更吵，它就是失败的。如果 AI 让 maintainer 更快看到真正风险，它才是成功的。</p>
+<p>第四，<strong>基础设施项目必须把运行时语义纳入 review。</strong></p>
+<p>YAML 不是文本，Terraform 不是模板，Kubernetes manifest 不是配置片段。它们最终都会变成真实权限、真实资源、真实网络、真实故障模式。</p>
+<p>第五，<strong>高风险系统必须保留人类最终责任。</strong></p>
+<p>AI 可以建议，可以阻塞，可以生成测试，可以总结风险，但不能替人类承担生产事故后的责任。支付、金融、交易、云平台、集群控制面这类系统，合入权必须绑定清晰的人类判断。</p>
+<h2 id="结语：别让-AI-把工程变成垃圾吞吐竞赛"><a href="#结语：别让-AI-把工程变成垃圾吞吐竞赛" class="headerlink" title="结语：别让 AI 把工程变成垃圾吞吐竞赛"></a>结语：别让 AI 把工程变成垃圾吞吐竞赛</h2><p>AI 让软件开发进入了一个很奇怪的阶段：我们第一次拥有了几乎无限的代码生成能力，却没有同时拥有无限的理解能力、验证能力和责任能力。</p>
+<p>这就是大型基础设施项目必须警惕的地方。</p>
+<p>如果团队只追求“AI 帮我写更多代码”，最终会得到更多 PR、更大 diff、更高 review 成本、更复杂系统，以及更多线上事故。</p>
+<p>但如果团队把 AI 用在正确位置——自动化第一轮审查、发现测试缺口、补充语义分析、连接历史事故、降低 maintainer 噪音——它就可能成为基础设施工程里非常重要的一层安全网。</p>
+<p>我的判断是：未来优秀的基础设施团队，不会是最会让 AI 写代码的团队，而是最会让 AI 参与验证、审查和合入决策的团队。</p>
+<p>因为生产环境从不奖励“生成得快”。</p>
+<p>生产环境只奖励一件事：<strong>改动被充分理解之后，仍然敢合入。</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/ai-infra-code-merge-philosophy.html">https://onefly.top/posts/ai-infra-code-merge-philosophy.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/AI%E5%AE%A1%E6%9F%A5/">
+                                    <span class="chip bg-color">AI审查</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9F%BA%E5%BB%BA/">
+                                    <span class="chip bg-color">基建</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">测试</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%88%E5%85%A5/">
+                                    <span class="chip bg-color">合入</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/ai-infra-code-merge-philosophy.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260619170259768-585809877.jpg" class="responsive-img" alt="AI代码合入哲学：大型基础设施不能只追求生成速度">
+                        
+                        <span class="card-title">AI代码合入哲学：大型基础设施不能只追求生成速度</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    AI工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI%E5%AE%A1%E6%9F%A5/">
+                        <span class="chip bg-color">AI审查</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E5%BB%BA/">
+                        <span class="chip bg-color">基建</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">测试</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%88%E5%85%A5/">
+                        <span class="chip bg-color">合入</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/loop-engineering-ai-memory.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260617002143238-457129225.png" class="responsive-img" alt="Loop Engineering：让 AI 自己沉淀上下文">
+                        
+                        <span class="card-title">Loop Engineering：让 AI 自己沉淀上下文</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    AI工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent/">
+                        <span class="chip bg-color">Agent</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">
+                        <span class="chip bg-color">上下文</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8A%80%E8%83%BD/">
+                        <span class="chip bg-color">技能</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

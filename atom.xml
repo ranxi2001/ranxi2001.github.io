@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-16T16:21:57.820Z</updated>
+  <updated>2026-06-19T09:03:31.740Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI代码合入哲学：大型基础设施不能只追求生成速度</title>
+    <link href="https://onefly.top/posts/ai-infra-code-merge-philosophy.html"/>
+    <id>https://onefly.top/posts/ai-infra-code-merge-philosophy.html</id>
+    <published>2026-06-19T08:52:13.000Z</published>
+    <updated>2026-06-19T09:03:31.740Z</updated>
+    
+    
+    <summary type="html">当 AI 让代码生成速度超过验证速度，大型开源基础设施项目需要重新设计 PR Review、测试、合入与责任边界。</summary>
+    
+    
+    
+    <category term="AI工程" scheme="https://onefly.top/categories/AI%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+    <category term="AI审查" scheme="https://onefly.top/tags/AI%E5%AE%A1%E6%9F%A5/"/>
+    
+    <category term="基建" scheme="https://onefly.top/tags/%E5%9F%BA%E5%BB%BA/"/>
+    
+    <category term="测试" scheme="https://onefly.top/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="合入" scheme="https://onefly.top/tags/%E5%90%88%E5%85%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>Loop Engineering：让 AI 自己沉淀上下文</title>
@@ -350,9 +375,9 @@
     <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
-    
     <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
+    
+    <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
     
     <category term="AI工作流" scheme="https://onefly.top/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     
@@ -472,29 +497,6 @@
     <category term="大厂面试" scheme="https://onefly.top/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E8%AF%95/"/>
     
     <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Claude Pro 订阅 87 元苹果尼日利亚区开通教程 + App Store 全球比价神器</title>
-    <link href="https://onefly.top/posts/claude-nigeria-apple-store-cheapest-subscription-guide-2026.html"/>
-    <id>https://onefly.top/posts/claude-nigeria-apple-store-cheapest-subscription-guide-2026.html</id>
-    <published>2026-04-10T06:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.301Z</updated>
-    
-    
-    <summary type="html">2026 最新 Claude Code 订阅省钱攻略：苹果尼日利亚区 Pro 仅 87 元、Max5 580 元、Max20 1160 元，全球最低价。手把手教你注册尼日利亚 Apple ID、避免虚拟卡秒封账号、礼品卡充值兑换，附 App Store 各大软件全球比价神器 app.vbr.me。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="Claude Code" scheme="https://onefly.top/tags/Claude-Code/"/>
-    
-    <category term="苹果低价区" scheme="https://onefly.top/tags/%E8%8B%B9%E6%9E%9C%E4%BD%8E%E4%BB%B7%E5%8C%BA/"/>
     
   </entry>
   

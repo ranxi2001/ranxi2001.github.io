@@ -1,0 +1,2143 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="GEO, Generative Engine Optimization, AI搜索优化, 生成式引擎优化, RAG, SEO, llms.txt, Schema, ChatGPT, Perplexity">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>GEO：让 AI 主动推荐你 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260623110027792-638286241.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">GEO：让 AI 主动推荐你</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/AI%E6%90%9C%E7%B4%A2/">
+                                <span class="chip bg-color">AI搜索</span>
+                            </a>
+                        
+                            <a href="/tags/GEO/">
+                                <span class="chip bg-color">GEO</span>
+                            </a>
+                        
+                            <a href="/tags/SEO/">
+                                <span class="chip bg-color">SEO</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                AI工程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-23
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260623110027792-638286241.jpg" style="zoom:33%;" alt="GEO：让 AI 主动推荐你封面图"></p>
+<h1 id="GEO：让-AI-主动推荐你"><a href="#GEO：让-AI-主动推荐你" class="headerlink" title="GEO：让 AI 主动推荐你"></a>GEO：让 AI 主动推荐你</h1><p>用户找工具、买软件、做决策的入口，正在从搜索框转向对话框。</p>
+<p>以前你想买一个会议记录工具，大概率会去 Google / 百度搜“AI 会议记录工具推荐”，再从一堆结果里点开、比较、筛选。现在越来越多的人会直接问 ChatGPT、Perplexity、豆包：</p>
+<blockquote>
+<p>有哪些适合跨国团队的 AI 会议记录工具？</p>
+</blockquote>
+<p>如果 AI 的回答里没有你，你就不是“排名靠后”，而是<strong>根本没出现在用户的决策现场</strong>。</p>
+<p>这就是 GEO（Generative Engine Optimization，生成式引擎优化）开始重要的原因。</p>
+<p>黄小木那篇 GEO 长文把这件事讲得很适合小白：GEO 的核心不是玄学，不是买广告，也不是把关键词塞满网页，而是让你的内容能被 AI 看见、读懂、信任，最后在生成答案时愿意引用你。</p>
+<p>我更愿意把它总结成一句话：</p>
+<blockquote>
+<p>SEO 抢的是搜索结果页的位置，GEO 抢的是 AI 答案里的推荐权。</p>
+</blockquote>
+<h2 id="GEO-不是-SEO-的替代品"><a href="#GEO-不是-SEO-的替代品" class="headerlink" title="GEO 不是 SEO 的替代品"></a>GEO 不是 SEO 的替代品</h2><p>很多人一听 GEO，就会把它理解成“SEO 过时了，接下来全做 AI 搜索”。</p>
+<p>这个判断太粗糙。</p>
+<p>GEO 更像是 SEO 在 AI 答案时代的上层扩展。传统 SEO 解决的是：搜索引擎能不能抓到你、理解你、把你排在结果页前面。GEO 继续关心这些，但它多了一步：<strong>生成式引擎会不会把你的内容转述进答案里。</strong></p>
+<p>可以画成这样：</p>
+<pre class="mermaid">flowchart LR
+    A[传统 SEO] --&gt; B[搜索引擎抓取]
+    B --&gt; C[搜索结果排名]
+    C --&gt; D[用户点击网页]
+
+    E[GEO] --&gt; F[AI 检索网页 / 文档 / 数据]
+    F --&gt; G[AI 提取可信事实]
+    G --&gt; H[AI 生成答案并推荐]
+    H --&gt; I[用户直接采纳建议]</pre>
+
+<p>两者最大的差别在最后一公里。</p>
+<p>SEO 时代，网页只是入口。用户还要点进来，自己读，自己判断。GEO 时代，AI 会先替用户做一轮筛选和总结。用户看到的不是十个蓝色链接，而是一段已经被组织好的答案。</p>
+<p>所以 GEO 不只是“让页面有排名”，而是“让页面里的事实能进入模型答案”。</p>
+<h2 id="AI-为什么会推荐某个产品"><a href="#AI-为什么会推荐某个产品" class="headerlink" title="AI 为什么会推荐某个产品"></a>AI 为什么会推荐某个产品</h2><p>生成式搜索背后最常见的机制是 RAG：Retrieval-Augmented Generation，检索增强生成。</p>
+<p>它大致分两步：</p>
+<ol>
+<li><strong>检索</strong>：AI 根据用户问题去找相关资料，可能来自网页、文档、新闻、论坛、产品官网、知识库。</li>
+<li><strong>生成</strong>：AI 阅读这些资料，提取事实，组织成自然语言答案。</li>
+</ol>
+<p>这意味着，GEO 的失败通常发生在两个地方：</p>
+<ul>
+<li>第一关：AI 根本没检索到你</li>
+<li>第二关：AI 检索到了，但提取不出有用信息，或者不信你</li>
+</ul>
+<p>所以 GEO 的核心不是“写得像广告”，而是反过来适配 AI 的工作方式：它怎么检索，你就怎么铺渠道；它怎么提取，你就怎么组织内容；它怎么判断可信，你就怎么补证据。</p>
+<p>更工程化一点，可以拆成三层漏斗。</p>
+<pre class="mermaid">flowchart TD
+    A[用户向 AI 提问] --&gt; B{AI 能找到你吗?}
+    B --&gt;|不能| X[答案里没有你]
+    B --&gt;|能| C{AI 能读懂你吗?}
+    C --&gt;|不能| X
+    C --&gt;|能| D{AI 信任你吗?}
+    D --&gt;|不能| X
+    D --&gt;|能| E[进入候选答案]
+    E --&gt; F[被引用 / 被推荐 / 被对比]</pre>
+
+<p>第一层是可检索性。网页能不能被爬，内容是不是公开，站点速度和结构是不是正常。</p>
+<p>第二层是可理解性。标题、段落、列表、表格、FAQ 是否清晰，AI 能不能快速抽取“这是什么、适合谁、优势是什么、和谁对比”。</p>
+<p>第三层是可信度。有没有第三方引用、真实数据、作者身份、案例、测评、权威来源。AI 越担心胡说，就越依赖交叉验证。</p>
+<p>所以我赞同黄小木文里的公式：</p>
+<blockquote>
+<p>GEO = SEO + RAG 优化</p>
+</blockquote>
+<p>但我会再补一句：GEO 最终优化的不是“排名”，而是<strong>被答案系统选中的概率</strong>。</p>
+<h2 id="AI-喜欢什么样的内容"><a href="#AI-喜欢什么样的内容" class="headerlink" title="AI 喜欢什么样的内容"></a>AI 喜欢什么样的内容</h2><p>AI 不在乎你的文案有多“高级”，它更在乎内容是否容易提取。</p>
+<p>这和人类读文章的偏好不完全一样。人类可能喜欢起承转合、情绪铺垫、品牌故事；AI 更喜欢定义、要点、表格、结论、FAQ、结构化字段。</p>
+<p>做 GEO 内容，最重要的写作原则是：<strong>结论前置，结构清楚，事实可抽取。</strong></p>
+<h3 id="定义式：抢占“是什么”"><a href="#定义式：抢占“是什么”" class="headerlink" title="定义式：抢占“是什么”"></a>定义式：抢占“是什么”</h3><p>每个产品、概念、服务页面，都应该有一句非常清楚的定义。</p>
+<p>不要写：</p>
+<blockquote>
+<p>我们致力于用前沿 AI 技术重塑未来办公协作体验。</p>
+</blockquote>
+<p>AI 读完也不知道你到底是什么。</p>
+<p>更好的写法是：</p>
+<blockquote>
+<p>NoteFlow 是一款面向跨国远程团队的 AI 会议记录工具，支持多语言实时转写、自动生成会议纪要，并能同步到 Slack、Notion 和飞书。</p>
+</blockquote>
+<p>这句话包含四个关键信息：</p>
+<ul>
+<li>产品名：NoteFlow</li>
+<li>类目：AI 会议记录工具</li>
+<li>目标用户：跨国远程团队</li>
+<li>核心能力：多语言转写、纪要生成、工具同步</li>
+</ul>
+<p>这类句子非常适合被 AI 拿去回答“NoteFlow 是什么”。</p>
+<h3 id="要点式：抢占“有哪些优势”"><a href="#要点式：抢占“有哪些优势”" class="headerlink" title="要点式：抢占“有哪些优势”"></a>要点式：抢占“有哪些优势”</h3><p>AI 很喜欢列表，因为列表降低了归纳成本。</p>
+<p>如果你希望 AI 推荐你的产品，就不要把优势藏在一大段软文里。直接写成要点：</p>
+<ul>
+<li><strong>多语言</strong>：支持中英日等多语言混合会议转写</li>
+<li><strong>自动化</strong>：会议结束后自动生成纪要、待办和责任人</li>
+<li><strong>集成能力</strong>：支持同步到 Notion、Slack、飞书等协作工具</li>
+<li><strong>适用场景</strong>：适合跨国团队、远程会议、销售访谈和用户研究</li>
+</ul>
+<p>这不是“文案变丑”，而是让信息变得可抓取。</p>
+<h3 id="对比式：抢占“哪个好”"><a href="#对比式：抢占“哪个好”" class="headerlink" title="对比式：抢占“哪个好”"></a>对比式：抢占“哪个好”</h3><p>用户最常问 AI 的不是“某某是什么”，而是“哪个更适合我”。</p>
+<p>比如：</p>
+<ul>
+<li>哪个 AI 会议记录工具适合跨国团队？</li>
+<li>Notion AI 和飞书妙记哪个好？</li>
+<li>有哪些 Perplexity 替代品？</li>
+</ul>
+<p>这类问题天然需要对比。GEO 里最有价值的内容之一，就是高质量对比页。</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> 维度 </span><span class="token punctuation">|</span><span class="token table-header important"> 你的产品 </span><span class="token punctuation">|</span><span class="token table-header important"> 竞品 A </span><span class="token punctuation">|</span><span class="token table-header important"> 竞品 B </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> 适合人群 </span><span class="token punctuation">|</span><span class="token table-data"> 跨国远程团队 </span><span class="token punctuation">|</span><span class="token table-data"> 本地会议 </span><span class="token punctuation">|</span><span class="token table-data"> 个人笔记 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 多语言支持 </span><span class="token punctuation">|</span><span class="token table-data"> 强 </span><span class="token punctuation">|</span><span class="token table-data"> 中 </span><span class="token punctuation">|</span><span class="token table-data"> 弱 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 会后自动化 </span><span class="token punctuation">|</span><span class="token table-data"> 纪要 + 待办 + 同步 </span><span class="token punctuation">|</span><span class="token table-data"> 仅纪要 </span><span class="token punctuation">|</span><span class="token table-data"> 仅转写 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 价格 </span><span class="token punctuation">|</span><span class="token table-data"> $29/月 </span><span class="token punctuation">|</span><span class="token table-data"> $39/月 </span><span class="token punctuation">|</span><span class="token table-data"> 免费/限制多 </span><span class="token punctuation">|</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Hexo/Telegram 不一定适合大量表格，但对网页内容来说，清晰对比表非常重要。AI 在回答“哪个好”时，很容易引用这种结构。</p>
+<h3 id="FAQ-式：直接匹配用户问题"><a href="#FAQ-式：直接匹配用户问题" class="headerlink" title="FAQ 式：直接匹配用户问题"></a>FAQ 式：直接匹配用户问题</h3><p>AI 检索时会拿用户问题去匹配网页里的标题和语义块。</p>
+<p>所以小标题不要只写抽象名词，比如“功能说明”。更好的写法是直接写成问题：</p>
+<ul>
+<li>NoteFlow 怎么自动生成会议纪要？</li>
+<li>NoteFlow 支持哪些语言？</li>
+<li>NoteFlow 适合销售团队吗？</li>
+<li>NoteFlow 和飞书妙记有什么区别？</li>
+</ul>
+<p>这类标题天然接近用户向 AI 提问的方式，也更容易成为答案片段。</p>
+<h2 id="技术层：别把-AI-挡在门外"><a href="#技术层：别把-AI-挡在门外" class="headerlink" title="技术层：别把 AI 挡在门外"></a>技术层：别把 AI 挡在门外</h2><p>内容写得再好，如果 AI 爬不到，也没用。</p>
+<p>GEO 的技术地基主要有四件事。</p>
+<h3 id="第一，robots-txt-不要误伤-AI-爬虫"><a href="#第一，robots-txt-不要误伤-AI-爬虫" class="headerlink" title="第一，robots.txt 不要误伤 AI 爬虫"></a>第一，robots.txt 不要误伤 AI 爬虫</h3><p><code>robots.txt</code> 像网站门卫，告诉爬虫哪些能进、哪些不能进。</p>
+<p>最糟糕的写法是：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">User-agent: *
+Disallow: /<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这等于把所有爬虫都挡在门外。做 GEO 时，至少要确保公开内容、文档、博客、产品页允许被正常抓取。</p>
+<p>更常见的做法是只屏蔽私有路径：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Allow: /<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果你特别关心不同 AI 爬虫，比如 <code>GPTBot</code>、<code>PerplexityBot</code>、<code>ClaudeBot</code>、<code>Google-Extended</code>，可以单独配置，但前提是你知道自己为什么放行或阻止。不要为了“安全感”一刀切屏蔽。</p>
+<h3 id="第二，Schema-让机器知道页面是什么"><a href="#第二，Schema-让机器知道页面是什么" class="headerlink" title="第二，Schema 让机器知道页面是什么"></a>第二，Schema 让机器知道页面是什么</h3><p>Schema.org 结构化数据不是给人看的，是给机器看的。</p>
+<p>对产品页，可以用 <code>Product</code>；对文章页，可以用 <code>Article</code>；对 FAQ，可以用 <code>FAQPage</code>；对教程，可以用 <code>HowTo</code>。</p>
+<p>例如产品页可以表达：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://schema.org"</span><span class="token punctuation">,</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Product"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"NoteFlow Pro"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"面向远程团队的 AI 会议记录工具，支持多语言实时转写和自动纪要生成"</span><span class="token punctuation">,</span>
+  <span class="token property">"brand"</span><span class="token operator">:</span> <span class="token string">"NoteFlow"</span><span class="token punctuation">,</span>
+  <span class="token property">"offers"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Offer"</span><span class="token punctuation">,</span>
+    <span class="token property">"price"</span><span class="token operator">:</span> <span class="token string">"29.00"</span><span class="token punctuation">,</span>
+    <span class="token property">"priceCurrency"</span><span class="token operator">:</span> <span class="token string">"USD"</span><span class="token punctuation">,</span>
+    <span class="token property">"availability"</span><span class="token operator">:</span> <span class="token string">"https://schema.org/InStock"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这不是保证 AI 一定推荐你，但它能降低机器理解成本。</p>
+<h3 id="第三，llms-txt-可以作为-AI-目录"><a href="#第三，llms-txt-可以作为-AI-目录" class="headerlink" title="第三，llms.txt 可以作为 AI 目录"></a>第三，llms.txt 可以作为 AI 目录</h3><p><code>llms.txt</code> 是近两年越来越多人讨论的新文件。它有点像给 LLM / AI Agent 准备的网站说明书：告诉 AI 你的重要页面、文档入口、产品说明、API 文档在哪里。</p>
+<p>它还不是像 <code>sitemap.xml</code> 那样成熟的事实标准，但对文档站、开源项目、SaaS 产品来说，值得提前布局。</p>
+<p>一个简单的 <code>llms.txt</code> 可以长这样：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># NoteFlow
+
+NoteFlow is an AI meeting notes tool for multilingual remote teams.
+
+## Key Pages
+- Product overview: https://example.com/
+- Pricing: https://example.com/pricing
+- Docs: https://example.com/docs
+- Comparison: https://example.com/compare/noteflow-vs-competitors
+- Blog: https://example.com/blog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Mintlify 的 GEO 指南也强调文档站要让 AI 更容易发现完整文档索引，这类思路对产品文档尤其有用。</p>
+<h3 id="第四，页面速度和可访问性仍然重要"><a href="#第四，页面速度和可访问性仍然重要" class="headerlink" title="第四，页面速度和可访问性仍然重要"></a>第四，页面速度和可访问性仍然重要</h3><p>不要以为到了 AI 搜索时代，基础 SEO 就不重要了。</p>
+<p>如果网页慢、JS 渲染复杂、移动端打不开、关键信息都藏在登录后，AI 也很难稳定抓取。GEO 的第一步仍然是让内容成为干净、可访问、可索引的网页。</p>
+<h2 id="内容布局：三类页面最值得做"><a href="#内容布局：三类页面最值得做" class="headerlink" title="内容布局：三类页面最值得做"></a>内容布局：三类页面最值得做</h2><p>如果你是一个产品、工具、SaaS 或个人 IP，不要一上来就乱写博客。</p>
+<p>优先做三类页面。</p>
+<h3 id="1-定义页：让-AI-知道你是谁"><a href="#1-定义页：让-AI-知道你是谁" class="headerlink" title="1. 定义页：让 AI 知道你是谁"></a>1. 定义页：让 AI 知道你是谁</h3><p>目标是回答：</p>
+<ul>
+<li>你是什么？</li>
+<li>你解决什么问题？</li>
+<li>适合谁？</li>
+<li>和传统方案有什么区别？</li>
+</ul>
+<p>这类页面适合官网首页、产品介绍页、文档首页。</p>
+<h3 id="2-场景页：让-AI-知道你适合谁"><a href="#2-场景页：让-AI-知道你适合谁" class="headerlink" title="2. 场景页：让 AI 知道你适合谁"></a>2. 场景页：让 AI 知道你适合谁</h3><p>目标是覆盖真实需求，而不是只覆盖产品名。</p>
+<p>比如不要只写“NoteFlow 功能介绍”，还要写：</p>
+<ul>
+<li>跨国团队如何记录多语言会议？</li>
+<li>销售访谈怎么自动生成 CRM 纪要？</li>
+<li>用户研究访谈如何整理成洞察报告？</li>
+</ul>
+<p>AI 推荐产品时，经常根据场景匹配。你的场景页越清楚，越容易进入候选。</p>
+<h3 id="3-对比页：让-AI-知道你和谁同框"><a href="#3-对比页：让-AI-知道你和谁同框" class="headerlink" title="3. 对比页：让 AI 知道你和谁同框"></a>3. 对比页：让 AI 知道你和谁同框</h3><p>对比页的意义不是贬低竞品，而是让 AI 在检索竞品和品类词时，也能看到你。</p>
+<p>如果用户问“某某工具替代品”，你的对比页就有机会被抓到。哪怕 AI 最后说“如果你更看重多语言会议，NoteFlow 更适合”，你也已经进入了决策集合。</p>
+<pre class="mermaid">flowchart TD
+    A[用户问题] --&gt; B{问题类型}
+    B --&gt;|这是什么| C[定义页]
+    B --&gt;|怎么解决| D[场景页 / 教程页]
+    B --&gt;|哪个好| E[对比页]
+    B --&gt;|靠谱吗| F[案例页 / 测评 / 第三方引用]
+    C --&gt; G[AI 候选答案]
+    D --&gt; G
+    E --&gt; G
+    F --&gt; G</pre>
+
+<h2 id="怎么测试-GEO-有没有效果"><a href="#怎么测试-GEO-有没有效果" class="headerlink" title="怎么测试 GEO 有没有效果"></a>怎么测试 GEO 有没有效果</h2><p>GEO 最大的问题是：你很难像传统 SEO 那样直接看排名。</p>
+<p>但你可以做模拟测试。</p>
+<h3 id="第一步：查-AI-是否认识你"><a href="#第一步：查-AI-是否认识你" class="headerlink" title="第一步：查 AI 是否认识你"></a>第一步：查 AI 是否认识你</h3><p>直接问：</p>
+<blockquote>
+<p>介绍一下 NoteFlow。</p>
+</blockquote>
+<p>如果 AI 能准确说出你的定位、功能、官网信息，说明它至少有一定收录或认知。</p>
+<p>如果它胡编，说明网上信息太少或信息冲突。</p>
+<h3 id="第二步：查-AI-是否推荐你"><a href="#第二步：查-AI-是否推荐你" class="headerlink" title="第二步：查 AI 是否推荐你"></a>第二步：查 AI 是否推荐你</h3><p>不要带品牌名，问品类词：</p>
+<blockquote>
+<p>推荐几款适合跨国团队的 AI 会议记录工具。</p>
+</blockquote>
+<p>这一步看的是你能不能进入自然推荐列表。</p>
+<h3 id="第三步：查-AI-引用了什么"><a href="#第三步：查-AI-引用了什么" class="headerlink" title="第三步：查 AI 引用了什么"></a>第三步：查 AI 引用了什么</h3><p>Perplexity、Google AI Overview、部分搜索型 AI 会显示引用来源。你要看：</p>
+<ul>
+<li>它引用的是官网吗？</li>
+<li>引用的是第三方测评吗？</li>
+<li>引用的是竞品对比页吗？</li>
+<li>它漏掉了哪些你想强调的信息？</li>
+</ul>
+<p>如果 AI 引用的是错误来源，就补官方说明；如果它推荐竞品，就写对比页；如果它理解错定位，就重写定义页。</p>
+<h3 id="第四步：持续记录而不是凭感觉"><a href="#第四步：持续记录而不是凭感觉" class="headerlink" title="第四步：持续记录而不是凭感觉"></a>第四步：持续记录而不是凭感觉</h3><p>建议用一个简单表格记录：</p>
+<ul>
+<li>提问词</li>
+<li>测试平台</li>
+<li>是否出现品牌</li>
+<li>排在第几个</li>
+<li>是否有引用源</li>
+<li>答案是否准确</li>
+<li>下一步补什么内容</li>
+</ul>
+<p>GEO 是动态博弈。你的竞争对手也会补内容，AI 的检索源也会更新。一次出现不代表永远出现，一次不出现也不代表永远没机会。</p>
+<h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><h3 id="坑-1：把-GEO-做成旧式关键词堆砌"><a href="#坑-1：把-GEO-做成旧式关键词堆砌" class="headerlink" title="坑 1：把 GEO 做成旧式关键词堆砌"></a>坑 1：把 GEO 做成旧式关键词堆砌</h3><p>AI 比传统搜索更擅长读语义。你在页面里重复 100 次“最佳 AI 会议记录工具”，不但没用，还可能显得像垃圾内容。</p>
+<p>GEO 需要的是结构化事实，不是关键词噪音。</p>
+<h3 id="坑-2：只在自己官网自夸"><a href="#坑-2：只在自己官网自夸" class="headerlink" title="坑 2：只在自己官网自夸"></a>坑 2：只在自己官网自夸</h3><p>AI 很看重交叉验证。</p>
+<p>如果全网只有你自己说自己好，没有测评、案例、社区讨论、媒体报道、开源仓库、用户评价，AI 很难判断可信。官网是主战场，但不是唯一战场。</p>
+<h3 id="坑-3：捏造数据和背书"><a href="#坑-3：捏造数据和背书" class="headerlink" title="坑 3：捏造数据和背书"></a>坑 3：捏造数据和背书</h3><p>不要为了“看起来可信”编造客户数、融资额、奖项、认证。</p>
+<p>生成式引擎会交叉验证，一旦发现对不上，可信度会受损。腾讯云那篇避坑文章也强调，GEO 不是灰帽 SEO 的新战场，数据造假、隐藏关键词、虚假背书都会反噬。</p>
+<h3 id="坑-4：内容太少导致-AI-幻觉"><a href="#坑-4：内容太少导致-AI-幻觉" class="headerlink" title="坑 4：内容太少导致 AI 幻觉"></a>坑 4：内容太少导致 AI 幻觉</h3><p>很多小产品最危险的状态不是负面多，而是信息太少。</p>
+<p>AI 找不到你时，可能不推荐；更糟的是，它可能把别人的信息拼到你身上。至少要保证官网、文档、About、定价、核心功能、FAQ 这些基础信息准确可抓。</p>
+<h3 id="坑-5：只做文章，不做产品信息底座"><a href="#坑-5：只做文章，不做产品信息底座" class="headerlink" title="坑 5：只做文章，不做产品信息底座"></a>坑 5：只做文章，不做产品信息底座</h3><p>GEO 不是发几篇博客就完事。</p>
+<p>你的首页、产品页、文档页、FAQ、对比页、案例页、Schema、robots.txt、llms.txt，都是同一个信息系统的一部分。AI 最终引用的是整个系统的可信度，不是一篇爆文。</p>
+<h2 id="给产品团队的-GEO-落地清单"><a href="#给产品团队的-GEO-落地清单" class="headerlink" title="给产品团队的 GEO 落地清单"></a>给产品团队的 GEO 落地清单</h2><p>如果你今天就要开始，我建议按这个顺序做。</p>
+<p><strong>第一周：补基础信息</strong></p>
+<ul>
+<li>明确一句话定义：你是什么、适合谁、解决什么问题</li>
+<li>重写官网首页首屏，避免只有口号</li>
+<li>补 FAQ：价格、功能、适用场景、和竞品区别</li>
+<li>检查 <code>robots.txt</code>，确认公开页面可抓</li>
+<li>提交 <code>sitemap.xml</code></li>
+</ul>
+<p><strong>第二周：做可引用内容</strong></p>
+<ul>
+<li>写 3 篇场景页：围绕真实用户问题</li>
+<li>写 1 篇竞品对比页：客观比较，不拉踩</li>
+<li>写 1 篇教程页：回答“怎么做”</li>
+<li>给重点页面加 <code>Article</code> / <code>Product</code> / <code>FAQPage</code> Schema</li>
+</ul>
+<p><strong>第三周：补可信信号</strong></p>
+<ul>
+<li>整理真实案例和用户评价</li>
+<li>在 GitHub、Product Hunt、社区、测评站留下准确资料</li>
+<li>让创始人或技术负责人署名专业文章</li>
+<li>准备 <code>llms.txt</code>，列出关键页面和文档入口</li>
+</ul>
+<p><strong>第四周：测试和迭代</strong></p>
+<ul>
+<li>在 ChatGPT、Perplexity、豆包、Kimi 等平台测试核心提问</li>
+<li>记录是否出现品牌、答案是否准确、引用源是什么</li>
+<li>针对误解补官方说明</li>
+<li>针对竞品推荐补对比页</li>
+<li>针对长尾需求补场景页</li>
+</ul>
+<h2 id="结语：从“被搜索到”到“被答案选中”"><a href="#结语：从“被搜索到”到“被答案选中”" class="headerlink" title="结语：从“被搜索到”到“被答案选中”"></a>结语：从“被搜索到”到“被答案选中”</h2><p>GEO 不是玄学，也不是把 SEO 包装成新词。</p>
+<p>它背后的变化很现实：用户不再只看搜索结果列表，而是越来越依赖 AI 直接给答案。流量入口从“搜索框”变成“生成式答案”，品牌竞争也从“谁排第一”变成“谁被 AI 认为值得推荐”。</p>
+<p>这件事对小产品反而是机会。</p>
+<p>大公司有品牌和外链优势，但小产品可以更快把内容结构、文档、对比页、FAQ、Schema、llms.txt 做干净。只要你比竞品更容易被 AI 看见、读懂、信任，就有机会在某些细分问题里先被推荐。</p>
+<p>一句话：</p>
+<blockquote>
+<p>未来的内容优化，不只是写给人看，也要写给会替人做决策的 AI 看。</p>
+</blockquote>
+<p>参考：</p>
+<ul>
+<li>黄小木 GEO 原帖：<a href="https://x.com/ai_xiaomu/status/2068613828687085699">https://x.com/ai_xiaomu/status/2068613828687085699</a></li>
+<li>Capgo：2026 生成式引擎优化与 AI 搜索终极指南：<a href="https://capgo.ai/blogs/en-geo-guide/">https://capgo.ai/blogs/en-geo-guide/</a></li>
+<li>Mintlify：GEO 指南：为 AI 搜索和答案引擎优化文档：<a href="https://www.mintlify.com/docs/zh/guides/geo">https://www.mintlify.com/docs/zh/guides/geo</a></li>
+<li>腾讯云开发者社区：GEO 避坑指南：<a href="https://cloud.tencent.com/developer/article/2563481">https://cloud.tencent.com/developer/article/2563481</a></li>
+<li>arXiv：GEO: Generative Engine Optimization：<a href="https://arxiv.org/abs/2311.09735">https://arxiv.org/abs/2311.09735</a></li>
+<li>Semrush：Generative Engine Optimization: A Practical Guide：<a href="https://www.semrush.com/blog/generative-engine-optimization/">https://www.semrush.com/blog/generative-engine-optimization/</a></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/generative-engine-optimization-ai-search.html">https://onefly.top/posts/generative-engine-optimization-ai-search.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/AI%E6%90%9C%E7%B4%A2/">
+                                    <span class="chip bg-color">AI搜索</span>
+                                </a>
+                            
+                                <a href="/tags/GEO/">
+                                    <span class="chip bg-color">GEO</span>
+                                </a>
+                            
+                                <a href="/tags/SEO/">
+                                    <span class="chip bg-color">SEO</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/generative-engine-optimization-ai-search.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260623110027792-638286241.jpg" class="responsive-img" alt="GEO：让 AI 主动推荐你">
+                        
+                        <span class="card-title">GEO：让 AI 主动推荐你</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    AI工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI%E6%90%9C%E7%B4%A2/">
+                        <span class="chip bg-color">AI搜索</span>
+                    </a>
+                    
+                    <a href="/tags/GEO/">
+                        <span class="chip bg-color">GEO</span>
+                    </a>
+                    
+                    <a href="/tags/SEO/">
+                        <span class="chip bg-color">SEO</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/ai-infra-code-merge-philosophy.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260619170259768-585809877.jpg" class="responsive-img" alt="AI代码合入哲学：大型基础设施不能只追求生成速度">
+                        
+                        <span class="card-title">AI代码合入哲学：大型基础设施不能只追求生成速度</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    AI工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI%E5%AE%A1%E6%9F%A5/">
+                        <span class="chip bg-color">AI审查</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E5%BB%BA/">
+                        <span class="chip bg-color">基建</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">测试</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%88%E5%85%A5/">
+                        <span class="chip bg-color">合入</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

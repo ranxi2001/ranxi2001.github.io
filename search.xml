@@ -26,6 +26,160 @@
       </tags>
   </entry>
   <entry>
+    <title>Python数据分析教程（二）：Pandas</title>
+    <url>/posts/13141.html</url>
+    <content><![CDATA[<h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
+<li>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</li>
+<li>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用</li>
+<li>两个数据类型：Series, DataFrame</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Pandas与numpy的比较"><a href="#Pandas与numpy的比较" class="headerlink" title="Pandas与numpy的比较"></a><strong>Pandas</strong>与numpy的比较</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204036490-294398481.png" alt=""></p>
+<h2 id="Pandas的Series类型"><a href="#Pandas的Series类型" class="headerlink" title="Pandas的Series类型"></a><strong>Pandas的Series类型</strong></h2><p>由一组数据及与之相关的数据索引组成</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204224581-494169725.png" alt=""></p>
+<h3 id="Pandas的Series类型的创建"><a href="#Pandas的Series类型的创建" class="headerlink" title="Pandas的Series类型的创建"></a><strong>Pandas的Series类型的创建</strong></h3><p>Series类型可以由如下类型创建：</p>
+<ul>
+<li>Python列表，index与列表元素个数一致</li>
+<li>标量值，index表达Series类型的尺寸</li>
+<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
+<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
+<li>其他函数，range()函数等</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204306537-1503027646.png" alt=""></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204534311-1927277320.png" alt=""></p>
+<h3 id="Pandas的Series类型的基本操作"><a href="#Pandas的Series类型的基本操作" class="headerlink" title="Pandas的Series类型的基本操作"></a><strong>Pandas的Series类型的基本操作</strong></h3><p>Series类型包含index和values两个部分：</p>
+<ul>
+<li>index 获得索引</li>
+<li>values 获得数据</li>
+</ul>
+<p>由ndarray或字典创建的Series，操作类似ndarray或字典类型</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204858056-644012635.png" alt=""></p>
+<h2 id="pandas的DataFrame类型"><a href="#pandas的DataFrame类型" class="headerlink" title="pandas的DataFrame类型"></a><strong>pandas的DataFrame类型</strong></h2><ul>
+<li>DataFrame类型由共用相同索引的一组列组成</li>
+<li>DataFrame是一个表格型的数据类型，每列值类型可以不同</li>
+<li>DataFrame既有行索引、也有列索引</li>
+<li><p>DataFrame常用于表达二维数据，但可以表达多维数据</p>
+</li>
+<li><p>DataFrame是二维带“标签”数组</p>
+</li>
+<li>DataFrame基本操作类似Series，依据行列索引</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205139067-819109186.png" alt=""></p>
+<h3 id="pandas的DataFrame类型创建"><a href="#pandas的DataFrame类型创建" class="headerlink" title="pandas的DataFrame类型创建"></a><strong>pandas的DataFrame类型创建</strong></h3><p>DataFrame类型可以由如下类型创建：</p>
+<ul>
+<li>二维ndarray对象</li>
+<li>由一维ndarray、列表、字典、元组或Series构成的字典</li>
+<li>Series类型</li>
+<li>其他的DataFrame类型</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205306000-1512929844.png" alt=""></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205403500-1728575625.png" alt=""></p>
+<h3 id="Pandas的Dataframe类型的基本操作"><a href="#Pandas的Dataframe类型的基本操作" class="headerlink" title="Pandas的Dataframe类型的基本操作"></a><strong>Pandas的Dataframe类型的基本操作</strong></h3><h4 id="pandas索引操作"><a href="#pandas索引操作" class="headerlink" title="pandas索引操作"></a><strong>pandas索引操作</strong></h4><h5 id="pandas重新索引"><a href="#pandas重新索引" class="headerlink" title="pandas重新索引"></a><strong>pandas重新索引</strong></h5><p>reindex()能够改变或重排Series和DataFrame索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205722764-2087213798.png" alt=""></p>
+<p>reindex(index=None, columns=None, …)的参数</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205810608-1806112533.png" alt=""></p>
+<p><strong>pandas删除索引</strong></p>
+<p>drop()能够删除Series和DataFrame指定行或列索引</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210003320-843812767.png" alt=""></p>
+<h4 id="pandas数据运算"><a href="#pandas数据运算" class="headerlink" title="pandas数据运算"></a><strong>pandas数据运算</strong></h4><ul>
+<li>算术运算根据行列索引，补齐后运算，运算默认产生浮点数</li>
+<li>补齐时缺项填充NaN (空值)</li>
+<li>二维和一维、一维和零维间为广播运算</li>
+<li>采用+ ‐ * /符号进行的二元运算产生新的对象</li>
+</ul>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210126120-1408047150.png" alt=""></p>
+<h5 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h5><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210234171-1672958996.png" alt=""></p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210300650-988503635.png" alt=""></p>
+<ul>
+<li>不同维度间为广播运算，一维Series默认在轴1参与运算</li>
+<li>使用运算方法可以令一维Series参与轴0运算</li>
+</ul>
+<h2 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a><strong>Pandas数据分析</strong></h2><h3 id="Pandas导入与导出数据"><a href="#Pandas导入与导出数据" class="headerlink" title="Pandas导入与导出数据"></a><strong>Pandas导入与导出数据</strong></h3><h4 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h4><p>pd.read_csv(filename)：从CSV文件导入数据</p>
+<p>pd.read_table(filename)：从限定分隔符的文本文件导入数据</p>
+<p>pd.read_excel(filename)：从Excel文件导入数据</p>
+<p>pd.read_sql(query, connection_object)：从SQL表/库导入数据</p>
+<p>pd.read_json(json_string)：从JSON格式的字符串导入数据</p>
+<p>pd.read_html(url)：解析URL、字符串或者HTML文件，抽取其中的tables表格</p>
+<p>pd.read_clipboard()：从你的粘贴板获取内容，并传给read_table()</p>
+<p>pd.DataFrame(dict)：从字典对象导入数据，Key是列名，Value是数据</p>
+<h4 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h4><p>df.to_csv(filename)：导出数据到CSV文件</p>
+<p>df.to_excel(filename)：导出数据到Excel文件</p>
+<p>df.to_sql(table_name, connection_object)：导出数据到SQL表</p>
+<p>df.to_json(filename)：以Json格式导出数据到文本文件</p>
+<h3 id="Pandas查看、检查数据"><a href="#Pandas查看、检查数据" class="headerlink" title="Pandas查看、检查数据"></a><strong>Pandas查看、检查数据</strong></h3><p>df.head(n)：查看DataFrame对象的前n行</p>
+<p>df.tail(n)：查看DataFrame对象的最后n行</p>
+<p>df.shape()：查看行数和列数</p>
+<p>df.info()：查看索引、数据类型和内存信息</p>
+<p>df.describe()：查看数值型列的汇总统计</p>
+<p>s.value_counts(dropna=False)：查看Series对象的唯一值和计数</p>
+<p>df.apply(pd.Series.value_counts)：查看DataFrame对象中每一列的唯一值和计数</p>
+<h3 id="Pandas数据选取"><a href="#Pandas数据选取" class="headerlink" title="Pandas数据选取"></a><strong>Pandas数据选取</strong></h3><p>df[col]：根据列名，并以Series的形式返回列</p>
+<p>df[[col1, col2]]：以DataFrame形式返回多列</p>
+<p>s.iloc[0]：按位置选取数据</p>
+<p>s.loc[‘index_one’]：按索引选取数据</p>
+<p>df.iloc[0,:]：返回第一行</p>
+<p>df.iloc[0,0]：返回第一列的第一个元素</p>
+<h3 id="pandas数据清理"><a href="#pandas数据清理" class="headerlink" title="pandas数据清理"></a><strong>pandas数据清理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old<em>name’: ‘new</em> name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<h3 id="Pandas数据处理"><a href="#Pandas数据处理" class="headerlink" title="Pandas数据处理"></a><strong>Pandas数据处理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
+<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
+<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
+<p>df.dropna()：删除所有包含空值的行</p>
+<p>df.dropna(axis=1)：删除所有包含空值的列</p>
+<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
+<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
+<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
+<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
+<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
+<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
+<p>df.rename(columns={‘old<em>name’: ‘new</em> name’})：选择性更改列名</p>
+<p>df.set_index(‘column_one’)：更改索引列</p>
+<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
+<p>df[df[col] &gt; 0.5]：选择col列的值大于0.5的行</p>
+<p>df.sort_values(col1)：按照列col1排序数据，默认升序排列</p>
+<p>df.sort_values(col2, ascending=False)：按照列col1降序排列数据</p>
+<p>df.sort_values([col1,col2], ascending=[True,False])：先按列col1升序排列，后按col2降序排列数据</p>
+<p>df.groupby(col)：返回一个按列col进行分组的Groupby对象</p>
+<p>df.groupby([col1,col2])：返回一个按多列进行分组的Groupby对象</p>
+<p>df.groupby(col1)[col2]：返回按列col1进行分组后，列col2的均值</p>
+<p>df.pivot_table(index=col1, values=[col2,col3], aggfunc=max)：创建一个按列col1进行分组，并计算col2和col3的最大值的数据透视表</p>
+<p>df.groupby(col1).agg(np.mean)：返回按列col1分组的所有列的均值</p>
+<p>data.apply(np.mean)：对DataFrame中的每一列应用函数np.mean</p>
+<p>data.apply(np.max,axis=1)：对DataFrame中的每一行应用函数np.max</p>
+<h4 id="Pandas数据合并"><a href="#Pandas数据合并" class="headerlink" title="Pandas数据合并"></a><strong>Pandas数据合并</strong></h4><p>df1.append(df2)：将df2中的行添加到df1的尾部</p>
+<p>df.concat([df1, df2],axis=1)：将df2中的列添加到df1的尾部</p>
+<p>df1.join(df2,on=col1,how=’inner’)：对df1的列和df2的列执行SQL形式的join</p>
+<h4 id="Pandas数据统计"><a href="#Pandas数据统计" class="headerlink" title="Pandas数据统计"></a><strong>Pandas数据统计</strong></h4><p>df.describe()：查看数据值列的汇总统计</p>
+<p>df.mean()：返回所有列的均值</p>
+<p>df.corr()：返回列与列之间的相关系数</p>
+<p>df.count()：返回每一列中的非空值的个数</p>
+<p>df.max()：返回每一列的最大值</p>
+<p>df.min()：返回每一列的最小值</p>
+<p>df.median()：返回每一列的中位数</p>
+<p>df.std()：返回每一列的标准差</p>
+]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+        <tag>python</tag>
+        <tag>pandas</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python数据分析教程（一）：Numpy</title>
     <url>/posts/13140.html</url>
     <content><![CDATA[<h2 id="数据的纬度"><a href="#数据的纬度" class="headerlink" title="数据的纬度"></a>数据的纬度</h2><p>一维数据：列表和集合类型</p>
@@ -231,160 +385,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>Python数据分析教程（二）：Pandas</title>
-    <url>/posts/13141.html</url>
-    <content><![CDATA[<h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><h3 id="Pandas导入"><a href="#Pandas导入" class="headerlink" title="Pandas导入"></a><strong>Pandas导入</strong></h3><ul>
-<li>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</li>
-<li>Pandas基于NumPy实现，常与NumPy和Matplotlib一同使用</li>
-<li>两个数据类型：Series, DataFrame</li>
-</ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="Pandas与numpy的比较"><a href="#Pandas与numpy的比较" class="headerlink" title="Pandas与numpy的比较"></a><strong>Pandas</strong>与numpy的比较</h3><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204036490-294398481.png" alt=""></p>
-<h2 id="Pandas的Series类型"><a href="#Pandas的Series类型" class="headerlink" title="Pandas的Series类型"></a><strong>Pandas的Series类型</strong></h2><p>由一组数据及与之相关的数据索引组成</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204224581-494169725.png" alt=""></p>
-<h3 id="Pandas的Series类型的创建"><a href="#Pandas的Series类型的创建" class="headerlink" title="Pandas的Series类型的创建"></a><strong>Pandas的Series类型的创建</strong></h3><p>Series类型可以由如下类型创建：</p>
-<ul>
-<li>Python列表，index与列表元素个数一致</li>
-<li>标量值，index表达Series类型的尺寸</li>
-<li>Python字典，键值对中的“键”是索引，index从字典中进行选择操作</li>
-<li>ndarray，索引和数据都可以通过ndarray类型创建</li>
-<li>其他函数，range()函数等</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204306537-1503027646.png" alt=""></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204534311-1927277320.png" alt=""></p>
-<h3 id="Pandas的Series类型的基本操作"><a href="#Pandas的Series类型的基本操作" class="headerlink" title="Pandas的Series类型的基本操作"></a><strong>Pandas的Series类型的基本操作</strong></h3><p>Series类型包含index和values两个部分：</p>
-<ul>
-<li>index 获得索引</li>
-<li>values 获得数据</li>
-</ul>
-<p>由ndarray或字典创建的Series，操作类似ndarray或字典类型</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920204858056-644012635.png" alt=""></p>
-<h2 id="pandas的DataFrame类型"><a href="#pandas的DataFrame类型" class="headerlink" title="pandas的DataFrame类型"></a><strong>pandas的DataFrame类型</strong></h2><ul>
-<li>DataFrame类型由共用相同索引的一组列组成</li>
-<li>DataFrame是一个表格型的数据类型，每列值类型可以不同</li>
-<li>DataFrame既有行索引、也有列索引</li>
-<li><p>DataFrame常用于表达二维数据，但可以表达多维数据</p>
-</li>
-<li><p>DataFrame是二维带“标签”数组</p>
-</li>
-<li>DataFrame基本操作类似Series，依据行列索引</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205139067-819109186.png" alt=""></p>
-<h3 id="pandas的DataFrame类型创建"><a href="#pandas的DataFrame类型创建" class="headerlink" title="pandas的DataFrame类型创建"></a><strong>pandas的DataFrame类型创建</strong></h3><p>DataFrame类型可以由如下类型创建：</p>
-<ul>
-<li>二维ndarray对象</li>
-<li>由一维ndarray、列表、字典、元组或Series构成的字典</li>
-<li>Series类型</li>
-<li>其他的DataFrame类型</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205306000-1512929844.png" alt=""></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205403500-1728575625.png" alt=""></p>
-<h3 id="Pandas的Dataframe类型的基本操作"><a href="#Pandas的Dataframe类型的基本操作" class="headerlink" title="Pandas的Dataframe类型的基本操作"></a><strong>Pandas的Dataframe类型的基本操作</strong></h3><h4 id="pandas索引操作"><a href="#pandas索引操作" class="headerlink" title="pandas索引操作"></a><strong>pandas索引操作</strong></h4><h5 id="pandas重新索引"><a href="#pandas重新索引" class="headerlink" title="pandas重新索引"></a><strong>pandas重新索引</strong></h5><p>reindex()能够改变或重排Series和DataFrame索引</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205722764-2087213798.png" alt=""></p>
-<p>reindex(index=None, columns=None, …)的参数</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920205810608-1806112533.png" alt=""></p>
-<p><strong>pandas删除索引</strong></p>
-<p>drop()能够删除Series和DataFrame指定行或列索引</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210003320-843812767.png" alt=""></p>
-<h4 id="pandas数据运算"><a href="#pandas数据运算" class="headerlink" title="pandas数据运算"></a><strong>pandas数据运算</strong></h4><ul>
-<li>算术运算根据行列索引，补齐后运算，运算默认产生浮点数</li>
-<li>补齐时缺项填充NaN (空值)</li>
-<li>二维和一维、一维和零维间为广播运算</li>
-<li>采用+ ‐ * /符号进行的二元运算产生新的对象</li>
-</ul>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210126120-1408047150.png" alt=""></p>
-<h5 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h5><p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210234171-1672958996.png" alt=""></p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920210300650-988503635.png" alt=""></p>
-<ul>
-<li>不同维度间为广播运算，一维Series默认在轴1参与运算</li>
-<li>使用运算方法可以令一维Series参与轴0运算</li>
-</ul>
-<h2 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a><strong>Pandas数据分析</strong></h2><h3 id="Pandas导入与导出数据"><a href="#Pandas导入与导出数据" class="headerlink" title="Pandas导入与导出数据"></a><strong>Pandas导入与导出数据</strong></h3><h4 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h4><p>pd.read_csv(filename)：从CSV文件导入数据</p>
-<p>pd.read_table(filename)：从限定分隔符的文本文件导入数据</p>
-<p>pd.read_excel(filename)：从Excel文件导入数据</p>
-<p>pd.read_sql(query, connection_object)：从SQL表/库导入数据</p>
-<p>pd.read_json(json_string)：从JSON格式的字符串导入数据</p>
-<p>pd.read_html(url)：解析URL、字符串或者HTML文件，抽取其中的tables表格</p>
-<p>pd.read_clipboard()：从你的粘贴板获取内容，并传给read_table()</p>
-<p>pd.DataFrame(dict)：从字典对象导入数据，Key是列名，Value是数据</p>
-<h4 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h4><p>df.to_csv(filename)：导出数据到CSV文件</p>
-<p>df.to_excel(filename)：导出数据到Excel文件</p>
-<p>df.to_sql(table_name, connection_object)：导出数据到SQL表</p>
-<p>df.to_json(filename)：以Json格式导出数据到文本文件</p>
-<h3 id="Pandas查看、检查数据"><a href="#Pandas查看、检查数据" class="headerlink" title="Pandas查看、检查数据"></a><strong>Pandas查看、检查数据</strong></h3><p>df.head(n)：查看DataFrame对象的前n行</p>
-<p>df.tail(n)：查看DataFrame对象的最后n行</p>
-<p>df.shape()：查看行数和列数</p>
-<p>df.info()：查看索引、数据类型和内存信息</p>
-<p>df.describe()：查看数值型列的汇总统计</p>
-<p>s.value_counts(dropna=False)：查看Series对象的唯一值和计数</p>
-<p>df.apply(pd.Series.value_counts)：查看DataFrame对象中每一列的唯一值和计数</p>
-<h3 id="Pandas数据选取"><a href="#Pandas数据选取" class="headerlink" title="Pandas数据选取"></a><strong>Pandas数据选取</strong></h3><p>df[col]：根据列名，并以Series的形式返回列</p>
-<p>df[[col1, col2]]：以DataFrame形式返回多列</p>
-<p>s.iloc[0]：按位置选取数据</p>
-<p>s.loc[‘index_one’]：按索引选取数据</p>
-<p>df.iloc[0,:]：返回第一行</p>
-<p>df.iloc[0,0]：返回第一列的第一个元素</p>
-<h3 id="pandas数据清理"><a href="#pandas数据清理" class="headerlink" title="pandas数据清理"></a><strong>pandas数据清理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
-<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
-<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
-<p>df.dropna()：删除所有包含空值的行</p>
-<p>df.dropna(axis=1)：删除所有包含空值的列</p>
-<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
-<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
-<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
-<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
-<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
-<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
-<p>df.rename(columns={‘old<em>name’: ‘new</em> name’})：选择性更改列名</p>
-<p>df.set_index(‘column_one’)：更改索引列</p>
-<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
-<h3 id="Pandas数据处理"><a href="#Pandas数据处理" class="headerlink" title="Pandas数据处理"></a><strong>Pandas数据处理</strong></h3><p>df.columns = [‘a’,’b’,’c’]：重命名列名</p>
-<p>pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组</p>
-<p>pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组</p>
-<p>df.dropna()：删除所有包含空值的行</p>
-<p>df.dropna(axis=1)：删除所有包含空值的列</p>
-<p>df.dropna(axis=1,thresh=n)：删除所有小于n个非空值的行</p>
-<p>df.fillna(x)：用x替换DataFrame对象中所有的空值</p>
-<p>s.astype(float)：将Series中的数据类型更改为float类型</p>
-<p>s.replace(1,’one’)：用‘one’代替所有等于1的值</p>
-<p>s.replace([1,3],[‘one’,’three’])：用’one’代替1，用’three’代替3</p>
-<p>df.rename(columns=lambda x: x + 1)：批量更改列名</p>
-<p>df.rename(columns={‘old<em>name’: ‘new</em> name’})：选择性更改列名</p>
-<p>df.set_index(‘column_one’)：更改索引列</p>
-<p>df.rename(index=lambda x: x + 1)：批量重命名索引</p>
-<p>df[df[col] &gt; 0.5]：选择col列的值大于0.5的行</p>
-<p>df.sort_values(col1)：按照列col1排序数据，默认升序排列</p>
-<p>df.sort_values(col2, ascending=False)：按照列col1降序排列数据</p>
-<p>df.sort_values([col1,col2], ascending=[True,False])：先按列col1升序排列，后按col2降序排列数据</p>
-<p>df.groupby(col)：返回一个按列col进行分组的Groupby对象</p>
-<p>df.groupby([col1,col2])：返回一个按多列进行分组的Groupby对象</p>
-<p>df.groupby(col1)[col2]：返回按列col1进行分组后，列col2的均值</p>
-<p>df.pivot_table(index=col1, values=[col2,col3], aggfunc=max)：创建一个按列col1进行分组，并计算col2和col3的最大值的数据透视表</p>
-<p>df.groupby(col1).agg(np.mean)：返回按列col1分组的所有列的均值</p>
-<p>data.apply(np.mean)：对DataFrame中的每一列应用函数np.mean</p>
-<p>data.apply(np.max,axis=1)：对DataFrame中的每一行应用函数np.max</p>
-<h4 id="Pandas数据合并"><a href="#Pandas数据合并" class="headerlink" title="Pandas数据合并"></a><strong>Pandas数据合并</strong></h4><p>df1.append(df2)：将df2中的行添加到df1的尾部</p>
-<p>df.concat([df1, df2],axis=1)：将df2中的列添加到df1的尾部</p>
-<p>df1.join(df2,on=col1,how=’inner’)：对df1的列和df2的列执行SQL形式的join</p>
-<h4 id="Pandas数据统计"><a href="#Pandas数据统计" class="headerlink" title="Pandas数据统计"></a><strong>Pandas数据统计</strong></h4><p>df.describe()：查看数据值列的汇总统计</p>
-<p>df.mean()：返回所有列的均值</p>
-<p>df.corr()：返回列与列之间的相关系数</p>
-<p>df.count()：返回每一列中的非空值的个数</p>
-<p>df.max()：返回每一列的最大值</p>
-<p>df.min()：返回每一列的最小值</p>
-<p>df.median()：返回每一列的中位数</p>
-<p>df.std()：返回每一列的标准差</p>
-]]></content>
-      <categories>
-        <category>数据分析</category>
-      </categories>
-      <tags>
-        <tag>数据分析</tag>
-        <tag>python</tag>
-        <tag>pandas</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>投资学博迪第十版.pdf下载</title>
     <url>/posts/15785.html</url>
     <content><![CDATA[<p>作者：（美）滋维·博迪（Zvi Bodie）,（美）亚历克斯·凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
@@ -502,6 +502,31 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>一个100%立即获得New bing资格的方法教程-点击就送bing chat</title>
+    <url>/posts/16891.html</url>
+    <content><![CDATA[<p>之前加入waitlist的账号一个多月过去了还没有任何反应，但是身边朋友却“点击就送”？</p>
+<p>深入调查后发现原来是IP的影响，相信说到这里就已经有人知道该怎么做了</p>
+<p>方法：</p>
+<ol>
+<li>将节点IP更换为日本全局（不会换ip的看这个<a href="https://blog.onefly.top/posts/16888.html">简易教程</a>)</li>
+</ol>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113249267-1194007670.png" alt=""></p>
+<ol>
+<li>进入new bing 申请网站点击立即加入</li>
+</ol>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113536042-1695660571.png" alt=""></p>
+<p>之后就可以直接在bing搜索中开启聊天了<br><a href="https://www.bing.com/?/ai">https://www.bing.com/?/ai</a><br>其他建议：先退账号，删除注册表，vpn登录国外邮箱，现在秒成功<br>其他方案：<a href="https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A">https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A</a></p>
+]]></content>
+      <categories>
+        <category>前沿技术</category>
+      </categories>
+      <tags>
+        <tag>技术分享</tag>
+        <tag>AI</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我们应该为Copilot X 的到来做好什么准备？</title>
     <url>/posts/16892.html</url>
     <content><![CDATA[<h1 id="申请github-copilot学生认证以及Jetbrain专业版学生教育免费教程-申请加入Copilot-X-Waitlist"><a href="#申请github-copilot学生认证以及Jetbrain专业版学生教育免费教程-申请加入Copilot-X-Waitlist" class="headerlink" title="申请github copilot学生认证以及Jetbrain专业版学生教育免费教程+申请加入Copilot X Waitlist."></a>申请github copilot学生认证以及Jetbrain专业版学生教育免费教程+申请加入Copilot X Waitlist.</h1><h2 id="教程概览"><a href="#教程概览" class="headerlink" title="教程概览"></a>教程概览</h2><p>1.学信网下载学籍认证pdf</p>
@@ -556,33 +581,8 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </categories>
       <tags>
         <tag>github</tag>
+        <tag>AI</tag>
         <tag>Copilot X</tag>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个100%立即获得New bing资格的方法教程-点击就送bing chat</title>
-    <url>/posts/16891.html</url>
-    <content><![CDATA[<p>之前加入waitlist的账号一个多月过去了还没有任何反应，但是身边朋友却“点击就送”？</p>
-<p>深入调查后发现原来是IP的影响，相信说到这里就已经有人知道该怎么做了</p>
-<p>方法：</p>
-<ol>
-<li>将节点IP更换为日本全局（不会换ip的看这个<a href="https://blog.onefly.top/posts/16888.html">简易教程</a>)</li>
-</ol>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113249267-1194007670.png" alt=""></p>
-<ol>
-<li>进入new bing 申请网站点击立即加入</li>
-</ol>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202303/2910984-20230312113536042-1695660571.png" alt=""></p>
-<p>之后就可以直接在bing搜索中开启聊天了<br><a href="https://www.bing.com/?/ai">https://www.bing.com/?/ai</a><br>其他建议：先退账号，删除注册表，vpn登录国外邮箱，现在秒成功<br>其他方案：<a href="https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A">https://mp.weixin.qq.com/s/MW7hdkhfixveEr48UUd16A</a></p>
-]]></content>
-      <categories>
-        <category>前沿技术</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
-        <tag>技术分享</tag>
-        <tag>人工智能</tag>
       </tags>
   </entry>
   <entry>
@@ -3352,32 +3352,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>OKX Web3 钱包入门教程｜区块链钱包创建、助记词备份与提币完整指南</title>
-    <url>/posts/okx-web3-wallet-guide.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/okx-bitcoin-trading-guide.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
-<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
-<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png" alt=""></p>
-<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
-<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png" alt=""></p>
-<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png" alt=""></p>
-<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>区块链钱包</tag>
-        <tag>OKX</tag>
-        <tag>加密货币</tag>
-        <tag>钱包安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OneKey Card关闭中国大陆注册后还能申请注册！抓紧最后开通ChatGPT4 PLUS的机会 | 美国VISA信用卡注册办理</title>
     <url>/posts/23808.html</url>
     <content><![CDATA[<h2 id="OneKey-Card-News"><a href="#OneKey-Card-News" class="headerlink" title="OneKey Card News"></a>OneKey Card News</h2><p>但是经过网友实测，<strong>大陆身份证还是可以通过kyc的，只需要选择香港地区，然后上传大陆身份证即可</strong>。</p>
@@ -3455,6 +3429,32 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>chatgpt</tag>
         <tag>visa</tag>
         <tag>信用卡</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OKX Web3 钱包入门教程｜区块链钱包创建、助记词备份与提币完整指南</title>
+    <url>/posts/okx-web3-wallet-guide.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/okx-bitcoin-trading-guide.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
+<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
+<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png" alt=""></p>
+<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
+<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png" alt=""></p>
+<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png" alt=""></p>
+<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>区块链钱包</tag>
+        <tag>OKX</tag>
+        <tag>加密货币</tag>
+        <tag>钱包安全</tag>
       </tags>
   </entry>
   <entry>
@@ -5278,141 +5278,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
-    <title>XQ：WEB3交易方法论与执行：信息差、时间差与散户策略</title>
-    <url>/posts/250920.html</url>
-    <content><![CDATA[<h1 id="交易方法论与执行"><a href="#交易方法论与执行" class="headerlink" title="交易方法论与执行"></a>交易方法论与执行</h1><h2 id="1-交易的本质"><a href="#1-交易的本质" class="headerlink" title="1. 交易的本质"></a>1. 交易的本质</h2><ul>
-<li><p><strong>交易即决策</strong><br>决策依赖于当下的信息量。一级市场的成功交易，往往依赖于基于有限信息量进行快速决策的能力。</p>
-</li>
-<li><p><strong>赚钱的本质是低买高卖</strong><br>低买高卖意味着你买入后，有更多买单跟随进场。这通常来自两种情况：</p>
-<ol>
-<li><strong>速度优势（时间差）</strong>：<ul>
-<li>在同样信息量下，你比别人更快。</li>
-<li>新行情中有优势，因为从新闻发生到价格完全定价需要时间。一级市场的窗口往往比二级和股票更长。</li>
-<li>成熟市场速度优势逐渐消失，机器胜于人类。信号之一是：市场出现越来越多成型的分析工具。</li>
-</ul>
-</li>
-<li><strong>信息优势（信息差）</strong>：<ul>
-<li>在同一时间点，你比别人获取更多信息。</li>
-<li>给自己预留更多决策和交易的时间。</li>
-<li>内幕玩家的优势尤为显著。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p><strong>核心：信息差 = 时间差 + 分析差</strong></p>
-<ul>
-<li><strong>时间差</strong>：<br>比别人更快，慢的人会在你之后买入抬高价格，你则卖出盈利。特点是稳定、长期，但耗费精力。</li>
-<li><strong>信息差</strong>：<br>提前知道更多，能在相同时间点做出更优决策。低频但高倍收益，需经验与研究。</li>
-</ul>
-</li>
-<li><p><strong>市场形态与散户机会</strong></p>
-<ul>
-<li><strong>增量市场</strong>：<br>外部资金进入，原生玩家凭经验获利，新资金成为退出流动性。<ul>
-<li>NFT（库里带货 → 新人成为退出流动性）</li>
-<li>铭文（2023 年 3 月起步 → 10 月爆发，ORDI 典型案例）</li>
-<li>Pump（2024 年 AI 热潮，二级玩家进入一级，成为流动性）</li>
-</ul>
-</li>
-<li><strong>存量市场</strong>：<br>没有增量资金，高水平玩家吃掉绝大部分利润，资金逐渐流失。<ul>
-<li>当前大部分币圈状态</li>
-</ul>
-</li>
-</ul>
-<p>→ <strong>散户应关注</strong>：</p>
-<ol>
-<li>潜在的外部增量赛道（如 Web2 → Web3 资金流入）。</li>
-<li>潜在的叙事增量（龙头 α 带动 β 效应）。</li>
-</ol>
-</li>
-</ul>
-<hr>
-<h2 id="2-交易三要素"><a href="#2-交易三要素" class="headerlink" title="2. 交易三要素"></a>2. 交易三要素</h2><p>在做每一笔交易之前，需要明确以下三点：</p>
-<ol>
-<li><p><strong>原因（Why Buy?）</strong></p>
-<ul>
-<li>为什么买？基于当下的信息量。</li>
-<li>需闭环到合理估值逻辑（可用相对估值）。</li>
-<li>多数时候结果不确定，但赔率合适即可。</li>
-</ul>
-</li>
-<li><p><strong>止盈（Take Profit）</strong></p>
-<ul>
-<li><strong>时间策略</strong>：信息传播速度决定离场点。</li>
-<li><strong>事件策略</strong>：根据叙事链条的兑现情况离场。</li>
-<li><strong>价格策略</strong>：按照盈利百分比或关键压力位离场。</li>
-</ul>
-</li>
-<li><p><strong>止损（Stop Loss）</strong></p>
-<ul>
-<li>与止盈逻辑一致，避免回撤扩大。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="3-信息差交易"><a href="#3-信息差交易" class="headerlink" title="3. 信息差交易"></a>3. 信息差交易</h2><ul>
-<li><p><strong>地址追踪</strong></p>
-<ul>
-<li><strong>KOL 地址</strong>：吃 KOL 粉丝流动性（KOL 买入 → 喊单 → 粉丝买入）。</li>
-<li><strong>聪明钱</strong>：借鉴聪明钱的交易决策，但需谨慎。</li>
-<li><strong>内幕玩家</strong>：低位筹码极具优势（如 PVS 5k → 20m）。</li>
-<li><strong>庄家集群</strong>：参考估值上限，制定买卖点（如 Fartcoin、Moodeng 等）。</li>
-</ul>
-</li>
-<li><p><strong>分析与判断</strong></p>
-<ul>
-<li>项目价格低 ≠ 一定垃圾，可能是市场错判。</li>
-<li>关键在于分析他人的结论，形成自己的判断。</li>
-<li><strong>现象级机会人人平等</strong>：信息量相同，拼的是分析力和决策力（如 TRUMP、BOME）。</li>
-<li>赔率计算也是分析的重要工具。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="4-新闻交易"><a href="#4-新闻交易" class="headerlink" title="4. 新闻交易"></a>4. 新闻交易</h2><ul>
-<li><p><strong>特征</strong></p>
-<ul>
-<li>新闻带来信息，随机性高，可能触发外部增量。</li>
-<li>属于长期存在的交易类型。</li>
-<li>现象级机会本质上就是新闻交易。</li>
-</ul>
-</li>
-<li><p><strong>常见对象</strong></p>
-<ul>
-<li>马斯克、特朗普、热点事件等。</li>
-<li>超过 80% 的 meme 币，都出自上述人物/事件。</li>
-</ul>
-</li>
-<li><p><strong>方法</strong></p>
-<ul>
-<li>多数依赖 <strong>时间差</strong>，部分需要 <strong>信息差</strong>。</li>
-<li>定价过程需要时间，行情好时更容易被庄家放大利用。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="5-执行与心态"><a href="#5-执行与心态" class="headerlink" title="5. 执行与心态"></a>5. 执行与心态</h2><ul>
-<li><strong>正确看待机会</strong>：只关注自己能吃到多少，不被倍数迷惑。</li>
-<li><strong>复盘</strong>：good win, bad win, good lose, bad lose → 纸面总结 → 让亏损变教训。</li>
-<li><strong>向上看</strong>：找到榜样，研究其原因而非结果。</li>
-<li><strong>避免压力下决策</strong>。</li>
-<li><strong>做自己擅长的事</strong>：擅长来自长期积累，不擅长就准备好交学费。</li>
-<li><strong>不相信运气</strong>：所有结果来自方法与执行，而非运气。</li>
-</ul>
-<hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一级市场的核心是 <strong>信息差与时间差</strong> 的博弈。散户要在增量叙事中寻找机会，明确交易三要素，执行止盈止损，并通过复盘不断提升决策质量。<br>「知行合一」是长期盈利的唯一路径。</p>
-<blockquote>
-<p>原文链接：<a href="https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70">https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>交易方法论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【零基础教程】如何用 Binance Alpha 免费撸空投月薪1万+？完整刷分指南+收益计算策略</title>
     <url>/posts/250526.html</url>
     <content><![CDATA[<h1 id="【零基础教程】如何用-Binance-Alpha-免费撸空投月薪1万-？完整刷分指南-收益计算策略"><a href="#【零基础教程】如何用-Binance-Alpha-免费撸空投月薪1万-？完整刷分指南-收益计算策略" class="headerlink" title="【零基础教程】如何用 Binance Alpha 免费撸空投月薪1万+？完整刷分指南+收益计算策略"></a>【零基础教程】如何用 Binance Alpha 免费撸空投月薪1万+？完整刷分指南+收益计算策略</h1><p>Binance Alpha 正在掀起一场 Web3 空投革命。它通过<strong>资产余额+交易量</strong>赚取积分，帮助用户参与早期项目空投与代币生成（TGE）活动，实现低风险、高收益参与 Web3。本文为你全面拆解 Binance Alpha 的玩法、赚钱逻辑与实用技巧，适合所有从零起步的用户。</p>
@@ -5604,6 +5469,141 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>Web3</tag>
         <tag>Airdrop</tag>
         <tag>Binance</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XQ：WEB3交易方法论与执行：信息差、时间差与散户策略</title>
+    <url>/posts/250920.html</url>
+    <content><![CDATA[<h1 id="交易方法论与执行"><a href="#交易方法论与执行" class="headerlink" title="交易方法论与执行"></a>交易方法论与执行</h1><h2 id="1-交易的本质"><a href="#1-交易的本质" class="headerlink" title="1. 交易的本质"></a>1. 交易的本质</h2><ul>
+<li><p><strong>交易即决策</strong><br>决策依赖于当下的信息量。一级市场的成功交易，往往依赖于基于有限信息量进行快速决策的能力。</p>
+</li>
+<li><p><strong>赚钱的本质是低买高卖</strong><br>低买高卖意味着你买入后，有更多买单跟随进场。这通常来自两种情况：</p>
+<ol>
+<li><strong>速度优势（时间差）</strong>：<ul>
+<li>在同样信息量下，你比别人更快。</li>
+<li>新行情中有优势，因为从新闻发生到价格完全定价需要时间。一级市场的窗口往往比二级和股票更长。</li>
+<li>成熟市场速度优势逐渐消失，机器胜于人类。信号之一是：市场出现越来越多成型的分析工具。</li>
+</ul>
+</li>
+<li><strong>信息优势（信息差）</strong>：<ul>
+<li>在同一时间点，你比别人获取更多信息。</li>
+<li>给自己预留更多决策和交易的时间。</li>
+<li>内幕玩家的优势尤为显著。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>核心：信息差 = 时间差 + 分析差</strong></p>
+<ul>
+<li><strong>时间差</strong>：<br>比别人更快，慢的人会在你之后买入抬高价格，你则卖出盈利。特点是稳定、长期，但耗费精力。</li>
+<li><strong>信息差</strong>：<br>提前知道更多，能在相同时间点做出更优决策。低频但高倍收益，需经验与研究。</li>
+</ul>
+</li>
+<li><p><strong>市场形态与散户机会</strong></p>
+<ul>
+<li><strong>增量市场</strong>：<br>外部资金进入，原生玩家凭经验获利，新资金成为退出流动性。<ul>
+<li>NFT（库里带货 → 新人成为退出流动性）</li>
+<li>铭文（2023 年 3 月起步 → 10 月爆发，ORDI 典型案例）</li>
+<li>Pump（2024 年 AI 热潮，二级玩家进入一级，成为流动性）</li>
+</ul>
+</li>
+<li><strong>存量市场</strong>：<br>没有增量资金，高水平玩家吃掉绝大部分利润，资金逐渐流失。<ul>
+<li>当前大部分币圈状态</li>
+</ul>
+</li>
+</ul>
+<p>→ <strong>散户应关注</strong>：</p>
+<ol>
+<li>潜在的外部增量赛道（如 Web2 → Web3 资金流入）。</li>
+<li>潜在的叙事增量（龙头 α 带动 β 效应）。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="2-交易三要素"><a href="#2-交易三要素" class="headerlink" title="2. 交易三要素"></a>2. 交易三要素</h2><p>在做每一笔交易之前，需要明确以下三点：</p>
+<ol>
+<li><p><strong>原因（Why Buy?）</strong></p>
+<ul>
+<li>为什么买？基于当下的信息量。</li>
+<li>需闭环到合理估值逻辑（可用相对估值）。</li>
+<li>多数时候结果不确定，但赔率合适即可。</li>
+</ul>
+</li>
+<li><p><strong>止盈（Take Profit）</strong></p>
+<ul>
+<li><strong>时间策略</strong>：信息传播速度决定离场点。</li>
+<li><strong>事件策略</strong>：根据叙事链条的兑现情况离场。</li>
+<li><strong>价格策略</strong>：按照盈利百分比或关键压力位离场。</li>
+</ul>
+</li>
+<li><p><strong>止损（Stop Loss）</strong></p>
+<ul>
+<li>与止盈逻辑一致，避免回撤扩大。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="3-信息差交易"><a href="#3-信息差交易" class="headerlink" title="3. 信息差交易"></a>3. 信息差交易</h2><ul>
+<li><p><strong>地址追踪</strong></p>
+<ul>
+<li><strong>KOL 地址</strong>：吃 KOL 粉丝流动性（KOL 买入 → 喊单 → 粉丝买入）。</li>
+<li><strong>聪明钱</strong>：借鉴聪明钱的交易决策，但需谨慎。</li>
+<li><strong>内幕玩家</strong>：低位筹码极具优势（如 PVS 5k → 20m）。</li>
+<li><strong>庄家集群</strong>：参考估值上限，制定买卖点（如 Fartcoin、Moodeng 等）。</li>
+</ul>
+</li>
+<li><p><strong>分析与判断</strong></p>
+<ul>
+<li>项目价格低 ≠ 一定垃圾，可能是市场错判。</li>
+<li>关键在于分析他人的结论，形成自己的判断。</li>
+<li><strong>现象级机会人人平等</strong>：信息量相同，拼的是分析力和决策力（如 TRUMP、BOME）。</li>
+<li>赔率计算也是分析的重要工具。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-新闻交易"><a href="#4-新闻交易" class="headerlink" title="4. 新闻交易"></a>4. 新闻交易</h2><ul>
+<li><p><strong>特征</strong></p>
+<ul>
+<li>新闻带来信息，随机性高，可能触发外部增量。</li>
+<li>属于长期存在的交易类型。</li>
+<li>现象级机会本质上就是新闻交易。</li>
+</ul>
+</li>
+<li><p><strong>常见对象</strong></p>
+<ul>
+<li>马斯克、特朗普、热点事件等。</li>
+<li>超过 80% 的 meme 币，都出自上述人物/事件。</li>
+</ul>
+</li>
+<li><p><strong>方法</strong></p>
+<ul>
+<li>多数依赖 <strong>时间差</strong>，部分需要 <strong>信息差</strong>。</li>
+<li>定价过程需要时间，行情好时更容易被庄家放大利用。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="5-执行与心态"><a href="#5-执行与心态" class="headerlink" title="5. 执行与心态"></a>5. 执行与心态</h2><ul>
+<li><strong>正确看待机会</strong>：只关注自己能吃到多少，不被倍数迷惑。</li>
+<li><strong>复盘</strong>：good win, bad win, good lose, bad lose → 纸面总结 → 让亏损变教训。</li>
+<li><strong>向上看</strong>：找到榜样，研究其原因而非结果。</li>
+<li><strong>避免压力下决策</strong>。</li>
+<li><strong>做自己擅长的事</strong>：擅长来自长期积累，不擅长就准备好交学费。</li>
+<li><strong>不相信运气</strong>：所有结果来自方法与执行，而非运气。</li>
+</ul>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一级市场的核心是 <strong>信息差与时间差</strong> 的博弈。散户要在增量叙事中寻找机会，明确交易三要素，执行止盈止损，并通过复盘不断提升决策质量。<br>「知行合一」是长期盈利的唯一路径。</p>
+<blockquote>
+<p>原文链接：<a href="https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70">https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>交易方法论</tag>
       </tags>
   </entry>
   <entry>
@@ -7333,169 +7333,6 @@ w3 <span class="token operator">=</span> Web3<span class="token punctuation">(</
       </tags>
   </entry>
   <entry>
-    <title>【2025.9】Web3投研热点全景：AI、Perp、DeFi与Binance Alpha</title>
-    <url>/posts/250918.html</url>
-    <content><![CDATA[<h1 id="2025年9月Web3投研热点全景"><a href="#2025年9月Web3投研热点全景" class="headerlink" title="2025年9月Web3投研热点全景"></a>2025年9月Web3投研热点全景</h1><blockquote>
-<p><strong>作者：</strong> <a href="https://x.com/onefly">Onefly</a> | <strong>单位：</strong> <a href="https://x.com/1000XSecurity">1000X Security</a> | <strong>日期：</strong> 2025年9月18日</p>
-</blockquote>
-<hr>
-<h2 id="宏观概览"><a href="#宏观概览" class="headerlink" title="宏观概览"></a>宏观概览</h2><p>过去一个月（8月中–9月中），Web3 市场出现了一个重要转折：<br><strong>叙事从“投机”向“实用”过渡</strong>。</p>
-<ul>
-<li><strong>驱动力</strong>：AI / DeFi / RWA 三大板块依旧是核心。</li>
-<li><strong>新趋势</strong>：机构资金和主权基金的采用明显加速，IPO 与监管框架的清晰化提供了边际利好。</li>
-<li><strong>风险点</strong>：短期内抛压压力与政策不确定性仍是最大变量。</li>
-</ul>
-<hr>
-<h2 id="1-BNB生态爆发与代币ATH"><a href="#1-BNB生态爆发与代币ATH" class="headerlink" title="1. BNB生态爆发与代币ATH"></a>1. BNB生态爆发与代币ATH</h2><p>BNB 在 9 月初突破 <strong>1000 美元</strong>，市值达 <strong>1400 亿美元</strong>，一度成为市场情绪的核心引擎。</p>
-<ul>
-<li><strong>链上表现</strong>：活跃地址与交易量显著增长，OKX Web3 DEX 曾插针至 1012 美元，显示高频交易活跃度。</li>
-<li><strong>资金扩散</strong>：生态项目 FLOKI、CAT 及部分 RWA 相关代币同步上涨，体现出“龙头拉升 – 资金外溢”的典型模式。</li>
-<li><strong>Alpha驱动</strong>：Binance Alpha 提供了“发现–空投–冷启动”的基础设施，使得 BNB 不仅是公链，还成为 <strong>新资产孵化平台</strong>。</li>
-</ul>
-<blockquote>
-<p><strong>投研启示</strong>：<br>BNB 的爆发不是孤立事件，而是 <strong>交易所自有生态→流量+资金循环</strong> 的典型案例。后续重点观察：BNB 是否能把资金外溢转化为长期的 DeFi/RWA 增量，而不仅是短期拉盘。</p>
-</blockquote>
-<hr>
-<h2 id="2-RWA（Real-World-Assets）代币化加速"><a href="#2-RWA（Real-World-Assets）代币化加速" class="headerlink" title="2. RWA（Real World Assets）代币化加速"></a>2. RWA（Real World Assets）代币化加速</h2><p>RWA 在 2025 年 9 月几乎是“政策+机构”的全方位加速。</p>
-<ul>
-<li><strong>机构动作</strong>：DBS、Franklin Templeton 与 Ripple 推出基金；云锋金融完成香港首个合规 RWA 项目。</li>
-<li><strong>主权信号</strong>：日本 TNL Mediagene 计划将 BTC 纳入国库；已有 25% BTC 国债公司市值低于其持有 BTC，市场发现明显“折价套利”。</li>
-<li><strong>区域推动</strong>：新加坡、香港的监管活动（Coinfest Asia 等）强化了 RWA 的制度化。</li>
-</ul>
-<blockquote>
-<p><strong>投研启示</strong>：<br>RWA 是 2025 下半年的“确定性赛道”。但投资要区分：</p>
-<ul>
-<li><strong>合规/机构型 RWA</strong>（基金、国库债、合规债券）：中长期价值。</li>
-<li><strong>社区驱动型 RWA</strong>（Meme 化、NFT 化）：短期投机价值。</li>
-<li>重点跟踪：哪些 RWA 项目能在 <strong>跨链+合规+收益分配</strong> 上先行一步。</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="3-AI-与-Web3-融合：代理、支付与基础设施"><a href="#3-AI-与-Web3-融合：代理、支付与基础设施" class="headerlink" title="3. AI 与 Web3 融合：代理、支付与基础设施"></a>3. AI 与 Web3 融合：代理、支付与基础设施</h2><p>AI 在 9 月有几个关键突破：</p>
-<ul>
-<li><strong>支付层</strong>：Google AP2 协议正式支持自动化稳定币支付，这是 <strong>AI 代理自主结算</strong> 的里程碑。</li>
-<li><strong>新兴项目</strong>：<ul>
-<li>@recallnet —— AI 链上竞技，奖金池模式。</li>
-<li>@antix_in —— 数字孪生体。</li>
-<li>@Almanak__ —— AI 驱动的 DeFi 策略。</li>
-<li>@0G_labs —— 去中心化 AI Layer1。</li>
-<li>@tenprotocol —— 隐私计算 TEE L2。</li>
-</ul>
-</li>
-<li><strong>社交层</strong>：UXLINK 等项目结合 AI + 社交信任，解决“身份验证+互动”上链难题。</li>
-</ul>
-<blockquote>
-<p><strong>投研启示</strong>：<br>AI 与 Web3 的结合点在于 <strong>代理+执行</strong>。未来用户可能不需要手动操作钱包，而是通过 AI 代理实现 <strong>自动化交易、跨链、NFT交互</strong>。<br>当前参与方式：关注 AI 驱动的 <strong>支付 / DeFi 策略 / 隐私计算</strong> 赛道。</p>
-</blockquote>
-<hr>
-<h2 id="4-DeFi-与跨链创新"><a href="#4-DeFi-与跨链创新" class="headerlink" title="4. DeFi 与跨链创新"></a>4. DeFi 与跨链创新</h2><p><strong>Perp DEX</strong> 与 <strong>跨链交易</strong>是 9 月的热点。</p>
-<ul>
-<li><strong>空投热点</strong>：Hyperliquid（合约 DEX）成为空投预期的核心。</li>
-<li><strong>代表项目</strong>：<ul>
-<li>@vooi_io —— 链抽象 DEX（Binance Labs 投资）。</li>
-<li>@VeloraDEX —— 意图驱动跨链。</li>
-<li>@LABtrade_ —— 多链低费撮合。</li>
-<li>@useTria —— 全球支付，子秒结算。</li>
-<li>@build_on_bob —— BTC+ETH ZK Rollup。</li>
-<li>@RaylsLabs —— TradFi 桥接。</li>
-</ul>
-</li>
-<li><strong>市场格局</strong>：<ul>
-<li>Solana 高频强势。</li>
-<li>Ethereum 高价值沉淀。</li>
-<li>新兴链亮眼，但 L2 有资金回撤迹象。</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>投研启示</strong>：<br>DeFi 的下一波是 <strong>意图驱动+跨链互操作</strong>。<br>投资者要关注的不是单链收益，而是谁能率先解决：<strong>跨链结算快、成本低、体验好</strong>。</p>
-</blockquote>
-<hr>
-<h2 id="5-机构与主权基金动向"><a href="#5-机构与主权基金动向" class="headerlink" title="5. 机构与主权基金动向"></a>5. 机构与主权基金动向</h2><ul>
-<li><strong>不丹</strong>：转移 343 BTC（约 4018 万美元）至新地址，疑似 CEX 入金。</li>
-<li><strong>美联储</strong>：释放鸽派信号，市场预期 10 月/12 月降息。</li>
-<li><strong>鲸鱼动态</strong>：<ul>
-<li>FalconX 提取 <strong>19万 SOL</strong>。</li>
-<li>某鲸清仓 <strong>8711 ETH</strong>，获利 523 万美元。</li>
-</ul>
-</li>
-<li><strong>资金趋势</strong>：Q2 2025 融资规模达 96 亿美元，东南亚成为 Web3 资金与合规双枢纽。</li>
-</ul>
-<hr>
-<h2 id="6-监管与IPO趋势"><a href="#6-监管与IPO趋势" class="headerlink" title="6. 监管与IPO趋势"></a>6. 监管与IPO趋势</h2><ul>
-<li><strong>美国</strong>：监管逻辑转向明确规则，而非执法打压。</li>
-<li><strong>IPO热潮</strong>：<ul>
-<li>Gemini 认购超 20 倍。</li>
-<li>Figure 首日飙升 24%。</li>
-<li>Kraken、Anchorage 在候选名单。</li>
-</ul>
-</li>
-<li><strong>区域监管</strong>：印尼 OJK、香港、新加坡成为“监管+金融中心”的双极。</li>
-</ul>
-<hr>
-<h2 id="7-其他短期机会：Meme-ETF-DePIN"><a href="#7-其他短期机会：Meme-ETF-DePIN" class="headerlink" title="7. 其他短期机会：Meme / ETF / DePIN"></a>7. 其他短期机会：Meme / ETF / DePIN</h2><ul>
-<li><strong>Meme ETF</strong>：DOGE 美国首个 ETF 上线，市场情绪看涨。</li>
-<li><strong>新币机会</strong>：<ul>
-<li>$BARD（多 CEX 上线）。</li>
-<li>$ASTER（CZ 点名，市值 7 亿美元）。</li>
-<li>Base 生态 $KTA、$ZORA 存在波段机会。</li>
-</ul>
-</li>
-<li><strong>DePIN 融资</strong>：Helium、Hivemapper 累计融资超 <strong>12 亿美元</strong>。</li>
-<li><strong>趋势</strong>：CZ 展望未来重点在 <strong>稳定币 / 代币化 / DEX / AI x Web3</strong>。</li>
-</ul>
-<hr>
-<h2 id="8-Binance-Alpha-空投代币生态"><a href="#8-Binance-Alpha-空投代币生态" class="headerlink" title="8. Binance Alpha 空投代币生态"></a>8. Binance Alpha 空投代币生态</h2><ul>
-<li><strong>规模</strong>：274+ 项目上线，177 带空投/TGE。</li>
-<li><strong>机制</strong>：<ul>
-<li>Alpha Points 由持仓/交易积累。</li>
-<li>1000U持仓+256U交易 ≈ 10积分/日。</li>
-</ul>
-</li>
-<li><strong>数据</strong>：<ul>
-<li>用户月均空投 ≈ 270U。</li>
-<li>独占代币 7日平均涨幅 27%。</li>
-</ul>
-</li>
-<li><strong>8–9月上线项目</strong>：$ARIA, $BTR, $Q, $MCH, $PTB, $UB, $STBL, $ZKC, $MRLN, $AIA, $BARD, $MVRK。</li>
-<li><strong>表现</strong>：<ul>
-<li>首日平均涨幅 7.8x。</li>
-<li>最高 ATH 118x。</li>
-<li>TVL 增长显著（Mitosis：8000万→3亿）。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="9-暴涨代币共性分析"><a href="#9-暴涨代币共性分析" class="headerlink" title="9. 暴涨代币共性分析"></a>9. 暴涨代币共性分析</h2><ul>
-<li><strong>早期低价进入</strong>（1/8.9 买入）。</li>
-<li><strong>社区驱动</strong>（积分+任务）。</li>
-<li><strong>平台背书</strong>（Binance / Labs / Alpha）。</li>
-<li><strong>供给紧缩</strong>（低流通+释放慢）。</li>
-<li><strong>实用整合</strong>（AI/DeFi/RWA 结合）。</li>
-</ul>
-<blockquote>
-<p><strong>数据</strong>：<br>优质 Alpha 项目平均涨幅 <strong>280%</strong>，但仅 <strong>35%</strong> 真正实现翻倍。<br>投资逻辑：<strong>优先关注低市值+实用性强的项目</strong>。</p>
-</blockquote>
-<hr>
-<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><ul>
-<li><strong>转型方向</strong>：Web3 正从基础设施走向 <strong>可用性+合规性</strong>。</li>
-<li><strong>核心板块</strong>：AI代理 / RWA 合规 / DeFi 跨链互操作。</li>
-<li><strong>短期机会</strong>：Perp DEX 空投、Binance Alpha、Meme+ETF 联动。</li>
-<li><strong>风险提示</strong>：抛压、监管政策变化、流动性风险仍不可忽视。</li>
-</ul>
-<p>2025 下半年，Web3 的关键词是：<strong>账户抽象、AI 代理、可组合生态、合规 RWA</strong>。<br>机会仍然很多，但风险管理永远是第一位。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>RWA</tag>
-        <tag>Binance Alpha</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【2025.9】Web3机构投研榜：10家低调却强到离谱的资本力量</title>
     <url>/posts/250926.html</url>
     <content><![CDATA[<h1 id="Web3-VC机构投资项目水平排行榜"><a href="#Web3-VC机构投资项目水平排行榜" class="headerlink" title="Web3 VC机构投资项目水平排行榜"></a>Web3 VC机构投资项目水平排行榜</h1><blockquote>
@@ -7698,8 +7535,171 @@ w3 <span class="token operator">=</span> Web3<span class="token punctuation">(</
       </categories>
       <tags>
         <tag>Web3</tag>
-        <tag>Binance Alpha</tag>
         <tag>VC</tag>
+        <tag>Binance Alpha</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【2025.9】Web3投研热点全景：AI、Perp、DeFi与Binance Alpha</title>
+    <url>/posts/250918.html</url>
+    <content><![CDATA[<h1 id="2025年9月Web3投研热点全景"><a href="#2025年9月Web3投研热点全景" class="headerlink" title="2025年9月Web3投研热点全景"></a>2025年9月Web3投研热点全景</h1><blockquote>
+<p><strong>作者：</strong> <a href="https://x.com/onefly">Onefly</a> | <strong>单位：</strong> <a href="https://x.com/1000XSecurity">1000X Security</a> | <strong>日期：</strong> 2025年9月18日</p>
+</blockquote>
+<hr>
+<h2 id="宏观概览"><a href="#宏观概览" class="headerlink" title="宏观概览"></a>宏观概览</h2><p>过去一个月（8月中–9月中），Web3 市场出现了一个重要转折：<br><strong>叙事从“投机”向“实用”过渡</strong>。</p>
+<ul>
+<li><strong>驱动力</strong>：AI / DeFi / RWA 三大板块依旧是核心。</li>
+<li><strong>新趋势</strong>：机构资金和主权基金的采用明显加速，IPO 与监管框架的清晰化提供了边际利好。</li>
+<li><strong>风险点</strong>：短期内抛压压力与政策不确定性仍是最大变量。</li>
+</ul>
+<hr>
+<h2 id="1-BNB生态爆发与代币ATH"><a href="#1-BNB生态爆发与代币ATH" class="headerlink" title="1. BNB生态爆发与代币ATH"></a>1. BNB生态爆发与代币ATH</h2><p>BNB 在 9 月初突破 <strong>1000 美元</strong>，市值达 <strong>1400 亿美元</strong>，一度成为市场情绪的核心引擎。</p>
+<ul>
+<li><strong>链上表现</strong>：活跃地址与交易量显著增长，OKX Web3 DEX 曾插针至 1012 美元，显示高频交易活跃度。</li>
+<li><strong>资金扩散</strong>：生态项目 FLOKI、CAT 及部分 RWA 相关代币同步上涨，体现出“龙头拉升 – 资金外溢”的典型模式。</li>
+<li><strong>Alpha驱动</strong>：Binance Alpha 提供了“发现–空投–冷启动”的基础设施，使得 BNB 不仅是公链，还成为 <strong>新资产孵化平台</strong>。</li>
+</ul>
+<blockquote>
+<p><strong>投研启示</strong>：<br>BNB 的爆发不是孤立事件，而是 <strong>交易所自有生态→流量+资金循环</strong> 的典型案例。后续重点观察：BNB 是否能把资金外溢转化为长期的 DeFi/RWA 增量，而不仅是短期拉盘。</p>
+</blockquote>
+<hr>
+<h2 id="2-RWA（Real-World-Assets）代币化加速"><a href="#2-RWA（Real-World-Assets）代币化加速" class="headerlink" title="2. RWA（Real World Assets）代币化加速"></a>2. RWA（Real World Assets）代币化加速</h2><p>RWA 在 2025 年 9 月几乎是“政策+机构”的全方位加速。</p>
+<ul>
+<li><strong>机构动作</strong>：DBS、Franklin Templeton 与 Ripple 推出基金；云锋金融完成香港首个合规 RWA 项目。</li>
+<li><strong>主权信号</strong>：日本 TNL Mediagene 计划将 BTC 纳入国库；已有 25% BTC 国债公司市值低于其持有 BTC，市场发现明显“折价套利”。</li>
+<li><strong>区域推动</strong>：新加坡、香港的监管活动（Coinfest Asia 等）强化了 RWA 的制度化。</li>
+</ul>
+<blockquote>
+<p><strong>投研启示</strong>：<br>RWA 是 2025 下半年的“确定性赛道”。但投资要区分：</p>
+<ul>
+<li><strong>合规/机构型 RWA</strong>（基金、国库债、合规债券）：中长期价值。</li>
+<li><strong>社区驱动型 RWA</strong>（Meme 化、NFT 化）：短期投机价值。</li>
+<li>重点跟踪：哪些 RWA 项目能在 <strong>跨链+合规+收益分配</strong> 上先行一步。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="3-AI-与-Web3-融合：代理、支付与基础设施"><a href="#3-AI-与-Web3-融合：代理、支付与基础设施" class="headerlink" title="3. AI 与 Web3 融合：代理、支付与基础设施"></a>3. AI 与 Web3 融合：代理、支付与基础设施</h2><p>AI 在 9 月有几个关键突破：</p>
+<ul>
+<li><strong>支付层</strong>：Google AP2 协议正式支持自动化稳定币支付，这是 <strong>AI 代理自主结算</strong> 的里程碑。</li>
+<li><strong>新兴项目</strong>：<ul>
+<li>@recallnet —— AI 链上竞技，奖金池模式。</li>
+<li>@antix_in —— 数字孪生体。</li>
+<li>@Almanak__ —— AI 驱动的 DeFi 策略。</li>
+<li>@0G_labs —— 去中心化 AI Layer1。</li>
+<li>@tenprotocol —— 隐私计算 TEE L2。</li>
+</ul>
+</li>
+<li><strong>社交层</strong>：UXLINK 等项目结合 AI + 社交信任，解决“身份验证+互动”上链难题。</li>
+</ul>
+<blockquote>
+<p><strong>投研启示</strong>：<br>AI 与 Web3 的结合点在于 <strong>代理+执行</strong>。未来用户可能不需要手动操作钱包，而是通过 AI 代理实现 <strong>自动化交易、跨链、NFT交互</strong>。<br>当前参与方式：关注 AI 驱动的 <strong>支付 / DeFi 策略 / 隐私计算</strong> 赛道。</p>
+</blockquote>
+<hr>
+<h2 id="4-DeFi-与跨链创新"><a href="#4-DeFi-与跨链创新" class="headerlink" title="4. DeFi 与跨链创新"></a>4. DeFi 与跨链创新</h2><p><strong>Perp DEX</strong> 与 <strong>跨链交易</strong>是 9 月的热点。</p>
+<ul>
+<li><strong>空投热点</strong>：Hyperliquid（合约 DEX）成为空投预期的核心。</li>
+<li><strong>代表项目</strong>：<ul>
+<li>@vooi_io —— 链抽象 DEX（Binance Labs 投资）。</li>
+<li>@VeloraDEX —— 意图驱动跨链。</li>
+<li>@LABtrade_ —— 多链低费撮合。</li>
+<li>@useTria —— 全球支付，子秒结算。</li>
+<li>@build_on_bob —— BTC+ETH ZK Rollup。</li>
+<li>@RaylsLabs —— TradFi 桥接。</li>
+</ul>
+</li>
+<li><strong>市场格局</strong>：<ul>
+<li>Solana 高频强势。</li>
+<li>Ethereum 高价值沉淀。</li>
+<li>新兴链亮眼，但 L2 有资金回撤迹象。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>投研启示</strong>：<br>DeFi 的下一波是 <strong>意图驱动+跨链互操作</strong>。<br>投资者要关注的不是单链收益，而是谁能率先解决：<strong>跨链结算快、成本低、体验好</strong>。</p>
+</blockquote>
+<hr>
+<h2 id="5-机构与主权基金动向"><a href="#5-机构与主权基金动向" class="headerlink" title="5. 机构与主权基金动向"></a>5. 机构与主权基金动向</h2><ul>
+<li><strong>不丹</strong>：转移 343 BTC（约 4018 万美元）至新地址，疑似 CEX 入金。</li>
+<li><strong>美联储</strong>：释放鸽派信号，市场预期 10 月/12 月降息。</li>
+<li><strong>鲸鱼动态</strong>：<ul>
+<li>FalconX 提取 <strong>19万 SOL</strong>。</li>
+<li>某鲸清仓 <strong>8711 ETH</strong>，获利 523 万美元。</li>
+</ul>
+</li>
+<li><strong>资金趋势</strong>：Q2 2025 融资规模达 96 亿美元，东南亚成为 Web3 资金与合规双枢纽。</li>
+</ul>
+<hr>
+<h2 id="6-监管与IPO趋势"><a href="#6-监管与IPO趋势" class="headerlink" title="6. 监管与IPO趋势"></a>6. 监管与IPO趋势</h2><ul>
+<li><strong>美国</strong>：监管逻辑转向明确规则，而非执法打压。</li>
+<li><strong>IPO热潮</strong>：<ul>
+<li>Gemini 认购超 20 倍。</li>
+<li>Figure 首日飙升 24%。</li>
+<li>Kraken、Anchorage 在候选名单。</li>
+</ul>
+</li>
+<li><strong>区域监管</strong>：印尼 OJK、香港、新加坡成为“监管+金融中心”的双极。</li>
+</ul>
+<hr>
+<h2 id="7-其他短期机会：Meme-ETF-DePIN"><a href="#7-其他短期机会：Meme-ETF-DePIN" class="headerlink" title="7. 其他短期机会：Meme / ETF / DePIN"></a>7. 其他短期机会：Meme / ETF / DePIN</h2><ul>
+<li><strong>Meme ETF</strong>：DOGE 美国首个 ETF 上线，市场情绪看涨。</li>
+<li><strong>新币机会</strong>：<ul>
+<li>$BARD（多 CEX 上线）。</li>
+<li>$ASTER（CZ 点名，市值 7 亿美元）。</li>
+<li>Base 生态 $KTA、$ZORA 存在波段机会。</li>
+</ul>
+</li>
+<li><strong>DePIN 融资</strong>：Helium、Hivemapper 累计融资超 <strong>12 亿美元</strong>。</li>
+<li><strong>趋势</strong>：CZ 展望未来重点在 <strong>稳定币 / 代币化 / DEX / AI x Web3</strong>。</li>
+</ul>
+<hr>
+<h2 id="8-Binance-Alpha-空投代币生态"><a href="#8-Binance-Alpha-空投代币生态" class="headerlink" title="8. Binance Alpha 空投代币生态"></a>8. Binance Alpha 空投代币生态</h2><ul>
+<li><strong>规模</strong>：274+ 项目上线，177 带空投/TGE。</li>
+<li><strong>机制</strong>：<ul>
+<li>Alpha Points 由持仓/交易积累。</li>
+<li>1000U持仓+256U交易 ≈ 10积分/日。</li>
+</ul>
+</li>
+<li><strong>数据</strong>：<ul>
+<li>用户月均空投 ≈ 270U。</li>
+<li>独占代币 7日平均涨幅 27%。</li>
+</ul>
+</li>
+<li><strong>8–9月上线项目</strong>：$ARIA, $BTR, $Q, $MCH, $PTB, $UB, $STBL, $ZKC, $MRLN, $AIA, $BARD, $MVRK。</li>
+<li><strong>表现</strong>：<ul>
+<li>首日平均涨幅 7.8x。</li>
+<li>最高 ATH 118x。</li>
+<li>TVL 增长显著（Mitosis：8000万→3亿）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="9-暴涨代币共性分析"><a href="#9-暴涨代币共性分析" class="headerlink" title="9. 暴涨代币共性分析"></a>9. 暴涨代币共性分析</h2><ul>
+<li><strong>早期低价进入</strong>（1/8.9 买入）。</li>
+<li><strong>社区驱动</strong>（积分+任务）。</li>
+<li><strong>平台背书</strong>（Binance / Labs / Alpha）。</li>
+<li><strong>供给紧缩</strong>（低流通+释放慢）。</li>
+<li><strong>实用整合</strong>（AI/DeFi/RWA 结合）。</li>
+</ul>
+<blockquote>
+<p><strong>数据</strong>：<br>优质 Alpha 项目平均涨幅 <strong>280%</strong>，但仅 <strong>35%</strong> 真正实现翻倍。<br>投资逻辑：<strong>优先关注低市值+实用性强的项目</strong>。</p>
+</blockquote>
+<hr>
+<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><ul>
+<li><strong>转型方向</strong>：Web3 正从基础设施走向 <strong>可用性+合规性</strong>。</li>
+<li><strong>核心板块</strong>：AI代理 / RWA 合规 / DeFi 跨链互操作。</li>
+<li><strong>短期机会</strong>：Perp DEX 空投、Binance Alpha、Meme+ETF 联动。</li>
+<li><strong>风险提示</strong>：抛压、监管政策变化、流动性风险仍不可忽视。</li>
+</ul>
+<p>2025 下半年，Web3 的关键词是：<strong>账户抽象、AI 代理、可组合生态、合规 RWA</strong>。<br>机会仍然很多，但风险管理永远是第一位。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>Binance Alpha</tag>
+        <tag>RWA</tag>
       </tags>
   </entry>
   <entry>
@@ -8901,6 +8901,153 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
         <tag>AI Agent</tag>
         <tag>LangGraph</tag>
         <tag>Claude Agent SDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</title>
+    <url>/posts/okx-2026-spring-festival-collect-five-blessings-guide.html</url>
+    <content><![CDATA[<h1 id="OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"><a href="#OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤" class="headerlink" title="OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"></a>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</h1><blockquote>
+<p>🧧 <strong>专属活动入口，通过此链接参与集五福瓜分 28 BTC！</strong><br>👉 <a href="https://oyidl.me/ul/I2Ojm3?channelId=8385429&amp;utm_medium=koc&amp;utm_campaign=referral_task&amp;utm_content=R6LHrLO4"><strong>点击这里进入活动页面</strong></a></p>
+</blockquote>
+<p>今年春节，OKX 搞了个大活动——<strong>集五福瓜分 28 BTC</strong>，人均最高可得 <strong>300U</strong>，还有 <strong>1 BTC 哈希锦鲤</strong>大奖等你来拿。</p>
+<p>这篇文章帮你把活动规则、集福技巧、最小成本打法、哈希锦鲤玩法全部拆解清楚，看完直接上手。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144317151-1618386141.jpg" style="zoom:50%;" alt="OKX春节集五福活动"></p>
+<h2 id="活动概览"><a href="#活动概览" class="headerlink" title="活动概览"></a>活动概览</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>活动时间</strong></td>
+<td>2026年2月11日 11:00 至 2月21日 12:00 (UTC+8)</td>
+</tr>
+<tr>
+<td><strong>奖池规模</strong></td>
+<td>28 BTC（总奖池超 500 万 U）</td>
+</tr>
+<tr>
+<td><strong>人均最高</strong></td>
+<td>300 USDT</td>
+</tr>
+<tr>
+<td><strong>哈希锦鲤</strong></td>
+<td>1 BTC</td>
+</tr>
+<tr>
+<td><strong>瓜分公布</strong></td>
+<td>2月21日 12:05</td>
+</tr>
+<tr>
+<td><strong>锦鲤公布</strong></td>
+<td>2月21日 12:20 前后</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>核心规则</strong>：集五福 → 合成「财神福」→ 瓜分 BTC 奖池。每人最多合成 <strong>5 张财神福</strong>，奖池金额 ×5 份。</p>
+<blockquote>
+<p>关注星球 OKX中文 &amp; 推特 @okxchinese 查看开奖结果。</p>
+</blockquote>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144315496-944790390.png" style="zoom:33%;" alt="OKX集五福攻略完整版"></p>
+<h2 id="如何快速拿福卡？"><a href="#如何快速拿福卡？" class="headerlink" title="如何快速拿福卡？"></a>如何快速拿福卡？</h2><p>进入活动页面，点击「前往集五福」开启集福。根据你的身份，玩法略有不同：</p>
+<h3 id="OKX-老用户"><a href="#OKX-老用户" class="headerlink" title="OKX 老用户"></a>OKX 老用户</h3><p><strong>速通版：拉新是最快的</strong></p>
+<ul>
+<li>每邀请 1 位新用户 → 获得 1 张福卡</li>
+<li>最多邀请 20 人</li>
+</ul>
+<p><strong>升级版：多交易多拿福</strong></p>
+<ul>
+<li>现货交易累计 6,000U → 1 张福卡（上限100张）</li>
+<li>合约交易累计 10,000U → 1 张福卡（上限100张）</li>
+</ul>
+<h3 id="OKX-新用户"><a href="#OKX-新用户" class="headerlink" title="OKX 新用户"></a>OKX 新用户</h3><p><strong>速通版：新人专属福利</strong></p>
+<ul>
+<li>首次现货交易 ≥100U → 直接获得 <strong>2 张福卡 + 50U 合约体验金</strong></li>
+<li>拉新拿福：邀请 1 人 → 1 张，最多 20 人</li>
+</ul>
+<p><strong>升级版：同老用户规则</strong></p>
+<blockquote>
+<p>*拉新拿福细则：被邀请人需完成 100U 现货交易才算有效。</p>
+</blockquote>
+<h2 id="最小成本拿福攻略"><a href="#最小成本拿福攻略" class="headerlink" title="最小成本拿福攻略"></a>最小成本拿福攻略</h2><p>这是经过实战验证的<strong>低成本高效打法</strong>：</p>
+<h3 id="1-拉人永远最快"><a href="#1-拉人永远最快" class="headerlink" title="1. 拉人永远最快"></a>1. 拉人永远最快</h3><p>1 个新用户 = 1 张福卡，多拉多得，速度第一。这是性价比最高的方式。</p>
+<h3 id="2-现货最小成本玩法"><a href="#2-现货最小成本玩法" class="headerlink" title="2. 现货最小成本玩法"></a>2. 现货最小成本玩法</h3><p><strong>600U 现货，来回买卖 5 次 = 一次完成 6,000U 交易量 = 1 张福卡</strong></p>
+<p>不需要 6,000U 本金，只需要 600U 反复交易即可达到累计交易量。</p>
+<h3 id="3-合约最小成本玩法"><a href="#3-合约最小成本玩法" class="headerlink" title="3. 合约最小成本玩法"></a>3. 合约最小成本玩法</h3><p><strong>1,000U × 10 倍杠杆 = 一次完成 10,000U 交易量 = 1 张福卡</strong></p>
+<p>用杠杆放大交易量，快速达标。</p>
+<h3 id="4-实测经验"><a href="#4-实测经验" class="headerlink" title="4. 实测经验"></a>4. 实测经验</h3><blockquote>
+<p>小群实测：前 10 张福卡，合成「财神福」的概率很高。5 人小群实测，最多集 10 张福就能合成财神福。</p>
+</blockquote>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144314159-2024874248.jpg" style="zoom:50%;" alt="OKX集五福活动页面"></p>
+<h2 id="福卡互换与赠送"><a href="#福卡互换与赠送" class="headerlink" title="福卡互换与赠送"></a>福卡互换与赠送</h2><p>福卡是可以和朋友<strong>互换 / 赠送</strong>的！</p>
+<p><strong>赠福方式</strong>：</p>
+<ol>
+<li>点击你拥有的福卡</li>
+<li>选择「赠送好友」</li>
+<li>通过链接或 UID 赠送</li>
+<li>好友扫码领取</li>
+</ol>
+<p>如果你缺某种福卡（比如「双冠福」），可以在社群里发帖互换。</p>
+<h2 id="哈希锦鲤——终极大奖-1-BTC"><a href="#哈希锦鲤——终极大奖-1-BTC" class="headerlink" title="哈希锦鲤——终极大奖 1 BTC"></a>哈希锦鲤——终极大奖 1 BTC</h2><p>这是整个活动最刺激的部分。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大奖</strong></td>
+<td>1 BTC</td>
+</tr>
+<tr>
+<td><strong>开奖时间</strong></td>
+<td>2月21日 12:20 前后</td>
+</tr>
+<tr>
+<td><strong>参与资格</strong></td>
+<td>合成「财神福」即可参与</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>中奖规则</strong>：你的财神福卡编码 = 2月21日 12:05 之后<strong>第一个 BTC 区块哈希值末 5~6 位数字</strong>。</p>
+<p>这是完全链上随机的开奖方式，公平透明，没有暗箱操作。</p>
+<p><strong>关键点</strong>：</p>
+<ul>
+<li>福卡越多 → 合成「财神福」的概率越高</li>
+<li>合成「财神福」→ 既能瓜分 BTC 奖池，又能冲击锦鲤</li>
+<li>会拉人的、交易量大的，这波都属于<strong>优势玩家</strong></li>
+</ul>
+<h2 id="重要提醒"><a href="#重要提醒" class="headerlink" title="重要提醒"></a>重要提醒</h2><ul>
+<li><strong>务必在 2月21日 12:05 前合成财神福</strong>，否则无法参与瓜分</li>
+<li>先点击「加入活动」按钮，页面显示「做任务集福卡」，才计入有效参与</li>
+<li>每人最多合成 5 张财神福，多合成多拿奖</li>
+<li>新人拉新和交易玩法<strong>可以并行</strong>，不冲突</li>
+</ul>
+<h2 id="活动参与入口"><a href="#活动参与入口" class="headerlink" title="活动参与入口"></a>活动参与入口</h2><p><strong>无需 VPN 直达链接</strong>：</p>
+<ul>
+<li><a href="https://www.hucneo.com/zh-hans/campaigns/fortuneblessings?channelid=88596413">极简活动页（推荐）</a></li>
+<li><a href="https://oyidl.net/ul/ibUte3?channelId=88596413">可拉起 APP 版本</a></li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>今年 OKX 春节活动诚意十足——Web2 给你画饼，Web3 直接给你撒币。28 BTC 的奖池 + 1 BTC 的锦鲤大奖，这波不薅白不薅。</p>
+<p><strong>速通路线</strong>：注册/登录 → 加入活动 → 拉新 + 交易集福卡 → 合成财神福 → 等待 2月21日开奖。</p>
+<p>过春节，集五福，用春节搞大钱！</p>
+]]></content>
+      <categories>
+        <category>加密货币</category>
+      </categories>
+      <tags>
+        <tag>OKX</tag>
+        <tag>加密货币</tag>
+        <tag>春节活动</tag>
+        <tag>BTC</tag>
       </tags>
   </entry>
   <entry>
@@ -13651,6 +13798,301 @@ python scripts/evaluate_predictions.py <span class="token punctuation">\</span>
       </tags>
   </entry>
   <entry>
+    <title>GEO：让 AI 主动推荐你</title>
+    <url>/posts/generative-engine-optimization-ai-search.html</url>
+    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260623110027792-638286241.jpg" style="zoom:33%;" alt="GEO：让 AI 主动推荐你封面图"></p>
+<h1 id="GEO：让-AI-主动推荐你"><a href="#GEO：让-AI-主动推荐你" class="headerlink" title="GEO：让 AI 主动推荐你"></a>GEO：让 AI 主动推荐你</h1><p>用户找工具、买软件、做决策的入口，正在从搜索框转向对话框。</p>
+<p>以前你想买一个会议记录工具，大概率会去 Google / 百度搜“AI 会议记录工具推荐”，再从一堆结果里点开、比较、筛选。现在越来越多的人会直接问 ChatGPT、Perplexity、豆包：</p>
+<blockquote>
+<p>有哪些适合跨国团队的 AI 会议记录工具？</p>
+</blockquote>
+<p>如果 AI 的回答里没有你，你就不是“排名靠后”，而是<strong>根本没出现在用户的决策现场</strong>。</p>
+<p>这就是 GEO（Generative Engine Optimization，生成式引擎优化）开始重要的原因。</p>
+<p>黄小木那篇 GEO 长文把这件事讲得很适合小白：GEO 的核心不是玄学，不是买广告，也不是把关键词塞满网页，而是让你的内容能被 AI 看见、读懂、信任，最后在生成答案时愿意引用你。</p>
+<p>我更愿意把它总结成一句话：</p>
+<blockquote>
+<p>SEO 抢的是搜索结果页的位置，GEO 抢的是 AI 答案里的推荐权。</p>
+</blockquote>
+<h2 id="GEO-不是-SEO-的替代品"><a href="#GEO-不是-SEO-的替代品" class="headerlink" title="GEO 不是 SEO 的替代品"></a>GEO 不是 SEO 的替代品</h2><p>很多人一听 GEO，就会把它理解成“SEO 过时了，接下来全做 AI 搜索”。</p>
+<p>这个判断太粗糙。</p>
+<p>GEO 更像是 SEO 在 AI 答案时代的上层扩展。传统 SEO 解决的是：搜索引擎能不能抓到你、理解你、把你排在结果页前面。GEO 继续关心这些，但它多了一步：<strong>生成式引擎会不会把你的内容转述进答案里。</strong></p>
+<p>可以画成这样：</p>
+<pre class="mermaid">flowchart LR
+    A[传统 SEO] --&gt; B[搜索引擎抓取]
+    B --&gt; C[搜索结果排名]
+    C --&gt; D[用户点击网页]
+
+    E[GEO] --&gt; F[AI 检索网页 / 文档 / 数据]
+    F --&gt; G[AI 提取可信事实]
+    G --&gt; H[AI 生成答案并推荐]
+    H --&gt; I[用户直接采纳建议]</pre>
+
+<p>两者最大的差别在最后一公里。</p>
+<p>SEO 时代，网页只是入口。用户还要点进来，自己读，自己判断。GEO 时代，AI 会先替用户做一轮筛选和总结。用户看到的不是十个蓝色链接，而是一段已经被组织好的答案。</p>
+<p>所以 GEO 不只是“让页面有排名”，而是“让页面里的事实能进入模型答案”。</p>
+<h2 id="AI-为什么会推荐某个产品"><a href="#AI-为什么会推荐某个产品" class="headerlink" title="AI 为什么会推荐某个产品"></a>AI 为什么会推荐某个产品</h2><p>生成式搜索背后最常见的机制是 RAG：Retrieval-Augmented Generation，检索增强生成。</p>
+<p>它大致分两步：</p>
+<ol>
+<li><strong>检索</strong>：AI 根据用户问题去找相关资料，可能来自网页、文档、新闻、论坛、产品官网、知识库。</li>
+<li><strong>生成</strong>：AI 阅读这些资料，提取事实，组织成自然语言答案。</li>
+</ol>
+<p>这意味着，GEO 的失败通常发生在两个地方：</p>
+<ul>
+<li>第一关：AI 根本没检索到你</li>
+<li>第二关：AI 检索到了，但提取不出有用信息，或者不信你</li>
+</ul>
+<p>所以 GEO 的核心不是“写得像广告”，而是反过来适配 AI 的工作方式：它怎么检索，你就怎么铺渠道；它怎么提取，你就怎么组织内容；它怎么判断可信，你就怎么补证据。</p>
+<p>更工程化一点，可以拆成三层漏斗。</p>
+<pre class="mermaid">flowchart TD
+    A[用户向 AI 提问] --&gt; B{AI 能找到你吗?}
+    B --&gt;|不能| X[答案里没有你]
+    B --&gt;|能| C{AI 能读懂你吗?}
+    C --&gt;|不能| X
+    C --&gt;|能| D{AI 信任你吗?}
+    D --&gt;|不能| X
+    D --&gt;|能| E[进入候选答案]
+    E --&gt; F[被引用 / 被推荐 / 被对比]</pre>
+
+<p>第一层是可检索性。网页能不能被爬，内容是不是公开，站点速度和结构是不是正常。</p>
+<p>第二层是可理解性。标题、段落、列表、表格、FAQ 是否清晰，AI 能不能快速抽取“这是什么、适合谁、优势是什么、和谁对比”。</p>
+<p>第三层是可信度。有没有第三方引用、真实数据、作者身份、案例、测评、权威来源。AI 越担心胡说，就越依赖交叉验证。</p>
+<p>所以我赞同黄小木文里的公式：</p>
+<blockquote>
+<p>GEO = SEO + RAG 优化</p>
+</blockquote>
+<p>但我会再补一句：GEO 最终优化的不是“排名”，而是<strong>被答案系统选中的概率</strong>。</p>
+<h2 id="AI-喜欢什么样的内容"><a href="#AI-喜欢什么样的内容" class="headerlink" title="AI 喜欢什么样的内容"></a>AI 喜欢什么样的内容</h2><p>AI 不在乎你的文案有多“高级”，它更在乎内容是否容易提取。</p>
+<p>这和人类读文章的偏好不完全一样。人类可能喜欢起承转合、情绪铺垫、品牌故事；AI 更喜欢定义、要点、表格、结论、FAQ、结构化字段。</p>
+<p>做 GEO 内容，最重要的写作原则是：<strong>结论前置，结构清楚，事实可抽取。</strong></p>
+<h3 id="定义式：抢占“是什么”"><a href="#定义式：抢占“是什么”" class="headerlink" title="定义式：抢占“是什么”"></a>定义式：抢占“是什么”</h3><p>每个产品、概念、服务页面，都应该有一句非常清楚的定义。</p>
+<p>不要写：</p>
+<blockquote>
+<p>我们致力于用前沿 AI 技术重塑未来办公协作体验。</p>
+</blockquote>
+<p>AI 读完也不知道你到底是什么。</p>
+<p>更好的写法是：</p>
+<blockquote>
+<p>NoteFlow 是一款面向跨国远程团队的 AI 会议记录工具，支持多语言实时转写、自动生成会议纪要，并能同步到 Slack、Notion 和飞书。</p>
+</blockquote>
+<p>这句话包含四个关键信息：</p>
+<ul>
+<li>产品名：NoteFlow</li>
+<li>类目：AI 会议记录工具</li>
+<li>目标用户：跨国远程团队</li>
+<li>核心能力：多语言转写、纪要生成、工具同步</li>
+</ul>
+<p>这类句子非常适合被 AI 拿去回答“NoteFlow 是什么”。</p>
+<h3 id="要点式：抢占“有哪些优势”"><a href="#要点式：抢占“有哪些优势”" class="headerlink" title="要点式：抢占“有哪些优势”"></a>要点式：抢占“有哪些优势”</h3><p>AI 很喜欢列表，因为列表降低了归纳成本。</p>
+<p>如果你希望 AI 推荐你的产品，就不要把优势藏在一大段软文里。直接写成要点：</p>
+<ul>
+<li><strong>多语言</strong>：支持中英日等多语言混合会议转写</li>
+<li><strong>自动化</strong>：会议结束后自动生成纪要、待办和责任人</li>
+<li><strong>集成能力</strong>：支持同步到 Notion、Slack、飞书等协作工具</li>
+<li><strong>适用场景</strong>：适合跨国团队、远程会议、销售访谈和用户研究</li>
+</ul>
+<p>这不是“文案变丑”，而是让信息变得可抓取。</p>
+<h3 id="对比式：抢占“哪个好”"><a href="#对比式：抢占“哪个好”" class="headerlink" title="对比式：抢占“哪个好”"></a>对比式：抢占“哪个好”</h3><p>用户最常问 AI 的不是“某某是什么”，而是“哪个更适合我”。</p>
+<p>比如：</p>
+<ul>
+<li>哪个 AI 会议记录工具适合跨国团队？</li>
+<li>Notion AI 和飞书妙记哪个好？</li>
+<li>有哪些 Perplexity 替代品？</li>
+</ul>
+<p>这类问题天然需要对比。GEO 里最有价值的内容之一，就是高质量对比页。</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> 维度 </span><span class="token punctuation">|</span><span class="token table-header important"> 你的产品 </span><span class="token punctuation">|</span><span class="token table-header important"> 竞品 A </span><span class="token punctuation">|</span><span class="token table-header important"> 竞品 B </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span> <span class="token punctuation">---</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> 适合人群 </span><span class="token punctuation">|</span><span class="token table-data"> 跨国远程团队 </span><span class="token punctuation">|</span><span class="token table-data"> 本地会议 </span><span class="token punctuation">|</span><span class="token table-data"> 个人笔记 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 多语言支持 </span><span class="token punctuation">|</span><span class="token table-data"> 强 </span><span class="token punctuation">|</span><span class="token table-data"> 中 </span><span class="token punctuation">|</span><span class="token table-data"> 弱 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 会后自动化 </span><span class="token punctuation">|</span><span class="token table-data"> 纪要 + 待办 + 同步 </span><span class="token punctuation">|</span><span class="token table-data"> 仅纪要 </span><span class="token punctuation">|</span><span class="token table-data"> 仅转写 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 价格 </span><span class="token punctuation">|</span><span class="token table-data"> $29/月 </span><span class="token punctuation">|</span><span class="token table-data"> $39/月 </span><span class="token punctuation">|</span><span class="token table-data"> 免费/限制多 </span><span class="token punctuation">|</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Hexo/Telegram 不一定适合大量表格，但对网页内容来说，清晰对比表非常重要。AI 在回答“哪个好”时，很容易引用这种结构。</p>
+<h3 id="FAQ-式：直接匹配用户问题"><a href="#FAQ-式：直接匹配用户问题" class="headerlink" title="FAQ 式：直接匹配用户问题"></a>FAQ 式：直接匹配用户问题</h3><p>AI 检索时会拿用户问题去匹配网页里的标题和语义块。</p>
+<p>所以小标题不要只写抽象名词，比如“功能说明”。更好的写法是直接写成问题：</p>
+<ul>
+<li>NoteFlow 怎么自动生成会议纪要？</li>
+<li>NoteFlow 支持哪些语言？</li>
+<li>NoteFlow 适合销售团队吗？</li>
+<li>NoteFlow 和飞书妙记有什么区别？</li>
+</ul>
+<p>这类标题天然接近用户向 AI 提问的方式，也更容易成为答案片段。</p>
+<h2 id="技术层：别把-AI-挡在门外"><a href="#技术层：别把-AI-挡在门外" class="headerlink" title="技术层：别把 AI 挡在门外"></a>技术层：别把 AI 挡在门外</h2><p>内容写得再好，如果 AI 爬不到，也没用。</p>
+<p>GEO 的技术地基主要有四件事。</p>
+<h3 id="第一，robots-txt-不要误伤-AI-爬虫"><a href="#第一，robots-txt-不要误伤-AI-爬虫" class="headerlink" title="第一，robots.txt 不要误伤 AI 爬虫"></a>第一，robots.txt 不要误伤 AI 爬虫</h3><p><code>robots.txt</code> 像网站门卫，告诉爬虫哪些能进、哪些不能进。</p>
+<p>最糟糕的写法是：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">User-agent: *
+Disallow: /<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这等于把所有爬虫都挡在门外。做 GEO 时，至少要确保公开内容、文档、博客、产品页允许被正常抓取。</p>
+<p>更常见的做法是只屏蔽私有路径：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Allow: /<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果你特别关心不同 AI 爬虫，比如 <code>GPTBot</code>、<code>PerplexityBot</code>、<code>ClaudeBot</code>、<code>Google-Extended</code>，可以单独配置，但前提是你知道自己为什么放行或阻止。不要为了“安全感”一刀切屏蔽。</p>
+<h3 id="第二，Schema-让机器知道页面是什么"><a href="#第二，Schema-让机器知道页面是什么" class="headerlink" title="第二，Schema 让机器知道页面是什么"></a>第二，Schema 让机器知道页面是什么</h3><p>Schema.org 结构化数据不是给人看的，是给机器看的。</p>
+<p>对产品页，可以用 <code>Product</code>；对文章页，可以用 <code>Article</code>；对 FAQ，可以用 <code>FAQPage</code>；对教程，可以用 <code>HowTo</code>。</p>
+<p>例如产品页可以表达：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://schema.org"</span><span class="token punctuation">,</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Product"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"NoteFlow Pro"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"面向远程团队的 AI 会议记录工具，支持多语言实时转写和自动纪要生成"</span><span class="token punctuation">,</span>
+  <span class="token property">"brand"</span><span class="token operator">:</span> <span class="token string">"NoteFlow"</span><span class="token punctuation">,</span>
+  <span class="token property">"offers"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Offer"</span><span class="token punctuation">,</span>
+    <span class="token property">"price"</span><span class="token operator">:</span> <span class="token string">"29.00"</span><span class="token punctuation">,</span>
+    <span class="token property">"priceCurrency"</span><span class="token operator">:</span> <span class="token string">"USD"</span><span class="token punctuation">,</span>
+    <span class="token property">"availability"</span><span class="token operator">:</span> <span class="token string">"https://schema.org/InStock"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这不是保证 AI 一定推荐你，但它能降低机器理解成本。</p>
+<h3 id="第三，llms-txt-可以作为-AI-目录"><a href="#第三，llms-txt-可以作为-AI-目录" class="headerlink" title="第三，llms.txt 可以作为 AI 目录"></a>第三，llms.txt 可以作为 AI 目录</h3><p><code>llms.txt</code> 是近两年越来越多人讨论的新文件。它有点像给 LLM / AI Agent 准备的网站说明书：告诉 AI 你的重要页面、文档入口、产品说明、API 文档在哪里。</p>
+<p>它还不是像 <code>sitemap.xml</code> 那样成熟的事实标准，但对文档站、开源项目、SaaS 产品来说，值得提前布局。</p>
+<p>一个简单的 <code>llms.txt</code> 可以长这样：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># NoteFlow
+
+NoteFlow is an AI meeting notes tool for multilingual remote teams.
+
+## Key Pages
+- Product overview: https://example.com/
+- Pricing: https://example.com/pricing
+- Docs: https://example.com/docs
+- Comparison: https://example.com/compare/noteflow-vs-competitors
+- Blog: https://example.com/blog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Mintlify 的 GEO 指南也强调文档站要让 AI 更容易发现完整文档索引，这类思路对产品文档尤其有用。</p>
+<h3 id="第四，页面速度和可访问性仍然重要"><a href="#第四，页面速度和可访问性仍然重要" class="headerlink" title="第四，页面速度和可访问性仍然重要"></a>第四，页面速度和可访问性仍然重要</h3><p>不要以为到了 AI 搜索时代，基础 SEO 就不重要了。</p>
+<p>如果网页慢、JS 渲染复杂、移动端打不开、关键信息都藏在登录后，AI 也很难稳定抓取。GEO 的第一步仍然是让内容成为干净、可访问、可索引的网页。</p>
+<h2 id="内容布局：三类页面最值得做"><a href="#内容布局：三类页面最值得做" class="headerlink" title="内容布局：三类页面最值得做"></a>内容布局：三类页面最值得做</h2><p>如果你是一个产品、工具、SaaS 或个人 IP，不要一上来就乱写博客。</p>
+<p>优先做三类页面。</p>
+<h3 id="1-定义页：让-AI-知道你是谁"><a href="#1-定义页：让-AI-知道你是谁" class="headerlink" title="1. 定义页：让 AI 知道你是谁"></a>1. 定义页：让 AI 知道你是谁</h3><p>目标是回答：</p>
+<ul>
+<li>你是什么？</li>
+<li>你解决什么问题？</li>
+<li>适合谁？</li>
+<li>和传统方案有什么区别？</li>
+</ul>
+<p>这类页面适合官网首页、产品介绍页、文档首页。</p>
+<h3 id="2-场景页：让-AI-知道你适合谁"><a href="#2-场景页：让-AI-知道你适合谁" class="headerlink" title="2. 场景页：让 AI 知道你适合谁"></a>2. 场景页：让 AI 知道你适合谁</h3><p>目标是覆盖真实需求，而不是只覆盖产品名。</p>
+<p>比如不要只写“NoteFlow 功能介绍”，还要写：</p>
+<ul>
+<li>跨国团队如何记录多语言会议？</li>
+<li>销售访谈怎么自动生成 CRM 纪要？</li>
+<li>用户研究访谈如何整理成洞察报告？</li>
+</ul>
+<p>AI 推荐产品时，经常根据场景匹配。你的场景页越清楚，越容易进入候选。</p>
+<h3 id="3-对比页：让-AI-知道你和谁同框"><a href="#3-对比页：让-AI-知道你和谁同框" class="headerlink" title="3. 对比页：让 AI 知道你和谁同框"></a>3. 对比页：让 AI 知道你和谁同框</h3><p>对比页的意义不是贬低竞品，而是让 AI 在检索竞品和品类词时，也能看到你。</p>
+<p>如果用户问“某某工具替代品”，你的对比页就有机会被抓到。哪怕 AI 最后说“如果你更看重多语言会议，NoteFlow 更适合”，你也已经进入了决策集合。</p>
+<pre class="mermaid">flowchart TD
+    A[用户问题] --&gt; B{问题类型}
+    B --&gt;|这是什么| C[定义页]
+    B --&gt;|怎么解决| D[场景页 / 教程页]
+    B --&gt;|哪个好| E[对比页]
+    B --&gt;|靠谱吗| F[案例页 / 测评 / 第三方引用]
+    C --&gt; G[AI 候选答案]
+    D --&gt; G
+    E --&gt; G
+    F --&gt; G</pre>
+
+<h2 id="怎么测试-GEO-有没有效果"><a href="#怎么测试-GEO-有没有效果" class="headerlink" title="怎么测试 GEO 有没有效果"></a>怎么测试 GEO 有没有效果</h2><p>GEO 最大的问题是：你很难像传统 SEO 那样直接看排名。</p>
+<p>但你可以做模拟测试。</p>
+<h3 id="第一步：查-AI-是否认识你"><a href="#第一步：查-AI-是否认识你" class="headerlink" title="第一步：查 AI 是否认识你"></a>第一步：查 AI 是否认识你</h3><p>直接问：</p>
+<blockquote>
+<p>介绍一下 NoteFlow。</p>
+</blockquote>
+<p>如果 AI 能准确说出你的定位、功能、官网信息，说明它至少有一定收录或认知。</p>
+<p>如果它胡编，说明网上信息太少或信息冲突。</p>
+<h3 id="第二步：查-AI-是否推荐你"><a href="#第二步：查-AI-是否推荐你" class="headerlink" title="第二步：查 AI 是否推荐你"></a>第二步：查 AI 是否推荐你</h3><p>不要带品牌名，问品类词：</p>
+<blockquote>
+<p>推荐几款适合跨国团队的 AI 会议记录工具。</p>
+</blockquote>
+<p>这一步看的是你能不能进入自然推荐列表。</p>
+<h3 id="第三步：查-AI-引用了什么"><a href="#第三步：查-AI-引用了什么" class="headerlink" title="第三步：查 AI 引用了什么"></a>第三步：查 AI 引用了什么</h3><p>Perplexity、Google AI Overview、部分搜索型 AI 会显示引用来源。你要看：</p>
+<ul>
+<li>它引用的是官网吗？</li>
+<li>引用的是第三方测评吗？</li>
+<li>引用的是竞品对比页吗？</li>
+<li>它漏掉了哪些你想强调的信息？</li>
+</ul>
+<p>如果 AI 引用的是错误来源，就补官方说明；如果它推荐竞品，就写对比页；如果它理解错定位，就重写定义页。</p>
+<h3 id="第四步：持续记录而不是凭感觉"><a href="#第四步：持续记录而不是凭感觉" class="headerlink" title="第四步：持续记录而不是凭感觉"></a>第四步：持续记录而不是凭感觉</h3><p>建议用一个简单表格记录：</p>
+<ul>
+<li>提问词</li>
+<li>测试平台</li>
+<li>是否出现品牌</li>
+<li>排在第几个</li>
+<li>是否有引用源</li>
+<li>答案是否准确</li>
+<li>下一步补什么内容</li>
+</ul>
+<p>GEO 是动态博弈。你的竞争对手也会补内容，AI 的检索源也会更新。一次出现不代表永远出现，一次不出现也不代表永远没机会。</p>
+<h2 id="最容易踩的坑"><a href="#最容易踩的坑" class="headerlink" title="最容易踩的坑"></a>最容易踩的坑</h2><h3 id="坑-1：把-GEO-做成旧式关键词堆砌"><a href="#坑-1：把-GEO-做成旧式关键词堆砌" class="headerlink" title="坑 1：把 GEO 做成旧式关键词堆砌"></a>坑 1：把 GEO 做成旧式关键词堆砌</h3><p>AI 比传统搜索更擅长读语义。你在页面里重复 100 次“最佳 AI 会议记录工具”，不但没用，还可能显得像垃圾内容。</p>
+<p>GEO 需要的是结构化事实，不是关键词噪音。</p>
+<h3 id="坑-2：只在自己官网自夸"><a href="#坑-2：只在自己官网自夸" class="headerlink" title="坑 2：只在自己官网自夸"></a>坑 2：只在自己官网自夸</h3><p>AI 很看重交叉验证。</p>
+<p>如果全网只有你自己说自己好，没有测评、案例、社区讨论、媒体报道、开源仓库、用户评价，AI 很难判断可信。官网是主战场，但不是唯一战场。</p>
+<h3 id="坑-3：捏造数据和背书"><a href="#坑-3：捏造数据和背书" class="headerlink" title="坑 3：捏造数据和背书"></a>坑 3：捏造数据和背书</h3><p>不要为了“看起来可信”编造客户数、融资额、奖项、认证。</p>
+<p>生成式引擎会交叉验证，一旦发现对不上，可信度会受损。腾讯云那篇避坑文章也强调，GEO 不是灰帽 SEO 的新战场，数据造假、隐藏关键词、虚假背书都会反噬。</p>
+<h3 id="坑-4：内容太少导致-AI-幻觉"><a href="#坑-4：内容太少导致-AI-幻觉" class="headerlink" title="坑 4：内容太少导致 AI 幻觉"></a>坑 4：内容太少导致 AI 幻觉</h3><p>很多小产品最危险的状态不是负面多，而是信息太少。</p>
+<p>AI 找不到你时，可能不推荐；更糟的是，它可能把别人的信息拼到你身上。至少要保证官网、文档、About、定价、核心功能、FAQ 这些基础信息准确可抓。</p>
+<h3 id="坑-5：只做文章，不做产品信息底座"><a href="#坑-5：只做文章，不做产品信息底座" class="headerlink" title="坑 5：只做文章，不做产品信息底座"></a>坑 5：只做文章，不做产品信息底座</h3><p>GEO 不是发几篇博客就完事。</p>
+<p>你的首页、产品页、文档页、FAQ、对比页、案例页、Schema、robots.txt、llms.txt，都是同一个信息系统的一部分。AI 最终引用的是整个系统的可信度，不是一篇爆文。</p>
+<h2 id="给产品团队的-GEO-落地清单"><a href="#给产品团队的-GEO-落地清单" class="headerlink" title="给产品团队的 GEO 落地清单"></a>给产品团队的 GEO 落地清单</h2><p>如果你今天就要开始，我建议按这个顺序做。</p>
+<p><strong>第一周：补基础信息</strong></p>
+<ul>
+<li>明确一句话定义：你是什么、适合谁、解决什么问题</li>
+<li>重写官网首页首屏，避免只有口号</li>
+<li>补 FAQ：价格、功能、适用场景、和竞品区别</li>
+<li>检查 <code>robots.txt</code>，确认公开页面可抓</li>
+<li>提交 <code>sitemap.xml</code></li>
+</ul>
+<p><strong>第二周：做可引用内容</strong></p>
+<ul>
+<li>写 3 篇场景页：围绕真实用户问题</li>
+<li>写 1 篇竞品对比页：客观比较，不拉踩</li>
+<li>写 1 篇教程页：回答“怎么做”</li>
+<li>给重点页面加 <code>Article</code> / <code>Product</code> / <code>FAQPage</code> Schema</li>
+</ul>
+<p><strong>第三周：补可信信号</strong></p>
+<ul>
+<li>整理真实案例和用户评价</li>
+<li>在 GitHub、Product Hunt、社区、测评站留下准确资料</li>
+<li>让创始人或技术负责人署名专业文章</li>
+<li>准备 <code>llms.txt</code>，列出关键页面和文档入口</li>
+</ul>
+<p><strong>第四周：测试和迭代</strong></p>
+<ul>
+<li>在 ChatGPT、Perplexity、豆包、Kimi 等平台测试核心提问</li>
+<li>记录是否出现品牌、答案是否准确、引用源是什么</li>
+<li>针对误解补官方说明</li>
+<li>针对竞品推荐补对比页</li>
+<li>针对长尾需求补场景页</li>
+</ul>
+<h2 id="结语：从“被搜索到”到“被答案选中”"><a href="#结语：从“被搜索到”到“被答案选中”" class="headerlink" title="结语：从“被搜索到”到“被答案选中”"></a>结语：从“被搜索到”到“被答案选中”</h2><p>GEO 不是玄学，也不是把 SEO 包装成新词。</p>
+<p>它背后的变化很现实：用户不再只看搜索结果列表，而是越来越依赖 AI 直接给答案。流量入口从“搜索框”变成“生成式答案”，品牌竞争也从“谁排第一”变成“谁被 AI 认为值得推荐”。</p>
+<p>这件事对小产品反而是机会。</p>
+<p>大公司有品牌和外链优势，但小产品可以更快把内容结构、文档、对比页、FAQ、Schema、llms.txt 做干净。只要你比竞品更容易被 AI 看见、读懂、信任，就有机会在某些细分问题里先被推荐。</p>
+<p>一句话：</p>
+<blockquote>
+<p>未来的内容优化，不只是写给人看，也要写给会替人做决策的 AI 看。</p>
+</blockquote>
+<p>参考：</p>
+<ul>
+<li>黄小木 GEO 原帖：<a href="https://x.com/ai_xiaomu/status/2068613828687085699">https://x.com/ai_xiaomu/status/2068613828687085699</a></li>
+<li>Capgo：2026 生成式引擎优化与 AI 搜索终极指南：<a href="https://capgo.ai/blogs/en-geo-guide/">https://capgo.ai/blogs/en-geo-guide/</a></li>
+<li>Mintlify：GEO 指南：为 AI 搜索和答案引擎优化文档：<a href="https://www.mintlify.com/docs/zh/guides/geo">https://www.mintlify.com/docs/zh/guides/geo</a></li>
+<li>腾讯云开发者社区：GEO 避坑指南：<a href="https://cloud.tencent.com/developer/article/2563481">https://cloud.tencent.com/developer/article/2563481</a></li>
+<li>arXiv：GEO: Generative Engine Optimization：<a href="https://arxiv.org/abs/2311.09735">https://arxiv.org/abs/2311.09735</a></li>
+<li>Semrush：Generative Engine Optimization: A Practical Guide：<a href="https://www.semrush.com/blog/generative-engine-optimization/">https://www.semrush.com/blog/generative-engine-optimization/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>AI工程</category>
+      </categories>
+      <tags>
+        <tag>AI搜索</tag>
+        <tag>GEO</tag>
+        <tag>SEO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LLM 挖因子：别被漂亮回测骗了</title>
     <url>/posts/llm-quant-factor-mining-overfitting-risk.html</url>
     <content><![CDATA[<h1 id="LLM-挖因子：别被漂亮回测骗了"><a href="#LLM-挖因子：别被漂亮回测骗了" class="headerlink" title="LLM 挖因子：别被漂亮回测骗了"></a>LLM 挖因子：别被漂亮回测骗了</h1><p>最近关于“用 LLM 挖量化因子”的讨论挺热。表面上看，这是一个很性感的话题：让大模型阅读数据、理解市场、自动提出因子，再通过回测筛选 Alpha。</p>
@@ -16980,153 +17422,6 @@ FNR = \frac{FN}{TP + FN}
         <tag>指标</tag>
         <tag>AUC</tag>
         <tag>误伤率</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</title>
-    <url>/posts/okx-2026-spring-festival-collect-five-blessings-guide.html</url>
-    <content><![CDATA[<h1 id="OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"><a href="#OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤" class="headerlink" title="OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"></a>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</h1><blockquote>
-<p>🧧 <strong>专属活动入口，通过此链接参与集五福瓜分 28 BTC！</strong><br>👉 <a href="https://oyidl.me/ul/I2Ojm3?channelId=8385429&amp;utm_medium=koc&amp;utm_campaign=referral_task&amp;utm_content=R6LHrLO4"><strong>点击这里进入活动页面</strong></a></p>
-</blockquote>
-<p>今年春节，OKX 搞了个大活动——<strong>集五福瓜分 28 BTC</strong>，人均最高可得 <strong>300U</strong>，还有 <strong>1 BTC 哈希锦鲤</strong>大奖等你来拿。</p>
-<p>这篇文章帮你把活动规则、集福技巧、最小成本打法、哈希锦鲤玩法全部拆解清楚，看完直接上手。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144317151-1618386141.jpg" style="zoom:50%;" alt="OKX春节集五福活动"></p>
-<h2 id="活动概览"><a href="#活动概览" class="headerlink" title="活动概览"></a>活动概览</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>活动时间</strong></td>
-<td>2026年2月11日 11:00 至 2月21日 12:00 (UTC+8)</td>
-</tr>
-<tr>
-<td><strong>奖池规模</strong></td>
-<td>28 BTC（总奖池超 500 万 U）</td>
-</tr>
-<tr>
-<td><strong>人均最高</strong></td>
-<td>300 USDT</td>
-</tr>
-<tr>
-<td><strong>哈希锦鲤</strong></td>
-<td>1 BTC</td>
-</tr>
-<tr>
-<td><strong>瓜分公布</strong></td>
-<td>2月21日 12:05</td>
-</tr>
-<tr>
-<td><strong>锦鲤公布</strong></td>
-<td>2月21日 12:20 前后</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>核心规则</strong>：集五福 → 合成「财神福」→ 瓜分 BTC 奖池。每人最多合成 <strong>5 张财神福</strong>，奖池金额 ×5 份。</p>
-<blockquote>
-<p>关注星球 OKX中文 &amp; 推特 @okxchinese 查看开奖结果。</p>
-</blockquote>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144315496-944790390.png" style="zoom:33%;" alt="OKX集五福攻略完整版"></p>
-<h2 id="如何快速拿福卡？"><a href="#如何快速拿福卡？" class="headerlink" title="如何快速拿福卡？"></a>如何快速拿福卡？</h2><p>进入活动页面，点击「前往集五福」开启集福。根据你的身份，玩法略有不同：</p>
-<h3 id="OKX-老用户"><a href="#OKX-老用户" class="headerlink" title="OKX 老用户"></a>OKX 老用户</h3><p><strong>速通版：拉新是最快的</strong></p>
-<ul>
-<li>每邀请 1 位新用户 → 获得 1 张福卡</li>
-<li>最多邀请 20 人</li>
-</ul>
-<p><strong>升级版：多交易多拿福</strong></p>
-<ul>
-<li>现货交易累计 6,000U → 1 张福卡（上限100张）</li>
-<li>合约交易累计 10,000U → 1 张福卡（上限100张）</li>
-</ul>
-<h3 id="OKX-新用户"><a href="#OKX-新用户" class="headerlink" title="OKX 新用户"></a>OKX 新用户</h3><p><strong>速通版：新人专属福利</strong></p>
-<ul>
-<li>首次现货交易 ≥100U → 直接获得 <strong>2 张福卡 + 50U 合约体验金</strong></li>
-<li>拉新拿福：邀请 1 人 → 1 张，最多 20 人</li>
-</ul>
-<p><strong>升级版：同老用户规则</strong></p>
-<blockquote>
-<p>*拉新拿福细则：被邀请人需完成 100U 现货交易才算有效。</p>
-</blockquote>
-<h2 id="最小成本拿福攻略"><a href="#最小成本拿福攻略" class="headerlink" title="最小成本拿福攻略"></a>最小成本拿福攻略</h2><p>这是经过实战验证的<strong>低成本高效打法</strong>：</p>
-<h3 id="1-拉人永远最快"><a href="#1-拉人永远最快" class="headerlink" title="1. 拉人永远最快"></a>1. 拉人永远最快</h3><p>1 个新用户 = 1 张福卡，多拉多得，速度第一。这是性价比最高的方式。</p>
-<h3 id="2-现货最小成本玩法"><a href="#2-现货最小成本玩法" class="headerlink" title="2. 现货最小成本玩法"></a>2. 现货最小成本玩法</h3><p><strong>600U 现货，来回买卖 5 次 = 一次完成 6,000U 交易量 = 1 张福卡</strong></p>
-<p>不需要 6,000U 本金，只需要 600U 反复交易即可达到累计交易量。</p>
-<h3 id="3-合约最小成本玩法"><a href="#3-合约最小成本玩法" class="headerlink" title="3. 合约最小成本玩法"></a>3. 合约最小成本玩法</h3><p><strong>1,000U × 10 倍杠杆 = 一次完成 10,000U 交易量 = 1 张福卡</strong></p>
-<p>用杠杆放大交易量，快速达标。</p>
-<h3 id="4-实测经验"><a href="#4-实测经验" class="headerlink" title="4. 实测经验"></a>4. 实测经验</h3><blockquote>
-<p>小群实测：前 10 张福卡，合成「财神福」的概率很高。5 人小群实测，最多集 10 张福就能合成财神福。</p>
-</blockquote>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144314159-2024874248.jpg" style="zoom:50%;" alt="OKX集五福活动页面"></p>
-<h2 id="福卡互换与赠送"><a href="#福卡互换与赠送" class="headerlink" title="福卡互换与赠送"></a>福卡互换与赠送</h2><p>福卡是可以和朋友<strong>互换 / 赠送</strong>的！</p>
-<p><strong>赠福方式</strong>：</p>
-<ol>
-<li>点击你拥有的福卡</li>
-<li>选择「赠送好友」</li>
-<li>通过链接或 UID 赠送</li>
-<li>好友扫码领取</li>
-</ol>
-<p>如果你缺某种福卡（比如「双冠福」），可以在社群里发帖互换。</p>
-<h2 id="哈希锦鲤——终极大奖-1-BTC"><a href="#哈希锦鲤——终极大奖-1-BTC" class="headerlink" title="哈希锦鲤——终极大奖 1 BTC"></a>哈希锦鲤——终极大奖 1 BTC</h2><p>这是整个活动最刺激的部分。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>大奖</strong></td>
-<td>1 BTC</td>
-</tr>
-<tr>
-<td><strong>开奖时间</strong></td>
-<td>2月21日 12:20 前后</td>
-</tr>
-<tr>
-<td><strong>参与资格</strong></td>
-<td>合成「财神福」即可参与</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>中奖规则</strong>：你的财神福卡编码 = 2月21日 12:05 之后<strong>第一个 BTC 区块哈希值末 5~6 位数字</strong>。</p>
-<p>这是完全链上随机的开奖方式，公平透明，没有暗箱操作。</p>
-<p><strong>关键点</strong>：</p>
-<ul>
-<li>福卡越多 → 合成「财神福」的概率越高</li>
-<li>合成「财神福」→ 既能瓜分 BTC 奖池，又能冲击锦鲤</li>
-<li>会拉人的、交易量大的，这波都属于<strong>优势玩家</strong></li>
-</ul>
-<h2 id="重要提醒"><a href="#重要提醒" class="headerlink" title="重要提醒"></a>重要提醒</h2><ul>
-<li><strong>务必在 2月21日 12:05 前合成财神福</strong>，否则无法参与瓜分</li>
-<li>先点击「加入活动」按钮，页面显示「做任务集福卡」，才计入有效参与</li>
-<li>每人最多合成 5 张财神福，多合成多拿奖</li>
-<li>新人拉新和交易玩法<strong>可以并行</strong>，不冲突</li>
-</ul>
-<h2 id="活动参与入口"><a href="#活动参与入口" class="headerlink" title="活动参与入口"></a>活动参与入口</h2><p><strong>无需 VPN 直达链接</strong>：</p>
-<ul>
-<li><a href="https://www.hucneo.com/zh-hans/campaigns/fortuneblessings?channelid=88596413">极简活动页（推荐）</a></li>
-<li><a href="https://oyidl.net/ul/ibUte3?channelId=88596413">可拉起 APP 版本</a></li>
-</ul>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>今年 OKX 春节活动诚意十足——Web2 给你画饼，Web3 直接给你撒币。28 BTC 的奖池 + 1 BTC 的锦鲤大奖，这波不薅白不薅。</p>
-<p><strong>速通路线</strong>：注册/登录 → 加入活动 → 拉新 + 交易集福卡 → 合成财神福 → 等待 2月21日开奖。</p>
-<p>过春节，集五福，用春节搞大钱！</p>
-]]></content>
-      <categories>
-        <category>加密货币</category>
-      </categories>
-      <tags>
-        <tag>OKX</tag>
-        <tag>加密货币</tag>
-        <tag>春节活动</tag>
-        <tag>BTC</tag>
       </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-23T03:00:35.146Z</updated>
+  <updated>2026-06-23T14:57:18.921Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI入门第一课：装App和填API Key</title>
+    <link href="https://onefly.top/posts/ai-api-key-mac-app-install-guide.html"/>
+    <id>https://onefly.top/posts/ai-api-key-mac-app-install-guide.html</id>
+    <published>2026-06-23T13:48:16.000Z</published>
+    <updated>2026-06-23T14:57:18.921Z</updated>
+    
+    
+    <summary type="html">企业推广 AI 最容易卡在两件小事：Mac 怎么安装非 App Store 应用，以及 API Key、Base URL、OpenAI 兼容接口到底怎么配置。这篇文章用 Codex App、Codex CLI 和 Tosky AI 为例，把第一步讲清楚。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Mac" scheme="https://onefly.top/tags/Mac/"/>
+    
+    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="API" scheme="https://onefly.top/tags/API/"/>
+    
+    <category term="Codex" scheme="https://onefly.top/tags/Codex/"/>
+    
+  </entry>
   
   <entry>
     <title>GEO：让 AI 主动推荐你</title>
@@ -474,29 +499,6 @@
     <category term="AI交易" scheme="https://onefly.top/tags/AI%E4%BA%A4%E6%98%93/"/>
     
     <category term="新闻交易" scheme="https://onefly.top/tags/%E6%96%B0%E9%97%BB%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GPT Plus 代充漏洞技术解构：iOS 收据校验缺陷与灰产套利链路全拆解</title>
-    <link href="https://onefly.top/posts/chatgpt-plus-apple-receipt-grey-market-risk-2026.html"/>
-    <id>https://onefly.top/posts/chatgpt-plus-apple-receipt-grey-market-risk-2026.html</id>
-    <published>2026-04-16T10:53:56.000Z</published>
-    <updated>2026-05-27T10:30:43.301Z</updated>
-    
-    
-    <summary type="html">基于 X 平台 @xkajon 原帖，完整还原 GPT Plus iOS 内购收据漏洞的技术原理：OpenAI 订阅校验链路缺陷、收据拦截与导出方法、API 补单接口细节，以及灰产套利的经济模型。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="ChatGPT Plus" scheme="https://onefly.top/tags/ChatGPT-Plus/"/>
-    
-    <category term="订阅安全" scheme="https://onefly.top/tags/%E8%AE%A2%E9%98%85%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="逆向工程" scheme="https://onefly.top/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
     
   </entry>
   

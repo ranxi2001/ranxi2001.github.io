@@ -4857,91 +4857,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
-    <title>MEME市场擒龙术（四）：庄家坐庄全流程举例详解</title>
-    <url>/posts/241231.html</url>
-    <content><![CDATA[<h1 id="MEME市场擒龙术（四）：庄家坐庄全流程举例详解"><a href="#MEME市场擒龙术（四）：庄家坐庄全流程举例详解" class="headerlink" title="MEME市场擒龙术（四）：庄家坐庄全流程举例详解"></a>MEME市场擒龙术（四）：庄家坐庄全流程举例详解</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1872232952962457643">https://x.com/Shanks_A9z/status/1872232952962457643</a></p>
-<blockquote>
-<p>转载仅供收藏和方便阅读</p>
-</blockquote>
-<p><strong>读完后，你应该就能彻底的了解庄家的全部操作，透彻一个币的全程走势如何。</strong>本篇篇幅较长，粗略阅读时间约为15分钟。且极为细致，时间点和点位全流程都写了，另外本文仅为我个人观点。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这一篇耗费我的时间是最久的，因为涉及到扒一个庄的所有地址，和数据的整理工作，所以让大家久等啦，抱歉抱歉~ </p>
-<p>最近圣诞节前后，行情确实不行。但在我看来，一级的牛市是没有结束的，下一大牛是在1-3月。现在的行情低迷，我觉得正好可以抽时间认真学习，为即将到来的牛市做好准备，一级依然是小资金博取大收益的最佳地方！ </p>
-<p>在讲解之前，我先分享我的经验，可以帮助大家细致的扒出全部的庄地址。 </p>
-<p>首先，明晰一个点，庄家拉盘的目的是为了不让低价筹码落入到他人手中，然后以更高的价格卖出从而获得更高收益。既然是这个目的，那么拉升一定是极速的。如何才能极速的拉盘呢？只有大笔的买单才能做到极速拉升。所以在拉盘时，一定会有一个或多个，具有统一性的地址在比较大额的买入。假如，你看到有两个地址都是至少一千多刀的买，不停的买，这就叫做拉盘。所以在找庄地址时，可以筛选大于1K刀的买单记录，逐一去看，且该地址的主要交易代币就是这个，即可知道哪个地址是庄的拉盘地址。 </p>
-<p>同样的，庄怎么样才能收集最初的底筹呢，一定是在最开始，最低点进行迅速的狙击，抽走大部分筹码。所以去看最早的交易记录，逐个看完基本就能看到庄家收集底筹的所有动作。 </p>
-<p>先来看看这个币附带庄家全部地址的走势，逐步流程会紧随其后讲解。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231185623504-2110142099.png" alt=""></p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>本次解析所讲到的LILX仅作讲解用例，不构成投资建议。 </p>
-<p>LILX这个代币是非常典型的pump币了，他的历程基本上与90%的币雷同。 </p>
-<p>不管是热点币，AI币，常规MEME币，全部都是这样的模式。不论是低市值还是高市值的币，无一例外。有多次大幅涨跌的MEME，是因为故事够新，庄的格局够大。如果想抓住这种，可以去看擒龙术二的找到庄家吸筹的方法。在这里是明晰透彻SOL上绝大部分MEME的流程如何，以及如何通过流动性去判断未来庄家的主要动向。 </p>
-<p>以LILX为例，时间均为UTC+8时间</p>
-<h3 id="一、时间：12-06-06-34"><a href="#一、时间：12-06-06-34" class="headerlink" title="一、时间：12/06-06:34"></a>一、时间：12/06-06:34</h3><p>马斯克在其推特发文并配图，他的小儿子（LIL X）骑在他的肩膀上，这是近期他首次在推特上晒自己的儿子，话题性较强，有炒作空间。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231185913451-2068122490.png" alt=""></p>
-<h3 id="二、时间：12-7-03-12"><a href="#二、时间：12-7-03-12" class="headerlink" title="二、时间：12/7-03:12"></a>二、时间：12/7-03:12</h3><blockquote>
-<p>流动性：暂无。筹码：76%。净利润：-2W。</p>
-</blockquote>
-<p>LILX的庄开始部署LILX代币，DEV号拿走了341.4M的筹码（筹码总量为1000M），约34%。并在其后的三分钟内，通过13个地址，每个地址狙击拿走了32.4M，总计421.2M（约42%）的筹码。至此在内盘便轻松完成了筹码的收集工作，约占总量的76%。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190033976-2063188362.png" alt=""></p>
-<h3 id="三、时间：12-7-03-18"><a href="#三、时间：12-7-03-18" class="headerlink" title="三、时间：12/7-03:18"></a>三、时间：12/7-03:18</h3><blockquote>
-<p>流动性：约为38K。筹码：76%。净利润：-2W。</p>
-</blockquote>
-<p>由于内盘筹码被购买完毕，得以顺利发射，在Raydium流动性池添加过程中庄家开始筹码的分散派发。由14个地址通过三层发送给了71个地址和3位KOL的地址。为了方便计数，在这里计算为每个地址约占总量的1%。底筹流向如图所示（全地址及全图会放在电报）</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190131489-717142684.png" alt=""></p>
-<h3 id="四、时间：03-18至03-19"><a href="#四、时间：03-18至03-19" class="headerlink" title="四、时间：03:18至03:19"></a>四、时间：03:18至03:19</h3><blockquote>
-<p>流动性：62K。筹码：82%(+6%)。净利润：-3.2W。</p>
-</blockquote>
-<p>发射后，拉盘地址狙击开盘，花费1.2W刀主导，带起跟风买单，顺势将市值抬升至500K附近，在这位置开始了十分平稳的横盘。此时总流动性为62K。意识到什么了吗？<strong>此时池子里的SOL价值31K</strong>（为总流动性的一半）差不多够覆盖此前的总成本：筹码狙击+拉盘=<strong>3.2W刀</strong>。此时在<strong>500K</strong>的价位，庄家付出的成本与池子中SOL的价值持平，所以庄家会选择在这个位置横盘，并开始下一步的计划。 </p>
-<p>这里不用担心会被庄家砸，也是最好的上车点位。因为庄家在发射后有一笔猛抬的成本，此时即便一键全出，算上磨损和池子浅所带来的滑点问题，对于庄家来说是亏本的。如果理解清楚这一点，在这个位置就是散户的最佳上车点位和时间，因为你和庄家的成本是同频的，且在知道这一点的情况下，在后续庄家不断拉砸磨的人过程中，你就能拿住了。</p>
-<p>相当于是，你通过流动性数据和捕捉到的庄家成本，计算出了在500K，在这个时间点，是狗庄的成本位。什么叫做与庄家共舞？这就叫做与庄家共舞。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190321804-1512231156.png" alt=""></p>
-<p>五：时间：12/7-03:18至04:02  流动性：67K。筹码：76%(-6%)。净利润：-1.8W。</p>
-<p>时间为03:18时，（图中为蓝线截取的时间）配备好的喊单频道1开始喊单，这就巧了哈，在喊单前没有卖出，在<strong>03:19喊单</strong>后开始卖了。在这个位置通过喊单带来一些流动性，可以借此在不太影响价格的情况下，平稳出掉少量筹码，从而增加后续操纵市场的资金。这里出了1.4W（这是性价比最高的方式，但同样的，什么样的人会极致追求性价比？没钱的人会这样，所以能反应出庄家是强庄，还是一般的游资水平，在这里你通过观察就能明白，这个币在这个庄的手里，上限不会很高。）</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190801700-1506232852.png" alt=""></p>
-<h3 id="六、时间：04-02至04-07"><a href="#六、时间：04-02至04-07" class="headerlink" title="六、时间：04:02至04:07"></a>六、时间：04:02至04:07</h3><blockquote>
-<p>流动性：97K。筹码：80%(+4%)。净利润：-2.62W。</p>
-</blockquote>
-<p>12/07-04:02 在出货收回部分资金后，买单枯竭。于是在<strong>04:02至04:07</strong>开始了大笔猛抬并收回筹码，进一步推高市值至800K的同时，将最初的底筹通过卖出紧接新地址买入的行为，进行筹码的换手，为了掩人耳目。在这段时间，庄家<strong>净买入了约8200美元，收回了4%的筹码。</strong> 如图为蓝线截取时间段。 </p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190859244-289759984.png" alt=""></p>
-<h3 id="七：时间：04-08至06-02"><a href="#七：时间：04-08至06-02" class="headerlink" title="七：时间：04:08至06:02"></a>七：时间：04:08至06:02</h3><blockquote>
-<p>流动性：132K。筹码：71%(-9%)。净利润：+3.4W</p>
-</blockquote>
-<p>这时筹码重新收集完毕，流动性再次枯竭。似乎是前一个喊单的效果不好。要谋求更大更新的流量入口。在此，<strong>04:08分</strong>，<strong>喊单频道2准时开始喊单</strong>，庄家第一时间猛抬点火，并开始多笔小笔出货回笼资金。</p>
-<p>在又一次枯竭后，此时喊单频道能量不够了，于是搬出了杀手锏。在<strong>4:44分</strong>，某个20W粉的国外阴谋caller（是谁我就不贴了，惠姐曾经罗列过）<strong>开始喊单</strong>。配合着他的喊单，第一时间猛抬两笔迅速吸引注意力，再次点火。一样的手法，在喊单+点火带来流动性后，多笔小笔慢出货，进一步增加后续操纵市场的资金。</p>
-<p><strong>如图是细致的全过程，异常重要。</strong>手法，点位，时间都在图中标注，从左到右，从下往上看，务必仔细看清。后续这种循环在多次重复，不再细讲。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191028458-2128496870.png" alt=""></p>
-<h3 id="八、时间：06-02至15-56"><a href="#八、时间：06-02至15-56" class="headerlink" title="八、时间：06:02至15:56"></a>八、时间：06:02至15:56</h3><blockquote>
-<p>流动性：219K。筹码：59%(-12%)。净利润：+8.6W</p>
-</blockquote>
-<p>在上一段结束后，来到了如下图所示的06:02—15:56时间段，依然在重复刚讲到的操作。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191119623-738337105.png" alt=""></p>
-<h3 id="九、时间：15-56至19-42"><a href="#九、时间：15-56至19-42" class="headerlink" title="九、时间：15:56至19:42"></a>九、时间：15:56至19:42</h3><blockquote>
-<p>流动性：254K。筹码：67%(+8%)。净利润：+12.4W。</p>
-</blockquote>
-<p>在时间来到<strong>15:56</strong>，在这个时间点突发事件，<strong>马斯克再次发图</strong>，又发了他的小儿子LILX。狗庄反应还算不错，半小时内得知消息，想好了这个居然有再一次的炒作空间，于是决定好了方向。在16:31分开始大笔猛砸，将市值从3.2M砸至1.7M，短时近乎腰斩。</p>
-<p>这时候由于两次发图，市场的注意力比正常情况下多了不少，这是极大助力，操盘更加容易。在后续的<strong>每次抬头时，都砸出，再低位买回。</strong>不仅可以将筹码换手收回，掩人耳目，在此期间也可赚取差价的利润。 全流程及标注如图所示。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191208064-1326765863.png" alt=""></p>
-<h3 id="十、时间：20-00至06-56"><a href="#十、时间：20-00至06-56" class="headerlink" title="十、时间：20:00至06:56"></a>十、时间：20:00至06:56</h3><blockquote>
-<p>流动性：298K。筹码：4%(-63%)。净利润：+92W。</p>
-</blockquote>
-<p>来到了最后的高潮阶段，在上一步骤的砸至水下吸筹完毕后，开始了最后一舞。同样的套路，新的某国外大V喊单，几个caller开始诉说着LILX是马斯克小儿子，是最宠爱的，已经发了两次图，以后会发更多，故事会一直延续下去云云猛猛CX。此时市场开始FOMO，<strong>配合更加猛烈的大笔少笔拉盘+多笔小笔出货，</strong>在图中的20:00至06:56时间段内，完成最后的操作，价格跳水，<strong>彻底出清几乎所有筹码</strong>，获利了结。</p>
-<p>如图标注所示</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191252503-304039223.png" alt=""></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>写这个确实花费不少时间，也不知道这样细致的解析有没有人看。想了想，我曾经在摸索MEME的这些东西时，没有任何的参考，全是笼统的大道理，没有实践并学会的可能。 </p>
-<p>当时我茫然无措，于是下了狠心，反正一级全部透明，我就去把一个MEME的近乎全部交易记录，花了9天时间全部看完，才知晓了一些东西。 所以，我还是写吧，并发出来。在一级，勤奋是可以显著提升自己的利润的。写这个出来，我也就当作是帮助曾经茫然无措的我了。 </p>
-<p>如果觉得对你有帮助，请点赞收藏转发，如果学到了，请在评论区评论一下。 </p>
-<p>至于下一篇，我先卖个关子，可以透露的是一个视频。 </p>
-<p>纯属为爱发电，你们的支持是我不断更新的动力，谢谢大家！！！</p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>sol</tag>
-        <tag>Web3</tag>
-        <tag>meme</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>0x哪吒：从0到100万人民币meme操作指南</title>
     <url>/posts/250206.html</url>
     <content><![CDATA[<h1 id="0x哪吒：从0到100万人民币meme操作指南"><a href="#0x哪吒：从0到100万人民币meme操作指南" class="headerlink" title="0x哪吒：从0到100万人民币meme操作指南"></a>0x哪吒：从0到100万人民币meme操作指南</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>哪吒(不甘心版)：<a href="https://x.com/0x_nezha/status/1886811255899611208">https://x.com/0x_nezha/status/1886811255899611208</a></p>
@@ -5275,6 +5190,91 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>Acrobat</tag>
         <tag>PDF</tag>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MEME市场擒龙术（四）：庄家坐庄全流程举例详解</title>
+    <url>/posts/241231.html</url>
+    <content><![CDATA[<h1 id="MEME市场擒龙术（四）：庄家坐庄全流程举例详解"><a href="#MEME市场擒龙术（四）：庄家坐庄全流程举例详解" class="headerlink" title="MEME市场擒龙术（四）：庄家坐庄全流程举例详解"></a>MEME市场擒龙术（四）：庄家坐庄全流程举例详解</h1><h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h2><p>Shanks：<a href="https://x.com/Shanks_A9z/status/1872232952962457643">https://x.com/Shanks_A9z/status/1872232952962457643</a></p>
+<blockquote>
+<p>转载仅供收藏和方便阅读</p>
+</blockquote>
+<p><strong>读完后，你应该就能彻底的了解庄家的全部操作，透彻一个币的全程走势如何。</strong>本篇篇幅较长，粗略阅读时间约为15分钟。且极为细致，时间点和点位全流程都写了，另外本文仅为我个人观点。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这一篇耗费我的时间是最久的，因为涉及到扒一个庄的所有地址，和数据的整理工作，所以让大家久等啦，抱歉抱歉~ </p>
+<p>最近圣诞节前后，行情确实不行。但在我看来，一级的牛市是没有结束的，下一大牛是在1-3月。现在的行情低迷，我觉得正好可以抽时间认真学习，为即将到来的牛市做好准备，一级依然是小资金博取大收益的最佳地方！ </p>
+<p>在讲解之前，我先分享我的经验，可以帮助大家细致的扒出全部的庄地址。 </p>
+<p>首先，明晰一个点，庄家拉盘的目的是为了不让低价筹码落入到他人手中，然后以更高的价格卖出从而获得更高收益。既然是这个目的，那么拉升一定是极速的。如何才能极速的拉盘呢？只有大笔的买单才能做到极速拉升。所以在拉盘时，一定会有一个或多个，具有统一性的地址在比较大额的买入。假如，你看到有两个地址都是至少一千多刀的买，不停的买，这就叫做拉盘。所以在找庄地址时，可以筛选大于1K刀的买单记录，逐一去看，且该地址的主要交易代币就是这个，即可知道哪个地址是庄的拉盘地址。 </p>
+<p>同样的，庄怎么样才能收集最初的底筹呢，一定是在最开始，最低点进行迅速的狙击，抽走大部分筹码。所以去看最早的交易记录，逐个看完基本就能看到庄家收集底筹的所有动作。 </p>
+<p>先来看看这个币附带庄家全部地址的走势，逐步流程会紧随其后讲解。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231185623504-2110142099.png" alt=""></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>本次解析所讲到的LILX仅作讲解用例，不构成投资建议。 </p>
+<p>LILX这个代币是非常典型的pump币了，他的历程基本上与90%的币雷同。 </p>
+<p>不管是热点币，AI币，常规MEME币，全部都是这样的模式。不论是低市值还是高市值的币，无一例外。有多次大幅涨跌的MEME，是因为故事够新，庄的格局够大。如果想抓住这种，可以去看擒龙术二的找到庄家吸筹的方法。在这里是明晰透彻SOL上绝大部分MEME的流程如何，以及如何通过流动性去判断未来庄家的主要动向。 </p>
+<p>以LILX为例，时间均为UTC+8时间</p>
+<h3 id="一、时间：12-06-06-34"><a href="#一、时间：12-06-06-34" class="headerlink" title="一、时间：12/06-06:34"></a>一、时间：12/06-06:34</h3><p>马斯克在其推特发文并配图，他的小儿子（LIL X）骑在他的肩膀上，这是近期他首次在推特上晒自己的儿子，话题性较强，有炒作空间。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231185913451-2068122490.png" alt=""></p>
+<h3 id="二、时间：12-7-03-12"><a href="#二、时间：12-7-03-12" class="headerlink" title="二、时间：12/7-03:12"></a>二、时间：12/7-03:12</h3><blockquote>
+<p>流动性：暂无。筹码：76%。净利润：-2W。</p>
+</blockquote>
+<p>LILX的庄开始部署LILX代币，DEV号拿走了341.4M的筹码（筹码总量为1000M），约34%。并在其后的三分钟内，通过13个地址，每个地址狙击拿走了32.4M，总计421.2M（约42%）的筹码。至此在内盘便轻松完成了筹码的收集工作，约占总量的76%。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190033976-2063188362.png" alt=""></p>
+<h3 id="三、时间：12-7-03-18"><a href="#三、时间：12-7-03-18" class="headerlink" title="三、时间：12/7-03:18"></a>三、时间：12/7-03:18</h3><blockquote>
+<p>流动性：约为38K。筹码：76%。净利润：-2W。</p>
+</blockquote>
+<p>由于内盘筹码被购买完毕，得以顺利发射，在Raydium流动性池添加过程中庄家开始筹码的分散派发。由14个地址通过三层发送给了71个地址和3位KOL的地址。为了方便计数，在这里计算为每个地址约占总量的1%。底筹流向如图所示（全地址及全图会放在电报）</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190131489-717142684.png" alt=""></p>
+<h3 id="四、时间：03-18至03-19"><a href="#四、时间：03-18至03-19" class="headerlink" title="四、时间：03:18至03:19"></a>四、时间：03:18至03:19</h3><blockquote>
+<p>流动性：62K。筹码：82%(+6%)。净利润：-3.2W。</p>
+</blockquote>
+<p>发射后，拉盘地址狙击开盘，花费1.2W刀主导，带起跟风买单，顺势将市值抬升至500K附近，在这位置开始了十分平稳的横盘。此时总流动性为62K。意识到什么了吗？<strong>此时池子里的SOL价值31K</strong>（为总流动性的一半）差不多够覆盖此前的总成本：筹码狙击+拉盘=<strong>3.2W刀</strong>。此时在<strong>500K</strong>的价位，庄家付出的成本与池子中SOL的价值持平，所以庄家会选择在这个位置横盘，并开始下一步的计划。 </p>
+<p>这里不用担心会被庄家砸，也是最好的上车点位。因为庄家在发射后有一笔猛抬的成本，此时即便一键全出，算上磨损和池子浅所带来的滑点问题，对于庄家来说是亏本的。如果理解清楚这一点，在这个位置就是散户的最佳上车点位和时间，因为你和庄家的成本是同频的，且在知道这一点的情况下，在后续庄家不断拉砸磨的人过程中，你就能拿住了。</p>
+<p>相当于是，你通过流动性数据和捕捉到的庄家成本，计算出了在500K，在这个时间点，是狗庄的成本位。什么叫做与庄家共舞？这就叫做与庄家共舞。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190321804-1512231156.png" alt=""></p>
+<p>五：时间：12/7-03:18至04:02  流动性：67K。筹码：76%(-6%)。净利润：-1.8W。</p>
+<p>时间为03:18时，（图中为蓝线截取的时间）配备好的喊单频道1开始喊单，这就巧了哈，在喊单前没有卖出，在<strong>03:19喊单</strong>后开始卖了。在这个位置通过喊单带来一些流动性，可以借此在不太影响价格的情况下，平稳出掉少量筹码，从而增加后续操纵市场的资金。这里出了1.4W（这是性价比最高的方式，但同样的，什么样的人会极致追求性价比？没钱的人会这样，所以能反应出庄家是强庄，还是一般的游资水平，在这里你通过观察就能明白，这个币在这个庄的手里，上限不会很高。）</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190801700-1506232852.png" alt=""></p>
+<h3 id="六、时间：04-02至04-07"><a href="#六、时间：04-02至04-07" class="headerlink" title="六、时间：04:02至04:07"></a>六、时间：04:02至04:07</h3><blockquote>
+<p>流动性：97K。筹码：80%(+4%)。净利润：-2.62W。</p>
+</blockquote>
+<p>12/07-04:02 在出货收回部分资金后，买单枯竭。于是在<strong>04:02至04:07</strong>开始了大笔猛抬并收回筹码，进一步推高市值至800K的同时，将最初的底筹通过卖出紧接新地址买入的行为，进行筹码的换手，为了掩人耳目。在这段时间，庄家<strong>净买入了约8200美元，收回了4%的筹码。</strong> 如图为蓝线截取时间段。 </p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231190859244-289759984.png" alt=""></p>
+<h3 id="七：时间：04-08至06-02"><a href="#七：时间：04-08至06-02" class="headerlink" title="七：时间：04:08至06:02"></a>七：时间：04:08至06:02</h3><blockquote>
+<p>流动性：132K。筹码：71%(-9%)。净利润：+3.4W</p>
+</blockquote>
+<p>这时筹码重新收集完毕，流动性再次枯竭。似乎是前一个喊单的效果不好。要谋求更大更新的流量入口。在此，<strong>04:08分</strong>，<strong>喊单频道2准时开始喊单</strong>，庄家第一时间猛抬点火，并开始多笔小笔出货回笼资金。</p>
+<p>在又一次枯竭后，此时喊单频道能量不够了，于是搬出了杀手锏。在<strong>4:44分</strong>，某个20W粉的国外阴谋caller（是谁我就不贴了，惠姐曾经罗列过）<strong>开始喊单</strong>。配合着他的喊单，第一时间猛抬两笔迅速吸引注意力，再次点火。一样的手法，在喊单+点火带来流动性后，多笔小笔慢出货，进一步增加后续操纵市场的资金。</p>
+<p><strong>如图是细致的全过程，异常重要。</strong>手法，点位，时间都在图中标注，从左到右，从下往上看，务必仔细看清。后续这种循环在多次重复，不再细讲。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191028458-2128496870.png" alt=""></p>
+<h3 id="八、时间：06-02至15-56"><a href="#八、时间：06-02至15-56" class="headerlink" title="八、时间：06:02至15:56"></a>八、时间：06:02至15:56</h3><blockquote>
+<p>流动性：219K。筹码：59%(-12%)。净利润：+8.6W</p>
+</blockquote>
+<p>在上一段结束后，来到了如下图所示的06:02—15:56时间段，依然在重复刚讲到的操作。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191119623-738337105.png" alt=""></p>
+<h3 id="九、时间：15-56至19-42"><a href="#九、时间：15-56至19-42" class="headerlink" title="九、时间：15:56至19:42"></a>九、时间：15:56至19:42</h3><blockquote>
+<p>流动性：254K。筹码：67%(+8%)。净利润：+12.4W。</p>
+</blockquote>
+<p>在时间来到<strong>15:56</strong>，在这个时间点突发事件，<strong>马斯克再次发图</strong>，又发了他的小儿子LILX。狗庄反应还算不错，半小时内得知消息，想好了这个居然有再一次的炒作空间，于是决定好了方向。在16:31分开始大笔猛砸，将市值从3.2M砸至1.7M，短时近乎腰斩。</p>
+<p>这时候由于两次发图，市场的注意力比正常情况下多了不少，这是极大助力，操盘更加容易。在后续的<strong>每次抬头时，都砸出，再低位买回。</strong>不仅可以将筹码换手收回，掩人耳目，在此期间也可赚取差价的利润。 全流程及标注如图所示。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191208064-1326765863.png" alt=""></p>
+<h3 id="十、时间：20-00至06-56"><a href="#十、时间：20-00至06-56" class="headerlink" title="十、时间：20:00至06:56"></a>十、时间：20:00至06:56</h3><blockquote>
+<p>流动性：298K。筹码：4%(-63%)。净利润：+92W。</p>
+</blockquote>
+<p>来到了最后的高潮阶段，在上一步骤的砸至水下吸筹完毕后，开始了最后一舞。同样的套路，新的某国外大V喊单，几个caller开始诉说着LILX是马斯克小儿子，是最宠爱的，已经发了两次图，以后会发更多，故事会一直延续下去云云猛猛CX。此时市场开始FOMO，<strong>配合更加猛烈的大笔少笔拉盘+多笔小笔出货，</strong>在图中的20:00至06:56时间段内，完成最后的操作，价格跳水，<strong>彻底出清几乎所有筹码</strong>，获利了结。</p>
+<p>如图标注所示</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202412/2910984-20241231191252503-304039223.png" alt=""></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>写这个确实花费不少时间，也不知道这样细致的解析有没有人看。想了想，我曾经在摸索MEME的这些东西时，没有任何的参考，全是笼统的大道理，没有实践并学会的可能。 </p>
+<p>当时我茫然无措，于是下了狠心，反正一级全部透明，我就去把一个MEME的近乎全部交易记录，花了9天时间全部看完，才知晓了一些东西。 所以，我还是写吧，并发出来。在一级，勤奋是可以显著提升自己的利润的。写这个出来，我也就当作是帮助曾经茫然无措的我了。 </p>
+<p>如果觉得对你有帮助，请点赞收藏转发，如果学到了，请在评论区评论一下。 </p>
+<p>至于下一篇，我先卖个关子，可以透露的是一个视频。 </p>
+<p>纯属为爱发电，你们的支持是我不断更新的动力，谢谢大家！！！</p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>sol</tag>
+        <tag>Web3</tag>
+        <tag>meme</tag>
       </tags>
   </entry>
   <entry>
@@ -6249,6 +6249,153 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
+    <title>从零开始学习 Google NotebookLM：AI 笔记神器与演示 PPT 制作教程</title>
+    <url>/posts/251122.html</url>
+    <content><![CDATA[<p>大家好！我是 <a href="https://x.com/Onefly">Onefly</a>，今天我们来聊聊 Google 的 AI 笔记工具 <strong>NotebookLM</strong>。这款工具最近大火，尤其是它的“文稿演示”（Slide Decks）功能，能让 AI 一键生成专业 PPT，完美解决“PPT 制作太麻烦”的痛点。基于 X 用户的分享（他用 NotebookLM 快速拆解 YouTube 视频生成演示），我整理了这篇从零开始的博客式教程。无论你是学生、上班族还是内容创作者，这篇教程都能帮你快速上手。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185349281-1843188761.png" alt=""></p>
+<p>NotebookLM 不是简单的笔记 App，它像你的“第二大脑”：上传文档、视频，就能自动总结、生成播客、思维导图，甚至一键变 PPT。免费版已支持中文（需 Google 账号），Pro 版有更多配额。走起！</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185833259-583465752.png" style="zoom:50%;"></p>
+<h2 id="第一步：快速入门——创建你的第一个-Notebook"><a href="#第一步：快速入门——创建你的第一个-Notebook" class="headerlink" title="第一步：快速入门——创建你的第一个 Notebook"></a>第一步：快速入门——创建你的第一个 Notebook</h2><h3 id="1-1-注册与访问"><a href="#1-1-注册与访问" class="headerlink" title="1.1 注册与访问"></a>1.1 注册与访问</h3><ul>
+<li><strong>前提</strong>：需要 Google 账号（Gmail）。如果没有，访问 <a href="https://accounts.google.com">accounts.google.com</a> 注册。</li>
+<li><strong>访问工具</strong>：打开浏览器，前往 <a href="https://notebooklm.google.com">notebooklm.google.com</a>。如果在国内，可能需科学上网（VPN）。</li>
+<li><strong>创建 Notebook</strong>：点击“New Notebook”，给它起个名，比如“我的 AI PPT 项目”。每个 Notebook 像一个独立文件夹，能上传最多 50 个来源（总字数限 2500 万字）。</li>
+</ul>
+<p><strong>小贴士</strong>：免费版够用，但演示文稿功能可能需 Pro 版（每月约 20 美元）。X 用户反馈，免费版有思维导图等，但 PPT 生成需升级。</p>
+<h3 id="1-2-上传来源：喂给-AI-的“原料”"><a href="#1-2-上传来源：喂给-AI-的“原料”" class="headerlink" title="1.2 上传来源：喂给 AI 的“原料”"></a>1.2 上传来源：喂给 AI 的“原料”</h3><p>NotebookLM 支持多种格式，让 AI “吃”进去分析：</p>
+<ul>
+<li><strong>文件类型</strong>：PDF、TXT、Markdown、Google Docs、Google Slides、音频/视频（MP3、MP4）、图像。</li>
+<li><strong>YouTube 视频</strong>：直接粘贴链接（如 Dan Koe 的视频），AI 会转录字幕并分析。</li>
+<li><strong>网站/URL</strong>：复制链接，AI 抓取内容。</li>
+</ul>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185500538-951746152.png" style="zoom:50%;"></p>
+<p><strong>操作步骤</strong>：</p>
+<ol>
+<li>在左侧“Sources”面板，点击“Add source”。</li>
+<li>上传文件或粘贴 URL。AI 会自动处理（几秒到几分钟）。</li>
+<li>处理后，右侧会生成<strong>来源摘要</strong>（Summary）：AI 提取关键点、主题标签。点击查看原内容。</li>
+</ol>
+<p><strong>示例</strong>：上传一篇 PDF 报告，AI 立即给出“核心观点：X、Y、Z”和“潜在问题：A、B”。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185534079-1180882295.png" style="zoom:50%;"><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185606145-251066183.png" alt="image-20251122185605031" style="zoom: 78%;"></p>
+<h2 id="第二步：核心玩法——与-AI-互动，生成笔记与洞见"><a href="#第二步：核心玩法——与-AI-互动，生成笔记与洞见" class="headerlink" title="第二步：核心玩法——与 AI 互动，生成笔记与洞见"></a>第二步：核心玩法——与 AI 互动，生成笔记与洞见</h2><p>上传后，NotebookLM 就“活”了。它基于 Gemini 1.5 Pro 模型，只用你的来源回答问题（减少“幻觉”），并带引用链接。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185725419-1720419791.png" alt=""></p>
+<h3 id="2-1-聊天问答：像问朋友一样挖深内容"><a href="#2-1-聊天问答：像问朋友一样挖深内容" class="headerlink" title="2.1 聊天问答：像问朋友一样挖深内容"></a>2.1 聊天问答：像问朋友一样挖深内容</h3><ul>
+<li><strong>界面</strong>：切换到“Chat”面板。</li>
+<li><strong>提问技巧</strong>：<ul>
+<li>基础： “总结这个视频的核心观点？”（引用来源页码）。</li>
+<li>进阶： “基于这些文档，分析优缺点？” 或 “生成学习指南，包括步骤和例子。”</li>
+</ul>
+</li>
+<li><strong>自动生成</strong>：点击“Notebook guide”，AI 弹出 5 种笔记：<ul>
+<li><strong>FAQ</strong>：常见问题解答。</li>
+<li><strong>Study Guide</strong>：学习指南，带测验题。</li>
+<li><strong>Timeline</strong>：事件时间线。</li>
+<li><strong>Briefing Doc</strong>：简报文档。</li>
+<li><strong>…and 2 more</strong>：自定义。</li>
+</ul>
+</li>
+</ul>
+<p><strong>实际案例</strong>：上传会议录音（MP3），问“关键行动项是什么？” AI 生成带截止日期的列表。</p>
+<h3 id="2-2-音频-视频输出：听-AI-讲故事"><a href="#2-2-音频-视频输出：听-AI-讲故事" class="headerlink" title="2.2 音频/视频输出：听 AI 讲故事"></a>2.2 音频/视频输出：听 AI 讲故事</h3><ul>
+<li><strong>Audio Overview</strong>：一键生成播客式对话（2 主持人大聊你的来源）。支持 50+ 语言，包括中文。<ul>
+<li>操作：点击“Audio overview” &gt; 生成 &gt; 下载 MP3。</li>
+<li>场景：边跑步边听论文总结，超高效！</li>
+</ul>
+</li>
+<li><strong>Video Overview</strong>（新功能）：生成短视频解说（需 Pro）。</li>
+</ul>
+<p>X 分享中，@song66546656 用这个功能把视频变播客，30 秒搞定。</p>
+<h2 id="第三步：进阶应用——生成播客、思维导图与自定义提示"><a href="#第三步：进阶应用——生成播客、思维导图与自定义提示" class="headerlink" title="第三步：进阶应用——生成播客、思维导图与自定义提示"></a>第三步：进阶应用——生成播客、思维导图与自定义提示</h2><h3 id="3-1-播客生成：从文本到“脱口秀”"><a href="#3-1-播客生成：从文本到“脱口秀”" class="headerlink" title="3.1 播客生成：从文本到“脱口秀”"></a>3.1 播客生成：从文本到“脱口秀”</h3><ul>
+<li><strong>为什么牛</strong>：AI 模拟 2 人对话，幽默生动，不枯燥。</li>
+<li><strong>步骤</strong>：<ol>
+<li>上传多来源。</li>
+<li>点击“Audio overview”。</li>
+<li>选择风格（e.g., “专业分析”或“轻松聊天”）。</li>
+</ol>
+</li>
+<li><strong>高级</strong>：用自定义提示如“用 Persona 5 风格生成播客”。</li>
+</ul>
+<p><strong>场景</strong>：学生复习历史，用播客形式“听”事件演变。</p>
+<h3 id="3-2-思维导图：可视化知识"><a href="#3-2-思维导图：可视化知识" class="headerlink" title="3.2 思维导图：可视化知识"></a>3.2 思维导图：可视化知识</h3><ul>
+<li><strong>功能</strong>：Studio 面板 &gt; “Mind map”，AI 自动画出分支图。</li>
+<li><strong>用途</strong>：上传教材，生成“章节-子主题-关联”图。导出 PNG 分享。</li>
+</ul>
+<h3 id="3-3-自定义提示：解锁无限可能"><a href="#3-3-自定义提示：解锁无限可能" class="headerlink" title="3.3 自定义提示：解锁无限可能"></a>3.3 自定义提示：解锁无限可能</h3><ul>
+<li><strong>Prompt 技巧</strong>（从简单到复杂）：<ul>
+<li>入门： “用 bullet points 总结。”</li>
+<li>中级： “生成 5 个面试问题，带答案。”</li>
+<li>高级： “基于来源，写一篇 800 字博客，风格像 Dan Koe。”</li>
+</ul>
+</li>
+<li><strong>保存笔记</strong>：生成内容后，点击“Save to notebook” 永久存档。</li>
+</ul>
+<p><strong>Pro Tip</strong>：结合多来源问“比较 A 和 B 的差异”，AI 会跨文档分析。</p>
+<h2 id="第四步：杀手锏——AI-一键制作演示-PPT"><a href="#第四步：杀手锏——AI-一键制作演示-PPT" class="headerlink" title="第四步：杀手锏——AI 一键制作演示 PPT"></a>第四步：杀手锏——AI 一键制作演示 PPT</h2><p>这是 X 帖子焦点！NotebookLM 的“文稿演示”功能，用 Nano Banana Pro 模型生成视觉炸裂的 PPT，远超 Gemini App。</p>
+<h3 id="4-1-为什么用它做-PPT？"><a href="#4-1-为什么用它做-PPT？" class="headerlink" title="4.1 为什么用它做 PPT？"></a>4.1 为什么用它做 PPT？</h3><ul>
+<li><strong>优势</strong>：忠实来源、无幻觉；自动配专业图（非库存照）；风格自定义。</li>
+<li><strong>场景</strong>：报告、教学、营销演示。X 用户反馈： “30 秒拆解视频，生成 Persona 5 风 PPT。”</li>
+</ul>
+<h3 id="4-2-详细步骤：从零到专业演示"><a href="#4-2-详细步骤：从零到专业演示" class="headerlink" title="4.2 详细步骤：从零到专业演示"></a>4.2 详细步骤：从零到专业演示</h3><ol>
+<li><strong>准备来源</strong>：上传文档/视频（如 YouTube 链接）。等待 AI 分析。</li>
+<li><strong>进入 Studio</strong>：右侧面板 &gt; “Studio” &gt; 选择“Slide Decks”（演示文稿）。</li>
+<li><strong>自定义设置</strong>：<ul>
+<li><strong>语言</strong>：选中文。</li>
+<li><strong>风格</strong>：简约、专业、创意（e.g., “Persona 5 游戏风”）。</li>
+<li><strong>提示词</strong>： “生成 10 页 PPT，焦点在关键信号，无噪音。包括图表和视觉张力。”</li>
+<li>（可选）长度：短/中/长。</li>
+</ul>
+</li>
+<li><strong>生成</strong>：点击“Generate”。AI 用 1-2 分钟输出完整 PPT（Google Slides 格式）。</li>
+<li><strong>编辑与导出</strong>：<ul>
+<li>打开铅笔图标编辑（调整布局、颜色）。</li>
+<li>导出 PDF/PPTX，或直接分享链接。</li>
+<li>视觉升级：AI 自动插 Nano Banana 生成的自定义图（e.g., 抽象信号图标）。</li>
+</ul>
+</li>
+</ol>
+<p><strong>示例输出</strong>（基于 Dan Koe 视频）：</p>
+<ul>
+<li>封面：标题 + 游戏风背景。</li>
+<li>主体：每页 1-2 点 + 图解。</li>
+<li>结尾：行动号召。</li>
+</ul>
+<p><strong>常见问题</strong>：</p>
+<ul>
+<li><strong>免费可用？</strong>：基础生成免费，高级视觉需 Pro。</li>
+<li><strong>中文支持</strong>：完美，但长文本偶有瑕疵。</li>
+<li><strong>优化提示</strong>： “强调视觉张力，用高对比色。”</li>
+</ul>
+<p>X 回复中，有人说手机版无此功能，用网页版吧！</p>
+<h2 id="第五步：最佳实践与注意事项"><a href="#第五步：最佳实践与注意事项" class="headerlink" title="第五步：最佳实践与注意事项"></a>第五步：最佳实践与注意事项</h2><h3 id="5-1-高效学习流程"><a href="#5-1-高效学习流程" class="headerlink" title="5.1 高效学习流程"></a>5.1 高效学习流程</h3><ol>
+<li><strong>收集</strong>：上传 5-10 来源。</li>
+<li><strong>分析</strong>：生成摘要 + 问答。</li>
+<li><strong>输出</strong>：播客复习 + PPT 分享。</li>
+<li><strong>迭代</strong>：用新提示深化（e.g., “生成测验”）。</li>
+</ol>
+<p><strong>场景举例</strong>：</p>
+<ul>
+<li><strong>学生</strong>：上传教材 &gt; 生成 Study Guide + 闪卡。</li>
+<li><strong>职场</strong>：会议纪要 &gt; 转 PPT 汇报。</li>
+<li><strong>创作者</strong>：视频脚本 &gt; 播客 + 演示。</li>
+</ul>
+<h3 id="5-2-注意事项"><a href="#5-2-注意事项" class="headerlink" title="5.2 注意事项"></a>5.2 注意事项</h3><ul>
+<li><strong>隐私</strong>：来源不用于训练模型，安全。</li>
+<li><strong>局限</strong>：不联网搜索，只用你的数据；视频需公开链接。</li>
+<li><strong>升级</strong>：Pro 版解锁无限生成、优先支持。</li>
+<li><strong>结合工具</strong>：用 Notion 存 Notebook 链接。</li>
+</ul>
+<h2 id="结语：你的-AI-学习杠杆已就位"><a href="#结语：你的-AI-学习杠杆已就位" class="headerlink" title="结语：你的 AI 学习杠杆已就位"></a>结语：你的 AI 学习杠杆已就位</h2><p>NotebookLM 不是工具，是杠杆——从“读懂”到“展示”，一键闭环。像 X 帖子说的，“只有信号，无噪音”。试试上传你的第一个视频，生成 PPT，效率起飞！</p>
+<p>有问题？评论区问我。更多 AI 教程，关注 Grok。开始你的 Notebook 之旅吧！ 🚀</p>
+]]></content>
+      <categories>
+        <category>AI工具</category>
+      </categories>
+      <tags>
+        <tag>Google NotebookLM</tag>
+        <tag>AI工具</tag>
+        <tag>PPT制作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>榨干黑五VPS的7个姿势：Web3玩家的资源优化实战指南</title>
     <url>/posts/251123.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Web3时代，许多玩家购买VPS（Virtual Private Server，虚拟私人服务器）仅用于简单任务，如运行爬虫或代理工具，导致资源严重浪费。一台典型的4核8GB内存、120GB硬盘的VPS，CPU利用率常年低于10%，内存仅用1.5GB左右。这不仅仅是金钱浪费，更是机会成本。</p>
@@ -6481,153 +6628,6 @@ w3 <span class="token operator">=</span> Web3<span class="token punctuation">(</
       </tags>
   </entry>
   <entry>
-    <title>从零开始学习 Google NotebookLM：AI 笔记神器与演示 PPT 制作教程</title>
-    <url>/posts/251122.html</url>
-    <content><![CDATA[<p>大家好！我是 <a href="https://x.com/Onefly">Onefly</a>，今天我们来聊聊 Google 的 AI 笔记工具 <strong>NotebookLM</strong>。这款工具最近大火，尤其是它的“文稿演示”（Slide Decks）功能，能让 AI 一键生成专业 PPT，完美解决“PPT 制作太麻烦”的痛点。基于 X 用户的分享（他用 NotebookLM 快速拆解 YouTube 视频生成演示），我整理了这篇从零开始的博客式教程。无论你是学生、上班族还是内容创作者，这篇教程都能帮你快速上手。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185349281-1843188761.png" alt=""></p>
-<p>NotebookLM 不是简单的笔记 App，它像你的“第二大脑”：上传文档、视频，就能自动总结、生成播客、思维导图，甚至一键变 PPT。免费版已支持中文（需 Google 账号），Pro 版有更多配额。走起！</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185833259-583465752.png" style="zoom:50%;"></p>
-<h2 id="第一步：快速入门——创建你的第一个-Notebook"><a href="#第一步：快速入门——创建你的第一个-Notebook" class="headerlink" title="第一步：快速入门——创建你的第一个 Notebook"></a>第一步：快速入门——创建你的第一个 Notebook</h2><h3 id="1-1-注册与访问"><a href="#1-1-注册与访问" class="headerlink" title="1.1 注册与访问"></a>1.1 注册与访问</h3><ul>
-<li><strong>前提</strong>：需要 Google 账号（Gmail）。如果没有，访问 <a href="https://accounts.google.com">accounts.google.com</a> 注册。</li>
-<li><strong>访问工具</strong>：打开浏览器，前往 <a href="https://notebooklm.google.com">notebooklm.google.com</a>。如果在国内，可能需科学上网（VPN）。</li>
-<li><strong>创建 Notebook</strong>：点击“New Notebook”，给它起个名，比如“我的 AI PPT 项目”。每个 Notebook 像一个独立文件夹，能上传最多 50 个来源（总字数限 2500 万字）。</li>
-</ul>
-<p><strong>小贴士</strong>：免费版够用，但演示文稿功能可能需 Pro 版（每月约 20 美元）。X 用户反馈，免费版有思维导图等，但 PPT 生成需升级。</p>
-<h3 id="1-2-上传来源：喂给-AI-的“原料”"><a href="#1-2-上传来源：喂给-AI-的“原料”" class="headerlink" title="1.2 上传来源：喂给 AI 的“原料”"></a>1.2 上传来源：喂给 AI 的“原料”</h3><p>NotebookLM 支持多种格式，让 AI “吃”进去分析：</p>
-<ul>
-<li><strong>文件类型</strong>：PDF、TXT、Markdown、Google Docs、Google Slides、音频/视频（MP3、MP4）、图像。</li>
-<li><strong>YouTube 视频</strong>：直接粘贴链接（如 Dan Koe 的视频），AI 会转录字幕并分析。</li>
-<li><strong>网站/URL</strong>：复制链接，AI 抓取内容。</li>
-</ul>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185500538-951746152.png" style="zoom:50%;"></p>
-<p><strong>操作步骤</strong>：</p>
-<ol>
-<li>在左侧“Sources”面板，点击“Add source”。</li>
-<li>上传文件或粘贴 URL。AI 会自动处理（几秒到几分钟）。</li>
-<li>处理后，右侧会生成<strong>来源摘要</strong>（Summary）：AI 提取关键点、主题标签。点击查看原内容。</li>
-</ol>
-<p><strong>示例</strong>：上传一篇 PDF 报告，AI 立即给出“核心观点：X、Y、Z”和“潜在问题：A、B”。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185534079-1180882295.png" style="zoom:50%;"><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185606145-251066183.png" alt="image-20251122185605031" style="zoom: 78%;"></p>
-<h2 id="第二步：核心玩法——与-AI-互动，生成笔记与洞见"><a href="#第二步：核心玩法——与-AI-互动，生成笔记与洞见" class="headerlink" title="第二步：核心玩法——与 AI 互动，生成笔记与洞见"></a>第二步：核心玩法——与 AI 互动，生成笔记与洞见</h2><p>上传后，NotebookLM 就“活”了。它基于 Gemini 1.5 Pro 模型，只用你的来源回答问题（减少“幻觉”），并带引用链接。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202511/2910984-20251122185725419-1720419791.png" alt=""></p>
-<h3 id="2-1-聊天问答：像问朋友一样挖深内容"><a href="#2-1-聊天问答：像问朋友一样挖深内容" class="headerlink" title="2.1 聊天问答：像问朋友一样挖深内容"></a>2.1 聊天问答：像问朋友一样挖深内容</h3><ul>
-<li><strong>界面</strong>：切换到“Chat”面板。</li>
-<li><strong>提问技巧</strong>：<ul>
-<li>基础： “总结这个视频的核心观点？”（引用来源页码）。</li>
-<li>进阶： “基于这些文档，分析优缺点？” 或 “生成学习指南，包括步骤和例子。”</li>
-</ul>
-</li>
-<li><strong>自动生成</strong>：点击“Notebook guide”，AI 弹出 5 种笔记：<ul>
-<li><strong>FAQ</strong>：常见问题解答。</li>
-<li><strong>Study Guide</strong>：学习指南，带测验题。</li>
-<li><strong>Timeline</strong>：事件时间线。</li>
-<li><strong>Briefing Doc</strong>：简报文档。</li>
-<li><strong>…and 2 more</strong>：自定义。</li>
-</ul>
-</li>
-</ul>
-<p><strong>实际案例</strong>：上传会议录音（MP3），问“关键行动项是什么？” AI 生成带截止日期的列表。</p>
-<h3 id="2-2-音频-视频输出：听-AI-讲故事"><a href="#2-2-音频-视频输出：听-AI-讲故事" class="headerlink" title="2.2 音频/视频输出：听 AI 讲故事"></a>2.2 音频/视频输出：听 AI 讲故事</h3><ul>
-<li><strong>Audio Overview</strong>：一键生成播客式对话（2 主持人大聊你的来源）。支持 50+ 语言，包括中文。<ul>
-<li>操作：点击“Audio overview” &gt; 生成 &gt; 下载 MP3。</li>
-<li>场景：边跑步边听论文总结，超高效！</li>
-</ul>
-</li>
-<li><strong>Video Overview</strong>（新功能）：生成短视频解说（需 Pro）。</li>
-</ul>
-<p>X 分享中，@song66546656 用这个功能把视频变播客，30 秒搞定。</p>
-<h2 id="第三步：进阶应用——生成播客、思维导图与自定义提示"><a href="#第三步：进阶应用——生成播客、思维导图与自定义提示" class="headerlink" title="第三步：进阶应用——生成播客、思维导图与自定义提示"></a>第三步：进阶应用——生成播客、思维导图与自定义提示</h2><h3 id="3-1-播客生成：从文本到“脱口秀”"><a href="#3-1-播客生成：从文本到“脱口秀”" class="headerlink" title="3.1 播客生成：从文本到“脱口秀”"></a>3.1 播客生成：从文本到“脱口秀”</h3><ul>
-<li><strong>为什么牛</strong>：AI 模拟 2 人对话，幽默生动，不枯燥。</li>
-<li><strong>步骤</strong>：<ol>
-<li>上传多来源。</li>
-<li>点击“Audio overview”。</li>
-<li>选择风格（e.g., “专业分析”或“轻松聊天”）。</li>
-</ol>
-</li>
-<li><strong>高级</strong>：用自定义提示如“用 Persona 5 风格生成播客”。</li>
-</ul>
-<p><strong>场景</strong>：学生复习历史，用播客形式“听”事件演变。</p>
-<h3 id="3-2-思维导图：可视化知识"><a href="#3-2-思维导图：可视化知识" class="headerlink" title="3.2 思维导图：可视化知识"></a>3.2 思维导图：可视化知识</h3><ul>
-<li><strong>功能</strong>：Studio 面板 &gt; “Mind map”，AI 自动画出分支图。</li>
-<li><strong>用途</strong>：上传教材，生成“章节-子主题-关联”图。导出 PNG 分享。</li>
-</ul>
-<h3 id="3-3-自定义提示：解锁无限可能"><a href="#3-3-自定义提示：解锁无限可能" class="headerlink" title="3.3 自定义提示：解锁无限可能"></a>3.3 自定义提示：解锁无限可能</h3><ul>
-<li><strong>Prompt 技巧</strong>（从简单到复杂）：<ul>
-<li>入门： “用 bullet points 总结。”</li>
-<li>中级： “生成 5 个面试问题，带答案。”</li>
-<li>高级： “基于来源，写一篇 800 字博客，风格像 Dan Koe。”</li>
-</ul>
-</li>
-<li><strong>保存笔记</strong>：生成内容后，点击“Save to notebook” 永久存档。</li>
-</ul>
-<p><strong>Pro Tip</strong>：结合多来源问“比较 A 和 B 的差异”，AI 会跨文档分析。</p>
-<h2 id="第四步：杀手锏——AI-一键制作演示-PPT"><a href="#第四步：杀手锏——AI-一键制作演示-PPT" class="headerlink" title="第四步：杀手锏——AI 一键制作演示 PPT"></a>第四步：杀手锏——AI 一键制作演示 PPT</h2><p>这是 X 帖子焦点！NotebookLM 的“文稿演示”功能，用 Nano Banana Pro 模型生成视觉炸裂的 PPT，远超 Gemini App。</p>
-<h3 id="4-1-为什么用它做-PPT？"><a href="#4-1-为什么用它做-PPT？" class="headerlink" title="4.1 为什么用它做 PPT？"></a>4.1 为什么用它做 PPT？</h3><ul>
-<li><strong>优势</strong>：忠实来源、无幻觉；自动配专业图（非库存照）；风格自定义。</li>
-<li><strong>场景</strong>：报告、教学、营销演示。X 用户反馈： “30 秒拆解视频，生成 Persona 5 风 PPT。”</li>
-</ul>
-<h3 id="4-2-详细步骤：从零到专业演示"><a href="#4-2-详细步骤：从零到专业演示" class="headerlink" title="4.2 详细步骤：从零到专业演示"></a>4.2 详细步骤：从零到专业演示</h3><ol>
-<li><strong>准备来源</strong>：上传文档/视频（如 YouTube 链接）。等待 AI 分析。</li>
-<li><strong>进入 Studio</strong>：右侧面板 &gt; “Studio” &gt; 选择“Slide Decks”（演示文稿）。</li>
-<li><strong>自定义设置</strong>：<ul>
-<li><strong>语言</strong>：选中文。</li>
-<li><strong>风格</strong>：简约、专业、创意（e.g., “Persona 5 游戏风”）。</li>
-<li><strong>提示词</strong>： “生成 10 页 PPT，焦点在关键信号，无噪音。包括图表和视觉张力。”</li>
-<li>（可选）长度：短/中/长。</li>
-</ul>
-</li>
-<li><strong>生成</strong>：点击“Generate”。AI 用 1-2 分钟输出完整 PPT（Google Slides 格式）。</li>
-<li><strong>编辑与导出</strong>：<ul>
-<li>打开铅笔图标编辑（调整布局、颜色）。</li>
-<li>导出 PDF/PPTX，或直接分享链接。</li>
-<li>视觉升级：AI 自动插 Nano Banana 生成的自定义图（e.g., 抽象信号图标）。</li>
-</ul>
-</li>
-</ol>
-<p><strong>示例输出</strong>（基于 Dan Koe 视频）：</p>
-<ul>
-<li>封面：标题 + 游戏风背景。</li>
-<li>主体：每页 1-2 点 + 图解。</li>
-<li>结尾：行动号召。</li>
-</ul>
-<p><strong>常见问题</strong>：</p>
-<ul>
-<li><strong>免费可用？</strong>：基础生成免费，高级视觉需 Pro。</li>
-<li><strong>中文支持</strong>：完美，但长文本偶有瑕疵。</li>
-<li><strong>优化提示</strong>： “强调视觉张力，用高对比色。”</li>
-</ul>
-<p>X 回复中，有人说手机版无此功能，用网页版吧！</p>
-<h2 id="第五步：最佳实践与注意事项"><a href="#第五步：最佳实践与注意事项" class="headerlink" title="第五步：最佳实践与注意事项"></a>第五步：最佳实践与注意事项</h2><h3 id="5-1-高效学习流程"><a href="#5-1-高效学习流程" class="headerlink" title="5.1 高效学习流程"></a>5.1 高效学习流程</h3><ol>
-<li><strong>收集</strong>：上传 5-10 来源。</li>
-<li><strong>分析</strong>：生成摘要 + 问答。</li>
-<li><strong>输出</strong>：播客复习 + PPT 分享。</li>
-<li><strong>迭代</strong>：用新提示深化（e.g., “生成测验”）。</li>
-</ol>
-<p><strong>场景举例</strong>：</p>
-<ul>
-<li><strong>学生</strong>：上传教材 &gt; 生成 Study Guide + 闪卡。</li>
-<li><strong>职场</strong>：会议纪要 &gt; 转 PPT 汇报。</li>
-<li><strong>创作者</strong>：视频脚本 &gt; 播客 + 演示。</li>
-</ul>
-<h3 id="5-2-注意事项"><a href="#5-2-注意事项" class="headerlink" title="5.2 注意事项"></a>5.2 注意事项</h3><ul>
-<li><strong>隐私</strong>：来源不用于训练模型，安全。</li>
-<li><strong>局限</strong>：不联网搜索，只用你的数据；视频需公开链接。</li>
-<li><strong>升级</strong>：Pro 版解锁无限生成、优先支持。</li>
-<li><strong>结合工具</strong>：用 Notion 存 Notebook 链接。</li>
-</ul>
-<h2 id="结语：你的-AI-学习杠杆已就位"><a href="#结语：你的-AI-学习杠杆已就位" class="headerlink" title="结语：你的 AI 学习杠杆已就位"></a>结语：你的 AI 学习杠杆已就位</h2><p>NotebookLM 不是工具，是杠杆——从“读懂”到“展示”，一键闭环。像 X 帖子说的，“只有信号，无噪音”。试试上传你的第一个视频，生成 PPT，效率起飞！</p>
-<p>有问题？评论区问我。更多 AI 教程，关注 Grok。开始你的 Notebook 之旅吧！ 🚀</p>
-]]></content>
-      <categories>
-        <category>AI工具</category>
-      </categories>
-      <tags>
-        <tag>Google NotebookLM</tag>
-        <tag>AI工具</tag>
-        <tag>PPT制作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OKX 邀请码补绑教程：如何填写邀请码获得20%手续费返佣（2025最新）</title>
     <url>/posts/251217.html</url>
     <content><![CDATA[<h1 id="OKX-邀请码补绑教程：如何填写邀请码获得20-手续费返佣（2025最新实操）"><a href="#OKX-邀请码补绑教程：如何填写邀请码获得20-手续费返佣（2025最新实操）" class="headerlink" title="OKX 邀请码补绑教程：如何填写邀请码获得20%手续费返佣（2025最新实操）"></a>OKX 邀请码补绑教程：如何填写邀请码获得20%手续费返佣（2025最新实操）</h1><p>特大好消息！<strong>现在可以补绑 #OKX 交易所邀请码了！</strong></p>
@@ -6702,173 +6702,6 @@ w3 <span class="token operator">=</span> Web3<span class="token punctuation">(</
         <tag>教程</tag>
         <tag>Crypto</tag>
         <tag>返佣</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【2025.6】当前行情下 Solana 土狗打狗心得分享篇</title>
-    <url>/posts/250605.html</url>
-    <content><![CDATA[<h1 id="【2025-6】当前行情下-Solana-土狗打狗心得分享篇"><a href="#【2025-6】当前行情下-Solana-土狗打狗心得分享篇" class="headerlink" title="【2025.6】当前行情下 Solana 土狗打狗心得分享篇"></a>【2025.6】当前行情下 Solana 土狗打狗心得分享篇</h1><blockquote>
-<p><strong>长文预警｜全文干货</strong></p>
-</blockquote>
-<hr>
-<h2 id="1-行情以及小资金打法思考"><a href="#1-行情以及小资金打法思考" class="headerlink" title="1. 行情以及小资金打法思考"></a>1. 行情以及小资金打法思考</h2><p>目前的 Solana 土狗 PVP 流动性相比去年已经低了不止一个档次。</p>
-<p>去年小资金启动打法：</p>
-<ul>
-<li>重仓 + 超短线 + 吃点数 + 滚资金量</li>
-</ul>
-<p>现在这些策略 <strong>已经完全失效</strong>。</p>
-<p>可以参考我之前写的「聪明钱地址见仁见智篇」：</p>
-<ul>
-<li>当年厉害的内盘高手如 DFM，现在也难以快速盈利。</li>
-<li>跟单几乎绝迹，原来轻松发射的盘子，现在不是死于 PVP 就是死于“钻地”。</li>
-</ul>
-<h3 id="案例举例：DFM"><a href="#案例举例：DFM" class="headerlink" title="案例举例：DFM"></a>案例举例：DFM</h3><p>他们的打法是：</p>
-<ul>
-<li>扫推+热点+大仓底部进+持续浇给</li>
-</ul>
-<p>过去吃爽的前提是：</p>
-<ul>
-<li><strong>持续买单 + 流动性充足 + 外盘大户接力</strong></li>
-</ul>
-<p>现在：</p>
-<ul>
-<li>车头极少出手，例如 CryptoD、0xsun、冷静等都退隐。</li>
-<li>市场大户不再轻易抬盘，热点市值难以抬高。</li>
-</ul>
-<h3 id="小资金新思路"><a href="#小资金新思路" class="headerlink" title="小资金新思路"></a>小资金新思路</h3><ul>
-<li><strong>少出手</strong></li>
-<li>不能再靠抓起量盘子就 PVP 的高频模式了</li>
-<li>出手金额建议不低（如我出手基准是 0.5 SOL）</li>
-</ul>
-<hr>
-<h2 id="2-项目分类与打法"><a href="#2-项目分类与打法" class="headerlink" title="2. 项目分类与打法"></a>2. 项目分类与打法</h2><h3 id="💀-名人盘"><a href="#💀-名人盘" class="headerlink" title="💀 名人盘"></a>💀 名人盘</h3><p><strong>❌ 完全不建议小资金玩家参与</strong></p>
-<ul>
-<li>名人盘分为 believe/boop 性质 以及 pump 性质</li>
-<li>典型问题：<strong>聪明钱+大热点+大户不FOMO</strong></li>
-<li>很多 Web2「名人」发币后马上割完不承认，例如 $AI16ZE</li>
-</ul>
-<h4 id="公信力破产的案例："><a href="#公信力破产的案例：" class="headerlink" title="公信力破产的案例："></a>公信力破产的案例：</h4><ul>
-<li>Toly 的 $TIMEFUN 也没掀起什么波澜</li>
-<li>trump/米莱时期是巅峰，后面基本下坡</li>
-</ul>
-<h3 id="🧑‍🤝‍🧑-社区盘（推荐参与）"><a href="#🧑‍🤝‍🧑-社区盘（推荐参与）" class="headerlink" title="🧑‍🤝‍🧑 社区盘（推荐参与）"></a>🧑‍🤝‍🧑 社区盘（推荐参与）</h3><h4 id="A-领头人社区盘"><a href="#A-领头人社区盘" class="headerlink" title="A. 领头人社区盘"></a>A. 领头人社区盘</h4><p><strong>判断标准：</strong></p>
-<ol>
-<li>看是否有被认可的关注者</li>
-<li>查历史 CTO 背景、做过的盘子、历史战绩</li>
-<li>是否自己掏钱付费上 DEX（300U 也是诚意）</li>
-</ol>
-<p>⚠️ 注意避雷：</p>
-<ul>
-<li>内盘一次性低市值付费上 DEX，常是钓鱼项目</li>
-<li>dev 伪装 CTO，底部持仓控盘，快速收割</li>
-</ul>
-<h4 id="B-散户自治类社区盘"><a href="#B-散户自治类社区盘" class="headerlink" title="B. 散户自治类社区盘"></a>B. 散户自治类社区盘</h4><ul>
-<li>题材好 + 社区热情 = 自发 CX</li>
-<li>例如 $DWCWRWB，靠 meme、好玩、有趣出圈</li>
-</ul>
-<p>🧠 关键点：</p>
-<ul>
-<li>审美判断力</li>
-<li>看交易频率、接力节奏</li>
-<li><strong>“新”或“热”都值得关注</strong></li>
-</ul>
-<p>🎯 核心观点：<strong>抛开盘面谈叙事 = 耍流氓</strong></p>
-<hr>
-<h2 id="3-热点币"><a href="#3-热点币" class="headerlink" title="3. 热点币"></a>3. 热点币</h2><p>类似名人盘，但风险更低。</p>
-<p><strong>优点：</strong></p>
-<ul>
-<li>会被低估</li>
-<li>会发酵</li>
-<li>不容易赢家通吃</li>
-</ul>
-<p>📝 策略建议：</p>
-<ul>
-<li><strong>耐心等待回调</strong></li>
-<li>不吃第一波</li>
-<li>等 CTO 出手后再上</li>
-</ul>
-<hr>
-<h2 id="4-阴谋币"><a href="#4-阴谋币" class="headerlink" title="4. 阴谋币"></a>4. 阴谋币</h2><p><strong>一句话总结：</strong><br>“先信的人赚后信的人的钱”</p>
-<p>真假其实不重要：</p>
-<ul>
-<li>曝光需要时间</li>
-<li>打假也需要时间</li>
-<li>Dev 通常不会太快收网</li>
-</ul>
-<hr>
-<h2 id="5-Dev-的分两类"><a href="#5-Dev-的分两类" class="headerlink" title="5. Dev 的分两类"></a>5. Dev 的分两类</h2><h3 id="🤡-炒币赚不到钱的-dev"><a href="#🤡-炒币赚不到钱的-dev" class="headerlink" title="🤡 炒币赚不到钱的 dev"></a>🤡 炒币赚不到钱的 dev</h3><ul>
-<li>一味打广告、买流量</li>
-<li>没有叙事审美</li>
-<li>花钱买接盘 ≠ 做事</li>
-<li>bsc 很多就是这种，盘子一眼无趣</li>
-</ul>
-<h3 id="🧙‍♂️-炒币能赚钱的-dev"><a href="#🧙‍♂️-炒币能赚钱的-dev" class="headerlink" title="🧙‍♂️ 炒币能赚钱的 dev"></a>🧙‍♂️ 炒币能赚钱的 dev</h3><ul>
-<li>审美足够 + 趣味性强</li>
-<li>例如 $LLJEEFY 的 dev</li>
-<li>例如 0.1B JAME 小狗、谣言币 $PROPAGANDA</li>
-</ul>
-<p>🧠 Dev 的思维决定项目上限<br>🗑️ 不要把钱送给只会挂数据的傻子</p>
-<hr>
-<h2 id="6-扫链屏蔽逻辑"><a href="#6-扫链屏蔽逻辑" class="headerlink" title="6. 扫链屏蔽逻辑"></a>6. 扫链屏蔽逻辑</h2><h3 id="屏蔽标准一：交易量-市值比"><a href="#屏蔽标准一：交易量-市值比" class="headerlink" title="屏蔽标准一：交易量 / 市值比"></a>屏蔽标准一：交易量 / 市值比</h3><p>示例：</p>
-<ul>
-<li>8k 交易量 + 15k 市值 = <strong>异常高市值</strong></li>
-<li>说明全是买单 = <strong>筹码集中</strong> = 钓鱼项目</li>
-</ul>
-<h3 id="屏蔽标准二：叙事类型"><a href="#屏蔽标准二：叙事类型" class="headerlink" title="屏蔽标准二：叙事类型"></a>屏蔽标准二：叙事类型</h3><ul>
-<li>已经存在多个同题材龙头，例如“gay 题材”出现多个项目，直接屏蔽其他。</li>
-<li>同头像、同套路重复出现，也直接屏蔽。</li>
-</ul>
-<h3 id="屏蔽标准三：低市值-dex-付费-内盘"><a href="#屏蔽标准三：低市值-dex-付费-内盘" class="headerlink" title="屏蔽标准三：低市值 + dex 付费 + 内盘"></a>屏蔽标准三：低市值 + dex 付费 + 内盘</h3><ul>
-<li>这种组合多为 dev 自割项目</li>
-<li>不浪费时间直接跳过</li>
-</ul>
-<hr>
-<h2 id="7-直播问题杂谈"><a href="#7-直播问题杂谈" class="headerlink" title="7. 直播问题杂谈"></a>7. 直播问题杂谈</h2><blockquote>
-<p>Q: Axiom 和 GMGN 怎么开钱包监控？<br>A: 点左下角“钱包监控”按钮</p>
-<p>Q: 气泡图怎么看？<br>A: Axiom 点“持有人”；GMGN 点“一键买卖”旁边有气泡图</p>
-<p>Q: 社区盘怕 CTO 浇给？<br>A:避雷前面说的钓鱼盘类型；接受无百分百把握，尽人事听天命</p>
-<p>Q: 为什么看 5 秒 K 线？<br>A: 判断是否有捆绑量、是否钓鱼，参考我写的「钓鱼盘篇」</p>
-</blockquote>
-<hr>
-<h2 id="8-打狗工具推荐"><a href="#8-打狗工具推荐" class="headerlink" title="8. 打狗工具推荐"></a>8. 打狗工具推荐</h2><p>我只用两个：</p>
-<ul>
-<li><strong>GMGN</strong>: 干净持仓显示、钱包标识全、功能好用  </li>
-<li><strong>Axiom</strong>: 大机构背景、有发币积分预期</li>
-</ul>
-<p>功能对比（基本持平）：</p>
-<ul>
-<li>快速交易面板</li>
-<li>钱包监控</li>
-<li>推文跟踪</li>
-</ul>
-<p><strong>小技巧：</strong></p>
-<ul>
-<li>GMGN 自动回收租金（0.002 SOL），无需手动操作</li>
-</ul>
-<p>🔗 我的推荐链接：</p>
-<ul>
-<li><a href="https://gmgn.ai/?ref=cLf0ZwzZ&amp;chain=sol">GMGN</a></li>
-<li><a href="https://axiom.trade/@onefly">Axiom</a></li>
-</ul>
-<hr>
-<h2 id="9-结语"><a href="#9-结语" class="headerlink" title="9. 结语"></a>9. 结语</h2><p>很多人私信问我：</p>
-<blockquote>
-<p>“亏了好多，还能翻身吗？”</p>
-</blockquote>
-<p>我想说：</p>
-<p><strong>沉没成本 ≠ 成本</strong><br>现在手里还有的，才是你新一轮开始的资本。</p>
-<hr>
-<blockquote>
-<p>原文链接：<a href="https://x.com/19ys_GGboy/status/1930310379785289740">https://x.com/19ys_GGboy/status/1930310379785289740</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>sol</tag>
-        <tag>Web3</tag>
-        <tag>meme</tag>
       </tags>
   </entry>
   <entry>
@@ -7268,6 +7101,173 @@ w3 <span class="token operator">=</span> Web3<span class="token punctuation">(</
         <tag>NFT</tag>
         <tag>Meme</tag>
         <tag>方法论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【2025.6】当前行情下 Solana 土狗打狗心得分享篇</title>
+    <url>/posts/250605.html</url>
+    <content><![CDATA[<h1 id="【2025-6】当前行情下-Solana-土狗打狗心得分享篇"><a href="#【2025-6】当前行情下-Solana-土狗打狗心得分享篇" class="headerlink" title="【2025.6】当前行情下 Solana 土狗打狗心得分享篇"></a>【2025.6】当前行情下 Solana 土狗打狗心得分享篇</h1><blockquote>
+<p><strong>长文预警｜全文干货</strong></p>
+</blockquote>
+<hr>
+<h2 id="1-行情以及小资金打法思考"><a href="#1-行情以及小资金打法思考" class="headerlink" title="1. 行情以及小资金打法思考"></a>1. 行情以及小资金打法思考</h2><p>目前的 Solana 土狗 PVP 流动性相比去年已经低了不止一个档次。</p>
+<p>去年小资金启动打法：</p>
+<ul>
+<li>重仓 + 超短线 + 吃点数 + 滚资金量</li>
+</ul>
+<p>现在这些策略 <strong>已经完全失效</strong>。</p>
+<p>可以参考我之前写的「聪明钱地址见仁见智篇」：</p>
+<ul>
+<li>当年厉害的内盘高手如 DFM，现在也难以快速盈利。</li>
+<li>跟单几乎绝迹，原来轻松发射的盘子，现在不是死于 PVP 就是死于“钻地”。</li>
+</ul>
+<h3 id="案例举例：DFM"><a href="#案例举例：DFM" class="headerlink" title="案例举例：DFM"></a>案例举例：DFM</h3><p>他们的打法是：</p>
+<ul>
+<li>扫推+热点+大仓底部进+持续浇给</li>
+</ul>
+<p>过去吃爽的前提是：</p>
+<ul>
+<li><strong>持续买单 + 流动性充足 + 外盘大户接力</strong></li>
+</ul>
+<p>现在：</p>
+<ul>
+<li>车头极少出手，例如 CryptoD、0xsun、冷静等都退隐。</li>
+<li>市场大户不再轻易抬盘，热点市值难以抬高。</li>
+</ul>
+<h3 id="小资金新思路"><a href="#小资金新思路" class="headerlink" title="小资金新思路"></a>小资金新思路</h3><ul>
+<li><strong>少出手</strong></li>
+<li>不能再靠抓起量盘子就 PVP 的高频模式了</li>
+<li>出手金额建议不低（如我出手基准是 0.5 SOL）</li>
+</ul>
+<hr>
+<h2 id="2-项目分类与打法"><a href="#2-项目分类与打法" class="headerlink" title="2. 项目分类与打法"></a>2. 项目分类与打法</h2><h3 id="💀-名人盘"><a href="#💀-名人盘" class="headerlink" title="💀 名人盘"></a>💀 名人盘</h3><p><strong>❌ 完全不建议小资金玩家参与</strong></p>
+<ul>
+<li>名人盘分为 believe/boop 性质 以及 pump 性质</li>
+<li>典型问题：<strong>聪明钱+大热点+大户不FOMO</strong></li>
+<li>很多 Web2「名人」发币后马上割完不承认，例如 $AI16ZE</li>
+</ul>
+<h4 id="公信力破产的案例："><a href="#公信力破产的案例：" class="headerlink" title="公信力破产的案例："></a>公信力破产的案例：</h4><ul>
+<li>Toly 的 $TIMEFUN 也没掀起什么波澜</li>
+<li>trump/米莱时期是巅峰，后面基本下坡</li>
+</ul>
+<h3 id="🧑‍🤝‍🧑-社区盘（推荐参与）"><a href="#🧑‍🤝‍🧑-社区盘（推荐参与）" class="headerlink" title="🧑‍🤝‍🧑 社区盘（推荐参与）"></a>🧑‍🤝‍🧑 社区盘（推荐参与）</h3><h4 id="A-领头人社区盘"><a href="#A-领头人社区盘" class="headerlink" title="A. 领头人社区盘"></a>A. 领头人社区盘</h4><p><strong>判断标准：</strong></p>
+<ol>
+<li>看是否有被认可的关注者</li>
+<li>查历史 CTO 背景、做过的盘子、历史战绩</li>
+<li>是否自己掏钱付费上 DEX（300U 也是诚意）</li>
+</ol>
+<p>⚠️ 注意避雷：</p>
+<ul>
+<li>内盘一次性低市值付费上 DEX，常是钓鱼项目</li>
+<li>dev 伪装 CTO，底部持仓控盘，快速收割</li>
+</ul>
+<h4 id="B-散户自治类社区盘"><a href="#B-散户自治类社区盘" class="headerlink" title="B. 散户自治类社区盘"></a>B. 散户自治类社区盘</h4><ul>
+<li>题材好 + 社区热情 = 自发 CX</li>
+<li>例如 $DWCWRWB，靠 meme、好玩、有趣出圈</li>
+</ul>
+<p>🧠 关键点：</p>
+<ul>
+<li>审美判断力</li>
+<li>看交易频率、接力节奏</li>
+<li><strong>“新”或“热”都值得关注</strong></li>
+</ul>
+<p>🎯 核心观点：<strong>抛开盘面谈叙事 = 耍流氓</strong></p>
+<hr>
+<h2 id="3-热点币"><a href="#3-热点币" class="headerlink" title="3. 热点币"></a>3. 热点币</h2><p>类似名人盘，但风险更低。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>会被低估</li>
+<li>会发酵</li>
+<li>不容易赢家通吃</li>
+</ul>
+<p>📝 策略建议：</p>
+<ul>
+<li><strong>耐心等待回调</strong></li>
+<li>不吃第一波</li>
+<li>等 CTO 出手后再上</li>
+</ul>
+<hr>
+<h2 id="4-阴谋币"><a href="#4-阴谋币" class="headerlink" title="4. 阴谋币"></a>4. 阴谋币</h2><p><strong>一句话总结：</strong><br>“先信的人赚后信的人的钱”</p>
+<p>真假其实不重要：</p>
+<ul>
+<li>曝光需要时间</li>
+<li>打假也需要时间</li>
+<li>Dev 通常不会太快收网</li>
+</ul>
+<hr>
+<h2 id="5-Dev-的分两类"><a href="#5-Dev-的分两类" class="headerlink" title="5. Dev 的分两类"></a>5. Dev 的分两类</h2><h3 id="🤡-炒币赚不到钱的-dev"><a href="#🤡-炒币赚不到钱的-dev" class="headerlink" title="🤡 炒币赚不到钱的 dev"></a>🤡 炒币赚不到钱的 dev</h3><ul>
+<li>一味打广告、买流量</li>
+<li>没有叙事审美</li>
+<li>花钱买接盘 ≠ 做事</li>
+<li>bsc 很多就是这种，盘子一眼无趣</li>
+</ul>
+<h3 id="🧙‍♂️-炒币能赚钱的-dev"><a href="#🧙‍♂️-炒币能赚钱的-dev" class="headerlink" title="🧙‍♂️ 炒币能赚钱的 dev"></a>🧙‍♂️ 炒币能赚钱的 dev</h3><ul>
+<li>审美足够 + 趣味性强</li>
+<li>例如 $LLJEEFY 的 dev</li>
+<li>例如 0.1B JAME 小狗、谣言币 $PROPAGANDA</li>
+</ul>
+<p>🧠 Dev 的思维决定项目上限<br>🗑️ 不要把钱送给只会挂数据的傻子</p>
+<hr>
+<h2 id="6-扫链屏蔽逻辑"><a href="#6-扫链屏蔽逻辑" class="headerlink" title="6. 扫链屏蔽逻辑"></a>6. 扫链屏蔽逻辑</h2><h3 id="屏蔽标准一：交易量-市值比"><a href="#屏蔽标准一：交易量-市值比" class="headerlink" title="屏蔽标准一：交易量 / 市值比"></a>屏蔽标准一：交易量 / 市值比</h3><p>示例：</p>
+<ul>
+<li>8k 交易量 + 15k 市值 = <strong>异常高市值</strong></li>
+<li>说明全是买单 = <strong>筹码集中</strong> = 钓鱼项目</li>
+</ul>
+<h3 id="屏蔽标准二：叙事类型"><a href="#屏蔽标准二：叙事类型" class="headerlink" title="屏蔽标准二：叙事类型"></a>屏蔽标准二：叙事类型</h3><ul>
+<li>已经存在多个同题材龙头，例如“gay 题材”出现多个项目，直接屏蔽其他。</li>
+<li>同头像、同套路重复出现，也直接屏蔽。</li>
+</ul>
+<h3 id="屏蔽标准三：低市值-dex-付费-内盘"><a href="#屏蔽标准三：低市值-dex-付费-内盘" class="headerlink" title="屏蔽标准三：低市值 + dex 付费 + 内盘"></a>屏蔽标准三：低市值 + dex 付费 + 内盘</h3><ul>
+<li>这种组合多为 dev 自割项目</li>
+<li>不浪费时间直接跳过</li>
+</ul>
+<hr>
+<h2 id="7-直播问题杂谈"><a href="#7-直播问题杂谈" class="headerlink" title="7. 直播问题杂谈"></a>7. 直播问题杂谈</h2><blockquote>
+<p>Q: Axiom 和 GMGN 怎么开钱包监控？<br>A: 点左下角“钱包监控”按钮</p>
+<p>Q: 气泡图怎么看？<br>A: Axiom 点“持有人”；GMGN 点“一键买卖”旁边有气泡图</p>
+<p>Q: 社区盘怕 CTO 浇给？<br>A:避雷前面说的钓鱼盘类型；接受无百分百把握，尽人事听天命</p>
+<p>Q: 为什么看 5 秒 K 线？<br>A: 判断是否有捆绑量、是否钓鱼，参考我写的「钓鱼盘篇」</p>
+</blockquote>
+<hr>
+<h2 id="8-打狗工具推荐"><a href="#8-打狗工具推荐" class="headerlink" title="8. 打狗工具推荐"></a>8. 打狗工具推荐</h2><p>我只用两个：</p>
+<ul>
+<li><strong>GMGN</strong>: 干净持仓显示、钱包标识全、功能好用  </li>
+<li><strong>Axiom</strong>: 大机构背景、有发币积分预期</li>
+</ul>
+<p>功能对比（基本持平）：</p>
+<ul>
+<li>快速交易面板</li>
+<li>钱包监控</li>
+<li>推文跟踪</li>
+</ul>
+<p><strong>小技巧：</strong></p>
+<ul>
+<li>GMGN 自动回收租金（0.002 SOL），无需手动操作</li>
+</ul>
+<p>🔗 我的推荐链接：</p>
+<ul>
+<li><a href="https://gmgn.ai/?ref=cLf0ZwzZ&amp;chain=sol">GMGN</a></li>
+<li><a href="https://axiom.trade/@onefly">Axiom</a></li>
+</ul>
+<hr>
+<h2 id="9-结语"><a href="#9-结语" class="headerlink" title="9. 结语"></a>9. 结语</h2><p>很多人私信问我：</p>
+<blockquote>
+<p>“亏了好多，还能翻身吗？”</p>
+</blockquote>
+<p>我想说：</p>
+<p><strong>沉没成本 ≠ 成本</strong><br>现在手里还有的，才是你新一轮开始的资本。</p>
+<hr>
+<blockquote>
+<p>原文链接：<a href="https://x.com/19ys_GGboy/status/1930310379785289740">https://x.com/19ys_GGboy/status/1930310379785289740</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>sol</tag>
+        <tag>Web3</tag>
+        <tag>meme</tag>
       </tags>
   </entry>
   <entry>
@@ -8741,153 +8741,6 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
-    <title>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</title>
-    <url>/posts/okx-2026-spring-festival-collect-five-blessings-guide.html</url>
-    <content><![CDATA[<h1 id="OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"><a href="#OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤" class="headerlink" title="OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"></a>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</h1><blockquote>
-<p>🧧 <strong>专属活动入口，通过此链接参与集五福瓜分 28 BTC！</strong><br>👉 <a href="https://oyidl.me/ul/I2Ojm3?channelId=8385429&amp;utm_medium=koc&amp;utm_campaign=referral_task&amp;utm_content=R6LHrLO4"><strong>点击这里进入活动页面</strong></a></p>
-</blockquote>
-<p>今年春节，OKX 搞了个大活动——<strong>集五福瓜分 28 BTC</strong>，人均最高可得 <strong>300U</strong>，还有 <strong>1 BTC 哈希锦鲤</strong>大奖等你来拿。</p>
-<p>这篇文章帮你把活动规则、集福技巧、最小成本打法、哈希锦鲤玩法全部拆解清楚，看完直接上手。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144317151-1618386141.jpg" style="zoom:50%;" alt="OKX春节集五福活动"></p>
-<h2 id="活动概览"><a href="#活动概览" class="headerlink" title="活动概览"></a>活动概览</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>活动时间</strong></td>
-<td>2026年2月11日 11:00 至 2月21日 12:00 (UTC+8)</td>
-</tr>
-<tr>
-<td><strong>奖池规模</strong></td>
-<td>28 BTC（总奖池超 500 万 U）</td>
-</tr>
-<tr>
-<td><strong>人均最高</strong></td>
-<td>300 USDT</td>
-</tr>
-<tr>
-<td><strong>哈希锦鲤</strong></td>
-<td>1 BTC</td>
-</tr>
-<tr>
-<td><strong>瓜分公布</strong></td>
-<td>2月21日 12:05</td>
-</tr>
-<tr>
-<td><strong>锦鲤公布</strong></td>
-<td>2月21日 12:20 前后</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>核心规则</strong>：集五福 → 合成「财神福」→ 瓜分 BTC 奖池。每人最多合成 <strong>5 张财神福</strong>，奖池金额 ×5 份。</p>
-<blockquote>
-<p>关注星球 OKX中文 &amp; 推特 @okxchinese 查看开奖结果。</p>
-</blockquote>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144315496-944790390.png" style="zoom:33%;" alt="OKX集五福攻略完整版"></p>
-<h2 id="如何快速拿福卡？"><a href="#如何快速拿福卡？" class="headerlink" title="如何快速拿福卡？"></a>如何快速拿福卡？</h2><p>进入活动页面，点击「前往集五福」开启集福。根据你的身份，玩法略有不同：</p>
-<h3 id="OKX-老用户"><a href="#OKX-老用户" class="headerlink" title="OKX 老用户"></a>OKX 老用户</h3><p><strong>速通版：拉新是最快的</strong></p>
-<ul>
-<li>每邀请 1 位新用户 → 获得 1 张福卡</li>
-<li>最多邀请 20 人</li>
-</ul>
-<p><strong>升级版：多交易多拿福</strong></p>
-<ul>
-<li>现货交易累计 6,000U → 1 张福卡（上限100张）</li>
-<li>合约交易累计 10,000U → 1 张福卡（上限100张）</li>
-</ul>
-<h3 id="OKX-新用户"><a href="#OKX-新用户" class="headerlink" title="OKX 新用户"></a>OKX 新用户</h3><p><strong>速通版：新人专属福利</strong></p>
-<ul>
-<li>首次现货交易 ≥100U → 直接获得 <strong>2 张福卡 + 50U 合约体验金</strong></li>
-<li>拉新拿福：邀请 1 人 → 1 张，最多 20 人</li>
-</ul>
-<p><strong>升级版：同老用户规则</strong></p>
-<blockquote>
-<p>*拉新拿福细则：被邀请人需完成 100U 现货交易才算有效。</p>
-</blockquote>
-<h2 id="最小成本拿福攻略"><a href="#最小成本拿福攻略" class="headerlink" title="最小成本拿福攻略"></a>最小成本拿福攻略</h2><p>这是经过实战验证的<strong>低成本高效打法</strong>：</p>
-<h3 id="1-拉人永远最快"><a href="#1-拉人永远最快" class="headerlink" title="1. 拉人永远最快"></a>1. 拉人永远最快</h3><p>1 个新用户 = 1 张福卡，多拉多得，速度第一。这是性价比最高的方式。</p>
-<h3 id="2-现货最小成本玩法"><a href="#2-现货最小成本玩法" class="headerlink" title="2. 现货最小成本玩法"></a>2. 现货最小成本玩法</h3><p><strong>600U 现货，来回买卖 5 次 = 一次完成 6,000U 交易量 = 1 张福卡</strong></p>
-<p>不需要 6,000U 本金，只需要 600U 反复交易即可达到累计交易量。</p>
-<h3 id="3-合约最小成本玩法"><a href="#3-合约最小成本玩法" class="headerlink" title="3. 合约最小成本玩法"></a>3. 合约最小成本玩法</h3><p><strong>1,000U × 10 倍杠杆 = 一次完成 10,000U 交易量 = 1 张福卡</strong></p>
-<p>用杠杆放大交易量，快速达标。</p>
-<h3 id="4-实测经验"><a href="#4-实测经验" class="headerlink" title="4. 实测经验"></a>4. 实测经验</h3><blockquote>
-<p>小群实测：前 10 张福卡，合成「财神福」的概率很高。5 人小群实测，最多集 10 张福就能合成财神福。</p>
-</blockquote>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144314159-2024874248.jpg" style="zoom:50%;" alt="OKX集五福活动页面"></p>
-<h2 id="福卡互换与赠送"><a href="#福卡互换与赠送" class="headerlink" title="福卡互换与赠送"></a>福卡互换与赠送</h2><p>福卡是可以和朋友<strong>互换 / 赠送</strong>的！</p>
-<p><strong>赠福方式</strong>：</p>
-<ol>
-<li>点击你拥有的福卡</li>
-<li>选择「赠送好友」</li>
-<li>通过链接或 UID 赠送</li>
-<li>好友扫码领取</li>
-</ol>
-<p>如果你缺某种福卡（比如「双冠福」），可以在社群里发帖互换。</p>
-<h2 id="哈希锦鲤——终极大奖-1-BTC"><a href="#哈希锦鲤——终极大奖-1-BTC" class="headerlink" title="哈希锦鲤——终极大奖 1 BTC"></a>哈希锦鲤——终极大奖 1 BTC</h2><p>这是整个活动最刺激的部分。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>大奖</strong></td>
-<td>1 BTC</td>
-</tr>
-<tr>
-<td><strong>开奖时间</strong></td>
-<td>2月21日 12:20 前后</td>
-</tr>
-<tr>
-<td><strong>参与资格</strong></td>
-<td>合成「财神福」即可参与</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>中奖规则</strong>：你的财神福卡编码 = 2月21日 12:05 之后<strong>第一个 BTC 区块哈希值末 5~6 位数字</strong>。</p>
-<p>这是完全链上随机的开奖方式，公平透明，没有暗箱操作。</p>
-<p><strong>关键点</strong>：</p>
-<ul>
-<li>福卡越多 → 合成「财神福」的概率越高</li>
-<li>合成「财神福」→ 既能瓜分 BTC 奖池，又能冲击锦鲤</li>
-<li>会拉人的、交易量大的，这波都属于<strong>优势玩家</strong></li>
-</ul>
-<h2 id="重要提醒"><a href="#重要提醒" class="headerlink" title="重要提醒"></a>重要提醒</h2><ul>
-<li><strong>务必在 2月21日 12:05 前合成财神福</strong>，否则无法参与瓜分</li>
-<li>先点击「加入活动」按钮，页面显示「做任务集福卡」，才计入有效参与</li>
-<li>每人最多合成 5 张财神福，多合成多拿奖</li>
-<li>新人拉新和交易玩法<strong>可以并行</strong>，不冲突</li>
-</ul>
-<h2 id="活动参与入口"><a href="#活动参与入口" class="headerlink" title="活动参与入口"></a>活动参与入口</h2><p><strong>无需 VPN 直达链接</strong>：</p>
-<ul>
-<li><a href="https://www.hucneo.com/zh-hans/campaigns/fortuneblessings?channelid=88596413">极简活动页（推荐）</a></li>
-<li><a href="https://oyidl.net/ul/ibUte3?channelId=88596413">可拉起 APP 版本</a></li>
-</ul>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>今年 OKX 春节活动诚意十足——Web2 给你画饼，Web3 直接给你撒币。28 BTC 的奖池 + 1 BTC 的锦鲤大奖，这波不薅白不薅。</p>
-<p><strong>速通路线</strong>：注册/登录 → 加入活动 → 拉新 + 交易集福卡 → 合成财神福 → 等待 2月21日开奖。</p>
-<p>过春节，集五福，用春节搞大钱！</p>
-]]></content>
-      <categories>
-        <category>加密货币</category>
-      </categories>
-      <tags>
-        <tag>OKX</tag>
-        <tag>加密货币</tag>
-        <tag>春节活动</tag>
-        <tag>BTC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</title>
     <url>/posts/260212.html</url>
     <content><![CDATA[<h1 id="2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？"><a href="#2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？" class="headerlink" title="2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？"></a>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</h1><p>AI Agent开发框架已从简单的RAG管道进化到多代理协作、状态管理和工具集成的复杂生态。2026年初，社区围绕”最优Agent框架”的讨论持续升温。本文基于X（Twitter）上AI从业者和开发者的最新分享，梳理主流框架的定位、优劣和适用场景，帮你做出明智的选型决策。</p>
@@ -9048,6 +8901,153 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
         <tag>AI Agent</tag>
         <tag>LangGraph</tag>
         <tag>Claude Agent SDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</title>
+    <url>/posts/okx-2026-spring-festival-collect-five-blessings-guide.html</url>
+    <content><![CDATA[<h1 id="OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"><a href="#OKX-2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤" class="headerlink" title="OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤"></a>OKX 2026春节集五福完全攻略：瓜分28BTC，冲击1BTC哈希锦鲤</h1><blockquote>
+<p>🧧 <strong>专属活动入口，通过此链接参与集五福瓜分 28 BTC！</strong><br>👉 <a href="https://oyidl.me/ul/I2Ojm3?channelId=8385429&amp;utm_medium=koc&amp;utm_campaign=referral_task&amp;utm_content=R6LHrLO4"><strong>点击这里进入活动页面</strong></a></p>
+</blockquote>
+<p>今年春节，OKX 搞了个大活动——<strong>集五福瓜分 28 BTC</strong>，人均最高可得 <strong>300U</strong>，还有 <strong>1 BTC 哈希锦鲤</strong>大奖等你来拿。</p>
+<p>这篇文章帮你把活动规则、集福技巧、最小成本打法、哈希锦鲤玩法全部拆解清楚，看完直接上手。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144317151-1618386141.jpg" style="zoom:50%;" alt="OKX春节集五福活动"></p>
+<h2 id="活动概览"><a href="#活动概览" class="headerlink" title="活动概览"></a>活动概览</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>活动时间</strong></td>
+<td>2026年2月11日 11:00 至 2月21日 12:00 (UTC+8)</td>
+</tr>
+<tr>
+<td><strong>奖池规模</strong></td>
+<td>28 BTC（总奖池超 500 万 U）</td>
+</tr>
+<tr>
+<td><strong>人均最高</strong></td>
+<td>300 USDT</td>
+</tr>
+<tr>
+<td><strong>哈希锦鲤</strong></td>
+<td>1 BTC</td>
+</tr>
+<tr>
+<td><strong>瓜分公布</strong></td>
+<td>2月21日 12:05</td>
+</tr>
+<tr>
+<td><strong>锦鲤公布</strong></td>
+<td>2月21日 12:20 前后</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>核心规则</strong>：集五福 → 合成「财神福」→ 瓜分 BTC 奖池。每人最多合成 <strong>5 张财神福</strong>，奖池金额 ×5 份。</p>
+<blockquote>
+<p>关注星球 OKX中文 &amp; 推特 @okxchinese 查看开奖结果。</p>
+</blockquote>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144315496-944790390.png" style="zoom:33%;" alt="OKX集五福攻略完整版"></p>
+<h2 id="如何快速拿福卡？"><a href="#如何快速拿福卡？" class="headerlink" title="如何快速拿福卡？"></a>如何快速拿福卡？</h2><p>进入活动页面，点击「前往集五福」开启集福。根据你的身份，玩法略有不同：</p>
+<h3 id="OKX-老用户"><a href="#OKX-老用户" class="headerlink" title="OKX 老用户"></a>OKX 老用户</h3><p><strong>速通版：拉新是最快的</strong></p>
+<ul>
+<li>每邀请 1 位新用户 → 获得 1 张福卡</li>
+<li>最多邀请 20 人</li>
+</ul>
+<p><strong>升级版：多交易多拿福</strong></p>
+<ul>
+<li>现货交易累计 6,000U → 1 张福卡（上限100张）</li>
+<li>合约交易累计 10,000U → 1 张福卡（上限100张）</li>
+</ul>
+<h3 id="OKX-新用户"><a href="#OKX-新用户" class="headerlink" title="OKX 新用户"></a>OKX 新用户</h3><p><strong>速通版：新人专属福利</strong></p>
+<ul>
+<li>首次现货交易 ≥100U → 直接获得 <strong>2 张福卡 + 50U 合约体验金</strong></li>
+<li>拉新拿福：邀请 1 人 → 1 张，最多 20 人</li>
+</ul>
+<p><strong>升级版：同老用户规则</strong></p>
+<blockquote>
+<p>*拉新拿福细则：被邀请人需完成 100U 现货交易才算有效。</p>
+</blockquote>
+<h2 id="最小成本拿福攻略"><a href="#最小成本拿福攻略" class="headerlink" title="最小成本拿福攻略"></a>最小成本拿福攻略</h2><p>这是经过实战验证的<strong>低成本高效打法</strong>：</p>
+<h3 id="1-拉人永远最快"><a href="#1-拉人永远最快" class="headerlink" title="1. 拉人永远最快"></a>1. 拉人永远最快</h3><p>1 个新用户 = 1 张福卡，多拉多得，速度第一。这是性价比最高的方式。</p>
+<h3 id="2-现货最小成本玩法"><a href="#2-现货最小成本玩法" class="headerlink" title="2. 现货最小成本玩法"></a>2. 现货最小成本玩法</h3><p><strong>600U 现货，来回买卖 5 次 = 一次完成 6,000U 交易量 = 1 张福卡</strong></p>
+<p>不需要 6,000U 本金，只需要 600U 反复交易即可达到累计交易量。</p>
+<h3 id="3-合约最小成本玩法"><a href="#3-合约最小成本玩法" class="headerlink" title="3. 合约最小成本玩法"></a>3. 合约最小成本玩法</h3><p><strong>1,000U × 10 倍杠杆 = 一次完成 10,000U 交易量 = 1 张福卡</strong></p>
+<p>用杠杆放大交易量，快速达标。</p>
+<h3 id="4-实测经验"><a href="#4-实测经验" class="headerlink" title="4. 实测经验"></a>4. 实测经验</h3><blockquote>
+<p>小群实测：前 10 张福卡，合成「财神福」的概率很高。5 人小群实测，最多集 10 张福就能合成财神福。</p>
+</blockquote>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260211144314159-2024874248.jpg" style="zoom:50%;" alt="OKX集五福活动页面"></p>
+<h2 id="福卡互换与赠送"><a href="#福卡互换与赠送" class="headerlink" title="福卡互换与赠送"></a>福卡互换与赠送</h2><p>福卡是可以和朋友<strong>互换 / 赠送</strong>的！</p>
+<p><strong>赠福方式</strong>：</p>
+<ol>
+<li>点击你拥有的福卡</li>
+<li>选择「赠送好友」</li>
+<li>通过链接或 UID 赠送</li>
+<li>好友扫码领取</li>
+</ol>
+<p>如果你缺某种福卡（比如「双冠福」），可以在社群里发帖互换。</p>
+<h2 id="哈希锦鲤——终极大奖-1-BTC"><a href="#哈希锦鲤——终极大奖-1-BTC" class="headerlink" title="哈希锦鲤——终极大奖 1 BTC"></a>哈希锦鲤——终极大奖 1 BTC</h2><p>这是整个活动最刺激的部分。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>大奖</strong></td>
+<td>1 BTC</td>
+</tr>
+<tr>
+<td><strong>开奖时间</strong></td>
+<td>2月21日 12:20 前后</td>
+</tr>
+<tr>
+<td><strong>参与资格</strong></td>
+<td>合成「财神福」即可参与</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>中奖规则</strong>：你的财神福卡编码 = 2月21日 12:05 之后<strong>第一个 BTC 区块哈希值末 5~6 位数字</strong>。</p>
+<p>这是完全链上随机的开奖方式，公平透明，没有暗箱操作。</p>
+<p><strong>关键点</strong>：</p>
+<ul>
+<li>福卡越多 → 合成「财神福」的概率越高</li>
+<li>合成「财神福」→ 既能瓜分 BTC 奖池，又能冲击锦鲤</li>
+<li>会拉人的、交易量大的，这波都属于<strong>优势玩家</strong></li>
+</ul>
+<h2 id="重要提醒"><a href="#重要提醒" class="headerlink" title="重要提醒"></a>重要提醒</h2><ul>
+<li><strong>务必在 2月21日 12:05 前合成财神福</strong>，否则无法参与瓜分</li>
+<li>先点击「加入活动」按钮，页面显示「做任务集福卡」，才计入有效参与</li>
+<li>每人最多合成 5 张财神福，多合成多拿奖</li>
+<li>新人拉新和交易玩法<strong>可以并行</strong>，不冲突</li>
+</ul>
+<h2 id="活动参与入口"><a href="#活动参与入口" class="headerlink" title="活动参与入口"></a>活动参与入口</h2><p><strong>无需 VPN 直达链接</strong>：</p>
+<ul>
+<li><a href="https://www.hucneo.com/zh-hans/campaigns/fortuneblessings?channelid=88596413">极简活动页（推荐）</a></li>
+<li><a href="https://oyidl.net/ul/ibUte3?channelId=88596413">可拉起 APP 版本</a></li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>今年 OKX 春节活动诚意十足——Web2 给你画饼，Web3 直接给你撒币。28 BTC 的奖池 + 1 BTC 的锦鲤大奖，这波不薅白不薅。</p>
+<p><strong>速通路线</strong>：注册/登录 → 加入活动 → 拉新 + 交易集福卡 → 合成财神福 → 等待 2月21日开奖。</p>
+<p>过春节，集五福，用春节搞大钱！</p>
+]]></content>
+      <categories>
+        <category>加密货币</category>
+      </categories>
+      <tags>
+        <tag>OKX</tag>
+        <tag>加密货币</tag>
+        <tag>春节活动</tag>
+        <tag>BTC</tag>
       </tags>
   </entry>
   <entry>
@@ -13395,7 +13395,7 @@ If yes, summarize what was generated and what was manually verified.<span aria-h
 </ul>
 <p>官网安装路径应该这样讲：</p>
 <ol>
-<li>打开 OpenAI Developers 的 Codex App 页面：<a href="https://developers.openai.com/codex/app；">https://developers.openai.com/codex/app；</a></li>
+<li>打开 OpenAI Developers 的 Codex App 页面：<br><a href="https://developers.openai.com/codex/app">https://developers.openai.com/codex/app</a></li>
 <li>根据电脑选择 macOS Apple Silicon、macOS Intel 或 Windows；</li>
 <li>下载后按系统提示安装；</li>
 <li>打开 Codex，用 ChatGPT 账号或 OpenAI API Key 登录；</li>
@@ -13407,7 +13407,7 @@ If yes, summarize what was generated and what was manually verified.<span aria-h
 <p>Codex App 也不是一个普通聊天窗口。它更像“本地项目控制台”：可以并行开多个任务线程，可以用 Git worktree 隔离改动，可以看 diff、stage、commit、push，也可以配合 in-app browser、Chrome extension、automations、skills、plugins 等能力。</p>
 <p>所以培训时我会把它讲成两层：</p>
 <ul>
-<li>想装桌面客户端：走 Codex App 官网下载：<a href="https://developers.openai.com/codex/app；">https://developers.openai.com/codex/app；</a></li>
+<li>想装桌面客户端：走 Codex App 官网下载：<a href="https://developers.openai.com/codex/app">https://developers.openai.com/codex/app</a></li>
 <li>想配置命令行和 OpenAI 兼容 API：再讲 Codex CLI、Base URL、API Key。</li>
 </ul>
 <h2 id="命令行工具另讲：Codex-CLI-不是桌面-App"><a href="#命令行工具另讲：Codex-CLI-不是桌面-App" class="headerlink" title="命令行工具另讲：Codex CLI 不是桌面 App"></a>命令行工具另讲：Codex CLI 不是桌面 App</h2><p>Codex CLI 仍然值得讲，但它不应该冒充“官网安装 App”的例子。它适合解释另一类问题：有些 AI 工具装完不会出现在 Launchpad，因为它本来就是命令行工具。</p>

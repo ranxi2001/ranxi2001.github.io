@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-23T15:07:01.779Z</updated>
+  <updated>2026-06-24T02:13:15.406Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后</title>
+    <link href="https://onefly.top/posts/openai-phd-industry-job-search-notes.html"/>
+    <id>https://onefly.top/posts/openai-phd-industry-job-search-notes.html</id>
+    <published>2026-06-24T01:24:48.000Z</published>
+    <updated>2026-06-24T02:13:15.406Z</updated>
+    
+    
+    <summary type="html">本文整理自 Alisa Liu 的英文博客，记录一位华盛顿大学 NLP 博士申请 OpenAI 等工业界研究岗位的完整求职复盘：时间线、面试类型、准备方法、谈薪和情绪管理。</summary>
+    
+    
+    
+    <category term="求职成长" scheme="https://onefly.top/categories/%E6%B1%82%E8%81%8C%E6%88%90%E9%95%BF/"/>
+    
+    
+    <category term="AI求职" scheme="https://onefly.top/tags/AI%E6%B1%82%E8%81%8C/"/>
+    
+    <category term="面经" scheme="https://onefly.top/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+    <category term="PhD" scheme="https://onefly.top/tags/PhD/"/>
+    
+  </entry>
   
   <entry>
     <title>AI入门第一课：装App和填API Key</title>
@@ -474,31 +497,6 @@
     <category term="ChatGPT" scheme="https://onefly.top/tags/ChatGPT/"/>
     
     <category term="薅羊毛" scheme="https://onefly.top/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AI Agent 新闻交易崛起：2026年加密市场的新范式革命</title>
-    <link href="https://onefly.top/posts/ai-agent-news-trading-crypto-2026.html"/>
-    <id>https://onefly.top/posts/ai-agent-news-trading-crypto-2026.html</id>
-    <published>2026-04-20T04:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.301Z</updated>
-    
-    
-    <summary type="html">深度解析2026年AI Agent与大模型能力提升背景下，加密货币新闻交易的最新发展态势。涵盖OKX Agent Trade Kit、newsliquid终端、vibe trading等前沿工具，结合真实案例与风险警示，为投资者提供全面的技术投研参考。</summary>
-    
-    
-    
-    <category term="加密投研" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
-    
-    
-    <category term="加密货币" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
-    
-    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
-    
-    <category term="AI交易" scheme="https://onefly.top/tags/AI%E4%BA%A4%E6%98%93/"/>
-    
-    <category term="新闻交易" scheme="https://onefly.top/tags/%E6%96%B0%E9%97%BB%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   

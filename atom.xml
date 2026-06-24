@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-24T02:13:15.406Z</updated>
+  <updated>2026-06-24T15:58:02.355Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</title>
+    <link href="https://onefly.top/posts/cs336-llm-from-scratch-knowledge-map.html"/>
+    <id>https://onefly.top/posts/cs336-llm-from-scratch-knowledge-map.html</id>
+    <published>2026-06-24T15:14:29.000Z</published>
+    <updated>2026-06-24T15:58:02.355Z</updated>
+    
+    
+    <summary type="html">这篇文章把 Stanford CS336 的语言模型课程整理成一张中文知识地图，按从零训练、系统效率、扩展规律、数据评测和对齐强化学习拆解，每一块都附上原课程资料与作业链接，适合收藏后按模块学习。</summary>
+    
+    
+    
+    <category term="AI研究" scheme="https://onefly.top/categories/AI%E7%A0%94%E7%A9%B6/"/>
+    
+    
+    <category term="LLM" scheme="https://onefly.top/tags/LLM/"/>
+    
+    <category term="训练" scheme="https://onefly.top/tags/%E8%AE%AD%E7%BB%83/"/>
+    
+    <category term="系统" scheme="https://onefly.top/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="对齐" scheme="https://onefly.top/tags/%E5%AF%B9%E9%BD%90/"/>
+    
+  </entry>
   
   <entry>
     <title>一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后</title>
@@ -474,29 +499,6 @@
     <category term="LobeHub" scheme="https://onefly.top/tags/LobeHub/"/>
     
     <category term="Harness" scheme="https://onefly.top/tags/Harness/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GPT Plus 纯零撸：用谷歌无限邮箱批量薅免费试用账号教程（2026最新）</title>
-    <link href="https://onefly.top/posts/gpt-plus-free-trial-google-infinite-email-hack-2026.html"/>
-    <id>https://onefly.top/posts/gpt-plus-free-trial-google-infinite-email-hack-2026.html</id>
-    <published>2026-04-23T06:00:00.000Z</published>
-    <updated>2026-05-27T10:30:43.301Z</updated>
-    
-    
-    <summary type="html">2026 最新 GPT Plus 零撸攻略：利用谷歌无限邮箱小技巧批量注册 ChatGPT Plus 免费试用账号，再通过反代自用，实现 AI 自由。附完整操作步骤与注意事项。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="ChatGPT" scheme="https://onefly.top/tags/ChatGPT/"/>
-    
-    <category term="薅羊毛" scheme="https://onefly.top/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/"/>
     
   </entry>
   

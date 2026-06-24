@@ -1,0 +1,2054 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="CS336,Stanford,语言模型,LLM训练,大模型系统,Scaling Laws,RLHF,模型评测,数据工程,AI课程">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260624234142748-1114942758.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/LLM/">
+                                <span class="chip bg-color">LLM</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AE%AD%E7%BB%83/">
+                                <span class="chip bg-color">训练</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">系统</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AF%B9%E9%BD%90/">
+                                <span class="chip bg-color">对齐</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E7%A0%94%E7%A9%B6/" class="post-category">
+                                AI研究
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-24
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="CS336-语言模型从零构建知识地图：一张图拆开-Stanford-LLM-训练课"><a href="#CS336-语言模型从零构建知识地图：一张图拆开-Stanford-LLM-训练课" class="headerlink" title="CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课"></a>CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</h1><p>Stanford CS336《Language Modeling from Scratch》不是那种“讲一堆 Transformer 概念就结束”的课。</p>
+<p>它真正有价值的地方在于：它把一个语言模型从零做出来所需的几条主线放到了一起——<strong>模型结构、训练系统、算力效率、数据工程、Scaling Laws、评测、推理和对齐</strong>。如果你不是只想调用 API，而是想理解大模型为什么这样训练、哪里贵、哪里难、哪里容易踩坑，这门课很适合当作路线图。</p>
+<p>但课程原网页是按日期排的。对自学者来说，按时间顺序看不一定最友好：你很容易今天看 tokenizer，明天跳到 GPU，再过几天突然 scaling law，脑子里缺少一张总图。</p>
+<p>所以这篇文章不做逐课翻译，而是把 CS336 拆成一张中文知识地图：每一块告诉你<strong>学什么、为什么重要、对应哪几节课、该做哪份作业</strong>。等你有时间，就可以按模块点进去看。</p>
+<blockquote>
+<p>课程主页：<a href="https://cs336.stanford.edu/">CS336: Language Modeling from Scratch, Spring 2026</a></p>
+</blockquote>
+<h2 id="先看总图：从一个-Token-到一个可用模型"><a href="#先看总图：从一个-Token-到一个可用模型" class="headerlink" title="先看总图：从一个 Token 到一个可用模型"></a>先看总图：从一个 Token 到一个可用模型</h2><pre class="mermaid">flowchart TD
+    A[文本进入模型] --&gt; B[Tokenization 与基础训练代码]
+    B --&gt; C[Transformer 架构与超参数]
+    C --&gt; D[GPU / Kernel / Triton]
+    D --&gt; E[并行训练系统]
+    E --&gt; F[Scaling Laws 与训练预算]
+    F --&gt; G[数据工程与数据质量]
+    G --&gt; H[评测与推理]
+    H --&gt; I[SFT / RLHF / RLVR 对齐]
+    I --&gt; J[可用、可评估、可迭代的语言模型]</pre>
+
+<p>这张图可以理解为 CS336 的学习顺序：</p>
+<ul>
+<li><strong>先能跑起来</strong>：tokenizer、PyTorch、Transformer、训练循环。</li>
+<li><strong>再让它跑得动</strong>：GPU、kernel、Triton、并行训练。</li>
+<li><strong>然后知道该训练多大</strong>：Scaling Laws、资源预算、训练曲线。</li>
+<li><strong>接着处理真实世界问题</strong>：数据质量、评测体系、推理成本。</li>
+<li><strong>最后让模型更像产品</strong>：SFT、RLHF、RLVR、对齐与反馈学习。</li>
+</ul>
+<p>如果只想快速建立框架，先看总图和每块的“学习目标”；如果想动手，优先做 5 个 assignment。</p>
+<h2 id="模块一：从文本到训练样本"><a href="#模块一：从文本到训练样本" class="headerlink" title="模块一：从文本到训练样本"></a>模块一：从文本到训练样本</h2><p>这一块解决最基础、也最容易被低估的问题：<strong>模型到底吃进去的是什么？</strong></p>
+<p>很多人学语言模型时会直接从 Transformer 开始，但实际训练里，tokenization 会影响词表、序列长度、训练效率、长尾字符处理，甚至影响多语言能力。CS336 第一节课把入口放在 tokenization，是很合理的。</p>
+<h3 id="你要建立的概念"><a href="#你要建立的概念" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>原始文本不会直接进入模型，而是先被切成 token。</li>
+<li>tokenizer 不是纯工程细节，它会改变训练分布和上下文利用率。</li>
+<li>从零训练模型时，数据清洗、编码方式、batch 构造都属于基础设施。</li>
+</ul>
+<h3 id="对应资料"><a href="#对应资料" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 1：Overview, tokenization<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_01">lecture_01.py</a></li>
+</ul>
+<h3 id="对应作业"><a href="#对应作业" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 1 Basics：从基础组件开始搭建语言模型训练流程<br><a href="https://github.com/stanford-cs336/assignment1-basics/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_assignment1_basics.pdf">作业 PDF</a></li>
+</ul>
+<p>这一份作业最适合当“入门门槛”：如果你能把它认真做完，后面的系统优化、扩展规律、对齐训练才不只是听概念。</p>
+<h2 id="模块二：Transformer-架构与训练基本功"><a href="#模块二：Transformer-架构与训练基本功" class="headerlink" title="模块二：Transformer 架构与训练基本功"></a>模块二：Transformer 架构与训练基本功</h2><p>有了 token 和数据流，下一步才是模型本体。</p>
+<p>这里的重点不是背诵“Attention is All You Need”，而是理解训练一个语言模型时，架构选择和超参数会怎样影响容量、稳定性和成本。比如层数、宽度、attention 形式、MoE、学习率、batch size、上下文长度，都会在训练预算里互相牵制。</p>
+<h3 id="你要建立的概念-1"><a href="#你要建立的概念-1" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>Transformer 是语言模型的核心计算图，但不是唯一决策点。</li>
+<li>超参数不是“调参玄学”，而是和算力预算、数据规模、模型大小绑定。</li>
+<li>MoE 的价值不只是“参数更多”，而是用稀疏激活改变计算和容量的关系。</li>
+</ul>
+<h3 id="对应资料-1"><a href="#对应资料-1" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 2：PyTorch, resource accounting<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_02">lecture_02.py</a></li>
+<li>Lecture 3：Architectures, hyperparameters<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_03.pdf">lecture 3.pdf</a></li>
+<li>Lecture 4：Attention alternatives and Mixture of Experts<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_04.pdf">lecture 4.pdf</a></li>
+</ul>
+<h3 id="推荐学习方式"><a href="#推荐学习方式" class="headerlink" title="推荐学习方式"></a>推荐学习方式</h3><p>先看 Lecture 2，把 PyTorch 和资源记账补起来；再看 Lecture 3 理解标准 Transformer 训练；最后看 Lecture 4 的 MoE。这样顺序更自然：<strong>先密集模型，再理解为什么需要稀疏模型</strong>。</p>
+<h2 id="模块三：GPU、Kernel-与训练系统"><a href="#模块三：GPU、Kernel-与训练系统" class="headerlink" title="模块三：GPU、Kernel 与训练系统"></a>模块三：GPU、Kernel 与训练系统</h2><p>这是 CS336 和很多普通 LLM 课程最大的差别之一：它不把“系统”当作附录。</p>
+<p>真实的大模型训练不是“写个 PyTorch 脚本然后等它跑完”。瓶颈经常来自显存、带宽、通信、kernel launch、并行策略，而不是模型公式本身。你如果只懂 Transformer 不懂系统，就很难判断训练为什么慢、为什么爆显存、为什么扩 GPU 后效率反而下降。</p>
+<h3 id="你要建立的概念-2"><a href="#你要建立的概念-2" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>GPU 不是“更快的 CPU”，它有自己的内存层级和并行计算模型。</li>
+<li>Kernel 优化的核心是减少无效访存、提高并行度、降低调度开销。</li>
+<li>Triton 的意义在于让研究者能写接近底层性能的 GPU kernel。</li>
+<li>并行训练不是只有 data parallel，还有 tensor/pipeline/sequence 等维度。</li>
+</ul>
+<h3 id="对应资料-2"><a href="#对应资料-2" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 5：GPUs, TPUs<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_05.pdf">lecture 5.pdf</a></li>
+<li>Lecture 6：Kernels, Triton<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_06">lecture_06.py</a></li>
+<li>Lecture 7：Parallelism basics<br><a href="https://github.com/stanford-cs336/spring2026-lectures/blob/main/nonexecutable/Lecture%207%20-%20Parallelism%20basics.pdf">lecture 7.pdf</a></li>
+<li>Lecture 8：Parallelism<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_08.pdf">lecture_08.py</a></li>
+</ul>
+<h3 id="对应作业-1"><a href="#对应作业-1" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 2 Systems：训练系统与性能优化<br><a href="https://github.com/stanford-cs336/assignment2-systems/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf">作业 PDF</a></li>
+</ul>
+<p>如果你想走 LLM Infra、训练框架、推理引擎、GPU kernel 方向，这一块值得反复啃。它比“会调 API”难得多，但也更有护城河。</p>
+<h2 id="模块四：Scaling-Laws-与训练预算"><a href="#模块四：Scaling-Laws-与训练预算" class="headerlink" title="模块四：Scaling Laws 与训练预算"></a>模块四：Scaling Laws 与训练预算</h2><p>模型做大以后，最重要的问题会变成：<strong>我到底该训练多大的模型、用多少数据、花多少算力？</strong></p>
+<p>Scaling Laws 的价值就在这里。它不是为了画漂亮曲线，而是为了让训练决策从拍脑袋变成可估算：在固定预算下，模型参数、数据 token、训练步数应该如何分配？什么时候继续加数据更划算？什么时候加参数更划算？什么时候只是浪费 GPU？</p>
+<h3 id="你要建立的概念-3"><a href="#你要建立的概念-3" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>loss 会随模型规模、数据规模、计算量呈现可预测趋势。</li>
+<li>训练预算不是单独看参数量，而是看 compute、data、model 的组合。</li>
+<li>小规模实验可以用于预测大规模训练，但前提是实验设计靠谱。</li>
+<li>Scaling law 是工程决策工具，不只是论文里的经验公式。</li>
+</ul>
+<h3 id="对应资料-3"><a href="#对应资料-3" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 9：Scaling laws basics<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_09.pdf">lecture 9.pdf</a></li>
+<li>Lecture 10：Inference<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_10">lecture_10.py</a></li>
+<li>Lecture 11：Scaling details<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_11.pdf">lecture 11.pdf</a></li>
+</ul>
+<h3 id="对应作业-2"><a href="#对应作业-2" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 3 Scaling：用实验理解 scaling 规律<br><a href="https://github.com/stanford-cs336/assignment3-scaling/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment3-scaling/blob/main/cs336_assignment3_scaling.pdf">作业 PDF</a></li>
+</ul>
+<p>这一块建议和推理一起看，因为训练成本和推理成本最后都会回到同一个问题：<strong>模型能力不是免费的，系统账必须算清楚。</strong></p>
+<h2 id="模块五：评测、数据与模型质量"><a href="#模块五：评测、数据与模型质量" class="headerlink" title="模块五：评测、数据与模型质量"></a>模块五：评测、数据与模型质量</h2><p>当模型可以训练、可以扩展之后，下一个问题是：<strong>它真的变好了吗？</strong></p>
+<p>这也是很多项目最容易翻车的地方。训练 loss 降了，不代表用户体验变好；benchmark 涨了，不代表真实任务可用；数据更多，也不代表质量更高。CS336 把 Evaluation 和 Data 放在 scaling 之后，非常符合真实研发节奏：当你开始认真扩模型时，数据和评测会变成最关键的杠杆。</p>
+<h3 id="你要建立的概念-4"><a href="#你要建立的概念-4" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>评测不是最后打分，而是训练过程中的反馈系统。</li>
+<li>数据质量、去重、过滤、混合比例，会直接影响模型能力边界。</li>
+<li>好的 benchmark 应该和目标能力相关，否则容易优化错方向。</li>
+<li>数据工程是 LLM 能力的一部分，不是“脏活外包”。</li>
+</ul>
+<h3 id="对应资料-4"><a href="#对应资料-4" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 12：Evaluation<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_12">lecture_12.py</a></li>
+<li>Lecture 13：Data<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_13">lecture_13.py</a></li>
+<li>Lecture 14：Data<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_14">lecture_14.py</a></li>
+</ul>
+<h3 id="对应作业-3"><a href="#对应作业-3" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 4 Data：数据处理、过滤与质量评估<br><a href="https://github.com/stanford-cs336/assignment4-data/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment4-data/blob/main/cs336_assignment4_data.pdf">作业 PDF</a></li>
+</ul>
+<p>如果你未来想做 Agent、RAG、垂直模型或企业 AI，这一块尤其重要。很多时候，模型效果差不是因为“模型不够大”，而是数据和评测闭环没有搭起来。</p>
+<h2 id="模块六：SFT、RLHF-与-RLVR-对齐"><a href="#模块六：SFT、RLHF-与-RLVR-对齐" class="headerlink" title="模块六：SFT、RLHF 与 RLVR 对齐"></a>模块六：SFT、RLHF 与 RLVR 对齐</h2><p>预训练模型学会的是“预测下一个 token”，但用户想要的是“按我的意图完成任务”。这中间的落差，就是对齐要解决的问题。</p>
+<p>CS336 后半部分进入 SFT、RLHF、RLVR。这里不应该只把它理解成“让模型更听话”，更准确地说，它是在构建一个反馈系统：用示范数据、偏好信号、奖励模型或可验证奖励，把基础模型推向更适合任务和产品的行为分布。</p>
+<h3 id="你要建立的概念-5"><a href="#你要建立的概念-5" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>SFT 让模型模仿高质量示范，是从预训练到可用助手的第一步。</li>
+<li>RLHF 用人类偏好构造优化目标，但会引入奖励建模和稳定性问题。</li>
+<li>RLVR 更强调可验证奖励，在数学、代码、推理任务里尤其重要。</li>
+<li>对齐不是魔法，它仍然受数据、评测、训练稳定性和系统成本约束。</li>
+</ul>
+<h3 id="对应资料-5"><a href="#对应资料-5" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 15：Mid/post-training - SFT/RLHF<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_15.pdf">lecture 15.pdf</a></li>
+<li>Lecture 16：Alignment - RL / RLVR<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_16.pdf">lecture 16.pdf</a></li>
+<li>Lecture 17：Alignment - multimodality<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_17">lecture_17.py</a></li>
+</ul>
+<h3 id="对应作业-4"><a href="#对应作业-4" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 5 Alignment：对齐训练实践<br><a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main/blob/main/cs336_spring2026_assignment5_alignment.pdf">作业 PDF</a></li>
+</ul>
+<p>对齐部分建议放在最后学。因为如果前面的训练系统、数据、评测没建立起来，RLHF 很容易被误解成一套孤立算法，而不是完整模型工程链条里的最后几步。</p>
+<h2 id="模块七：前沿讲座与行业视角"><a href="#模块七：前沿讲座与行业视角" class="headerlink" title="模块七：前沿讲座与行业视角"></a>模块七：前沿讲座与行业视角</h2><p>CS336 后面还有两场 guest lecture，适合作为扩展阅读。它们不一定是“基础必修”，但适合用来连接工业界的真实问题。</p>
+<h3 id="对应资料-6"><a href="#对应资料-6" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Guest Lecture：Daniel Selsam</li>
+<li>Guest Lecture：Dan Fu</li>
+</ul>
+<p>这类讲座最适合在你完成前六个模块后再看：前面建立底层地图，后面再看行业专家怎么取舍，收获会更大。</p>
+<h2 id="如果只想自学，推荐三条路径"><a href="#如果只想自学，推荐三条路径" class="headerlink" title="如果只想自学，推荐三条路径"></a>如果只想自学，推荐三条路径</h2><p>不同目标的人不必按同一条路线学。可以按自己的方向选择重点。</p>
+<h3 id="路径-A：想理解-LLM-从零训练"><a href="#路径-A：想理解-LLM-从零训练" class="headerlink" title="路径 A：想理解 LLM 从零训练"></a>路径 A：想理解 LLM 从零训练</h3><p>推荐顺序：</p>
+<ol>
+<li>Lecture 1：Tokenization</li>
+<li>Lecture 2：PyTorch 与资源记账</li>
+<li>Lecture 3：架构与超参数</li>
+<li>Assignment 1 Basics</li>
+<li>Lecture 12-14：Evaluation 与 Data</li>
+</ol>
+<p>这条路适合想补齐基础的人。目标不是马上训练大模型，而是理解一个语言模型训练项目有哪些必要组件。</p>
+<h3 id="路径-B：想走-LLM-Infra-Systems"><a href="#路径-B：想走-LLM-Infra-Systems" class="headerlink" title="路径 B：想走 LLM Infra / Systems"></a>路径 B：想走 LLM Infra / Systems</h3><p>推荐顺序：</p>
+<ol>
+<li>Lecture 5：GPUs</li>
+<li>Lecture 6：Kernels, Triton</li>
+<li>Lecture 7-8：Parallelism</li>
+<li>Assignment 2 Systems</li>
+<li>Lecture 10：Inference</li>
+</ol>
+<p>这条路更偏工程和性能优化。它不会像做 prompt 那样立刻有“可见成果”，但长期价值很高。</p>
+<h3 id="路径-C：想做模型训练策略与对齐"><a href="#路径-C：想做模型训练策略与对齐" class="headerlink" title="路径 C：想做模型训练策略与对齐"></a>路径 C：想做模型训练策略与对齐</h3><p>推荐顺序：</p>
+<ol>
+<li>Lecture 9 / 11：Scaling Laws</li>
+<li>Assignment 3 Scaling</li>
+<li>Lecture 12-14：Evaluation 与 Data</li>
+<li>Lecture 15-17：SFT、RLHF、RLVR</li>
+<li>Assignment 5 Alignment</li>
+</ol>
+<p>这条路适合对 post-training、推理模型、奖励建模、评测体系感兴趣的人。</p>
+<h2 id="五份作业入口汇总"><a href="#五份作业入口汇总" class="headerlink" title="五份作业入口汇总"></a>五份作业入口汇总</h2><p>如果只能收藏一部分，我建议优先收藏作业。课件让你理解，作业逼你真的动手。</p>
+<ul>
+<li>Assignment 1 Basics：<br><a href="https://github.com/stanford-cs336/assignment1-basics/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_assignment1_basics.pdf">作业 PDF</a></li>
+<li>Assignment 2 Systems：<br><a href="https://github.com/stanford-cs336/assignment2-systems/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf">作业 PDF</a></li>
+<li>Assignment 3 Scaling：<br><a href="https://github.com/stanford-cs336/assignment3-scaling/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment3-scaling/blob/main/cs336_assignment3_scaling.pdf">作业 PDF</a></li>
+<li>Assignment 4 Data：<br><a href="https://github.com/stanford-cs336/assignment4-data/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment4-data/blob/main/cs336_assignment4_data.pdf">作业 PDF</a></li>
+<li>Assignment 5 Alignment：<br><a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main/blob/main/cs336_spring2026_assignment5_alignment.pdf">作业 PDF</a></li>
+</ul>
+<h2 id="最后：这门课最值得学的不是“知识点”，而是工程视角"><a href="#最后：这门课最值得学的不是“知识点”，而是工程视角" class="headerlink" title="最后：这门课最值得学的不是“知识点”，而是工程视角"></a>最后：这门课最值得学的不是“知识点”，而是工程视角</h2><p>CS336 最好的地方，不是它覆盖了多少新概念，而是它把语言模型放回了真实工程链条里：</p>
+<pre class="mermaid">flowchart LR
+    A[数据] --&gt; B[训练目标]
+    B --&gt; C[模型架构]
+    C --&gt; D[系统实现]
+    D --&gt; E[训练预算]
+    E --&gt; F[评测反馈]
+    F --&gt; G[对齐优化]
+    G --&gt; H[推理与产品]
+    H --&gt; A</pre>
+
+<p>很多 LLM 学习材料会把这些拆散：模型结构归模型结构，GPU 归 GPU，RLHF 归 RLHF，评测归评测。但真实的大模型研发不是这样运转的。一个看似算法层面的选择，可能会改变系统瓶颈；一个看似数据层面的过滤规则，可能会改变评测结果；一个看似后训练的问题，可能最后还是回到数据和奖励设计。</p>
+<p>所以这篇知识地图的使用方式也很简单：</p>
+<ul>
+<li>想快速入门，就按模块一到模块六顺序看。</li>
+<li>想补系统能力，就重点看 GPU、Kernel、Parallelism 和 Inference。</li>
+<li>想理解模型能力增长，就重点看 Scaling、Data、Evaluation。</li>
+<li>想研究对齐和推理模型，就把 SFT、RLHF、RLVR 放到最后精读。</li>
+</ul>
+<p>别急着一次看完。收藏这张地图，等有时间了，一块一块点进去就行。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/cs336-llm-from-scratch-knowledge-map.html">https://onefly.top/posts/cs336-llm-from-scratch-knowledge-map.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/LLM/">
+                                    <span class="chip bg-color">LLM</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%AD%E7%BB%83/">
+                                    <span class="chip bg-color">训练</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">系统</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AF%B9%E9%BD%90/">
+                                    <span class="chip bg-color">对齐</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/cs336-llm-from-scratch-knowledge-map.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260624234142748-1114942758.jpg" class="responsive-img" alt="CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课">
+                        
+                        <span class="card-title">CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E7%A0%94%E7%A9%B6/" class="post-category">
+                                    AI研究
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LLM/">
+                        <span class="chip bg-color">LLM</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%AD%E7%BB%83/">
+                        <span class="chip bg-color">训练</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">系统</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%B9%E9%BD%90/">
+                        <span class="chip bg-color">对齐</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/openai-phd-industry-job-search-notes.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260624101314960-332140420.jpg" class="responsive-img" alt="一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后">
+                        
+                        <span class="card-title">一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B1%82%E8%81%8C%E6%88%90%E9%95%BF/" class="post-category">
+                                    求职成长
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI%E6%B1%82%E8%81%8C/">
+                        <span class="chip bg-color">AI求职</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
+                    </a>
+                    
+                    <a href="/tags/PhD/">
+                        <span class="chip bg-color">PhD</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

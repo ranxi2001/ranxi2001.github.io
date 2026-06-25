@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-25T15:42:26.432Z</updated>
+  <updated>2026-06-25T16:21:43.409Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OfferPilot：把AI Agent面试准备变成一次真实诊断</title>
+    <link href="https://onefly.top/posts/offerpilot-ai-agent-interview-diagnosis.html"/>
+    <id>https://onefly.top/posts/offerpilot-ai-agent-interview-diagnosis.html</id>
+    <published>2026-06-25T16:16:36.000Z</published>
+    <updated>2026-06-25T16:21:43.409Z</updated>
+    
+    
+    <summary type="html">OfferPilot 是一个面向 AI Agent 与 LLM 工程面试的开源诊断 Agent，把手写 Agent Loop、子 Agent、知识检索、Web 流式交互和语音诊断整合成可运行产品。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
+    
+    <category term="面试" scheme="https://onefly.top/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="开源" scheme="https://onefly.top/tags/%E5%BC%80%E6%BA%90/"/>
+    
+    <category term="语音" scheme="https://onefly.top/tags/%E8%AF%AD%E9%9F%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>Kubernetes和云原生：从Docker到K8s的知识三明治</title>
@@ -476,29 +501,6 @@
     <category term="交易风控" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E9%A3%8E%E6%8E%A7/"/>
     
     <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>别再把 Claude Code 当一次性聊天框了：CLAUDE.md 与持久上下文工作流</title>
-    <link href="https://onefly.top/posts/claude-md-persistent-context-ai-workflow-2026.html"/>
-    <id>https://onefly.top/posts/claude-md-persistent-context-ai-workflow-2026.html</id>
-    <published>2026-05-28T07:31:46.000Z</published>
-    <updated>2026-05-28T07:50:02.062Z</updated>
-    
-    
-    <summary type="html">从一篇 X 长文出发，拆解 Claude Code 里的 CLAUDE.md 为什么重要：它不是神奇 Prompt，而是把个人偏好、项目约束、权限边界、错误经验沉淀为持久上下文的 AI 编程工作流。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Claude" scheme="https://onefly.top/tags/Claude/"/>
-    
-    <category term="AI Agent" scheme="https://onefly.top/tags/AI-Agent/"/>
-    
-    <category term="AI工作流" scheme="https://onefly.top/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     
   </entry>
   

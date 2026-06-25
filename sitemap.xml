@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://onefly.top/posts/ai-api-key-mac-app-install-guide.html</loc>
+    
+    <lastmod>2026-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/posts/k8s-cloud-native-foundation.html</loc>
     
     <lastmod>2026-06-25</lastmod>
@@ -23,15 +32,6 @@
     <loc>https://onefly.top/posts/openai-phd-industry-job-search-notes.html</loc>
     
     <lastmod>2026-06-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/posts/ai-api-key-mac-app-install-guide.html</loc>
-    
-    <lastmod>2026-06-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -236,6 +236,15 @@
   </url>
   
   <url>
+    <loc>https://onefly.top/posts/260305.html</loc>
+    
+    <lastmod>2026-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/posts/ai-agent-news-trading-crypto-2026.html</loc>
     
     <lastmod>2026-05-27</lastmod>
@@ -273,15 +282,6 @@
   
   <url>
     <loc>https://onefly.top/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html</loc>
-    
-    <lastmod>2026-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/posts/260305.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/250731.html</loc>
+    <loc>https://onefly.top/posts/250226.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -515,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/250226.html</loc>
+    <loc>https://onefly.top/posts/250731.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -785,6 +785,15 @@
   </url>
   
   <url>
+    <loc>https://onefly.top/posts/240920.html</loc>
+    
+    <lastmod>2026-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/posts/241016.html</loc>
     
     <lastmod>2026-05-27</lastmod>
@@ -812,7 +821,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/240920.html</loc>
+    <loc>https://onefly.top/posts/241014.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -830,7 +839,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/241014.html</loc>
+    <loc>https://onefly.top/posts/13140.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -848,25 +857,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/13140.html</loc>
-    
-    <lastmod>2026-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://onefly.top/posts/13141.html</loc>
-    
-    <lastmod>2026-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/posts/15785.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -893,15 +884,6 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/16891.html</loc>
-    
-    <lastmod>2026-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://onefly.top/posts/16892.html</loc>
     
     <lastmod>2026-05-27</lastmod>
@@ -911,7 +893,34 @@
   </url>
   
   <url>
+    <loc>https://onefly.top/posts/16891.html</loc>
+    
+    <lastmod>2026-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/posts/16890.html</loc>
+    
+    <lastmod>2026-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/posts/15785.html</loc>
+    
+    <lastmod>2026-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/posts/23702.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -930,15 +939,6 @@
   
   <url>
     <loc>https://onefly.top/posts/23703.html</loc>
-    
-    <lastmod>2026-05-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/posts/23702.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -1019,27 +1019,6 @@
 
   
   <url>
-    <loc>https://onefly.top/tags/%E7%A0%B4%E8%A7%A3%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/JetBrain/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/PyCharm/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://onefly.top/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1061,6 +1040,27 @@
   </url>
   
   <url>
+    <loc>https://onefly.top/tags/%E7%A0%B4%E8%A7%A3%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/JetBrain/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/PyCharm/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/tags/pandas/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1069,13 +1069,6 @@
   
   <url>
     <loc>https://onefly.top/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/%E7%BB%8F%E7%AE%A1/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1103,7 +1096,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</loc>
+    <loc>https://onefly.top/tags/Copilot-X/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1117,14 +1110,14 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>https://onefly.top/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/Copilot-X/</loc>
+    <loc>https://onefly.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1146,6 +1139,20 @@
   
   <url>
     <loc>https://onefly.top/tags/%E7%BE%8E%E5%9B%BD/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E7%BB%8F%E7%AE%A1/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E5%85%8D%E8%B4%B9/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1174,13 +1181,6 @@
   
   <url>
     <loc>https://onefly.top/tags/zlibrary/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/%E5%85%8D%E8%B4%B9/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1257,6 +1257,20 @@
   </url>
   
   <url>
+    <loc>https://onefly.top/tags/strk/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E4%BA%A4%E6%98%93%E6%89%80/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/tags/Web3/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1286,20 +1300,6 @@
   
   <url>
     <loc>https://onefly.top/tags/%E9%92%B1%E5%8C%85%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/strk/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/%E4%BA%A4%E6%98%93%E6%89%80/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1348,20 +1348,6 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/Office/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/%E6%BF%80%E6%B4%BB/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://onefly.top/tags/%E5%9C%9F%E7%8B%97/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1376,7 +1362,14 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/%E5%BE%AE%E8%BD%AF%E5%95%86%E5%BA%97/</loc>
+    <loc>https://onefly.top/tags/Office/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E6%BF%80%E6%B4%BB/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1384,6 +1377,13 @@
   
   <url>
     <loc>https://onefly.top/tags/spss/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E5%BE%AE%E8%BD%AF%E5%95%86%E5%BA%97/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1586,6 +1586,27 @@
   </url>
   
   <url>
+    <loc>https://onefly.top/tags/VPS/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/Docker/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/tags/Crypto/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1615,27 +1636,6 @@
   
   <url>
     <loc>https://onefly.top/tags/%E7%BE%8E%E8%82%A1%E9%93%B6%E8%A1%8C%E5%8D%A1/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/VPS/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/Docker/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1936,6 +1936,27 @@
   </url>
   
   <url>
+    <loc>https://onefly.top/tags/Gemini-Pro/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/%E5%AE%B6%E5%BA%AD%E5%85%B1%E4%BA%AB/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/tags/System-Prompt/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -2007,27 +2028,6 @@
   
   <url>
     <loc>https://onefly.top/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/Gemini-Pro/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/%E5%AE%B6%E5%BA%AD%E5%85%B1%E4%BA%AB/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2335,14 +2335,14 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/</loc>
+    <loc>https://onefly.top/tags/%E5%90%88%E7%BA%A6/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/%E5%90%88%E7%BA%A6/</loc>
+    <loc>https://onefly.top/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2386,14 +2386,14 @@
 
   
   <url>
-    <loc>https://onefly.top/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
+    <loc>https://onefly.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://onefly.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
+    <loc>https://onefly.top/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2414,14 +2414,14 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/categories/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://onefly.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://onefly.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>https://onefly.top/categories/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

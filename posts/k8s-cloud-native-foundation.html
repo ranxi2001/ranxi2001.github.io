@@ -1,0 +1,2432 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="Kubernetes, K8s, Docker, 云原生, Pod, Service, Ingress, Deployment, StatefulSet, ConfigMap, Secret, Volume">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Kubernetes和云原生：从Docker到K8s的知识三明治 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>    
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260625234201450-868926711.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Kubernetes和云原生：从Docker到K8s的知识三明治</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                            <a href="/tags/K8s/">
+                                <span class="chip bg-color">K8s</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
+                                <span class="chip bg-color">云原生</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/" class="post-category">
+                                云原生
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-25
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Kubernetes和云原生：从Docker到K8s的知识三明治"><a href="#Kubernetes和云原生：从Docker到K8s的知识三明治" class="headerlink" title="Kubernetes和云原生：从Docker到K8s的知识三明治"></a>Kubernetes和云原生：从Docker到K8s的知识三明治</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260625234201450-868926711.jpg" style="zoom:33%;" alt="Kubernetes和云原生从Docker到K8s封面图"></p>
+<p>我最近在云服务大厂实习，需要补一下 Kubernetes 和云原生的知识。</p>
+<p>但问题是，我并不是一开始就懂 K8s。我之前主要用过 Docker，知道可以把一个应用打包成镜像，然后用容器跑起来。比如本地起一个 MySQL、Redis、Nginx，或者把自己的后端服务打成镜像，这些都还比较直观。</p>
+<p>可是当容器数量变多之后，问题就来了。</p>
+<p>一个容器挂了怎么办？多个容器之间怎么互相访问？服务升级时怎么不停机？数据库这种有数据的服务怎么处理？应用配置变了是不是还要重新打镜像？容器要跑在哪台机器上？机器挂了以后谁来把服务重新拉起来？</p>
+<p>如果只有两三个容器，我们还可以用 Shell 脚本、Docker Compose 或者手动命令勉强管理。但如果是一整个项目、多个服务、多台机器、多个环境，这件事就会迅速失控。</p>
+<p><strong>Kubernetes 要解决的，就是“容器多了以后怎么管理”的问题。</strong></p>
+<p>它不是 Docker 的替代品，而是站在 Docker 这类容器技术之上，帮我们做容器编排、调度、服务发现、扩缩容、配置管理、存储管理和故障恢复。</p>
+<p>这篇文章就按“知识三明治”的方式来补：先用 Docker 的直觉理解 K8s，再逐个解释核心组件，最后看一下它在云原生里的位置。</p>
+<h2 id="一、从-Docker-到-Kubernetes：为什么需要-K8s"><a href="#一、从-Docker-到-Kubernetes：为什么需要-K8s" class="headerlink" title="一、从 Docker 到 Kubernetes：为什么需要 K8s"></a>一、从 Docker 到 Kubernetes：为什么需要 K8s</h2><p>Docker 解决的是“怎么把应用和运行环境打包起来”。</p>
+<p>比如一个 Java 应用原来需要 JDK、配置文件、启动脚本、依赖包。不同机器环境不一样，很容易出现“我本地能跑，你服务器跑不了”的问题。Docker 把这些东西打进镜像里，容器启动后环境基本一致，这就方便很多。</p>
+<p>但 Docker 更偏向管理单个容器，或者少量容器。</p>
+<p>假设现在有一个简单系统：</p>
+<ul>
+<li>一个前端服务</li>
+<li>一个后端 API 服务</li>
+<li>一个 MySQL 数据库</li>
+<li>一个 Redis 缓存</li>
+<li>一个 Nginx 网关</li>
+</ul>
+<p>用 Docker 跑起来不难。但继续往下想：</p>
+<ul>
+<li>后端 API 要不要多跑几个副本？</li>
+<li>某个副本挂了，谁负责重新启动？</li>
+<li>Redis 的地址变了，后端配置怎么更新？</li>
+<li>MySQL 数据不能丢，容器重启后数据放哪里？</li>
+<li>Nginx 怎么把外部请求转发到正确服务？</li>
+<li>服务升级时怎么做到用户无感？</li>
+<li>这些容器到底应该跑在哪台机器上？</li>
+</ul>
+<p>这些问题单靠手写脚本也能做一部分，但很快会变得复杂。</p>
+<p>于是 Kubernetes 出场了。</p>
+<p>可以先把它理解成：<strong>Kubernetes 是一个容器管理平台，它负责在一组机器上管理一堆容器，让它们按照我们声明的方式运行。</strong></p>
+<h2 id="二、Kubernetes-的基本直觉：我想要什么状态"><a href="#二、Kubernetes-的基本直觉：我想要什么状态" class="headerlink" title="二、Kubernetes 的基本直觉：我想要什么状态"></a>二、Kubernetes 的基本直觉：我想要什么状态</h2><p>Kubernetes 里很重要的一个思想叫“声明式”。</p>
+<p>你不是一步一步告诉它：先创建这个容器，再启动那个容器，再检查一下，再挂了重启。</p>
+<p>你更多是在告诉它：</p>
+<blockquote>
+<p>我希望这个应用一直有 3 个副本，使用 nginx:1.25 这个镜像，对外暴露 80 端口。</p>
+</blockquote>
+<p>然后 Kubernetes 会不断检查当前状态和你想要的状态是否一致。如果少了一个副本，它就补一个；如果某个 Pod 挂了，它就重新创建；如果你把副本数从 3 改成 5，它就再扩两个。</p>
+<p>这个过程可以理解为：</p>
+<pre class="mermaid">flowchart LR
+    A[你写配置<br>期望状态] --&gt; B[Kubernetes 接收配置]
+    B --&gt; C[检查当前状态]
+    C --&gt; D{是否一致}
+    D --&gt;|一致| E[保持运行]
+    D --&gt;|不一致| F[创建 / 删除 / 更新资源]
+    F --&gt; C</pre>
+
+<p>这就是 K8s 的核心直觉：<strong>你描述目标状态，它负责尽量把现实状态调整过去。</strong></p>
+<h2 id="三、Node：K8s-里的机器"><a href="#三、Node：K8s-里的机器" class="headerlink" title="三、Node：K8s 里的机器"></a>三、Node：K8s 里的机器</h2><p>Node 是 Kubernetes 里的节点，可以是一台物理机，也可以是一台虚拟机。</p>
+<p>如果你之前用 Docker，大概率是在自己电脑或者一台服务器上跑容器。而 Kubernetes 通常管理的是多台机器。每台机器就是一个 Node。</p>
+<p>这些 Node 合在一起，就是一个 Kubernetes 集群。</p>
+<p>可以先这样理解：</p>
+<ul>
+<li><strong>Node</strong>：一台能跑容器的机器。</li>
+<li><strong>Cluster</strong>：很多 Node 组成的集群。</li>
+<li><strong>Kubernetes</strong>：负责管理整个集群。</li>
+</ul>
+<p>在云厂环境里，Node 很可能就是云服务器 ECS、CVM、EC2 这类虚拟机。你不一定直接登录每台机器，但你的应用最终还是会被调度到某些 Node 上运行。</p>
+<h2 id="四、Pod：K8s-不是直接管理容器"><a href="#四、Pod：K8s-不是直接管理容器" class="headerlink" title="四、Pod：K8s 不是直接管理容器"></a>四、Pod：K8s 不是直接管理容器</h2><p>学 Kubernetes 第一个容易卡住的概念就是 Pod。</p>
+<p>我们直觉上会以为：Docker 里跑的是容器，那 K8s 应该也是直接管理容器。</p>
+<p>但实际上，Kubernetes 最小的调度单位不是容器，而是 <strong>Pod</strong>。</p>
+<p>Pod 可以理解为“容器外面的一层壳”，它给容器提供一个运行环境。一个 Pod 里可以有一个容器，也可以有多个容器。它们可以共享网络、存储和一些运行时配置。</p>
+<p>大部分情况下，一个 Pod 里只跑一个主业务容器。比如：</p>
+<ul>
+<li>一个后端服务 Pod，里面跑一个 Java 容器。</li>
+<li>一个 Nginx Pod，里面跑一个 Nginx 容器。</li>
+<li>一个 Redis Pod，里面跑一个 Redis 容器。</li>
+</ul>
+<p>那什么时候一个 Pod 里会有多个容器？</p>
+<p>通常是这些容器关系非常紧密，必须一起工作。比如主业务容器旁边加一个日志采集容器，或者加一个代理容器。这种模式常叫 sidecar。</p>
+<p>先不要被这些高级用法绕进去。入门时记住一句话就够了：</p>
+<p><strong>Pod 是 Kubernetes 管理应用实例的最小单位，容器通常运行在 Pod 里面。</strong></p>
+<h2 id="五、Pod-IP：为什么直接访问-Pod-不靠谱"><a href="#五、Pod-IP：为什么直接访问-Pod-不靠谱" class="headerlink" title="五、Pod IP：为什么直接访问 Pod 不靠谱"></a>五、Pod IP：为什么直接访问 Pod 不靠谱</h2><p>每个 Pod 创建后，Kubernetes 会给它分配一个集群内部 IP。Pod 之间可以通过这个 IP 通信。</p>
+<p>比如后端应用要访问数据库，理论上可以直接访问数据库 Pod 的 IP。</p>
+<p>但这会有一个问题：<strong>Pod 不是稳定的。</strong></p>
+<p>Pod 很容易被创建、销毁和重建：</p>
+<ul>
+<li>容器崩了，Pod 可能被重建。</li>
+<li>Node 挂了，Pod 可能被调度到别的 Node。</li>
+<li>应用升级了，旧 Pod 会被新 Pod 替换。</li>
+<li>手动扩缩容时，Pod 数量会变化。</li>
+</ul>
+<p>Pod 一重建，IP 可能就变了。</p>
+<p>如果应用程序写死数据库 Pod 的 IP，那数据库 Pod 一换，应用就找不到数据库了。</p>
+<p>所以不能让应用直接依赖 Pod IP。</p>
+<p>这就引出了 Service。</p>
+<h2 id="六、Service：给一组-Pod-一个稳定入口"><a href="#六、Service：给一组-Pod-一个稳定入口" class="headerlink" title="六、Service：给一组 Pod 一个稳定入口"></a>六、Service：给一组 Pod 一个稳定入口</h2><p>Service 是 Kubernetes 里非常重要的对象。</p>
+<p>它解决的问题是：<strong>Pod IP 不稳定，但服务访问需要一个稳定入口。</strong></p>
+<p>比如数据库可能有一个 Pod，也可能有多个 Pod。无论背后的 Pod 怎么变，应用都希望用一个固定地址访问数据库。</p>
+<p>Service 就像一个中间层：</p>
+<ul>
+<li>前面给调用方一个稳定地址。</li>
+<li>后面自动转发到健康的 Pod。</li>
+</ul>
+<p>可以把它类比成反向代理或者负载均衡器。</p>
+<pre class="mermaid">flowchart LR
+    A[应用 Pod] --&gt; B[数据库 Service<br>稳定入口]
+    B --&gt; C[数据库 Pod 1]
+    B --&gt; D[数据库 Pod 2]
+    B --&gt; E[数据库 Pod 3]</pre>
+
+<p>即使数据库 Pod 1 挂了，被新的 Pod 替换了，Service 的地址也不变。应用继续访问 Service，Service 再把请求转发到可用的 Pod。</p>
+<p>这里顺手补一下正向代理和反向代理。</p>
+<p><strong>正向代理</strong>代理的是客户端。比如科学上网时，客户端先把请求发给代理服务器，代理服务器再帮你去访问目标网站。目标网站看到的是代理服务器，不一定知道真实客户端是谁。</p>
+<p><strong>反向代理</strong>代理的是服务端。比如 Nginx 后面有多台服务器，用户只访问 Nginx，Nginx 再把请求转发给某一台后端服务器。用户不知道后面真实服务器是谁。</p>
+<p>Service 更像反向代理：调用方不需要知道后面具体有哪些 Pod，只需要访问 Service。</p>
+<h2 id="七、内部服务和外部服务"><a href="#七、内部服务和外部服务" class="headerlink" title="七、内部服务和外部服务"></a>七、内部服务和外部服务</h2><p>不是所有服务都应该暴露给外部用户。</p>
+<p>比如：</p>
+<ul>
+<li>数据库</li>
+<li>Redis 缓存</li>
+<li>消息队列</li>
+<li>内部管理服务</li>
+</ul>
+<p>这些通常只需要在集群内部访问，不应该直接暴露到公网。</p>
+<p>而下面这些服务可能需要对外暴露：</p>
+<ul>
+<li>前端页面</li>
+<li>后端 API</li>
+<li>网关服务</li>
+<li>对外开放的平台接口</li>
+</ul>
+<p>所以可以先分成两类：</p>
+<ul>
+<li><strong>内部服务</strong>：只在集群内部访问。</li>
+<li><strong>外部服务</strong>：需要让用户或外部系统访问。</li>
+</ul>
+<p>Service 有几种常见类型：</p>
+<ul>
+<li><strong>ClusterIP</strong>：默认类型，只能在集群内部访问。</li>
+<li><strong>NodePort</strong>：在 Node 上开放一个端口，通过 <code>NodeIP:端口</code> 访问。</li>
+<li><strong>LoadBalancer</strong>：通常对接云厂的负载均衡器，给服务分配外部入口。</li>
+<li><strong>ExternalName</strong>：把服务映射到一个外部域名。</li>
+</ul>
+<p>刚入门时，重点理解 ClusterIP 和 NodePort 就够了。</p>
+<p>ClusterIP 就像“内网地址”，只在集群里用。NodePort 就像在机器上开了一个端口，比如你以前访问 <code>localhost:8080</code>，本质上也是通过 IP 和端口访问服务。</p>
+<p>但生产环境一般不会让用户记 IP 和端口，而是使用域名。</p>
+<p>这就轮到 Ingress 了。</p>
+<h2 id="八、Ingress：用域名和路径访问服务"><a href="#八、Ingress：用域名和路径访问服务" class="headerlink" title="八、Ingress：用域名和路径访问服务"></a>八、Ingress：用域名和路径访问服务</h2><p>Service 能解决服务入口问题，但如果要对外提供正式访问，通常还需要域名、路径转发、HTTPS 证书等能力。</p>
+<p>Ingress 就是用来管理外部访问规则的。</p>
+<p>比如：</p>
+<ul>
+<li><code>www.example.com</code> 访问前端服务。</li>
+<li><code>api.example.com/user</code> 访问用户服务。</li>
+<li><code>api.example.com/order</code> 访问订单服务。</li>
+</ul>
+<p>Ingress 可以根据域名和路径，把请求转发到不同的 Service。</p>
+<pre class="mermaid">flowchart TD
+    U[用户浏览器] --&gt; I[Ingress<br>统一入口]
+    I --&gt;|/user| S1[user-service]
+    I --&gt;|/order| S2[order-service]
+    S1 --&gt; P1[用户服务 Pod]
+    S2 --&gt; P2[订单服务 Pod]</pre>
+
+<p>需要注意的是，Ingress 本身更像一份规则，真正执行转发的通常是 Ingress Controller，比如 Nginx Ingress Controller，或者云厂自己的网关组件。</p>
+<p>入门时可以这样记：</p>
+<ul>
+<li><strong>Pod</strong>：真正跑应用的地方。</li>
+<li><strong>Service</strong>：给 Pod 一个稳定入口。</li>
+<li><strong>Ingress</strong>：把外部域名和路径转到 Service。</li>
+</ul>
+<h2 id="九、ConfigMap：配置不要写死在镜像里"><a href="#九、ConfigMap：配置不要写死在镜像里" class="headerlink" title="九、ConfigMap：配置不要写死在镜像里"></a>九、ConfigMap：配置不要写死在镜像里</h2><p>以前我们写应用时，数据库地址、Redis 地址、端口号、开关配置，可能会写在配置文件或环境变量里。</p>
+<p>如果这些配置直接打进镜像，就会很麻烦。</p>
+<p>比如数据库地址变了，难道还要重新改代码、重新构建镜像、重新部署吗？这对线上服务很不友好。</p>
+<p>Kubernetes 提供了 ConfigMap，用来管理普通配置。</p>
+<p>它的作用是：<strong>把配置从镜像里拿出来，交给运行环境管理。</strong></p>
+<p>比如同一个后端镜像，可以在开发环境连接开发数据库，在测试环境连接测试数据库，在生产环境连接生产数据库。镜像不变，只是注入的 ConfigMap 不同。</p>
+<p>可以这样理解：</p>
+<ul>
+<li>镜像负责“程序是什么”。</li>
+<li>ConfigMap 负责“程序运行时用什么配置”。</li>
+</ul>
+<p>这样应用和配置就解耦了。</p>
+<h2 id="十、Secret：敏感信息不要放-ConfigMap"><a href="#十、Secret：敏感信息不要放-ConfigMap" class="headerlink" title="十、Secret：敏感信息不要放 ConfigMap"></a>十、Secret：敏感信息不要放 ConfigMap</h2><p>ConfigMap 适合放普通配置，但不适合放密码、Token、证书这类敏感信息。</p>
+<p>所以 Kubernetes 提供了 Secret。</p>
+<p>Secret 用来保存敏感配置，比如：</p>
+<ul>
+<li>数据库用户名和密码</li>
+<li>API Token</li>
+<li>TLS 证书</li>
+<li>私钥片段</li>
+</ul>
+<p>不过这里有个坑：<strong>Kubernetes Secret 默认只是 Base64 编码，不等于加密。</strong></p>
+<p>Base64 很容易解码，网上随便找个工具就能还原。所以 Secret 不是“绝对安全保险箱”，还需要配合权限控制、访问审计、密钥管理系统等手段。</p>
+<p>入门时先记住：</p>
+<ul>
+<li>普通配置放 ConfigMap。</li>
+<li>敏感配置放 Secret。</li>
+<li>Secret 默认 Base64 不是加密，不要误以为万事大吉。</li>
+</ul>
+<p>真是一层套一层。</p>
+<h2 id="十一、Volume：Pod-重启后数据怎么办"><a href="#十一、Volume：Pod-重启后数据怎么办" class="headerlink" title="十一、Volume：Pod 重启后数据怎么办"></a>十一、Volume：Pod 重启后数据怎么办</h2><p>Pod 是不稳定的。它可能被删除、重建、迁移。</p>
+<p>如果 Pod 里跑的是无状态应用，比如普通后端 API，那问题不大。这个 Pod 挂了，重新拉一个就行。</p>
+<p>但如果 Pod 里跑的是数据库，事情就复杂了。</p>
+<p>数据库最重要的是数据。如果 Pod 一重启，数据就没了，那肯定不行。</p>
+<p>Kubernetes 提供 Volume 来解决这个问题。</p>
+<p>Volume 可以把一块存储挂载到 Pod 里。这样数据不完全跟着容器生命周期走，而是放在外部存储或节点存储上。</p>
+<p>在云环境里，这个存储可能是：</p>
+<ul>
+<li>云硬盘</li>
+<li>NAS</li>
+<li>对象存储</li>
+<li>分布式存储</li>
+<li>本地磁盘目录</li>
+</ul>
+<p>入门时可以先把 Volume 理解成：<strong>给 Pod 挂一块“不会因为容器重启就马上消失”的存储。</strong></p>
+<p>后面还会遇到 PV、PVC、StorageClass，它们是更完整的持久化存储管理方式。初学不用急着一次吃完。</p>
+<h2 id="十二、Deployment：管理应用副本和更新"><a href="#十二、Deployment：管理应用副本和更新" class="headerlink" title="十二、Deployment：管理应用副本和更新"></a>十二、Deployment：管理应用副本和更新</h2><p>如果一个服务只有一个 Pod，那么这个 Pod 挂了，服务就不可用了。</p>
+<p>为了高可用，我们通常会让同一个服务跑多个副本。</p>
+<p>比如后端 API 跑 3 个 Pod：</p>
+<pre class="mermaid">flowchart LR
+    S[api-service] --&gt; P1[api Pod 1]
+    S --&gt; P2[api Pod 2]
+    S --&gt; P3[api Pod 3]</pre>
+
+<p>但问题是：谁来保证一直有 3 个 Pod？谁来处理 Pod 挂了以后补一个？谁来做版本升级？</p>
+<p>Deployment 就是用来管理这些事情的。</p>
+<p>它主要负责：</p>
+<ul>
+<li>定义应用有多少个副本。</li>
+<li>某个 Pod 挂了以后自动补齐。</li>
+<li>应用升级时做滚动更新。</li>
+<li>新版本有问题时支持回滚。</li>
+</ul>
+<p>比如你声明一个 Deployment：副本数是 3。Kubernetes 就会努力保证集群里一直有 3 个对应的 Pod。</p>
+<p>如果其中一个 Pod 挂了，它会再创建一个新的 Pod。</p>
+<p>这就叫副本控制。</p>
+<h3 id="滚动更新是什么"><a href="#滚动更新是什么" class="headerlink" title="滚动更新是什么"></a>滚动更新是什么</h3><p>滚动更新可以理解为：不要一下子把旧版本全部停掉，而是一批一批替换。</p>
+<p>比如原来有 3 个旧版本 Pod，现在要升级到新版本。Kubernetes 可以先启动 1 个新版本 Pod，确认它能正常接流量，再逐步替换剩下的旧版本 Pod。</p>
+<p>这样用户不容易感知到服务中断。</p>
+<p>这就是所谓的平滑升级。</p>
+<h2 id="十三、ReplicaSet：Deployment-和-Pod-中间的一层"><a href="#十三、ReplicaSet：Deployment-和-Pod-中间的一层" class="headerlink" title="十三、ReplicaSet：Deployment 和 Pod 中间的一层"></a>十三、ReplicaSet：Deployment 和 Pod 中间的一层</h2><p>当你创建 Deployment 后，Kubernetes 通常不会直接由 Deployment 管 Pod，而是中间还有一层 ReplicaSet。</p>
+<p>关系大概是：</p>
+<pre class="mermaid">flowchart TD
+    D[Deployment<br>定义版本和副本策略] --&gt; R[ReplicaSet<br>维护副本数量]
+    R --&gt; P1[Pod 1]
+    R --&gt; P2[Pod 2]
+    R --&gt; P3[Pod 3]</pre>
+
+<p>ReplicaSet 的作用是维护某一批 Pod 的副本数量。</p>
+<p>平时我们一般不直接操作 ReplicaSet，而是操作 Deployment。你可以把 ReplicaSet 理解成 Deployment 背后自动创建和管理的“副本控制器”。</p>
+<p>在命令里看到类似 <code>nginx-deployment-6d6565499c-xrkv9</code> 这种 Pod 名字时，中间那段通常就和 ReplicaSet 有关。</p>
+<h2 id="十四、StatefulSet：有状态应用不能简单复制"><a href="#十四、StatefulSet：有状态应用不能简单复制" class="headerlink" title="十四、StatefulSet：有状态应用不能简单复制"></a>十四、StatefulSet：有状态应用不能简单复制</h2><p>Deployment 很适合管理无状态应用，比如普通 API 服务、前端服务、计算服务。</p>
+<p>什么叫无状态？</p>
+<p>简单说：这个 Pod 挂了，换一个新的也没关系。因为关键数据不在它本地，或者它可以从数据库、缓存、对象存储里重新拿到。</p>
+<p>但数据库、消息队列、部分缓存、搜索引擎这类服务就不一样。它们有自己的数据、身份、顺序和存储需求。</p>
+<p>这种就叫有状态应用。</p>
+<p>有状态应用不能简单地“复制 3 个一模一样的 Pod”就完事。因为每个副本可能有不同数据，或者需要固定身份，比如：</p>
+<ul>
+<li><code>mysql-0</code></li>
+<li><code>mysql-1</code></li>
+<li><code>mysql-2</code></li>
+</ul>
+<p>它们之间可能有主从关系、同步关系、选主关系。</p>
+<p>StatefulSet 就是 Kubernetes 用来管理有状态应用的对象。</p>
+<p>它和 Deployment 有点像，也能管理副本数量，但它额外强调：</p>
+<ul>
+<li>每个 Pod 有稳定名字。</li>
+<li>每个 Pod 有稳定网络标识。</li>
+<li>每个 Pod 可以绑定自己的持久化存储。</li>
+<li>创建、删除、更新通常有固定顺序。</li>
+</ul>
+<p>不过要注意：<strong>不是所有数据库都适合直接放进 Kubernetes 里。</strong></p>
+<p>有些有状态服务部署和维护很复杂，生产环境里也常常会使用云数据库、独立数据库集群，或者专门的 Operator 来管理，而不是自己手写一个 StatefulSet 就完事。</p>
+<p>所以入门理解到这里就够：</p>
+<ul>
+<li>无状态应用通常用 Deployment。</li>
+<li>有状态应用可以用 StatefulSet。</li>
+<li>数据库这类服务要格外小心，不要以为多起几个 Pod 就高可用了。</li>
+</ul>
+<h2 id="十五、Kubernetes-架构：Master-Worker"><a href="#十五、Kubernetes-架构：Master-Worker" class="headerlink" title="十五、Kubernetes 架构：Master-Worker"></a>十五、Kubernetes 架构：Master-Worker</h2><p>Kubernetes 是典型的 Master-Worker 架构。</p>
+<ul>
+<li><strong>Master Node</strong>：负责管理整个集群。</li>
+<li><strong>Worker Node</strong>：负责真正运行应用。</li>
+</ul>
+<p>现在很多文档会把 Master Node 称为 Control Plane，也就是控制平面。为了入门好理解，先叫 Master 也没问题。</p>
+<p>整体结构可以这样看：</p>
+<pre class="mermaid">flowchart TD
+    U[用户 / kubectl] --&gt; A[kube-apiserver]
+
+    subgraph Master[Master Node / Control Plane]
+        A --&gt; S[Scheduler]
+        A --&gt; C[Controller Manager]
+        A --&gt; E[etcd]
+        A --&gt; CCM[Cloud Controller Manager]
+    end
+
+    subgraph W1[Worker Node 1]
+        K1[kubelet]
+        P1[kube-proxy]
+        R1[container runtime]
+        Pod1[Pod]
+    end
+
+    subgraph W2[Worker Node 2]
+        K2[kubelet]
+        P2[kube-proxy]
+        R2[container runtime]
+        Pod2[Pod]
+    end
+
+    A --&gt; K1
+    A --&gt; K2
+    R1 --&gt; Pod1
+    R2 --&gt; Pod2</pre>
+
+<p>下面拆开看。</p>
+<h2 id="十六、Worker-Node-上有什么"><a href="#十六、Worker-Node-上有什么" class="headerlink" title="十六、Worker Node 上有什么"></a>十六、Worker Node 上有什么</h2><p>Worker Node 是真正跑业务应用的机器。</p>
+<p>每个 Worker Node 上通常有三个重要组件：</p>
+<ul>
+<li>container runtime</li>
+<li>kubelet</li>
+<li>kube-proxy</li>
+</ul>
+<h3 id="container-runtime"><a href="#container-runtime" class="headerlink" title="container runtime"></a>container runtime</h3><p>container runtime 是容器运行时。</p>
+<p>它负责拉取镜像、创建容器、启动容器、停止容器。</p>
+<p>以前大家经常听 Docker，现在 Kubernetes 里也可能使用 containerd、CRI-O 等运行时。对入门来说，可以先理解为：<strong>container runtime 就是负责真正把容器跑起来的东西。</strong></p>
+<h3 id="kubelet"><a href="#kubelet" class="headerlink" title="kubelet"></a>kubelet</h3><p>kubelet 是每个 Node 上非常关键的组件。</p>
+<p>它负责管理当前节点上的 Pod。</p>
+<p>Master 告诉这个 Node：“你这里应该跑某个 Pod。”然后 kubelet 就会调用容器运行时，把对应容器拉起来，并持续汇报状态。</p>
+<p>可以理解为：<strong>kubelet 是 Node 上的管家。</strong></p>
+<p>它会关心：</p>
+<ul>
+<li>Pod 有没有启动成功。</li>
+<li>容器是否还活着。</li>
+<li>当前节点资源状态如何。</li>
+<li>要不要向 apiserver 汇报最新状态。</li>
+</ul>
+<h3 id="kube-proxy"><a href="#kube-proxy" class="headerlink" title="kube-proxy"></a>kube-proxy</h3><p>kube-proxy 负责网络代理和负载均衡相关工作。</p>
+<p>前面说 Service 会把请求转发到后端 Pod。那这件事在每个节点上就离不开 kube-proxy 这类组件的参与。</p>
+<p>你可以先简单理解为：<strong>kube-proxy 帮 Service 把流量导到正确的 Pod。</strong></p>
+<h2 id="十七、Master-Node-上有什么"><a href="#十七、Master-Node-上有什么" class="headerlink" title="十七、Master Node 上有什么"></a>十七、Master Node 上有什么</h2><p>Master Node 负责管理整个集群。</p>
+<p>它上面有几个核心组件。</p>
+<h3 id="kube-apiserver"><a href="#kube-apiserver" class="headerlink" title="kube-apiserver"></a>kube-apiserver</h3><p>kube-apiserver 是 Kubernetes 的入口。</p>
+<p>无论你用 <code>kubectl</code> 创建 Deployment，还是其他组件要读取集群状态，基本都要经过 apiserver。</p>
+<p>它负责：</p>
+<ul>
+<li>提供 Kubernetes API。</li>
+<li>接收用户请求。</li>
+<li>做认证、授权和准入控制。</li>
+<li>把资源状态写入 etcd。</li>
+<li>让其他组件通过它协作。</li>
+</ul>
+<p>可以把 apiserver 理解成 Kubernetes 集群的大门和中转站。</p>
+<h3 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h3><p>Scheduler 是调度器。</p>
+<p>当你创建一个新的 Pod 时，它一开始还不知道该跑在哪个 Node 上。Scheduler 会根据节点资源、调度规则、亲和性、污点容忍等条件，决定把 Pod 放到哪台机器上。</p>
+<p>入门理解可以简单一点：<strong>Scheduler 负责给 Pod 挑机器。</strong></p>
+<h3 id="Controller-Manager"><a href="#Controller-Manager" class="headerlink" title="Controller Manager"></a>Controller Manager</h3><p>Controller Manager 是控制器管理器。</p>
+<p>它负责各种控制循环。</p>
+<p>比如你声明一个 Deployment 要 3 个副本，但现在只有 2 个，控制器就会发现“不一致”，然后创建新的 Pod 让它恢复到 3 个。</p>
+<p>Node 挂了、Pod 少了、资源状态不对，这些都需要控制器不断检查和修正。</p>
+<p>所以可以理解为：<strong>Controller Manager 负责让现实状态接近期望状态。</strong></p>
+<h3 id="etcd"><a href="#etcd" class="headerlink" title="etcd"></a>etcd</h3><p>etcd 是一个高可用键值存储系统。</p>
+<p>Kubernetes 会把集群状态存在 etcd 里，比如有哪些 Node、有哪些 Pod、有哪些 Service、当前配置是什么。</p>
+<p>注意：<strong>etcd 存的是 Kubernetes 集群状态，不是你的业务数据。</strong></p>
+<p>你的 MySQL 数据、用户订单、文件内容，不应该存在 etcd 里。</p>
+<h3 id="Cloud-Controller-Manager"><a href="#Cloud-Controller-Manager" class="headerlink" title="Cloud Controller Manager"></a>Cloud Controller Manager</h3><p>Cloud Controller Manager 是 Kubernetes 和云厂基础设施之间的连接层。</p>
+<p>比如在云上创建 LoadBalancer、挂载云盘、识别云服务器节点，这些都需要和云平台 API 交互。</p>
+<p>不同云厂有不同实现，但 Kubernetes 尽量提供统一抽象。</p>
+<p>对云厂实习来说，这个组件挺有意义，因为它说明：Kubernetes 并不是孤立运行的，它会和云服务器、负载均衡、云硬盘、网络等云产品发生关系。</p>
+<h2 id="十八、kubectl：和-Kubernetes-对话的命令行"><a href="#十八、kubectl：和-Kubernetes-对话的命令行" class="headerlink" title="十八、kubectl：和 Kubernetes 对话的命令行"></a>十八、kubectl：和 Kubernetes 对话的命令行</h2><p>kubectl 是 Kubernetes 的命令行工具。</p>
+<p>你可以通过 kubectl 和 apiserver 交互，比如：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl get nodes
+kubectl get pods
+kubectl get services
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> -- /bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果你刚开始学，不用一口气背所有命令。先掌握几个最常用的：</p>
+<ul>
+<li><code>kubectl get</code>：查看资源列表。</li>
+<li><code>kubectl describe</code>：查看资源详细信息和事件。</li>
+<li><code>kubectl logs</code>：查看 Pod 日志。</li>
+<li><code>kubectl exec</code>：进入 Pod 内部执行命令。</li>
+<li><code>kubectl apply -f</code>：根据 YAML 文件创建或更新资源。</li>
+<li><code>kubectl delete -f</code>：根据 YAML 文件删除资源。</li>
+</ul>
+<p>这些命令就是你排查问题的入口。</p>
+<h2 id="十九、YAML：把命令变成配置文件"><a href="#十九、YAML：把命令变成配置文件" class="headerlink" title="十九、YAML：把命令变成配置文件"></a>十九、YAML：把命令变成配置文件</h2><p>刚开始可以用命令创建资源，比如：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl create deployment nginx-deployment <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>但命令不方便长期维护。更推荐把资源写成 YAML 文件。</p>
+<p>比如一个简单 Deployment：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>deployment
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+          <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span><span class="token number">1.25</span>
+          <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">80</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里先看几个关键字段：</p>
+<ul>
+<li><code>apiVersion</code>：使用哪个 API 版本。</li>
+<li><code>kind</code>：资源类型，比如 Deployment、Service。</li>
+<li><code>metadata.name</code>：资源名称。</li>
+<li><code>spec.replicas</code>：副本数量。</li>
+<li><code>selector.matchLabels</code>：Deployment 用什么标签选择 Pod。</li>
+<li><code>template</code>：Pod 模板，描述要创建什么样的 Pod。</li>
+<li><code>containers.image</code>：容器镜像。</li>
+</ul>
+<p>应用配置：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl apply <span class="token parameter variable">-f</span> nginx-deployment.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看 Pod：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl get pods <span class="token parameter variable">-o</span> wide<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里的 <code>-o wide</code> 可以看到更多信息，比如 Pod IP、所在 Node。</p>
+<p>如果把 <code>replicas: 3</code> 改成 <code>replicas: 2</code>，再执行 <code>apply</code>，Kubernetes 就会把副本数调整成 2。</p>
+<p>这就是声明式配置的好处：<strong>配置文件就是你希望集群变成的样子。</strong></p>
+<h2 id="二十、用-Service-把-nginx-暴露出去"><a href="#二十、用-Service-把-nginx-暴露出去" class="headerlink" title="二十、用 Service 把 nginx 暴露出去"></a>二十、用 Service 把 nginx 暴露出去</h2><p>前面的 Deployment 创建了 3 个 nginx Pod，但它们的 IP 是集群内部 IP，外部访问不了，而且 Pod IP 也不稳定。</p>
+<p>这时可以创建 Service。</p>
+<p>一个简单 Service：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>service
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个 Service 会选择带有 <code>app: nginx</code> 标签的 Pod，把请求转发到它们的 80 端口。</p>
+<p>但这个 Service 默认是 ClusterIP 类型，只能集群内部访问。</p>
+<p>如果想通过 Node 的 IP 和端口访问，可以改成 NodePort：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>service
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+      <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> <span class="token number">30080</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>应用之后：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl apply <span class="token parameter variable">-f</span> nginx-service.yaml
+kubectl get services
+kubectl get nodes <span class="token parameter variable">-o</span> wide<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>然后就可以尝试访问：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">http://NodeIP:30080<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里的 <code>30080</code> 就是暴露在 Node 上的端口。NodePort 默认端口范围通常是 <code>30000-32767</code>。</p>
+<p>这个例子把前面的概念串起来了：</p>
+<pre class="mermaid">flowchart LR
+    U[浏览器访问<br>NodeIP:30080] --&gt; S[NodePort Service]
+    S --&gt; P1[nginx Pod 1]
+    S --&gt; P2[nginx Pod 2]
+    S --&gt; P3[nginx Pod 3]
+    D[Deployment] --&gt; P1
+    D --&gt; P2
+    D --&gt; P3</pre>
+
+<p>这时候你就能看到 K8s 的基本链路：</p>
+<p><strong>Deployment 创建和管理 Pod，Service 选择这些 Pod 并提供访问入口。</strong></p>
+<h2 id="二十一、Namespace：给资源分空间"><a href="#二十一、Namespace：给资源分空间" class="headerlink" title="二十一、Namespace：给资源分空间"></a>二十一、Namespace：给资源分空间</h2><p>Namespace 是命名空间，用来把 Kubernetes 资源分组。</p>
+<p>可以理解为在一个集群里划分多个空间，不同项目、团队或环境可以放在不同 Namespace 里。</p>
+<p>比如：</p>
+<ul>
+<li><code>dev</code>：开发环境</li>
+<li><code>test</code>：测试环境</li>
+<li><code>prod</code>：生产环境</li>
+<li><code>monitoring</code>：监控组件</li>
+<li><code>portainer</code>：可视化管理工具</li>
+</ul>
+<p>命令里经常会看到 <code>-n</code> 参数：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl get pods <span class="token parameter variable">-n</span> default
+kubectl apply <span class="token parameter variable">-n</span> portainer <span class="token parameter variable">-f</span> portainer.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这里的 <code>-n</code> 就是指定 Namespace。</p>
+<p>Namespace 的意义是隔离和分组，但它不是虚拟机，也不是强安全边界。入门阶段先理解为“资源分目录”就行。</p>
+<h2 id="二十二、minikube、K3s-和云厂集群"><a href="#二十二、minikube、K3s-和云厂集群" class="headerlink" title="二十二、minikube、K3s 和云厂集群"></a>二十二、minikube、K3s 和云厂集群</h2><p>如果只是本地学习，可以用 minikube 或 K3s。</p>
+<p><strong>minikube</strong> 是一个轻量级 Kubernetes 发行版，可以在本地启动一个单节点集群，适合入门学习。</p>
+<p>常见命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube start
+kubectl get nodes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如果国内拉镜像慢，可以指定镜像源或版本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube start --image-mirror-country<span class="token operator">=</span><span class="token string">'cn'</span> --kubernetes-version<span class="token operator">=</span>v1.23.9<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>K3s</strong> 是一个轻量级 Kubernetes，适合资源有限的环境，也常用于边缘计算、开发测试、小集群。</p>
+<p>如果你用 Multipass 创建几台 Ubuntu 虚拟机，可以用 K3s 搭一个简单 Master-Worker 集群。</p>
+<p>但如果是在云厂实习，你接触的更多可能是托管 Kubernetes：</p>
+<ul>
+<li>腾讯云 TKE</li>
+<li>阿里云 ACK</li>
+<li>AWS EKS</li>
+<li>Google GKE</li>
+<li>Azure AKS</li>
+</ul>
+<p>它们本质上也是 Kubernetes，只是云厂帮你托管了很多集群管理工作，比如控制面、节点池、负载均衡、云盘、网络插件、监控日志集成等。</p>
+<p>所以本地学习 minikube / K3s 是为了理解原理；到云厂看托管 K8s，是看这些原理如何产品化。</p>
+<h2 id="二十三、把所有概念串成一张图"><a href="#二十三、把所有概念串成一张图" class="headerlink" title="二十三、把所有概念串成一张图"></a>二十三、把所有概念串成一张图</h2><p>到这里，核心概念可以串起来了：</p>
+<pre class="mermaid">flowchart TD
+    A[Docker 镜像] --&gt; B[Pod<br>运行容器]
+    C[Deployment<br>管理副本和更新] --&gt; B
+    D[Service<br>稳定访问入口] --&gt; B
+    E[Ingress<br>域名 / 路径转发] --&gt; D
+    F[ConfigMap<br>普通配置] --&gt; B
+    G[Secret<br>敏感配置] --&gt; B
+    H[Volume<br>持久化存储] --&gt; B
+    I[Node<br>运行 Pod 的机器] --&gt; B</pre>
+
+<p>如果再放进集群架构里，就是：</p>
+<pre class="mermaid">flowchart LR
+    U[用户 / kubectl] --&gt; M[Master Node<br>管理集群]
+    M --&gt; W1[Worker Node 1]
+    M --&gt; W2[Worker Node 2]
+    W1 --&gt; P1[Pod]
+    W2 --&gt; P2[Pod]
+    S[Service] --&gt; P1
+    S --&gt; P2
+    I[Ingress] --&gt; S</pre>
+
+<p>这两张图基本覆盖了入门阶段最重要的关系。</p>
+<h2 id="二十四、用-Docker-使用经验类比-K8s"><a href="#二十四、用-Docker-使用经验类比-K8s" class="headerlink" title="二十四、用 Docker 使用经验类比 K8s"></a>二十四、用 Docker 使用经验类比 K8s</h2><p>如果你只用过 Docker，可以这样类比：</p>
+<ul>
+<li>Docker 里你关心 <code>docker run</code>，K8s 里你更多关心 <code>kubectl apply -f yaml</code>。</li>
+<li>Docker 里你直接跑容器，K8s 里容器通常跑在 Pod 里。</li>
+<li>Docker 里容器挂了可能手动重启，K8s 里 Deployment 会帮你补副本。</li>
+<li>Docker 里端口映射用 <code>-p 8080:80</code>，K8s 里常用 Service / NodePort / Ingress 暴露服务。</li>
+<li>Docker 里配置可能用环境变量，K8s 里可以用 ConfigMap / Secret 管理配置。</li>
+<li>Docker 里数据卷用 volume，K8s 里也有 Volume / PVC 这套机制。</li>
+<li>Docker Compose 管一组容器，K8s 管一组机器上的一组应用。</li>
+</ul>
+<p>这个类比不完全严谨，但足够帮入门者建立第一层直觉。</p>
+<h2 id="二十五、实习时先掌握哪些就够用"><a href="#二十五、实习时先掌握哪些就够用" class="headerlink" title="二十五、实习时先掌握哪些就够用"></a>二十五、实习时先掌握哪些就够用</h2><p>如果刚开始补 K8s，不建议一上来就钻 CNI、CSI、CRI、etcd 高可用、iptables、IPVS、Operator、Service Mesh。</p>
+<p>先把下面这些搞清楚：</p>
+<ol>
+<li><strong>Node 是机器。</strong></li>
+<li><strong>Pod 是最小调度单位，容器跑在 Pod 里。</strong></li>
+<li><strong>Pod IP 不稳定，所以需要 Service。</strong></li>
+<li><strong>Service 给一组 Pod 提供稳定入口。</strong></li>
+<li><strong>Ingress 负责外部域名和路径转发。</strong></li>
+<li><strong>ConfigMap 放普通配置，Secret 放敏感配置。</strong></li>
+<li><strong>Volume 解决 Pod 重启后的数据问题。</strong></li>
+<li><strong>Deployment 管理副本、滚动更新和回滚。</strong></li>
+<li><strong>StatefulSet 用来管理有状态应用。</strong></li>
+<li><strong>Master 管集群，Worker 跑应用。</strong></li>
+<li><strong>kubectl 是和集群交互的命令行。</strong></li>
+<li><strong>YAML 是声明资源期望状态的配置文件。</strong></li>
+</ol>
+<p>掌握这些之后，再看云厂里的容器服务、节点池、负载均衡、日志服务、监控告警，就不会完全懵了。</p>
+<h2 id="结语：K8s-先别学成玄学"><a href="#结语：K8s-先别学成玄学" class="headerlink" title="结语：K8s 先别学成玄学"></a>结语：K8s 先别学成玄学</h2><p>Kubernetes 的生态很大，大到很容易让初学者误以为它是一门玄学。</p>
+<p>但刚入门时，不要急着背所有名词。先从 Docker 的问题出发：一个容器好管理，很多容器、多台机器、多个服务、多个环境就不好管理了。</p>
+<p>Kubernetes 解决的就是这些复杂性：</p>
+<ul>
+<li>它用 Pod 包住容器。</li>
+<li>用 Deployment 管应用副本。</li>
+<li>用 Service 解决访问入口不稳定。</li>
+<li>用 Ingress 管外部流量。</li>
+<li>用 ConfigMap 和 Secret 管配置。</li>
+<li>用 Volume 管数据。</li>
+<li>用 Master-Worker 架构管理整个集群。</li>
+</ul>
+<p>所以第一阶段不需要装作很懂。只要能把这条线讲清楚：</p>
+<blockquote>
+<p>Docker 让应用容器化，Kubernetes 负责在一组机器上管理这些容器，让它们能被调度、访问、扩缩、更新和恢复。</p>
+</blockquote>
+<p>这就已经是一个很好的开始了。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/k8s-cloud-native-foundation.html">https://onefly.top/posts/k8s-cloud-native-foundation.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                                <a href="/tags/K8s/">
+                                    <span class="chip bg-color">K8s</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
+                                    <span class="chip bg-color">云原生</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/k8s-cloud-native-foundation.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260625234201450-868926711.jpg" class="responsive-img" alt="Kubernetes和云原生：从Docker到K8s的知识三明治">
+                        
+                        <span class="card-title">Kubernetes和云原生：从Docker到K8s的知识三明治</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/" class="post-category">
+                                    云原生
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/K8s/">
+                        <span class="chip bg-color">K8s</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
+                        <span class="chip bg-color">云原生</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/cs336-llm-from-scratch-knowledge-map.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260624234142748-1114942758.jpg" class="responsive-img" alt="CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课">
+                        
+                        <span class="card-title">CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E7%A0%94%E7%A9%B6/" class="post-category">
+                                    AI研究
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LLM/">
+                        <span class="chip bg-color">LLM</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%AD%E7%BB%83/">
+                        <span class="chip bg-color">训练</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">系统</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AF%B9%E9%BD%90/">
+                        <span class="chip bg-color">对齐</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

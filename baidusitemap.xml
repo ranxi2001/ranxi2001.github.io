@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://onefly.top/posts/k8s-cloud-native-foundation.html</loc>
+    <lastmod>2026-06-25</lastmod>
+  </url>
+  <url>
     <loc>https://onefly.top/posts/cs336-llm-from-scratch-knowledge-map.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
@@ -85,10 +89,6 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/260305.html</loc>
-    <lastmod>2026-05-27</lastmod>
-  </url>
-  <url>
     <loc>https://onefly.top/posts/ai-agent-news-trading-crypto-2026.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
@@ -106,6 +106,10 @@
   </url>
   <url>
     <loc>https://onefly.top/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html</loc>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+  <url>
+    <loc>https://onefly.top/posts/260305.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
@@ -169,11 +173,11 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/250918.html</loc>
+    <loc>https://onefly.top/posts/250916.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/250916.html</loc>
+    <loc>https://onefly.top/posts/250918.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
@@ -197,11 +201,11 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/250226.html</loc>
+    <loc>https://onefly.top/posts/250731.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/250731.html</loc>
+    <loc>https://onefly.top/posts/250226.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
@@ -321,10 +325,6 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/240920.html</loc>
-    <lastmod>2026-05-27</lastmod>
-  </url>
-  <url>
     <loc>https://onefly.top/posts/241016.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
@@ -337,11 +337,15 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/241014.html</loc>
+    <loc>https://onefly.top/posts/240920.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
     <loc>https://onefly.top/posts/241020.html</loc>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+  <url>
+    <loc>https://onefly.top/posts/241014.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
@@ -381,15 +385,15 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://onefly.top/posts/23702.html</loc>
-    <lastmod>2026-05-27</lastmod>
-  </url>
-  <url>
     <loc>https://onefly.top/posts/23701.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
     <loc>https://onefly.top/posts/23703.html</loc>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+  <url>
+    <loc>https://onefly.top/posts/23702.html</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>

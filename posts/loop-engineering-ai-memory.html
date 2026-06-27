@@ -815,7 +815,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.7k
+                    5.8k
                 </div>
                 
 
@@ -842,8 +842,8 @@
             <div id="articleContent">
                 <p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260617002143238-457129225.png" style="zoom:33%;" alt="Loop Engineering：让 AI 自己沉淀上下文封面图"></p>
 <h1 id="Loop-Engineering：让-AI-自己沉淀上下文"><a href="#Loop-Engineering：让-AI-自己沉淀上下文" class="headerlink" title="Loop Engineering：让 AI 自己沉淀上下文"></a>Loop Engineering：让 AI 自己沉淀上下文</h1><p>这两天 X 上关于 <strong>Loop Engineering</strong> 的讨论突然热了起来。</p>
-<p>先是“Prompt 该退环境了，未来属于 Loop Engineering”的说法刷屏，后面又有人继续补充：别再只写提示词，要去设计循环；最小可用的 Loop，甚至只需要几份配置，就能让 Claude 自己跑测试、读错误、修 Bug、再跑测试。最近金尘马和 Kyrie 又各写了一篇长文，一个把它讲成小白能上手的七件套，一个把它讲成工程里能跑的 daily triage。</p>
-<p>我看完之后，感觉这不是一个新概念硬炒。</p>
+<p>先是“Prompt Engineering 正在让位于 Loop Engineering”的说法被频繁讨论，后面又有人继续补充：别再只写提示词，要去设计循环；最小可用的 Loop，甚至只需要几份配置，就能让 Claude 自己跑测试、读错误、修 Bug、再跑测试。最近金尘马和 Kyrie 又各写了一篇长文，一个把它讲成普通用户也能上手的实践框架，一个把它讲成工程里能跑的 daily triage。</p>
+<p>我看完之后，感觉这不是一个被硬造出来的新概念。</p>
 <p>它其实讲中了我日常用 AI 最重要的一件事：<strong>不要只优化单次对话，要优化下一次对话开始时，AI 已经知道什么、会自己检查什么、能自动沉淀什么。</strong></p>
 <p>我现在越来越少把 AI 当成一个“问一句答一句”的聊天窗口。更准确地说，我是在养一个长期工作的系统：它会读上下文，会查历史，会调用工具，会把有价值的对话沉淀成 memory / skill / 项目文档，下次遇到类似任务，不需要我从头解释。</p>
 <p>这就是我理解的 Loop Engineering。</p>
@@ -1018,7 +1018,7 @@
 <span class="token list punctuation">-</span> 跑 <span class="token code-snippet code keyword">`npm test -- LoginForm`</span>
 <span class="token list punctuation">-</span> 如果同一错误再出现 2 次，停止并请求人工判断<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这不是为了写日报，而是为了让循环下一轮不用从零开始。</p>
-<h2 id="普通用户的最小模板：目标、流程、验收、停止"><a href="#普通用户的最小模板：目标、流程、验收、停止" class="headerlink" title="普通用户的最小模板：目标、流程、验收、停止"></a>普通用户的最小模板：目标、流程、验收、停止</h2><p>如果说上面的 <code>PROGRESS.md</code> 更偏 Agent 工程，那 Adrian Punk 那篇面向小白的 Loop Engineering 教程，补上的其实是另一块：<strong>不要一上来就讲 Agent、worktree、sub-agent，先让普通用户把任务写成一个可执行循环。</strong></p>
+<h2 id="普通用户的最小模板：目标、流程、验收、停止"><a href="#普通用户的最小模板：目标、流程、验收、停止" class="headerlink" title="普通用户的最小模板：目标、流程、验收、停止"></a>普通用户的最小模板：目标、流程、验收、停止</h2><p>如果说上面的 <code>PROGRESS.md</code> 更偏 Agent 工程，那 Adrian Punk 那篇面向入门用户的 Loop Engineering 教程，补上的其实是另一块：<strong>不要一上来就讲 Agent、worktree、sub-agent，先让普通用户把任务写成一个可执行循环。</strong></p>
 <p>它的新意不在概念更深，而在表达更低门槛：一个最小 Loop 不必复杂到像系统架构，先写清楚四件事就够了。</p>
 <ul>
 <li><strong>目标</strong>：到底要交付什么，不要只说“做好一点”</li>
@@ -1033,7 +1033,7 @@
 <p>更好的写法是：</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">请用 Loop 的方式完成这个任务。
 
-目标：写一篇面向小白的 AI 工具教程。
+目标：写一篇面向新手读者的 AI 工具教程。
 流程：
 <span class="token list punctuation">1.</span> 先判断读者是谁
 <span class="token list punctuation">2.</span> 再列出文章大纲
@@ -1111,7 +1111,7 @@
 </ul>
 <p>这个规则非常朴素，但已经能让 AI 的使用体验发生变化。</p>
 <p>你会发现，真正省时间的不是它某一次回答快了 10 秒，而是它不再反复问你同样的问题。</p>
-<h2 id="回头看-Prompt：它只是循环里的一个节点"><a href="#回头看-Prompt：它只是循环里的一个节点" class="headerlink" title="回头看 Prompt：它只是循环里的一个节点"></a>回头看 Prompt：它只是循环里的一个节点</h2><p>所以我不太会说“Prompt 退环境了”。</p>
+<h2 id="回头看-Prompt：它只是循环里的一个节点"><a href="#回头看-Prompt：它只是循环里的一个节点" class="headerlink" title="回头看 Prompt：它只是循环里的一个节点"></a>回头看 Prompt：它只是循环里的一个节点</h2><p>所以我不太会说“Prompt Engineering 过时了”。</p>
 <p>更准确地说，Prompt 正在从主角变成节点。</p>
 <p>以前我们把所有希望都压在一句 prompt 上：写得越完整越好，越结构化越好，越像说明书越好。</p>
 <p>但在 Agent 工作流里，prompt 只是循环的一部分：</p>
@@ -1157,11 +1157,11 @@
 <p>这大概就是我理解的 Loop Engineering：<strong>不是让 AI 替你多说几句话，而是让它在每次工作后，都比上一次更懂你的系统。</strong></p>
 <p>参考：</p>
 <ul>
-<li>Prompt 该退环境了，未来属于 Loop Engineering：<a href="https://x.com/Khazix0918/status/2066394718519656909">https://x.com/Khazix0918/status/2066394718519656909</a></li>
+<li>Prompt Engineering 正在让位于 Loop Engineering：<a href="https://x.com/Khazix0918/status/2066394718519656909">https://x.com/Khazix0918/status/2066394718519656909</a></li>
 <li>Loop Engineering 六件套拆解：<a href="https://x.com/cuisitekp/status/2066823370138677651">https://x.com/cuisitekp/status/2066823370138677651</a></li>
 <li>最小 Loop：让 Claude 自己跑测试、读错误、修 Bug：<a href="https://x.com/freeman1266/status/2066677040238227843">https://x.com/freeman1266/status/2066677040238227843</a></li>
-<li>Loop Engineering 小白入门模板：<a href="https://x.com/AdrianPunk115/status/2068947825120223659">https://x.com/AdrianPunk115/status/2068947825120223659</a></li>
-<li>小白教程：一文带你搞明白 Loop Engineering 并快速上手：<a href="https://x.com/jinchenma_ai/status/2070293677206094086">https://x.com/jinchenma_ai/status/2070293677206094086</a></li>
+<li>Loop Engineering 入门模板：<a href="https://x.com/AdrianPunk115/status/2068947825120223659">https://x.com/AdrianPunk115/status/2068947825120223659</a></li>
+<li>入门教程：一文带你搞明白 Loop Engineering 并快速上手：<a href="https://x.com/jinchenma_ai/status/2070293677206094086">https://x.com/jinchenma_ai/status/2070293677206094086</a></li>
 <li>用好 Loop 能让你事半功倍，六个实战场景教你驾驭循环工程：<a href="https://x.com/KyrieCheungYep/status/2070333819249627273">https://x.com/KyrieCheungYep/status/2070333819249627273</a></li>
 <li>Loop Engineering: The Anatomy of an Autonomous Loop：<a href="https://x.com/zostaff/status/2068992150243508712">https://x.com/zostaff/status/2068992150243508712</a></li>
 </ul>

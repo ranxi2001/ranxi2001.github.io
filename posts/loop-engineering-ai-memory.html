@@ -815,14 +815,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    5.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    20 分
                 </div>
                 
 
@@ -847,7 +847,7 @@
 <p>它其实讲中了我日常用 AI 最重要的一件事：<strong>不要只优化单次对话，要优化下一次对话开始时，AI 已经知道什么、会自己检查什么、能自动沉淀什么。</strong></p>
 <p>我现在越来越少把 AI 当成一个“问一句答一句”的聊天窗口。更准确地说，我是在养一个长期工作的系统：它会读上下文，会查历史，会调用工具，会把有价值的对话沉淀成 memory / skill / 项目文档，下次遇到类似任务，不需要我从头解释。</p>
 <p>这就是我理解的 Loop Engineering。</p>
-<h2 id="Prompt-没死，只是降级了"><a href="#Prompt-没死，只是降级了" class="headerlink" title="Prompt 没死，只是降级了"></a>Prompt 没死，只是降级了</h2><p>Prompt Engineering 当然还有用。</p>
+<h2 id="从-Prompt-到-Loop：人不再手动转每一轮"><a href="#从-Prompt-到-Loop：人不再手动转每一轮" class="headerlink" title="从 Prompt 到 Loop：人不再手动转每一轮"></a>从 Prompt 到 Loop：人不再手动转每一轮</h2><p>Prompt Engineering 当然还有用。</p>
 <p>一个清楚的任务描述、边界、输出格式，依然能显著提高模型表现。问题是，Prompt 解决的是“这一轮怎么说清楚”，不是“这个系统如何越用越顺”。</p>
 <p>以前我们使用 AI 的方式大概是这样：</p>
 <pre class="mermaid">sequenceDiagram
@@ -866,7 +866,7 @@
 <p>再往后是 Harness Engineering：给 Agent 配工具、权限、测试、回滚、子任务调度，让它不只是“会说”，而是真的能在系统里干活。</p>
 <p>Loop Engineering 再往上走一层。</p>
 <p>它关心的是：<strong>Agent 做完一件事之后，系统如何继续运行、验证、更新自己。</strong></p>
-<h2 id="一个-Loop-到底由什么组成"><a href="#一个-Loop-到底由什么组成" class="headerlink" title="一个 Loop 到底由什么组成"></a>一个 Loop 到底由什么组成</h2><p>卡牌大师崔斯特那篇补充文章里，把 Addy Osmani 对 Loop 的拆解讲得很清楚：一个能跑起来的循环，通常由六类零件组合出来。</p>
+<h2 id="Loop-的基本骨架：触发、行动、验证、记忆"><a href="#Loop-的基本骨架：触发、行动、验证、记忆" class="headerlink" title="Loop 的基本骨架：触发、行动、验证、记忆"></a>Loop 的基本骨架：触发、行动、验证、记忆</h2><p>卡牌大师崔斯特那篇补充文章里，把 Addy Osmani 对 Loop 的拆解讲得很清楚：一个能跑起来的循环，通常由六类零件组合出来。</p>
 <ul>
 <li><strong>Automation</strong>：定时任务、hook、webhook，让任务不必等你开口</li>
 <li><strong>Worktree</strong>：隔离并行 Agent，避免互相踩文件</li>
@@ -892,7 +892,7 @@
 
 <p>这里最关键的一点是：<strong>Agent 会忘，但文件不会。</strong></p>
 <p>模型的上下文窗口会结束，会压缩，会丢掉细节。但一个 <code>PROGRESS.md</code>、<code>STATE.md</code>、<code>AGENTS.md</code>、<code>SKILL.md</code>，只要维护得好，就能让下一次循环从上一次的经验继续，而不是从零开始。</p>
-<h2 id="什么任务值得做成-Loop"><a href="#什么任务值得做成-Loop" class="headerlink" title="什么任务值得做成 Loop"></a>什么任务值得做成 Loop</h2><p>不是所有任务都值得 Loop 化。</p>
+<h2 id="先判断边界：什么任务值得做成-Loop"><a href="#先判断边界：什么任务值得做成-Loop" class="headerlink" title="先判断边界：什么任务值得做成 Loop"></a>先判断边界：什么任务值得做成 Loop</h2><p>不是所有任务都值得 Loop 化。</p>
 <p>很多人看到“循环”两个字，第一反应是把所有重复动作都自动化。但这里有个很重要的区别：<strong>批处理只是重复执行，Loop 是根据上一轮结果决定下一轮动作。</strong></p>
 <p>比如让 AI 遍历 100 篇文章，每篇都生成摘要，这只是批处理。第一篇摘要写得好不好，并不会影响第二篇怎么做。真正的 Loop 应该是：上一轮检查发现摘要缺来源，下一轮就补来源；发现概念页强行关联，下一轮就拆开；发现连续两轮都无法判断，就停止并交给人。</p>
 <p>所以判断一个任务该不该做成 Loop，可以先过三道门：</p>
@@ -908,7 +908,7 @@
 <li><strong>工具辅助型任务</strong>：目标清楚，但路径需要人判断，适合 Copilot 式协作。</li>
 <li><strong>目标驱动型任务</strong>：人给目标、边界和验收标准，系统自己观察、行动、验证、迭代，这才是 Loop Engineering 最适合的位置。</li>
 </ul>
-<h2 id="最小-Loop：先让-AI-自己跑测试"><a href="#最小-Loop：先让-AI-自己跑测试" class="headerlink" title="最小 Loop：先让 AI 自己跑测试"></a>最小 Loop：先让 AI 自己跑测试</h2><p>老金那篇“最小 Loop”给了一个很好的落地例子。</p>
+<h2 id="从最小闭环开始：先让-AI-自己跑测试"><a href="#从最小闭环开始：先让-AI-自己跑测试" class="headerlink" title="从最小闭环开始：先让 AI 自己跑测试"></a>从最小闭环开始：先让 AI 自己跑测试</h2><p>老金那篇“最小 Loop”给了一个很好的落地例子。</p>
 <p>很多人用 Claude Code 写代码时，真实流程是这样的：</p>
 <pre class="mermaid">flowchart LR
     A[Claude 写代码] --&gt; B[你跑测试]
@@ -933,7 +933,7 @@
 <p>你不再允许 Agent 在没有检查输出的情况下说“完成”。你也不允许它通过删测试、弱化断言、跳过错误来制造绿色结果。完成的定义从“我写完了”变成“检查通过了”。</p>
 <p>这一步非常关键。</p>
 <p>因为 Agent 最大的问题之一，不是不会干活，而是太容易提前乐观。它会把“代码看起来像完成了”当成“任务完成了”。Loop Engineering 要做的，就是给它一个不会被语言糊弄的停止条件。</p>
-<h2 id="Evaluator-必须有硬闸门"><a href="#Evaluator-必须有硬闸门" class="headerlink" title="Evaluator 必须有硬闸门"></a>Evaluator 必须有硬闸门</h2><p>这里有个坑：很多人会加一个“检查 Agent”，但只是让它“帮我审一下”。</p>
+<h2 id="验证是心脏：Evaluator-必须有硬闸门"><a href="#验证是心脏：Evaluator-必须有硬闸门" class="headerlink" title="验证是心脏：Evaluator 必须有硬闸门"></a>验证是心脏：Evaluator 必须有硬闸门</h2><p>这里有个坑：很多人会加一个“检查 Agent”，但只是让它“帮我审一下”。</p>
 <p>这不够。</p>
 <p>一个只被要求“审一下”的第二 Agent，很容易变成另一个乐观主义者。它会用语言判断语言，然后大家一起觉得差不多了。</p>
 <p>真正有效的 evaluator-optimizer 模式，必须有客观失败信号：</p>
@@ -956,7 +956,7 @@
 
 <p>这也是我自己用 AI 时很在意的一点：<strong>结论必须带证据，完成必须有验证。</strong></p>
 <p>如果没有验证输出，它说“好了”没有意义。</p>
-<h2 id="让-AI-自己沉淀对话内容"><a href="#让-AI-自己沉淀对话内容" class="headerlink" title="让 AI 自己沉淀对话内容"></a>让 AI 自己沉淀对话内容</h2><p>我日常用 Agent，最看重的不是它一次性回答得多漂亮，而是它做完之后会不会更新自己的上下文资产。</p>
+<h2 id="验证之后，还要沉淀上下文"><a href="#验证之后，还要沉淀上下文" class="headerlink" title="验证之后，还要沉淀上下文"></a>验证之后，还要沉淀上下文</h2><p>我日常用 Agent，最看重的不是它一次性回答得多漂亮，而是它做完之后会不会更新自己的上下文资产。</p>
 <p>每次任务结束，我希望它自动判断三件事：</p>
 <ol>
 <li>这次任务里有没有稳定事实？</li>
@@ -990,7 +990,7 @@
 <p>这几层不能混。</p>
 <p>Memory 适合存偏好和稳定事实。Skill 适合存步骤、命令、坑点、验证方式。项目文档适合约束同一个仓库里的所有 Agent。临时进度则应该放在 session history 或 <code>PROGRESS.md</code> 里。</p>
 <p>如果你把所有东西都塞进长期记忆，系统会越来越吵。记忆不是存档，记忆是索引。它应该保存能改变未来行为的东西，而不是保存“今天做了什么”。</p>
-<h2 id="PROGRESS-md-模式：给循环一个短记忆"><a href="#PROGRESS-md-模式：给循环一个短记忆" class="headerlink" title="PROGRESS.md 模式：给循环一个短记忆"></a>PROGRESS.md 模式：给循环一个短记忆</h2><p>Loop 里最容易被低估的是状态文件。</p>
+<h2 id="状态文件：给循环一个短记忆"><a href="#状态文件：给循环一个短记忆" class="headerlink" title="状态文件：给循环一个短记忆"></a>状态文件：给循环一个短记忆</h2><p>Loop 里最容易被低估的是状态文件。</p>
 <p>一个 <code>PROGRESS.md</code> 或 <code>STATE.md</code>，看起来很土，但非常有用。</p>
 <p>它解决的是“Agent 两次运行之间会忘”的问题。每次循环开始时，先读它；每次循环结束时，再把关键状态写回去。</p>
 <p>但这里有一个原则：<strong>短。</strong></p>
@@ -1018,7 +1018,7 @@
 <span class="token list punctuation">-</span> 跑 <span class="token code-snippet code keyword">`npm test -- LoginForm`</span>
 <span class="token list punctuation">-</span> 如果同一错误再出现 2 次，停止并请求人工判断<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这不是为了写日报，而是为了让循环下一轮不用从零开始。</p>
-<h2 id="给新手的最小模板：目标、流程、验收、停止"><a href="#给新手的最小模板：目标、流程、验收、停止" class="headerlink" title="给新手的最小模板：目标、流程、验收、停止"></a>给新手的最小模板：目标、流程、验收、停止</h2><p>如果说上面的 <code>PROGRESS.md</code> 更偏 Agent 工程，那 Adrian Punk 那篇面向小白的 Loop Engineering 教程，补上的其实是另一块：<strong>不要一上来就讲 Agent、worktree、sub-agent，先让普通用户把任务写成一个可执行循环。</strong></p>
+<h2 id="普通用户的最小模板：目标、流程、验收、停止"><a href="#普通用户的最小模板：目标、流程、验收、停止" class="headerlink" title="普通用户的最小模板：目标、流程、验收、停止"></a>普通用户的最小模板：目标、流程、验收、停止</h2><p>如果说上面的 <code>PROGRESS.md</code> 更偏 Agent 工程，那 Adrian Punk 那篇面向小白的 Loop Engineering 教程，补上的其实是另一块：<strong>不要一上来就讲 Agent、worktree、sub-agent，先让普通用户把任务写成一个可执行循环。</strong></p>
 <p>它的新意不在概念更深，而在表达更低门槛：一个最小 Loop 不必复杂到像系统架构，先写清楚四件事就够了。</p>
 <ul>
 <li><strong>目标</strong>：到底要交付什么，不要只说“做好一点”</li>
@@ -1057,7 +1057,7 @@
 <li>对 Agent 工程，Loop 才进一步变成工具调用、硬检查、记忆写回、skill 沉淀和多 Agent 协作</li>
 </ul>
 <p>前者解决“让 AI 别只答题，要按流程做事”；后者解决“让 AI 跨任务、跨会话、跨工具持续变强”。两层不是互斥关系，而是同一件事的不同成熟度。</p>
-<h2 id="Skill-比-Memory-更像“程序”"><a href="#Skill-比-Memory-更像“程序”" class="headerlink" title="Skill 比 Memory 更像“程序”"></a>Skill 比 Memory 更像“程序”</h2><p>Memory 适合存事实，但流程不应该塞进 memory。</p>
+<h2 id="经验复用：Skill-比-Memory-更像“程序”"><a href="#经验复用：Skill-比-Memory-更像“程序”" class="headerlink" title="经验复用：Skill 比 Memory 更像“程序”"></a>经验复用：Skill 比 Memory 更像“程序”</h2><p>Memory 适合存事实，但流程不应该塞进 memory。</p>
 <p>如果你发现某件事有固定步骤、有依赖、有坑点、有验证方法，那它更适合写成 Skill。</p>
 <p>比如“从 X 线程写成 Hexo 博客”就不是一句记忆能解决的，它至少包含：</p>
 <ul>
@@ -1071,14 +1071,14 @@
 </ul>
 <p>这就是 Skill 的价值：它把一次经验变成可复用的操作系统能力。</p>
 <p>对 Agent 来说，Memory 像“我知道你偏好什么”，Skill 像“我知道这类事该怎么做”。两者都重要，但混在一起就会出问题。</p>
-<h2 id="Worktree-和-Sub-agent：别让并行变成互相踩脚"><a href="#Worktree-和-Sub-agent：别让并行变成互相踩脚" class="headerlink" title="Worktree 和 Sub-agent：别让并行变成互相踩脚"></a>Worktree 和 Sub-agent：别让并行变成互相踩脚</h2><p>Loop 一旦开始自动化，迟早会遇到并行问题。</p>
+<h2 id="扩大到工程场景：隔离并行与做检分离"><a href="#扩大到工程场景：隔离并行与做检分离" class="headerlink" title="扩大到工程场景：隔离并行与做检分离"></a>扩大到工程场景：隔离并行与做检分离</h2><p>Loop 一旦开始自动化，迟早会遇到并行问题。</p>
 <p>一个 Agent 修测试，另一个 Agent 改页面，第三个 Agent 做重构。如果它们都在同一个工作目录里改文件，很容易互相覆盖、互相污染。</p>
 <p>所以 worktree 是 Loop 里的基础设施，不是高级玩法。</p>
 <p>每个 Agent 拿一个隔离工作区，做完后再合并结果。这样并行才是真的并行，不是几个人挤在同一张桌子上改同一份稿子。</p>
 <p>Sub-agent 的意义也类似。</p>
 <p>主 Agent 不应该什么都自己做。它可以让一个子 Agent 研究方案，让另一个子 Agent 做实现，让第三个子 Agent 按测试和规范做审查。尤其是当主会话已经连续失败几轮时，一个干净上下文的 fixer 往往比继续在原窗口里硬修更有效。</p>
 <p>这也是 Loop Engineering 和普通自动化脚本的区别：它不只是重复执行命令，而是在设计不同上下文之间的协作方式。</p>
-<h2 id="一个更真实的工程-Loop：晨间维护"><a href="#一个更真实的工程-Loop：晨间维护" class="headerlink" title="一个更真实的工程 Loop：晨间维护"></a>一个更真实的工程 Loop：晨间维护</h2><p>如果把前面的零件拼起来，一个比较真实的工程 Loop 可以长这样：</p>
+<h2 id="一个完整例子：晨间维护-Loop"><a href="#一个完整例子：晨间维护-Loop" class="headerlink" title="一个完整例子：晨间维护 Loop"></a>一个完整例子：晨间维护 Loop</h2><p>如果把前面的零件拼起来，一个比较真实的工程 Loop 可以长这样：</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">每天 9 点触发：
 1. 读取 PROGRESS.md，跳过已经处理过的问题
 2. 收集昨夜 CI 失败、新 issue、依赖审计告警
@@ -1096,7 +1096,7 @@
 <li><strong>人类闸门</strong>：只让低风险、证据充分的结果自动进入 PR；高风险决策必须停下来。</li>
 </ul>
 <p>这比“让 AI 帮我修一下项目”要可靠得多。后者是一句愿望，前者是一条有入口、有状态、有检查、有退出条件的生产线。</p>
-<h2 id="一个可执行的沉淀规则"><a href="#一个可执行的沉淀规则" class="headerlink" title="一个可执行的沉淀规则"></a>一个可执行的沉淀规则</h2><p>如果你也想这样用 AI，可以先从一个很简单的规则开始。</p>
+<h2 id="收尾动作：把经验写回正确的位置"><a href="#收尾动作：把经验写回正确的位置" class="headerlink" title="收尾动作：把经验写回正确的位置"></a>收尾动作：把经验写回正确的位置</h2><p>如果你也想这样用 AI，可以先从一个很简单的规则开始。</p>
 <p>每次任务结束前，让 Agent 做一次自检：</p>
 <blockquote>
 <p>这次任务有没有任何信息，能让未来同类任务少解释一次？</p>
@@ -1111,7 +1111,7 @@
 </ul>
 <p>这个规则非常朴素，但已经能让 AI 的使用体验发生变化。</p>
 <p>你会发现，真正省时间的不是它某一次回答快了 10 秒，而是它不再反复问你同样的问题。</p>
-<h2 id="Prompt-会变成循环里的一个节点"><a href="#Prompt-会变成循环里的一个节点" class="headerlink" title="Prompt 会变成循环里的一个节点"></a>Prompt 会变成循环里的一个节点</h2><p>所以我不太会说“Prompt 退环境了”。</p>
+<h2 id="回头看-Prompt：它只是循环里的一个节点"><a href="#回头看-Prompt：它只是循环里的一个节点" class="headerlink" title="回头看 Prompt：它只是循环里的一个节点"></a>回头看 Prompt：它只是循环里的一个节点</h2><p>所以我不太会说“Prompt 退环境了”。</p>
 <p>更准确地说，Prompt 正在从主角变成节点。</p>
 <p>以前我们把所有希望都压在一句 prompt 上：写得越完整越好，越结构化越好，越像说明书越好。</p>
 <p>但在 Agent 工作流里，prompt 只是循环的一部分：</p>
@@ -1123,18 +1123,26 @@
 </ul>
 <p>然后系统继续往下走：读文件、查历史、调用工具、验证结果、修正错误、沉淀经验。</p>
 <p>如果只盯着 prompt，等于只盯着流水线入口。真正决定产能的是整条线怎么转、哪里质检、哪里返工、哪里把经验固化成制度。</p>
-<h2 id="Loop-也会制造成本和理解债"><a href="#Loop-也会制造成本和理解债" class="headerlink" title="Loop 也会制造成本和理解债"></a>Loop 也会制造成本和理解债</h2><p>Loop 不是免费的。</p>
+<h2 id="最后装刹车：Loop-如何失控"><a href="#最后装刹车：Loop-如何失控" class="headerlink" title="最后装刹车：Loop 如何失控"></a>最后装刹车：Loop 如何失控</h2><p>Loop 不是免费的。</p>
 <p>它把你守在对话框前复制粘贴的时间，换成了 token、工具调用、日志维护和验收成本。真正贵的通常不是单次运行，而是<strong>频率</strong>：每天跑一次的维护循环可能很划算，每 5 分钟跑一次同样的循环，成本会放大两个数量级。</p>
-<p>所以每个 Loop 都应该有三道刹车：</p>
+<p>所以 Loop 不是先追求“跑起来”，而是先确认“坏了会怎么停”。我会把常见失控分成四类：</p>
+<ul>
+<li><strong>Runaway</strong>：轮次和账单一直涨，但没有实质进展。通常是没有次数上限和预算上限。</li>
+<li><strong>Silent death</strong>：表面上还在运行，其实已经卡在同一个状态里。通常是没有 heartbeat、状态文件或外部监控。</li>
+<li><strong>Random walk</strong>：每轮都在动，但离目标越来越远。通常是没有硬验收条件，只靠模型判断“看起来差不多”。</li>
+<li><strong>Comprehension debt</strong>：PR、文档、代码越来越多，人却越来越不理解系统。通常是没有强制人工阅读和高风险闸门。</li>
+</ul>
+<p>对应的刹车也不用玄学：</p>
 <ul>
 <li><strong>次数上限</strong>：最多重试几轮，不要无限“再试一次”。</li>
-<li><strong>无进展检测</strong>：连续几轮没有新信息、新 diff、新测试结果，就停。</li>
 <li><strong>预算上限</strong>：时间、token、钱、外部 API 调用都要有边界。</li>
+<li><strong>无进展检测</strong>：连续几轮没有新信息、新 diff、新测试结果，就停。</li>
+<li><strong>心跳记录</strong>：每轮写入状态文件，沉默太久就告警。</li>
+<li><strong>爆炸半径</strong>：限制在一个 worktree、一个分支、一个低权限目录里。</li>
+<li><strong>人工闸门</strong>：公开 API、数据迁移、删除、发布、付款这类动作必须停下来交给人。</li>
 </ul>
-<p>还有一个更隐蔽的问题：<strong>理解债</strong>。</p>
 <p>Agent 可以更快地生成代码、文档和 PR，但如果你不读、不审、不理解，仓库里的东西会越来越多，而你真正掌握的部分会越来越少。Loop Engineering 不是让人从系统里消失，而是把人从“每轮搬运报错”升级为“设计规则、检查证据、承担结果”的角色。</p>
-<p>一个好 Loop 应该让你少做机械重复，不应该让你放弃判断。</p>
-<p>这才是 Loop Engineering 值得关注的地方。</p>
+<p>一个好 Loop 应该让你少做机械重复，不应该让你放弃判断。这才是 Loop Engineering 值得关注的地方。</p>
 <h2 id="结语：把-AI-从“聪明回复”养成“长期系统”"><a href="#结语：把-AI-从“聪明回复”养成“长期系统”" class="headerlink" title="结语：把 AI 从“聪明回复”养成“长期系统”"></a>结语：把 AI 从“聪明回复”养成“长期系统”</h2><p>Loop Engineering 真正击中的，是一个很朴素的需求：大家已经不满足于“AI 回答得不错”了。我们开始希望 AI 能带着工具、带着记忆、带着流程，持续参与自己的工作系统。</p>
 <p>Prompt 仍然重要，但它不再是全部。</p>
 <p>下一阶段真正重要的是：</p>
@@ -1149,12 +1157,13 @@
 <p>这大概就是我理解的 Loop Engineering：<strong>不是让 AI 替你多说几句话，而是让它在每次工作后，都比上一次更懂你的系统。</strong></p>
 <p>参考：</p>
 <ul>
-<li>X 原帖：<a href="https://x.com/Khazix0918/status/2066394718519656909">https://x.com/Khazix0918/status/2066394718519656909</a></li>
-<li>补充材料：<a href="https://x.com/cuisitekp/status/2066823370138677651">https://x.com/cuisitekp/status/2066823370138677651</a></li>
-<li>最小 Loop 示例：<a href="https://x.com/freeman1266/status/2066677040238227843">https://x.com/freeman1266/status/2066677040238227843</a></li>
-<li>小白入门模板：<a href="https://x.com/AdrianPunk115/status/2068947825120223659">https://x.com/AdrianPunk115/status/2068947825120223659</a></li>
-<li>金尘马：Loop Engineering 小白教程：<a href="https://x.com/jinchenma_ai/status/2070293677206094086">https://x.com/jinchenma_ai/status/2070293677206094086</a></li>
-<li>Kyrie：Loop Engineering 六个实战场景：<a href="https://x.com/KyrieCheungYep/status/2070333819249627273">https://x.com/KyrieCheungYep/status/2070333819249627273</a></li>
+<li>Prompt 该退环境了，未来属于 Loop Engineering：<a href="https://x.com/Khazix0918/status/2066394718519656909">https://x.com/Khazix0918/status/2066394718519656909</a></li>
+<li>Loop Engineering 六件套拆解：<a href="https://x.com/cuisitekp/status/2066823370138677651">https://x.com/cuisitekp/status/2066823370138677651</a></li>
+<li>最小 Loop：让 Claude 自己跑测试、读错误、修 Bug：<a href="https://x.com/freeman1266/status/2066677040238227843">https://x.com/freeman1266/status/2066677040238227843</a></li>
+<li>Loop Engineering 小白入门模板：<a href="https://x.com/AdrianPunk115/status/2068947825120223659">https://x.com/AdrianPunk115/status/2068947825120223659</a></li>
+<li>小白教程：一文带你搞明白 Loop Engineering 并快速上手：<a href="https://x.com/jinchenma_ai/status/2070293677206094086">https://x.com/jinchenma_ai/status/2070293677206094086</a></li>
+<li>用好 Loop 能让你事半功倍，六个实战场景教你驾驭循环工程：<a href="https://x.com/KyrieCheungYep/status/2070333819249627273">https://x.com/KyrieCheungYep/status/2070333819249627273</a></li>
+<li>Loop Engineering: The Anatomy of an Autonomous Loop：<a href="https://x.com/zostaff/status/2068992150243508712">https://x.com/zostaff/status/2068992150243508712</a></li>
 </ul>
 
                 

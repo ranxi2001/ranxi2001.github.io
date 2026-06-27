@@ -815,14 +815,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    5.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    19 分
                 </div>
                 
 
@@ -842,7 +842,7 @@
             <div id="articleContent">
                 <p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260617002143238-457129225.png" style="zoom:33%;" alt="Loop Engineering：让 AI 自己沉淀上下文封面图"></p>
 <h1 id="Loop-Engineering：让-AI-自己沉淀上下文"><a href="#Loop-Engineering：让-AI-自己沉淀上下文" class="headerlink" title="Loop Engineering：让 AI 自己沉淀上下文"></a>Loop Engineering：让 AI 自己沉淀上下文</h1><p>这两天 X 上关于 <strong>Loop Engineering</strong> 的讨论突然热了起来。</p>
-<p>先是数字生命卡兹克那条“Prompt 该退环境了，未来属于 Loop Engineering”刷屏，顺带把 Khazix Skills 这个项目带火了。后面又有人继续补充：别再只写提示词，要去设计循环；最小可用的 Loop，甚至只需要几份配置，就能让 Claude 自己跑测试、读错误、修 Bug、再跑测试。</p>
+<p>先是数字生命卡兹克那条“Prompt 该退环境了，未来属于 Loop Engineering”刷屏，顺带把 Khazix Skills 这个项目带火了。后面又有人继续补充：别再只写提示词，要去设计循环；最小可用的 Loop，甚至只需要几份配置，就能让 Claude 自己跑测试、读错误、修 Bug、再跑测试。最近金尘马和 Kyrie 又各写了一篇长文，一个把它讲成小白能上手的七件套，一个把它讲成工程里能跑的 daily triage。</p>
 <p>我看完之后，感觉这不是一个新概念硬炒。</p>
 <p>它其实讲中了我日常用 AI 最重要的一件事：<strong>不要只优化单次对话，要优化下一次对话开始时，AI 已经知道什么、会自己检查什么、能自动沉淀什么。</strong></p>
 <p>我现在越来越少把 AI 当成一个“问一句答一句”的聊天窗口。更准确地说，我是在养一个长期工作的系统：它会读上下文，会查历史，会调用工具，会把有价值的对话沉淀成 memory / skill / 项目文档，下次遇到类似任务，不需要我从头解释。</p>
@@ -892,6 +892,22 @@
 
 <p>这里最关键的一点是：<strong>Agent 会忘，但文件不会。</strong></p>
 <p>模型的上下文窗口会结束，会压缩，会丢掉细节。但一个 <code>PROGRESS.md</code>、<code>STATE.md</code>、<code>AGENTS.md</code>、<code>SKILL.md</code>，只要维护得好，就能让下一次循环从上一次的经验继续，而不是从零开始。</p>
+<h2 id="什么任务值得做成-Loop"><a href="#什么任务值得做成-Loop" class="headerlink" title="什么任务值得做成 Loop"></a>什么任务值得做成 Loop</h2><p>不是所有任务都值得 Loop 化。</p>
+<p>很多人看到“循环”两个字，第一反应是把所有重复动作都自动化。但这里有个很重要的区别：<strong>批处理只是重复执行，Loop 是根据上一轮结果决定下一轮动作。</strong></p>
+<p>比如让 AI 遍历 100 篇文章，每篇都生成摘要，这只是批处理。第一篇摘要写得好不好，并不会影响第二篇怎么做。真正的 Loop 应该是：上一轮检查发现摘要缺来源，下一轮就补来源；发现概念页强行关联，下一轮就拆开；发现连续两轮都无法判断，就停止并交给人。</p>
+<p>所以判断一个任务该不该做成 Loop，可以先过三道门：</p>
+<ul>
+<li><strong>重复</strong>：这件事是不是经常发生？如果只是一次性任务，设计循环的成本可能比手动做还高。</li>
+<li><strong>可验</strong>：什么叫“完成”、什么叫“做好”，能不能写成测试、清单、字段校验或 reviewer 规则？</li>
+<li><strong>值得</strong>：它省下的时间、降低的错误率，是否抵得过 token、工具调用、维护规则的成本？</li>
+</ul>
+<p>三条都满足，才值得认真做成 Loop。缺一条，普通 prompt、脚本或人工判断往往更划算。</p>
+<p>还可以再分一层：</p>
+<ul>
+<li><strong>流程型任务</strong>：步骤固定、结果确定，用脚本/RPA 就够了，不一定需要 Agent。</li>
+<li><strong>工具辅助型任务</strong>：目标清楚，但路径需要人判断，适合 Copilot 式协作。</li>
+<li><strong>目标驱动型任务</strong>：人给目标、边界和验收标准，系统自己观察、行动、验证、迭代，这才是 Loop Engineering 最适合的位置。</li>
+</ul>
 <h2 id="最小-Loop：先让-AI-自己跑测试"><a href="#最小-Loop：先让-AI-自己跑测试" class="headerlink" title="最小 Loop：先让 AI 自己跑测试"></a>最小 Loop：先让 AI 自己跑测试</h2><p>老金那篇“最小 Loop”给了一个很好的落地例子。</p>
 <p>很多人用 Claude Code 写代码时，真实流程是这样的：</p>
 <pre class="mermaid">flowchart LR
@@ -1062,6 +1078,24 @@
 <p>Sub-agent 的意义也类似。</p>
 <p>主 Agent 不应该什么都自己做。它可以让一个子 Agent 研究方案，让另一个子 Agent 做实现，让第三个子 Agent 按测试和规范做审查。尤其是当主会话已经连续失败几轮时，一个干净上下文的 fixer 往往比继续在原窗口里硬修更有效。</p>
 <p>这也是 Loop Engineering 和普通自动化脚本的区别：它不只是重复执行命令，而是在设计不同上下文之间的协作方式。</p>
+<h2 id="一个更真实的工程-Loop：晨间维护"><a href="#一个更真实的工程-Loop：晨间维护" class="headerlink" title="一个更真实的工程 Loop：晨间维护"></a>一个更真实的工程 Loop：晨间维护</h2><p>如果把前面的零件拼起来，一个比较真实的工程 Loop 可以长这样：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">每天 9 点触发：
+1. 读取 PROGRESS.md，跳过已经处理过的问题
+2. 收集昨夜 CI 失败、新 issue、依赖审计告警
+3. 每条问题开独立 worktree 或分支
+4. Agent 只起草最小修复，不顺手重构
+5. Reviewer agent 只读检查：跑测试、跑 lint、看 diff
+6. PASS 且低风险：开 PR
+7. FAIL 或涉及公开 API / 数据迁移 / 删除操作：写入 PROGRESS.md，交给人
+8. 更新 PROGRESS.md，结束<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个例子的重点不是“每天 9 点”，而是四个工程约束：</p>
+<ul>
+<li><strong>隔离</strong>：每条问题在独立 worktree 或分支里处理，不污染主线。</li>
+<li><strong>最小改动</strong>：一次只修一个问题，避免 Agent 把维护任务做成重构任务。</li>
+<li><strong>做检分离</strong>：写代码的 Agent 不给自己判分，Reviewer 必须亲自跑测试和 lint。</li>
+<li><strong>人类闸门</strong>：只让低风险、证据充分的结果自动进入 PR；高风险决策必须停下来。</li>
+</ul>
+<p>这比“让 AI 帮我修一下项目”要可靠得多。后者是一句愿望，前者是一条有入口、有状态、有检查、有退出条件的生产线。</p>
 <h2 id="一个可执行的沉淀规则"><a href="#一个可执行的沉淀规则" class="headerlink" title="一个可执行的沉淀规则"></a>一个可执行的沉淀规则</h2><p>如果你也想这样用 AI，可以先从一个很简单的规则开始。</p>
 <p>每次任务结束前，让 Agent 做一次自检：</p>
 <blockquote>
@@ -1089,6 +1123,17 @@
 </ul>
 <p>然后系统继续往下走：读文件、查历史、调用工具、验证结果、修正错误、沉淀经验。</p>
 <p>如果只盯着 prompt，等于只盯着流水线入口。真正决定产能的是整条线怎么转、哪里质检、哪里返工、哪里把经验固化成制度。</p>
+<h2 id="Loop-也会制造成本和理解债"><a href="#Loop-也会制造成本和理解债" class="headerlink" title="Loop 也会制造成本和理解债"></a>Loop 也会制造成本和理解债</h2><p>Loop 不是免费的。</p>
+<p>它把你守在对话框前复制粘贴的时间，换成了 token、工具调用、日志维护和验收成本。真正贵的通常不是单次运行，而是<strong>频率</strong>：每天跑一次的维护循环可能很划算，每 5 分钟跑一次同样的循环，成本会放大两个数量级。</p>
+<p>所以每个 Loop 都应该有三道刹车：</p>
+<ul>
+<li><strong>次数上限</strong>：最多重试几轮，不要无限“再试一次”。</li>
+<li><strong>无进展检测</strong>：连续几轮没有新信息、新 diff、新测试结果，就停。</li>
+<li><strong>预算上限</strong>：时间、token、钱、外部 API 调用都要有边界。</li>
+</ul>
+<p>还有一个更隐蔽的问题：<strong>理解债</strong>。</p>
+<p>Agent 可以更快地生成代码、文档和 PR，但如果你不读、不审、不理解，仓库里的东西会越来越多，而你真正掌握的部分会越来越少。Loop Engineering 不是让人从系统里消失，而是把人从“每轮搬运报错”升级为“设计规则、检查证据、承担结果”的角色。</p>
+<p>一个好 Loop 应该让你少做机械重复，不应该让你放弃判断。</p>
 <p>这才是 Loop Engineering 值得关注的地方。</p>
 <h2 id="结语：把-AI-从“聪明回复”养成“长期系统”"><a href="#结语：把-AI-从“聪明回复”养成“长期系统”" class="headerlink" title="结语：把 AI 从“聪明回复”养成“长期系统”"></a>结语：把 AI 从“聪明回复”养成“长期系统”</h2><p>Khazix Skills 这类项目火起来，我觉得不是偶然。</p>
 <p>它击中了一个真实需求：大家已经不满足于“AI 回答得不错”了。我们开始希望 AI 能带着工具、带着记忆、带着流程，持续参与自己的工作系统。</p>
@@ -1109,6 +1154,8 @@
 <li>补充材料：<a href="https://x.com/cuisitekp/status/2066823370138677651">https://x.com/cuisitekp/status/2066823370138677651</a></li>
 <li>最小 Loop 示例：<a href="https://x.com/freeman1266/status/2066677040238227843">https://x.com/freeman1266/status/2066677040238227843</a></li>
 <li>小白入门模板：<a href="https://x.com/AdrianPunk115/status/2068947825120223659">https://x.com/AdrianPunk115/status/2068947825120223659</a></li>
+<li>金尘马：Loop Engineering 小白教程：<a href="https://x.com/jinchenma_ai/status/2070293677206094086">https://x.com/jinchenma_ai/status/2070293677206094086</a></li>
+<li>Kyrie：Loop Engineering 六个实战场景：<a href="https://x.com/KyrieCheungYep/status/2070333819249627273">https://x.com/KyrieCheungYep/status/2070333819249627273</a></li>
 <li>Khazix Skills：<a href="https://github.com/KKKKhazix/khazix-skills">https://github.com/KKKKhazix/khazix-skills</a></li>
 </ul>
 

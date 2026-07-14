@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-07-05T17:23:36.850Z</updated>
+  <updated>2026-07-14T17:56:22.024Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Kubernetes DRA：GPU 调度从“数卡”走向“选卡”</title>
+    <link href="https://onefly.top/posts/kubernetes-dra-gpu-scheduling.html"/>
+    <id>https://onefly.top/posts/kubernetes-dra-gpu-scheduling.html</id>
+    <published>2026-07-14T17:26:00.000Z</published>
+    <updated>2026-07-14T17:56:22.024Z</updated>
+    
+    
+    <summary type="html">Kubernetes v1.35 中 DRA 进入稳定阶段。本文从 Device Plugin 的数量模型出发，讲清 DeviceClass、ResourceClaim、ResourceSlice 如何让 GPU 按属性参与节点调度，以及生产落地前需要验证什么。</summary>
+    
+    
+    
+    <category term="云原生" scheme="https://onefly.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
+    
+    
+    <category term="云原生" scheme="https://onefly.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
+    
+    <category term="Kubernetes" scheme="https://onefly.top/tags/Kubernetes/"/>
+    
+    <category term="GPU调度" scheme="https://onefly.top/tags/GPU%E8%B0%83%E5%BA%A6/"/>
+    
+    <category term="AI基础设施" scheme="https://onefly.top/tags/AI%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>AI 时代，CI/CD 不是可选项</title>
@@ -476,31 +501,6 @@
     <category term="美股" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1/"/>
     
     <category term="稳定币" scheme="https://onefly.top/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LLM 挖因子：别被漂亮回测骗了</title>
-    <link href="https://onefly.top/posts/llm-quant-factor-mining-overfitting-risk.html"/>
-    <id>https://onefly.top/posts/llm-quant-factor-mining-overfitting-risk.html</id>
-    <published>2026-06-01T07:38:34.000Z</published>
-    <updated>2026-06-01T08:07:53.916Z</updated>
-    
-    
-    <summary type="html">从评论区争议出发，拆解 LLM 挖量化因子的价值边界：因子挖掘边际收益下降、过拟合、数据泄漏、传统搜索效率，以及真正值得投入的量化研究流程。</summary>
-    
-    
-    
-    <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    
-    
-    <category term="Alpha" scheme="https://onefly.top/tags/Alpha/"/>
-    
-    <category term="量化交易" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    
-    <category term="LLM" scheme="https://onefly.top/tags/LLM/"/>
-    
-    <category term="因子研究" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90%E7%A0%94%E7%A9%B6/"/>
     
   </entry>
   

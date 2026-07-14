@@ -815,14 +815,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.8k
+                    6.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    21 分
                 </div>
                 
 
@@ -866,6 +866,16 @@
 <p>再往后是 Harness Engineering：给 Agent 配工具、权限、测试、回滚、子任务调度，让它不只是“会说”，而是真的能在系统里干活。</p>
 <p>Loop Engineering 再往上走一层。</p>
 <p>它关心的是：<strong>Agent 做完一件事之后，系统如何继续运行、验证、更新自己。</strong></p>
+<h2 id="四种-Loop：控制权交给谁"><a href="#四种-Loop：控制权交给谁" class="headerlink" title="四种 Loop：控制权交给谁"></a>四种 Loop：控制权交给谁</h2><p>理解 Loop Engineering，可以先看循环由什么触发，以及由谁决定下一轮是否继续。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260714230603418-1791231204.gif" alt="Loop Engineering 的四种循环：轮次驱动、目标驱动、时间驱动与主动式工作流" style="display:block;width:100%;height:auto;margin:24px auto;"></p>
+<p>这四种结构对应着 Agent 自治程度逐步提高的过程：</p>
+<ul>
+<li><strong>Turn-Based（轮次驱动）</strong>：用户发出 prompt，Agent 收集上下文、执行并检查；当前轮结束后，用户审阅结果并决定下一步。</li>
+<li><strong>Goal-Based（目标驱动）</strong>：用户一次性给出目标、验收标准和尝试上限；Evaluator 判断是否达标，未达标就把任务送回继续执行。</li>
+<li><strong>Time-Based（时间驱动）</strong>：固定时间间隔触发同一任务，例如每五分钟检查一次 PR 和 CI；执行结束后等待下一次调度。</li>
+<li><strong>Proactive（主动式）</strong>：事件或日程在无人值守时触发动态工作流，由不同 Agent 完成分诊、修复和审查；单次任务完成后退出，监听例程继续运行。</li>
+</ul>
+<p>四种 Loop 不是互相替代的产品等级，而是四种控制结构。设计时真正需要回答的是：<strong>谁来触发、谁来检查、失败后回到哪里、什么条件下停止，以及人是否必须留在循环中。</strong></p>
 <h2 id="Loop-的基本骨架：触发、行动、验证、记忆"><a href="#Loop-的基本骨架：触发、行动、验证、记忆" class="headerlink" title="Loop 的基本骨架：触发、行动、验证、记忆"></a>Loop 的基本骨架：触发、行动、验证、记忆</h2><p>卡牌大师崔斯特那篇补充文章里，把 Addy Osmani 对 Loop 的拆解讲得很清楚：一个能跑起来的循环，通常由六类零件组合出来。</p>
 <ul>
 <li><strong>Automation</strong>：定时任务、hook、webhook，让任务不必等你开口</li>

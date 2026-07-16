@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-07-14T17:56:22.024Z</updated>
+  <updated>2026-07-16T16:37:37.329Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/kubernetes-dra-gpu-scheduling.html"/>
     <id>https://onefly.top/posts/kubernetes-dra-gpu-scheduling.html</id>
     <published>2026-07-14T17:26:00.000Z</published>
-    <updated>2026-07-14T17:56:22.024Z</updated>
+    <updated>2026-07-16T16:37:37.329Z</updated>
     
     
     <summary type="html">Kubernetes v1.35 中 DRA 进入稳定阶段。本文从 Device Plugin 的数量模型出发，讲清 DeviceClass、ResourceClaim、ResourceSlice 如何让 GPU 按属性参与节点调度，以及生产落地前需要验证什么。</summary>
@@ -36,8 +36,6 @@
     <category term="Kubernetes" scheme="https://onefly.top/tags/Kubernetes/"/>
     
     <category term="GPU调度" scheme="https://onefly.top/tags/GPU%E8%B0%83%E5%BA%A6/"/>
-    
-    <category term="AI基础设施" scheme="https://onefly.top/tags/AI%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/"/>
     
   </entry>
   

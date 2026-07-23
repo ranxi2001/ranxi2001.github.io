@@ -627,6 +627,86 @@
     animation: pulse 1.6s ease-in-out infinite;
 }
 
+/* Onefly Shop 闪卡 CTA */
+.gpt-shop-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 8px;
+    margin: 0 0 12px 0;
+    border: 1px solid rgba(125, 211, 252, 0.55);
+    border-radius: 10px;
+    background: linear-gradient(105deg, #071a52, #075bd8, #00a8e8, #075bd8, #071a52);
+    background-size: 300% auto;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-decoration: none !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18);
+    animation: gpt-card-flow 4s linear infinite, gpt-card-pulse 2.2s ease-in-out infinite;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gpt-shop-btn:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(0, 168, 232, 0.55), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.gpt-shop-btn::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -55%;
+    width: 34%;
+    height: 220%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-22deg);
+    animation: gpt-card-sweep 2.8s ease-in-out infinite;
+}
+
+.gpt-shop-btn > * {
+    position: relative;
+    z-index: 1;
+}
+
+.gpt-shop-icon {
+    font-size: 16px;
+    filter: drop-shadow(0 0 5px rgba(125, 211, 252, 0.9));
+}
+
+.badge-shop {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gpt-card-flow {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+@keyframes gpt-card-sweep {
+    0%, 35% { left: -55%; }
+    75%, 100% { left: 125%; }
+}
+
+@keyframes gpt-card-pulse {
+    0%, 100% { box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18); }
+    50% { box-shadow: 0 5px 19px rgba(0, 168, 232, 0.58), inset 0 1px 0 rgba(255,255,255,0.24); }
+}
+
 /* 分割线 */
 .sidebar-divider {
     border: none;
@@ -731,6 +811,16 @@
             <span class="badge-btc">新手必看</span>
         </a>
 
+        <!-- Onefly Shop 闪卡 CTA -->
+        <a class="gpt-shop-btn"
+           href="https://pay.ldxp.cn/shop/XBXEDJWO"
+           target="_blank"
+           rel="noopener noreferrer">
+            <span class="gpt-shop-icon">✦</span>
+            <span>速刷 GPT 账号购买</span>
+            <span class="badge-shop">Onefly Shop</span>
+        </a>
+
         <hr class="sidebar-divider">
 
         <!-- 快捷链接 -->
@@ -751,13 +841,6 @@
                 <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
                     <span class="link-icon">🎬</span>
                     <span class="link-text">视频会员 · 自媒体涨粉</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://pay.ldxp.cn/shop/XBXEDJWO" target="_blank" rel="noopener noreferrer">
-                    <span class="link-icon">🤖</span>
-                    <span class="link-text">速刷 GPT 账号购买</span>
-                    <span class="link-badge">小店</span>
                 </a>
             </li>
         </ul>

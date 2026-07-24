@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-07-16T16:37:37.329Z</updated>
+  <updated>2026-07-24T09:22:33.714Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ChatGPT提示“此应用已与另一个账号关联”：切换Google Play下载账号</title>
+    <link href="https://onefly.top/posts/chatgpt-google-play-switch-download-account.html"/>
+    <id>https://onefly.top/posts/chatgpt-google-play-switch-download-account.html</id>
+    <published>2026-07-24T09:09:14.000Z</published>
+    <updated>2026-07-24T09:22:33.714Z</updated>
+    
+    
+    <summary type="html">Android手机安装ChatGPT后，Google Play内购或Beta资格仍绑定旧账号怎么办？本文记录一种已实际成功的方法：卸载应用后，用目标Google账号从网页版Google Play远程安装到手机。</summary>
+    
+    
+    
+    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="ChatGPT" scheme="https://onefly.top/tags/ChatGPT/"/>
+    
+    <category term="谷歌商店" scheme="https://onefly.top/tags/%E8%B0%B7%E6%AD%8C%E5%95%86%E5%BA%97/"/>
+    
+    <category term="账号切换" scheme="https://onefly.top/tags/%E8%B4%A6%E5%8F%B7%E5%88%87%E6%8D%A2/"/>
+    
+    <category term="内购" scheme="https://onefly.top/tags/%E5%86%85%E8%B4%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>Kubernetes DRA：GPU 调度从“数卡”走向“选卡”</title>
@@ -472,33 +497,6 @@
     <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
     
     <category term="美股" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>币安美股交易来了：用 USDT 买股票的新入口</title>
-    <link href="https://onefly.top/posts/binance-usdt-us-stock-trading-guide.html"/>
-    <id>https://onefly.top/posts/binance-usdt-us-stock-trading-guide.html</id>
-    <published>2026-06-01T14:42:00.000Z</published>
-    <updated>2026-06-01T14:50:27.952Z</updated>
-    
-    
-    <summary type="html">币安上线美股交易后，CEX 正在从加密货币交易所变成全球资产配置入口。本文整理 Binance Stocks 的模式、费用、分红、和 Bitget/Gate/MEXC 的差异，并附币安注册入口与风险提示。</summary>
-    
-    
-    
-    <category term="Web3" scheme="https://onefly.top/categories/Web3/"/>
-    
-    
-    <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
-    
-    <category term="Binance" scheme="https://onefly.top/tags/Binance/"/>
-    
-    <category term="RWA" scheme="https://onefly.top/tags/RWA/"/>
-    
-    <category term="美股" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1/"/>
-    
-    <category term="稳定币" scheme="https://onefly.top/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/"/>
     
   </entry>
   

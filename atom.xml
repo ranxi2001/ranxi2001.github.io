@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-07-24T09:22:33.714Z</updated>
+  <updated>2026-07-24T09:32:19.421Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://onefly.top/posts/chatgpt-google-play-switch-download-account.html"/>
     <id>https://onefly.top/posts/chatgpt-google-play-switch-download-account.html</id>
     <published>2026-07-24T09:09:14.000Z</published>
-    <updated>2026-07-24T09:22:33.714Z</updated>
+    <updated>2026-07-24T09:32:19.421Z</updated>
     
     
-    <summary type="html">Android手机安装ChatGPT后，Google Play内购或Beta资格仍绑定旧账号怎么办？本文记录一种已实际成功的方法：卸载应用后，用目标Google账号从网页版Google Play远程安装到手机。</summary>
+    <summary type="html">ChatGPT提示“此应用目前已与另一个账号建立关联”（This app is currently associated with another account），或“应用内购买目前不可用”（In-app purchases are currently unavailable）怎么办？本文记录实测成功的Google Play账号切换方法：彻底卸载ChatGPT，再由目标Google账号通过网页版Google Play远程安装到手机。</summary>
     
     
     

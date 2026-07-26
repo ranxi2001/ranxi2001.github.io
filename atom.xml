@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-07-24T10:27:05.713Z</updated>
+  <updated>2026-07-26T17:25:35.704Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OKX 注册忘记填邀请码怎么办？补绑、换绑与返佣完整指南</title>
+    <link href="https://onefly.top/posts/okx-invite-code-missing-guide.html"/>
+    <id>https://onefly.top/posts/okx-invite-code-missing-guide.html</id>
+    <published>2026-07-26T17:25:00.000Z</published>
+    <updated>2026-07-26T17:25:35.704Z</updated>
+    
+    
+    <summary type="html">OKX（欧易）注册忘记填邀请码怎么办？本文说明哪些账号可能补绑邀请关系、如何判断资格、补绑失败怎么处理，以及新用户如何填写邀请码 ONEFLY 并核对最高20%手续费返佣。</summary>
+    
+    
+    
+    <category term="加密货币" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+    
+    <category term="OKX" scheme="https://onefly.top/tags/OKX/"/>
+    
+    <category term="欧易教程" scheme="https://onefly.top/tags/%E6%AC%A7%E6%98%93%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="手续费返佣" scheme="https://onefly.top/tags/%E6%89%8B%E7%BB%AD%E8%B4%B9%E8%BF%94%E4%BD%A3/"/>
+    
+    <category term="邀请码" scheme="https://onefly.top/tags/%E9%82%80%E8%AF%B7%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ChatGPT提示“此应用已与另一个账号关联”：切换Google Play下载账号</title>
@@ -444,9 +469,9 @@
     
     <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
     
-    <category term="合约" scheme="https://onefly.top/tags/%E5%90%88%E7%BA%A6/"/>
-    
     <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
+    
+    <category term="合约" scheme="https://onefly.top/tags/%E5%90%88%E7%BA%A6/"/>
     
   </entry>
   
@@ -472,31 +497,6 @@
     <category term="Markdown" scheme="https://onefly.top/tags/Markdown/"/>
     
     <category term="写作" scheme="https://onefly.top/tags/%E5%86%99%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交易所都开始推美股了：币圈真正的对手是纳指</title>
-    <link href="https://onefly.top/posts/crypto-exchanges-push-us-stocks-nasdaq.html"/>
-    <id>https://onefly.top/posts/crypto-exchanges-push-us-stocks-nasdaq.html</id>
-    <published>2026-06-02T17:11:03.000Z</published>
-    <updated>2026-06-02T17:22:36.401Z</updated>
-    
-    
-    <summary type="html">当交易所 App 一边提示 NAS100 创历史新高，一边提示 ETH、BTC 跌破关键价位，加密市场正在发生更深层的资金迁移：交易所从币圈入口变成全球风险资产入口，而纯叙事山寨币正在失去注意力溢价。</summary>
-    
-    
-    
-    <category term="加密投研" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
-    
-    
-    <category term="交易所" scheme="https://onefly.top/tags/%E4%BA%A4%E6%98%93%E6%89%80/"/>
-    
-    <category term="RWA" scheme="https://onefly.top/tags/RWA/"/>
-    
-    <category term="加密投研" scheme="https://onefly.top/tags/%E5%8A%A0%E5%AF%86%E6%8A%95%E7%A0%94/"/>
-    
-    <category term="美股" scheme="https://onefly.top/tags/%E7%BE%8E%E8%82%A1/"/>
     
   </entry>
   

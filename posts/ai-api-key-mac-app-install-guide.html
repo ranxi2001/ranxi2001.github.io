@@ -2241,6 +2241,50 @@ $(function () {
     </a>
 </div>
 
+    <div id="onefly-eagle-mascot" class="onefly-eagle-mascot" aria-label="Onefly Eagle" role="img" tabindex="0">
+    <div class="onefly-eagle-mascot__bubble" aria-hidden="true">保持敏锐，继续前进</div>
+    <img src="/medias/onefly-eagle-mascot.webp" alt="" width="386" height="640" draggable="false">
+</div>
+
+<script>
+(function () {
+    var mascot = document.getElementById('onefly-eagle-mascot');
+    if (!mascot) return;
+
+    var idleTimer;
+    var settleTimer;
+
+    function wake() {
+        mascot.classList.remove('is-curious');
+        void mascot.offsetWidth;
+        mascot.classList.add('is-curious');
+        window.clearTimeout(settleTimer);
+        settleTimer = window.setTimeout(function () {
+            mascot.classList.remove('is-curious');
+        }, 1100);
+    }
+
+    function scheduleIdle() {
+        window.clearTimeout(idleTimer);
+        idleTimer = window.setTimeout(function () {
+            wake();
+            scheduleIdle();
+        }, 9000 + Math.random() * 7000);
+    }
+
+    mascot.addEventListener('mouseenter', wake);
+    mascot.addEventListener('click', wake);
+    mascot.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            wake();
+        }
+    });
+
+    scheduleIdle();
+})();
+</script>
+
 
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
@@ -2313,6 +2357,6 @@ $(function () {
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+</body>
 
 </html>

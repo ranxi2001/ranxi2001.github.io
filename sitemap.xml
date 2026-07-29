@@ -272,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/friends/index.html</loc>
+    <loc>https://onefly.top/contact/index.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -281,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/contact/index.html</loc>
+    <loc>https://onefly.top/friends/index.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -1001,7 +1001,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/231224.html</loc>
+    <loc>https://onefly.top/posts/23711.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -1010,7 +1010,7 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/posts/23711.html</loc>
+    <loc>https://onefly.top/posts/231224.html</loc>
     
     <lastmod>2026-05-27</lastmod>
     
@@ -1241,27 +1241,6 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/web3/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/bot/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/sol/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://onefly.top/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -1277,6 +1256,27 @@
   
   <url>
     <loc>https://onefly.top/tags/%E8%87%AA%E5%AA%92%E4%BD%93%E7%B2%89%E4%B8%9D/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/web3/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/bot/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/sol/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

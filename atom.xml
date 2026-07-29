@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-07-29T04:53:19.235Z</updated>
+  <updated>2026-07-29T14:30:28.540Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>克制：AI时代最稀缺的工程能力</title>
+    <link href="https://onefly.top/posts/restraint-in-ai-agent-engineering.html"/>
+    <id>https://onefly.top/posts/restraint-in-ai-agent-engineering.html</id>
+    <published>2026-07-29T14:22:01.000Z</published>
+    <updated>2026-07-29T14:30:28.540Z</updated>
+    
+    
+    <summary type="html">从梁文锋谈组织聚焦，到多 Agent 系统的上下文治理：AI 时代真正稀缺的能力，不是做得更多，而是知道什么不做、什么不进入主线程。</summary>
+    
+    
+    
+    <category term="AI工程" scheme="https://onefly.top/categories/AI%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+    <category term="方法论" scheme="https://onefly.top/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
+    
+    <category term="上下文" scheme="https://onefly.top/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
+    
+    <category term="AI工程" scheme="https://onefly.top/tags/AI%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>从模型到实盘：StepOneAi 量化心得整理</title>
@@ -474,29 +499,6 @@
     <category term="Opt" scheme="https://onefly.top/tags/Opt/"/>
     
     <category term="心流" scheme="https://onefly.top/tags/%E5%BF%83%E6%B5%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>清算燃料耗尽：一个短线反转因子的拆解</title>
-    <link href="https://onefly.top/posts/liquidation-exhaustion-factor.html"/>
-    <id>https://onefly.top/posts/liquidation-exhaustion-factor.html</id>
-    <published>2026-06-04T03:12:32.000Z</published>
-    <updated>2026-06-04T03:28:01.846Z</updated>
-    
-    
-    <summary type="html">从价格跳跃成交额相关性出发，拆解一个识别合约清算、爆仓燃料耗尽与短线反转机会的量化因子，并给出可落地的公式、过滤器和回测框架。</summary>
-    
-    
-    
-    <category term="加密货币" scheme="https://onefly.top/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
-    
-    
-    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
-    
-    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
-    
-    <category term="合约" scheme="https://onefly.top/tags/%E5%90%88%E7%BA%A6/"/>
     
   </entry>
   

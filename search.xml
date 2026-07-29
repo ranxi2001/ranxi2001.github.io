@@ -12699,308 +12699,6 @@ bundle <span class="token builtin class-name">exec</span> jekyll serve
       </tags>
   </entry>
   <entry>
-    <title>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</title>
-    <url>/posts/self-evolving-harness-lobehub-agent-runtime-2026.html</url>
-    <content><![CDATA[<h1 id="需要自进化的不是-Agent，而是-Harness：LobeHub-的-Self-Evolving-Runtime-实践"><a href="#需要自进化的不是-Agent，而是-Harness：LobeHub-的-Self-Evolving-Runtime-实践" class="headerlink" title="需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践"></a>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</h1><p>过去一年，AI Agent 圈子里最容易被高估的是“模型又强了多少”，最容易被低估的是：<strong>真正决定产品稳定性的，往往不是模型，而是包在模型外面的 Harness。</strong></p>
-<p>单独的模型已经不再是完整产品。真正被用户感知到的产品，是：</p>
-<blockquote>
-<p>模型 + 工具 + 上下文 + 权限 + 环境 + 错误恢复机制。</p>
-</blockquote>
-<p>这套把模型组织起来、让它能稳定完成任务的运行时，才是 Agent 产品的核心。LobeHub 最近这篇关于 <strong>Self-Evolving Harness</strong> 的文章，讲的正是这个变化：</p>
-<p><strong>未来需要自进化的不是单个 Agent，而是承载 Agent 的 Harness。</strong></p>
-<p>本文试着把原文的工程逻辑拆开讲清楚：为什么 Harness 会成为 AI-Native 产品的新护城河？为什么 Tracing 是自进化的起点？以及 LobeHub 的 Error Pattern 自动巡检为什么是一个很值得关注的生产案例。</p>
-<div style="text-align:center;">
-<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527223243205-541295227.png" style="zoom:33%;" alt="Self-Evolving Harness 博客封面图">
-</div>
-
-<hr>
-<h2 id="一、模型越来越强，为什么产品体验没有同比变强？"><a href="#一、模型越来越强，为什么产品体验没有同比变强？" class="headerlink" title="一、模型越来越强，为什么产品体验没有同比变强？"></a>一、模型越来越强，为什么产品体验没有同比变强？</h2><p>早期 AI 产品的竞争，主要是模型能力竞争。</p>
-<p>谁的 benchmark 更高，谁的上下文更长，谁的推理更快，谁就更容易获得体验优势。但到了 2026 年，这种优势开始边际递减。</p>
-<p>在很多真实任务里，用户感受到的差异已经不再只是“模型聪不聪明”，而是：</p>
-<ul>
-<li>它能不能记住任务约束？</li>
-<li>它能不能在第 50 步工具调用后仍然不跑偏？</li>
-<li>它能不能在工具失败后正确恢复，而不是编造结果？</li>
-<li>它能不能识别哪些错误该展示给用户，哪些错误应该系统内部消化？</li>
-<li>它能不能根据不同模型、不同 provider、不同环境自动调整执行策略？</li>
-</ul>
-<p>这就是 Phil Schmid 提到的 <strong>Durability</strong> 问题：模型在长链路、多工具、复杂环境中到底能坚持多久。</p>
-<p>一个模型在榜单上领先 1%，并不能保证它在真实 Agent 任务里不会误删文件、忘记权限边界、丢失上下文，或者把上游 API 报错解释成“任务完成”。</p>
-<p>所以，模型能力只是底座。真正把能力转化为稳定体验的，是 Harness。</p>
-<hr>
-<h2 id="二、什么是-Agent-Harness？"><a href="#二、什么是-Agent-Harness？" class="headerlink" title="二、什么是 Agent Harness？"></a>二、什么是 Agent Harness？</h2><p>如果把大模型看作 CPU，把上下文窗口看作 RAM，那么 <strong>Agent Harness 更像操作系统</strong>。</p>
-<p>它不等于 Agent 本身，却决定 Agent 能不能跑起来、跑多久、跑得稳不稳。</p>
-<p>一个成熟的 Harness 至少要处理这些事情：</p>
-<ul>
-<li><strong>Model Runtime</strong>：适配 OpenAI、Anthropic、DeepSeek、Gemini、MiniMax、Kimi 等不同模型和 provider</li>
-<li><strong>Agent Runtime</strong>：管理 Agent 的 step loop、工具调用、状态机、生命周期</li>
-<li><strong>Context Engine</strong>：决定哪些上下文应该进入窗口，哪些应该压缩，哪些应该从历史恢复</li>
-<li><strong>Environment</strong>：支持 Page、Task、Group、IM、CLI、浏览器等不同执行环境</li>
-<li><strong>Tool Orchestration</strong>：设计工具 schema，决定何时调用、失败后是否重试、如何重试</li>
-<li><strong>Error Handling</strong>：识别错误类型，区分用户侧问题和系统侧问题</li>
-<li><strong>Permission Boundary</strong>：限制危险操作，管理外部副作用和用户确认</li>
-</ul>
-<p>模型像发动机，Harness 像整辆车的传动、刹车、仪表盘和自动驾驶系统。</p>
-<p>发动机再猛，如果刹车不稳、仪表盘不准、导航乱跳，用户也不会觉得这辆车好开。</p>
-<div style="text-align:center;">
-<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527203254977-1778900783.png" style="zoom:40%;" alt="Agent Harness 运行时架构示意图">
-</div>
-
-<hr>
-<h2 id="三、Harness-为什么必须是“活的”？"><a href="#三、Harness-为什么必须是“活的”？" class="headerlink" title="三、Harness 为什么必须是“活的”？"></a>三、Harness 为什么必须是“活的”？</h2><p>传统软件里的运行时大多是静态的：工程师写好逻辑，用户使用，出了问题再修。</p>
-<p>但 Agent Harness 面对的是一个高速变化的环境：</p>
-<ul>
-<li>模型接口会变</li>
-<li>provider 错误格式会变</li>
-<li>工具 schema 会变</li>
-<li>用户任务会变</li>
-<li>上下文策略会过时</li>
-<li>reasoning / thinking 字段的行为会变化</li>
-<li>某个只在小流量下偶发的错误，会在用户增长后变成主要故障来源</li>
-</ul>
-<p>如果每一次变化都靠工程师手动发现、分类、修复，这套系统会越来越难维护。</p>
-<p>更麻烦的是，很多问题不是设计阶段能想出来的，而是只有在真实运行里才会暴露。</p>
-<p>比如：</p>
-<ul>
-<li>某个 provider 在余额不足时返回了非标准错误</li>
-<li>某个模型在 thinking mode 下丢了 reasoning_content</li>
-<li>某个工具 schema 对某类参数兼容性不好</li>
-<li>某个 context window 策略在长任务里把关键约束压没了</li>
-<li>某类用户任务经常在第 N 步触发同一种失败</li>
-</ul>
-<p>这些都是运行数据里长出来的问题。</p>
-<p>因此，Harness 不能只是被动执行环境。它需要能观察自己、理解自己、修复自己。</p>
-<p>这就是 Self-Evolving Harness 的核心：</p>
-<blockquote>
-<p>进化的对象不是模型，而是模型外面的运行时系统。</p>
-</blockquote>
-<pre class="mermaid">flowchart TD
-    A[模型接口变化] --&gt; E[Harness 持续过时]
-    B[工具 schema 变化] --&gt; E
-    C[用户任务变化] --&gt; E
-    D[错误模式变化] --&gt; E
-    E --&gt; F[Tracing 记录真实执行]
-    F --&gt; G[识别失败模式]
-    G --&gt; H[更新上下文策略 / 工具编排 / 错误处理]
-    H --&gt; I[运行时变得更稳定]
-    I --&gt; F</pre>
-
-<hr>
-<h2 id="四、自进化的前提：Tracing-必须是一等公民"><a href="#四、自进化的前提：Tracing-必须是一等公民" class="headerlink" title="四、自进化的前提：Tracing 必须是一等公民"></a>四、自进化的前提：Tracing 必须是一等公民</h2><p>要让 Harness 自我改进，第一步不是让 Agent 自动写代码，而是让系统知道刚才到底发生了什么。</p>
-<p>也就是：<strong>Tracing。</strong></p>
-<p>每一次 Agent 执行，都应该留下完整记录：</p>
-<ul>
-<li>调用了哪个模型？</li>
-<li>每次 LLM 请求用了多少 token？</li>
-<li>花了多少钱？</li>
-<li>每一步是模型调用还是工具调用？</li>
-<li>每一步耗时多久？</li>
-<li>总共走了多少步？</li>
-<li>哪一步失败了？</li>
-<li>错误类型是什么？</li>
-<li>当时的上下文是什么？</li>
-<li>cache 命中率如何？</li>
-<li>工具输入输出是什么？</li>
-</ul>
-<p>没有这些数据，所谓 Self-Evolution 就只是口号。</p>
-<p>原文里有个判断很关键：行业里很多 Agent Framework 都在说 tracing 难做，不是因为大家不会用 OpenTelemetry，而是因为大多数 runtime 一开始就没有把 observability 当作一等公民。</p>
-<p>典型问题是：Tracing 是后加的。</p>
-<ul>
-<li>LangChain：callback 是可选的，忘了注册就没有 trace</li>
-<li>CrewAI：事件监听器挂在事件总线上，事件丢失 trace 就断</li>
-<li>OpenAI Agents SDK：需要显式创建 trace，不会天然传播</li>
-<li>AG2：middleware 是可选安装，不装就没有 tracing</li>
-</ul>
-<p>这种架构下，trace 像外挂，不像系统血液。</p>
-<p>LobeHub 的做法则是把 Agent Runtime 设计成状态机，按“单步执行”原则拆成细粒度 step。每个 step 天然就是一个 trace event。</p>
-<p>换句话说：</p>
-<blockquote>
-<p>Tracing 不是执行之后补一份日志，而是执行过程本身的副产品。</p>
-</blockquote>
-<p>这点非常重要。只有 trace 足够完整、稳定、可回放，后面的自动归因、自动修复、自动优化才有意义。</p>
-<pre class="mermaid">flowchart LR
-    U[用户任务] --&gt; R[Agent Runtime]
-    R --&gt; S1[Step 1: LLM 调用]
-    R --&gt; S2[Step 2: Tool 调用]
-    R --&gt; S3[Step 3: Context 更新]
-    R --&gt; S4[Step N: 错误或完成]
-    S1 --&gt; T[Trace Event]
-    S2 --&gt; T
-    S3 --&gt; T
-    S4 --&gt; T
-    T --&gt; ES[Execution Snapshot]
-    ES --&gt; A[回放 / 归因 / 对比 / 优化]</pre>
-
-<hr>
-<h2 id="五、Trace-是-Harness-的黑匣子"><a href="#五、Trace-是-Harness-的黑匣子" class="headerlink" title="五、Trace 是 Harness 的黑匣子"></a>五、Trace 是 Harness 的黑匣子</h2><p>飞机出事故后，黑匣子不直接修飞机，但它能告诉你事故发生前到底经历了什么。</p>
-<p>Agent Harness 也是一样。</p>
-<p>一次失败任务如果只留下一句“调用失败”，工程师或者 Agent 都很难分析。但如果它保留了完整 Execution Snapshot，就能回放出：</p>
-<ul>
-<li>哪个 provider 出错</li>
-<li>是用户 API Key 问题，还是上游服务问题</li>
-<li>是 schema 不兼容，还是上下文溢出</li>
-<li>是模型 hallucination，还是工具返回异常</li>
-<li>是某一步重试策略不合理，还是错误提示对用户不友好</li>
-</ul>
-<p>这时，错误就不再是噪音，而是训练 Harness 的原料。</p>
-<p>原文把这点讲得很清楚：Trace 本身不解决问题，但它让问题第一次变得可以回放、归因和比较。</p>
-<p>对 AI-Native 产品来说，这可能是比单次模型调用更重要的数据资产。</p>
-<hr>
-<h2 id="六、生产案例：Error-Pattern-自动巡检"><a href="#六、生产案例：Error-Pattern-自动巡检" class="headerlink" title="六、生产案例：Error Pattern 自动巡检"></a>六、生产案例：Error Pattern 自动巡检</h2><p>LobeHub 的 Error Pattern 自动巡检，是 Self-Evolving Harness 最具体的落地案例。</p>
-<p>它的背景是：LobeHub Model Runtime 接入了 70 多个 AI Providers，每天承接大量 Agent 运行。每次模型调用失败，系统都会留下错误记录。</p>
-<p>这些错误大致可以分为两类。</p>
-<p>第一类是用户侧错误：</p>
-<ul>
-<li>API Key 过期</li>
-<li>余额不足</li>
-<li>触发速率限制</li>
-<li>权限不足</li>
-</ul>
-<p>第二类是 Harness 自身问题：</p>
-<ul>
-<li>Tool schema 不兼容</li>
-<li>负数 max_tokens</li>
-<li>DeepSeek reasoning_content 丢失</li>
-<li>Context Window 过载</li>
-<li>thinking mode 元数据处理异常</li>
-</ul>
-<p>传统做法是人定期看后台，人工分类，再手动修复。</p>
-<p>但在高频 Agent 系统里，这个办法很快失效。错误产生速度高于人工分类速度，未归类错误会不断堆积，用户看到的就是陌生、难懂、无法处理的报错。</p>
-<p>LobeHub 的做法是把失败 trace 的查询权限开放给 Agent，让 Agent 批量解析 tracing 数据：</p>
-<ol>
-<li>从后台拉取最近 error records</li>
-<li>按 provider、errorType、status code、message 多维分桶</li>
-<li>对照已有 ERROR_PATTERNS，找出未覆盖的新错误模式</li>
-<li>区分用户侧错误和 Harness 自身 bug</li>
-<li>对用户侧错误，自动更新匹配 Pattern</li>
-<li>commit、push、开 PR</li>
-<li>清理 Dashboard 中已被新 pattern 覆盖的历史噪音</li>
-<li>对 Harness 自身 bug，继续根因分析并创建修复任务</li>
-</ol>
-<p>这套机制已经运行了九轮，结果很有代表性：</p>
-<ul>
-<li>累计 Pattern 从 31 增长到 104 后趋于平稳</li>
-<li>新增 Pattern 从 31 持续下降到 0</li>
-<li>即使 error 日志量在 334 到 1158 之间波动，Pattern 库仍然趋于饱和</li>
-<li>Agent 自主发现了 20+ 个 Harness 自身缺陷</li>
-<li>Agent 成功率从早期约 75% 提升到 95% 以上</li>
-</ul>
-<p>这说明一件事：<strong>Harness 的错误认知能力可以随着使用增长而增长。</strong></p>
-<p>产品不是只在版本发布时变好，而是在每天的运行中变好。</p>
-<div style="text-align:center;">
-<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527203430006-1832913588.png" style="zoom:40%;" alt="Error Pattern 自动巡检闭环示意图">
-</div>
-
-<hr>
-<h2 id="七、Harness-自进化的四个层次"><a href="#七、Harness-自进化的四个层次" class="headerlink" title="七、Harness 自进化的四个层次"></a>七、Harness 自进化的四个层次</h2><p>原文把 Harness 自进化理解成一个连续谱，而不是一步到位的“完全自动”。</p>
-<pre class="mermaid">flowchart LR
-    L1[L1 纯人工<br>人发现 / 人分析 / 人修复]
-    L2[L2 Agent 辅助<br>Agent 整理线索<br>人确认修复]
-    L3[L3 Agent 主导<br>采集 / 识别 / 修复 / PR / 验证]
-    L4[L4 Harness 主动优化<br>持续观察 / 提出修复 / 回归验证]
-    L1 --&gt; L2 --&gt; L3 --&gt; L4</pre>
-
-<h3 id="L1：纯人工"><a href="#L1：纯人工" class="headerlink" title="L1：纯人工"></a>L1：纯人工</h3><p>人发现问题，人分析问题，人修复问题。</p>
-<p>这是传统软件维护方式。可靠，但慢，且很难适应高频 Agent 执行环境。</p>
-<h3 id="L2：Agent-辅助"><a href="#L2：Agent-辅助" class="headerlink" title="L2：Agent 辅助"></a>L2：Agent 辅助</h3><p>Agent 帮人找可疑问题、整理日志、给出修复建议。</p>
-<p>人负责确认，再让 Agent 执行部分修复。</p>
-<h3 id="L3：Agent-主导"><a href="#L3：Agent-主导" class="headerlink" title="L3：Agent 主导"></a>L3：Agent 主导</h3><p>Agent 可以完成大部分流程：</p>
-<ul>
-<li>采集数据</li>
-<li>识别模式</li>
-<li>修改代码</li>
-<li>提交 PR</li>
-<li>跑验证</li>
-<li>清理历史噪音</li>
-</ul>
-<p>人仍然保留关键判断，比如根因归属、修复方向、是否影响用户体验。</p>
-<p>LobeHub 的 Error Pattern 巡检大致就在 L3。</p>
-<h3 id="L4：Harness-主动优化自己"><a href="#L4：Harness-主动优化自己" class="headerlink" title="L4：Harness 主动优化自己"></a>L4：Harness 主动优化自己</h3><p>更完整的形态是：Harness 持续观察自己的运行状态，发现可改进点，提出修复，经过人确认后执行并验证。</p>
-<p>未来它不只是处理错误，还能主动优化：</p>
-<ul>
-<li>Context Engine 策略</li>
-<li>Tool schema 兼容层</li>
-<li>provider 适配规则</li>
-<li>Prompt 和执行策略</li>
-<li>失败任务的 eval / replay / regression 流程</li>
-</ul>
-<p>人不需要盯每一条日志，而是设定目标、审查边界、处理少数高风险决策。</p>
-<hr>
-<h2 id="八、为什么-Consumer-AI-Product-天然更适合-Self-Evolving？"><a href="#八、为什么-Consumer-AI-Product-天然更适合-Self-Evolving？" class="headerlink" title="八、为什么 Consumer AI Product 天然更适合 Self-Evolving？"></a>八、为什么 Consumer AI Product 天然更适合 Self-Evolving？</h2><p>这篇文章里一个比较尖锐的观点是：<strong>Consumer-Aimed Product 天然拥有信号密度优势。</strong></p>
-<p>自部署方案，比如 OpenClaw、Hermes 这类本地运行的助手，技术上可以很强，但它们天然有一个瓶颈：每个用户每天的 Agent 执行可能只有几条到几十条，而且数据分散在本地，应用开发方拿不到完整错误信号。</p>
-<p>这意味着：</p>
-<ul>
-<li>错误样本稀疏</li>
-<li>pattern 验证周期长</li>
-<li>很难知道某个修复是否真的覆盖了高频问题</li>
-<li>难以形成全局运行时优化闭环</li>
-</ul>
-<p>而面向消费者的云产品不同。</p>
-<p>以 LobeHub 为例，每天有上万次 Agent 执行，Error 样本按分钟级积累。一个 Harness bug 上午触发，中午被巡检发现，下午就可能修复上线。</p>
-<p>反馈闭环越快，Harness 进化速度越快。</p>
-<p>这会带来一种新的护城河：</p>
-<blockquote>
-<p>模型是外部的、通用的、可替换的；Harness 中沉淀的上下文、pattern、trajectory，才是产品内部长期积累的数据资产。</p>
-</blockquote>
-<p>传统 SaaS 的产品逻辑是：功能代码 + 用户数据。</p>
-<p>AI-Native 产品的逻辑则更像：</p>
-<blockquote>
-<p>Harness + 用户交互数据 + 进化能力。</p>
-</blockquote>
-<p>用户每一次使用，不只是消费产品，也在为产品提供进化信号。</p>
-<hr>
-<h2 id="九、The-Bitter-Lesson-在-Agent-时代的新含义"><a href="#九、The-Bitter-Lesson-在-Agent-时代的新含义" class="headerlink" title="九、The Bitter Lesson 在 Agent 时代的新含义"></a>九、The Bitter Lesson 在 Agent 时代的新含义</h2><p>Rich Sutton 的《The Bitter Lesson》说的是：通用方法 + 算力，长期会战胜手工编码的领域知识。</p>
-<p>到了 Agent 时代，这条经验有了新版本：</p>
-<blockquote>
-<p>模型进步太快，手工写死的 Harness 逻辑随时会过时。</p>
-</blockquote>
-<p>LangChain 的 Open Deep Research Agent 一年内重构三次，Manus 的 Harness 六个月重构五次，Anthropic 也不断从 Claude Code Harness 中剥离过时逻辑。</p>
-<p>这些现象都指向同一个问题：昨天的最佳实践，今天可能变成负担。</p>
-<p>如果 Harness 只能靠人定期重构，它永远追不上模型和用户场景的变化。</p>
-<p>所以真正的解法不是写一个“完美 Harness”，而是构建一个能持续观察、持续验证、持续改进自己的 Harness。</p>
-<p>也就是原文最后那句话：</p>
-<blockquote>
-<p>Build a Harness That Builds Itself.</p>
-</blockquote>
-<hr>
-<h2 id="十、我的判断：Agent-产品的护城河会从模型迁移到运行时"><a href="#十、我的判断：Agent-产品的护城河会从模型迁移到运行时" class="headerlink" title="十、我的判断：Agent 产品的护城河会从模型迁移到运行时"></a>十、我的判断：Agent 产品的护城河会从模型迁移到运行时</h2><p>这篇文章最重要的启发，不是 LobeHub 做了一个 tracing 系统，而是它指出了 AI 产品竞争的下一层。</p>
-<p>过去我们习惯问：</p>
-<ul>
-<li>你接了哪个模型？</li>
-<li>你的上下文多长？</li>
-<li>你的 benchmark 多高？</li>
-</ul>
-<p>接下来更应该问：</p>
-<ul>
-<li>你的 Harness 能不能记录每一次失败？</li>
-<li>你的错误 pattern 能不能自动增长？</li>
-<li>你的 context strategy 能不能根据真实任务优化？</li>
-<li>你的工具 schema 能不能从失败调用中自我修复？</li>
-<li>你的 Agent 成功率能不能随着使用量提高？</li>
-</ul>
-<p>这才是 AI-Native 产品和传统套壳产品的分水岭。</p>
-<p>真正优秀的 Agent 产品，不应该只是“调用模型的前端”，而应该是一套会自我学习的运行时。</p>
-<p>它观察每一次交互，从错误中学习，把失败变成 pattern，把 pattern 变成修复，把修复变成下一次更稳定的体验。</p>
-<p>模型会越来越通用，越来越可替换。</p>
-<p>但一个长期运行、持续积累真实 trajectory、error pattern、context strategy 的 Harness，会越来越难复制。</p>
-<p>这就是 Self-Evolving Harness 的价值：</p>
-<p><strong>不是让 Agent 看起来更聪明，而是让整个系统真的越用越稳。</strong></p>
-<hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li>原文：空谷 Arvin Xu《需要自进化的不是 Agent，而是 Harness》</li>
-<li>LobeHub Agent Tracing：<a href="https://github.com/lobehub/lobehub/tree/canary/packages/agent-tracing">https://github.com/lobehub/lobehub/tree/canary/packages/agent-tracing</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>AI工具</category>
-      </categories>
-      <tags>
-        <tag>AI Agent</tag>
-        <tag>LobeHub</tag>
-        <tag>Harness</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI代码合入哲学：大型基础设施不能只追求生成速度</title>
     <url>/posts/ai-infra-code-merge-philosophy.html</url>
     <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260619170259768-585809877.jpg" style="zoom:33%;" alt="AI代码合入哲学封面图"></p>
@@ -20033,6 +19731,443 @@ FNR = \frac{FN}{TP + FN}
         <tag>风控</tag>
         <tag>高频做市</tag>
         <tag>回测</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>克制：AI时代最稀缺的工程能力</title>
+    <url>/posts/restraint-in-ai-agent-engineering.html</url>
+    <content><![CDATA[<h1 id="克制：AI时代最稀缺的工程能力"><a href="#克制：AI时代最稀缺的工程能力" class="headerlink" title="克制：AI时代最稀缺的工程能力"></a>克制：AI时代最稀缺的工程能力</h1><p>我们习惯把能力理解为“能做什么”。</p>
+<p>模型能调用多少工具，Agent 能并行处理多少任务，团队能发布多少功能，一个人能同时推进多少项目——这些都容易被展示，也容易被衡量。</p>
+<p>但系统复杂到一定程度后，决定结果的往往不是能力清单，而是另一种不那么显眼的东西：<strong>知道什么不做，什么不保留，什么不应该进入主线程。</strong></p>
+<p>这就是克制。</p>
+<p>最近两段内容让我反复想到这个词。</p>
+<p>一段来自网络上流传的梁文锋投资者交流会录音整理稿。在这份未经 DeepSeek 官方确认的材料中，他被记录为：DeepSeek 很聚焦，一些产品即使不完善，也没有急着全部补齐，“也算是一种克制的文化”。另一份整理把这种选择概括为：舍弃一些东西，换取做成 AGI 的概率。</p>
+<p>另一段来自 Martin Fowler 网站上一篇关于多 Agent 编排成本的实践文章，经由 X 用户 @hongming731 整理。作者发现，多 Agent 真正稀缺的并不是并发数，而是主线程保持清晰工作记忆的能力。子 Agent 可以更快地完成局部任务，但如果它们的日志、中间推理和工具输出全部回流主线程，并行带来的收益很快就会被上下文污染抵消。</p>
+<p>一个谈组织战略，一个谈 Agent 工程，看起来相距很远，背后却是同一个问题：</p>
+<blockquote>
+<p><strong>当系统拥有越来越多可能性时，如何拒绝那些“可以做、看起来也有价值”，却会稀释主线的事情？</strong></p>
+</blockquote>
+<h2 id="克制不是少做，而是保护主线"><a href="#克制不是少做，而是保护主线" class="headerlink" title="克制不是少做，而是保护主线"></a>克制不是少做，而是保护主线</h2><p>“克制”容易被理解成保守、节省，甚至是不够有野心。但真正有效的克制恰恰需要足够清楚的野心。</p>
+<p>只有知道自己最终要什么，才能判断哪些机会不属于当前主线。</p>
+<p>按照流传的会议整理稿，DeepSeek 没有把所有产品缺口都补上，也没有因为某个方向能带来用户或收入，就自动把它纳入公司路线。这里的重点不是“不完善”，而是<strong>允许非核心问题暂时保持不完善</strong>。</p>
+<p>这是很反直觉的。组织天然倾向于消灭眼前的不完整：用户提了需求，产品就想补功能；市场出现热点，团队就想跟进；看到竞争对手进入新方向，管理者就担心错过机会。每一项工作单独看都合理，最后却可能形成一种危险状态：每个人都很忙，主线反而越来越模糊。</p>
+<p>因此，克制不是简单地减少工作量，而是为核心目标保留资源、注意力和组织稳定性。</p>
+<p>可以把它理解为一种资源配置原则：</p>
+<ul>
+<li>不是所有问题都要现在解决；</li>
+<li>不是所有机会都要转化为项目；</li>
+<li>不是所有增长都值得用主线交换；</li>
+<li>不是所有局部优化都能提高系统的最终成功率。</li>
+</ul>
+<p>很多时候，真正困难的决策并不是从好选项和坏选项中做选择，而是从多个好选项中，主动放弃大部分。</p>
+<h2 id="多-Agent-的问题，同样不是“能力不够”"><a href="#多-Agent-的问题，同样不是“能力不够”" class="headerlink" title="多 Agent 的问题，同样不是“能力不够”"></a>多 Agent 的问题，同样不是“能力不够”</h2><p>多 Agent 系统也有类似的诱惑。</p>
+<p>既然可以并行，为什么不同时启动更多 Agent？既然运行日志已经存在，为什么不全部拉回来？既然子 Agent 发现了新问题，为什么不顺便继续调查？</p>
+<p>这些选择在局部都说得通。但 Agent 数量增加后，系统面对的主要矛盾会从执行能力不足，转向协调成本上升。</p>
+<p>@hongming731 总结的案例很典型：几个子 Agent 并行后，任务耗时确实从二十多分钟缩短到了约十二分钟。真正的问题不是并行，而是一次普通的进度检查把完整运行记录带回主线程。大量 JSONL、工具输出和中间过程进入上下文后，不会随着那次调用结束而消失，而是继续参与后续推理。</p>
+<p>这揭示了 Token 成本与上下文成本的区别。</p>
+<p>Token 是一次调用的账单；上下文则是之后每一步都要继续背负的工作记忆。即使窗口还没有满，过期结论、重复信息和探索过程也会降低信噪比，让模型更难找到当前真正有效的约束与决策。</p>
+<p>因此，多 Agent 系统需要的不是无止境扩张，而是信息上的克制：</p>
+<ul>
+<li>子 Agent 只接收完成局部任务所需的上下文；</li>
+<li>搜索、试错和重复读取留在子 Agent 内部；</li>
+<li>返回主线程的是结论、证据、修改范围、验证结果、风险和未决问题；</li>
+<li>普通进度查询只返回“运行中、完成、阻塞”等状态；</li>
+<li>只有发生异常时，才按需读取详细日志。</li>
+</ul>
+<p>子 Agent 的价值不只是并行执行，还包括<strong>隔离过程噪声</strong>。如果所有中间信息最终仍无差别地回到主线程，那么所谓多 Agent，不过是把一个上下文混乱的问题放大了几倍。</p>
+<h2 id="认知局部性：不要只按文件拆任务"><a href="#认知局部性：不要只按文件拆任务" class="headerlink" title="认知局部性：不要只按文件拆任务"></a>认知局部性：不要只按文件拆任务</h2><p>文章还提出了一个很有价值的概念：认知局部性。</p>
+<p>两个任务即使修改不同文件，也可能依赖同一套架构知识、测试规范和设计约束。如果把它们拆给两个 Agent，每个 Agent 都要重新阅读相似的代码、建立相似的心智模型，最终再由主线程对齐两份结果。</p>
+<p>表面上是并行，实际上是在重复支付认知成本。</p>
+<p>真正适合并行的任务，应当同时满足两个条件：</p>
+<ol>
+<li><strong>知识边界相对独立</strong>：不需要反复阅读同一批文件，也不会依赖对方尚未得出的关键结论；</li>
+<li><strong>修改范围相对独立</strong>：文件所有权清楚，不会同时改动同一模块或共享状态。</li>
+</ol>
+<p>这和组织中的克制是相通的。好的管理不是把目标拆得越细越好，也不是让更多人同时参与，而是让相关知识尽可能留在同一个局部，让真正独立的工作并行展开。</p>
+<p>拆分的目的应该是降低耦合，而不是增加“正在工作的 Agent 数量”。</p>
+<h2 id="克制也是对共享状态的尊重"><a href="#克制也是对共享状态的尊重" class="headerlink" title="克制也是对共享状态的尊重"></a>克制也是对共享状态的尊重</h2><p>多 Agent 协作中，还有一类风险来自全局操作。</p>
+<p>例如，一个子 Agent 在多人共享的工作区执行 <code>git stash</code>、切换分支或重置仓库。对它自己而言，这可能只是正常操作；对整个系统而言，却会改变所有参与者共享的状态。一次看似局部的动作，可能覆盖另一名 Agent 尚未提交的修改。</p>
+<p>这说明自治必须有边界。</p>
+<p>主线程负责目标、任务边界、文件归属和验收标准；子 Agent 可以自主选择局部搜索与实现路径，但不能随意改变整个仓库的状态。探索自由与全局约束并不冲突，前者依赖后者才能成立。</p>
+<p>组织管理也是如此。克制并不意味着不管理，而是把管理集中在少数真正重要的地方：</p>
+<ul>
+<li>主线是否清楚；</li>
+<li>资源边界是否明确；</li>
+<li>哪些状态不能被局部随意修改；</li>
+<li>结果以什么结构返回；</li>
+<li>什么情况下必须升级为人工决策。</li>
+</ul>
+<p>其余部分则留给局部自主完成。</p>
+<h2 id="不要把一次问题变成永久流程"><a href="#不要把一次问题变成永久流程" class="headerlink" title="不要把一次问题变成永久流程"></a>不要把一次问题变成永久流程</h2><p>我很喜欢多 Agent 案例中的另一个细节。</p>
+<p>作者发现，主线程加载的技能不会自动传递给子 Agent。他最初想增加一道“每次启动前人工确认”的审批流程。继续思考后，他没有把一次信息缺失扩展成长期存在的手续，而是选择在任务描述中明确需要加载的技能和文件位置；只有 Agent 数量过多或文件归属不清时，才要求额外确认。</p>
+<p>这是流程治理中的克制。</p>
+<p>很多制度不是因为问题长期存在而建立，而是因为某次事故令人不安。团队随后增加审批、会议、表格和检查项，却很少再问：我们缺少的究竟是事实说明、边界约束、自动检查，还是确实需要人工决策？</p>
+<p>如果只是信息没有传递，补充信息即可；如果只是边界不清，明确所有权即可；如果机器能够稳定检查，就不必增加永久审批。</p>
+<p>流程不是越严密越好。每增加一道流程，也在增加未来每一次行动的成本。</p>
+<h2 id="从组织到-Agent，克制都在管理“进入主线的资格”"><a href="#从组织到-Agent，克制都在管理“进入主线的资格”" class="headerlink" title="从组织到 Agent，克制都在管理“进入主线的资格”"></a>从组织到 Agent，克制都在管理“进入主线的资格”</h2><p>把两段材料放在一起看，会发现克制并不是某种抽象品格，而是一套具体的准入机制。</p>
+<p>对一家公司来说，它决定：</p>
+<ul>
+<li>哪些机会可以进入战略；</li>
+<li>哪些需求可以进入产品路线；</li>
+<li>哪些短期收益值得消耗长期资源。</li>
+</ul>
+<p>对一个多 Agent 系统来说，它决定：</p>
+<ul>
+<li>哪些任务值得独立委派；</li>
+<li>哪些信息需要进入主上下文；</li>
+<li>哪些局部发现需要升级为全局决策；</li>
+<li>哪些过程只应留在临时上下文中。</li>
+</ul>
+<p>对个人来说，同样如此：</p>
+<ul>
+<li>哪些事情值得成为长期项目；</li>
+<li>哪些输入值得占据注意力；</li>
+<li>哪些“以后可能有用”的信息其实不必保存；</li>
+<li>哪些机会看起来不错，却会让真正重要的事情失去连续性。</li>
+</ul>
+<p>所以，克制不是把自己缩小，而是提高进入主线的门槛。</p>
+<h2 id="克制需要三个前提"><a href="#克制需要三个前提" class="headerlink" title="克制需要三个前提"></a>克制需要三个前提</h2><p>克制听起来简单，实践起来却很难，因为它至少依赖三个前提。</p>
+<h3 id="第一，必须有足够清楚的目标"><a href="#第一，必须有足够清楚的目标" class="headerlink" title="第一，必须有足够清楚的目标"></a>第一，必须有足够清楚的目标</h3><p>没有主线时，拒绝只是随意取舍；只有目标清楚，克制才是战略。</p>
+<p>DeepSeek 的讨论之所以有意义，是因为材料中反复出现 AGI 这条长期主线。多 Agent 编排也一样：如果主线程自己都不知道最终要交付什么，就不可能判断哪些上下文是噪声。</p>
+<h3 id="第二，必须承认注意力和协调能力有限"><a href="#第二，必须承认注意力和协调能力有限" class="headerlink" title="第二，必须承认注意力和协调能力有限"></a>第二，必须承认注意力和协调能力有限</h3><p>更多 Agent、更多信息、更多流程并不免费。它们会消耗审阅、同步、检索和决策能力。</p>
+<p>一个系统的上限不只取决于它能启动多少执行单元，也取决于它能否维持一条稳定的决策链。</p>
+<h3 id="第三，必须能够承受局部的不完美"><a href="#第三，必须能够承受局部的不完美" class="headerlink" title="第三，必须能够承受局部的不完美"></a>第三，必须能够承受局部的不完美</h3><p>克制最难的部分，是允许一些事情暂时没有解决。</p>
+<p>产品可以有缺口，文档可以稍后补充，子 Agent 的所有探索过程不必被主线程完整看见。只要关键风险受控、结果可验证，局部的不完整往往比主线被持续打断更健康。</p>
+<h2 id="一套可以执行的克制原则"><a href="#一套可以执行的克制原则" class="headerlink" title="一套可以执行的克制原则"></a>一套可以执行的克制原则</h2><p>如果把这篇文章压缩成可执行的规则，我会保留以下几点：</p>
+<ol>
+<li><strong>每个阶段只保留一条明确主线。</strong> 新任务必须说明它如何提高主线成功率。</li>
+<li><strong>不把所有“可以做”自动变成“应该做”。</strong> 机会、问题和需求都需要准入条件。</li>
+<li><strong>按认知边界拆任务，而不是机械地按文件或步骤拆分。</strong></li>
+<li><strong>探索过程留在局部，关键结果结构化返回。</strong></li>
+<li><strong>全局状态由主线程控制。</strong> 并发执行者不得擅自改变共享仓库和关键配置。</li>
+<li><strong>先修正信息与边界，再考虑增加审批。</strong> 不让一次问题永久增加组织摩擦。</li>
+<li><strong>定期删除过期信息和失效规则。</strong> 工作记忆的质量不仅来自写入，也来自遗忘。</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>AI 时代最容易获得的是更多：更多模型、更多 Agent、更多工具、更多上下文，以及更多随时可以启动的项目。</p>
+<p>真正稀缺的是选择。</p>
+<p>组织的克制，是不把所有能做的事情都变成业务；Agent 的克制，是不把所有产生的信息都带回主线程；个人的克制，是不让每一个看起来不错的机会都获得长期注意力。</p>
+<p><strong>能力决定你能走多快，克制决定你是否还走在原来的方向上。</strong></p>
+<p>当系统越来越强，克制不会变得过时。相反，它会从一种个人品质，逐渐变成组织设计、Agent 工程和长期决策中最核心的基础设施。</p>
+<h2 id="参考资料与说明"><a href="#参考资料与说明" class="headerlink" title="参考资料与说明"></a>参考资料与说明</h2><ul>
+<li><a href="https://x.com/hongming731/status/2082281912060833854">多 Agent 协作中，真正稀缺的是主线程的工作记忆</a></li>
+<li><a href="https://x.com/_FORAB/status/2080135853620576761">梁文锋交流会内容摘录：聚焦、产品取舍与上下文问题</a></li>
+<li><a href="https://x.com/yaojingang/status/2080087307320000733">梁文锋交流会整理：克制、AGI 路线与开源</a></li>
+<li><a href="https://www7.ftchinese.com/story/001110446">FT中文网：梁文锋不是情怀，而是这个时代最精密的商业理性</a></li>
+</ul>
+<blockquote>
+<p>注：文中涉及梁文锋投资者交流会的内容，来自2026年7月网络流传的录音及转录整理，DeepSeek 尚未公开确认其真实性与完整性。本文仅在明确限定来源的前提下讨论其中呈现的思想，不将整理者概括视为正式公开演讲原文。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>AI工程</category>
+      </categories>
+      <tags>
+        <tag>方法论</tag>
+        <tag>Agent</tag>
+        <tag>上下文</tag>
+        <tag>AI工程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</title>
+    <url>/posts/self-evolving-harness-lobehub-agent-runtime-2026.html</url>
+    <content><![CDATA[<h1 id="需要自进化的不是-Agent，而是-Harness：LobeHub-的-Self-Evolving-Runtime-实践"><a href="#需要自进化的不是-Agent，而是-Harness：LobeHub-的-Self-Evolving-Runtime-实践" class="headerlink" title="需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践"></a>需要自进化的不是 Agent，而是 Harness：LobeHub 的 Self-Evolving Runtime 实践</h1><p>过去一年，AI Agent 圈子里最容易被高估的是“模型又强了多少”，最容易被低估的是：<strong>真正决定产品稳定性的，往往不是模型，而是包在模型外面的 Harness。</strong></p>
+<p>单独的模型已经不再是完整产品。真正被用户感知到的产品，是：</p>
+<blockquote>
+<p>模型 + 工具 + 上下文 + 权限 + 环境 + 错误恢复机制。</p>
+</blockquote>
+<p>这套把模型组织起来、让它能稳定完成任务的运行时，才是 Agent 产品的核心。LobeHub 最近这篇关于 <strong>Self-Evolving Harness</strong> 的文章，讲的正是这个变化：</p>
+<p><strong>未来需要自进化的不是单个 Agent，而是承载 Agent 的 Harness。</strong></p>
+<p>本文试着把原文的工程逻辑拆开讲清楚：为什么 Harness 会成为 AI-Native 产品的新护城河？为什么 Tracing 是自进化的起点？以及 LobeHub 的 Error Pattern 自动巡检为什么是一个很值得关注的生产案例。</p>
+<div style="text-align:center;">
+<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527223243205-541295227.png" style="zoom:33%;" alt="Self-Evolving Harness 博客封面图">
+</div>
+
+<hr>
+<h2 id="一、模型越来越强，为什么产品体验没有同比变强？"><a href="#一、模型越来越强，为什么产品体验没有同比变强？" class="headerlink" title="一、模型越来越强，为什么产品体验没有同比变强？"></a>一、模型越来越强，为什么产品体验没有同比变强？</h2><p>早期 AI 产品的竞争，主要是模型能力竞争。</p>
+<p>谁的 benchmark 更高，谁的上下文更长，谁的推理更快，谁就更容易获得体验优势。但到了 2026 年，这种优势开始边际递减。</p>
+<p>在很多真实任务里，用户感受到的差异已经不再只是“模型聪不聪明”，而是：</p>
+<ul>
+<li>它能不能记住任务约束？</li>
+<li>它能不能在第 50 步工具调用后仍然不跑偏？</li>
+<li>它能不能在工具失败后正确恢复，而不是编造结果？</li>
+<li>它能不能识别哪些错误该展示给用户，哪些错误应该系统内部消化？</li>
+<li>它能不能根据不同模型、不同 provider、不同环境自动调整执行策略？</li>
+</ul>
+<p>这就是 Phil Schmid 提到的 <strong>Durability</strong> 问题：模型在长链路、多工具、复杂环境中到底能坚持多久。</p>
+<p>一个模型在榜单上领先 1%，并不能保证它在真实 Agent 任务里不会误删文件、忘记权限边界、丢失上下文，或者把上游 API 报错解释成“任务完成”。</p>
+<p>所以，模型能力只是底座。真正把能力转化为稳定体验的，是 Harness。</p>
+<hr>
+<h2 id="二、什么是-Agent-Harness？"><a href="#二、什么是-Agent-Harness？" class="headerlink" title="二、什么是 Agent Harness？"></a>二、什么是 Agent Harness？</h2><p>如果把大模型看作 CPU，把上下文窗口看作 RAM，那么 <strong>Agent Harness 更像操作系统</strong>。</p>
+<p>它不等于 Agent 本身，却决定 Agent 能不能跑起来、跑多久、跑得稳不稳。</p>
+<p>一个成熟的 Harness 至少要处理这些事情：</p>
+<ul>
+<li><strong>Model Runtime</strong>：适配 OpenAI、Anthropic、DeepSeek、Gemini、MiniMax、Kimi 等不同模型和 provider</li>
+<li><strong>Agent Runtime</strong>：管理 Agent 的 step loop、工具调用、状态机、生命周期</li>
+<li><strong>Context Engine</strong>：决定哪些上下文应该进入窗口，哪些应该压缩，哪些应该从历史恢复</li>
+<li><strong>Environment</strong>：支持 Page、Task、Group、IM、CLI、浏览器等不同执行环境</li>
+<li><strong>Tool Orchestration</strong>：设计工具 schema，决定何时调用、失败后是否重试、如何重试</li>
+<li><strong>Error Handling</strong>：识别错误类型，区分用户侧问题和系统侧问题</li>
+<li><strong>Permission Boundary</strong>：限制危险操作，管理外部副作用和用户确认</li>
+</ul>
+<p>模型像发动机，Harness 像整辆车的传动、刹车、仪表盘和自动驾驶系统。</p>
+<p>发动机再猛，如果刹车不稳、仪表盘不准、导航乱跳，用户也不会觉得这辆车好开。</p>
+<div style="text-align:center;">
+<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527203254977-1778900783.png" style="zoom:40%;" alt="Agent Harness 运行时架构示意图">
+</div>
+
+<hr>
+<h2 id="三、Harness-为什么必须是“活的”？"><a href="#三、Harness-为什么必须是“活的”？" class="headerlink" title="三、Harness 为什么必须是“活的”？"></a>三、Harness 为什么必须是“活的”？</h2><p>传统软件里的运行时大多是静态的：工程师写好逻辑，用户使用，出了问题再修。</p>
+<p>但 Agent Harness 面对的是一个高速变化的环境：</p>
+<ul>
+<li>模型接口会变</li>
+<li>provider 错误格式会变</li>
+<li>工具 schema 会变</li>
+<li>用户任务会变</li>
+<li>上下文策略会过时</li>
+<li>reasoning / thinking 字段的行为会变化</li>
+<li>某个只在小流量下偶发的错误，会在用户增长后变成主要故障来源</li>
+</ul>
+<p>如果每一次变化都靠工程师手动发现、分类、修复，这套系统会越来越难维护。</p>
+<p>更麻烦的是，很多问题不是设计阶段能想出来的，而是只有在真实运行里才会暴露。</p>
+<p>比如：</p>
+<ul>
+<li>某个 provider 在余额不足时返回了非标准错误</li>
+<li>某个模型在 thinking mode 下丢了 reasoning_content</li>
+<li>某个工具 schema 对某类参数兼容性不好</li>
+<li>某个 context window 策略在长任务里把关键约束压没了</li>
+<li>某类用户任务经常在第 N 步触发同一种失败</li>
+</ul>
+<p>这些都是运行数据里长出来的问题。</p>
+<p>因此，Harness 不能只是被动执行环境。它需要能观察自己、理解自己、修复自己。</p>
+<p>这就是 Self-Evolving Harness 的核心：</p>
+<blockquote>
+<p>进化的对象不是模型，而是模型外面的运行时系统。</p>
+</blockquote>
+<pre class="mermaid">flowchart TD
+    A[模型接口变化] --&gt; E[Harness 持续过时]
+    B[工具 schema 变化] --&gt; E
+    C[用户任务变化] --&gt; E
+    D[错误模式变化] --&gt; E
+    E --&gt; F[Tracing 记录真实执行]
+    F --&gt; G[识别失败模式]
+    G --&gt; H[更新上下文策略 / 工具编排 / 错误处理]
+    H --&gt; I[运行时变得更稳定]
+    I --&gt; F</pre>
+
+<hr>
+<h2 id="四、自进化的前提：Tracing-必须是一等公民"><a href="#四、自进化的前提：Tracing-必须是一等公民" class="headerlink" title="四、自进化的前提：Tracing 必须是一等公民"></a>四、自进化的前提：Tracing 必须是一等公民</h2><p>要让 Harness 自我改进，第一步不是让 Agent 自动写代码，而是让系统知道刚才到底发生了什么。</p>
+<p>也就是：<strong>Tracing。</strong></p>
+<p>每一次 Agent 执行，都应该留下完整记录：</p>
+<ul>
+<li>调用了哪个模型？</li>
+<li>每次 LLM 请求用了多少 token？</li>
+<li>花了多少钱？</li>
+<li>每一步是模型调用还是工具调用？</li>
+<li>每一步耗时多久？</li>
+<li>总共走了多少步？</li>
+<li>哪一步失败了？</li>
+<li>错误类型是什么？</li>
+<li>当时的上下文是什么？</li>
+<li>cache 命中率如何？</li>
+<li>工具输入输出是什么？</li>
+</ul>
+<p>没有这些数据，所谓 Self-Evolution 就只是口号。</p>
+<p>原文里有个判断很关键：行业里很多 Agent Framework 都在说 tracing 难做，不是因为大家不会用 OpenTelemetry，而是因为大多数 runtime 一开始就没有把 observability 当作一等公民。</p>
+<p>典型问题是：Tracing 是后加的。</p>
+<ul>
+<li>LangChain：callback 是可选的，忘了注册就没有 trace</li>
+<li>CrewAI：事件监听器挂在事件总线上，事件丢失 trace 就断</li>
+<li>OpenAI Agents SDK：需要显式创建 trace，不会天然传播</li>
+<li>AG2：middleware 是可选安装，不装就没有 tracing</li>
+</ul>
+<p>这种架构下，trace 像外挂，不像系统血液。</p>
+<p>LobeHub 的做法则是把 Agent Runtime 设计成状态机，按“单步执行”原则拆成细粒度 step。每个 step 天然就是一个 trace event。</p>
+<p>换句话说：</p>
+<blockquote>
+<p>Tracing 不是执行之后补一份日志，而是执行过程本身的副产品。</p>
+</blockquote>
+<p>这点非常重要。只有 trace 足够完整、稳定、可回放，后面的自动归因、自动修复、自动优化才有意义。</p>
+<pre class="mermaid">flowchart LR
+    U[用户任务] --&gt; R[Agent Runtime]
+    R --&gt; S1[Step 1: LLM 调用]
+    R --&gt; S2[Step 2: Tool 调用]
+    R --&gt; S3[Step 3: Context 更新]
+    R --&gt; S4[Step N: 错误或完成]
+    S1 --&gt; T[Trace Event]
+    S2 --&gt; T
+    S3 --&gt; T
+    S4 --&gt; T
+    T --&gt; ES[Execution Snapshot]
+    ES --&gt; A[回放 / 归因 / 对比 / 优化]</pre>
+
+<hr>
+<h2 id="五、Trace-是-Harness-的黑匣子"><a href="#五、Trace-是-Harness-的黑匣子" class="headerlink" title="五、Trace 是 Harness 的黑匣子"></a>五、Trace 是 Harness 的黑匣子</h2><p>飞机出事故后，黑匣子不直接修飞机，但它能告诉你事故发生前到底经历了什么。</p>
+<p>Agent Harness 也是一样。</p>
+<p>一次失败任务如果只留下一句“调用失败”，工程师或者 Agent 都很难分析。但如果它保留了完整 Execution Snapshot，就能回放出：</p>
+<ul>
+<li>哪个 provider 出错</li>
+<li>是用户 API Key 问题，还是上游服务问题</li>
+<li>是 schema 不兼容，还是上下文溢出</li>
+<li>是模型 hallucination，还是工具返回异常</li>
+<li>是某一步重试策略不合理，还是错误提示对用户不友好</li>
+</ul>
+<p>这时，错误就不再是噪音，而是训练 Harness 的原料。</p>
+<p>原文把这点讲得很清楚：Trace 本身不解决问题，但它让问题第一次变得可以回放、归因和比较。</p>
+<p>对 AI-Native 产品来说，这可能是比单次模型调用更重要的数据资产。</p>
+<hr>
+<h2 id="六、生产案例：Error-Pattern-自动巡检"><a href="#六、生产案例：Error-Pattern-自动巡检" class="headerlink" title="六、生产案例：Error Pattern 自动巡检"></a>六、生产案例：Error Pattern 自动巡检</h2><p>LobeHub 的 Error Pattern 自动巡检，是 Self-Evolving Harness 最具体的落地案例。</p>
+<p>它的背景是：LobeHub Model Runtime 接入了 70 多个 AI Providers，每天承接大量 Agent 运行。每次模型调用失败，系统都会留下错误记录。</p>
+<p>这些错误大致可以分为两类。</p>
+<p>第一类是用户侧错误：</p>
+<ul>
+<li>API Key 过期</li>
+<li>余额不足</li>
+<li>触发速率限制</li>
+<li>权限不足</li>
+</ul>
+<p>第二类是 Harness 自身问题：</p>
+<ul>
+<li>Tool schema 不兼容</li>
+<li>负数 max_tokens</li>
+<li>DeepSeek reasoning_content 丢失</li>
+<li>Context Window 过载</li>
+<li>thinking mode 元数据处理异常</li>
+</ul>
+<p>传统做法是人定期看后台，人工分类，再手动修复。</p>
+<p>但在高频 Agent 系统里，这个办法很快失效。错误产生速度高于人工分类速度，未归类错误会不断堆积，用户看到的就是陌生、难懂、无法处理的报错。</p>
+<p>LobeHub 的做法是把失败 trace 的查询权限开放给 Agent，让 Agent 批量解析 tracing 数据：</p>
+<ol>
+<li>从后台拉取最近 error records</li>
+<li>按 provider、errorType、status code、message 多维分桶</li>
+<li>对照已有 ERROR_PATTERNS，找出未覆盖的新错误模式</li>
+<li>区分用户侧错误和 Harness 自身 bug</li>
+<li>对用户侧错误，自动更新匹配 Pattern</li>
+<li>commit、push、开 PR</li>
+<li>清理 Dashboard 中已被新 pattern 覆盖的历史噪音</li>
+<li>对 Harness 自身 bug，继续根因分析并创建修复任务</li>
+</ol>
+<p>这套机制已经运行了九轮，结果很有代表性：</p>
+<ul>
+<li>累计 Pattern 从 31 增长到 104 后趋于平稳</li>
+<li>新增 Pattern 从 31 持续下降到 0</li>
+<li>即使 error 日志量在 334 到 1158 之间波动，Pattern 库仍然趋于饱和</li>
+<li>Agent 自主发现了 20+ 个 Harness 自身缺陷</li>
+<li>Agent 成功率从早期约 75% 提升到 95% 以上</li>
+</ul>
+<p>这说明一件事：<strong>Harness 的错误认知能力可以随着使用增长而增长。</strong></p>
+<p>产品不是只在版本发布时变好，而是在每天的运行中变好。</p>
+<div style="text-align:center;">
+<img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260527203430006-1832913588.png" style="zoom:40%;" alt="Error Pattern 自动巡检闭环示意图">
+</div>
+
+<hr>
+<h2 id="七、Harness-自进化的四个层次"><a href="#七、Harness-自进化的四个层次" class="headerlink" title="七、Harness 自进化的四个层次"></a>七、Harness 自进化的四个层次</h2><p>原文把 Harness 自进化理解成一个连续谱，而不是一步到位的“完全自动”。</p>
+<pre class="mermaid">flowchart LR
+    L1[L1 纯人工<br>人发现 / 人分析 / 人修复]
+    L2[L2 Agent 辅助<br>Agent 整理线索<br>人确认修复]
+    L3[L3 Agent 主导<br>采集 / 识别 / 修复 / PR / 验证]
+    L4[L4 Harness 主动优化<br>持续观察 / 提出修复 / 回归验证]
+    L1 --&gt; L2 --&gt; L3 --&gt; L4</pre>
+
+<h3 id="L1：纯人工"><a href="#L1：纯人工" class="headerlink" title="L1：纯人工"></a>L1：纯人工</h3><p>人发现问题，人分析问题，人修复问题。</p>
+<p>这是传统软件维护方式。可靠，但慢，且很难适应高频 Agent 执行环境。</p>
+<h3 id="L2：Agent-辅助"><a href="#L2：Agent-辅助" class="headerlink" title="L2：Agent 辅助"></a>L2：Agent 辅助</h3><p>Agent 帮人找可疑问题、整理日志、给出修复建议。</p>
+<p>人负责确认，再让 Agent 执行部分修复。</p>
+<h3 id="L3：Agent-主导"><a href="#L3：Agent-主导" class="headerlink" title="L3：Agent 主导"></a>L3：Agent 主导</h3><p>Agent 可以完成大部分流程：</p>
+<ul>
+<li>采集数据</li>
+<li>识别模式</li>
+<li>修改代码</li>
+<li>提交 PR</li>
+<li>跑验证</li>
+<li>清理历史噪音</li>
+</ul>
+<p>人仍然保留关键判断，比如根因归属、修复方向、是否影响用户体验。</p>
+<p>LobeHub 的 Error Pattern 巡检大致就在 L3。</p>
+<h3 id="L4：Harness-主动优化自己"><a href="#L4：Harness-主动优化自己" class="headerlink" title="L4：Harness 主动优化自己"></a>L4：Harness 主动优化自己</h3><p>更完整的形态是：Harness 持续观察自己的运行状态，发现可改进点，提出修复，经过人确认后执行并验证。</p>
+<p>未来它不只是处理错误，还能主动优化：</p>
+<ul>
+<li>Context Engine 策略</li>
+<li>Tool schema 兼容层</li>
+<li>provider 适配规则</li>
+<li>Prompt 和执行策略</li>
+<li>失败任务的 eval / replay / regression 流程</li>
+</ul>
+<p>人不需要盯每一条日志，而是设定目标、审查边界、处理少数高风险决策。</p>
+<hr>
+<h2 id="八、为什么-Consumer-AI-Product-天然更适合-Self-Evolving？"><a href="#八、为什么-Consumer-AI-Product-天然更适合-Self-Evolving？" class="headerlink" title="八、为什么 Consumer AI Product 天然更适合 Self-Evolving？"></a>八、为什么 Consumer AI Product 天然更适合 Self-Evolving？</h2><p>这篇文章里一个比较尖锐的观点是：<strong>Consumer-Aimed Product 天然拥有信号密度优势。</strong></p>
+<p>自部署方案，比如 OpenClaw、Hermes 这类本地运行的助手，技术上可以很强，但它们天然有一个瓶颈：每个用户每天的 Agent 执行可能只有几条到几十条，而且数据分散在本地，应用开发方拿不到完整错误信号。</p>
+<p>这意味着：</p>
+<ul>
+<li>错误样本稀疏</li>
+<li>pattern 验证周期长</li>
+<li>很难知道某个修复是否真的覆盖了高频问题</li>
+<li>难以形成全局运行时优化闭环</li>
+</ul>
+<p>而面向消费者的云产品不同。</p>
+<p>以 LobeHub 为例，每天有上万次 Agent 执行，Error 样本按分钟级积累。一个 Harness bug 上午触发，中午被巡检发现，下午就可能修复上线。</p>
+<p>反馈闭环越快，Harness 进化速度越快。</p>
+<p>这会带来一种新的护城河：</p>
+<blockquote>
+<p>模型是外部的、通用的、可替换的；Harness 中沉淀的上下文、pattern、trajectory，才是产品内部长期积累的数据资产。</p>
+</blockquote>
+<p>传统 SaaS 的产品逻辑是：功能代码 + 用户数据。</p>
+<p>AI-Native 产品的逻辑则更像：</p>
+<blockquote>
+<p>Harness + 用户交互数据 + 进化能力。</p>
+</blockquote>
+<p>用户每一次使用，不只是消费产品，也在为产品提供进化信号。</p>
+<hr>
+<h2 id="九、The-Bitter-Lesson-在-Agent-时代的新含义"><a href="#九、The-Bitter-Lesson-在-Agent-时代的新含义" class="headerlink" title="九、The Bitter Lesson 在 Agent 时代的新含义"></a>九、The Bitter Lesson 在 Agent 时代的新含义</h2><p>Rich Sutton 的《The Bitter Lesson》说的是：通用方法 + 算力，长期会战胜手工编码的领域知识。</p>
+<p>到了 Agent 时代，这条经验有了新版本：</p>
+<blockquote>
+<p>模型进步太快，手工写死的 Harness 逻辑随时会过时。</p>
+</blockquote>
+<p>LangChain 的 Open Deep Research Agent 一年内重构三次，Manus 的 Harness 六个月重构五次，Anthropic 也不断从 Claude Code Harness 中剥离过时逻辑。</p>
+<p>这些现象都指向同一个问题：昨天的最佳实践，今天可能变成负担。</p>
+<p>如果 Harness 只能靠人定期重构，它永远追不上模型和用户场景的变化。</p>
+<p>所以真正的解法不是写一个“完美 Harness”，而是构建一个能持续观察、持续验证、持续改进自己的 Harness。</p>
+<p>也就是原文最后那句话：</p>
+<blockquote>
+<p>Build a Harness That Builds Itself.</p>
+</blockquote>
+<hr>
+<h2 id="十、我的判断：Agent-产品的护城河会从模型迁移到运行时"><a href="#十、我的判断：Agent-产品的护城河会从模型迁移到运行时" class="headerlink" title="十、我的判断：Agent 产品的护城河会从模型迁移到运行时"></a>十、我的判断：Agent 产品的护城河会从模型迁移到运行时</h2><p>这篇文章最重要的启发，不是 LobeHub 做了一个 tracing 系统，而是它指出了 AI 产品竞争的下一层。</p>
+<p>过去我们习惯问：</p>
+<ul>
+<li>你接了哪个模型？</li>
+<li>你的上下文多长？</li>
+<li>你的 benchmark 多高？</li>
+</ul>
+<p>接下来更应该问：</p>
+<ul>
+<li>你的 Harness 能不能记录每一次失败？</li>
+<li>你的错误 pattern 能不能自动增长？</li>
+<li>你的 context strategy 能不能根据真实任务优化？</li>
+<li>你的工具 schema 能不能从失败调用中自我修复？</li>
+<li>你的 Agent 成功率能不能随着使用量提高？</li>
+</ul>
+<p>这才是 AI-Native 产品和传统套壳产品的分水岭。</p>
+<p>真正优秀的 Agent 产品，不应该只是“调用模型的前端”，而应该是一套会自我学习的运行时。</p>
+<p>它观察每一次交互，从错误中学习，把失败变成 pattern，把 pattern 变成修复，把修复变成下一次更稳定的体验。</p>
+<p>模型会越来越通用，越来越可替换。</p>
+<p>但一个长期运行、持续积累真实 trajectory、error pattern、context strategy 的 Harness，会越来越难复制。</p>
+<p>这就是 Self-Evolving Harness 的价值：</p>
+<p><strong>不是让 Agent 看起来更聪明，而是让整个系统真的越用越稳。</strong></p>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>原文：空谷 Arvin Xu《需要自进化的不是 Agent，而是 Harness》</li>
+<li>LobeHub Agent Tracing：<a href="https://github.com/lobehub/lobehub/tree/canary/packages/agent-tracing">https://github.com/lobehub/lobehub/tree/canary/packages/agent-tracing</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>AI工具</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>LobeHub</tag>
+        <tag>Harness</tag>
       </tags>
   </entry>
 </search>

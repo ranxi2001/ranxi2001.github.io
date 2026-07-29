@@ -8,7 +8,7 @@
     <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
     <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
     <meta charset="utf-8">
-    <meta name="keywords" content="StepOneAi, 量化交易, 高频做市, 回测, 延迟模型, 策略衰减, 风险管理, 市场微观结构">
+    <meta name="keywords" content="克制, 梁文锋, DeepSeek, 多Agent, AI Agent, 上下文工程, 工作记忆, 组织管理">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从模型到实盘：StepOneAi 量化心得整理 | 孤飞的博客</title>
+    <title>克制：AI时代最稀缺的工程能力 | 孤飞的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -293,12 +293,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729111901129-1969739172.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729223027933-83321720.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从模型到实盘：StepOneAi 量化心得整理</h1>
+                    <h1 class="description center-align post-title">克制：AI时代最稀缺的工程能力</h1>
                 </div>
             </div>
         </div>
@@ -900,20 +900,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/">
-                                <span class="chip bg-color">量化交易</span>
+                            <a href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/">
+                                <span class="chip bg-color">方法论</span>
                             </a>
                         
-                            <a href="/tags/%E9%A3%8E%E6%8E%A7/">
-                                <span class="chip bg-color">风控</span>
+                            <a href="/tags/Agent/">
+                                <span class="chip bg-color">Agent</span>
                             </a>
                         
-                            <a href="/tags/%E9%AB%98%E9%A2%91%E5%81%9A%E5%B8%82/">
-                                <span class="chip bg-color">高频做市</span>
+                            <a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">
+                                <span class="chip bg-color">上下文</span>
                             </a>
                         
-                            <a href="/tags/%E5%9B%9E%E6%B5%8B/">
-                                <span class="chip bg-color">回测</span>
+                            <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">AI工程</span>
                             </a>
                         
                     </div>
@@ -924,8 +924,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" class="post-category">
-                                量化交易
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                AI工程
                             </a>
                         
                     </div>
@@ -946,14 +946,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    11 分
                 </div>
                 
 
@@ -971,148 +971,126 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="从模型到实盘：StepOneAi-量化心得整理"><a href="#从模型到实盘：StepOneAi-量化心得整理" class="headerlink" title="从模型到实盘：StepOneAi 量化心得整理"></a>从模型到实盘：StepOneAi 量化心得整理</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729111901129-1969739172.jpg" style="zoom:33%;" alt="量化实盘方法论封面图"></p>
-<p>量化交易最容易被误解的地方，是人们常把注意力放在模型、因子和收益曲线上，却低估了数据性质、成交假设、系统延迟、风险边界与团队协作的重要性。</p>
-<p>2026 年 7 月，X 用户 <a href="https://x.com/StepOneAi">@StepOneAi</a> 连续发布了一组量化实战心得。内容从“复杂模型为什么容易过拟合”一路延伸到高频做市、策略衰减、研究能力、团队形成、回测撮合和延迟分布。本文不按推文顺序简单拼接，而是把这些观点重新组织为一套从研究假设走向实盘验证的方法框架。</p>
+                <h1 id="克制：AI时代最稀缺的工程能力"><a href="#克制：AI时代最稀缺的工程能力" class="headerlink" title="克制：AI时代最稀缺的工程能力"></a>克制：AI时代最稀缺的工程能力</h1><p>我们习惯把能力理解为“能做什么”。</p>
+<p>模型能调用多少工具，Agent 能并行处理多少任务，团队能发布多少功能，一个人能同时推进多少项目——这些都容易被展示，也容易被衡量。</p>
+<p>但系统复杂到一定程度后，决定结果的往往不是能力清单，而是另一种不那么显眼的东西：<strong>知道什么不做，什么不保留，什么不应该进入主线程。</strong></p>
+<p>这就是克制。</p>
+<p>最近两段内容让我反复想到这个词。</p>
+<p>一段来自网络上流传的梁文锋投资者交流会录音整理稿。在这份未经 DeepSeek 官方确认的材料中，他被记录为：DeepSeek 很聚焦，一些产品即使不完善，也没有急着全部补齐，“也算是一种克制的文化”。另一份整理把这种选择概括为：舍弃一些东西，换取做成 AGI 的概率。</p>
+<p>另一段来自 Martin Fowler 网站上一篇关于多 Agent 编排成本的实践文章，经由 X 用户 @hongming731 整理。作者发现，多 Agent 真正稀缺的并不是并发数，而是主线程保持清晰工作记忆的能力。子 Agent 可以更快地完成局部任务，但如果它们的日志、中间推理和工具输出全部回流主线程，并行带来的收益很快就会被上下文污染抵消。</p>
+<p>一个谈组织战略，一个谈 Agent 工程，看起来相距很远，背后却是同一个问题：</p>
 <blockquote>
-<p>说明：本文是对公开推文的主题化整理与分析，并非投资建议。推文中的收益、频率、生命周期和延迟数据来自作者经验描述，不能直接外推到其他团队、市场或交易所。</p>
+<p><strong>当系统拥有越来越多可能性时，如何拒绝那些“可以做、看起来也有价值”，却会稀释主线的事情？</strong></p>
 </blockquote>
-<h2 id="一、先理解金融数据，而不是先追求复杂模型"><a href="#一、先理解金融数据，而不是先追求复杂模型" class="headerlink" title="一、先理解金融数据，而不是先追求复杂模型"></a>一、先理解金融数据，而不是先追求复杂模型</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125040690-1611220579.png" style="zoom:50%;" alt="Onefly 鹰从市场噪声中筛选稳健信号并送入样本外验证"></p>
-<p>很多量化研究者会从技术工具出发：因子表现不够好，就继续增加特征、模型层数和搜索空间。XGBoost、LSTM、Transformer 都可能被搬进同一条研究流水线，直到回测曲线足够平滑。</p>
-<p>问题在于，<strong>模型容量越大，并不意味着可交易信息越多</strong>。</p>
-<p>金融数据通常同时具备两个不利性质：</p>
+<h2 id="克制不是少做，而是保护主线"><a href="#克制不是少做，而是保护主线" class="headerlink" title="克制不是少做，而是保护主线"></a>克制不是少做，而是保护主线</h2><p>“克制”容易被理解成保守、节省，甚至是不够有野心。但真正有效的克制恰恰需要足够清楚的野心。</p>
+<p>只有知道自己最终要什么，才能判断哪些机会不属于当前主线。</p>
+<p>按照流传的会议整理稿，DeepSeek 没有把所有产品缺口都补上，也没有因为某个方向能带来用户或收入，就自动把它纳入公司路线。这里的重点不是“不完善”，而是<strong>允许非核心问题暂时保持不完善</strong>。</p>
+<p>这是很反直觉的。组织天然倾向于消灭眼前的不完整：用户提了需求，产品就想补功能；市场出现热点，团队就想跟进；看到竞争对手进入新方向，管理者就担心错过机会。每一项工作单独看都合理，最后却可能形成一种危险状态：每个人都很忙，主线反而越来越模糊。</p>
+<p>因此，克制不是简单地减少工作量，而是为核心目标保留资源、注意力和组织稳定性。</p>
+<p>可以把它理解为一种资源配置原则：</p>
 <ul>
-<li><strong>信噪比低</strong>：绝大多数短期波动来自随机扰动和参与者博弈，真正稳定的 Alpha 很弱；</li>
-<li><strong>非平稳</strong>：宏观环境、市场参与者、交易规则和微观结构都在变化，历史规律可能随时失效。</li>
+<li>不是所有问题都要现在解决；</li>
+<li>不是所有机会都要转化为项目；</li>
+<li>不是所有增长都值得用主线交换；</li>
+<li>不是所有局部优化都能提高系统的最终成功率。</li>
 </ul>
-<p>高容量模型很容易记住历史样本中的偶然波动。在样本内，这会表现为更高的夏普和更低的回撤；进入样本外或真实市场后，模型却可能因为市场状态变化而迅速失效。</p>
-<p>这并不意味着机器学习不能用于金融，而是意味着<strong>复杂度必须由样本规模、信号强度、验证方式和部署约束共同决定</strong>。对低信噪比任务，简单的线性模型、横截面排序、少量固定阈值甚至等权配置，往往更容易解释，也更能承受未知行情。</p>
-<p>可以把研究目标从“把历史拟合得更好”改为三个问题：</p>
+<p>很多时候，真正困难的决策并不是从好选项和坏选项中做选择，而是从多个好选项中，主动放弃大部分。</p>
+<h2 id="多-Agent-的问题，同样不是“能力不够”"><a href="#多-Agent-的问题，同样不是“能力不够”" class="headerlink" title="多 Agent 的问题，同样不是“能力不够”"></a>多 Agent 的问题，同样不是“能力不够”</h2><p>多 Agent 系统也有类似的诱惑。</p>
+<p>既然可以并行，为什么不同时启动更多 Agent？既然运行日志已经存在，为什么不全部拉回来？既然子 Agent 发现了新问题，为什么不顺便继续调查？</p>
+<p>这些选择在局部都说得通。但 Agent 数量增加后，系统面对的主要矛盾会从执行能力不足，转向协调成本上升。</p>
+<p>@hongming731 总结的案例很典型：几个子 Agent 并行后，任务耗时确实从二十多分钟缩短到了约十二分钟。真正的问题不是并行，而是一次普通的进度检查把完整运行记录带回主线程。大量 JSONL、工具输出和中间过程进入上下文后，不会随着那次调用结束而消失，而是继续参与后续推理。</p>
+<p>这揭示了 Token 成本与上下文成本的区别。</p>
+<p>Token 是一次调用的账单；上下文则是之后每一步都要继续背负的工作记忆。即使窗口还没有满，过期结论、重复信息和探索过程也会降低信噪比，让模型更难找到当前真正有效的约束与决策。</p>
+<p>因此，多 Agent 系统需要的不是无止境扩张，而是信息上的克制：</p>
+<ul>
+<li>子 Agent 只接收完成局部任务所需的上下文；</li>
+<li>搜索、试错和重复读取留在子 Agent 内部；</li>
+<li>返回主线程的是结论、证据、修改范围、验证结果、风险和未决问题；</li>
+<li>普通进度查询只返回“运行中、完成、阻塞”等状态；</li>
+<li>只有发生异常时，才按需读取详细日志。</li>
+</ul>
+<p>子 Agent 的价值不只是并行执行，还包括<strong>隔离过程噪声</strong>。如果所有中间信息最终仍无差别地回到主线程，那么所谓多 Agent，不过是把一个上下文混乱的问题放大了几倍。</p>
+<h2 id="认知局部性：不要只按文件拆任务"><a href="#认知局部性：不要只按文件拆任务" class="headerlink" title="认知局部性：不要只按文件拆任务"></a>认知局部性：不要只按文件拆任务</h2><p>文章还提出了一个很有价值的概念：认知局部性。</p>
+<p>两个任务即使修改不同文件，也可能依赖同一套架构知识、测试规范和设计约束。如果把它们拆给两个 Agent，每个 Agent 都要重新阅读相似的代码、建立相似的心智模型，最终再由主线程对齐两份结果。</p>
+<p>表面上是并行，实际上是在重复支付认知成本。</p>
+<p>真正适合并行的任务，应当同时满足两个条件：</p>
 <ol>
-<li>这个信号为何可能存在？</li>
-<li>它依赖哪些市场条件？</li>
-<li>条件变化后，它会以什么方式失效？</li>
+<li><strong>知识边界相对独立</strong>：不需要反复阅读同一批文件，也不会依赖对方尚未得出的关键结论；</li>
+<li><strong>修改范围相对独立</strong>：文件所有权清楚，不会同时改动同一模块或共享状态。</li>
 </ol>
-<h2 id="二、高夏普不一定反常，先判断收益来自哪里"><a href="#二、高夏普不一定反常，先判断收益来自哪里" class="headerlink" title="二、高夏普不一定反常，先判断收益来自哪里"></a>二、高夏普不一定反常，先判断收益来自哪里</h2><p>StepOneAi 用高频做市解释了一个常见认知差异：中低频方向策略如果出现异常高的回测夏普，通常需要重点排查过拟合、未来函数和成本遗漏；但高频做市可能呈现完全不同的收益分布。</p>
-<p>原因不是某类模型更准确，而是两类策略赚取的收益不同：</p>
+<p>这和组织中的克制是相通的。好的管理不是把目标拆得越细越好，也不是让更多人同时参与，而是让相关知识尽可能留在同一个局部，让真正独立的工作并行展开。</p>
+<p>拆分的目的应该是降低耦合，而不是增加“正在工作的 Agent 数量”。</p>
+<h2 id="克制也是对共享状态的尊重"><a href="#克制也是对共享状态的尊重" class="headerlink" title="克制也是对共享状态的尊重"></a>克制也是对共享状态的尊重</h2><p>多 Agent 协作中，还有一类风险来自全局操作。</p>
+<p>例如，一个子 Agent 在多人共享的工作区执行 <code>git stash</code>、切换分支或重置仓库。对它自己而言，这可能只是正常操作；对整个系统而言，却会改变所有参与者共享的状态。一次看似局部的动作，可能覆盖另一名 Agent 尚未提交的修改。</p>
+<p>这说明自治必须有边界。</p>
+<p>主线程负责目标、任务边界、文件归属和验收标准；子 Agent 可以自主选择局部搜索与实现路径，但不能随意改变整个仓库的状态。探索自由与全局约束并不冲突，前者依赖后者才能成立。</p>
+<p>组织管理也是如此。克制并不意味着不管理，而是把管理集中在少数真正重要的地方：</p>
 <ul>
-<li><strong>方向策略</strong>依靠对未来价格变化的预测，需要承担持续的方向敞口；</li>
-<li><strong>做市策略</strong>通过双边报价提供流动性，主要争取买卖价差和可能存在的 maker rebate，同时承担库存风险与逆向选择。</li>
+<li>主线是否清楚；</li>
+<li>资源边界是否明确；</li>
+<li>哪些状态不能被局部随意修改；</li>
+<li>结果以什么结构返回；</li>
+<li>什么情况下必须升级为人工决策。</li>
 </ul>
-<p>高频做市把单次利润压得很薄，再通过大量交易样本分散随机波动。若每次交易具有稳定、微弱的正期望，频次增加可能使收益统计更平滑。但这不是无风险收益：一旦报价更新慢于市场、撤单未及时生效，或库存持续偏向单边，累积的价差收入可能被短时间亏损吞没。</p>
-<p>因此，评价夏普时不能只看数字，还要追问：</p>
+<p>其余部分则留给局部自主完成。</p>
+<h2 id="不要把一次问题变成永久流程"><a href="#不要把一次问题变成永久流程" class="headerlink" title="不要把一次问题变成永久流程"></a>不要把一次问题变成永久流程</h2><p>我很喜欢多 Agent 案例中的另一个细节。</p>
+<p>作者发现，主线程加载的技能不会自动传递给子 Agent。他最初想增加一道“每次启动前人工确认”的审批流程。继续思考后，他没有把一次信息缺失扩展成长期存在的手续，而是选择在任务描述中明确需要加载的技能和文件位置；只有 Agent 数量过多或文件归属不清时，才要求额外确认。</p>
+<p>这是流程治理中的克制。</p>
+<p>很多制度不是因为问题长期存在而建立，而是因为某次事故令人不安。团队随后增加审批、会议、表格和检查项，却很少再问：我们缺少的究竟是事实说明、边界约束、自动检查，还是确实需要人工决策？</p>
+<p>如果只是信息没有传递，补充信息即可；如果只是边界不清，明确所有权即可；如果机器能够稳定检查，就不必增加永久审批。</p>
+<p>流程不是越严密越好。每增加一道流程，也在增加未来每一次行动的成本。</p>
+<h2 id="从组织到-Agent，克制都在管理“进入主线的资格”"><a href="#从组织到-Agent，克制都在管理“进入主线的资格”" class="headerlink" title="从组织到 Agent，克制都在管理“进入主线的资格”"></a>从组织到 Agent，克制都在管理“进入主线的资格”</h2><p>把两段材料放在一起看，会发现克制并不是某种抽象品格，而是一套具体的准入机制。</p>
+<p>对一家公司来说，它决定：</p>
 <ul>
-<li>收益来自方向预测、流动性补偿，还是隐藏的尾部风险？</li>
-<li>交易频次是否足以支撑统计稳定性？</li>
-<li>成本、滑点、库存敞口和极端行情是否完整计入？</li>
-<li>真实成交机制是否被正确模拟？</li>
+<li>哪些机会可以进入战略；</li>
+<li>哪些需求可以进入产品路线；</li>
+<li>哪些短期收益值得消耗长期资源。</li>
 </ul>
-<h2 id="三、策略是消耗品，真正的资产是研究流水线"><a href="#三、策略是消耗品，真正的资产是研究流水线" class="headerlink" title="三、策略是消耗品，真正的资产是研究流水线"></a>三、策略是消耗品，真正的资产是研究流水线</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125106784-1089765463.png" style="zoom:50%;" alt="Onefly 鹰替换衰减策略并完成验证上线"></p>
-<p>一个策略开始衰减，未必代表最初的研究完全错误。金融市场是动态博弈系统，策略会受到至少两类变化影响。</p>
-<h3 id="1-拥挤与竞争"><a href="#1-拥挤与竞争" class="headerlink" title="1. 拥挤与竞争"></a>1. 拥挤与竞争</h3><p>当更多资金发现相似规律并开始交易，超额收益会被摊薄。频率越高、策略越依赖短暂的盘口特征，对手跟进和反向利用的速度通常越快。</p>
-<h3 id="2-市场状态切换"><a href="#2-市场状态切换" class="headerlink" title="2. 市场状态切换"></a>2. 市场状态切换</h3><p>策略可能只是适配某种波动率、流动性、资金偏好或监管环境。当这些条件改变，过去有效的关系就可能弱化甚至反转。</p>
-<p>因此，成熟团队的壁垒通常不是某个长期保密的“神奇因子”，而是持续生产、验证和替换策略的能力：</p>
-<pre class="mermaid">flowchart LR
-    A[提出可解释假设] --&gt; B[清洗原始数据]
-    B --&gt; C[构造低自由度信号]
-    C --&gt; D[保守回测与压力测试]
-    D --&gt; E[小规模实盘验证]
-    E --&gt; F[监控偏差与风险边界]
-    F --&gt; G{信号仍有效吗}
-    G --&gt;|是| H[逐步分配风险预算]
-    G --&gt;|否| I[下线、归因与迭代]
-    I --&gt; A</pre>
-
-<p>对个人开发者同样如此。与其把全部时间投入单个模型，不如建设可复用的数据清洗、特征生产、回测、部署和监控框架。当旧策略失效时，团队仍能快速验证新假设，并把失败原因沉淀为下一轮研究约束。</p>
-<h2 id="四、做策略需要的四种能力"><a href="#四、做策略需要的四种能力" class="headerlink" title="四、做策略需要的四种能力"></a>四、做策略需要的四种能力</h2><p>在“做策略需要什么能力”一文中，StepOneAi 给出的答案并不是继续堆叠数学课程和编程语言。数学与编程是基础门槛，跨过门槛后，更稀缺的是以下能力。</p>
-<h3 id="1-市场微观结构的直觉"><a href="#1-市场微观结构的直觉" class="headerlink" title="1. 市场微观结构的直觉"></a>1. 市场微观结构的直觉</h3><p>研究者需要理解订单进入盘口后发生了什么：前方排队量有多少、订单何时获得成交、撤单与成交如何竞争、盘口为何突然变薄。GLFT、Avellaneda–Stoikov 等模型提供了框架，但框架不能替代对逐笔数据的长期观察。</p>
-<h3 id="2-对回测保持怀疑"><a href="#2-对回测保持怀疑" class="headerlink" title="2. 对回测保持怀疑"></a>2. 对回测保持怀疑</h3><p>看到漂亮曲线时，第一反应不应只是庆祝，而应检查哪里可能算错：成交条件是否宽松、队列是否被忽略、延迟是否写死、费用是否取了理想档位。回测首先是暴露问题的工具，其次才是估计收益的工具。</p>
-<h3 id="3-风控先于收益"><a href="#3-风控先于收益" class="headerlink" title="3. 风控先于收益"></a>3. 风控先于收益</h3><p>策略设计应先回答“什么情况下会出问题”，再回答“正常情况下能赚多少”。停止条件、库存上限、最大可接受回撤和异常延迟下的保护动作，通常比进一步优化少量收益更重要。</p>
-<h3 id="4-足够可靠的工程能力"><a href="#4-足够可靠的工程能力" class="headerlink" title="4. 足够可靠的工程能力"></a>4. 足够可靠的工程能力</h3><p>研究者不一定要成为顶尖系统工程师，但必须能够：</p>
+<p>对一个多 Agent 系统来说，它决定：</p>
 <ul>
-<li>处理原始逐笔数据；</li>
-<li>尽量让回测和实盘复用同一套核心逻辑；</li>
-<li>区分策略失效、数据错误与基础设施故障；</li>
-<li>定位精度、溢出、类型转换和状态同步问题。</li>
+<li>哪些任务值得独立委派；</li>
+<li>哪些信息需要进入主上下文；</li>
+<li>哪些局部发现需要升级为全局决策；</li>
+<li>哪些过程只应留在临时上下文中。</li>
 </ul>
-<p>更有效的学习闭环是：提出假设，用苛刻口径回测，以极小风险进入实盘，解释回测与实盘的差异，然后继续迭代。失败本身不是研究成果；<strong>把失败原因解释清楚，才是可复用的经验</strong>。</p>
-<h2 id="五、团队不是角色列表，而是共同处理过故障的人"><a href="#五、团队不是角色列表，而是共同处理过故障的人" class="headerlink" title="五、团队不是角色列表，而是共同处理过故障的人"></a>五、团队不是角色列表，而是共同处理过故障的人</h2><p>另一篇长文讲的是团队形成。StepOneAi 回忆，他们在 NTU 学习期间便开始共同搭系统、写策略和跑回测。早期缺少资金、经验和成熟框架，很多假设会被推翻，回测结果也经常无法在实盘中复现。</p>
-<p>团队价值并不只是把工作拆成“策略、基建、风控”几个岗位，而是让每一块都有可以信任的负责人。当出现回撤或系统故障时，有人检查策略假设，有人核对数据与延迟，有人控制整体风险。长期共同排查问题所形成的协作方式，很难通过临时招募直接复制。</p>
-<p>对量化团队而言，这也说明技术栈之外还有一项重要资产：<strong>一套在压力下仍能完成归因、决策和止损的协作机制</strong>。</p>
-<h2 id="六、回测最容易在哪些地方欺骗研究者"><a href="#六、回测最容易在哪些地方欺骗研究者" class="headerlink" title="六、回测最容易在哪些地方欺骗研究者"></a>六、回测最容易在哪些地方欺骗研究者</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125123200-1590704546.png" style="zoom:50%;" alt="Onefly 鹰在成交闸门前校验触价、排队与延迟"></p>
-<p>StepOneAi 的“回测一、二”给出了六个具体检查项。这部分是整个系列中最适合直接转化为工程清单的内容。</p>
-<h3 id="1-不要把触价直接记为成交"><a href="#1-不要把触价直接记为成交" class="headerlink" title="1. 不要把触价直接记为成交"></a>1. 不要把触价直接记为成交</h3><p>如果市场价格刚好碰到挂单价，回测便认为订单成交，就相当于默认订单始终排在队首。实际做市订单通常需要排队，是否成交取决于前方队列量与后续成交量。</p>
-<p>更严重的是，这种宽松规则可能产生方向性偏差：价格触及后反转的订单往往更有利，却最容易被虚假计入；价格穿透挂单价的订单通常更不利，但几乎一定会成交。结果就是有利样本被高估，不利样本仍被保留。</p>
-<p>在缺少精确队列模型时，可以采用更保守的“穿价成交”口径。它会漏掉部分真实成交，但通常比系统性高估收益更安全。</p>
-<h3 id="2-队列模型必须与延迟模型联动"><a href="#2-队列模型必须与延迟模型联动" class="headerlink" title="2. 队列模型必须与延迟模型联动"></a>2. 队列模型必须与延迟模型联动</h3><p>延迟不仅改变成交时的市场价格，还决定订单何时进入订单簿，以及进入后排在什么位置。一个固定的 <code>5ms</code> 常数无法表示真实网络、网关与撮合引擎的波动。</p>
-<h3 id="3-回测与实盘要检查变量类型"><a href="#3-回测与实盘要检查变量类型" class="headerlink" title="3. 回测与实盘要检查变量类型"></a>3. 回测与实盘要检查变量类型</h3><p>两套系统即使逻辑描述一致，也可能因为数值精度、整数溢出或隐式类型转换产生差异。这类错误难以察觉，因为两边都能正常运行，只是结果始终无法严格对齐。</p>
-<h3 id="4-做市研究需要足够精细的原始数据"><a href="#4-做市研究需要足够精细的原始数据" class="headerlink" title="4. 做市研究需要足够精细的原始数据"></a>4. 做市研究需要足够精细的原始数据</h3><p>通用研究可以使用快照或聚合数据，但对订单簿精度敏感的策略，应尽量使用交易所原始增量数据逐条回放。快照重建和降采样会破坏队列信息，使精细的撮合模型失去依据。</p>
-<h3 id="5-冲击成本和费率采用保守假设"><a href="#5-冲击成本和费率采用保守假设" class="headerlink" title="5. 冲击成本和费率采用保守假设"></a>5. 冲击成本和费率采用保守假设</h3><p>历史市场不会因回测中的虚拟订单改变行为，因而天然忽略了策略规模增大后的市场冲击。maker 费率、返佣档位与资金费在边际利润很薄时也可能决定策略最终是正收益还是负收益。无法准确估计时，应优先使用更差而不是更理想的参数。</p>
-<h3 id="6-回测的核心输出是系统底线"><a href="#6-回测的核心输出是系统底线" class="headerlink" title="6. 回测的核心输出是系统底线"></a>6. 回测的核心输出是系统底线</h3><p>比收益曲线更重要的问题包括：</p>
+<p>对个人来说，同样如此：</p>
 <ul>
-<li>策略在哪类行情下亏损？</li>
-<li>最大回撤和恢复时间是多少？</li>
-<li>行情延迟增加后，系统只是少赚，还是会产生反向持仓？</li>
-<li>单边行情中库存会累积到什么程度？</li>
-<li>哪个阈值必须触发降仓、熔断或停机？</li>
+<li>哪些事情值得成为长期项目；</li>
+<li>哪些输入值得占据注意力；</li>
+<li>哪些“以后可能有用”的信息其实不必保存；</li>
+<li>哪些机会看起来不错，却会让真正重要的事情失去连续性。</li>
 </ul>
-<p>只有这些边界被测试清楚，团队才能决定策略是否上线，以及分配多少风险预算。</p>
-<h2 id="七、延迟不能是常数，要把长尾风险放进回测"><a href="#七、延迟不能是常数，要把长尾风险放进回测" class="headerlink" title="七、延迟不能是常数，要把长尾风险放进回测"></a>七、延迟不能是常数，要把长尾风险放进回测</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125249976-921834215.png" style="zoom:50%;" alt="Onefly 鹰隔离撤单链路中的延迟长尾风险"></p>
-<p>延迟分布是系列后半段最重要的工程观点。真实市场不存在始终固定的响应时间。网络抖动、交易所负载和网关排队都会使延迟形成分布，并可能带有明显长尾。</p>
-<p>假设观测到的延迟样本大致分为三段：多数请求在低延迟区域完成，一部分在拥堵时明显变慢，少量极端请求出现几十毫秒的卡顿。回测不应为每次事件赋相同延迟，而应从实测分布中抽样，并在压力测试中增加极端情形。</p>
-<p>长尾尤其重要，因为大额亏损往往集中在市场剧烈波动和系统拥堵同时发生的时刻。固定延迟模型可能判断撤单已经生效，真实系统却仍在排队，最终使旧报价暴露给具有信息优势的订单流。</p>
-<p>同时，至少应区分三条链路：</p>
-<pre class="mermaid">flowchart TD
-    M[市场事件] --&gt; A[行情链路延迟]
-    A --&gt; S[策略看到新状态并计算报价]
-    S --&gt; O[下单链路延迟]
-    O --&gt; B[订单进入交易所队列]
-    M --&gt; R[风险条件触发撤单]
-    R --&gt; C[撤单链路延迟]
-    C --&gt; X{撤单先于成交生效吗}
-    B --&gt; X
-    X --&gt;|是| Y[风险敞口解除]
-    X --&gt;|否| Z[发生成交并承担库存或逆向选择]</pre>
-
-<p>行情推送、新单和撤单可能经过不同网关与排队机制。把三者混在一个总延迟池中，会使队列位置、成交概率和风险暴露与实盘不符。</p>
-<h2 id="八、盈亏同源：收益曲线为何不能替代风险解释"><a href="#八、盈亏同源：收益曲线为何不能替代风险解释" class="headerlink" title="八、盈亏同源：收益曲线为何不能替代风险解释"></a>八、盈亏同源：收益曲线为何不能替代风险解释</h2><p>StepOneAi 在番外中解释了不公开实盘曲线的理由。公开截图很难证明完整业绩：它可能只展示对冲组合的一条腿，也可能来自多个账户或多个信号中的幸存样本。真正具有验证效力的材料通常需要托管记录、审计报告和逐笔对账，并在正式尽调中检查。</p>
-<p>更重要的是，收益曲线只展示已经兑现的结果，不会完整呈现策略承担的敞口。做市利润来自承担库存风险和逆向选择，并换取价差与返佣；同一项风险在正常市场中贡献收益，在极端市场中也会制造亏损。</p>
-<p>因此，一条过度平滑的曲线不应首先引发羡慕，而应引发调查：</p>
-<ul>
-<li>尾部亏损是否尚未发生？</li>
-<li>杠杆和未实现风险是否被隐藏？</li>
-<li>是否存在账户或时间区间筛选？</li>
-<li>策略承担的真实敞口是什么？</li>
-</ul>
-<p>对策略的信心，不应只来自“过去赚过钱”，而应来自对亏损条件、深度、持续时间和停止边界的理解。</p>
-<h2 id="九、把整组心得压缩成一套实盘研究准则"><a href="#九、把整组心得压缩成一套实盘研究准则" class="headerlink" title="九、把整组心得压缩成一套实盘研究准则"></a>九、把整组心得压缩成一套实盘研究准则</h2><p>综合这些推文，可以提炼出以下准则：</p>
+<p>所以，克制不是把自己缩小，而是提高进入主线的门槛。</p>
+<h2 id="克制需要三个前提"><a href="#克制需要三个前提" class="headerlink" title="克制需要三个前提"></a>克制需要三个前提</h2><p>克制听起来简单，实践起来却很难，因为它至少依赖三个前提。</p>
+<h3 id="第一，必须有足够清楚的目标"><a href="#第一，必须有足够清楚的目标" class="headerlink" title="第一，必须有足够清楚的目标"></a>第一，必须有足够清楚的目标</h3><p>没有主线时，拒绝只是随意取舍；只有目标清楚，克制才是战略。</p>
+<p>DeepSeek 的讨论之所以有意义，是因为材料中反复出现 AGI 这条长期主线。多 Agent 编排也一样：如果主线程自己都不知道最终要交付什么，就不可能判断哪些上下文是噪声。</p>
+<h3 id="第二，必须承认注意力和协调能力有限"><a href="#第二，必须承认注意力和协调能力有限" class="headerlink" title="第二，必须承认注意力和协调能力有限"></a>第二，必须承认注意力和协调能力有限</h3><p>更多 Agent、更多信息、更多流程并不免费。它们会消耗审阅、同步、检索和决策能力。</p>
+<p>一个系统的上限不只取决于它能启动多少执行单元，也取决于它能否维持一条稳定的决策链。</p>
+<h3 id="第三，必须能够承受局部的不完美"><a href="#第三，必须能够承受局部的不完美" class="headerlink" title="第三，必须能够承受局部的不完美"></a>第三，必须能够承受局部的不完美</h3><p>克制最难的部分，是允许一些事情暂时没有解决。</p>
+<p>产品可以有缺口，文档可以稍后补充，子 Agent 的所有探索过程不必被主线程完整看见。只要关键风险受控、结果可验证，局部的不完整往往比主线被持续打断更健康。</p>
+<h2 id="一套可以执行的克制原则"><a href="#一套可以执行的克制原则" class="headerlink" title="一套可以执行的克制原则"></a>一套可以执行的克制原则</h2><p>如果把这篇文章压缩成可执行的规则，我会保留以下几点：</p>
 <ol>
-<li><strong>从市场机制出发，而不是从模型名称出发。</strong></li>
-<li><strong>优先控制自由度，再追求样本内表现。</strong></li>
-<li><strong>根据收益来源解释夏普，不脱离交易机制看指标。</strong></li>
-<li><strong>默认策略会衰减，把研究流水线视为长期资产。</strong></li>
-<li><strong>用原始数据、保守成交和真实成本约束回测。</strong></li>
-<li><strong>分别建模行情、下单和撤单延迟，并关注长尾。</strong></li>
-<li><strong>让回测回答亏损边界，而不只是预估收益。</strong></li>
-<li><strong>通过小规模实盘解释偏差，不直接从回测跳到放大资金。</strong></li>
-<li><strong>建立跨策略、基建和风控的故障归因机制。</strong></li>
-<li><strong>不把收益截图当证据，把可检验的方法放在展示之前。</strong></li>
+<li><strong>每个阶段只保留一条明确主线。</strong> 新任务必须说明它如何提高主线成功率。</li>
+<li><strong>不把所有“可以做”自动变成“应该做”。</strong> 机会、问题和需求都需要准入条件。</li>
+<li><strong>按认知边界拆任务，而不是机械地按文件或步骤拆分。</strong></li>
+<li><strong>探索过程留在局部，关键结果结构化返回。</strong></li>
+<li><strong>全局状态由主线程控制。</strong> 并发执行者不得擅自改变共享仓库和关键配置。</li>
+<li><strong>先修正信息与边界，再考虑增加审批。</strong> 不让一次问题永久增加组织摩擦。</li>
+<li><strong>定期删除过期信息和失效规则。</strong> 工作记忆的质量不仅来自写入，也来自遗忘。</li>
 </ol>
-<p>这套方法的共同点，是主动降低自我欺骗的空间。复杂模型、漂亮曲线和高收益指标都可以成为研究线索，但只有在成交、成本、延迟、风险与实盘偏差经得起检查时，它们才可能转化为可部署的策略。</p>
-<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><p>本文主要整理自 <a href="https://x.com/StepOneAi">@StepOneAi</a> 在 2026 年 7 月发布的公开内容：</p>
-<ul>
-<li><a href="https://x.com/StepOneAi/status/2079791183996580143">量化心得二：复杂模型与过拟合</a></li>
-<li><a href="https://x.com/StepOneAi/status/2079877987693158644">量化心得三：高频做市在赚什么钱</a></li>
-<li><a href="https://x.com/StepOneAi/status/2080091572079890623">量化心得四：策略往往是消耗品</a></li>
-<li><a href="https://x.com/StepOneAi/status/2080753207207428309">量化系列：做策略需要什么能力</a></li>
-<li><a href="https://x.com/StepOneAi/status/2080768749893009700">量化系列：关于团队</a></li>
-<li><a href="https://x.com/StepOneAi/status/2080859705027805228">番外：盈亏同源，为什么不发实盘</a></li>
-<li><a href="https://x.com/StepOneAi/status/2081996453002756240">量化心得九：回测（一）</a></li>
-<li><a href="https://x.com/StepOneAi/status/2081996561270399455">量化心得九：回测（二）</a></li>
-<li><a href="https://x.com/StepOneAi/status/2082259786033447294">量化心得十：回测中延迟分布采样</a></li>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>AI 时代最容易获得的是更多：更多模型、更多 Agent、更多工具、更多上下文，以及更多随时可以启动的项目。</p>
+<p>真正稀缺的是选择。</p>
+<p>组织的克制，是不把所有能做的事情都变成业务；Agent 的克制，是不把所有产生的信息都带回主线程；个人的克制，是不让每一个看起来不错的机会都获得长期注意力。</p>
+<p><strong>能力决定你能走多快，克制决定你是否还走在原来的方向上。</strong></p>
+<p>当系统越来越强，克制不会变得过时。相反，它会从一种个人品质，逐渐变成组织设计、Agent 工程和长期决策中最核心的基础设施。</p>
+<h2 id="参考资料与说明"><a href="#参考资料与说明" class="headerlink" title="参考资料与说明"></a>参考资料与说明</h2><ul>
+<li><a href="https://x.com/hongming731/status/2082281912060833854">多 Agent 协作中，真正稀缺的是主线程的工作记忆</a></li>
+<li><a href="https://x.com/_FORAB/status/2080135853620576761">梁文锋交流会内容摘录：聚焦、产品取舍与上下文问题</a></li>
+<li><a href="https://x.com/yaojingang/status/2080087307320000733">梁文锋交流会整理：克制、AGI 路线与开源</a></li>
+<li><a href="https://www7.ftchinese.com/story/001110446">FT中文网：梁文锋不是情怀，而是这个时代最精密的商业理性</a></li>
 </ul>
 <blockquote>
-<p>整理范围截至 2026 年 7 月 29 日。本次共核实 9 条量化主题长文；公开检索中未找到“量化心得一”及编号五至八的可验证原文，部分标题编号也存在重复或不连续，因此本文仅整理能够核验的内容，未补写缺失篇目。</p>
+<p>注：文中涉及梁文锋投资者交流会的内容，来自2026年7月网络流传的录音及转录整理，DeepSeek 尚未公开确认其真实性与完整性。本文仅在明确限定来源的前提下讨论其中呈现的思想，不将整理者概括视为正式公开演讲原文。</p>
 </blockquote>
 
                 
@@ -1140,7 +1118,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://onefly.top/posts/steponeai-quantitative-trading-lessons.html">https://onefly.top/posts/steponeai-quantitative-trading-lessons.html</a>
+                    <a href="https://onefly.top/posts/restraint-in-ai-agent-engineering.html">https://onefly.top/posts/restraint-in-ai-agent-engineering.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1178,20 +1156,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/">
-                                    <span class="chip bg-color">量化交易</span>
+                                <a href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/">
+                                    <span class="chip bg-color">方法论</span>
                                 </a>
                             
-                                <a href="/tags/%E9%A3%8E%E6%8E%A7/">
-                                    <span class="chip bg-color">风控</span>
+                                <a href="/tags/Agent/">
+                                    <span class="chip bg-color">Agent</span>
                                 </a>
                             
-                                <a href="/tags/%E9%AB%98%E9%A2%91%E5%81%9A%E5%B8%82/">
-                                    <span class="chip bg-color">高频做市</span>
+                                <a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">
+                                    <span class="chip bg-color">上下文</span>
                                 </a>
                             
-                                <a href="/tags/%E5%9B%9E%E6%B5%8B/">
-                                    <span class="chip bg-color">回测</span>
+                                <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">AI工程</span>
                                 </a>
                             
                         </div>
@@ -1624,9 +1602,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/restraint-in-ai-agent-engineering.html">
                     <div class="card-image">
@@ -1643,9 +1622,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-07-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1658,6 +1637,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1688,12 +1668,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/okx-invite-code-missing-guide.html">
+                <a href="/posts/steponeai-quantitative-trading-lessons.html">
                     <div class="card-image">
                         
-                        <img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260727012523936-2066343062.jpg" class="responsive-img" alt="OKX 注册忘记填邀请码怎么办？补绑、换绑与返佣完整指南">
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729111901129-1969739172.jpg" class="responsive-img" alt="从模型到实盘：StepOneAi 量化心得整理">
                         
-                        <span class="card-title">OKX 注册忘记填邀请码怎么办？补绑、换绑与返佣完整指南</span>
+                        <span class="card-title">从模型到实盘：StepOneAi 量化心得整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1704,14 +1684,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-07-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-07-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/" class="post-category">
-                                    加密货币
+                            <a href="/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" class="post-category">
+                                    量化交易
                                 </a>
                             
                             
@@ -1721,20 +1701,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/OKX/">
-                        <span class="chip bg-color">OKX</span>
+                    <a href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/">
+                        <span class="chip bg-color">量化交易</span>
                     </a>
                     
-                    <a href="/tags/%E6%AC%A7%E6%98%93%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">欧易教程</span>
+                    <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                        <span class="chip bg-color">风控</span>
                     </a>
                     
-                    <a href="/tags/%E6%89%8B%E7%BB%AD%E8%B4%B9%E8%BF%94%E4%BD%A3/">
-                        <span class="chip bg-color">手续费返佣</span>
+                    <a href="/tags/%E9%AB%98%E9%A2%91%E5%81%9A%E5%B8%82/">
+                        <span class="chip bg-color">高频做市</span>
                     </a>
                     
-                    <a href="/tags/%E9%82%80%E8%AF%B7%E7%A0%81/">
-                        <span class="chip bg-color">邀请码</span>
+                    <a href="/tags/%E5%9B%9E%E6%B5%8B/">
+                        <span class="chip bg-color">回测</span>
                     </a>
                     
                 </div>

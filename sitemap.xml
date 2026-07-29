@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://onefly.top/posts/restraint-in-ai-agent-engineering.html</loc>
+    
+    <lastmod>2026-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://onefly.top/posts/steponeai-quantitative-trading-lessons.html</loc>
     
     <lastmod>2026-07-29</lastmod>
@@ -2130,20 +2139,6 @@
   </url>
   
   <url>
-    <loc>https://onefly.top/tags/LobeHub/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://onefly.top/tags/Harness/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://onefly.top/tags/AI%E5%AE%A1%E6%9F%A5/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -2551,6 +2546,27 @@
   
   <url>
     <loc>https://onefly.top/tags/%E5%9B%9E%E6%B5%8B/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/AI%E5%B7%A5%E7%A8%8B/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/LobeHub/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://onefly.top/tags/Harness/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

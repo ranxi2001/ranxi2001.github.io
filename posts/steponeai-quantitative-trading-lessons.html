@@ -1,0 +1,2105 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="StepOneAi, 量化交易, 高频做市, 回测, 延迟模型, 策略衰减, 风险管理, 市场微观结构">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>从模型到实盘：StepOneAi 量化心得整理 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729111901129-1969739172.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">从模型到实盘：StepOneAi 量化心得整理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* Onefly Shop 闪卡 CTA */
+.gpt-shop-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 8px;
+    margin: 0 0 12px 0;
+    border: 1px solid rgba(125, 211, 252, 0.55);
+    border-radius: 10px;
+    background: linear-gradient(105deg, #071a52, #075bd8, #00a8e8, #075bd8, #071a52);
+    background-size: 300% auto;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-decoration: none !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18);
+    animation: gpt-card-flow 4s linear infinite, gpt-card-pulse 2.2s ease-in-out infinite;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gpt-shop-btn:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(0, 168, 232, 0.55), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.gpt-shop-btn::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -55%;
+    width: 34%;
+    height: 220%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-22deg);
+    animation: gpt-card-sweep 2.8s ease-in-out infinite;
+}
+
+.gpt-shop-btn > * {
+    position: relative;
+    z-index: 1;
+}
+
+.gpt-shop-icon {
+    font-size: 16px;
+    filter: drop-shadow(0 0 5px rgba(125, 211, 252, 0.9));
+}
+
+.badge-shop {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gpt-card-flow {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+@keyframes gpt-card-sweep {
+    0%, 35% { left: -55%; }
+    75%, 100% { left: 125%; }
+}
+
+@keyframes gpt-card-pulse {
+    0%, 100% { box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18); }
+    50% { box-shadow: 0 5px 19px rgba(0, 168, 232, 0.58), inset 0 1px 0 rgba(255,255,255,0.24); }
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <!-- Onefly Shop 闪卡 CTA -->
+        <a class="gpt-shop-btn"
+           href="https://pay.ldxp.cn/shop/XBXEDJWO"
+           target="_blank"
+           rel="noopener noreferrer">
+            <span class="gpt-shop-icon">✦</span>
+            <span>速刷 GPT 账号购买</span>
+            <span class="badge-shop">Onefly Shop</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/">
+                                <span class="chip bg-color">量化交易</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                                <span class="chip bg-color">风控</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%AB%98%E9%A2%91%E5%81%9A%E5%B8%82/">
+                                <span class="chip bg-color">高频做市</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9B%9E%E6%B5%8B/">
+                                <span class="chip bg-color">回测</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" class="post-category">
+                                量化交易
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-07-29
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    14 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="从模型到实盘：StepOneAi-量化心得整理"><a href="#从模型到实盘：StepOneAi-量化心得整理" class="headerlink" title="从模型到实盘：StepOneAi 量化心得整理"></a>从模型到实盘：StepOneAi 量化心得整理</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729111901129-1969739172.jpg" style="zoom:33%;" alt="量化实盘方法论封面图"></p>
+<p>量化交易最容易被误解的地方，是人们常把注意力放在模型、因子和收益曲线上，却低估了数据性质、成交假设、系统延迟、风险边界与团队协作的重要性。</p>
+<p>2026 年 7 月，X 用户 <a href="https://x.com/StepOneAi">@StepOneAi</a> 连续发布了一组量化实战心得。内容从“复杂模型为什么容易过拟合”一路延伸到高频做市、策略衰减、研究能力、团队形成、回测撮合和延迟分布。本文不按推文顺序简单拼接，而是把这些观点重新组织为一套从研究假设走向实盘验证的方法框架。</p>
+<blockquote>
+<p>说明：本文是对公开推文的主题化整理与分析，并非投资建议。推文中的收益、频率、生命周期和延迟数据来自作者经验描述，不能直接外推到其他团队、市场或交易所。</p>
+</blockquote>
+<h2 id="一、先理解金融数据，而不是先追求复杂模型"><a href="#一、先理解金融数据，而不是先追求复杂模型" class="headerlink" title="一、先理解金融数据，而不是先追求复杂模型"></a>一、先理解金融数据，而不是先追求复杂模型</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125040690-1611220579.png" style="zoom:50%;" alt="Onefly 鹰从市场噪声中筛选稳健信号并送入样本外验证"></p>
+<p>很多量化研究者会从技术工具出发：因子表现不够好，就继续增加特征、模型层数和搜索空间。XGBoost、LSTM、Transformer 都可能被搬进同一条研究流水线，直到回测曲线足够平滑。</p>
+<p>问题在于，<strong>模型容量越大，并不意味着可交易信息越多</strong>。</p>
+<p>金融数据通常同时具备两个不利性质：</p>
+<ul>
+<li><strong>信噪比低</strong>：绝大多数短期波动来自随机扰动和参与者博弈，真正稳定的 Alpha 很弱；</li>
+<li><strong>非平稳</strong>：宏观环境、市场参与者、交易规则和微观结构都在变化，历史规律可能随时失效。</li>
+</ul>
+<p>高容量模型很容易记住历史样本中的偶然波动。在样本内，这会表现为更高的夏普和更低的回撤；进入样本外或真实市场后，模型却可能因为市场状态变化而迅速失效。</p>
+<p>这并不意味着机器学习不能用于金融，而是意味着<strong>复杂度必须由样本规模、信号强度、验证方式和部署约束共同决定</strong>。对低信噪比任务，简单的线性模型、横截面排序、少量固定阈值甚至等权配置，往往更容易解释，也更能承受未知行情。</p>
+<p>可以把研究目标从“把历史拟合得更好”改为三个问题：</p>
+<ol>
+<li>这个信号为何可能存在？</li>
+<li>它依赖哪些市场条件？</li>
+<li>条件变化后，它会以什么方式失效？</li>
+</ol>
+<h2 id="二、高夏普不一定反常，先判断收益来自哪里"><a href="#二、高夏普不一定反常，先判断收益来自哪里" class="headerlink" title="二、高夏普不一定反常，先判断收益来自哪里"></a>二、高夏普不一定反常，先判断收益来自哪里</h2><p>StepOneAi 用高频做市解释了一个常见认知差异：中低频方向策略如果出现异常高的回测夏普，通常需要重点排查过拟合、未来函数和成本遗漏；但高频做市可能呈现完全不同的收益分布。</p>
+<p>原因不是某类模型更准确，而是两类策略赚取的收益不同：</p>
+<ul>
+<li><strong>方向策略</strong>依靠对未来价格变化的预测，需要承担持续的方向敞口；</li>
+<li><strong>做市策略</strong>通过双边报价提供流动性，主要争取买卖价差和可能存在的 maker rebate，同时承担库存风险与逆向选择。</li>
+</ul>
+<p>高频做市把单次利润压得很薄，再通过大量交易样本分散随机波动。若每次交易具有稳定、微弱的正期望，频次增加可能使收益统计更平滑。但这不是无风险收益：一旦报价更新慢于市场、撤单未及时生效，或库存持续偏向单边，累积的价差收入可能被短时间亏损吞没。</p>
+<p>因此，评价夏普时不能只看数字，还要追问：</p>
+<ul>
+<li>收益来自方向预测、流动性补偿，还是隐藏的尾部风险？</li>
+<li>交易频次是否足以支撑统计稳定性？</li>
+<li>成本、滑点、库存敞口和极端行情是否完整计入？</li>
+<li>真实成交机制是否被正确模拟？</li>
+</ul>
+<h2 id="三、策略是消耗品，真正的资产是研究流水线"><a href="#三、策略是消耗品，真正的资产是研究流水线" class="headerlink" title="三、策略是消耗品，真正的资产是研究流水线"></a>三、策略是消耗品，真正的资产是研究流水线</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125106784-1089765463.png" style="zoom:50%;" alt="Onefly 鹰替换衰减策略并完成验证上线"></p>
+<p>一个策略开始衰减，未必代表最初的研究完全错误。金融市场是动态博弈系统，策略会受到至少两类变化影响。</p>
+<h3 id="1-拥挤与竞争"><a href="#1-拥挤与竞争" class="headerlink" title="1. 拥挤与竞争"></a>1. 拥挤与竞争</h3><p>当更多资金发现相似规律并开始交易，超额收益会被摊薄。频率越高、策略越依赖短暂的盘口特征，对手跟进和反向利用的速度通常越快。</p>
+<h3 id="2-市场状态切换"><a href="#2-市场状态切换" class="headerlink" title="2. 市场状态切换"></a>2. 市场状态切换</h3><p>策略可能只是适配某种波动率、流动性、资金偏好或监管环境。当这些条件改变，过去有效的关系就可能弱化甚至反转。</p>
+<p>因此，成熟团队的壁垒通常不是某个长期保密的“神奇因子”，而是持续生产、验证和替换策略的能力：</p>
+<pre class="mermaid">flowchart LR
+    A[提出可解释假设] --&gt; B[清洗原始数据]
+    B --&gt; C[构造低自由度信号]
+    C --&gt; D[保守回测与压力测试]
+    D --&gt; E[小规模实盘验证]
+    E --&gt; F[监控偏差与风险边界]
+    F --&gt; G{信号仍有效吗}
+    G --&gt;|是| H[逐步分配风险预算]
+    G --&gt;|否| I[下线、归因与迭代]
+    I --&gt; A</pre>
+
+<p>对个人开发者同样如此。与其把全部时间投入单个模型，不如建设可复用的数据清洗、特征生产、回测、部署和监控框架。当旧策略失效时，团队仍能快速验证新假设，并把失败原因沉淀为下一轮研究约束。</p>
+<h2 id="四、做策略需要的四种能力"><a href="#四、做策略需要的四种能力" class="headerlink" title="四、做策略需要的四种能力"></a>四、做策略需要的四种能力</h2><p>在“做策略需要什么能力”一文中，StepOneAi 给出的答案并不是继续堆叠数学课程和编程语言。数学与编程是基础门槛，跨过门槛后，更稀缺的是以下能力。</p>
+<h3 id="1-市场微观结构的直觉"><a href="#1-市场微观结构的直觉" class="headerlink" title="1. 市场微观结构的直觉"></a>1. 市场微观结构的直觉</h3><p>研究者需要理解订单进入盘口后发生了什么：前方排队量有多少、订单何时获得成交、撤单与成交如何竞争、盘口为何突然变薄。GLFT、Avellaneda–Stoikov 等模型提供了框架，但框架不能替代对逐笔数据的长期观察。</p>
+<h3 id="2-对回测保持怀疑"><a href="#2-对回测保持怀疑" class="headerlink" title="2. 对回测保持怀疑"></a>2. 对回测保持怀疑</h3><p>看到漂亮曲线时，第一反应不应只是庆祝，而应检查哪里可能算错：成交条件是否宽松、队列是否被忽略、延迟是否写死、费用是否取了理想档位。回测首先是暴露问题的工具，其次才是估计收益的工具。</p>
+<h3 id="3-风控先于收益"><a href="#3-风控先于收益" class="headerlink" title="3. 风控先于收益"></a>3. 风控先于收益</h3><p>策略设计应先回答“什么情况下会出问题”，再回答“正常情况下能赚多少”。停止条件、库存上限、最大可接受回撤和异常延迟下的保护动作，通常比进一步优化少量收益更重要。</p>
+<h3 id="4-足够可靠的工程能力"><a href="#4-足够可靠的工程能力" class="headerlink" title="4. 足够可靠的工程能力"></a>4. 足够可靠的工程能力</h3><p>研究者不一定要成为顶尖系统工程师，但必须能够：</p>
+<ul>
+<li>处理原始逐笔数据；</li>
+<li>尽量让回测和实盘复用同一套核心逻辑；</li>
+<li>区分策略失效、数据错误与基础设施故障；</li>
+<li>定位精度、溢出、类型转换和状态同步问题。</li>
+</ul>
+<p>更有效的学习闭环是：提出假设，用苛刻口径回测，以极小风险进入实盘，解释回测与实盘的差异，然后继续迭代。失败本身不是研究成果；<strong>把失败原因解释清楚，才是可复用的经验</strong>。</p>
+<h2 id="五、团队不是角色列表，而是共同处理过故障的人"><a href="#五、团队不是角色列表，而是共同处理过故障的人" class="headerlink" title="五、团队不是角色列表，而是共同处理过故障的人"></a>五、团队不是角色列表，而是共同处理过故障的人</h2><p>另一篇长文讲的是团队形成。StepOneAi 回忆，他们在 NTU 学习期间便开始共同搭系统、写策略和跑回测。早期缺少资金、经验和成熟框架，很多假设会被推翻，回测结果也经常无法在实盘中复现。</p>
+<p>团队价值并不只是把工作拆成“策略、基建、风控”几个岗位，而是让每一块都有可以信任的负责人。当出现回撤或系统故障时，有人检查策略假设，有人核对数据与延迟，有人控制整体风险。长期共同排查问题所形成的协作方式，很难通过临时招募直接复制。</p>
+<p>对量化团队而言，这也说明技术栈之外还有一项重要资产：<strong>一套在压力下仍能完成归因、决策和止损的协作机制</strong>。</p>
+<h2 id="六、回测最容易在哪些地方欺骗研究者"><a href="#六、回测最容易在哪些地方欺骗研究者" class="headerlink" title="六、回测最容易在哪些地方欺骗研究者"></a>六、回测最容易在哪些地方欺骗研究者</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125123200-1590704546.png" style="zoom:50%;" alt="Onefly 鹰在成交闸门前校验触价、排队与延迟"></p>
+<p>StepOneAi 的“回测一、二”给出了六个具体检查项。这部分是整个系列中最适合直接转化为工程清单的内容。</p>
+<h3 id="1-不要把触价直接记为成交"><a href="#1-不要把触价直接记为成交" class="headerlink" title="1. 不要把触价直接记为成交"></a>1. 不要把触价直接记为成交</h3><p>如果市场价格刚好碰到挂单价，回测便认为订单成交，就相当于默认订单始终排在队首。实际做市订单通常需要排队，是否成交取决于前方队列量与后续成交量。</p>
+<p>更严重的是，这种宽松规则可能产生方向性偏差：价格触及后反转的订单往往更有利，却最容易被虚假计入；价格穿透挂单价的订单通常更不利，但几乎一定会成交。结果就是有利样本被高估，不利样本仍被保留。</p>
+<p>在缺少精确队列模型时，可以采用更保守的“穿价成交”口径。它会漏掉部分真实成交，但通常比系统性高估收益更安全。</p>
+<h3 id="2-队列模型必须与延迟模型联动"><a href="#2-队列模型必须与延迟模型联动" class="headerlink" title="2. 队列模型必须与延迟模型联动"></a>2. 队列模型必须与延迟模型联动</h3><p>延迟不仅改变成交时的市场价格，还决定订单何时进入订单簿，以及进入后排在什么位置。一个固定的 <code>5ms</code> 常数无法表示真实网络、网关与撮合引擎的波动。</p>
+<h3 id="3-回测与实盘要检查变量类型"><a href="#3-回测与实盘要检查变量类型" class="headerlink" title="3. 回测与实盘要检查变量类型"></a>3. 回测与实盘要检查变量类型</h3><p>两套系统即使逻辑描述一致，也可能因为数值精度、整数溢出或隐式类型转换产生差异。这类错误难以察觉，因为两边都能正常运行，只是结果始终无法严格对齐。</p>
+<h3 id="4-做市研究需要足够精细的原始数据"><a href="#4-做市研究需要足够精细的原始数据" class="headerlink" title="4. 做市研究需要足够精细的原始数据"></a>4. 做市研究需要足够精细的原始数据</h3><p>通用研究可以使用快照或聚合数据，但对订单簿精度敏感的策略，应尽量使用交易所原始增量数据逐条回放。快照重建和降采样会破坏队列信息，使精细的撮合模型失去依据。</p>
+<h3 id="5-冲击成本和费率采用保守假设"><a href="#5-冲击成本和费率采用保守假设" class="headerlink" title="5. 冲击成本和费率采用保守假设"></a>5. 冲击成本和费率采用保守假设</h3><p>历史市场不会因回测中的虚拟订单改变行为，因而天然忽略了策略规模增大后的市场冲击。maker 费率、返佣档位与资金费在边际利润很薄时也可能决定策略最终是正收益还是负收益。无法准确估计时，应优先使用更差而不是更理想的参数。</p>
+<h3 id="6-回测的核心输出是系统底线"><a href="#6-回测的核心输出是系统底线" class="headerlink" title="6. 回测的核心输出是系统底线"></a>6. 回测的核心输出是系统底线</h3><p>比收益曲线更重要的问题包括：</p>
+<ul>
+<li>策略在哪类行情下亏损？</li>
+<li>最大回撤和恢复时间是多少？</li>
+<li>行情延迟增加后，系统只是少赚，还是会产生反向持仓？</li>
+<li>单边行情中库存会累积到什么程度？</li>
+<li>哪个阈值必须触发降仓、熔断或停机？</li>
+</ul>
+<p>只有这些边界被测试清楚，团队才能决定策略是否上线，以及分配多少风险预算。</p>
+<h2 id="七、延迟不能是常数，要把长尾风险放进回测"><a href="#七、延迟不能是常数，要把长尾风险放进回测" class="headerlink" title="七、延迟不能是常数，要把长尾风险放进回测"></a>七、延迟不能是常数，要把长尾风险放进回测</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729125249976-921834215.png" style="zoom:50%;" alt="Onefly 鹰隔离撤单链路中的延迟长尾风险"></p>
+<p>延迟分布是系列后半段最重要的工程观点。真实市场不存在始终固定的响应时间。网络抖动、交易所负载和网关排队都会使延迟形成分布，并可能带有明显长尾。</p>
+<p>假设观测到的延迟样本大致分为三段：多数请求在低延迟区域完成，一部分在拥堵时明显变慢，少量极端请求出现几十毫秒的卡顿。回测不应为每次事件赋相同延迟，而应从实测分布中抽样，并在压力测试中增加极端情形。</p>
+<p>长尾尤其重要，因为大额亏损往往集中在市场剧烈波动和系统拥堵同时发生的时刻。固定延迟模型可能判断撤单已经生效，真实系统却仍在排队，最终使旧报价暴露给具有信息优势的订单流。</p>
+<p>同时，至少应区分三条链路：</p>
+<pre class="mermaid">flowchart TD
+    M[市场事件] --&gt; A[行情链路延迟]
+    A --&gt; S[策略看到新状态并计算报价]
+    S --&gt; O[下单链路延迟]
+    O --&gt; B[订单进入交易所队列]
+    M --&gt; R[风险条件触发撤单]
+    R --&gt; C[撤单链路延迟]
+    C --&gt; X{撤单先于成交生效吗}
+    B --&gt; X
+    X --&gt;|是| Y[风险敞口解除]
+    X --&gt;|否| Z[发生成交并承担库存或逆向选择]</pre>
+
+<p>行情推送、新单和撤单可能经过不同网关与排队机制。把三者混在一个总延迟池中，会使队列位置、成交概率和风险暴露与实盘不符。</p>
+<h2 id="八、盈亏同源：收益曲线为何不能替代风险解释"><a href="#八、盈亏同源：收益曲线为何不能替代风险解释" class="headerlink" title="八、盈亏同源：收益曲线为何不能替代风险解释"></a>八、盈亏同源：收益曲线为何不能替代风险解释</h2><p>StepOneAi 在番外中解释了不公开实盘曲线的理由。公开截图很难证明完整业绩：它可能只展示对冲组合的一条腿，也可能来自多个账户或多个信号中的幸存样本。真正具有验证效力的材料通常需要托管记录、审计报告和逐笔对账，并在正式尽调中检查。</p>
+<p>更重要的是，收益曲线只展示已经兑现的结果，不会完整呈现策略承担的敞口。做市利润来自承担库存风险和逆向选择，并换取价差与返佣；同一项风险在正常市场中贡献收益，在极端市场中也会制造亏损。</p>
+<p>因此，一条过度平滑的曲线不应首先引发羡慕，而应引发调查：</p>
+<ul>
+<li>尾部亏损是否尚未发生？</li>
+<li>杠杆和未实现风险是否被隐藏？</li>
+<li>是否存在账户或时间区间筛选？</li>
+<li>策略承担的真实敞口是什么？</li>
+</ul>
+<p>对策略的信心，不应只来自“过去赚过钱”，而应来自对亏损条件、深度、持续时间和停止边界的理解。</p>
+<h2 id="九、把整组心得压缩成一套实盘研究准则"><a href="#九、把整组心得压缩成一套实盘研究准则" class="headerlink" title="九、把整组心得压缩成一套实盘研究准则"></a>九、把整组心得压缩成一套实盘研究准则</h2><p>综合这些推文，可以提炼出以下准则：</p>
+<ol>
+<li><strong>从市场机制出发，而不是从模型名称出发。</strong></li>
+<li><strong>优先控制自由度，再追求样本内表现。</strong></li>
+<li><strong>根据收益来源解释夏普，不脱离交易机制看指标。</strong></li>
+<li><strong>默认策略会衰减，把研究流水线视为长期资产。</strong></li>
+<li><strong>用原始数据、保守成交和真实成本约束回测。</strong></li>
+<li><strong>分别建模行情、下单和撤单延迟，并关注长尾。</strong></li>
+<li><strong>让回测回答亏损边界，而不只是预估收益。</strong></li>
+<li><strong>通过小规模实盘解释偏差，不直接从回测跳到放大资金。</strong></li>
+<li><strong>建立跨策略、基建和风控的故障归因机制。</strong></li>
+<li><strong>不把收益截图当证据，把可检验的方法放在展示之前。</strong></li>
+</ol>
+<p>这套方法的共同点，是主动降低自我欺骗的空间。复杂模型、漂亮曲线和高收益指标都可以成为研究线索，但只有在成交、成本、延迟、风险与实盘偏差经得起检查时，它们才可能转化为可部署的策略。</p>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><p>本文主要整理自 <a href="https://x.com/StepOneAi">@StepOneAi</a> 在 2026 年 7 月发布的公开内容：</p>
+<ul>
+<li><a href="https://x.com/StepOneAi/status/2079791183996580143">量化心得二：复杂模型与过拟合</a></li>
+<li><a href="https://x.com/StepOneAi/status/2079877987693158644">量化心得三：高频做市在赚什么钱</a></li>
+<li><a href="https://x.com/StepOneAi/status/2080091572079890623">量化心得四：策略往往是消耗品</a></li>
+<li><a href="https://x.com/StepOneAi/status/2080753207207428309">量化系列：做策略需要什么能力</a></li>
+<li><a href="https://x.com/StepOneAi/status/2080768749893009700">量化系列：关于团队</a></li>
+<li><a href="https://x.com/StepOneAi/status/2080859705027805228">番外：盈亏同源，为什么不发实盘</a></li>
+<li><a href="https://x.com/StepOneAi/status/2081996453002756240">量化心得九：回测（一）</a></li>
+<li><a href="https://x.com/StepOneAi/status/2081996561270399455">量化心得九：回测（二）</a></li>
+<li><a href="https://x.com/StepOneAi/status/2082259786033447294">量化心得十：回测中延迟分布采样</a></li>
+</ul>
+<blockquote>
+<p>整理范围截至 2026 年 7 月 29 日。本次共核实 9 条量化主题长文；公开检索中未找到“量化心得一”及编号五至八的可验证原文，部分标题编号也存在重复或不连续，因此本文仅整理能够核验的内容，未补写缺失篇目。</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/steponeai-quantitative-trading-lessons.html">https://onefly.top/posts/steponeai-quantitative-trading-lessons.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/">
+                                    <span class="chip bg-color">量化交易</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                                    <span class="chip bg-color">风控</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%AB%98%E9%A2%91%E5%81%9A%E5%B8%82/">
+                                    <span class="chip bg-color">高频做市</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%9E%E6%B5%8B/">
+                                    <span class="chip bg-color">回测</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/steponeai-quantitative-trading-lessons.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260729111901129-1969739172.jpg" class="responsive-img" alt="从模型到实盘：StepOneAi 量化心得整理">
+                        
+                        <span class="card-title">从模型到实盘：StepOneAi 量化心得整理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-07-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" class="post-category">
+                                    量化交易
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/">
+                        <span class="chip bg-color">量化交易</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A3%8E%E6%8E%A7/">
+                        <span class="chip bg-color">风控</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%AB%98%E9%A2%91%E5%81%9A%E5%B8%82/">
+                        <span class="chip bg-color">高频做市</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%B5%8B/">
+                        <span class="chip bg-color">回测</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/okx-invite-code-missing-guide.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202607/2910984-20260727012523936-2066343062.jpg" class="responsive-img" alt="OKX 注册忘记填邀请码怎么办？补绑、换绑与返佣完整指南">
+                        
+                        <span class="card-title">OKX 注册忘记填邀请码怎么办？补绑、换绑与返佣完整指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-07-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/" class="post-category">
+                                    加密货币
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OKX/">
+                        <span class="chip bg-color">OKX</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AC%A7%E6%98%93%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">欧易教程</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%89%8B%E7%BB%AD%E8%B4%B9%E8%BF%94%E4%BD%A3/">
+                        <span class="chip bg-color">手续费返佣</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%82%80%E8%AF%B7%E7%A0%81/">
+                        <span class="chip bg-color">邀请码</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

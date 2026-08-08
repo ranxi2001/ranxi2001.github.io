@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-07-29T14:41:21.315Z</updated>
+  <updated>2026-08-08T19:59:06.990Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI把代码变便宜之后，独立开发者真正要学什么</title>
+    <link href="https://onefly.top/posts/ai-era-independent-developer-product-engineering.html"/>
+    <id>https://onefly.top/posts/ai-era-independent-developer-product-engineering.html</id>
+    <published>2026-08-08T19:48:48.000Z</published>
+    <updated>2026-08-08T19:59:06.990Z</updated>
+    
+    
+    <summary type="html">从 Mole 由开源 CLI 延伸为 Mac 付费软件的经历出发，讨论 AI 时代独立开发真正稀缺的能力：问题选择、产品取舍、持续发布、用户信任与数据分析。</summary>
+    
+    
+    
+    <category term="AI工程" scheme="https://onefly.top/categories/AI%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+    <category term="AI工程" scheme="https://onefly.top/tags/AI%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="独立开发" scheme="https://onefly.top/tags/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="产品方法" scheme="https://onefly.top/tags/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>克制：AI时代最稀缺的工程能力</title>
@@ -476,29 +499,6 @@
     <category term="账号安全" scheme="https://onefly.top/tags/%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8/"/>
     
     <category term="反作弊" scheme="https://onefly.top/tags/%E5%8F%8D%E4%BD%9C%E5%BC%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>量化心流：最爽的不是赚钱</title>
-    <link href="https://onefly.top/posts/quant-flow-state.html"/>
-    <id>https://onefly.top/posts/quant-flow-state.html</id>
-    <published>2026-06-04T05:26:51.000Z</published>
-    <updated>2026-06-04T05:33:10.722Z</updated>
-    
-    
-    <summary type="html">量化最爽的瞬间，不只是挖到因子或跑出收益，而是脏数据被清洗、优化问题被压成一行公式、数学推导让噪声世界突然安静下来的心流状态。</summary>
-    
-    
-    
-    <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    
-    
-    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
-    
-    <category term="Opt" scheme="https://onefly.top/tags/Opt/"/>
-    
-    <category term="心流" scheme="https://onefly.top/tags/%E5%BF%83%E6%B5%81/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-08-08T20:17:06.927Z</updated>
+  <updated>2026-08-09T13:47:56.325Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Agent 到底是不是正在膨胀的泡沫？</title>
+    <link href="https://onefly.top/posts/agent-bubble-production-engineering.html"/>
+    <id>https://onefly.top/posts/agent-bubble-production-engineering.html</id>
+    <published>2026-08-09T13:36:28.000Z</published>
+    <updated>2026-08-09T13:47:56.325Z</updated>
+    
+    
+    <summary type="html">Agent 的热度是否已经超过真实价值？本文从生产落地条件、工程鸿沟、岗位重组和模型能力演进出发，区分演示效果、生产系统与商业回报。</summary>
+    
+    
+    
+    <category term="人工智能" scheme="https://onefly.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="智能体" scheme="https://onefly.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
+    
+    <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
+    
+    <category term="职业发展" scheme="https://onefly.top/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
+    
+  </entry>
   
   <entry>
     <title>AI把代码变便宜之后，独立开发者真正要学什么</title>
@@ -474,31 +499,6 @@
     <category term="AUC" scheme="https://onefly.top/tags/AUC/"/>
     
     <category term="误伤率" scheme="https://onefly.top/tags/%E8%AF%AF%E4%BC%A4%E7%8E%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>互联网风控算法入门：从账号安全到广告反作弊</title>
-    <link href="https://onefly.top/posts/internet-risk-control-algorithm.html"/>
-    <id>https://onefly.top/posts/internet-risk-control-algorithm.html</id>
-    <published>2026-06-04T15:17:13.000Z</published>
-    <updated>2026-06-04T15:54:11.907Z</updated>
-    
-    
-    <summary type="html">一篇写给零基础同学的互联网风控算法入门指南：从账号安全、营销风控、广告反作弊、内容安全到大模型安全，理解业务场景、算法路线、工程链路与指标体系。</summary>
-    
-    
-    
-    <category term="技术成长" scheme="https://onefly.top/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
-    
-    
-    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
-    
-    <category term="算法" scheme="https://onefly.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="账号安全" scheme="https://onefly.top/tags/%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="反作弊" scheme="https://onefly.top/tags/%E5%8F%8D%E4%BD%9C%E5%BC%8A/"/>
     
   </entry>
   

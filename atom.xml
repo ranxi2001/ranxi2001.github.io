@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-08-09T13:47:56.325Z</updated>
+  <updated>2026-08-13T07:18:23.334Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GMGN 30%返佣注册指南：邀请码、计算规则与领取说明</title>
+    <link href="https://onefly.top/posts/gmgn-referral-code-fee-rebate-guide.html"/>
+    <id>https://onefly.top/posts/gmgn-referral-code-fee-rebate-guide.html</id>
+    <published>2026-08-13T07:18:00.000Z</published>
+    <updated>2026-08-13T07:18:23.334Z</updated>
+    
+    
+    <summary type="html">GMGN 邀请码和30%手续费返佣如何使用？本文说明 GMGN.BEST 的推荐关系绑定、返佣计算、查询领取与钱包安全，并附英文注册指引。</summary>
+    
+    
+    
+    <category term="Web3" scheme="https://onefly.top/categories/Web3/"/>
+    
+    
+    <category term="Web3" scheme="https://onefly.top/tags/Web3/"/>
+    
+    <category term="手续费返佣" scheme="https://onefly.top/tags/%E6%89%8B%E7%BB%AD%E8%B4%B9%E8%BF%94%E4%BD%A3/"/>
+    
+    <category term="GMGN" scheme="https://onefly.top/tags/GMGN/"/>
+    
+    <category term="链上交易" scheme="https://onefly.top/tags/%E9%93%BE%E4%B8%8A%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
   
   <entry>
     <title>Agent 到底是不是正在膨胀的泡沫？</title>
@@ -474,31 +499,6 @@
     <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
     
     <category term="策略" scheme="https://onefly.top/tags/%E7%AD%96%E7%95%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>风控模型指标：别只盯着 AUC</title>
-    <link href="https://onefly.top/posts/risk-control-model-metrics.html"/>
-    <id>https://onefly.top/posts/risk-control-model-metrics.html</id>
-    <published>2026-06-04T16:30:24.000Z</published>
-    <updated>2026-06-05T05:36:29.305Z</updated>
-    
-    
-    <summary type="html">一篇写给算法同学和风控面试准备者的模型指标复习：用 TP/FP/TN/FN 理解 Precision、Recall、FPR、FNR、ROC-AUC、PR-AUC、KS 与 Precision@TopK，重点掌握“低误伤率下的黑样本召回”。</summary>
-    
-    
-    
-    <category term="技术成长" scheme="https://onefly.top/categories/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
-    
-    
-    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
-    
-    <category term="指标" scheme="https://onefly.top/tags/%E6%8C%87%E6%A0%87/"/>
-    
-    <category term="AUC" scheme="https://onefly.top/tags/AUC/"/>
-    
-    <category term="误伤率" scheme="https://onefly.top/tags/%E8%AF%AF%E4%BC%A4%E7%8E%87/"/>
     
   </entry>
   

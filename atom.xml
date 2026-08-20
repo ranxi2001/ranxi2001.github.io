@@ -40,6 +40,29 @@
   </entry>
   
   <entry>
+    <title>AI Infra入门与职业发展：从推理优化到系统能力</title>
+    <link href="https://onefly.top/posts/ai-infra-career-roadmap-2026.html"/>
+    <id>https://onefly.top/posts/ai-infra-career-roadmap-2026.html</id>
+    <published>2026-08-15T10:00:00.000Z</published>
+    <updated>2026-08-20T17:08:30.824Z</updated>
+    
+    
+    <summary type="html">从 AI Infra 的技术价值、训练与推理方向，到无集群资源下的实践方法和校招项目表达，梳理 AI Infra 初学者的切入路径与长期成长框架。</summary>
+    
+    
+    
+    <category term="AI Infra" scheme="https://onefly.top/categories/AI-Infra/"/>
+    
+    
+    <category term="云原生" scheme="https://onefly.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
+    
+    <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
+    
+    <category term="求职" scheme="https://onefly.top/tags/%E6%B1%82%E8%81%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GMGN 30%返佣注册指南：邀请码、计算规则与领取说明</title>
     <link href="https://onefly.top/posts/gmgn-referral-code-fee-rebate-guide.html"/>
     <id>https://onefly.top/posts/gmgn-referral-code-fee-rebate-guide.html</id>
@@ -81,9 +104,9 @@
     
     <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="智能体" scheme="https://onefly.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
-    
     <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
+    
+    <category term="智能体" scheme="https://onefly.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     
     <category term="职业发展" scheme="https://onefly.top/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
     
@@ -474,29 +497,6 @@
     <category term="工程" scheme="https://onefly.top/tags/%E5%B7%A5%E7%A8%8B/"/>
     
     <category term="LLM" scheme="https://onefly.top/tags/LLM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FreshBench：我把 2026 高考数学做成了开源评测基准</title>
-    <link href="https://onefly.top/posts/freshbench-gaokao-math-2026.html"/>
-    <id>https://onefly.top/posts/freshbench-gaokao-math-2026.html</id>
-    <published>2026-06-12T03:25:40.000Z</published>
-    <updated>2026-06-19T09:32:26.207Z</updated>
-    
-    
-    <summary type="html">2026 高考数学刚公开后，我整理了 FreshBench-GaokaoMath-2026：一个带时间戳、Schema、JSONL 和评测脚本的开源新题基准，用来观察大模型与 Agent 在真实新题上的数学推理能力。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
-    
-    <category term="评测" scheme="https://onefly.top/tags/%E8%AF%84%E6%B5%8B/"/>
-    
-    <category term="高考数学" scheme="https://onefly.top/tags/%E9%AB%98%E8%80%83%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   

@@ -8,9 +8,9 @@
     <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
     <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
     <meta charset="utf-8">
-    <meta name="keywords" content="AI Infra, 推理优化, 分布式训练, GPU集群, AI工程, 项目表达, 校招面试, 端侧AI">
-    <meta name="description" content="从 AI Infra 的技术价值、训练与推理方向，到无集群资源下的实践方法和校招项目表达，梳理 AI Infra 初学者的切入路径与长期成长框架。">
-    <link rel="canonical" href="https://onefly.top/posts/ai-infra-career-roadmap-2026.html">
+    <meta name="keywords" content="Agent自进化, DeepSeek Harness, Agent脚手架, 上下文管理, 插件化架构, 执行轨迹, Agent评测, AI工程">
+    <meta name="description" content="从 DeepSeek Harness 的设计思路出发，梳理 Agent 自进化的任务集、轨迹分析、插件化脚手架、上下文追加和安全回滚机制，并给出可落地的工程闭环。">
+    <link rel="canonical" href="https://onefly.top/posts/agent-self-evolution-deepseek-harness.html">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>AI Infra入门与职业发展：从推理优化到系统能力 | 孤飞的博客</title>
+    <title>Agent自进化：从DeepSeek Harness看可回滚的脚手架工程 | 孤飞的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -294,12 +294,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260821010755619-714690832.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260821012605162-1626644516.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">AI Infra入门与职业发展：从推理优化到系统能力</h1>
+                    <h1 class="description center-align post-title">Agent自进化：从DeepSeek Harness看可回滚的脚手架工程</h1>
                 </div>
             </div>
         </div>
@@ -901,16 +901,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
-                                <span class="chip bg-color">云原生</span>
+                            <a href="/tags/Agent%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">Agent工程</span>
                             </a>
                         
-                            <a href="/tags/AI-Infra/">
-                                <span class="chip bg-color">AI Infra</span>
+                            <a href="/tags/Harness/">
+                                <span class="chip bg-color">Harness</span>
                             </a>
                         
-                            <a href="/tags/%E6%B1%82%E8%81%8C/">
-                                <span class="chip bg-color">求职</span>
+                            <a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">
+                                <span class="chip bg-color">上下文</span>
+                            </a>
+                        
+                            <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">AI工程</span>
                             </a>
                         
                     </div>
@@ -921,8 +925,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/AI-Infra/" class="post-category">
-                                AI Infra
+                            <a href="/categories/Agent%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                Agent工程
                             </a>
                         
                     </div>
@@ -934,7 +938,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-08-15
+                    2026-08-20
                 </div>
                 
 
@@ -943,14 +947,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    15 分
                 </div>
                 
 
@@ -968,263 +972,277 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="AI-Infra入门与职业发展：从推理优化到系统能力"><a href="#AI-Infra入门与职业发展：从推理优化到系统能力" class="headerlink" title="AI Infra入门与职业发展：从推理优化到系统能力"></a>AI Infra入门与职业发展：从推理优化到系统能力</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260821010755619-714690832.jpg" style="zoom:33%;" alt="AI Infra入门与职业发展封面图"></p>
-<p>AI Infra 不是简单地把模型部署到服务器上，也不只是为算法同学提供一套运行环境。它位于模型、软件系统和计算硬件之间，负责把模型变成稳定、可扩展、可观测且成本可控的生产能力。</p>
-<p>一场面向 AI Infra 初学者的分享，围绕行业方向、学习路径、面试准备和项目表达展开。本文在会议智能纪要的基础上重新整理，保留可复用的技术判断，删除会议管理噪声，并对部分带有明显个人经验色彩的结论做了谨慎表述。</p>
+                <p><img src="https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260821012605162-1626644516.jpg" style="zoom:33%;" alt="Agent自进化：从DeepSeek Harness看可回滚的脚手架工程封面图"></p>
+<h1 id="Agent自进化：从DeepSeek-Harness看可回滚的脚手架工程"><a href="#Agent自进化：从DeepSeek-Harness看可回滚的脚手架工程" class="headerlink" title="Agent自进化：从DeepSeek Harness看可回滚的脚手架工程"></a>Agent自进化：从DeepSeek Harness看可回滚的脚手架工程</h1><p>Agent 的能力提升，未必首先意味着重新训练一个更大的模型。很多时候，真正影响结果的是模型周围的脚手架：上下文如何组织，工具如何调用，规则如何执行，失败如何恢复，以及一次改动能不能被准确评估和安全撤销。</p>
+<p>一场围绕 DeepSeek Harness 的技术分享，讨论了 Agent 自进化的难点、脚手架优化路径和工程落地方法。本文将会议内容重新整理为一套更适合工程实践的框架，重点关注一个核心问题：<strong>如何让 Agent 持续改进，同时不把线上服务变成不可控的实验场。</strong></p>
 <blockquote>
-<p>文中关于岗位选择、方向热度和职业节奏的内容属于经验分享，不构成对具体公司、岗位或薪资的承诺。具体团队的工作内容仍应以岗位描述和面试沟通为准。</p>
+<p>文中关于具体项目版本、实验效果和业界方案的描述，主要来自分享中的会议纪要。部分结论属于经验总结或方案解读，不应视为项目官方文档或确定的生产承诺。</p>
 </blockquote>
-<h2 id="一、AI-Infra-到底解决什么问题"><a href="#一、AI-Infra-到底解决什么问题" class="headerlink" title="一、AI Infra 到底解决什么问题"></a>一、AI Infra 到底解决什么问题</h2><p>可以把 AI 系统粗略分成三层：</p>
+<h2 id="一、Agent-自进化，究竟在进化什么"><a href="#一、Agent-自进化，究竟在进化什么" class="headerlink" title="一、Agent 自进化，究竟在进化什么"></a>一、Agent 自进化，究竟在进化什么</h2><p>“自进化”容易被理解成模型自己训练自己，但在 Agent 系统中，至少存在三种不同的进化对象：</p>
+<ol>
+<li><strong>模型权重</strong>：通过监督微调、强化学习或其他训练方法改变模型本身；</li>
+<li><strong>脚手架配置</strong>：修改 Prompt、工具说明、路由规则、上下文模板和流程约束；</li>
+<li><strong>运行时状态</strong>：在任务执行过程中积累经验、调整上下文或选择不同工具路径。</li>
+</ol>
+<p>工程实践中，第二类通常更容易快速验证，也更适合做受控迭代。它不需要每次都重新训练大模型，但依然可能显著影响 Agent 的执行质量。</p>
 <pre class="mermaid">flowchart TD
-    A[模型与算法] --&gt; B[AI Infra 系统层]
-    B --&gt; C[计算硬件与集群]
-    B --&gt; D[训练与推理运行时]
-    B --&gt; E[数据与存储管线]
-    B --&gt; F[调度、监控与稳定性]
-    D --&gt; G[线上 AI 应用]
-    E --&gt; D
-    F --&gt; D</pre>
+    A[用户任务] --&gt; B[Agent脚手架]
+    B --&gt; C[模型推理]
+    C --&gt; D[工具调用与环境交互]
+    D --&gt; E[执行轨迹]
+    E --&gt; F[评测与问题定位]
+    F --&gt; G[修改Prompt、工具说明或规则]
+    G --&gt; H{离线验证通过?}
+    H --&gt;|否| I[保留旧版本并分析失败样本]
+    H --&gt;|是| J[小流量线上实验]
+    J --&gt; K{业务指标改善?}
+    K --&gt;|否| I
+    K --&gt;|是| L[发布新版本]</pre>
 
-<p>模型效果只是系统价值的一部分。真正上线之后，还需要回答一系列工程问题：</p>
+<p>这里的关键不是“让 Agent 自动修改自己”这句口号，而是建立一个可观测、可验证、可回滚的变更系统。</p>
+<h2 id="二、自进化为什么比普通-Prompt-优化难"><a href="#二、自进化为什么比普通-Prompt-优化难" class="headerlink" title="二、自进化为什么比普通 Prompt 优化难"></a>二、自进化为什么比普通 Prompt 优化难</h2><h3 id="1-任务集必须足够大且覆盖均匀"><a href="#1-任务集必须足够大且覆盖均匀" class="headerlink" title="1. 任务集必须足够大且覆盖均匀"></a>1. 任务集必须足够大且覆盖均匀</h3><p>如果只用少量任务验证一次改动，Agent 很容易在局部样本上变好，却在其他场景中退化。理想的评测集需要覆盖：</p>
 <ul>
-<li>GPU 是否被充分利用？</li>
-<li>数据是否能及时送到计算设备？</li>
-<li>训练任务能否稳定运行并在故障后恢复？</li>
-<li>推理服务能否在延迟、吞吐和成本之间取得平衡？</li>
-<li>集群资源如何分配、隔离和回收？</li>
-<li>出现性能下降时，能否快速定位到模型、数据、网络、调度还是硬件？</li>
+<li>Agent 支持的主要任务类型；</li>
+<li>不同难度和输入分布；</li>
+<li>常见成功路径与异常路径；</li>
+<li>工具调用、文件操作、网络访问等不同能力；</li>
+<li>真实用户任务和人工构造任务。</li>
 </ul>
-<p>因此，AI Infra 的价值通常体现为<strong>资源利用率、任务稳定性、服务延迟、吞吐能力和单位成本</strong>等系统指标，而不只是模型准确率。</p>
-<h3 id="1-算力投入需要系统能力来兑现"><a href="#1-算力投入需要系统能力来兑现" class="headerlink" title="1. 算力投入需要系统能力来兑现"></a>1. 算力投入需要系统能力来兑现</h3><p>在大规模训练和推理场景中，硬件成本很高。一个看似很小的效率损失，经过长时间运行和大规模资源放大，也可能变成明显的成本浪费。</p>
-<p>这并不意味着所有优化都值得做。工程判断的关键是：</p>
-<ol>
-<li>先找到真正的瓶颈；</li>
-<li>估算优化收益和改造成本；</li>
-<li>在小规模环境中验证；</li>
-<li>再决定是否推广到生产集群。</li>
-</ol>
-<p><strong>AI Infra 工程师的核心工作不是盲目追求更复杂的技术，而是把资源、性能和可靠性问题转化成可测量、可验证的工程目标。</strong></p>
-<h3 id="2-大模型时代的竞争不只在模型结构"><a href="#2-大模型时代的竞争不只在模型结构" class="headerlink" title="2. 大模型时代的竞争不只在模型结构"></a>2. 大模型时代的竞争不只在模型结构</h3><p>模型架构、训练方法和应用形态都在快速演进，但一个模型能否稳定运行、能否低成本服务大量请求，仍然取决于底层系统能力。</p>
-<p>这也是为什么推理服务、分布式训练、数据管线、资源调度和稳定性工程都具有长期价值。模型会变化，系统问题却会持续出现，只是具体硬件、框架和运行时不断更新。</p>
-<h2 id="二、AI-Infra-的主要方向"><a href="#二、AI-Infra-的主要方向" class="headerlink" title="二、AI Infra 的主要方向"></a>二、AI Infra 的主要方向</h2><p>AI Infra 并不是一个单一岗位，而是一组技术方向的集合。不同团队的边界可能不同，但可以从以下几个方向建立认知。</p>
-<h3 id="1-分布式训练"><a href="#1-分布式训练" class="headerlink" title="1. 分布式训练"></a>1. 分布式训练</h3><p>分布式训练关注如何让多个 GPU 或多个节点协同完成训练任务，常见问题包括：</p>
+<p>任务规模越大，评估成本越高；任务分布越复杂，越难判断一次提升究竟来自真正的能力改进，还是来自对评测样本的过拟合。</p>
+<h3 id="2-低质量-Query-会污染优化方向"><a href="#2-低质量-Query-会污染优化方向" class="headerlink" title="2. 低质量 Query 会污染优化方向"></a>2. 低质量 Query 会污染优化方向</h3><p>真实用户提交的 Query 并不天然适合训练或评测。有些请求缺少上下文，有些只包含模糊意图，还有些无法判断结果是否正确。</p>
+<p>如果把这些数据不加筛选地投入自进化流程，可能导致：</p>
 <ul>
-<li>数据并行、模型并行和流水线并行；</li>
-<li>通信开销与计算重叠；</li>
-<li>梯度同步和检查点保存；</li>
-<li>节点故障、任务恢复和资源利用率；</li>
-<li>不同硬件和通信拓扑下的性能差异。</li>
+<li>Agent 过度适应低信息量输入；</li>
+<li>评测结果噪声增大；</li>
+<li>优化方向被偶然样本带偏；</li>
+<li>规则越来越多，但整体能力没有提升；</li>
+<li>某些场景变好后，其他场景出现退化。</li>
 </ul>
-<p>这个方向的技术深度较高，通常需要较强的并行计算、网络和硬件基础。适合已经具备系统基础、并且有机会接触真实训练集群的人继续深入。</p>
-<h3 id="2-推理服务与性能优化"><a href="#2-推理服务与性能优化" class="headerlink" title="2. 推理服务与性能优化"></a>2. 推理服务与性能优化</h3><p>推理方向直接连接模型和线上业务，常见目标是降低延迟、提高吞吐和控制单位请求成本。</p>
-<p>主要问题包括：</p>
+<p>因此，数据治理本身就是 Agent 自进化系统的一部分。至少应保留任务来源、任务类型、可验证目标、执行轨迹和最终评价，而不是只保存一条自然语言 Query。</p>
+<h3 id="3-Reward-很难覆盖完整执行过程"><a href="#3-Reward-很难覆盖完整执行过程" class="headerlink" title="3. Reward 很难覆盖完整执行过程"></a>3. Reward 很难覆盖完整执行过程</h3><p>Agent 的结果通常不是一步生成的，而是经历理解任务、规划、调用工具、读取结果、修正策略和提交答案等多个阶段。</p>
+<p>如果只奖励最终文本，系统可能无法区分：</p>
 <ul>
-<li>请求批处理与动态 batching；</li>
-<li>KV Cache 管理；</li>
-<li>Prefill 与 Decode 阶段的资源差异；</li>
-<li>并发控制、流式输出和超时处理；</li>
-<li>模型量化、显存占用与精度权衡；</li>
-<li>多实例部署和负载均衡；</li>
-<li>P50、P95、P99 延迟以及吞吐指标。</li>
+<li>过程正确但最终输出格式错误；</li>
+<li>结果碰巧正确但执行路径危险；</li>
+<li>使用了过高权限工具；</li>
+<li>修改了不该修改的文件；</li>
+<li>花费大量 Token 和时间后才得到结果。</li>
 </ul>
-<p>推理方向相对适合个人实践，因为很多问题可以在单张 GPU、云服务器甚至 CPU 环境中做小规模验证。重点不是复现某个大厂集群，而是把“测量—定位—优化—对比”的闭环做出来。</p>
-<h3 id="3-集群编排与资源调度"><a href="#3-集群编排与资源调度" class="headerlink" title="3. 集群编排与资源调度"></a>3. 集群编排与资源调度</h3><p>这一方向负责将大量计算资源分配给不同任务，涉及：</p>
+<p>这使得 Agentic RL 的 Reward 设计难度很高。奖励函数不仅要衡量最终结果，还要考虑过程质量、安全边界、资源成本和可复现性。</p>
+<h2 id="三、Agent-自进化的两条主路径"><a href="#三、Agent-自进化的两条主路径" class="headerlink" title="三、Agent 自进化的两条主路径"></a>三、Agent 自进化的两条主路径</h2><h3 id="路径一：Agentic-RL"><a href="#路径一：Agentic-RL" class="headerlink" title="路径一：Agentic RL"></a>路径一：Agentic RL</h3><p>Agentic RL 通过强化学习训练模型，使其在 Agent 环境中获得更好的任务表现。它的理论上限较高，但工程门槛也更高：</p>
 <ul>
-<li>资源队列和配额；</li>
-<li>多租户隔离；</li>
-<li>抢占、优先级和公平调度；</li>
-<li>GPU 拓扑感知；</li>
-<li>任务生命周期管理；</li>
-<li>失败重试和资源回收。</li>
+<li>需要大量高质量任务和环境；</li>
+<li>需要设计覆盖执行过程的奖励函数；</li>
+<li>需要控制训练成本和样本效率；</li>
+<li>需要防止模型为了奖励投机取巧；</li>
+<li>需要验证新能力是否损害旧能力。</li>
 </ul>
-<p>它通常需要生产级集群作为实践环境。没有真实资源时，可以先通过 Kubernetes、Volcano、Karmada 或相关调度组件理解概念，但不要把本地 Demo 的复杂度等同于生产系统经验。</p>
-<h3 id="4-数据存储与数据管线"><a href="#4-数据存储与数据管线" class="headerlink" title="4. 数据存储与数据管线"></a>4. 数据存储与数据管线</h3><p>训练和推理都依赖数据管线。数据读取速度不足、预处理效率过低或存储访问抖动，都可能让昂贵的计算设备处于等待状态。</p>
-<p>可以重点学习：</p>
+<p>它更像是一项完整的训练系统工程，不适合作为所有团队的第一步。</p>
+<h3 id="路径二：脚手架分析与迭代"><a href="#路径二：脚手架分析与迭代" class="headerlink" title="路径二：脚手架分析与迭代"></a>路径二：脚手架分析与迭代</h3><p>另一条路径是直接分析 Agent 的执行轨迹，从失败样本中归纳问题，再修改：</p>
 <ul>
-<li>DataLoader 与预取；</li>
-<li>数据分片、缓存和并行读取；</li>
-<li>对象存储与本地缓存；</li>
-<li>数据格式转换；</li>
-<li>大文件读写和随机访问；</li>
-<li>数据管线的监控与故障恢复。</li>
+<li>System Prompt；</li>
+<li>工具描述；</li>
+<li>任务路由规则；</li>
+<li>上下文拼接方式；</li>
+<li>计划与执行流程；</li>
+<li>错误处理和重试策略。</li>
 </ul>
-<p>这是非常适合初学者建立工程感的方向。它不要求一开始就拥有大规模集群，但能训练性能分析、数据建模和可靠性设计能力。</p>
-<h3 id="5-框架、运行时与算子"><a href="#5-框架、运行时与算子" class="headerlink" title="5. 框架、运行时与算子"></a>5. 框架、运行时与算子</h3><p>这一层连接模型代码和硬件执行，涉及算子实现、编译优化、内存管理和运行时调度。</p>
-<p>算子与框架是很好的入门材料，但不应停留在“照着接口写一个算子”。更有价值的学习方式是理解：</p>
-<ul>
-<li>算子为什么慢；</li>
-<li>数据布局如何影响访存；</li>
-<li>Kernel Launch 和同步的成本是什么；</li>
-<li>编译器、运行时和硬件之间如何协作；</li>
-<li>优化后如何设计基准测试验证收益。</li>
-</ul>
-<h3 id="6-稳定性与运维"><a href="#6-稳定性与运维" class="headerlink" title="6. 稳定性与运维"></a>6. 稳定性与运维</h3><p>AI 集群和推理服务都需要稳定性工程，包括：</p>
-<ul>
-<li>指标、日志和链路追踪；</li>
-<li>GPU、网络、存储和任务状态监控；</li>
-<li>故障检测、隔离和恢复；</li>
-<li>容量规划与告警降噪；</li>
-<li>根因分析和事故复盘；</li>
-<li>服务降级与流量保护。</li>
-</ul>
-<p>稳定性方向容易被低估，但它最接近真实生产环境。能把故障定位过程讲清楚，并且用数据证明改进效果，往往比罗列一长串工具名称更有说服力。</p>
-<h2 id="三、初学者应该从哪里切入"><a href="#三、初学者应该从哪里切入" class="headerlink" title="三、初学者应该从哪里切入"></a>三、初学者应该从哪里切入</h2><p>没有大规模集群并不意味着不能学习 AI Infra。入门阶段更重要的是建立正确的验证习惯。</p>
-<h3 id="推荐的切入顺序"><a href="#推荐的切入顺序" class="headerlink" title="推荐的切入顺序"></a>推荐的切入顺序</h3><pre class="mermaid">flowchart LR
-    A[理解系统指标] --&gt; B[单机复现实验]
-    B --&gt; C[定位一个瓶颈]
-    C --&gt; D[做最小优化]
-    D --&gt; E[对比优化前后]
-    E --&gt; F[沉淀复盘与代码]</pre>
+<p>这条路径的优点是反馈快、改动可解释、上线成本相对低。缺点是容易陷入局部最优：针对某一批失败样本不断加规则，最终得到一个越来越复杂却不一定更强的脚手架。</p>
+<p>因此，脚手架迭代必须配合固定验证集、回归测试和版本化管理，不能只看单个 Case 是否修好。</p>
+<h2 id="四、DeepSeek-Harness-的设计启发"><a href="#四、DeepSeek-Harness-的设计启发" class="headerlink" title="四、DeepSeek Harness 的设计启发"></a>四、DeepSeek Harness 的设计启发</h2><p>根据分享内容，DeepSeek Harness 的定位并不是已经实现完整的 Agent 自进化，而是为“安全修改 Agent 脚手架”提供一个标准化底座。</p>
+<p>它的核心思路可以概括为：<strong>把容易变化的部分从极简内核中拆出来，把每次变更变成可登记、可追踪、可撤销的插件操作。</strong></p>
+<h3 id="1-极简内核与插件分离"><a href="#1-极简内核与插件分离" class="headerlink" title="1. 极简内核与插件分离"></a>1. 极简内核与插件分离</h3><p>内核只保留 Agent 运行所必需的基础能力，其他上下文管理、规则逻辑和策略模块都以插件形式实现。</p>
+<pre class="mermaid">flowchart LR
+    A[极简内核] --&gt; B[插件调度]
+    B --&gt; C[上下文插件]
+    B --&gt; D[工具规则插件]
+    B --&gt; E[任务路由插件]
+    B --&gt; F[错误处理插件]
+    C --&gt; G[追加式事件日志]
+    D --&gt; G
+    E --&gt; G
+    F --&gt; G
+    G --&gt; H[评测、审计与回滚]</pre>
 
-<p>可以按以下顺序推进：</p>
+<p>这样做的直接收益是：</p>
+<ul>
+<li>优化某个规则时不必修改内核；</li>
+<li>不同插件可以独立测试和版本管理；</li>
+<li>变更影响范围更容易界定；</li>
+<li>可以针对不同任务组合不同插件；</li>
+<li>出现问题时能定位到具体插件版本。</li>
+</ul>
+<p>插件化并不自动带来安全性。真正重要的是插件边界、权限模型、依赖关系和生命周期都必须被明确描述。</p>
+<h3 id="2-强制登记撤销方法"><a href="#2-强制登记撤销方法" class="headerlink" title="2. 强制登记撤销方法"></a>2. 强制登记撤销方法</h3><p>一个很有价值的设计是：<strong>每个插件修改必须同时登记对应的撤销方法。</strong></p>
+<p>可以把一次变更抽象为：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Change = {
+  target: 被修改的插件或规则,
+  apply: 如何应用变更,
+  undo: 如何撤销变更,
+  metadata: 变更原因、版本、评测结果和操作者
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果只有 <code>apply</code> 没有 <code>undo</code>，系统就无法保证快速恢复。强制撤销登记相当于把“可回滚”从运维承诺变成上线前的结构化约束。</p>
+<p>在实际系统中，撤销方法还需要满足几个条件：</p>
+<ul>
+<li>能够幂等执行；</li>
+<li>不依赖已经被新版本删除的数据；</li>
+<li>回滚后状态可被验证；</li>
+<li>能恢复配置、路由、工具权限和上下文策略；</li>
+<li>能关联到具体的变更版本和实验批次。</li>
+</ul>
+<h3 id="3-上下文只追加，不原地修改"><a href="#3-上下文只追加，不原地修改" class="headerlink" title="3. 上下文只追加，不原地修改"></a>3. 上下文只追加，不原地修改</h3><p>如果 Agent 的历史上下文可以被任意覆盖，问题发生后很难回答：当时 Agent 看到了什么？哪个插件追加了哪段信息？哪一次修改改变了决策？</p>
+<p>追加式上下文的基本思想是：</p>
+<ul>
+<li>原始事件只写入，不覆盖；</li>
+<li>新信息以新事件或新版本追加；</li>
+<li>当前视图由事件重放或投影得到；</li>
+<li>历史记录可用于审计、回放和问题定位。</li>
+</ul>
+<pre class="mermaid">sequenceDiagram
+    participant U as 用户
+    participant R as Agent运行时
+    participant P as 插件
+    participant L as 事件日志
+    U-&gt;&gt;R: 提交任务
+    R-&gt;&gt;L: 追加用户输入
+    R-&gt;&gt;P: 触发插件
+    P-&gt;&gt;L: 追加上下文事件
+    P-&gt;&gt;L: 追加工具调用事件
+    L--&gt;&gt;R: 重放当前上下文视图
+    R-&gt;&gt;U: 返回结果
+    Note over L: 历史事件不覆盖，变更可审计</pre>
+
+<p>这与传统“直接修改一份上下文对象”的方式不同。它会增加存储和投影复杂度，但换来了更强的可追溯性。</p>
+<h3 id="4-Waterfall-式事件接力"><a href="#4-Waterfall-式事件接力" class="headerlink" title="4. Waterfall 式事件接力"></a>4. Waterfall 式事件接力</h3><p>插件按照明确顺序接力执行，每个阶段消费前一阶段的结果，并生成新的事件或状态。</p>
+<p>这类 Waterfall 机制适合强调：</p>
+<ul>
+<li>执行顺序；</li>
+<li>阶段边界；</li>
+<li>输入输出契约；</li>
+<li>依赖关系；</li>
+<li>全链路观测。</li>
+</ul>
+<p>它不一定适合所有 Agent。对于需要并行探索的任务，可能还需要并行分支、合并节点和超时控制。但即使采用并行执行，也应保留清晰的事件关系，而不是让插件之间互相读写共享状态。</p>
+<h3 id="5-状态与处理逻辑隔离"><a href="#5-状态与处理逻辑隔离" class="headerlink" title="5. 状态与处理逻辑隔离"></a>5. 状态与处理逻辑隔离</h3><p>会话状态统一存储在独立日志层，插件主要负责读取和处理数据，不直接修改底层历史状态。</p>
+<p>这可以降低几类风险：</p>
+<ul>
+<li>插件误删上下文；</li>
+<li>不同插件互相覆盖结果；</li>
+<li>回滚时无法恢复原始状态；</li>
+<li>一个任务的临时修改泄漏到其他任务。</li>
+</ul>
+<p>真正落地时，还需要进一步设计租户、会话和任务级隔离，不能只依靠插件开发者自觉遵守约定。</p>
+<h2 id="五、线上自进化必须先解决控制问题"><a href="#五、线上自进化必须先解决控制问题" class="headerlink" title="五、线上自进化必须先解决控制问题"></a>五、线上自进化必须先解决控制问题</h2><p>在线自进化的吸引力在于：Agent 可以边服务边学习，甚至在单个任务执行过程中动态调整策略。但它也带来更高风险。</p>
+<p>至少要同时解决三件事：</p>
 <ol>
-<li>先理解 CPU、GPU、显存、带宽、网络和存储之间的关系；</li>
-<li>在本地或低成本云服务器上跑通一个训练或推理服务；</li>
-<li>记录延迟、吞吐、显存占用、GPU 利用率等指标；</li>
-<li>选择一个具体瓶颈，而不是泛泛地“优化性能”；</li>
-<li>修改一个变量并做对照实验；</li>
-<li>记录结果、失败原因和适用边界。</li>
+<li><strong>服务可用性</strong>：优化过程不能阻塞或破坏正常请求；</li>
+<li><strong>变更可回滚</strong>：出现退化时能快速恢复稳定版本；</li>
+<li><strong>任务互不干扰</strong>：一个会话的实验状态不能污染其他会话。</li>
 </ol>
-<h3 id="1-推理实验示例"><a href="#1-推理实验示例" class="headerlink" title="1. 推理实验示例"></a>1. 推理实验示例</h3><p>可以搭建一个小型推理服务，对比不同配置下的效果：</p>
+<p>因此，线上自进化不应直接修改全局生产配置。更稳妥的流程是：</p>
+<pre class="mermaid">flowchart TD
+    A[线上执行轨迹] --&gt; B[脱敏与质量筛选]
+    B --&gt; C[离线问题归因]
+    C --&gt; D[生成候选脚手架变更]
+    D --&gt; E[固定评测集回归]
+    E --&gt; F{是否出现能力退化?}
+    F --&gt;|是| G[拒绝候选变更]
+    F --&gt;|否| H[沙箱或小流量实验]
+    H --&gt; I{线上指标是否改善?}
+    I --&gt;|否| J[撤销并记录原因]
+    I --&gt;|是| K[扩大流量并保留回滚点]</pre>
+
+<p>“在线”更适合指数据和反馈在线产生，而不是允许 Agent 不经审核地在线修改所有生产行为。</p>
+<h2 id="六、从执行轨迹到可落地闭环"><a href="#六、从执行轨迹到可落地闭环" class="headerlink" title="六、从执行轨迹到可落地闭环"></a>六、从执行轨迹到可落地闭环</h2><p>一个可运行的 Agent 优化系统，至少需要以下数据链路：</p>
+<h3 id="1-采集完整执行轨迹"><a href="#1-采集完整执行轨迹" class="headerlink" title="1. 采集完整执行轨迹"></a>1. 采集完整执行轨迹</h3><p>只保存最终答案是不够的。应尽量记录：</p>
 <ul>
-<li>单请求与批量请求；</li>
-<li>不同并发数；</li>
-<li>不同最大输入长度；</li>
-<li>不同量化方式；</li>
-<li>CPU 与 GPU 推理；</li>
-<li>是否启用缓存；</li>
-<li>不同模型实例数。</li>
+<li>用户任务和任务类型；</li>
+<li>每一步模型输入输出；</li>
+<li>工具调用参数和返回值；</li>
+<li>上下文版本和插件版本；</li>
+<li>延迟、Token、资源消耗；</li>
+<li>错误、重试和中断原因；</li>
+<li>最终结果与评价。</li>
 </ul>
-<p>每次实验至少记录：</p>
+<p>采集时要注意隐私、权限和敏感数据脱敏，不能为了可观测性无限制保留原始用户内容。</p>
+<h3 id="2-自动归因，而不是只统计成功率"><a href="#2-自动归因，而不是只统计成功率" class="headerlink" title="2. 自动归因，而不是只统计成功率"></a>2. 自动归因，而不是只统计成功率</h3><p>成功率只能告诉你结果是否变好，不能说明为什么变好或变坏。可以按以下维度对失败轨迹分类：</p>
 <ul>
-<li>请求数量；</li>
-<li>输入和输出长度；</li>
-<li>平均延迟、P95 延迟；</li>
-<li>吞吐量；</li>
-<li>显存占用；</li>
-<li>错误率和超时数量。</li>
+<li>任务理解错误；</li>
+<li>计划不完整；</li>
+<li>工具选择错误；</li>
+<li>参数或权限错误；</li>
+<li>上下文缺失；</li>
+<li>中间结果未验证；</li>
+<li>重试失控；</li>
+<li>最终输出不符合验收标准。</li>
 </ul>
-<p>不要只截一张监控图就结束。应该说明测试环境、负载模型、对比基线和结论是否可迁移。</p>
-<h3 id="2-数据管线实验示例"><a href="#2-数据管线实验示例" class="headerlink" title="2. 数据管线实验示例"></a>2. 数据管线实验示例</h3><p>可以构造一个包含大量小文件或分片数据的训练输入，比较以下方案：</p>
+<p>归因之后，才能判断应该改 Prompt、工具描述、上下文结构还是验证器。</p>
+<h3 id="3-固定集与线上-A-B-双重验证"><a href="#3-固定集与线上-A-B-双重验证" class="headerlink" title="3. 固定集与线上 A/B 双重验证"></a>3. 固定集与线上 A/B 双重验证</h3><p>AI 生成的优化方案不能直接全量发布。建议至少经过：</p>
+<ol>
+<li>固定验证集回归；</li>
+<li>关键场景和历史失败样本复测；</li>
+<li>沙箱或小流量 A/B 实验；</li>
+<li>线上业务指标对比；</li>
+<li>版本冻结和回滚点保留。</li>
+</ol>
+<p>线上指标也不应只看任务成功率，还可以观察 P95 延迟、Token 成本、工具错误率、人工接管率和安全告警数。</p>
+<h2 id="七、当前方法的边界"><a href="#七、当前方法的边界" class="headerlink" title="七、当前方法的边界"></a>七、当前方法的边界</h2><h3 id="1-从低水位到中水位更容易"><a href="#1-从低水位到中水位更容易" class="headerlink" title="1. 从低水位到中水位更容易"></a>1. 从低水位到中水位更容易</h3><p>当 Agent 还有明显的基础缺陷时，修复工具调用、上下文缺失或流程遗漏，往往能带来较明显的提升。但当系统已经达到较高准确率后，剩余错误通常更分散、更难归因。</p>
+<p>从 90% 提升到 95%，不只是多修几个 Bug，可能意味着需要更细的任务分层、更可靠的验证器和更严格的数据治理。</p>
+<h3 id="2-经验优化不等于全局最优"><a href="#2-经验优化不等于全局最优" class="headerlink" title="2. 经验优化不等于全局最优"></a>2. 经验优化不等于全局最优</h3><p>当前的脚手架进化，大多是从轨迹中发现问题，再尝试一组修改。这是一种有效的工程迭代方式，但并不能证明已经找到全局最优方案。</p>
+<p>因此，工程团队应保留：</p>
 <ul>
-<li>逐文件读取与批量读取；</li>
-<li>无缓存与本地缓存；</li>
-<li>单线程与多进程 DataLoader；</li>
-<li>不同预取参数；</li>
-<li>不同数据格式。</li>
+<li>改动假设；</li>
+<li>对照实验；</li>
+<li>未生效的尝试；</li>
+<li>适用范围和副作用；</li>
+<li>仍未解决的失败样本。</li>
 </ul>
-<p>实验目标不是得到一个脱离场景的“最佳参数”，而是学会回答：<strong>GPU 为什么在等待，等待时间来自哪里，改动后是否真的减少了等待。</strong></p>
-<h3 id="3-集群方向的低成本学习方式"><a href="#3-集群方向的低成本学习方式" class="headerlink" title="3. 集群方向的低成本学习方式"></a>3. 集群方向的低成本学习方式</h3><p>没有万卡集群时，可以先做小规模的控制面和调度实验：</p>
+<p>把一次优化写成可复盘的实验，而不是只保留“最终版本”，有助于避免系统不断重复无效尝试。</p>
+<h3 id="3-插件化也会引入复杂度"><a href="#3-插件化也会引入复杂度" class="headerlink" title="3. 插件化也会引入复杂度"></a>3. 插件化也会引入复杂度</h3><p>插件拆分可以降低单点修改风险，但插件数量增加后，也会出现：</p>
 <ul>
-<li>用 Kubernetes 部署简单任务；</li>
-<li>观察 Pod、Job、节点资源和 GPU 设备插件；</li>
-<li>设计队列、优先级和资源配额；</li>
-<li>模拟任务失败与重试；</li>
-<li>记录调度延迟和资源利用率。</li>
+<li>插件依赖关系复杂；</li>
+<li>新增和删除插件需要大量配套配置；</li>
+<li>调试链路变长；</li>
+<li>多 Agent 之间的隔离更难；</li>
+<li>版本组合数量快速增长。</li>
 </ul>
-<p>这些实验不能替代生产经验，但能帮助你建立资源编排和任务生命周期的基本模型。面试时应清楚区分“本地复现”和“生产实践”。</p>
-<h2 id="四、项目如何体现-AI-Infra-能力"><a href="#四、项目如何体现-AI-Infra-能力" class="headerlink" title="四、项目如何体现 AI Infra 能力"></a>四、项目如何体现 AI Infra 能力</h2><p>项目不需要看起来很大，但必须有清晰的问题和可验证的指标。</p>
-<h3 id="不推荐的项目描述"><a href="#不推荐的项目描述" class="headerlink" title="不推荐的项目描述"></a>不推荐的项目描述</h3><blockquote>
-<p>使用某框架部署了一个大模型，调整参数后速度变快，最终效果不错。</p>
-</blockquote>
-<p>这个描述的问题是：没有基线、没有瓶颈、没有定位过程，也没有说明个人做了什么。</p>
-<h3 id="更好的表达结构"><a href="#更好的表达结构" class="headerlink" title="更好的表达结构"></a>更好的表达结构</h3><p>建议采用：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">问题背景
-  -&gt; 观测与定位
-  -&gt; 方案设计
-  -&gt; 实现与实验
-  -&gt; 量化结果
-  -&gt; 取舍与后续工作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>例如：</p>
+<p>因此，插件化的目标不是把所有逻辑都拆成插件，而是把变化频繁、边界清晰、值得独立验证的部分拆出来。</p>
+<h2 id="八、给-Agent-工程师的实践建议"><a href="#八、给-Agent-工程师的实践建议" class="headerlink" title="八、给 Agent 工程师的实践建议"></a>八、给 Agent 工程师的实践建议</h2><h3 id="1-先把单-Agent-的基本链路做扎实"><a href="#1-先把单-Agent-的基本链路做扎实" class="headerlink" title="1. 先把单 Agent 的基本链路做扎实"></a>1. 先把单 Agent 的基本链路做扎实</h3><p>不需要一开始就追逐多 Agent、动态工作流等复杂范式。更值得先理解：</p>
+<ul>
+<li>上下文如何构建；</li>
+<li>工具如何注册和调用；</li>
+<li>任务如何规划和执行；</li>
+<li>错误如何反馈给模型；</li>
+<li>结果如何验证；</li>
+<li>日志如何记录和回放。</li>
+</ul>
+<p>当单 Agent 的执行链路和失败边界足够清楚后，再讨论多 Agent 协作，才不会把问题隐藏在更复杂的编排中。</p>
+<h3 id="2-做一个可回放的最小-Harness"><a href="#2-做一个可回放的最小-Harness" class="headerlink" title="2. 做一个可回放的最小 Harness"></a>2. 做一个可回放的最小 Harness</h3><p>个人练习可以从一个小型 Harness 开始，至少具备：</p>
+<ul>
+<li>一个明确的任务集合；</li>
+<li>一个版本化的 Prompt 和工具描述；</li>
+<li>一份追加式执行日志；</li>
+<li>一个固定验证集；</li>
+<li>一个简单的插件加载机制；</li>
+<li>一个可执行的撤销操作；</li>
+<li>一份变更前后的对比报告。</li>
+</ul>
+<p>即使只支持本地文件分析或代码测试，也足以训练 Agent 工程所需的系统思维。</p>
+<h3 id="3-面试中不要只讲“用了什么模型”"><a href="#3-面试中不要只讲“用了什么模型”" class="headerlink" title="3. 面试中不要只讲“用了什么模型”"></a>3. 面试中不要只讲“用了什么模型”</h3><p>更有价值的项目表达方式是：</p>
 <blockquote>
-<p>在批量推理实验中，GPU 利用率较低且 P95 延迟波动明显。通过拆分请求排队、模型执行和结果序列化耗时，定位到动态 batching 配置与输入长度分布不匹配。随后调整批处理策略并增加超时保护，在相同负载和硬件条件下对比优化前后延迟与吞吐。最终记录指标变化，并说明该方案在高并发和长上下文场景下的限制。</p>
+<p>我遇到了什么问题？如何通过轨迹和指标定位？修改了哪个环节？为什么选择这个方案？结果如何验证？有没有引入新的风险？</p>
 </blockquote>
-<p>这个表达不依赖夸张的收益数字，但能让面试官看到完整的工程思考过程。</p>
-<h3 id="量化结果不一定要很大"><a href="#量化结果不一定要很大" class="headerlink" title="量化结果不一定要很大"></a>量化结果不一定要很大</h3><p>一个可靠的 5% 提升，也可能比一个无法解释的 50% 提升更有价值。关键是说明：</p>
+<p>即使负责的不是核心模块，也可以从模块边界、接口设计、失败处理和业务价值出发，把自己的工作讲清楚。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>Agent 自进化真正困难的地方，不是让模型生成一段“自我优化”的代码，而是让每一次变化都具备可观测性、可验证性和可逆性。</p>
+<p>DeepSeek Harness 带来的重要启发，是把 Agent 脚手架当成一个可以版本化、插件化和审计的系统：</p>
 <ul>
-<li>指标是什么；</li>
-<li>基线如何测量；</li>
-<li>测试负载是否一致；</li>
-<li>优化影响了哪些资源；</li>
-<li>是否引入了精度、稳定性或成本代价。</li>
+<li>内核保持稳定，变化放进边界清晰的插件；</li>
+<li>上下文只追加，原始事件可回放；</li>
+<li>每个变更都登记撤销方法；</li>
+<li>离线评测和线上实验分层进行；</li>
+<li>任何自动优化都必须保留回滚点。</li>
 </ul>
-<p>如果实验没有获得提升，也可以写成有价值的复盘：</p>
-<ul>
-<li>假设是什么；</li>
-<li>为什么尝试该方案；</li>
-<li>实验如何设计；</li>
-<li>结果为什么没有改善；</li>
-<li>最终排除了什么错误方向。</li>
-</ul>
-<h2 id="五、校招面试应重点准备什么"><a href="#五、校招面试应重点准备什么" class="headerlink" title="五、校招面试应重点准备什么"></a>五、校招面试应重点准备什么</h2><p>校招阶段通常不要求候选人已经拥有完整生产集群经验，但需要证明具备继续成长的基础。</p>
-<h3 id="1-操作系统"><a href="#1-操作系统" class="headerlink" title="1. 操作系统"></a>1. 操作系统</h3><p>重点理解：</p>
-<ul>
-<li>进程、线程和协程；</li>
-<li>虚拟内存与页面置换；</li>
-<li>锁、条件变量和并发安全；</li>
-<li>IO、多路复用和上下文切换；</li>
-<li>CPU Cache 与内存访问。</li>
-</ul>
-<h3 id="2-网络原理"><a href="#2-网络原理" class="headerlink" title="2. 网络原理"></a>2. 网络原理</h3><p>AI 服务经常由多个组件组成，因此需要掌握：</p>
-<ul>
-<li>TCP 连接和拥塞控制；</li>
-<li>HTTP、RPC 与连接复用；</li>
-<li>超时、重试和幂等；</li>
-<li>负载均衡；</li>
-<li>服务发现和故障转移。</li>
-</ul>
-<h3 id="3-并行计算"><a href="#3-并行计算" class="headerlink" title="3. 并行计算"></a>3. 并行计算</h3><p>至少要能解释：</p>
-<ul>
-<li>数据并行与模型并行的差异；</li>
-<li>通信和计算为什么会互相影响；</li>
-<li>GPU 利用率低可能有哪些原因；</li>
-<li>批处理为什么会影响吞吐和延迟；</li>
-<li>如何设计一个公平的性能对比实验。</li>
-</ul>
-<h3 id="4-代码能力与故障排查"><a href="#4-代码能力与故障排查" class="headerlink" title="4. 代码能力与故障排查"></a>4. 代码能力与故障排查</h3><p>面试官往往会通过代码题和项目追问判断你是否真的理解系统。准备时不要只背概念，还要练习：</p>
-<ul>
-<li>读日志定位异常；</li>
-<li>设计最小复现；</li>
-<li>编写基准测试；</li>
-<li>用指标验证假设；</li>
-<li>在不确定时逐步缩小问题范围。</li>
-</ul>
-<h2 id="六、职业选择中的几个判断"><a href="#六、职业选择中的几个判断" class="headerlink" title="六、职业选择中的几个判断"></a>六、职业选择中的几个判断</h2><h3 id="1-不要只追逐热门关键词"><a href="#1-不要只追逐热门关键词" class="headerlink" title="1. 不要只追逐热门关键词"></a>1. 不要只追逐热门关键词</h3><p>同一个“AI Infra”岗位，可能对应推理服务、数据平台、集群调度、算子开发或稳定性工程。投递前应重点确认：</p>
-<ul>
-<li>主要服务对象是谁；</li>
-<li>日常工作是开发、优化还是运维；</li>
-<li>使用什么硬件和运行环境；</li>
-<li>是否有真实线上流量或训练任务；</li>
-<li>个人能否获得指标和问题闭环；</li>
-<li>团队是否允许工程师深入系统问题。</li>
-</ul>
-<h3 id="2-第一份工作先建立可迁移能力"><a href="#2-第一份工作先建立可迁移能力" class="headerlink" title="2. 第一份工作先建立可迁移能力"></a>2. 第一份工作先建立可迁移能力</h3><p>初期不必排斥数据、稳定性、推理服务等基础工作。只要能接触真实问题，并且能够形成“问题—定位—方案—结果”的闭环，就能逐步建立系统能力。</p>
-<p>比起岗位名称，更值得关注的是：你是否能接触到代码、指标、故障和真实约束。</p>
-<h3 id="3-方向可以变化，但基础能力要持续积累"><a href="#3-方向可以变化，但基础能力要持续积累" class="headerlink" title="3. 方向可以变化，但基础能力要持续积累"></a>3. 方向可以变化，但基础能力要持续积累</h3><p>训练、推理、存储、调度和稳定性之间并非完全割裂。一个方向上的系统经验，往往可以迁移到其他方向：</p>
-<ul>
-<li>推理优化会涉及调度、缓存和硬件；</li>
-<li>数据管线会涉及存储、并发和性能分析；</li>
-<li>稳定性会涉及服务治理、监控和故障恢复；</li>
-<li>端侧 AI 会同时要求模型压缩、运行时和软硬件协同。</li>
-</ul>
-<p>因此，早期不需要急于给自己贴上永久标签，先把一个方向做深，再扩大系统边界。</p>
-<h2 id="七、给-AI-Infra-学习者的实践清单"><a href="#七、给-AI-Infra-学习者的实践清单" class="headerlink" title="七、给 AI Infra 学习者的实践清单"></a>七、给 AI Infra 学习者的实践清单</h2><p>可以用一个小型项目验证自己是否真正进入了工程状态：</p>
-<ul>
-<li>[ ] 能在本地或云服务器上部署一个可复现的推理服务；</li>
-<li>[ ] 能给服务增加并发压测和 P95 延迟统计；</li>
-<li>[ ] 能解释显存占用和吞吐变化的原因；</li>
-<li>[ ] 能记录一次失败的性能优化尝试；</li>
-<li>[ ] 能为数据读取增加缓存或预取，并做对照实验；</li>
-<li>[ ] 能用日志和指标定位一次故障；</li>
-<li>[ ] 能写出清晰的 README 和启动脚本；</li>
-<li>[ ] 能用“问题—定位—方案—结果—取舍”讲清楚项目。</li>
-</ul>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>AI Infra 的长期价值来自系统能力，而不是单个工具或短期热点。初学者没有大规模集群也可以从单机推理、数据管线、性能基准和故障排查开始，逐步建立可验证的工程闭环。</p>
-<p>真正值得沉淀的不是“我部署过某个模型”，而是：</p>
-<blockquote>
-<p>我遇到过什么问题，如何定位，做了什么取舍，结果如何验证，方案还有什么边界。</p>
-</blockquote>
-<p>这套表达方式既适用于 AI Infra 学习，也适用于校招项目面试和后续工程工作。</p>
+<p>当这些基础设施建立起来后，Agent 的“自进化”才不会停留在概念演示，而会逐步变成一种可以被团队管理、被数据验证、也能在出现问题时及时收回的工程能力。</p>
 
                 
             </div>
@@ -1251,7 +1269,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://onefly.top/posts/ai-infra-career-roadmap-2026.html">https://onefly.top/posts/ai-infra-career-roadmap-2026.html</a>
+                    <a href="https://onefly.top/posts/agent-self-evolution-deepseek-harness.html">https://onefly.top/posts/agent-self-evolution-deepseek-harness.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1289,16 +1307,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
-                                    <span class="chip bg-color">云原生</span>
+                                <a href="/tags/Agent%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">Agent工程</span>
                                 </a>
                             
-                                <a href="/tags/AI-Infra/">
-                                    <span class="chip bg-color">AI Infra</span>
+                                <a href="/tags/Harness/">
+                                    <span class="chip bg-color">Harness</span>
                                 </a>
                             
-                                <a href="/tags/%E6%B1%82%E8%81%8C/">
-                                    <span class="chip bg-color">求职</span>
+                                <a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">
+                                    <span class="chip bg-color">上下文</span>
+                                </a>
+                            
+                                <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">AI工程</span>
                                 </a>
                             
                         </div>
@@ -1731,9 +1753,71 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/agent-self-evolution-deepseek-harness.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260821012605162-1626644516.jpg" class="responsive-img" alt="Agent自进化：从DeepSeek Harness看可回滚的脚手架工程">
+                        
+                        <span class="card-title">Agent自进化：从DeepSeek Harness看可回滚的脚手架工程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-08-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Agent%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    Agent工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent%E5%B7%A5%E7%A8%8B/">
+                        <span class="chip bg-color">Agent工程</span>
+                    </a>
+                    
+                    <a href="/tags/Harness/">
+                        <span class="chip bg-color">Harness</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/">
+                        <span class="chip bg-color">上下文</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                        <span class="chip bg-color">AI工程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/ant-ai-coding-interview-guide.html">
                     <div class="card-image">
@@ -1750,9 +1834,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-08-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-08-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1778,66 +1862,6 @@
                     
                     <a href="/tags/AI%E7%AC%94%E8%AF%95/">
                         <span class="chip bg-color">AI笔试</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/gmgn-referral-code-fee-rebate-guide.html">
-                    <div class="card-image">
-                        
-                        <img src="https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260813151521461-346907403.png" class="responsive-img" alt="GMGN 30%返佣注册指南：邀请码、计算规则与领取说明">
-                        
-                        <span class="card-title">GMGN 30%返佣注册指南：邀请码、计算规则与领取说明</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-08-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Web3/" class="post-category">
-                                    Web3
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Web3/">
-                        <span class="chip bg-color">Web3</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%89%8B%E7%BB%AD%E8%B4%B9%E8%BF%94%E4%BD%A3/">
-                        <span class="chip bg-color">手续费返佣</span>
-                    </a>
-                    
-                    <a href="/tags/GMGN/">
-                        <span class="chip bg-color">GMGN</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%93%BE%E4%B8%8A%E4%BA%A4%E6%98%93/">
-                        <span class="chip bg-color">链上交易</span>
                     </a>
                     
                 </div>

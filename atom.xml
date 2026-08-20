@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-08-20T09:18:26.818Z</updated>
+  <updated>2026-08-20T17:26:32.752Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Agent自进化：从DeepSeek Harness看可回滚的脚手架工程</title>
+    <link href="https://onefly.top/posts/agent-self-evolution-deepseek-harness.html"/>
+    <id>https://onefly.top/posts/agent-self-evolution-deepseek-harness.html</id>
+    <published>2026-08-20T12:00:00.000Z</published>
+    <updated>2026-08-20T17:26:32.752Z</updated>
+    
+    
+    <summary type="html">从 DeepSeek Harness 的设计思路出发，梳理 Agent 自进化的任务集、轨迹分析、插件化脚手架、上下文追加和安全回滚机制，并给出可落地的工程闭环。</summary>
+    
+    
+    
+    <category term="Agent工程" scheme="https://onefly.top/categories/Agent%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+    <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="Harness" scheme="https://onefly.top/tags/Harness/"/>
+    
+    <category term="上下文" scheme="https://onefly.top/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
+    
+    <category term="AI工程" scheme="https://onefly.top/tags/AI%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>蚂蚁 AI Coding 笔试经验：3道题与通用 AI Harness Prompt</title>
@@ -36,29 +61,6 @@
     <category term="面试" scheme="https://onefly.top/tags/%E9%9D%A2%E8%AF%95/"/>
     
     <category term="AI笔试" scheme="https://onefly.top/tags/AI%E7%AC%94%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AI Infra入门与职业发展：从推理优化到系统能力</title>
-    <link href="https://onefly.top/posts/ai-infra-career-roadmap-2026.html"/>
-    <id>https://onefly.top/posts/ai-infra-career-roadmap-2026.html</id>
-    <published>2026-08-15T10:00:00.000Z</published>
-    <updated>2026-08-20T17:08:30.824Z</updated>
-    
-    
-    <summary type="html">从 AI Infra 的技术价值、训练与推理方向，到无集群资源下的实践方法和校招项目表达，梳理 AI Infra 初学者的切入路径与长期成长框架。</summary>
-    
-    
-    
-    <category term="AI Infra" scheme="https://onefly.top/categories/AI-Infra/"/>
-    
-    
-    <category term="云原生" scheme="https://onefly.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
-    
-    <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
-    
-    <category term="求职" scheme="https://onefly.top/tags/%E6%B1%82%E8%81%8C/"/>
     
   </entry>
   
@@ -104,9 +106,9 @@
     
     <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
-    
     <category term="智能体" scheme="https://onefly.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
+    
+    <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
     
     <category term="职业发展" scheme="https://onefly.top/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
     

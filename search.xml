@@ -385,25 +385,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
-    <title>投资学博迪第十版.pdf下载</title>
-    <url>/posts/15785.html</url>
-    <content><![CDATA[<p>作者：（美）滋维·博迪（Zvi Bodie）,（美）亚历克斯·凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
-<p></p><p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p><br>格式: PDF<p></p>
-<p>封面：</p>
-<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png" alt=""></p>
-<p>下载链接：</p>
-<p>链接:<a href="https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq">https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq</a><br>提取码:hdiq</p>
-<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
-]]></content>
-      <categories>
-        <category>电子书</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-        <tag>经管</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>第一行代码Android（第3版）pdf</title>
     <url>/posts/43427.html</url>
     <content><![CDATA[<p>2020年人民邮电出版社出版的图书<br>《第一行代码Android（第3版）》是2020年4月人民邮电出版社出版的图书，作者是郭霖。</p>
@@ -3619,6 +3600,25 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>投资学博迪第十版.pdf下载</title>
+    <url>/posts/15785.html</url>
+    <content><![CDATA[<p>作者：（美）滋维·博迪（Zvi Bodie）,（美）亚历克斯·凯恩（Alex Kane）,（美）艾伦J.马库斯（Alan J.Marcus）</p>
+<p></p><p>出版社：<a href="http://www.txtepub.com/tag/%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE">机械工业出版社</a></p><br>格式: PDF<p></p>
+<p>封面：</p>
+<p><img src="https://img2022.cnblogs.com/blog/2910984/202209/2910984-20220920083837829-995145796.png" alt=""></p>
+<p>下载链接：</p>
+<p>链接:<a href="https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq">https://pan.baidu.com/s/1FVBxcq3500omoGLGuan3GA?pwd=hdiq</a><br>提取码:hdiq</p>
+<p>资源来自于互联网，如分享有损你的权益，请联系我删除！</p>
+]]></content>
+      <categories>
+        <category>电子书</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+        <tag>经管</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Matlab R2024a For Mac 苹果M1/2/3芯片中文破解版</title>
     <url>/posts/24430.html</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Matlab R2024a 是一个高级的<strong>数学计算软件</strong>，广泛应用于工程、科学研究和经济统计等领域。该版本专为<strong>苹果 M1、M2 和 M3 芯片的 Mac 设备优化</strong>，提供了更好的性能和更高的计算效率。Matlab R2024a 支持多种编程语言，包括 MATLAB 自身的语言、C++、Python 等，使得用户可以方便地进行算法开发、数据分析和数值计算。此外，本版本还包括各种工具箱，支持图像处理、信号分析、机器学习等多种应用，是科研和工程设计的强大工具。</p>
@@ -5100,6 +5100,182 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
       </tags>
   </entry>
   <entry>
+    <title>时延套利策略研究：基于双交易所报价延迟的量化交易模型</title>
+    <url>/posts/250731.html</url>
+    <content><![CDATA[<h1 id="时延套利策略研究：基于双交易所报价延迟的量化交易模型"><a href="#时延套利策略研究：基于双交易所报价延迟的量化交易模型" class="headerlink" title="时延套利策略研究：基于双交易所报价延迟的量化交易模型"></a>时延套利策略研究：基于双交易所报价延迟的量化交易模型</h1><blockquote>
+<p><strong>作者：</strong> Waynecoin | <strong>单位：</strong> Alpha 9 Ventures  | <strong>日期：</strong> 2025年7月</p>
+</blockquote>
+<hr>
+<h2 id="1-研究背景与动机"><a href="#1-研究背景与动机" class="headerlink" title="1. 研究背景与动机"></a>1. 研究背景与动机</h2><p>在加密货币市场中，由于不同交易所的撮合引擎、参与者结构以及 API 响应速度存在差异，即使是同一资产，其买卖报价在平台之间也经常出现短期偏差。如果能够利用这些报价延迟，就可以构建“时延套利策略”，实现短期稳定盈利。</p>
+<p>本研究分析了领先交易所（交易所 A）和跟随交易所（交易所 B）之间的报价同步性，重点关注<strong>仅在交易所 B 开仓并等待价格收敛</strong>以实现盈利的策略。</p>
+<h3 id="💼-交易所账户类型与策略设计的关系："><a href="#💼-交易所账户类型与策略设计的关系：" class="headerlink" title="💼 交易所账户类型与策略设计的关系："></a>💼 交易所账户类型与策略设计的关系：</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>账户类型</th>
+<th>优势</th>
+<th>劣势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标准账户</td>
+<td>简单易用</td>
+<td>手续费高，API 速率限制</td>
+</tr>
+<tr>
+<td>VIP账户</td>
+<td>低手续费、高配额</td>
+<td>需高交易量或资产</td>
+</tr>
+<tr>
+<td>做市商账户</td>
+<td>负手续费、高权限</td>
+<td>需官方合作</td>
+</tr>
+<tr>
+<td>返佣代理账户</td>
+<td>返佣高，无门槛</td>
+<td>适合小规模套利</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="2-策略逻辑与入场条件"><a href="#2-策略逻辑与入场条件" class="headerlink" title="2. 策略逻辑与入场条件"></a>2. 策略逻辑与入场条件</h2><p>设：</p>
+<ul>
+<li>$P^{A}_{\text{bid}}$：交易所 A 的最佳买入价</li>
+<li>$P^{A}_{\text{ask}}$：交易所 A 的最佳卖出价</li>
+<li>$P^{B}_{\text{bid}}$：交易所 B 的最佳买入价</li>
+<li>$P^{B}_{\text{ask}}$：交易所 B 的最佳卖出价</li>
+</ul>
+<p>入场条件：</p>
+<ul>
+<li>多头条件：<script type="math/tex; mode=display">
+\Delta P_{\text{long}} = P^{A}*{\text{bid}} - P^{B}*{\text{ask}} > \theta_{\text{entry}}</script></li>
+<li>空头条件：<script type="math/tex; mode=display">
+\Delta P_{\text{short}} = P^{B}*{\text{bid}} - P^{A}*{\text{ask}} > \theta_{\text{entry}}</script></li>
+</ul>
+<p>其中 $\theta_{\text{entry}}$ 是最小套利阈值（例如 0.15%）。</p>
+<blockquote>
+<p>策略仅在 B 上操作，预期其价格向 A 收敛，不在 A 上开仓。</p>
+</blockquote>
+<hr>
+<h2 id="3-止盈与止损模型"><a href="#3-止盈与止损模型" class="headerlink" title="3. 止盈与止损模型"></a>3. 止盈与止损模型</h2><p>设 $\Delta P_0$ 为入场时价差，$\Delta P_t$ 为时刻 $t$ 的价差：</p>
+<ul>
+<li>止盈条件：$|\Delta P<em>t| \leq (1 - r</em>{\text{tp}}) \cdot |\Delta P_0|$</li>
+<li>止损条件：$|\Delta P<em>t| \geq (1 + r</em>{\text{sl}}) \cdot |\Delta P_0|$</li>
+</ul>
+<p>示例推荐比率：</p>
+<ul>
+<li>$r<em>{\text{tp}} = 1.0$, $r</em>{\text{sl}} = 1.0$</li>
+</ul>
+<hr>
+<h2 id="4-退出机制比较"><a href="#4-退出机制比较" class="headerlink" title="4. 退出机制比较"></a>4. 退出机制比较</h2><h3 id="方法-1：止盈触发时提交-GTC"><a href="#方法-1：止盈触发时提交-GTC" class="headerlink" title="方法 1：止盈触发时提交 GTC"></a>方法 1：止盈触发时提交 GTC</h3><p>动态入场、最大化利润、但延迟高、难填单。</p>
+<h3 id="方法-2：入场时预设-GTC"><a href="#方法-2：入场时预设-GTC" class="headerlink" title="方法 2：入场时预设 GTC"></a>方法 2：入场时预设 GTC</h3><p>简单稳定、易被其他交易者察觉、不能适应波动。</p>
+<p>比较两方法的预期值：</p>
+<ul>
+<li>$E_1 = p_1 \cdot (R - s_1)$</li>
+<li>$E_2 = p_2 \cdot (R - s_2)$<br>若 $E_1 &gt; E_2$，应优先使用方法 1。</li>
+</ul>
+<hr>
+<h2 id="5-每笔交易预期回报（EV）"><a href="#5-每笔交易预期回报（EV）" class="headerlink" title="5. 每笔交易预期回报（EV）"></a>5. 每笔交易预期回报（EV）</h2><p>设：</p>
+<ul>
+<li>$p$：止盈概率</li>
+<li>$R$：止盈回报百分比</li>
+<li>$L$：止损百分比</li>
+<li>$f$：手续费（往返）</li>
+</ul>
+<p>则：</p>
+<p>$\mathbb{E}[\text{Profit}] = p(R - f) + (1 - p)(-L - f)$</p>
+<p>盈亏平衡胜率为：</p>
+<p>$p = \frac{L + f}{R + L}$</p>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><ul>
+<li>$R = 0.002$，$L = 0.002$，$f = 0.0006$</li>
+<li>则 $p = \frac{0.0026}{0.004} = 0.65$</li>
+</ul>
+<p>若手续费降为 $f = 0.0002$，则 $p = 0.55$</p>
+<hr>
+<h2 id="6-资本效率与年化收益率"><a href="#6-资本效率与年化收益率" class="headerlink" title="6. 资本效率与年化收益率"></a>6. 资本效率与年化收益率</h2><p>设：</p>
+<ul>
+<li>$\mu$：每笔交易平均收益</li>
+<li>$n$：每日交易笔数</li>
+<li>$u$：资本利用率</li>
+<li>$\ell$：杠杆倍数</li>
+</ul>
+<p>年化回报计算公式：</p>
+<p>$\text{Annual Return} = \mu \cdot n \cdot 365 \cdot u \cdot \ell$</p>
+<h3 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h3><ul>
+<li>$\mu = 0.0014$，$n = 40$，$u = 0.3$，$\ell = 5$</li>
+<li>年化回报 ≈ 3066%</li>
+</ul>
+<hr>
+<h2 id="7-风险因素与对策"><a href="#7-风险因素与对策" class="headerlink" title="7. 风险因素与对策"></a>7. 风险因素与对策</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>风险类型</th>
+<th>对策建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>价差未收敛</td>
+<td>最大持仓时间、交易量确认</td>
+</tr>
+<tr>
+<td>GTC未成交</td>
+<td>超时回退、订单优先级</td>
+</tr>
+<tr>
+<td>API 延迟</td>
+<td>使用近场 VPS、WebSocket</td>
+</tr>
+<tr>
+<td>手续费压力</td>
+<td>VIP/MM、返佣账户</td>
+</tr>
+<tr>
+<td>交易所禁令</td>
+<td>模拟人类行为、交涉白名单</td>
+</tr>
+<tr>
+<td>执行滑点</td>
+<td>预估滑点容忍、订单簿分析</td>
+</tr>
+<tr>
+<td>系统故障</td>
+<td>冗余机制、自动报警系统</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="8-未来研究方向"><a href="#8-未来研究方向" class="headerlink" title="8. 未来研究方向"></a>8. 未来研究方向</h2><ul>
+<li>跨交易所延迟预测（如 LSTM）</li>
+<li>GTC 动态优化（强化学习）</li>
+<li>多交易所套利模拟器</li>
+<li>CEX–DEX套利结合</li>
+<li>深度感知过滤器</li>
+<li>混合做市套利模型</li>
+<li>HFT级基础设施部署</li>
+</ul>
+<hr>
+<p>感谢阅读！若你已动手实战，<strong>一定要告诉我你在哪个平台套利成功了 🤣</strong></p>
+<blockquote>
+<p>原文链接：<a href="https://x.com/Wayne145591/status/1944386125981982962">https://x.com/Wayne145591/status/1944386125981982962</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>交易所</tag>
+        <tag>套利</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XQ：WEB3交易方法论与执行：信息差、时间差与散户策略</title>
     <url>/posts/250920.html</url>
     <content><![CDATA[<h1 id="交易方法论与执行"><a href="#交易方法论与执行" class="headerlink" title="交易方法论与执行"></a>交易方法论与执行</h1><h2 id="1-交易的本质"><a href="#1-交易的本质" class="headerlink" title="1. 交易的本质"></a>1. 交易的本质</h2><ul>
@@ -5801,182 +5977,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>MacOS</tag>
         <tag>Office工具</tag>
         <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时延套利策略研究：基于双交易所报价延迟的量化交易模型</title>
-    <url>/posts/250731.html</url>
-    <content><![CDATA[<h1 id="时延套利策略研究：基于双交易所报价延迟的量化交易模型"><a href="#时延套利策略研究：基于双交易所报价延迟的量化交易模型" class="headerlink" title="时延套利策略研究：基于双交易所报价延迟的量化交易模型"></a>时延套利策略研究：基于双交易所报价延迟的量化交易模型</h1><blockquote>
-<p><strong>作者：</strong> Waynecoin | <strong>单位：</strong> Alpha 9 Ventures  | <strong>日期：</strong> 2025年7月</p>
-</blockquote>
-<hr>
-<h2 id="1-研究背景与动机"><a href="#1-研究背景与动机" class="headerlink" title="1. 研究背景与动机"></a>1. 研究背景与动机</h2><p>在加密货币市场中，由于不同交易所的撮合引擎、参与者结构以及 API 响应速度存在差异，即使是同一资产，其买卖报价在平台之间也经常出现短期偏差。如果能够利用这些报价延迟，就可以构建“时延套利策略”，实现短期稳定盈利。</p>
-<p>本研究分析了领先交易所（交易所 A）和跟随交易所（交易所 B）之间的报价同步性，重点关注<strong>仅在交易所 B 开仓并等待价格收敛</strong>以实现盈利的策略。</p>
-<h3 id="💼-交易所账户类型与策略设计的关系："><a href="#💼-交易所账户类型与策略设计的关系：" class="headerlink" title="💼 交易所账户类型与策略设计的关系："></a>💼 交易所账户类型与策略设计的关系：</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>账户类型</th>
-<th>优势</th>
-<th>劣势</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>标准账户</td>
-<td>简单易用</td>
-<td>手续费高，API 速率限制</td>
-</tr>
-<tr>
-<td>VIP账户</td>
-<td>低手续费、高配额</td>
-<td>需高交易量或资产</td>
-</tr>
-<tr>
-<td>做市商账户</td>
-<td>负手续费、高权限</td>
-<td>需官方合作</td>
-</tr>
-<tr>
-<td>返佣代理账户</td>
-<td>返佣高，无门槛</td>
-<td>适合小规模套利</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2 id="2-策略逻辑与入场条件"><a href="#2-策略逻辑与入场条件" class="headerlink" title="2. 策略逻辑与入场条件"></a>2. 策略逻辑与入场条件</h2><p>设：</p>
-<ul>
-<li>$P^{A}_{\text{bid}}$：交易所 A 的最佳买入价</li>
-<li>$P^{A}_{\text{ask}}$：交易所 A 的最佳卖出价</li>
-<li>$P^{B}_{\text{bid}}$：交易所 B 的最佳买入价</li>
-<li>$P^{B}_{\text{ask}}$：交易所 B 的最佳卖出价</li>
-</ul>
-<p>入场条件：</p>
-<ul>
-<li>多头条件：<script type="math/tex; mode=display">
-\Delta P_{\text{long}} = P^{A}*{\text{bid}} - P^{B}*{\text{ask}} > \theta_{\text{entry}}</script></li>
-<li>空头条件：<script type="math/tex; mode=display">
-\Delta P_{\text{short}} = P^{B}*{\text{bid}} - P^{A}*{\text{ask}} > \theta_{\text{entry}}</script></li>
-</ul>
-<p>其中 $\theta_{\text{entry}}$ 是最小套利阈值（例如 0.15%）。</p>
-<blockquote>
-<p>策略仅在 B 上操作，预期其价格向 A 收敛，不在 A 上开仓。</p>
-</blockquote>
-<hr>
-<h2 id="3-止盈与止损模型"><a href="#3-止盈与止损模型" class="headerlink" title="3. 止盈与止损模型"></a>3. 止盈与止损模型</h2><p>设 $\Delta P_0$ 为入场时价差，$\Delta P_t$ 为时刻 $t$ 的价差：</p>
-<ul>
-<li>止盈条件：$|\Delta P<em>t| \leq (1 - r</em>{\text{tp}}) \cdot |\Delta P_0|$</li>
-<li>止损条件：$|\Delta P<em>t| \geq (1 + r</em>{\text{sl}}) \cdot |\Delta P_0|$</li>
-</ul>
-<p>示例推荐比率：</p>
-<ul>
-<li>$r<em>{\text{tp}} = 1.0$, $r</em>{\text{sl}} = 1.0$</li>
-</ul>
-<hr>
-<h2 id="4-退出机制比较"><a href="#4-退出机制比较" class="headerlink" title="4. 退出机制比较"></a>4. 退出机制比较</h2><h3 id="方法-1：止盈触发时提交-GTC"><a href="#方法-1：止盈触发时提交-GTC" class="headerlink" title="方法 1：止盈触发时提交 GTC"></a>方法 1：止盈触发时提交 GTC</h3><p>动态入场、最大化利润、但延迟高、难填单。</p>
-<h3 id="方法-2：入场时预设-GTC"><a href="#方法-2：入场时预设-GTC" class="headerlink" title="方法 2：入场时预设 GTC"></a>方法 2：入场时预设 GTC</h3><p>简单稳定、易被其他交易者察觉、不能适应波动。</p>
-<p>比较两方法的预期值：</p>
-<ul>
-<li>$E_1 = p_1 \cdot (R - s_1)$</li>
-<li>$E_2 = p_2 \cdot (R - s_2)$<br>若 $E_1 &gt; E_2$，应优先使用方法 1。</li>
-</ul>
-<hr>
-<h2 id="5-每笔交易预期回报（EV）"><a href="#5-每笔交易预期回报（EV）" class="headerlink" title="5. 每笔交易预期回报（EV）"></a>5. 每笔交易预期回报（EV）</h2><p>设：</p>
-<ul>
-<li>$p$：止盈概率</li>
-<li>$R$：止盈回报百分比</li>
-<li>$L$：止损百分比</li>
-<li>$f$：手续费（往返）</li>
-</ul>
-<p>则：</p>
-<p>$\mathbb{E}[\text{Profit}] = p(R - f) + (1 - p)(-L - f)$</p>
-<p>盈亏平衡胜率为：</p>
-<p>$p = \frac{L + f}{R + L}$</p>
-<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><ul>
-<li>$R = 0.002$，$L = 0.002$，$f = 0.0006$</li>
-<li>则 $p = \frac{0.0026}{0.004} = 0.65$</li>
-</ul>
-<p>若手续费降为 $f = 0.0002$，则 $p = 0.55$</p>
-<hr>
-<h2 id="6-资本效率与年化收益率"><a href="#6-资本效率与年化收益率" class="headerlink" title="6. 资本效率与年化收益率"></a>6. 资本效率与年化收益率</h2><p>设：</p>
-<ul>
-<li>$\mu$：每笔交易平均收益</li>
-<li>$n$：每日交易笔数</li>
-<li>$u$：资本利用率</li>
-<li>$\ell$：杠杆倍数</li>
-</ul>
-<p>年化回报计算公式：</p>
-<p>$\text{Annual Return} = \mu \cdot n \cdot 365 \cdot u \cdot \ell$</p>
-<h3 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h3><ul>
-<li>$\mu = 0.0014$，$n = 40$，$u = 0.3$，$\ell = 5$</li>
-<li>年化回报 ≈ 3066%</li>
-</ul>
-<hr>
-<h2 id="7-风险因素与对策"><a href="#7-风险因素与对策" class="headerlink" title="7. 风险因素与对策"></a>7. 风险因素与对策</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>风险类型</th>
-<th>对策建议</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>价差未收敛</td>
-<td>最大持仓时间、交易量确认</td>
-</tr>
-<tr>
-<td>GTC未成交</td>
-<td>超时回退、订单优先级</td>
-</tr>
-<tr>
-<td>API 延迟</td>
-<td>使用近场 VPS、WebSocket</td>
-</tr>
-<tr>
-<td>手续费压力</td>
-<td>VIP/MM、返佣账户</td>
-</tr>
-<tr>
-<td>交易所禁令</td>
-<td>模拟人类行为、交涉白名单</td>
-</tr>
-<tr>
-<td>执行滑点</td>
-<td>预估滑点容忍、订单簿分析</td>
-</tr>
-<tr>
-<td>系统故障</td>
-<td>冗余机制、自动报警系统</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2 id="8-未来研究方向"><a href="#8-未来研究方向" class="headerlink" title="8. 未来研究方向"></a>8. 未来研究方向</h2><ul>
-<li>跨交易所延迟预测（如 LSTM）</li>
-<li>GTC 动态优化（强化学习）</li>
-<li>多交易所套利模拟器</li>
-<li>CEX–DEX套利结合</li>
-<li>深度感知过滤器</li>
-<li>混合做市套利模型</li>
-<li>HFT级基础设施部署</li>
-</ul>
-<hr>
-<p>感谢阅读！若你已动手实战，<strong>一定要告诉我你在哪个平台套利成功了 🤣</strong></p>
-<blockquote>
-<p>原文链接：<a href="https://x.com/Wayne145591/status/1944386125981982962">https://x.com/Wayne145591/status/1944386125981982962</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>交易所</tag>
-        <tag>套利</tag>
       </tags>
   </entry>
   <entry>
@@ -8664,74 +8664,6 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
-    <title>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</title>
-    <url>/posts/260112.html</url>
-    <content><![CDATA[<h1 id="如何在一天内修复你的整个人生：DAN-KOE的2026最新方法"><a href="#如何在一天内修复你的整个人生：DAN-KOE的2026最新方法" class="headerlink" title="如何在一天内修复你的整个人生：DAN KOE的2026最新方法"></a>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</h1><p>如果你和我一样，你会觉得新年决心是愚蠢的。</p>
-<p>为什么？因为大多数人改变生活的方式完全错误。他们制定这些决心只是因为其他人都在这么做——但这种方式从根本上就注定失败。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822199-1792776152.jpg" alt="DAN KOE 关于生活改变的核心理念"></p>
-<h2 id="传统新年决心为什么会失败"><a href="#传统新年决心为什么会失败" class="headerlink" title="传统新年决心为什么会失败"></a>传统新年决心为什么会失败</h2><p>大多数人在新年时制定雄心勃勃的目标：</p>
-<ul>
-<li>减肥50斤</li>
-<li>学习一门新语言</li>
-<li>开始创业</li>
-<li>建立健康习惯</li>
-</ul>
-<p>但到了二月，这些决心就已经被抛在脑后。问题不在于你的意志力，而在于<strong>方法本身就是错的</strong>。</p>
-<h2 id="正确的改变方式：一天修复你的整个人生"><a href="#正确的改变方式：一天修复你的整个人生" class="headerlink" title="正确的改变方式：一天修复你的整个人生"></a>正确的改变方式：一天修复你的整个人生</h2><h3 id="1-停止制定“决心”，开始设计系统"><a href="#1-停止制定“决心”，开始设计系统" class="headerlink" title="1. 停止制定“决心”，开始设计系统"></a>1. 停止制定“决心”，开始设计系统</h3><p>决心是一个结果，而系统是达成结果的过程。不要说“我要减肥”，而是建立一个每天都能执行的系统。</p>
-<p><strong>关键原则：</strong></p>
-<ul>
-<li>关注过程，而非结果</li>
-<li>建立可持续的日常习惯</li>
-<li>让改变变得不可避免</li>
-</ul>
-<h3 id="2-重新定义你的身份"><a href="#2-重新定义你的身份" class="headerlink" title="2. 重新定义你的身份"></a>2. 重新定义你的身份</h3><p>你不是在“尝试”成为某个人——你<strong>已经是</strong>那个人了。这种身份转变会立即改变你的行为模式。</p>
-<blockquote>
-<p>💡 提示：不要说“我想成为健康的人”，而是说“我是一个重视健康的人”。</p>
-</blockquote>
-<h3 id="3-一天之内完成的根本性转变"><a href="#3-一天之内完成的根本性转变" class="headerlink" title="3. 一天之内完成的根本性转变"></a>3. 一天之内完成的根本性转变</h3><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822964-309957013.jpg" alt="实施改变的行动步骤"></p>
-<p><strong>今天就可以做的事情：</strong></p>
-<ol>
-<li><strong>清理你的环境</strong> - 移除所有阻碍你目标的事物</li>
-<li><strong>重新设计你的一天</strong> - 创建一个支持新身份的日程表</li>
-<li><strong>建立问责机制</strong> - 公开承诺或找到问责伙伴</li>
-<li><strong>立即采取行动</strong> - 不要等到“完美时机”</li>
-</ol>
-<h3 id="4-从“动机”到“势头”"><a href="#4-从“动机”到“势头”" class="headerlink" title="4. 从“动机”到“势头”"></a>4. 从“动机”到“势头”</h3><p>动机是短暂的，但势头是可持续的。一旦你开始行动，持续下去会变得越来越容易。</p>
-<p><strong>创建势头的关键：</strong></p>
-<ul>
-<li>从极小的胜利开始</li>
-<li>每天都要有进展，无论多小</li>
-<li>庆祝过程中的每一步</li>
-</ul>
-<h2 id="为什么这种方法有效"><a href="#为什么这种方法有效" class="headerlink" title="为什么这种方法有效"></a>为什么这种方法有效</h2><p>这不是关于意志力或自律的神话故事。这是关于：</p>
-<ol>
-<li><strong>设计环境</strong>让正确的选择成为唯一的选择</li>
-<li><strong>重塑身份</strong>让行为成为自然表达</li>
-<li><strong>建立系统</strong>让成功成为必然结果</li>
-</ol>
-<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 (FAQ)"></a>常见问题 (FAQ)</h2><p><strong>Q: 我真的能在一天内改变我的整个人生吗？</strong><br>A: 你可以在一天内做出改变整个人生轨迹的决定和行动。转变是瞬间的，但结果需要时间显现。</p>
-<p><strong>Q: 如果我失败了怎么办？</strong><br>A: 失败是系统的一部分。关键是建立一个能够容纳失败并继续前进的系统。</p>
-<p><strong>Q: 这和传统的新年决心有什么不同？</strong><br>A: 传统决心关注结果和意志力；这种方法关注系统和身份转变。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>停止等待新的一年、新的一月，甚至新的一周。<strong>今天就是那一天</strong>。</p>
-<p>你不需要更多的动机、更多的时间或更好的环境。你只需要正确的方法和立即行动的决心。</p>
-<p>改变不是发生在未来的某个时刻——它发生在你决定成为不同的人的那一刻。</p>
-<p>那一刻就是现在。</p>
-<hr>
-<p><strong>原文作者</strong>: DAN KOE (<a href="https://x.com/thedankoe">@thedankoe</a>)<br><strong>原文链接</strong>: <a href="https://x.com/thedankoe/status/2010751592346030461">Twitter Article</a></p>
-<blockquote>
-<p>📌 本文基于 DAN KOE 的 Twitter 长文整理和扩展，旨在帮助更多人找到正确的生活改变方法。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>个人成长</category>
-      </categories>
-      <tags>
-        <tag>个人成长</tag>
-        <tag>自我提升</tag>
-        <tag>目标设定</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</title>
     <url>/posts/260212.html</url>
     <content><![CDATA[<h1 id="2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？"><a href="#2026年AI-Agent开发框架选型指南：LangGraph、CrewAI、Claude-Agent-SDK谁是最优解？" class="headerlink" title="2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？"></a>2026年AI Agent开发框架选型指南：LangGraph、CrewAI、Claude Agent SDK谁是最优解？</h1><p>AI Agent开发框架已从简单的RAG管道进化到多代理协作、状态管理和工具集成的复杂生态。2026年初，社区围绕”最优Agent框架”的讨论持续升温。本文基于X（Twitter）上AI从业者和开发者的最新分享，梳理主流框架的定位、优劣和适用场景，帮你做出明智的选型决策。</p>
@@ -9042,95 +8974,71 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
-    <title>OpenClaw(Clawdbot)的超级完整部署教程 0基础教学</title>
-    <url>/posts/260209.html</url>
-    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209180808035-1707057347.jpg" alt="OpenClaw Bot Deployment Guide" style="zoom:80%;"></p>
-<p>我选的服务器和 API 可能不是最便宜、性价比最高的，但是我认为是最简单的，适合 0 技术基础的同学学习搭建。我自己也是刚自学两天，不足之处请指教。</p>
-<h2 id="第一步：购买腾讯云轻量服务器"><a href="#第一步：购买腾讯云轻量服务器" class="headerlink" title="第一步：购买腾讯云轻量服务器"></a>第一步：购买腾讯云轻量服务器</h2><p><a href="https://buy.cloud.tencent.com/lighthouse?blueprintType=APP_OS&amp;blueprintOfficialId=lhbp-qr19tbkm&amp;regionId=9&amp;zone=ap-singapore-3&amp;bundleId=bundle_rs_nmc_lin_med2_01&amp;loginSet=AUTO&amp;from=lh-console">点击购买链接</a></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031852590-1821400031.jpg" alt="" style="zoom:33%;"></p>
-<p>费用约 40 元一个月，买完先放着。</p>
-<h2 id="第二步：创建-Telegram-Bot"><a href="#第二步：创建-Telegram-Bot" class="headerlink" title="第二步：创建 Telegram Bot"></a>第二步：创建 Telegram Bot</h2><p>在 Telegram 中搜索 <code>BotFather</code>（注意有蓝标认证），并点击进入。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031913515-242223594.jpg" alt="" style="zoom:33%;"></p>
-<p>发送指令：<br></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/newbot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p></p>
-<p>然后按照提示：</p>
-<ol>
-<li>取个名字（Name）。</li>
-<li>取个用户名（Username，必须以 <code>bot</code> 结尾）。</li>
-</ol>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031849302-2095540955.jpg" alt="" style="zoom:33%;"></p>
-<p>BotFather 发给你的这一长串字符（Token）就是你的 API 密钥，请保存好，不要泄露。</p>
-<p>示例 Token：<br><code>8232094405:AAFTXBMwkhRfE08bmqjOw0b27N-vOjlHbGg</code></p>
-<h2 id="第三步：购买-OpenClaw-API"><a href="#第三步：购买-OpenClaw-API" class="headerlink" title="第三步：购买 OpenClaw API"></a>第三步：购买 OpenClaw API</h2><p>我是在闲鱼买的中转 API（每个 API 都需要中转，所以用法不一样）。如果你在其他商家购买，请咨询商家如何使用。</p>
+    <title>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</title>
+    <url>/posts/260112.html</url>
+    <content><![CDATA[<h1 id="如何在一天内修复你的整个人生：DAN-KOE的2026最新方法"><a href="#如何在一天内修复你的整个人生：DAN-KOE的2026最新方法" class="headerlink" title="如何在一天内修复你的整个人生：DAN KOE的2026最新方法"></a>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</h1><p>如果你和我一样，你会觉得新年决心是愚蠢的。</p>
+<p>为什么？因为大多数人改变生活的方式完全错误。他们制定这些决心只是因为其他人都在这么做——但这种方式从根本上就注定失败。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822199-1792776152.jpg" alt="DAN KOE 关于生活改变的核心理念"></p>
+<h2 id="传统新年决心为什么会失败"><a href="#传统新年决心为什么会失败" class="headerlink" title="传统新年决心为什么会失败"></a>传统新年决心为什么会失败</h2><p>大多数人在新年时制定雄心勃勃的目标：</p>
+<ul>
+<li>减肥50斤</li>
+<li>学习一门新语言</li>
+<li>开始创业</li>
+<li>建立健康习惯</li>
+</ul>
+<p>但到了二月，这些决心就已经被抛在脑后。问题不在于你的意志力，而在于<strong>方法本身就是错的</strong>。</p>
+<h2 id="正确的改变方式：一天修复你的整个人生"><a href="#正确的改变方式：一天修复你的整个人生" class="headerlink" title="正确的改变方式：一天修复你的整个人生"></a>正确的改变方式：一天修复你的整个人生</h2><h3 id="1-停止制定“决心”，开始设计系统"><a href="#1-停止制定“决心”，开始设计系统" class="headerlink" title="1. 停止制定“决心”，开始设计系统"></a>1. 停止制定“决心”，开始设计系统</h3><p>决心是一个结果，而系统是达成结果的过程。不要说“我要减肥”，而是建立一个每天都能执行的系统。</p>
+<p><strong>关键原则：</strong></p>
+<ul>
+<li>关注过程，而非结果</li>
+<li>建立可持续的日常习惯</li>
+<li>让改变变得不可避免</li>
+</ul>
+<h3 id="2-重新定义你的身份"><a href="#2-重新定义你的身份" class="headerlink" title="2. 重新定义你的身份"></a>2. 重新定义你的身份</h3><p>你不是在“尝试”成为某个人——你<strong>已经是</strong>那个人了。这种身份转变会立即改变你的行为模式。</p>
 <blockquote>
-<p>【闲鱼】HU071 「快来捡漏【OpenClaw 一键配置 API Claude Opus 4.5 Opus-4-6】」</p>
+<p>💡 提示：不要说“我想成为健康的人”，而是说“我是一个重视健康的人”。</p>
 </blockquote>
-<p>点击链接购买后会收到一串密钥，例如：<br><code>H58JA72B-PNHV-XXXX-OGIH2</code></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031903158-197392592.jpg" alt="" style="zoom:33%;"></p>
-<p>现在所有准备工作就绪，开始部署。</p>
-<h2 id="第四步：部署-OpenClaw"><a href="#第四步：部署-OpenClaw" class="headerlink" title="第四步：部署 OpenClaw"></a>第四步：部署 OpenClaw</h2><p>回到腾讯云控制台，找到刚才购买的机器，点击”登录”按钮，在弹窗中再点击”登录”，进入 Web 终端。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031907000-297808215.jpg" alt="" style="zoom:33%;"></p>
-<p>在终端中输入以下命令并回车：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">clawdbot onboard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031859558-290543961.jpg" alt="" style="zoom:33%;"></p>
-<p>之后使用键盘的 <strong>上下左右方向键</strong> 和 <strong>回车键</strong> 来操作界面。</p>
-<h3 id="初始化配置"><a href="#初始化配置" class="headerlink" title="初始化配置"></a>初始化配置</h3><p>看到提示 <code>I understand this is powerful and inherently risky. Continue?</code><br>按方向键 <code>←</code> 选择 <strong>Yes</strong>，回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031909170-1833045627.jpg" alt="" style="zoom:33%;"></p>
-<p>选择 <strong>QuickStart</strong>，回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031917893-1015437888.jpg" alt="" style="zoom:33%;"></p>
-<p>选择 <strong>Use existing values</strong>，回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031910029-1072133267.jpg" alt="" style="zoom:33%;"></p>
-<p>选择 <strong>Anthropic</strong>，回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031911530-153236201.jpg" alt="" style="zoom:33%;"></p>
-<p>选择 <strong>Anthropic API key</strong>，回车。<br>把刚才闲鱼买的密钥（如 <code>H58JA72B-PNHV-XXXX-OGIH2</code>）粘贴进去，回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031914891-684078389.jpg" alt="" style="zoom:33%;"></p>
-<p>选择模型（推荐 <strong>Claude Sonnet 4.5</strong>，4.6 很贵），回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031902429-536468473.jpg" alt="" style="zoom:33%;"></p>
-<h3 id="配置-Telegram-频道"><a href="#配置-Telegram-频道" class="headerlink" title="配置 Telegram 频道"></a>配置 Telegram 频道</h3><p>接下来选择你的机器人聊天频道。如果你想部署到其他频道（如 QQ、微信、Discord、飞书），可以参考<a href="https://cloud.tencent.com/developer/article/2624973">腾讯云教程</a>。</p>
-<p>这里我们选择 <strong>Telegram (tg)</strong>，回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031908512-1306884093.jpg" alt="" style="zoom:33%;"></p>
-<p>输入你从 BotFather 获取的 <strong>Bot Token</strong>（如 <code>8232094405:AAFT...</code>），粘贴并回车。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031901679-1121919655.jpg" alt="" style="zoom:33%;"></p>
-<p>提示 <code>Configure skills now? (recommended)</code><br>这里选择 <strong>No</strong>。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031900272-316906763.jpg" alt="" style="zoom:33%;"></p>
-<p>选择 <strong>Restart</strong>。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031912190-1110822026.jpg" alt="" style="zoom:33%;"></p>
-<p>选择 <strong>Do this later</strong>。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031906116-1735265164.jpg" alt="" style="zoom:33%;"></p>
-<p>之后会出现一行红字提示，此时把这个网页关掉。</p>
-<h3 id="绑定验证"><a href="#绑定验证" class="headerlink" title="绑定验证"></a>绑定验证</h3><p>回到腾讯云终端，再次登录。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031905546-1162351507.jpg" alt="" style="zoom:33%;"></p>
-<p>回到 Telegram，找到你刚创建的 Bot，给它发一条任意消息。</p>
-<p>Bot 会回复一条验证码消息，格式如：<br><code>openclaw pairing approve telegram XXXX</code></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031853674-141839229.jpg" alt="" style="zoom:33%;"></p>
-<p>把你收到的那条验证命令粘贴进终端，回车。例如：<br></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">openclaw pairing approve telegram CLUPKDAE<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031904800-1501384401.jpg" alt="" style="zoom:33%;"></p>
-<h3 id="配置-API-Key"><a href="#配置-API-Key" class="headerlink" title="配置 API Key"></a>配置 API Key</h3><p>现在 Telegram 配置好了，最后配置 API Key。</p>
-<p>使用以下命令（记得替换 <code>你的Key</code>）：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">OPENCLAW_CLAUDE_KEY</span><span class="token operator">=</span><span class="token string">"你的Key"</span> npx openclawapi@latest preset-claude<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>例如：<br></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">OPENCLAW_CLAUDE_KEY</span><span class="token operator">=</span><span class="token string">"H58JA72B-PNHV-XXXX-OGIH2"</span> npx openclawapi@latest preset-claude<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031850852-746987831.jpg" alt="" style="zoom:33%;"></p>
+<h3 id="3-一天之内完成的根本性转变"><a href="#3-一天之内完成的根本性转变" class="headerlink" title="3. 一天之内完成的根本性转变"></a>3. 一天之内完成的根本性转变</h3><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822964-309957013.jpg" alt="实施改变的行动步骤"></p>
+<p><strong>今天就可以做的事情：</strong></p>
 <ol>
-<li>键盘输入 <code>y</code>，回车。</li>
-<li>提示保留配置，直接回车。</li>
-<li>选择模型：选择 <strong>Claude Sonnet 4.5</strong>，回车。</li>
-<li>设为默认模型？输入 <code>Y</code>，回车。</li>
-<li>是否立即通过 OpenClaw Gateway 测试？输入 <code>Y</code>，回车。</li>
+<li><strong>清理你的环境</strong> - 移除所有阻碍你目标的事物</li>
+<li><strong>重新设计你的一天</strong> - 创建一个支持新身份的日程表</li>
+<li><strong>建立问责机制</strong> - 公开承诺或找到问责伙伴</li>
+<li><strong>立即采取行动</strong> - 不要等到“完美时机”</li>
 </ol>
-<p>如果通过测试，说明 Bot 已经搭建好了，给它发消息验证即可。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031916536-1675915592.jpg" alt="" style="zoom:33%;"></p>
-<h3 id="故障排查"><a href="#故障排查" class="headerlink" title="故障排查"></a>故障排查</h3><p>如果没有通过测试，或者 Bot 没反应，尝试执行这两条命令重启服务：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">openclaw gateway stop
-openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>如果后期更新了 API Key，也需要执行这两条命令重启 Bot。</p>
+<h3 id="4-从“动机”到“势头”"><a href="#4-从“动机”到“势头”" class="headerlink" title="4. 从“动机”到“势头”"></a>4. 从“动机”到“势头”</h3><p>动机是短暂的，但势头是可持续的。一旦你开始行动，持续下去会变得越来越容易。</p>
+<p><strong>创建势头的关键：</strong></p>
+<ul>
+<li>从极小的胜利开始</li>
+<li>每天都要有进展，无论多小</li>
+<li>庆祝过程中的每一步</li>
+</ul>
+<h2 id="为什么这种方法有效"><a href="#为什么这种方法有效" class="headerlink" title="为什么这种方法有效"></a>为什么这种方法有效</h2><p>这不是关于意志力或自律的神话故事。这是关于：</p>
+<ol>
+<li><strong>设计环境</strong>让正确的选择成为唯一的选择</li>
+<li><strong>重塑身份</strong>让行为成为自然表达</li>
+<li><strong>建立系统</strong>让成功成为必然结果</li>
+</ol>
+<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 (FAQ)"></a>常见问题 (FAQ)</h2><p><strong>Q: 我真的能在一天内改变我的整个人生吗？</strong><br>A: 你可以在一天内做出改变整个人生轨迹的决定和行动。转变是瞬间的，但结果需要时间显现。</p>
+<p><strong>Q: 如果我失败了怎么办？</strong><br>A: 失败是系统的一部分。关键是建立一个能够容纳失败并继续前进的系统。</p>
+<p><strong>Q: 这和传统的新年决心有什么不同？</strong><br>A: 传统决心关注结果和意志力；这种方法关注系统和身份转变。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>停止等待新的一年、新的一月，甚至新的一周。<strong>今天就是那一天</strong>。</p>
+<p>你不需要更多的动机、更多的时间或更好的环境。你只需要正确的方法和立即行动的决心。</p>
+<p>改变不是发生在未来的某个时刻——它发生在你决定成为不同的人的那一刻。</p>
+<p>那一刻就是现在。</p>
+<hr>
+<p><strong>原文作者</strong>: DAN KOE (<a href="https://x.com/thedankoe">@thedankoe</a>)<br><strong>原文链接</strong>: <a href="https://x.com/thedankoe/status/2010751592346030461">Twitter Article</a></p>
+<blockquote>
+<p>📌 本文基于 DAN KOE 的 Twitter 长文整理和扩展，旨在帮助更多人找到正确的生活改变方法。</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>AI工具</category>
+        <category>个人成长</category>
       </categories>
       <tags>
-        <tag>AI</tag>
-        <tag>OpenClaw</tag>
-        <tag>Tutorial</tag>
-        <tag>0基础</tag>
+        <tag>个人成长</tag>
+        <tag>自我提升</tag>
+        <tag>目标设定</tag>
       </tags>
   </entry>
   <entry>
@@ -9227,6 +9135,98 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
         <tag>AI Agent</tag>
         <tag>OpenClaw</tag>
         <tag>记忆系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenClaw(Clawdbot)的超级完整部署教程 0基础教学</title>
+    <url>/posts/260209.html</url>
+    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209180808035-1707057347.jpg" alt="OpenClaw Bot Deployment Guide" style="zoom:80%;"></p>
+<p>我选的服务器和 API 可能不是最便宜、性价比最高的，但是我认为是最简单的，适合 0 技术基础的同学学习搭建。我自己也是刚自学两天，不足之处请指教。</p>
+<h2 id="第一步：购买腾讯云轻量服务器"><a href="#第一步：购买腾讯云轻量服务器" class="headerlink" title="第一步：购买腾讯云轻量服务器"></a>第一步：购买腾讯云轻量服务器</h2><p><a href="https://buy.cloud.tencent.com/lighthouse?blueprintType=APP_OS&amp;blueprintOfficialId=lhbp-qr19tbkm&amp;regionId=9&amp;zone=ap-singapore-3&amp;bundleId=bundle_rs_nmc_lin_med2_01&amp;loginSet=AUTO&amp;from=lh-console">点击购买链接</a></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031852590-1821400031.jpg" alt="" style="zoom:33%;"></p>
+<p>费用约 40 元一个月，买完先放着。</p>
+<h2 id="第二步：创建-Telegram-Bot"><a href="#第二步：创建-Telegram-Bot" class="headerlink" title="第二步：创建 Telegram Bot"></a>第二步：创建 Telegram Bot</h2><p>在 Telegram 中搜索 <code>BotFather</code>（注意有蓝标认证），并点击进入。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031913515-242223594.jpg" alt="" style="zoom:33%;"></p>
+<p>发送指令：<br></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/newbot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p></p>
+<p>然后按照提示：</p>
+<ol>
+<li>取个名字（Name）。</li>
+<li>取个用户名（Username，必须以 <code>bot</code> 结尾）。</li>
+</ol>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031849302-2095540955.jpg" alt="" style="zoom:33%;"></p>
+<p>BotFather 发给你的这一长串字符（Token）就是你的 API 密钥，请保存好，不要泄露。</p>
+<p>示例 Token：<br><code>8232094405:AAFTXBMwkhRfE08bmqjOw0b27N-vOjlHbGg</code></p>
+<h2 id="第三步：购买-OpenClaw-API"><a href="#第三步：购买-OpenClaw-API" class="headerlink" title="第三步：购买 OpenClaw API"></a>第三步：购买 OpenClaw API</h2><p>我是在闲鱼买的中转 API（每个 API 都需要中转，所以用法不一样）。如果你在其他商家购买，请咨询商家如何使用。</p>
+<blockquote>
+<p>【闲鱼】HU071 「快来捡漏【OpenClaw 一键配置 API Claude Opus 4.5 Opus-4-6】」</p>
+</blockquote>
+<p>点击链接购买后会收到一串密钥，例如：<br><code>H58JA72B-PNHV-XXXX-OGIH2</code></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031903158-197392592.jpg" alt="" style="zoom:33%;"></p>
+<p>现在所有准备工作就绪，开始部署。</p>
+<h2 id="第四步：部署-OpenClaw"><a href="#第四步：部署-OpenClaw" class="headerlink" title="第四步：部署 OpenClaw"></a>第四步：部署 OpenClaw</h2><p>回到腾讯云控制台，找到刚才购买的机器，点击”登录”按钮，在弹窗中再点击”登录”，进入 Web 终端。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031907000-297808215.jpg" alt="" style="zoom:33%;"></p>
+<p>在终端中输入以下命令并回车：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">clawdbot onboard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031859558-290543961.jpg" alt="" style="zoom:33%;"></p>
+<p>之后使用键盘的 <strong>上下左右方向键</strong> 和 <strong>回车键</strong> 来操作界面。</p>
+<h3 id="初始化配置"><a href="#初始化配置" class="headerlink" title="初始化配置"></a>初始化配置</h3><p>看到提示 <code>I understand this is powerful and inherently risky. Continue?</code><br>按方向键 <code>←</code> 选择 <strong>Yes</strong>，回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031909170-1833045627.jpg" alt="" style="zoom:33%;"></p>
+<p>选择 <strong>QuickStart</strong>，回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031917893-1015437888.jpg" alt="" style="zoom:33%;"></p>
+<p>选择 <strong>Use existing values</strong>，回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031910029-1072133267.jpg" alt="" style="zoom:33%;"></p>
+<p>选择 <strong>Anthropic</strong>，回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031911530-153236201.jpg" alt="" style="zoom:33%;"></p>
+<p>选择 <strong>Anthropic API key</strong>，回车。<br>把刚才闲鱼买的密钥（如 <code>H58JA72B-PNHV-XXXX-OGIH2</code>）粘贴进去，回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031914891-684078389.jpg" alt="" style="zoom:33%;"></p>
+<p>选择模型（推荐 <strong>Claude Sonnet 4.5</strong>，4.6 很贵），回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031902429-536468473.jpg" alt="" style="zoom:33%;"></p>
+<h3 id="配置-Telegram-频道"><a href="#配置-Telegram-频道" class="headerlink" title="配置 Telegram 频道"></a>配置 Telegram 频道</h3><p>接下来选择你的机器人聊天频道。如果你想部署到其他频道（如 QQ、微信、Discord、飞书），可以参考<a href="https://cloud.tencent.com/developer/article/2624973">腾讯云教程</a>。</p>
+<p>这里我们选择 <strong>Telegram (tg)</strong>，回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031908512-1306884093.jpg" alt="" style="zoom:33%;"></p>
+<p>输入你从 BotFather 获取的 <strong>Bot Token</strong>（如 <code>8232094405:AAFT...</code>），粘贴并回车。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031901679-1121919655.jpg" alt="" style="zoom:33%;"></p>
+<p>提示 <code>Configure skills now? (recommended)</code><br>这里选择 <strong>No</strong>。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031900272-316906763.jpg" alt="" style="zoom:33%;"></p>
+<p>选择 <strong>Restart</strong>。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031912190-1110822026.jpg" alt="" style="zoom:33%;"></p>
+<p>选择 <strong>Do this later</strong>。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031906116-1735265164.jpg" alt="" style="zoom:33%;"></p>
+<p>之后会出现一行红字提示，此时把这个网页关掉。</p>
+<h3 id="绑定验证"><a href="#绑定验证" class="headerlink" title="绑定验证"></a>绑定验证</h3><p>回到腾讯云终端，再次登录。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031905546-1162351507.jpg" alt="" style="zoom:33%;"></p>
+<p>回到 Telegram，找到你刚创建的 Bot，给它发一条任意消息。</p>
+<p>Bot 会回复一条验证码消息，格式如：<br><code>openclaw pairing approve telegram XXXX</code></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031853674-141839229.jpg" alt="" style="zoom:33%;"></p>
+<p>把你收到的那条验证命令粘贴进终端，回车。例如：<br></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">openclaw pairing approve telegram CLUPKDAE<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031904800-1501384401.jpg" alt="" style="zoom:33%;"></p>
+<h3 id="配置-API-Key"><a href="#配置-API-Key" class="headerlink" title="配置 API Key"></a>配置 API Key</h3><p>现在 Telegram 配置好了，最后配置 API Key。</p>
+<p>使用以下命令（记得替换 <code>你的Key</code>）：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">OPENCLAW_CLAUDE_KEY</span><span class="token operator">=</span><span class="token string">"你的Key"</span> npx openclawapi@latest preset-claude<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>例如：<br></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">OPENCLAW_CLAUDE_KEY</span><span class="token operator">=</span><span class="token string">"H58JA72B-PNHV-XXXX-OGIH2"</span> npx openclawapi@latest preset-claude<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031850852-746987831.jpg" alt="" style="zoom:33%;"></p>
+<ol>
+<li>键盘输入 <code>y</code>，回车。</li>
+<li>提示保留配置，直接回车。</li>
+<li>选择模型：选择 <strong>Claude Sonnet 4.5</strong>，回车。</li>
+<li>设为默认模型？输入 <code>Y</code>，回车。</li>
+<li>是否立即通过 OpenClaw Gateway 测试？输入 <code>Y</code>，回车。</li>
+</ol>
+<p>如果通过测试，说明 Bot 已经搭建好了，给它发消息验证即可。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260209031916536-1675915592.jpg" alt="" style="zoom:33%;"></p>
+<h3 id="故障排查"><a href="#故障排查" class="headerlink" title="故障排查"></a>故障排查</h3><p>如果没有通过测试，或者 Bot 没反应，尝试执行这两条命令重启服务：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">openclaw gateway stop
+openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如果后期更新了 API Key，也需要执行这两条命令重启 Bot。</p>
+]]></content>
+      <categories>
+        <category>AI工具</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>OpenClaw</tag>
+        <tag>Tutorial</tag>
+        <tag>0基础</tag>
       </tags>
   </entry>
   <entry>
@@ -20179,6 +20179,276 @@ FNR = \frac{FN}{TP + FN}
       </tags>
   </entry>
   <entry>
+    <title>AI Infra入门与职业发展：从推理优化到系统能力</title>
+    <url>/posts/ai-infra-career-roadmap-2026.html</url>
+    <content><![CDATA[<h1 id="AI-Infra入门与职业发展：从推理优化到系统能力"><a href="#AI-Infra入门与职业发展：从推理优化到系统能力" class="headerlink" title="AI Infra入门与职业发展：从推理优化到系统能力"></a>AI Infra入门与职业发展：从推理优化到系统能力</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260821010755619-714690832.jpg" style="zoom:33%;" alt="AI Infra入门与职业发展封面图"></p>
+<p>AI Infra 不是简单地把模型部署到服务器上，也不只是为算法同学提供一套运行环境。它位于模型、软件系统和计算硬件之间，负责把模型变成稳定、可扩展、可观测且成本可控的生产能力。</p>
+<p>一场面向 AI Infra 初学者的分享，围绕行业方向、学习路径、面试准备和项目表达展开。本文在会议智能纪要的基础上重新整理，保留可复用的技术判断，删除会议管理噪声，并对部分带有明显个人经验色彩的结论做了谨慎表述。</p>
+<blockquote>
+<p>文中关于岗位选择、方向热度和职业节奏的内容属于经验分享，不构成对具体公司、岗位或薪资的承诺。具体团队的工作内容仍应以岗位描述和面试沟通为准。</p>
+</blockquote>
+<h2 id="一、AI-Infra-到底解决什么问题"><a href="#一、AI-Infra-到底解决什么问题" class="headerlink" title="一、AI Infra 到底解决什么问题"></a>一、AI Infra 到底解决什么问题</h2><p>可以把 AI 系统粗略分成三层：</p>
+<pre class="mermaid">flowchart TD
+    A[模型与算法] --&gt; B[AI Infra 系统层]
+    B --&gt; C[计算硬件与集群]
+    B --&gt; D[训练与推理运行时]
+    B --&gt; E[数据与存储管线]
+    B --&gt; F[调度、监控与稳定性]
+    D --&gt; G[线上 AI 应用]
+    E --&gt; D
+    F --&gt; D</pre>
+
+<p>模型效果只是系统价值的一部分。真正上线之后，还需要回答一系列工程问题：</p>
+<ul>
+<li>GPU 是否被充分利用？</li>
+<li>数据是否能及时送到计算设备？</li>
+<li>训练任务能否稳定运行并在故障后恢复？</li>
+<li>推理服务能否在延迟、吞吐和成本之间取得平衡？</li>
+<li>集群资源如何分配、隔离和回收？</li>
+<li>出现性能下降时，能否快速定位到模型、数据、网络、调度还是硬件？</li>
+</ul>
+<p>因此，AI Infra 的价值通常体现为<strong>资源利用率、任务稳定性、服务延迟、吞吐能力和单位成本</strong>等系统指标，而不只是模型准确率。</p>
+<h3 id="1-算力投入需要系统能力来兑现"><a href="#1-算力投入需要系统能力来兑现" class="headerlink" title="1. 算力投入需要系统能力来兑现"></a>1. 算力投入需要系统能力来兑现</h3><p>在大规模训练和推理场景中，硬件成本很高。一个看似很小的效率损失，经过长时间运行和大规模资源放大，也可能变成明显的成本浪费。</p>
+<p>这并不意味着所有优化都值得做。工程判断的关键是：</p>
+<ol>
+<li>先找到真正的瓶颈；</li>
+<li>估算优化收益和改造成本；</li>
+<li>在小规模环境中验证；</li>
+<li>再决定是否推广到生产集群。</li>
+</ol>
+<p><strong>AI Infra 工程师的核心工作不是盲目追求更复杂的技术，而是把资源、性能和可靠性问题转化成可测量、可验证的工程目标。</strong></p>
+<h3 id="2-大模型时代的竞争不只在模型结构"><a href="#2-大模型时代的竞争不只在模型结构" class="headerlink" title="2. 大模型时代的竞争不只在模型结构"></a>2. 大模型时代的竞争不只在模型结构</h3><p>模型架构、训练方法和应用形态都在快速演进，但一个模型能否稳定运行、能否低成本服务大量请求，仍然取决于底层系统能力。</p>
+<p>这也是为什么推理服务、分布式训练、数据管线、资源调度和稳定性工程都具有长期价值。模型会变化，系统问题却会持续出现，只是具体硬件、框架和运行时不断更新。</p>
+<h2 id="二、AI-Infra-的主要方向"><a href="#二、AI-Infra-的主要方向" class="headerlink" title="二、AI Infra 的主要方向"></a>二、AI Infra 的主要方向</h2><p>AI Infra 并不是一个单一岗位，而是一组技术方向的集合。不同团队的边界可能不同，但可以从以下几个方向建立认知。</p>
+<h3 id="1-分布式训练"><a href="#1-分布式训练" class="headerlink" title="1. 分布式训练"></a>1. 分布式训练</h3><p>分布式训练关注如何让多个 GPU 或多个节点协同完成训练任务，常见问题包括：</p>
+<ul>
+<li>数据并行、模型并行和流水线并行；</li>
+<li>通信开销与计算重叠；</li>
+<li>梯度同步和检查点保存；</li>
+<li>节点故障、任务恢复和资源利用率；</li>
+<li>不同硬件和通信拓扑下的性能差异。</li>
+</ul>
+<p>这个方向的技术深度较高，通常需要较强的并行计算、网络和硬件基础。适合已经具备系统基础、并且有机会接触真实训练集群的人继续深入。</p>
+<h3 id="2-推理服务与性能优化"><a href="#2-推理服务与性能优化" class="headerlink" title="2. 推理服务与性能优化"></a>2. 推理服务与性能优化</h3><p>推理方向直接连接模型和线上业务，常见目标是降低延迟、提高吞吐和控制单位请求成本。</p>
+<p>主要问题包括：</p>
+<ul>
+<li>请求批处理与动态 batching；</li>
+<li>KV Cache 管理；</li>
+<li>Prefill 与 Decode 阶段的资源差异；</li>
+<li>并发控制、流式输出和超时处理；</li>
+<li>模型量化、显存占用与精度权衡；</li>
+<li>多实例部署和负载均衡；</li>
+<li>P50、P95、P99 延迟以及吞吐指标。</li>
+</ul>
+<p>推理方向相对适合个人实践，因为很多问题可以在单张 GPU、云服务器甚至 CPU 环境中做小规模验证。重点不是复现某个大厂集群，而是把“测量—定位—优化—对比”的闭环做出来。</p>
+<h3 id="3-集群编排与资源调度"><a href="#3-集群编排与资源调度" class="headerlink" title="3. 集群编排与资源调度"></a>3. 集群编排与资源调度</h3><p>这一方向负责将大量计算资源分配给不同任务，涉及：</p>
+<ul>
+<li>资源队列和配额；</li>
+<li>多租户隔离；</li>
+<li>抢占、优先级和公平调度；</li>
+<li>GPU 拓扑感知；</li>
+<li>任务生命周期管理；</li>
+<li>失败重试和资源回收。</li>
+</ul>
+<p>它通常需要生产级集群作为实践环境。没有真实资源时，可以先通过 Kubernetes、Volcano、Karmada 或相关调度组件理解概念，但不要把本地 Demo 的复杂度等同于生产系统经验。</p>
+<h3 id="4-数据存储与数据管线"><a href="#4-数据存储与数据管线" class="headerlink" title="4. 数据存储与数据管线"></a>4. 数据存储与数据管线</h3><p>训练和推理都依赖数据管线。数据读取速度不足、预处理效率过低或存储访问抖动，都可能让昂贵的计算设备处于等待状态。</p>
+<p>可以重点学习：</p>
+<ul>
+<li>DataLoader 与预取；</li>
+<li>数据分片、缓存和并行读取；</li>
+<li>对象存储与本地缓存；</li>
+<li>数据格式转换；</li>
+<li>大文件读写和随机访问；</li>
+<li>数据管线的监控与故障恢复。</li>
+</ul>
+<p>这是非常适合初学者建立工程感的方向。它不要求一开始就拥有大规模集群，但能训练性能分析、数据建模和可靠性设计能力。</p>
+<h3 id="5-框架、运行时与算子"><a href="#5-框架、运行时与算子" class="headerlink" title="5. 框架、运行时与算子"></a>5. 框架、运行时与算子</h3><p>这一层连接模型代码和硬件执行，涉及算子实现、编译优化、内存管理和运行时调度。</p>
+<p>算子与框架是很好的入门材料，但不应停留在“照着接口写一个算子”。更有价值的学习方式是理解：</p>
+<ul>
+<li>算子为什么慢；</li>
+<li>数据布局如何影响访存；</li>
+<li>Kernel Launch 和同步的成本是什么；</li>
+<li>编译器、运行时和硬件之间如何协作；</li>
+<li>优化后如何设计基准测试验证收益。</li>
+</ul>
+<h3 id="6-稳定性与运维"><a href="#6-稳定性与运维" class="headerlink" title="6. 稳定性与运维"></a>6. 稳定性与运维</h3><p>AI 集群和推理服务都需要稳定性工程，包括：</p>
+<ul>
+<li>指标、日志和链路追踪；</li>
+<li>GPU、网络、存储和任务状态监控；</li>
+<li>故障检测、隔离和恢复；</li>
+<li>容量规划与告警降噪；</li>
+<li>根因分析和事故复盘；</li>
+<li>服务降级与流量保护。</li>
+</ul>
+<p>稳定性方向容易被低估，但它最接近真实生产环境。能把故障定位过程讲清楚，并且用数据证明改进效果，往往比罗列一长串工具名称更有说服力。</p>
+<h2 id="三、初学者应该从哪里切入"><a href="#三、初学者应该从哪里切入" class="headerlink" title="三、初学者应该从哪里切入"></a>三、初学者应该从哪里切入</h2><p>没有大规模集群并不意味着不能学习 AI Infra。入门阶段更重要的是建立正确的验证习惯。</p>
+<h3 id="推荐的切入顺序"><a href="#推荐的切入顺序" class="headerlink" title="推荐的切入顺序"></a>推荐的切入顺序</h3><pre class="mermaid">flowchart LR
+    A[理解系统指标] --&gt; B[单机复现实验]
+    B --&gt; C[定位一个瓶颈]
+    C --&gt; D[做最小优化]
+    D --&gt; E[对比优化前后]
+    E --&gt; F[沉淀复盘与代码]</pre>
+
+<p>可以按以下顺序推进：</p>
+<ol>
+<li>先理解 CPU、GPU、显存、带宽、网络和存储之间的关系；</li>
+<li>在本地或低成本云服务器上跑通一个训练或推理服务；</li>
+<li>记录延迟、吞吐、显存占用、GPU 利用率等指标；</li>
+<li>选择一个具体瓶颈，而不是泛泛地“优化性能”；</li>
+<li>修改一个变量并做对照实验；</li>
+<li>记录结果、失败原因和适用边界。</li>
+</ol>
+<h3 id="1-推理实验示例"><a href="#1-推理实验示例" class="headerlink" title="1. 推理实验示例"></a>1. 推理实验示例</h3><p>可以搭建一个小型推理服务，对比不同配置下的效果：</p>
+<ul>
+<li>单请求与批量请求；</li>
+<li>不同并发数；</li>
+<li>不同最大输入长度；</li>
+<li>不同量化方式；</li>
+<li>CPU 与 GPU 推理；</li>
+<li>是否启用缓存；</li>
+<li>不同模型实例数。</li>
+</ul>
+<p>每次实验至少记录：</p>
+<ul>
+<li>请求数量；</li>
+<li>输入和输出长度；</li>
+<li>平均延迟、P95 延迟；</li>
+<li>吞吐量；</li>
+<li>显存占用；</li>
+<li>错误率和超时数量。</li>
+</ul>
+<p>不要只截一张监控图就结束。应该说明测试环境、负载模型、对比基线和结论是否可迁移。</p>
+<h3 id="2-数据管线实验示例"><a href="#2-数据管线实验示例" class="headerlink" title="2. 数据管线实验示例"></a>2. 数据管线实验示例</h3><p>可以构造一个包含大量小文件或分片数据的训练输入，比较以下方案：</p>
+<ul>
+<li>逐文件读取与批量读取；</li>
+<li>无缓存与本地缓存；</li>
+<li>单线程与多进程 DataLoader；</li>
+<li>不同预取参数；</li>
+<li>不同数据格式。</li>
+</ul>
+<p>实验目标不是得到一个脱离场景的“最佳参数”，而是学会回答：<strong>GPU 为什么在等待，等待时间来自哪里，改动后是否真的减少了等待。</strong></p>
+<h3 id="3-集群方向的低成本学习方式"><a href="#3-集群方向的低成本学习方式" class="headerlink" title="3. 集群方向的低成本学习方式"></a>3. 集群方向的低成本学习方式</h3><p>没有万卡集群时，可以先做小规模的控制面和调度实验：</p>
+<ul>
+<li>用 Kubernetes 部署简单任务；</li>
+<li>观察 Pod、Job、节点资源和 GPU 设备插件；</li>
+<li>设计队列、优先级和资源配额；</li>
+<li>模拟任务失败与重试；</li>
+<li>记录调度延迟和资源利用率。</li>
+</ul>
+<p>这些实验不能替代生产经验，但能帮助你建立资源编排和任务生命周期的基本模型。面试时应清楚区分“本地复现”和“生产实践”。</p>
+<h2 id="四、项目如何体现-AI-Infra-能力"><a href="#四、项目如何体现-AI-Infra-能力" class="headerlink" title="四、项目如何体现 AI Infra 能力"></a>四、项目如何体现 AI Infra 能力</h2><p>项目不需要看起来很大，但必须有清晰的问题和可验证的指标。</p>
+<h3 id="不推荐的项目描述"><a href="#不推荐的项目描述" class="headerlink" title="不推荐的项目描述"></a>不推荐的项目描述</h3><blockquote>
+<p>使用某框架部署了一个大模型，调整参数后速度变快，最终效果不错。</p>
+</blockquote>
+<p>这个描述的问题是：没有基线、没有瓶颈、没有定位过程，也没有说明个人做了什么。</p>
+<h3 id="更好的表达结构"><a href="#更好的表达结构" class="headerlink" title="更好的表达结构"></a>更好的表达结构</h3><p>建议采用：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">问题背景
+  -&gt; 观测与定位
+  -&gt; 方案设计
+  -&gt; 实现与实验
+  -&gt; 量化结果
+  -&gt; 取舍与后续工作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>例如：</p>
+<blockquote>
+<p>在批量推理实验中，GPU 利用率较低且 P95 延迟波动明显。通过拆分请求排队、模型执行和结果序列化耗时，定位到动态 batching 配置与输入长度分布不匹配。随后调整批处理策略并增加超时保护，在相同负载和硬件条件下对比优化前后延迟与吞吐。最终记录指标变化，并说明该方案在高并发和长上下文场景下的限制。</p>
+</blockquote>
+<p>这个表达不依赖夸张的收益数字，但能让面试官看到完整的工程思考过程。</p>
+<h3 id="量化结果不一定要很大"><a href="#量化结果不一定要很大" class="headerlink" title="量化结果不一定要很大"></a>量化结果不一定要很大</h3><p>一个可靠的 5% 提升，也可能比一个无法解释的 50% 提升更有价值。关键是说明：</p>
+<ul>
+<li>指标是什么；</li>
+<li>基线如何测量；</li>
+<li>测试负载是否一致；</li>
+<li>优化影响了哪些资源；</li>
+<li>是否引入了精度、稳定性或成本代价。</li>
+</ul>
+<p>如果实验没有获得提升，也可以写成有价值的复盘：</p>
+<ul>
+<li>假设是什么；</li>
+<li>为什么尝试该方案；</li>
+<li>实验如何设计；</li>
+<li>结果为什么没有改善；</li>
+<li>最终排除了什么错误方向。</li>
+</ul>
+<h2 id="五、校招面试应重点准备什么"><a href="#五、校招面试应重点准备什么" class="headerlink" title="五、校招面试应重点准备什么"></a>五、校招面试应重点准备什么</h2><p>校招阶段通常不要求候选人已经拥有完整生产集群经验，但需要证明具备继续成长的基础。</p>
+<h3 id="1-操作系统"><a href="#1-操作系统" class="headerlink" title="1. 操作系统"></a>1. 操作系统</h3><p>重点理解：</p>
+<ul>
+<li>进程、线程和协程；</li>
+<li>虚拟内存与页面置换；</li>
+<li>锁、条件变量和并发安全；</li>
+<li>IO、多路复用和上下文切换；</li>
+<li>CPU Cache 与内存访问。</li>
+</ul>
+<h3 id="2-网络原理"><a href="#2-网络原理" class="headerlink" title="2. 网络原理"></a>2. 网络原理</h3><p>AI 服务经常由多个组件组成，因此需要掌握：</p>
+<ul>
+<li>TCP 连接和拥塞控制；</li>
+<li>HTTP、RPC 与连接复用；</li>
+<li>超时、重试和幂等；</li>
+<li>负载均衡；</li>
+<li>服务发现和故障转移。</li>
+</ul>
+<h3 id="3-并行计算"><a href="#3-并行计算" class="headerlink" title="3. 并行计算"></a>3. 并行计算</h3><p>至少要能解释：</p>
+<ul>
+<li>数据并行与模型并行的差异；</li>
+<li>通信和计算为什么会互相影响；</li>
+<li>GPU 利用率低可能有哪些原因；</li>
+<li>批处理为什么会影响吞吐和延迟；</li>
+<li>如何设计一个公平的性能对比实验。</li>
+</ul>
+<h3 id="4-代码能力与故障排查"><a href="#4-代码能力与故障排查" class="headerlink" title="4. 代码能力与故障排查"></a>4. 代码能力与故障排查</h3><p>面试官往往会通过代码题和项目追问判断你是否真的理解系统。准备时不要只背概念，还要练习：</p>
+<ul>
+<li>读日志定位异常；</li>
+<li>设计最小复现；</li>
+<li>编写基准测试；</li>
+<li>用指标验证假设；</li>
+<li>在不确定时逐步缩小问题范围。</li>
+</ul>
+<h2 id="六、职业选择中的几个判断"><a href="#六、职业选择中的几个判断" class="headerlink" title="六、职业选择中的几个判断"></a>六、职业选择中的几个判断</h2><h3 id="1-不要只追逐热门关键词"><a href="#1-不要只追逐热门关键词" class="headerlink" title="1. 不要只追逐热门关键词"></a>1. 不要只追逐热门关键词</h3><p>同一个“AI Infra”岗位，可能对应推理服务、数据平台、集群调度、算子开发或稳定性工程。投递前应重点确认：</p>
+<ul>
+<li>主要服务对象是谁；</li>
+<li>日常工作是开发、优化还是运维；</li>
+<li>使用什么硬件和运行环境；</li>
+<li>是否有真实线上流量或训练任务；</li>
+<li>个人能否获得指标和问题闭环；</li>
+<li>团队是否允许工程师深入系统问题。</li>
+</ul>
+<h3 id="2-第一份工作先建立可迁移能力"><a href="#2-第一份工作先建立可迁移能力" class="headerlink" title="2. 第一份工作先建立可迁移能力"></a>2. 第一份工作先建立可迁移能力</h3><p>初期不必排斥数据、稳定性、推理服务等基础工作。只要能接触真实问题，并且能够形成“问题—定位—方案—结果”的闭环，就能逐步建立系统能力。</p>
+<p>比起岗位名称，更值得关注的是：你是否能接触到代码、指标、故障和真实约束。</p>
+<h3 id="3-方向可以变化，但基础能力要持续积累"><a href="#3-方向可以变化，但基础能力要持续积累" class="headerlink" title="3. 方向可以变化，但基础能力要持续积累"></a>3. 方向可以变化，但基础能力要持续积累</h3><p>训练、推理、存储、调度和稳定性之间并非完全割裂。一个方向上的系统经验，往往可以迁移到其他方向：</p>
+<ul>
+<li>推理优化会涉及调度、缓存和硬件；</li>
+<li>数据管线会涉及存储、并发和性能分析；</li>
+<li>稳定性会涉及服务治理、监控和故障恢复；</li>
+<li>端侧 AI 会同时要求模型压缩、运行时和软硬件协同。</li>
+</ul>
+<p>因此，早期不需要急于给自己贴上永久标签，先把一个方向做深，再扩大系统边界。</p>
+<h2 id="七、给-AI-Infra-学习者的实践清单"><a href="#七、给-AI-Infra-学习者的实践清单" class="headerlink" title="七、给 AI Infra 学习者的实践清单"></a>七、给 AI Infra 学习者的实践清单</h2><p>可以用一个小型项目验证自己是否真正进入了工程状态：</p>
+<ul>
+<li>[ ] 能在本地或云服务器上部署一个可复现的推理服务；</li>
+<li>[ ] 能给服务增加并发压测和 P95 延迟统计；</li>
+<li>[ ] 能解释显存占用和吞吐变化的原因；</li>
+<li>[ ] 能记录一次失败的性能优化尝试；</li>
+<li>[ ] 能为数据读取增加缓存或预取，并做对照实验；</li>
+<li>[ ] 能用日志和指标定位一次故障；</li>
+<li>[ ] 能写出清晰的 README 和启动脚本；</li>
+<li>[ ] 能用“问题—定位—方案—结果—取舍”讲清楚项目。</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>AI Infra 的长期价值来自系统能力，而不是单个工具或短期热点。初学者没有大规模集群也可以从单机推理、数据管线、性能基准和故障排查开始，逐步建立可验证的工程闭环。</p>
+<p>真正值得沉淀的不是“我部署过某个模型”，而是：</p>
+<blockquote>
+<p>我遇到过什么问题，如何定位，做了什么取舍，结果如何验证，方案还有什么边界。</p>
+</blockquote>
+<p>这套表达方式既适用于 AI Infra 学习，也适用于校招项目面试和后续工程工作。</p>
+]]></content>
+      <categories>
+        <category>AI Infra</category>
+      </categories>
+      <tags>
+        <tag>云原生</tag>
+        <tag>AI Infra</tag>
+        <tag>求职</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI把代码变便宜之后，独立开发者真正要学什么</title>
     <url>/posts/ai-era-independent-developer-product-engineering.html</url>
     <content><![CDATA[<h1 id="AI把代码变便宜之后，独立开发者真正要学什么"><a href="#AI把代码变便宜之后，独立开发者真正要学什么" class="headerlink" title="AI把代码变便宜之后，独立开发者真正要学什么"></a>AI把代码变便宜之后，独立开发者真正要学什么</h1><p>AI 编程工具让“把功能做出来”变得越来越容易。</p>
@@ -20418,8 +20688,8 @@ FNR = \frac{FN}{TP + FN}
       </categories>
       <tags>
         <tag>Agent工程</tag>
-        <tag>智能体</tag>
         <tag>AI Infra</tag>
+        <tag>智能体</tag>
         <tag>职业发展</tag>
       </tags>
   </entry>

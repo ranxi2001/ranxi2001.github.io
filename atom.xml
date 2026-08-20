@@ -65,6 +65,29 @@
   </entry>
   
   <entry>
+    <title>AI Infra入门与职业发展：从推理优化到系统能力</title>
+    <link href="https://onefly.top/posts/ai-infra-career-roadmap-2026.html"/>
+    <id>https://onefly.top/posts/ai-infra-career-roadmap-2026.html</id>
+    <published>2026-08-15T10:00:00.000Z</published>
+    <updated>2026-08-20T17:08:30.824Z</updated>
+    
+    
+    <summary type="html">从 AI Infra 的技术价值、训练与推理方向，到无集群资源下的实践方法和校招项目表达，梳理 AI Infra 初学者的切入路径与长期成长框架。</summary>
+    
+    
+    
+    <category term="AI Infra" scheme="https://onefly.top/categories/AI-Infra/"/>
+    
+    
+    <category term="云原生" scheme="https://onefly.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
+    
+    <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
+    
+    <category term="求职" scheme="https://onefly.top/tags/%E6%B1%82%E8%81%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GMGN 30%返佣注册指南：邀请码、计算规则与领取说明</title>
     <link href="https://onefly.top/posts/gmgn-referral-code-fee-rebate-guide.html"/>
     <id>https://onefly.top/posts/gmgn-referral-code-fee-rebate-guide.html</id>
@@ -106,9 +129,9 @@
     
     <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="智能体" scheme="https://onefly.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
-    
     <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
+    
+    <category term="智能体" scheme="https://onefly.top/tags/%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     
     <category term="职业发展" scheme="https://onefly.top/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
     
@@ -474,31 +497,6 @@
     <category term="上下文" scheme="https://onefly.top/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
     
     <category term="技能" scheme="https://onefly.top/tags/%E6%8A%80%E8%83%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Agent Harness：从 Demo 到工程系统的 10 层架构</title>
-    <link href="https://onefly.top/posts/agent-harness-engineering-architecture.html"/>
-    <id>https://onefly.top/posts/agent-harness-engineering-architecture.html</id>
-    <published>2026-06-12T16:23:38.000Z</published>
-    <updated>2026-06-16T17:01:12.754Z</updated>
-    
-    
-    <summary type="html">一篇面向工程实践的 AI Agent Harness 架构指南：从 Tools、Skills、Memory、Context、Permission 到 Sub-agent、Hook、Session 和 Query Engine，讲清楚 Agent 从 Demo 走向可用系统需要补齐哪些层。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
-    
-    <category term="架构" scheme="https://onefly.top/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-    <category term="工程" scheme="https://onefly.top/tags/%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="LLM" scheme="https://onefly.top/tags/LLM/"/>
     
   </entry>
   

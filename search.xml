@@ -3432,6 +3432,32 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
       </tags>
   </entry>
   <entry>
+    <title>OKX Web3 钱包入门教程｜区块链钱包创建、助记词备份与提币完整指南</title>
+    <url>/posts/okx-web3-wallet-guide.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/okx-bitcoin-trading-guide.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
+<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
+<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png" alt=""></p>
+<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
+<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png" alt=""></p>
+<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png" alt=""></p>
+<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>区块链钱包</tag>
+        <tag>OKX</tag>
+        <tag>加密货币</tag>
+        <tag>钱包安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>开源开发者的狂欢，STRK开了一个好头！附领取价值1700元的web3空投教程</title>
     <url>/posts/24222.html</url>
     <content><![CDATA[<p>这两天在Github和推特上最热闹的事情便是知名ETH（以太坊）二层公链项目STRK给所有gtihub上排名前5000的开源项目的项目贡献者提供了价值1700元的代币空投，其中不乏前端程序员、大学生等web3（币圈）圈外用户。</p>
@@ -3462,32 +3488,6 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <tag>web3</tag>
         <tag>strk</tag>
         <tag>交易所</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OKX Web3 钱包入门教程｜区块链钱包创建、助记词备份与提币完整指南</title>
-    <url>/posts/okx-web3-wallet-guide.html</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在我们 <a href="https://onefly.top/posts/okx-bitcoin-trading-guide.html">注册<strong>OKX</strong></a> 后，我们点击<code>交易所</code>旁边的<code>Web3钱包</code>即可开始探索区块链钱包，从而步入一级市场，了解NFT、铭文、一级代币等新鲜事物。</p>
-<p>第一次打开Web3钱包，OKX会提示你创建钱包并备份到谷歌云盘或iCloud,如果你要在电脑导入钱包则需要获取私钥或助记词。</p>
-<h2 id="在Web3钱包获取钱包助记词"><a href="#在Web3钱包获取钱包助记词" class="headerlink" title="在Web3钱包获取钱包助记词"></a>在Web3钱包获取钱包助记词</h2><p>但是一级市场比二级市场风险万分，稍不注意你的钱包里的比特币马上可能转移到黑客手上，请注意安全防护，不要给黑客打工（送钱）！请<strong>保护好你的私钥，助记词</strong>！不要透露给任何人！不要复制完整的私钥和助记词，防止木马传输！转账之前仔细核对地址，不要偷懒！不要运行来历不明的.exe电脑软件，全是盗币的！不要相信任何人代为操作钱包账户！请<strong>备份好你的助记词</strong>！</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228141035085-54225300.png" alt=""></p>
-<p>获取私钥的话，点击账户01而不是钱包B即可复制单链（不同的区块链网络，不同的区块链）私钥。</p>
-<h2 id="在电脑钱包导入助记词钱包"><a href="#在电脑钱包导入助记词钱包" class="headerlink" title="在电脑钱包导入助记词钱包"></a>在电脑钱包导入助记词钱包</h2><p>以 <a href="https://chromewebstore.google.com/detail/%E6%AC%A7%E6%98%93-web3-%E9%92%B1%E5%8C%85/mcohilncbfahbmgdjkbpemcciiolgcge?hl=zh-CN">OKX钱包</a> 为例。之所以要从OKX导入，是为了从交易所提币方便，空钱包也没啥用的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142132028-213315821.png" alt=""></p>
-<h2 id="获取钱包代币充值地址"><a href="#获取钱包代币充值地址" class="headerlink" title="获取钱包代币充值地址"></a>获取钱包代币充值地址</h2><p>要想提币到钱包最重要的第一步是获得钱包公钥也就是接收地址，电脑上可以用手机扫码直接添加地址的。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228142426257-109027352.png" alt=""></p>
-<h2 id="从交易所提币"><a href="#从交易所提币" class="headerlink" title="从交易所提币"></a>从交易所提币</h2><p>从交易所提币是转账到其他交易所或提到自己钱包的操作，从提币完成开始，你就需要自己对自己的钱包负责了。</p>
-<p><img src="https://img2023.cnblogs.com/blog/2910984/202402/2910984-20240228143335419-880761503.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>区块链钱包</tag>
-        <tag>OKX</tag>
-        <tag>加密货币</tag>
-        <tag>钱包安全</tag>
       </tags>
   </entry>
   <entry>
@@ -3610,10 +3610,10 @@ np<span class="token punctuation">.</span>random<span class="token punctuation">
         <category>Web3</category>
       </categories>
       <tags>
-        <tag>交易所</tag>
         <tag>Web3</tag>
         <tag>OKX</tag>
         <tag>加密货币</tag>
+        <tag>交易所</tag>
         <tag>比特币</tag>
         <tag>虚拟货币教程</tag>
       </tags>
@@ -5190,8 +5190,8 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <category>Web3</category>
       </categories>
       <tags>
-        <tag>交易所</tag>
         <tag>Web3</tag>
+        <tag>交易所</tag>
         <tag>套利</tag>
       </tags>
   </entry>
@@ -5273,6 +5273,141 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>Acrobat</tag>
         <tag>PDF</tag>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XQ：WEB3交易方法论与执行：信息差、时间差与散户策略</title>
+    <url>/posts/250920.html</url>
+    <content><![CDATA[<h1 id="交易方法论与执行"><a href="#交易方法论与执行" class="headerlink" title="交易方法论与执行"></a>交易方法论与执行</h1><h2 id="1-交易的本质"><a href="#1-交易的本质" class="headerlink" title="1. 交易的本质"></a>1. 交易的本质</h2><ul>
+<li><p><strong>交易即决策</strong><br>决策依赖于当下的信息量。一级市场的成功交易，往往依赖于基于有限信息量进行快速决策的能力。</p>
+</li>
+<li><p><strong>赚钱的本质是低买高卖</strong><br>低买高卖意味着你买入后，有更多买单跟随进场。这通常来自两种情况：</p>
+<ol>
+<li><strong>速度优势（时间差）</strong>：<ul>
+<li>在同样信息量下，你比别人更快。</li>
+<li>新行情中有优势，因为从新闻发生到价格完全定价需要时间。一级市场的窗口往往比二级和股票更长。</li>
+<li>成熟市场速度优势逐渐消失，机器胜于人类。信号之一是：市场出现越来越多成型的分析工具。</li>
+</ul>
+</li>
+<li><strong>信息优势（信息差）</strong>：<ul>
+<li>在同一时间点，你比别人获取更多信息。</li>
+<li>给自己预留更多决策和交易的时间。</li>
+<li>内幕玩家的优势尤为显著。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>核心：信息差 = 时间差 + 分析差</strong></p>
+<ul>
+<li><strong>时间差</strong>：<br>比别人更快，慢的人会在你之后买入抬高价格，你则卖出盈利。特点是稳定、长期，但耗费精力。</li>
+<li><strong>信息差</strong>：<br>提前知道更多，能在相同时间点做出更优决策。低频但高倍收益，需经验与研究。</li>
+</ul>
+</li>
+<li><p><strong>市场形态与散户机会</strong></p>
+<ul>
+<li><strong>增量市场</strong>：<br>外部资金进入，原生玩家凭经验获利，新资金成为退出流动性。<ul>
+<li>NFT（库里带货 → 新人成为退出流动性）</li>
+<li>铭文（2023 年 3 月起步 → 10 月爆发，ORDI 典型案例）</li>
+<li>Pump（2024 年 AI 热潮，二级玩家进入一级，成为流动性）</li>
+</ul>
+</li>
+<li><strong>存量市场</strong>：<br>没有增量资金，高水平玩家吃掉绝大部分利润，资金逐渐流失。<ul>
+<li>当前大部分币圈状态</li>
+</ul>
+</li>
+</ul>
+<p>→ <strong>散户应关注</strong>：</p>
+<ol>
+<li>潜在的外部增量赛道（如 Web2 → Web3 资金流入）。</li>
+<li>潜在的叙事增量（龙头 α 带动 β 效应）。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="2-交易三要素"><a href="#2-交易三要素" class="headerlink" title="2. 交易三要素"></a>2. 交易三要素</h2><p>在做每一笔交易之前，需要明确以下三点：</p>
+<ol>
+<li><p><strong>原因（Why Buy?）</strong></p>
+<ul>
+<li>为什么买？基于当下的信息量。</li>
+<li>需闭环到合理估值逻辑（可用相对估值）。</li>
+<li>多数时候结果不确定，但赔率合适即可。</li>
+</ul>
+</li>
+<li><p><strong>止盈（Take Profit）</strong></p>
+<ul>
+<li><strong>时间策略</strong>：信息传播速度决定离场点。</li>
+<li><strong>事件策略</strong>：根据叙事链条的兑现情况离场。</li>
+<li><strong>价格策略</strong>：按照盈利百分比或关键压力位离场。</li>
+</ul>
+</li>
+<li><p><strong>止损（Stop Loss）</strong></p>
+<ul>
+<li>与止盈逻辑一致，避免回撤扩大。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="3-信息差交易"><a href="#3-信息差交易" class="headerlink" title="3. 信息差交易"></a>3. 信息差交易</h2><ul>
+<li><p><strong>地址追踪</strong></p>
+<ul>
+<li><strong>KOL 地址</strong>：吃 KOL 粉丝流动性（KOL 买入 → 喊单 → 粉丝买入）。</li>
+<li><strong>聪明钱</strong>：借鉴聪明钱的交易决策，但需谨慎。</li>
+<li><strong>内幕玩家</strong>：低位筹码极具优势（如 PVS 5k → 20m）。</li>
+<li><strong>庄家集群</strong>：参考估值上限，制定买卖点（如 Fartcoin、Moodeng 等）。</li>
+</ul>
+</li>
+<li><p><strong>分析与判断</strong></p>
+<ul>
+<li>项目价格低 ≠ 一定垃圾，可能是市场错判。</li>
+<li>关键在于分析他人的结论，形成自己的判断。</li>
+<li><strong>现象级机会人人平等</strong>：信息量相同，拼的是分析力和决策力（如 TRUMP、BOME）。</li>
+<li>赔率计算也是分析的重要工具。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-新闻交易"><a href="#4-新闻交易" class="headerlink" title="4. 新闻交易"></a>4. 新闻交易</h2><ul>
+<li><p><strong>特征</strong></p>
+<ul>
+<li>新闻带来信息，随机性高，可能触发外部增量。</li>
+<li>属于长期存在的交易类型。</li>
+<li>现象级机会本质上就是新闻交易。</li>
+</ul>
+</li>
+<li><p><strong>常见对象</strong></p>
+<ul>
+<li>马斯克、特朗普、热点事件等。</li>
+<li>超过 80% 的 meme 币，都出自上述人物/事件。</li>
+</ul>
+</li>
+<li><p><strong>方法</strong></p>
+<ul>
+<li>多数依赖 <strong>时间差</strong>，部分需要 <strong>信息差</strong>。</li>
+<li>定价过程需要时间，行情好时更容易被庄家放大利用。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="5-执行与心态"><a href="#5-执行与心态" class="headerlink" title="5. 执行与心态"></a>5. 执行与心态</h2><ul>
+<li><strong>正确看待机会</strong>：只关注自己能吃到多少，不被倍数迷惑。</li>
+<li><strong>复盘</strong>：good win, bad win, good lose, bad lose → 纸面总结 → 让亏损变教训。</li>
+<li><strong>向上看</strong>：找到榜样，研究其原因而非结果。</li>
+<li><strong>避免压力下决策</strong>。</li>
+<li><strong>做自己擅长的事</strong>：擅长来自长期积累，不擅长就准备好交学费。</li>
+<li><strong>不相信运气</strong>：所有结果来自方法与执行，而非运气。</li>
+</ul>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一级市场的核心是 <strong>信息差与时间差</strong> 的博弈。散户要在增量叙事中寻找机会，明确交易三要素，执行止盈止损，并通过复盘不断提升决策质量。<br>「知行合一」是长期盈利的唯一路径。</p>
+<blockquote>
+<p>原文链接：<a href="https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70">https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Web3</category>
+      </categories>
+      <tags>
+        <tag>Web3</tag>
+        <tag>交易方法论</tag>
       </tags>
   </entry>
   <entry>
@@ -5467,141 +5602,6 @@ token_transfers <span class="token keyword">AS</span> <span class="token punctua
         <tag>Web3</tag>
         <tag>Airdrop</tag>
         <tag>Binance</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XQ：WEB3交易方法论与执行：信息差、时间差与散户策略</title>
-    <url>/posts/250920.html</url>
-    <content><![CDATA[<h1 id="交易方法论与执行"><a href="#交易方法论与执行" class="headerlink" title="交易方法论与执行"></a>交易方法论与执行</h1><h2 id="1-交易的本质"><a href="#1-交易的本质" class="headerlink" title="1. 交易的本质"></a>1. 交易的本质</h2><ul>
-<li><p><strong>交易即决策</strong><br>决策依赖于当下的信息量。一级市场的成功交易，往往依赖于基于有限信息量进行快速决策的能力。</p>
-</li>
-<li><p><strong>赚钱的本质是低买高卖</strong><br>低买高卖意味着你买入后，有更多买单跟随进场。这通常来自两种情况：</p>
-<ol>
-<li><strong>速度优势（时间差）</strong>：<ul>
-<li>在同样信息量下，你比别人更快。</li>
-<li>新行情中有优势，因为从新闻发生到价格完全定价需要时间。一级市场的窗口往往比二级和股票更长。</li>
-<li>成熟市场速度优势逐渐消失，机器胜于人类。信号之一是：市场出现越来越多成型的分析工具。</li>
-</ul>
-</li>
-<li><strong>信息优势（信息差）</strong>：<ul>
-<li>在同一时间点，你比别人获取更多信息。</li>
-<li>给自己预留更多决策和交易的时间。</li>
-<li>内幕玩家的优势尤为显著。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p><strong>核心：信息差 = 时间差 + 分析差</strong></p>
-<ul>
-<li><strong>时间差</strong>：<br>比别人更快，慢的人会在你之后买入抬高价格，你则卖出盈利。特点是稳定、长期，但耗费精力。</li>
-<li><strong>信息差</strong>：<br>提前知道更多，能在相同时间点做出更优决策。低频但高倍收益，需经验与研究。</li>
-</ul>
-</li>
-<li><p><strong>市场形态与散户机会</strong></p>
-<ul>
-<li><strong>增量市场</strong>：<br>外部资金进入，原生玩家凭经验获利，新资金成为退出流动性。<ul>
-<li>NFT（库里带货 → 新人成为退出流动性）</li>
-<li>铭文（2023 年 3 月起步 → 10 月爆发，ORDI 典型案例）</li>
-<li>Pump（2024 年 AI 热潮，二级玩家进入一级，成为流动性）</li>
-</ul>
-</li>
-<li><strong>存量市场</strong>：<br>没有增量资金，高水平玩家吃掉绝大部分利润，资金逐渐流失。<ul>
-<li>当前大部分币圈状态</li>
-</ul>
-</li>
-</ul>
-<p>→ <strong>散户应关注</strong>：</p>
-<ol>
-<li>潜在的外部增量赛道（如 Web2 → Web3 资金流入）。</li>
-<li>潜在的叙事增量（龙头 α 带动 β 效应）。</li>
-</ol>
-</li>
-</ul>
-<hr>
-<h2 id="2-交易三要素"><a href="#2-交易三要素" class="headerlink" title="2. 交易三要素"></a>2. 交易三要素</h2><p>在做每一笔交易之前，需要明确以下三点：</p>
-<ol>
-<li><p><strong>原因（Why Buy?）</strong></p>
-<ul>
-<li>为什么买？基于当下的信息量。</li>
-<li>需闭环到合理估值逻辑（可用相对估值）。</li>
-<li>多数时候结果不确定，但赔率合适即可。</li>
-</ul>
-</li>
-<li><p><strong>止盈（Take Profit）</strong></p>
-<ul>
-<li><strong>时间策略</strong>：信息传播速度决定离场点。</li>
-<li><strong>事件策略</strong>：根据叙事链条的兑现情况离场。</li>
-<li><strong>价格策略</strong>：按照盈利百分比或关键压力位离场。</li>
-</ul>
-</li>
-<li><p><strong>止损（Stop Loss）</strong></p>
-<ul>
-<li>与止盈逻辑一致，避免回撤扩大。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="3-信息差交易"><a href="#3-信息差交易" class="headerlink" title="3. 信息差交易"></a>3. 信息差交易</h2><ul>
-<li><p><strong>地址追踪</strong></p>
-<ul>
-<li><strong>KOL 地址</strong>：吃 KOL 粉丝流动性（KOL 买入 → 喊单 → 粉丝买入）。</li>
-<li><strong>聪明钱</strong>：借鉴聪明钱的交易决策，但需谨慎。</li>
-<li><strong>内幕玩家</strong>：低位筹码极具优势（如 PVS 5k → 20m）。</li>
-<li><strong>庄家集群</strong>：参考估值上限，制定买卖点（如 Fartcoin、Moodeng 等）。</li>
-</ul>
-</li>
-<li><p><strong>分析与判断</strong></p>
-<ul>
-<li>项目价格低 ≠ 一定垃圾，可能是市场错判。</li>
-<li>关键在于分析他人的结论，形成自己的判断。</li>
-<li><strong>现象级机会人人平等</strong>：信息量相同，拼的是分析力和决策力（如 TRUMP、BOME）。</li>
-<li>赔率计算也是分析的重要工具。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="4-新闻交易"><a href="#4-新闻交易" class="headerlink" title="4. 新闻交易"></a>4. 新闻交易</h2><ul>
-<li><p><strong>特征</strong></p>
-<ul>
-<li>新闻带来信息，随机性高，可能触发外部增量。</li>
-<li>属于长期存在的交易类型。</li>
-<li>现象级机会本质上就是新闻交易。</li>
-</ul>
-</li>
-<li><p><strong>常见对象</strong></p>
-<ul>
-<li>马斯克、特朗普、热点事件等。</li>
-<li>超过 80% 的 meme 币，都出自上述人物/事件。</li>
-</ul>
-</li>
-<li><p><strong>方法</strong></p>
-<ul>
-<li>多数依赖 <strong>时间差</strong>，部分需要 <strong>信息差</strong>。</li>
-<li>定价过程需要时间，行情好时更容易被庄家放大利用。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="5-执行与心态"><a href="#5-执行与心态" class="headerlink" title="5. 执行与心态"></a>5. 执行与心态</h2><ul>
-<li><strong>正确看待机会</strong>：只关注自己能吃到多少，不被倍数迷惑。</li>
-<li><strong>复盘</strong>：good win, bad win, good lose, bad lose → 纸面总结 → 让亏损变教训。</li>
-<li><strong>向上看</strong>：找到榜样，研究其原因而非结果。</li>
-<li><strong>避免压力下决策</strong>。</li>
-<li><strong>做自己擅长的事</strong>：擅长来自长期积累，不擅长就准备好交学费。</li>
-<li><strong>不相信运气</strong>：所有结果来自方法与执行，而非运气。</li>
-</ul>
-<hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一级市场的核心是 <strong>信息差与时间差</strong> 的博弈。散户要在增量叙事中寻找机会，明确交易三要素，执行止盈止损，并通过复盘不断提升决策质量。<br>「知行合一」是长期盈利的唯一路径。</p>
-<blockquote>
-<p>原文链接：<a href="https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70">https://0xxq.notion.site/274e0f2305d2808fb056e73000bc1d70</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Web3</category>
-      </categories>
-      <tags>
-        <tag>Web3</tag>
-        <tag>交易方法论</tag>
       </tags>
   </entry>
   <entry>
@@ -8304,186 +8304,6 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
       </tags>
   </entry>
   <entry>
-    <title>大学生白嫖5年 Office 365 Premium 含 Copilot 完整教程（2026最新）</title>
-    <url>/posts/260121.html</url>
-    <content><![CDATA[<h1 id="大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程"><a href="#大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程" class="headerlink" title="大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程"></a>大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程</h1><blockquote>
-<p>原文作者：Rina (@Fire1000x)<br>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Microsoft 365 Premium 是微软最高级的订阅服务，包含：</p>
-<ul>
-<li><strong>Microsoft Copilot</strong> - AI 智能助手</li>
-<li><strong>1TB OneDrive</strong> 云存储空间</li>
-<li><strong>Word、Excel、PowerPoint、Outlook</strong> 等全套 Office 应用</li>
-<li><strong>5 台设备</strong>同时登录使用</li>
-<li><strong>图片和视频编辑工具</strong></li>
-<li><strong>数据和设备安全保护</strong></li>
-</ul>
-<p>正常订阅价格约 $4.99/月，但通过学生优惠渠道，可以<strong>完全免费</strong>获得长达 <strong>5 年</strong>的订阅！</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021136925-1727547049.jpg" alt="最终效果：订阅到期日期 2031 年"></p>
-<hr>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在开始之前，你需要准备：</p>
-<ol>
-<li><strong>edu 学生邮箱</strong> - 必须是有效的教育机构邮箱</li>
-<li><strong>微软账号</strong> - 用于绑定订阅</li>
-<li><strong>Google Pay 或 Apple Pay</strong> - 用于验证（不会实际扣款）</li>
-<li><strong>浏览器无痕模式</strong> - 避免缓存干扰</li>
-</ol>
-<hr>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="第一步：获取基础-1-年-Office-365-学生版"><a href="#第一步：获取基础-1-年-Office-365-学生版" class="headerlink" title="第一步：获取基础 1 年 Office 365 学生版"></a>第一步：获取基础 1 年 Office 365 学生版</h3><ol>
-<li><p>打开浏览器的<strong>无痕模式</strong>（Chrome: Ctrl+Shift+N / Edge: Ctrl+Shift+P）</p>
-</li>
-<li><p>切换ip为美国IP 家宽节点最佳</p>
-</li>
-<li><p>访问以下链接：</p>
-</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ol>
-<li><p>登录你想要绑定的<strong>微软账号</strong></p>
-</li>
-<li><p>选择 <strong>Google Pay</strong> 作为支付方式（成功率更高）</p>
-</li>
-<li><p>输入你的 <strong>edu 学生邮箱</strong>进行验证</p>
-</li>
-<li><p>点击 <strong>Verify student email</strong> 验证学生身份</p>
-</li>
-<li><p>去邮箱接收验证链接，复制回来打开</p>
-</li>
-<li><p>最后验证付款 <strong>0 元</strong>即可</p>
-</li>
-</ol>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021138201-800132641.jpg" alt="操作步骤示意图"></p>
-<h3 id="第二步：升级到-Premium-版本"><a href="#第二步：升级到-Premium-版本" class="headerlink" title="第二步：升级到 Premium 版本"></a>第二步：升级到 Premium 版本</h3><p>完成第一步后，继续访问以下链接升级到 Premium：</p>
-<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>重复相同的验证流程即可。</p>
-<h3 id="第三步：查询订阅状态"><a href="#第三步：查询订阅状态" class="headerlink" title="第三步：查询订阅状态"></a>第三步：查询订阅状态</h3><p>完成后，访问以下链接查看你的订阅信息：</p>
-<pre class="line-numbers language-none"><code class="language-none">https://account.microsoft.com/services/microsoft365/details<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021137821-2087432330.jpg" alt="三个关键链接"></p>
-<hr>
-<h2 id="关键链接汇总"><a href="#关键链接汇总" class="headerlink" title="关键链接汇总"></a>关键链接汇总</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>用途</th>
-<th>链接</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>链接1：订阅会员</td>
-<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M">StudentFree12M</a></td>
-</tr>
-<tr>
-<td>链接2：升级 Premium</td>
-<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M">StudentPremiumFree12M</a></td>
-</tr>
-<tr>
-<td>链接3：查询订阅</td>
-<td><a href="https://account.microsoft.com/services/microsoft365/details">Microsoft 365 Details</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><strong>必须使用无痕模式</strong>，避免之前的登录状态干扰</li>
-<li><strong>Google Pay 成功率更高</strong>，推荐优先使用</li>
-<li><strong>不会实际扣款</strong>，只是用于验证支付方式</li>
-<li><strong>edu 邮箱必须有效</strong>，过期的学生邮箱可能无法验证</li>
-<li><strong>每年可以续期</strong>，理论上可以一直白嫖</li>
-<li><strong>⚠️ 重要：使用美国 IP 可获得 5 年订阅，香港等其他地区 IP 可能只有 2 年或 1 年</strong>，建议使用 VPN 切换到美国节点后再操作</li>
-</ol>
-<hr>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>Q: 没有 edu 邮箱怎么办？</strong><br>A: 可以尝试申请一些提供免费 edu 邮箱的项目，或者联系学校 IT 部门获取。</p>
-<p><strong>Q: 验证失败怎么办？</strong><br>A: 尝试更换浏览器、清除缓存、使用 VPN 切换到美国 IP。</p>
-<p><strong>Q: 订阅到期后会自动扣款吗？</strong><br>A: 记得在订阅管理页面关闭”自动续订”，或者在到期前取消订阅。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，你可以免费获得价值数百美元的 Microsoft 365 Premium 订阅，享受包括 Copilot AI 在内的全部高级功能。这是微软官方的学生优惠渠道，完全合法合规。</p>
-<p>赶紧趁着还有效，去领取你的 5 年免费订阅吧！</p>
-<hr>
-<p><strong>相关链接</strong>：</p>
-<ul>
-<li>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>资源分享</category>
-      </categories>
-      <tags>
-        <tag>Office 365</tag>
-        <tag>Microsoft</tag>
-        <tag>学生优惠</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</title>
-    <url>/posts/260112.html</url>
-    <content><![CDATA[<h1 id="如何在一天内修复你的整个人生：DAN-KOE的2026最新方法"><a href="#如何在一天内修复你的整个人生：DAN-KOE的2026最新方法" class="headerlink" title="如何在一天内修复你的整个人生：DAN KOE的2026最新方法"></a>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</h1><p>如果你和我一样，你会觉得新年决心是愚蠢的。</p>
-<p>为什么？因为大多数人改变生活的方式完全错误。他们制定这些决心只是因为其他人都在这么做——但这种方式从根本上就注定失败。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822199-1792776152.jpg" alt="DAN KOE 关于生活改变的核心理念"></p>
-<h2 id="传统新年决心为什么会失败"><a href="#传统新年决心为什么会失败" class="headerlink" title="传统新年决心为什么会失败"></a>传统新年决心为什么会失败</h2><p>大多数人在新年时制定雄心勃勃的目标：</p>
-<ul>
-<li>减肥50斤</li>
-<li>学习一门新语言</li>
-<li>开始创业</li>
-<li>建立健康习惯</li>
-</ul>
-<p>但到了二月，这些决心就已经被抛在脑后。问题不在于你的意志力，而在于<strong>方法本身就是错的</strong>。</p>
-<h2 id="正确的改变方式：一天修复你的整个人生"><a href="#正确的改变方式：一天修复你的整个人生" class="headerlink" title="正确的改变方式：一天修复你的整个人生"></a>正确的改变方式：一天修复你的整个人生</h2><h3 id="1-停止制定“决心”，开始设计系统"><a href="#1-停止制定“决心”，开始设计系统" class="headerlink" title="1. 停止制定“决心”，开始设计系统"></a>1. 停止制定“决心”，开始设计系统</h3><p>决心是一个结果，而系统是达成结果的过程。不要说“我要减肥”，而是建立一个每天都能执行的系统。</p>
-<p><strong>关键原则：</strong></p>
-<ul>
-<li>关注过程，而非结果</li>
-<li>建立可持续的日常习惯</li>
-<li>让改变变得不可避免</li>
-</ul>
-<h3 id="2-重新定义你的身份"><a href="#2-重新定义你的身份" class="headerlink" title="2. 重新定义你的身份"></a>2. 重新定义你的身份</h3><p>你不是在“尝试”成为某个人——你<strong>已经是</strong>那个人了。这种身份转变会立即改变你的行为模式。</p>
-<blockquote>
-<p>💡 提示：不要说“我想成为健康的人”，而是说“我是一个重视健康的人”。</p>
-</blockquote>
-<h3 id="3-一天之内完成的根本性转变"><a href="#3-一天之内完成的根本性转变" class="headerlink" title="3. 一天之内完成的根本性转变"></a>3. 一天之内完成的根本性转变</h3><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822964-309957013.jpg" alt="实施改变的行动步骤"></p>
-<p><strong>今天就可以做的事情：</strong></p>
-<ol>
-<li><strong>清理你的环境</strong> - 移除所有阻碍你目标的事物</li>
-<li><strong>重新设计你的一天</strong> - 创建一个支持新身份的日程表</li>
-<li><strong>建立问责机制</strong> - 公开承诺或找到问责伙伴</li>
-<li><strong>立即采取行动</strong> - 不要等到“完美时机”</li>
-</ol>
-<h3 id="4-从“动机”到“势头”"><a href="#4-从“动机”到“势头”" class="headerlink" title="4. 从“动机”到“势头”"></a>4. 从“动机”到“势头”</h3><p>动机是短暂的，但势头是可持续的。一旦你开始行动，持续下去会变得越来越容易。</p>
-<p><strong>创建势头的关键：</strong></p>
-<ul>
-<li>从极小的胜利开始</li>
-<li>每天都要有进展，无论多小</li>
-<li>庆祝过程中的每一步</li>
-</ul>
-<h2 id="为什么这种方法有效"><a href="#为什么这种方法有效" class="headerlink" title="为什么这种方法有效"></a>为什么这种方法有效</h2><p>这不是关于意志力或自律的神话故事。这是关于：</p>
-<ol>
-<li><strong>设计环境</strong>让正确的选择成为唯一的选择</li>
-<li><strong>重塑身份</strong>让行为成为自然表达</li>
-<li><strong>建立系统</strong>让成功成为必然结果</li>
-</ol>
-<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 (FAQ)"></a>常见问题 (FAQ)</h2><p><strong>Q: 我真的能在一天内改变我的整个人生吗？</strong><br>A: 你可以在一天内做出改变整个人生轨迹的决定和行动。转变是瞬间的，但结果需要时间显现。</p>
-<p><strong>Q: 如果我失败了怎么办？</strong><br>A: 失败是系统的一部分。关键是建立一个能够容纳失败并继续前进的系统。</p>
-<p><strong>Q: 这和传统的新年决心有什么不同？</strong><br>A: 传统决心关注结果和意志力；这种方法关注系统和身份转变。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>停止等待新的一年、新的一月，甚至新的一周。<strong>今天就是那一天</strong>。</p>
-<p>你不需要更多的动机、更多的时间或更好的环境。你只需要正确的方法和立即行动的决心。</p>
-<p>改变不是发生在未来的某个时刻——它发生在你决定成为不同的人的那一刻。</p>
-<p>那一刻就是现在。</p>
-<hr>
-<p><strong>原文作者</strong>: DAN KOE (<a href="https://x.com/thedankoe">@thedankoe</a>)<br><strong>原文链接</strong>: <a href="https://x.com/thedankoe/status/2010751592346030461">Twitter Article</a></p>
-<blockquote>
-<p>📌 本文基于 DAN KOE 的 Twitter 长文整理和扩展，旨在帮助更多人找到正确的生活改变方法。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>个人成长</category>
-      </categories>
-      <tags>
-        <tag>个人成长</tag>
-        <tag>自我提升</tag>
-        <tag>目标设定</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从 Claude Code 到 Web API：解构 AI Agent 的 Skills 体系（2026最新深度解析）</title>
     <url>/posts/260118.html</url>
     <content><![CDATA[<h1 id="从-Claude-Code-到-Web-API：解构-AI-Agent-的-Skills-体系"><a href="#从-Claude-Code-到-Web-API：解构-AI-Agent-的-Skills-体系" class="headerlink" title="从 Claude Code 到 Web API：解构 AI Agent 的 Skills 体系"></a>从 Claude Code 到 Web API：解构 AI Agent 的 Skills 体系</h1><blockquote>
@@ -8729,6 +8549,186 @@ npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><s
         <tag>Claude Code</tag>
         <tag>AI Agent</tag>
         <tag>Skills</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学生白嫖5年 Office 365 Premium 含 Copilot 完整教程（2026最新）</title>
+    <url>/posts/260121.html</url>
+    <content><![CDATA[<h1 id="大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程"><a href="#大学生白嫖-5-年-Office-365-Premium-含-Copilot-完整教程" class="headerlink" title="大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程"></a>大学生白嫖 5 年 Office 365 Premium 含 Copilot 完整教程</h1><blockquote>
+<p>原文作者：Rina (@Fire1000x)<br>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Microsoft 365 Premium 是微软最高级的订阅服务，包含：</p>
+<ul>
+<li><strong>Microsoft Copilot</strong> - AI 智能助手</li>
+<li><strong>1TB OneDrive</strong> 云存储空间</li>
+<li><strong>Word、Excel、PowerPoint、Outlook</strong> 等全套 Office 应用</li>
+<li><strong>5 台设备</strong>同时登录使用</li>
+<li><strong>图片和视频编辑工具</strong></li>
+<li><strong>数据和设备安全保护</strong></li>
+</ul>
+<p>正常订阅价格约 $4.99/月，但通过学生优惠渠道，可以<strong>完全免费</strong>获得长达 <strong>5 年</strong>的订阅！</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021136925-1727547049.jpg" alt="最终效果：订阅到期日期 2031 年"></p>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在开始之前，你需要准备：</p>
+<ol>
+<li><strong>edu 学生邮箱</strong> - 必须是有效的教育机构邮箱</li>
+<li><strong>微软账号</strong> - 用于绑定订阅</li>
+<li><strong>Google Pay 或 Apple Pay</strong> - 用于验证（不会实际扣款）</li>
+<li><strong>浏览器无痕模式</strong> - 避免缓存干扰</li>
+</ol>
+<hr>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="第一步：获取基础-1-年-Office-365-学生版"><a href="#第一步：获取基础-1-年-Office-365-学生版" class="headerlink" title="第一步：获取基础 1 年 Office 365 学生版"></a>第一步：获取基础 1 年 Office 365 学生版</h3><ol>
+<li><p>打开浏览器的<strong>无痕模式</strong>（Chrome: Ctrl+Shift+N / Edge: Ctrl+Shift+P）</p>
+</li>
+<li><p>切换ip为美国IP 家宽节点最佳</p>
+</li>
+<li><p>访问以下链接：</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol>
+<li><p>登录你想要绑定的<strong>微软账号</strong></p>
+</li>
+<li><p>选择 <strong>Google Pay</strong> 作为支付方式（成功率更高）</p>
+</li>
+<li><p>输入你的 <strong>edu 学生邮箱</strong>进行验证</p>
+</li>
+<li><p>点击 <strong>Verify student email</strong> 验证学生身份</p>
+</li>
+<li><p>去邮箱接收验证链接，复制回来打开</p>
+</li>
+<li><p>最后验证付款 <strong>0 元</strong>即可</p>
+</li>
+</ol>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021138201-800132641.jpg" alt="操作步骤示意图"></p>
+<h3 id="第二步：升级到-Premium-版本"><a href="#第二步：升级到-Premium-版本" class="headerlink" title="第二步：升级到 Premium 版本"></a>第二步：升级到 Premium 版本</h3><p>完成第一步后，继续访问以下链接升级到 Premium：</p>
+<pre class="line-numbers language-none"><code class="language-none">https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>重复相同的验证流程即可。</p>
+<h3 id="第三步：查询订阅状态"><a href="#第三步：查询订阅状态" class="headerlink" title="第三步：查询订阅状态"></a>第三步：查询订阅状态</h3><p>完成后，访问以下链接查看你的订阅信息：</p>
+<pre class="line-numbers language-none"><code class="language-none">https://account.microsoft.com/services/microsoft365/details<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260121021137821-2087432330.jpg" alt="三个关键链接"></p>
+<hr>
+<h2 id="关键链接汇总"><a href="#关键链接汇总" class="headerlink" title="关键链接汇总"></a>关键链接汇总</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>链接1：订阅会员</td>
+<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-student&amp;client=poc&amp;campaign=StudentFree12M">StudentFree12M</a></td>
+</tr>
+<tr>
+<td>链接2：升级 Premium</td>
+<td><a href="https://checkout.microsoft365.com/acquire/purchase?language=en-us&amp;market=US&amp;requestedDuration=Month&amp;scenario=microsoft-365-premium&amp;client=poc&amp;campaign=StudentPremiumFree12M">StudentPremiumFree12M</a></td>
+</tr>
+<tr>
+<td>链接3：查询订阅</td>
+<td><a href="https://account.microsoft.com/services/microsoft365/details">Microsoft 365 Details</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><strong>必须使用无痕模式</strong>，避免之前的登录状态干扰</li>
+<li><strong>Google Pay 成功率更高</strong>，推荐优先使用</li>
+<li><strong>不会实际扣款</strong>，只是用于验证支付方式</li>
+<li><strong>edu 邮箱必须有效</strong>，过期的学生邮箱可能无法验证</li>
+<li><strong>每年可以续期</strong>，理论上可以一直白嫖</li>
+<li><strong>⚠️ 重要：使用美国 IP 可获得 5 年订阅，香港等其他地区 IP 可能只有 2 年或 1 年</strong>，建议使用 VPN 切换到美国节点后再操作</li>
+</ol>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>Q: 没有 edu 邮箱怎么办？</strong><br>A: 可以尝试申请一些提供免费 edu 邮箱的项目，或者联系学校 IT 部门获取。</p>
+<p><strong>Q: 验证失败怎么办？</strong><br>A: 尝试更换浏览器、清除缓存、使用 VPN 切换到美国 IP。</p>
+<p><strong>Q: 订阅到期后会自动扣款吗？</strong><br>A: 记得在订阅管理页面关闭”自动续订”，或者在到期前取消订阅。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，你可以免费获得价值数百美元的 Microsoft 365 Premium 订阅，享受包括 Copilot AI 在内的全部高级功能。这是微软官方的学生优惠渠道，完全合法合规。</p>
+<p>赶紧趁着还有效，去领取你的 5 年免费订阅吧！</p>
+<hr>
+<p><strong>相关链接</strong>：</p>
+<ul>
+<li>原推文：<a href="https://x.com/Fire1000x/status/2013674832370504041">https://x.com/Fire1000x/status/2013674832370504041</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>资源分享</category>
+      </categories>
+      <tags>
+        <tag>Office 365</tag>
+        <tag>Microsoft</tag>
+        <tag>学生优惠</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</title>
+    <url>/posts/260112.html</url>
+    <content><![CDATA[<h1 id="如何在一天内修复你的整个人生：DAN-KOE的2026最新方法"><a href="#如何在一天内修复你的整个人生：DAN-KOE的2026最新方法" class="headerlink" title="如何在一天内修复你的整个人生：DAN KOE的2026最新方法"></a>如何在一天内修复你的整个人生：DAN KOE的2026最新方法</h1><p>如果你和我一样，你会觉得新年决心是愚蠢的。</p>
+<p>为什么？因为大多数人改变生活的方式完全错误。他们制定这些决心只是因为其他人都在这么做——但这种方式从根本上就注定失败。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822199-1792776152.jpg" alt="DAN KOE 关于生活改变的核心理念"></p>
+<h2 id="传统新年决心为什么会失败"><a href="#传统新年决心为什么会失败" class="headerlink" title="传统新年决心为什么会失败"></a>传统新年决心为什么会失败</h2><p>大多数人在新年时制定雄心勃勃的目标：</p>
+<ul>
+<li>减肥50斤</li>
+<li>学习一门新语言</li>
+<li>开始创业</li>
+<li>建立健康习惯</li>
+</ul>
+<p>但到了二月，这些决心就已经被抛在脑后。问题不在于你的意志力，而在于<strong>方法本身就是错的</strong>。</p>
+<h2 id="正确的改变方式：一天修复你的整个人生"><a href="#正确的改变方式：一天修复你的整个人生" class="headerlink" title="正确的改变方式：一天修复你的整个人生"></a>正确的改变方式：一天修复你的整个人生</h2><h3 id="1-停止制定“决心”，开始设计系统"><a href="#1-停止制定“决心”，开始设计系统" class="headerlink" title="1. 停止制定“决心”，开始设计系统"></a>1. 停止制定“决心”，开始设计系统</h3><p>决心是一个结果，而系统是达成结果的过程。不要说“我要减肥”，而是建立一个每天都能执行的系统。</p>
+<p><strong>关键原则：</strong></p>
+<ul>
+<li>关注过程，而非结果</li>
+<li>建立可持续的日常习惯</li>
+<li>让改变变得不可避免</li>
+</ul>
+<h3 id="2-重新定义你的身份"><a href="#2-重新定义你的身份" class="headerlink" title="2. 重新定义你的身份"></a>2. 重新定义你的身份</h3><p>你不是在“尝试”成为某个人——你<strong>已经是</strong>那个人了。这种身份转变会立即改变你的行为模式。</p>
+<blockquote>
+<p>💡 提示：不要说“我想成为健康的人”，而是说“我是一个重视健康的人”。</p>
+</blockquote>
+<h3 id="3-一天之内完成的根本性转变"><a href="#3-一天之内完成的根本性转变" class="headerlink" title="3. 一天之内完成的根本性转变"></a>3. 一天之内完成的根本性转变</h3><p><img src="https://img2024.cnblogs.com/blog/2910984/202601/2910984-20260118234822964-309957013.jpg" alt="实施改变的行动步骤"></p>
+<p><strong>今天就可以做的事情：</strong></p>
+<ol>
+<li><strong>清理你的环境</strong> - 移除所有阻碍你目标的事物</li>
+<li><strong>重新设计你的一天</strong> - 创建一个支持新身份的日程表</li>
+<li><strong>建立问责机制</strong> - 公开承诺或找到问责伙伴</li>
+<li><strong>立即采取行动</strong> - 不要等到“完美时机”</li>
+</ol>
+<h3 id="4-从“动机”到“势头”"><a href="#4-从“动机”到“势头”" class="headerlink" title="4. 从“动机”到“势头”"></a>4. 从“动机”到“势头”</h3><p>动机是短暂的，但势头是可持续的。一旦你开始行动，持续下去会变得越来越容易。</p>
+<p><strong>创建势头的关键：</strong></p>
+<ul>
+<li>从极小的胜利开始</li>
+<li>每天都要有进展，无论多小</li>
+<li>庆祝过程中的每一步</li>
+</ul>
+<h2 id="为什么这种方法有效"><a href="#为什么这种方法有效" class="headerlink" title="为什么这种方法有效"></a>为什么这种方法有效</h2><p>这不是关于意志力或自律的神话故事。这是关于：</p>
+<ol>
+<li><strong>设计环境</strong>让正确的选择成为唯一的选择</li>
+<li><strong>重塑身份</strong>让行为成为自然表达</li>
+<li><strong>建立系统</strong>让成功成为必然结果</li>
+</ol>
+<h2 id="常见问题-FAQ"><a href="#常见问题-FAQ" class="headerlink" title="常见问题 (FAQ)"></a>常见问题 (FAQ)</h2><p><strong>Q: 我真的能在一天内改变我的整个人生吗？</strong><br>A: 你可以在一天内做出改变整个人生轨迹的决定和行动。转变是瞬间的，但结果需要时间显现。</p>
+<p><strong>Q: 如果我失败了怎么办？</strong><br>A: 失败是系统的一部分。关键是建立一个能够容纳失败并继续前进的系统。</p>
+<p><strong>Q: 这和传统的新年决心有什么不同？</strong><br>A: 传统决心关注结果和意志力；这种方法关注系统和身份转变。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>停止等待新的一年、新的一月，甚至新的一周。<strong>今天就是那一天</strong>。</p>
+<p>你不需要更多的动机、更多的时间或更好的环境。你只需要正确的方法和立即行动的决心。</p>
+<p>改变不是发生在未来的某个时刻——它发生在你决定成为不同的人的那一刻。</p>
+<p>那一刻就是现在。</p>
+<hr>
+<p><strong>原文作者</strong>: DAN KOE (<a href="https://x.com/thedankoe">@thedankoe</a>)<br><strong>原文链接</strong>: <a href="https://x.com/thedankoe/status/2010751592346030461">Twitter Article</a></p>
+<blockquote>
+<p>📌 本文基于 DAN KOE 的 Twitter 长文整理和扩展，旨在帮助更多人找到正确的生活改变方法。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>个人成长</category>
+      </categories>
+      <tags>
+        <tag>个人成长</tag>
+        <tag>自我提升</tag>
+        <tag>目标设定</tag>
       </tags>
   </entry>
   <entry>
@@ -9230,6 +9230,103 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
       </tags>
   </entry>
   <entry>
+    <title>日结真经：P小将熊市的生存指南（2026最新）</title>
+    <url>/posts/260210.html</url>
+    <content><![CDATA[<h1 id="日结真经：P小将熊市的生存指南"><a href="#日结真经：P小将熊市的生存指南" class="headerlink" title="日结真经：P小将熊市的生存指南"></a>日结真经：P小将熊市的生存指南</h1><blockquote>
+<p>原文作者：DZ (@0x_duozi)<br>来源：<a href="https://x.com/0x_duozi/status/2018388058484441580">X/Twitter Article</a></p>
+</blockquote>
+<p>各位好，我是那个在市场不确定性里反复横跳的PVP选手。问怎么赚钱，我一般建议他们先去拜拜佛。但我不同，我这种P小将专门喜欢在价值错配的泥潭里刨食。在这个人人想当镰刀、结果全成了韭菜的时代，我把这些折腾的经历记下来，取名《日结真经》，其实就是想说：作为一名P小将，长得慢点没关系，只要别被割得太齐就行。</p>
+<p>在开篇前，我得先给你泼一盆冷水，最好是带冰渣的那种。</p>
+<p><strong>如果你满脑子想的是靠”日结”单笔赚出 1M 的神话，那你可以现在就出门左转，去买两张彩票。</strong> 日结，跟一夜暴富不沾边，它本质上是你在市场缝隙里卖力气。</p>
+<p>就像创业需要第一桶金，PVP 选手也需要原始积累。如果你现在已经能跟 0xSun、James、Sencrazy、王小二、冷静、外星猫、pow、大D等这些位列仙班的高手一样，那这篇文字对你来说就是废纸，直接关掉页面。链上的世界很大，如果你还在泥潭里挣扎，想先活下来，那咱们接着聊。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010225508-1070390058.jpg" alt="交易数据截图"></p>
+<p>这是我使用的其中两个比较典型钱包去年的交易量和交易数据，总结就是如下：</p>
+<p><strong>本金是命，频率是术，仓位管理是道。</strong></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010226436-309098044.jpg" alt="钱包数据"></p>
+<hr>
+<h2 id="一、本金是你的命根子"><a href="#一、本金是你的命根子" class="headerlink" title="一、本金是你的命根子"></a>一、本金是你的命根子</h2><p>在这个链上修罗场，所有的技术指标都是假的，只有你钱包里的余额是真的。记住，<strong>留住本金是绝对的第一性原则</strong>。你要追求的不是一招制敌，而是”胜率的复利”：</p>
+<ul>
+<li><strong>经常性小赚：</strong> 这是你的口粮。</li>
+<li><strong>偶尔小亏：</strong> 这是你交的保护费。</li>
+<li><strong>偶尔大赚：</strong> 这是老天爷赏你的红包。</li>
+<li><strong>绝对避免大亏：</strong> 这是你在这行干下去的底线。</li>
+</ul>
+<h3 id="利润是”跑”出来的"><a href="#利润是”跑”出来的" class="headerlink" title="利润是”跑”出来的"></a>利润是”跑”出来的</h3><p>只有让利润跑起来，你才有底气去追逐那些可能让你改命的”大金狗”。没有利润做护城河，你的心态在波动面前就像一张擦过嘴的纸，一捅就破。</p>
+<p>别对着估值”仰望”到脖子断掉，翻倍了要不要走？这不取决于你的贪欲，取决于现实的引力。</p>
+<ul>
+<li><strong>情绪巅峰：</strong> 既然大家都在做梦，你可以陪着再睡一会儿。</li>
+<li><strong>情绪低谷：</strong> 别谈理想，别谈叙事。你要看后排还有没有新的逻辑新的买盘，如果没有，你得跟踏马一个修空调的一样立刻拿钱走人。重申本金第一。</li>
+</ul>
+<h3 id="关于贪婪：给欲望装个节制阀"><a href="#关于贪婪：给欲望装个节制阀" class="headerlink" title="关于贪婪：给欲望装个节制阀"></a>关于贪婪：给欲望装个节制阀</h3><p>很多人翻倍了想 5 倍，5 倍了想 10 倍。这时候他们忘了，那翻倍的部分已经是你兜里的钱了。买地早，坐过山车不叫本事，能从过山车上平安跳下来才叫本事。</p>
+<ul>
+<li><strong>心法：</strong> 进场前就定好靶点。</li>
+<li><strong>手法：</strong> 分批出货。像剥洋葱一样一点点套现，哪怕最后它真涨到了天上去，你手里剩下的那点”梦想仓位”也只会让你笑，而不是让你悔。</li>
+</ul>
+<hr>
+<h2 id="二、频率是术，要有自己的雷达"><a href="#二、频率是术，要有自己的雷达" class="headerlink" title="二、频率是术，要有自己的雷达"></a>二、频率是术，要有自己的雷达</h2><h3 id="复制你的”赚钱肌肉”"><a href="#复制你的”赚钱肌肉”" class="headerlink" title="复制你的”赚钱肌肉”"></a>复制你的”赚钱肌肉”</h3><p>在链上混，频率只是表象，可复制的交易逻辑才是你的钢筋骨架。你得有一套能循环运作的系统。别今天听张三的，明天跟李四的，那样你不是在交易，你是在”流浪”。你得有自己的”一技之长”，让赚钱变成一种肌肉记忆。</p>
+<h3 id="顶级猎手的”沉默名单”：地址系统"><a href="#顶级猎手的”沉默名单”：地址系统" class="headerlink" title="顶级猎手的”沉默名单”：地址系统"></a>顶级猎手的”沉默名单”：地址系统</h3><p>很多人加几百个小群，每天被成千上万条垃圾信息淹没，以为那是机会，其实那是噪音。我的秘诀是：<strong>地址逻辑</strong>。你需要通过时间的积累手里攒着一批”深水炸弹”级别的地址。这些地址可能半年都不动一下，像死了一样，但只要它们一旦在链上有动作，那就是捡钱的信号。</p>
+<ul>
+<li><strong>心法：</strong> 当你积累了足够多的内幕地址和阴谋盘逻辑，你根本不需要什么”私密小群”。平常我也没有在各种大哥的小群里面，我只是默默地坐在电脑前，等待我的警报响起。</li>
+<li><strong>状态：</strong> 我就在大群里待着，看大家聊什么，然后转头钻进推特和工具里，去印证我的地址库。</li>
+</ul>
+<h3 id="判断力，才是PVP选手的核心装备"><a href="#判断力，才是PVP选手的核心装备" class="headerlink" title="判断力，才是PVP选手的核心装备"></a>判断力，才是PVP选手的核心装备</h3><p>很多人觉得高手离自己很远，其实不然。你可以通过很多渠道去提升自己的判断力！现在有这么多的转发群，链上的高手的推特总结和地址操作也都是公开的，很多P小将会觉得”他们赚钱是运气，如果我有xxx的内幕，我也可以”，听我一句劝，<strong>放下自己的傲慢，把这些高手的推特好好地研读。</strong></p>
+<ul>
+<li><strong>生存哲学：</strong> 当你不够强大的时候，别急着自创流派。Win or Learn，在交易之外能看到他们的分享与分析可以少走很多弯路。</li>
+<li><strong>动作：</strong> 盯着那些已经拿到了结果的人，像素级地去复刻他们的思路和逻辑。向有结果的人学习，是你通往强大最短的路径。</li>
+</ul>
+<hr>
+<h2 id="三、以-MOLT-为例：动态博弈与逻辑驱动"><a href="#三、以-MOLT-为例：动态博弈与逻辑驱动" class="headerlink" title="三、以 $MOLT 为例：动态博弈与逻辑驱动"></a>三、以 $MOLT 为例：动态博弈与逻辑驱动</h2><p>很多人问我：”道理我都懂，但到底什么时候该冲？”拿 $MOLT 举例，我不看K线玄学，我只看交易理由。一笔单子，你都得清楚自己是为什么而战。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010224624-51241850.jpg" alt="MOLT K线图"></p>
+<h3 id="第一次上车"><a href="#第一次上车" class="headerlink" title="第一次上车"></a>第一次上车</h3><p><strong>逻辑：</strong> a16z 关注了，且他之前也点火了企鹅。a16z之前在推特也说过要大力发展ai相关，顶级的 AI 叙事背书。</p>
+<ul>
+<li><strong>战况：</strong> 市值从 12M 冲向 30M。</li>
+<li><strong>操作：</strong> 5000u 进，翻倍出，收米 9000u。</li>
+<li><strong>复盘：</strong> 当时信息收集不全，我只把它当”日结”。这就是我说的：不确定的时候，先落袋为安。当然往后来看这笔交易让我卖飞了3wu。</li>
+</ul>
+<h3 id="第二次上车"><a href="#第二次上车" class="headerlink" title="第二次上车"></a>第二次上车</h3><p><strong>逻辑：</strong> @heyibinance 关注了，在50m的位置，从120m跌到了50，跌幅已够，博一个上 Alpha 的预期。</p>
+<ul>
+<li><strong>转折：</strong> 50M立马上了，拿了一个晚上，交易量没跟上，想象中的”千军万马”没来。</li>
+<li><strong>操作：</strong> 亏损 800u，果断割肉。</li>
+<li><strong>复盘：</strong> <strong>逻辑证伪，立刻撤退。</strong> 哪怕是何一关注了，如果市场不买账，我也绝不在这儿死磕。往后看这及时止损让我躲过了腰斩。</li>
+</ul>
+<h3 id="第三次上车"><a href="#第三次上车" class="headerlink" title="第三次上车"></a>第三次上车</h3><p><strong>逻辑：</strong> 纳瓦尔（Naval）发推了提到了molt，前有 $Zec。</p>
+<ul>
+<li><strong>操作：</strong> 第一时间 26M 杀回，立马又买了5000u。</li>
+<li><strong>心态：</strong> 这 5000u 是我之前赚来的利润，所以心态上很好，并且已经从120m跌到了30m，我想拿着看看有没有二浪。</li>
+</ul>
+<h3 id="总结：你上车的理由到底是什么？"><a href="#总结：你上车的理由到底是什么？" class="headerlink" title="总结：你上车的理由到底是什么？"></a>总结：你上车的理由到底是什么？</h3><p>在几十 M 的位置去接盘，如果没有清晰的理由，那叫送人头；如果有逻辑支撑，那叫”胜率博弈”。</p>
+<ol>
+<li><strong>你是为了消息面冲的？</strong> 那消息兑现或不及预期时，你跑了吗？</li>
+<li><strong>你是为了叙事冲的？</strong> 那你有没有认认真真地去收集消息？</li>
+<li><strong>你是为了利润冲的？</strong> 那你能不能承受过山车的颠簸？</li>
+</ol>
+<p>每一次买之前，都要问问自己为什么冲，如果不知道，那这钱你不赚也罢。这就是所谓的<strong>频率是术，要有自己的雷达</strong>。</p>
+<hr>
+<h2 id="四、仓位管理是道"><a href="#四、仓位管理是道" class="headerlink" title="四、仓位管理是道"></a>四、仓位管理是道</h2><h3 id="1-别被”牛市焦虑”带进坑里"><a href="#1-别被”牛市焦虑”带进坑里" class="headerlink" title="1. 别被”牛市焦虑”带进坑里"></a>1. 别被”牛市焦虑”带进坑里</h3><p>很多人怕错过了牛市的暴富列车，却忘了列车上多的是通往悬崖的单程票。你看着别人单币 1M、一天几十万 U，就开始心跳加速、呼吸困难，然后推翻自己所有的打法去追高、去 FOMO？听我一句劝：<strong>那是别人的剧本，不是你的财运。</strong> 只要你还活在这个市场上，1mu是机会，1000u对你来说难道不是机会吗？只要有人在玩，机会永远都在。</p>
+<h3 id="2-什么是真正的”知行合一”？"><a href="#2-什么是真正的”知行合一”？" class="headerlink" title="2. 什么是真正的”知行合一”？"></a>2. 什么是真正的”知行合一”？</h3><p>每一笔交易，你都要从中抠出点”认知”来。运气固然重要，但运气只负责把金狗送到你面前，能不能抓稳靠的是你那套”可复制的逻辑”。<strong>最核心的法则：永远只上你承受得住亏损的仓位。</strong> 再看好一个项目，也别去跟市场硬刚。市场是大海，你只是一棵小草，随浪而动是你的本领，逆流而上那是你想自尽。</p>
+<h3 id="3-避开”宏大叙事”的糖衣炮弹"><a href="#3-避开”宏大叙事”的糖衣炮弹" class="headerlink" title="3. 避开”宏大叙事”的糖衣炮弹"></a>3. 避开”宏大叙事”的糖衣炮弹</h3><p>你要学会扬长避短：你的舒适区能赚到钱，就给我像牛一样努力工作，拼命”日结”；舒适区失灵了，就关掉电脑去睡觉。</p>
+<p>最关键的一点：<strong>没钱的时候，别谈什么”格局”。</strong> 所谓的”陪伴伟大征程”、”改变世界”，那是已经赚够了的大佬们的精神保健品。对于还在原始积累阶段的”小草”来说，那些宏大叙事是你的陷阱。赚到你的心理预期，就给我撒丫子跑。跑了之后哪怕它再涨十倍，你也别回头。再过30天看，你99%能买到你心里的那个”如果跌到多少我一定上车”的价格。</p>
+<h3 id="4-小草的胜利"><a href="#4-小草的胜利" class="headerlink" title="4. 小草的胜利"></a>4. 小草的胜利</h3><p>你可以跟大牛走在同一条赛道上，但你要清楚：<strong>人家要的是江山，我们要的是口粮。</strong> 他们拿大结果，我们拿属于自己的小结果。还是重复那句话，只要能做到”经常小赚，偶尔大赚，绝不大亏”，你就已经在这场 PVP 中赢过了 90% 的人。</p>
+<p><strong>记住：市场永远有机会。活着，才有真经。</strong></p>
+<hr>
+<h2 id="五、日结真经的终章：大巧若拙，慢即是快"><a href="#五、日结真经的终章：大巧若拙，慢即是快" class="headerlink" title="五、日结真经的终章：大巧若拙，慢即是快"></a>五、日结真经的终章：大巧若拙，慢即是快</h2><h3 id="从日结到格局"><a href="#从日结到格局" class="headerlink" title="从日结到格局"></a>从日结到格局</h3><p>日结不是目的，是原始资本的积累过程。当你攒够了子弹，你要做的就是等待。等一些确定性足够大、叙事足够强的”金狗”出现后，你要敢于推翻自己平时的碎步跑位，尝试去”格局”一点。但记住，这种转变必须建立在确定性之上，你不能用之前辛辛苦苦攒下的血汗钱，去赌一个模棱两可的梦想。</p>
+<h3 id="终局思维"><a href="#终局思维" class="headerlink" title="终局思维"></a>终局思维</h3><p>我追求财富自由，但我从不着急。我把资产平均分布在黄金、BTC、英伟达、特斯拉、谷歌、META这些世界顶级的优质资产里。我不求它们明天就翻倍，我求的是它们能承载我通过 PVP 赚来的利润，让财富增长变成一个时间问题。但是PVP的快乐我应该也不会舍弃，我喜欢PVP也乐在其中。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010228848-801209164.jpg" alt="比特币 Ahr999 指标"></p>
+<p>你看，BTC 已经第六次进入 AHR999 定投线了。历史证明了六次：<strong>只要你在定投区间内入场，时间就是你最好的朋友。</strong></p>
+<hr>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>我们都很年轻。年轻最大的资本不是那几千 U，而是你还有机会再遇到一次资产翻倍的浪潮。在属于你的浪潮来临之前，请你保持冷静，狠狠地去日结，狠狠地去磨练。只要你还在这个桌上，只要你还没被洗出局并且方法论正确，财富自由就只是个迟早要打卡的站点。</p>
+]]></content>
+      <categories>
+        <category>加密货币</category>
+      </categories>
+      <tags>
+        <tag>Crypto</tag>
+        <tag>交易策略</tag>
+        <tag>Meme币</tag>
+        <tag>PVP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路</title>
     <url>/posts/260203.html</url>
     <content><![CDATA[<h1 id="揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路"><a href="#揭秘-RIVER庞氏骗局：KOL组局收割韭菜的完整套路" class="headerlink" title="揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路"></a>揭秘$RIVER庞氏骗局：KOL组局收割韭菜的完整套路</h1><p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260203010435590-1362194860.jpg" style="zoom:50%;"></p>
@@ -9416,103 +9513,6 @@ openclaw gateway start<span aria-hidden="true" class="line-numbers-rows"><span><
         <tag>加密货币</tag>
         <tag>骗局揭露</tag>
         <tag>KOL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日结真经：P小将熊市的生存指南（2026最新）</title>
-    <url>/posts/260210.html</url>
-    <content><![CDATA[<h1 id="日结真经：P小将熊市的生存指南"><a href="#日结真经：P小将熊市的生存指南" class="headerlink" title="日结真经：P小将熊市的生存指南"></a>日结真经：P小将熊市的生存指南</h1><blockquote>
-<p>原文作者：DZ (@0x_duozi)<br>来源：<a href="https://x.com/0x_duozi/status/2018388058484441580">X/Twitter Article</a></p>
-</blockquote>
-<p>各位好，我是那个在市场不确定性里反复横跳的PVP选手。问怎么赚钱，我一般建议他们先去拜拜佛。但我不同，我这种P小将专门喜欢在价值错配的泥潭里刨食。在这个人人想当镰刀、结果全成了韭菜的时代，我把这些折腾的经历记下来，取名《日结真经》，其实就是想说：作为一名P小将，长得慢点没关系，只要别被割得太齐就行。</p>
-<p>在开篇前，我得先给你泼一盆冷水，最好是带冰渣的那种。</p>
-<p><strong>如果你满脑子想的是靠”日结”单笔赚出 1M 的神话，那你可以现在就出门左转，去买两张彩票。</strong> 日结，跟一夜暴富不沾边，它本质上是你在市场缝隙里卖力气。</p>
-<p>就像创业需要第一桶金，PVP 选手也需要原始积累。如果你现在已经能跟 0xSun、James、Sencrazy、王小二、冷静、外星猫、pow、大D等这些位列仙班的高手一样，那这篇文字对你来说就是废纸，直接关掉页面。链上的世界很大，如果你还在泥潭里挣扎，想先活下来，那咱们接着聊。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010225508-1070390058.jpg" alt="交易数据截图"></p>
-<p>这是我使用的其中两个比较典型钱包去年的交易量和交易数据，总结就是如下：</p>
-<p><strong>本金是命，频率是术，仓位管理是道。</strong></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010226436-309098044.jpg" alt="钱包数据"></p>
-<hr>
-<h2 id="一、本金是你的命根子"><a href="#一、本金是你的命根子" class="headerlink" title="一、本金是你的命根子"></a>一、本金是你的命根子</h2><p>在这个链上修罗场，所有的技术指标都是假的，只有你钱包里的余额是真的。记住，<strong>留住本金是绝对的第一性原则</strong>。你要追求的不是一招制敌，而是”胜率的复利”：</p>
-<ul>
-<li><strong>经常性小赚：</strong> 这是你的口粮。</li>
-<li><strong>偶尔小亏：</strong> 这是你交的保护费。</li>
-<li><strong>偶尔大赚：</strong> 这是老天爷赏你的红包。</li>
-<li><strong>绝对避免大亏：</strong> 这是你在这行干下去的底线。</li>
-</ul>
-<h3 id="利润是”跑”出来的"><a href="#利润是”跑”出来的" class="headerlink" title="利润是”跑”出来的"></a>利润是”跑”出来的</h3><p>只有让利润跑起来，你才有底气去追逐那些可能让你改命的”大金狗”。没有利润做护城河，你的心态在波动面前就像一张擦过嘴的纸，一捅就破。</p>
-<p>别对着估值”仰望”到脖子断掉，翻倍了要不要走？这不取决于你的贪欲，取决于现实的引力。</p>
-<ul>
-<li><strong>情绪巅峰：</strong> 既然大家都在做梦，你可以陪着再睡一会儿。</li>
-<li><strong>情绪低谷：</strong> 别谈理想，别谈叙事。你要看后排还有没有新的逻辑新的买盘，如果没有，你得跟踏马一个修空调的一样立刻拿钱走人。重申本金第一。</li>
-</ul>
-<h3 id="关于贪婪：给欲望装个节制阀"><a href="#关于贪婪：给欲望装个节制阀" class="headerlink" title="关于贪婪：给欲望装个节制阀"></a>关于贪婪：给欲望装个节制阀</h3><p>很多人翻倍了想 5 倍，5 倍了想 10 倍。这时候他们忘了，那翻倍的部分已经是你兜里的钱了。买地早，坐过山车不叫本事，能从过山车上平安跳下来才叫本事。</p>
-<ul>
-<li><strong>心法：</strong> 进场前就定好靶点。</li>
-<li><strong>手法：</strong> 分批出货。像剥洋葱一样一点点套现，哪怕最后它真涨到了天上去，你手里剩下的那点”梦想仓位”也只会让你笑，而不是让你悔。</li>
-</ul>
-<hr>
-<h2 id="二、频率是术，要有自己的雷达"><a href="#二、频率是术，要有自己的雷达" class="headerlink" title="二、频率是术，要有自己的雷达"></a>二、频率是术，要有自己的雷达</h2><h3 id="复制你的”赚钱肌肉”"><a href="#复制你的”赚钱肌肉”" class="headerlink" title="复制你的”赚钱肌肉”"></a>复制你的”赚钱肌肉”</h3><p>在链上混，频率只是表象，可复制的交易逻辑才是你的钢筋骨架。你得有一套能循环运作的系统。别今天听张三的，明天跟李四的，那样你不是在交易，你是在”流浪”。你得有自己的”一技之长”，让赚钱变成一种肌肉记忆。</p>
-<h3 id="顶级猎手的”沉默名单”：地址系统"><a href="#顶级猎手的”沉默名单”：地址系统" class="headerlink" title="顶级猎手的”沉默名单”：地址系统"></a>顶级猎手的”沉默名单”：地址系统</h3><p>很多人加几百个小群，每天被成千上万条垃圾信息淹没，以为那是机会，其实那是噪音。我的秘诀是：<strong>地址逻辑</strong>。你需要通过时间的积累手里攒着一批”深水炸弹”级别的地址。这些地址可能半年都不动一下，像死了一样，但只要它们一旦在链上有动作，那就是捡钱的信号。</p>
-<ul>
-<li><strong>心法：</strong> 当你积累了足够多的内幕地址和阴谋盘逻辑，你根本不需要什么”私密小群”。平常我也没有在各种大哥的小群里面，我只是默默地坐在电脑前，等待我的警报响起。</li>
-<li><strong>状态：</strong> 我就在大群里待着，看大家聊什么，然后转头钻进推特和工具里，去印证我的地址库。</li>
-</ul>
-<h3 id="判断力，才是PVP选手的核心装备"><a href="#判断力，才是PVP选手的核心装备" class="headerlink" title="判断力，才是PVP选手的核心装备"></a>判断力，才是PVP选手的核心装备</h3><p>很多人觉得高手离自己很远，其实不然。你可以通过很多渠道去提升自己的判断力！现在有这么多的转发群，链上的高手的推特总结和地址操作也都是公开的，很多P小将会觉得”他们赚钱是运气，如果我有xxx的内幕，我也可以”，听我一句劝，<strong>放下自己的傲慢，把这些高手的推特好好地研读。</strong></p>
-<ul>
-<li><strong>生存哲学：</strong> 当你不够强大的时候，别急着自创流派。Win or Learn，在交易之外能看到他们的分享与分析可以少走很多弯路。</li>
-<li><strong>动作：</strong> 盯着那些已经拿到了结果的人，像素级地去复刻他们的思路和逻辑。向有结果的人学习，是你通往强大最短的路径。</li>
-</ul>
-<hr>
-<h2 id="三、以-MOLT-为例：动态博弈与逻辑驱动"><a href="#三、以-MOLT-为例：动态博弈与逻辑驱动" class="headerlink" title="三、以 $MOLT 为例：动态博弈与逻辑驱动"></a>三、以 $MOLT 为例：动态博弈与逻辑驱动</h2><p>很多人问我：”道理我都懂，但到底什么时候该冲？”拿 $MOLT 举例，我不看K线玄学，我只看交易理由。一笔单子，你都得清楚自己是为什么而战。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010224624-51241850.jpg" alt="MOLT K线图"></p>
-<h3 id="第一次上车"><a href="#第一次上车" class="headerlink" title="第一次上车"></a>第一次上车</h3><p><strong>逻辑：</strong> a16z 关注了，且他之前也点火了企鹅。a16z之前在推特也说过要大力发展ai相关，顶级的 AI 叙事背书。</p>
-<ul>
-<li><strong>战况：</strong> 市值从 12M 冲向 30M。</li>
-<li><strong>操作：</strong> 5000u 进，翻倍出，收米 9000u。</li>
-<li><strong>复盘：</strong> 当时信息收集不全，我只把它当”日结”。这就是我说的：不确定的时候，先落袋为安。当然往后来看这笔交易让我卖飞了3wu。</li>
-</ul>
-<h3 id="第二次上车"><a href="#第二次上车" class="headerlink" title="第二次上车"></a>第二次上车</h3><p><strong>逻辑：</strong> @heyibinance 关注了，在50m的位置，从120m跌到了50，跌幅已够，博一个上 Alpha 的预期。</p>
-<ul>
-<li><strong>转折：</strong> 50M立马上了，拿了一个晚上，交易量没跟上，想象中的”千军万马”没来。</li>
-<li><strong>操作：</strong> 亏损 800u，果断割肉。</li>
-<li><strong>复盘：</strong> <strong>逻辑证伪，立刻撤退。</strong> 哪怕是何一关注了，如果市场不买账，我也绝不在这儿死磕。往后看这及时止损让我躲过了腰斩。</li>
-</ul>
-<h3 id="第三次上车"><a href="#第三次上车" class="headerlink" title="第三次上车"></a>第三次上车</h3><p><strong>逻辑：</strong> 纳瓦尔（Naval）发推了提到了molt，前有 $Zec。</p>
-<ul>
-<li><strong>操作：</strong> 第一时间 26M 杀回，立马又买了5000u。</li>
-<li><strong>心态：</strong> 这 5000u 是我之前赚来的利润，所以心态上很好，并且已经从120m跌到了30m，我想拿着看看有没有二浪。</li>
-</ul>
-<h3 id="总结：你上车的理由到底是什么？"><a href="#总结：你上车的理由到底是什么？" class="headerlink" title="总结：你上车的理由到底是什么？"></a>总结：你上车的理由到底是什么？</h3><p>在几十 M 的位置去接盘，如果没有清晰的理由，那叫送人头；如果有逻辑支撑，那叫”胜率博弈”。</p>
-<ol>
-<li><strong>你是为了消息面冲的？</strong> 那消息兑现或不及预期时，你跑了吗？</li>
-<li><strong>你是为了叙事冲的？</strong> 那你有没有认认真真地去收集消息？</li>
-<li><strong>你是为了利润冲的？</strong> 那你能不能承受过山车的颠簸？</li>
-</ol>
-<p>每一次买之前，都要问问自己为什么冲，如果不知道，那这钱你不赚也罢。这就是所谓的<strong>频率是术，要有自己的雷达</strong>。</p>
-<hr>
-<h2 id="四、仓位管理是道"><a href="#四、仓位管理是道" class="headerlink" title="四、仓位管理是道"></a>四、仓位管理是道</h2><h3 id="1-别被”牛市焦虑”带进坑里"><a href="#1-别被”牛市焦虑”带进坑里" class="headerlink" title="1. 别被”牛市焦虑”带进坑里"></a>1. 别被”牛市焦虑”带进坑里</h3><p>很多人怕错过了牛市的暴富列车，却忘了列车上多的是通往悬崖的单程票。你看着别人单币 1M、一天几十万 U，就开始心跳加速、呼吸困难，然后推翻自己所有的打法去追高、去 FOMO？听我一句劝：<strong>那是别人的剧本，不是你的财运。</strong> 只要你还活在这个市场上，1mu是机会，1000u对你来说难道不是机会吗？只要有人在玩，机会永远都在。</p>
-<h3 id="2-什么是真正的”知行合一”？"><a href="#2-什么是真正的”知行合一”？" class="headerlink" title="2. 什么是真正的”知行合一”？"></a>2. 什么是真正的”知行合一”？</h3><p>每一笔交易，你都要从中抠出点”认知”来。运气固然重要，但运气只负责把金狗送到你面前，能不能抓稳靠的是你那套”可复制的逻辑”。<strong>最核心的法则：永远只上你承受得住亏损的仓位。</strong> 再看好一个项目，也别去跟市场硬刚。市场是大海，你只是一棵小草，随浪而动是你的本领，逆流而上那是你想自尽。</p>
-<h3 id="3-避开”宏大叙事”的糖衣炮弹"><a href="#3-避开”宏大叙事”的糖衣炮弹" class="headerlink" title="3. 避开”宏大叙事”的糖衣炮弹"></a>3. 避开”宏大叙事”的糖衣炮弹</h3><p>你要学会扬长避短：你的舒适区能赚到钱，就给我像牛一样努力工作，拼命”日结”；舒适区失灵了，就关掉电脑去睡觉。</p>
-<p>最关键的一点：<strong>没钱的时候，别谈什么”格局”。</strong> 所谓的”陪伴伟大征程”、”改变世界”，那是已经赚够了的大佬们的精神保健品。对于还在原始积累阶段的”小草”来说，那些宏大叙事是你的陷阱。赚到你的心理预期，就给我撒丫子跑。跑了之后哪怕它再涨十倍，你也别回头。再过30天看，你99%能买到你心里的那个”如果跌到多少我一定上车”的价格。</p>
-<h3 id="4-小草的胜利"><a href="#4-小草的胜利" class="headerlink" title="4. 小草的胜利"></a>4. 小草的胜利</h3><p>你可以跟大牛走在同一条赛道上，但你要清楚：<strong>人家要的是江山，我们要的是口粮。</strong> 他们拿大结果，我们拿属于自己的小结果。还是重复那句话，只要能做到”经常小赚，偶尔大赚，绝不大亏”，你就已经在这场 PVP 中赢过了 90% 的人。</p>
-<p><strong>记住：市场永远有机会。活着，才有真经。</strong></p>
-<hr>
-<h2 id="五、日结真经的终章：大巧若拙，慢即是快"><a href="#五、日结真经的终章：大巧若拙，慢即是快" class="headerlink" title="五、日结真经的终章：大巧若拙，慢即是快"></a>五、日结真经的终章：大巧若拙，慢即是快</h2><h3 id="从日结到格局"><a href="#从日结到格局" class="headerlink" title="从日结到格局"></a>从日结到格局</h3><p>日结不是目的，是原始资本的积累过程。当你攒够了子弹，你要做的就是等待。等一些确定性足够大、叙事足够强的”金狗”出现后，你要敢于推翻自己平时的碎步跑位，尝试去”格局”一点。但记住，这种转变必须建立在确定性之上，你不能用之前辛辛苦苦攒下的血汗钱，去赌一个模棱两可的梦想。</p>
-<h3 id="终局思维"><a href="#终局思维" class="headerlink" title="终局思维"></a>终局思维</h3><p>我追求财富自由，但我从不着急。我把资产平均分布在黄金、BTC、英伟达、特斯拉、谷歌、META这些世界顶级的优质资产里。我不求它们明天就翻倍，我求的是它们能承载我通过 PVP 赚来的利润，让财富增长变成一个时间问题。但是PVP的快乐我应该也不会舍弃，我喜欢PVP也乐在其中。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202602/2910984-20260210010228848-801209164.jpg" alt="比特币 Ahr999 指标"></p>
-<p>你看，BTC 已经第六次进入 AHR999 定投线了。历史证明了六次：<strong>只要你在定投区间内入场，时间就是你最好的朋友。</strong></p>
-<hr>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>我们都很年轻。年轻最大的资本不是那几千 U，而是你还有机会再遇到一次资产翻倍的浪潮。在属于你的浪潮来临之前，请你保持冷静，狠狠地去日结，狠狠地去磨练。只要你还在这个桌上，只要你还没被洗出局并且方法论正确，财富自由就只是个迟早要打卡的站点。</p>
-]]></content>
-      <categories>
-        <category>加密货币</category>
-      </categories>
-      <tags>
-        <tag>Crypto</tag>
-        <tag>交易策略</tag>
-        <tag>Meme币</tag>
-        <tag>PVP</tag>
       </tags>
   </entry>
   <entry>
@@ -11677,6 +11677,208 @@ OpenAI 实际：验真伪 → （跳过）→ （跳过）→ （跳过）→ �
       </tags>
   </entry>
   <entry>
+    <title>Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比</title>
+    <url>/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html</url>
+    <content><![CDATA[<h1 id="Hermes-Agent-vs-OpenClaw：下一代自学习-AI-助手深度对比"><a href="#Hermes-Agent-vs-OpenClaw：下一代自学习-AI-助手深度对比" class="headerlink" title="Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比"></a>Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比</h1><p>2026年，AI 助手赛道出现了一个新的竞争者——<strong>Hermes Agent</strong>，由 Nous Research 开发，以“越用越聪明”的自学习架构迅速吸引开发者目光。与此同时，坐拥 30 万+ GitHub Star 的老牌框架 <strong>OpenClaw</strong> 依然凭借庞大生态屹立不倒。</p>
+<p>两者到底有什么区别？该如何选择？本文基于社区真实反馈与技术架构分析，给你一个清晰的答案。</p>
+<hr>
+<h2 id="一、核心定位：宽度优先-vs-深度优先"><a href="#一、核心定位：宽度优先-vs-深度优先" class="headerlink" title="一、核心定位：宽度优先 vs 深度优先"></a>一、核心定位：宽度优先 vs 深度优先</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260407180624265-1877876110.jpg" style="zoom:40%;" alt="Hermes Agent vs OpenClaw 架构对比"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>OpenClaw</th>
+<th>Hermes Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Stars</td>
+<td>30万+</td>
+<td>~2.2万（快速增长）</td>
+</tr>
+<tr>
+<td>开发方</td>
+<td>社区驱动</td>
+<td>Nous Research</td>
+</tr>
+<tr>
+<td>架构哲学</td>
+<td>宽度优先，广覆盖</td>
+<td>深度优先，自进化</td>
+</tr>
+<tr>
+<td>Skills 来源</td>
+<td>人工手写静态 Markdown</td>
+<td>Agent 从任务经验自动生成</td>
+</tr>
+<tr>
+<td>记忆系统</td>
+<td>基础 Markdown 存储</td>
+<td>多层结构（会话/持久/技能层）</td>
+</tr>
+<tr>
+<td>生态规模</td>
+<td>50+ 平台集成，1万+ 社区 Skills</td>
+<td>持续自我构建</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>取决于所配置的模型</td>
+<td>取决于所配置的模型</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>两者均为开源自托管项目，支持 Claude API、OpenAI、本地 Ollama 等模型后端，价格完全相同。</strong></p>
+<blockquote>
+<p>值得注意的是：2026年4月4日起，Anthropic 宣布 Claude Pro/Max 订阅不再覆盖第三方工具调用，这对两者影响完全一致。</p>
+</blockquote>
+<hr>
+<h2 id="二、社区真实反响"><a href="#二、社区真实反响" class="headerlink" title="二、社区真实反响"></a>二、社区真实反响</h2><h3 id="中文社区声音"><a href="#中文社区声音" class="headerlink" title="中文社区声音"></a>中文社区声音</h3><blockquote>
+<p>“剛剛安裝好 hermes，安裝的過程可以選擇去抓 OpenClaw 的設定……目前初步體感還不賴耶！”</p>
+<p>“听说 OpenClaw 已经过时了，现在流行 Hermes Agent，是不是该去研究一下了”</p>
+<p>“openclaw, hermes, CC, codex …. 集合！”（越来越多人选择两者并用）</p>
+</blockquote>
+<h3 id="英文社区声音"><a href="#英文社区声音" class="headerlink" title="英文社区声音"></a>英文社区声音</h3><blockquote>
+<p>“Hermes is the AI agent OpenClaw promised to be. Better memory, better instruction following, better security.”</p>
+<p>“AI agents as we know them are already obsolete… Hermes builds and refines its own skills autonomously.”</p>
+</blockquote>
+<p>SEO 从业者 Julian Goldie 做了真实测试：在相同任务下，Hermes 建站速度更快、内容实时更新，并能从错误中自动生成可复用 Skill——完胜 OpenClaw。</p>
+<hr>
+<h2 id="三、Hermes-自学习架构深度解析"><a href="#三、Hermes-自学习架构深度解析" class="headerlink" title="三、Hermes 自学习架构深度解析"></a>三、Hermes 自学习架构深度解析</h2><p>Hermes 的核心哲学是：<strong>把任务执行本身转化为学习过程</strong>，最终实现“Agent 自己编写自己的工具和记忆”。</p>
+<h3 id="3-1-闭环学习循环（4-阶段）"><a href="#3-1-闭环学习循环（4-阶段）" class="headerlink" title="3.1 闭环学习循环（4 阶段）"></a>3.1 闭环学习循环（4 阶段）</h3><pre class="mermaid">flowchart TD
+    A([任务输入]) --&gt; B[阶段1：执行]
+    B --&gt; B1["ReAct 风格：Observation → Reasoning → Action"]
+    B1 --&gt;|"5+ 工具调用，标记为值得学习"| C
+    C[阶段2：自评估] --&gt;|值得提取为 Skill| D
+    C --&gt;|无需学习| A
+    D["阶段3：Skill 创建/更新<br>~/.hermes/skills/ 精确 patch"] --&gt; E
+    E["阶段4：记忆更新<br>写入 MEMORY.md / USER.md"] --&gt; A</pre>
+
+<p><strong>复杂度自动触发学习</strong>：只有涉及 5 个以上工具调用的任务才会被标记为学习对象，避免噪声。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260407180544899-518399870.jpg" style="zoom:40%;" alt="Hermes Agent 四阶段闭环学习循环流程图"></p>
+<h3 id="3-2-四层记忆系统"><a href="#3-2-四层记忆系统" class="headerlink" title="3.2 四层记忆系统"></a>3.2 四层记忆系统</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>名称</th>
+<th>存储位置</th>
+<th>读取时机</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Prompt Memory</td>
+<td><code>~/.hermes/memories/</code></td>
+<td>每次会话开始注入</td>
+<td>永久用户偏好（限 3575 字符）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Session Search</td>
+<td>SQLite + FTS5</td>
+<td>相关时按需查询</td>
+<td>跨会话历史检索</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Skills Procedural Memory</td>
+<td><code>~/.hermes/skills/</code></td>
+<td>默认只加载摘要</td>
+<td>可复用工作流</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Honcho Layer（可选）</td>
+<td>独立 dialectic 建模</td>
+<td>后台持续运行</td>
+<td>12 层用户身份建模</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>核心优势</strong>：200 个 Skill 的 token 消耗 ≈ 40 个 Skill（分层 + 缓存设计），极大降低上下文开销。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260407180704953-1407880598.jpg" style="zoom:40%;" alt="Hermes Agent 四层记忆系统架构图"></p>
+<h3 id="3-3-“越用越聪明”的本质"><a href="#3-3-“越用越聪明”的本质" class="headerlink" title="3.3 “越用越聪明”的本质"></a>3.3 “越用越聪明”的本质</h3><ul>
+<li><strong>短期</strong>：Session Search + 压缩记忆，当次对话越来越精准</li>
+<li><strong>长期</strong>：Skills 持续积累 + 自动 patch，工具库越来越强大</li>
+<li><strong>跨会话</strong>：持久用户模型（Honcho），跨会话理解用户偏好</li>
+<li><strong>无 token 膨胀</strong>：分层 + 缓存 + 压缩，保持高效运行</li>
+</ul>
+<hr>
+<h2 id="四、OpenClaw-的核心优势"><a href="#四、OpenClaw-的核心优势" class="headerlink" title="四、OpenClaw 的核心优势"></a>四、OpenClaw 的核心优势</h2><p>尽管 Hermes 在自学习方面领先，OpenClaw 仍有不可替代的价值：</p>
+<ul>
+<li><strong>生态规模</strong>：50+ 消息平台集成（Slack、Discord、微信等），覆盖面极广</li>
+<li><strong>社区 Skills</strong>：1万+ 人工精调的高质量 Skills，即装即用</li>
+<li><strong>稳定性</strong>：经过大规模验证，踩坑较少</li>
+<li><strong>多通道支持</strong>：适合需要跨平台统一管理的场景</li>
+</ul>
+<hr>
+<h2 id="五、如何选择？"><a href="#五、如何选择？" class="headerlink" title="五、如何选择？"></a>五、如何选择？</h2><h3 id="选-Hermes-如果你……"><a href="#选-Hermes-如果你……" class="headerlink" title="选 Hermes 如果你……"></a>选 Hermes 如果你……</h3><ul>
+<li>希望 AI 助手能从你的使用习惯中持续学习</li>
+<li>需要长期、深度的个人化 AI 伴侣</li>
+<li>不介意生态还在成长阶段</li>
+<li>已有 OpenClaw 配置（Hermes 官方支持导入）</li>
+</ul>
+<h3 id="选-OpenClaw-如果你……"><a href="#选-OpenClaw-如果你……" class="headerlink" title="选 OpenClaw 如果你……"></a>选 OpenClaw 如果你……</h3><ul>
+<li>需要立即接入多个消息平台</li>
+<li>依赖社区的海量现成 Skills</li>
+<li>团队规模大，需要成熟稳定的解决方案</li>
+<li>不需要 AI 自主学习能力</li>
+</ul>
+<h3 id="两者并用（推荐）"><a href="#两者并用（推荐）" class="headerlink" title="两者并用（推荐）"></a>两者并用（推荐）</h3><p>社区主流趋势是<strong>互补使用</strong>：OpenClaw 负责广泛的平台集成和现成工具，Hermes 负责深度个人化和自动技能沉淀。Hermes 官方也支持直接导入 OpenClaw 的 Skills 和记忆配置，迁移成本极低。</p>
+<hr>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>快速上手，即插即用</td>
+<td>OpenClaw</td>
+</tr>
+<tr>
+<td>长期使用，越用越强</td>
+<td>Hermes Agent</td>
+</tr>
+<tr>
+<td>多平台统一管理</td>
+<td>OpenClaw</td>
+</tr>
+<tr>
+<td>个人知识沉淀</td>
+<td>Hermes Agent</td>
+</tr>
+<tr>
+<td>两者都想要</td>
+<td>并用，Hermes 导入 OpenClaw 配置</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Hermes Agent 代表了 AI 助手的下一个演进方向——<strong>不再是静态工具集，而是会自我成长的智能体</strong>。如果你正在考虑长期投入一个 AI 助手框架，现在是研究 Hermes 的好时机。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>AI工具</category>
+      </categories>
+      <tags>
+        <tag>AI Agent</tag>
+        <tag>OpenClaw</tag>
+        <tag>Hermes</tag>
+        <tag>开源工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>zero2Agent：面向大厂面试的Agent工程教程，从概念到生产的完整学习路线</title>
     <url>/posts/zero2agent-programmer-agent-engineering-tutorial-interview-guide.html</url>
     <content><![CDATA[<h1 id="zero2Agent：面向大厂面试的-Agent-工程教程，从概念到生产的完整学习路线"><a href="#zero2Agent：面向大厂面试的-Agent-工程教程，从概念到生产的完整学习路线" class="headerlink" title="zero2Agent：面向大厂面试的 Agent 工程教程，从概念到生产的完整学习路线"></a>zero2Agent：面向大厂面试的 Agent 工程教程，从概念到生产的完整学习路线</h1><p>2025 年下半年以来，<strong>AI Agent 工程师</strong>已经成为大厂最热门的岗位之一。蚂蚁 AI Coding、阿里 Agent 研发、字节 Infra Agent、腾讯 LLM 应用开发——几乎每一家头部公司都在疯狂招人。</p>
@@ -12275,205 +12477,215 @@ bundle <span class="token builtin class-name">exec</span> jekyll serve
       </tags>
   </entry>
   <entry>
-    <title>Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比</title>
-    <url>/posts/hermes-agent-vs-openclaw-self-learning-ai-comparison-2026.html</url>
-    <content><![CDATA[<h1 id="Hermes-Agent-vs-OpenClaw：下一代自学习-AI-助手深度对比"><a href="#Hermes-Agent-vs-OpenClaw：下一代自学习-AI-助手深度对比" class="headerlink" title="Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比"></a>Hermes Agent vs OpenClaw：下一代自学习 AI 助手深度对比</h1><p>2026年，AI 助手赛道出现了一个新的竞争者——<strong>Hermes Agent</strong>，由 Nous Research 开发，以“越用越聪明”的自学习架构迅速吸引开发者目光。与此同时，坐拥 30 万+ GitHub Star 的老牌框架 <strong>OpenClaw</strong> 依然凭借庞大生态屹立不倒。</p>
-<p>两者到底有什么区别？该如何选择？本文基于社区真实反馈与技术架构分析，给你一个清晰的答案。</p>
+    <title>链上行为学：如何判断一个币是不是“假流动性”</title>
+    <url>/posts/onchain-fake-liquidity-token-checklist.html</url>
+    <content><![CDATA[<h1 id="链上行为学：如何判断一个币是不是“假流动性”"><a href="#链上行为学：如何判断一个币是不是“假流动性”" class="headerlink" title="链上行为学：如何判断一个币是不是“假流动性”"></a>链上行为学：如何判断一个币是不是“假流动性”</h1><p>很多新币刚上线时，Dexscreener 上的 <code>Liquidity</code> 数字看起来很好看：几十万、几百万美元，好像池子很厚，买卖都不会出问题。</p>
+<p>但这个数字只能作为参考，不能直接等同于“真实可成交深度”。</p>
+<p>尤其是在 Meme 币、新项目首发、低市值高波动标的里，<strong>流动性看起来很厚，真正卖出时却发现滑点爆炸</strong>，是非常常见的坑。</p>
+<p>这篇整理自 <a href="https://x.com/Mojito_cx/status/2059963599788093529">Mojito 的 X 线程</a>，我会把原线程扩展成一套更适合实战的检查框架：买一个新币前，如何判断它是不是“假流动性”。</p>
 <hr>
-<h2 id="一、核心定位：宽度优先-vs-深度优先"><a href="#一、核心定位：宽度优先-vs-深度优先" class="headerlink" title="一、核心定位：宽度优先 vs 深度优先"></a>一、核心定位：宽度优先 vs 深度优先</h2><p><img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260407180624265-1877876110.jpg" style="zoom:40%;" alt="Hermes Agent vs OpenClaw 架构对比"></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>OpenClaw</th>
-<th>Hermes Agent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GitHub Stars</td>
-<td>30万+</td>
-<td>~2.2万（快速增长）</td>
-</tr>
-<tr>
-<td>开发方</td>
-<td>社区驱动</td>
-<td>Nous Research</td>
-</tr>
-<tr>
-<td>架构哲学</td>
-<td>宽度优先，广覆盖</td>
-<td>深度优先，自进化</td>
-</tr>
-<tr>
-<td>Skills 来源</td>
-<td>人工手写静态 Markdown</td>
-<td>Agent 从任务经验自动生成</td>
-</tr>
-<tr>
-<td>记忆系统</td>
-<td>基础 Markdown 存储</td>
-<td>多层结构（会话/持久/技能层）</td>
-</tr>
-<tr>
-<td>生态规模</td>
-<td>50+ 平台集成，1万+ 社区 Skills</td>
-<td>持续自我构建</td>
-</tr>
-<tr>
-<td>价格</td>
-<td>取决于所配置的模型</td>
-<td>取决于所配置的模型</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>两者均为开源自托管项目，支持 Claude API、OpenAI、本地 Ollama 等模型后端，价格完全相同。</strong></p>
+<h2 id="先定义：什么是假流动性？"><a href="#先定义：什么是假流动性？" class="headerlink" title="先定义：什么是假流动性？"></a>先定义：什么是假流动性？</h2><p>所谓“假流动性”，不是说池子里完全没有钱，而是指：</p>
 <blockquote>
-<p>值得注意的是：2026年4月4日起，Anthropic 宣布 Claude Pro/Max 订阅不再覆盖第三方工具调用，这对两者影响完全一致。</p>
+<p>表面指标显示有流动性，但当前价格附近真实可成交深度很差，或者流动性被少数主体控制，随时可能撤走。</p>
 </blockquote>
-<hr>
-<h2 id="二、社区真实反响"><a href="#二、社区真实反响" class="headerlink" title="二、社区真实反响"></a>二、社区真实反响</h2><h3 id="中文社区声音"><a href="#中文社区声音" class="headerlink" title="中文社区声音"></a>中文社区声音</h3><blockquote>
-<p>“剛剛安裝好 hermes，安裝的過程可以選擇去抓 OpenClaw 的設定……目前初步體感還不賴耶！”</p>
-<p>“听说 OpenClaw 已经过时了，现在流行 Hermes Agent，是不是该去研究一下了”</p>
-<p>“openclaw, hermes, CC, codex …. 集合！”（越来越多人选择两者并用）</p>
-</blockquote>
-<h3 id="英文社区声音"><a href="#英文社区声音" class="headerlink" title="英文社区声音"></a>英文社区声音</h3><blockquote>
-<p>“Hermes is the AI agent OpenClaw promised to be. Better memory, better instruction following, better security.”</p>
-<p>“AI agents as we know them are already obsolete… Hermes builds and refines its own skills autonomously.”</p>
-</blockquote>
-<p>SEO 从业者 Julian Goldie 做了真实测试：在相同任务下，Hermes 建站速度更快、内容实时更新，并能从错误中自动生成可复用 Skill——完胜 OpenClaw。</p>
-<hr>
-<h2 id="三、Hermes-自学习架构深度解析"><a href="#三、Hermes-自学习架构深度解析" class="headerlink" title="三、Hermes 自学习架构深度解析"></a>三、Hermes 自学习架构深度解析</h2><p>Hermes 的核心哲学是：<strong>把任务执行本身转化为学习过程</strong>，最终实现“Agent 自己编写自己的工具和记忆”。</p>
-<h3 id="3-1-闭环学习循环（4-阶段）"><a href="#3-1-闭环学习循环（4-阶段）" class="headerlink" title="3.1 闭环学习循环（4 阶段）"></a>3.1 闭环学习循环（4 阶段）</h3><pre class="mermaid">flowchart TD
-    A([任务输入]) --&gt; B[阶段1：执行]
-    B --&gt; B1["ReAct 风格：Observation → Reasoning → Action"]
-    B1 --&gt;|"5+ 工具调用，标记为值得学习"| C
-    C[阶段2：自评估] --&gt;|值得提取为 Skill| D
-    C --&gt;|无需学习| A
-    D["阶段3：Skill 创建/更新<br>~/.hermes/skills/ 精确 patch"] --&gt; E
-    E["阶段4：记忆更新<br>写入 MEMORY.md / USER.md"] --&gt; A</pre>
-
-<p><strong>复杂度自动触发学习</strong>：只有涉及 5 个以上工具调用的任务才会被标记为学习对象，避免噪声。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260407180544899-518399870.jpg" style="zoom:40%;" alt="Hermes Agent 四阶段闭环学习循环流程图"></p>
-<h3 id="3-2-四层记忆系统"><a href="#3-2-四层记忆系统" class="headerlink" title="3.2 四层记忆系统"></a>3.2 四层记忆系统</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>层级</th>
-<th>名称</th>
-<th>存储位置</th>
-<th>读取时机</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Prompt Memory</td>
-<td><code>~/.hermes/memories/</code></td>
-<td>每次会话开始注入</td>
-<td>永久用户偏好（限 3575 字符）</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Session Search</td>
-<td>SQLite + FTS5</td>
-<td>相关时按需查询</td>
-<td>跨会话历史检索</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Skills Procedural Memory</td>
-<td><code>~/.hermes/skills/</code></td>
-<td>默认只加载摘要</td>
-<td>可复用工作流</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Honcho Layer（可选）</td>
-<td>独立 dialectic 建模</td>
-<td>后台持续运行</td>
-<td>12 层用户身份建模</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>核心优势</strong>：200 个 Skill 的 token 消耗 ≈ 40 个 Skill（分层 + 缓存设计），极大降低上下文开销。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260407180704953-1407880598.jpg" style="zoom:40%;" alt="Hermes Agent 四层记忆系统架构图"></p>
-<h3 id="3-3-“越用越聪明”的本质"><a href="#3-3-“越用越聪明”的本质" class="headerlink" title="3.3 “越用越聪明”的本质"></a>3.3 “越用越聪明”的本质</h3><ul>
-<li><strong>短期</strong>：Session Search + 压缩记忆，当次对话越来越精准</li>
-<li><strong>长期</strong>：Skills 持续积累 + 自动 patch，工具库越来越强大</li>
-<li><strong>跨会话</strong>：持久用户模型（Honcho），跨会话理解用户偏好</li>
-<li><strong>无 token 膨胀</strong>：分层 + 缓存 + 压缩，保持高效运行</li>
-</ul>
-<hr>
-<h2 id="四、OpenClaw-的核心优势"><a href="#四、OpenClaw-的核心优势" class="headerlink" title="四、OpenClaw 的核心优势"></a>四、OpenClaw 的核心优势</h2><p>尽管 Hermes 在自学习方面领先，OpenClaw 仍有不可替代的价值：</p>
+<p>它常见于几种情况：</p>
 <ul>
-<li><strong>生态规模</strong>：50+ 消息平台集成（Slack、Discord、微信等），覆盖面极广</li>
-<li><strong>社区 Skills</strong>：1万+ 人工精调的高质量 Skills，即装即用</li>
-<li><strong>稳定性</strong>：经过大规模验证，踩坑较少</li>
-<li><strong>多通道支持</strong>：适合需要跨平台统一管理的场景</li>
+<li>V3 池总流动性很高，但资金集中在远离当前价格的区间；</li>
+<li>多个池子分散显示 liquidity，但主交易池深度很差；</li>
+<li>小额交易正常，大额卖出滑点极高；</li>
+<li>LP token 或 V3 LP NFT 主要由项目方/少数钱包控制；</li>
+<li>成交量看起来很高，但只是少数钱包互刷；</li>
+<li>上涨过程中项目方持续撤 LP，慢慢抽走买盘承接。</li>
 </ul>
+<p>一个简单公式是：</p>
+<pre class="mermaid">flowchart LR
+    A[表面 Liquidity] --&gt; B{是否真实可卖出}
+    B --&gt;|滑点低| C[相对健康的流动性]
+    B --&gt;|滑点高| D[可能是假流动性]
+    D --&gt; E[继续查 V3 区间]
+    D --&gt; F[继续查 LP 控制权]
+    D --&gt; G[继续查成交量与钱包分布]</pre>
+
+<p>真正重要的不是“池子显示有多少钱”，而是：<strong>你要卖的时候，有没有足够买盘接住你。</strong></p>
 <hr>
-<h2 id="五、如何选择？"><a href="#五、如何选择？" class="headerlink" title="五、如何选择？"></a>五、如何选择？</h2><h3 id="选-Hermes-如果你……"><a href="#选-Hermes-如果你……" class="headerlink" title="选 Hermes 如果你……"></a>选 Hermes 如果你……</h3><ul>
-<li>希望 AI 助手能从你的使用习惯中持续学习</li>
-<li>需要长期、深度的个人化 AI 伴侣</li>
-<li>不介意生态还在成长阶段</li>
-<li>已有 OpenClaw 配置（Hermes 官方支持导入）</li>
+<h2 id="一、不要把-Liquidity-数字当安全垫"><a href="#一、不要把-Liquidity-数字当安全垫" class="headerlink" title="一、不要把 Liquidity 数字当安全垫"></a>一、不要把 Liquidity 数字当安全垫</h2><p>很多人看新币，只看 Dexscreener 上的两个数字：</p>
+<ul>
+<li>Liquidity；</li>
+<li>24h Volume。</li>
 </ul>
-<h3 id="选-OpenClaw-如果你……"><a href="#选-OpenClaw-如果你……" class="headerlink" title="选 OpenClaw 如果你……"></a>选 OpenClaw 如果你……</h3><ul>
-<li>需要立即接入多个消息平台</li>
-<li>依赖社区的海量现成 Skills</li>
-<li>团队规模大，需要成熟稳定的解决方案</li>
-<li>不需要 AI 自主学习能力</li>
+<p>如果 Liquidity 显示几十万，就觉得至少不会一卖归零。</p>
+<p>这个判断太粗糙。</p>
+<p>因为 Dexscreener 显示的流动性，通常只是池子层面的表面统计。它不能直接回答几个更关键的问题：</p>
+<ul>
+<li>当前价格附近有多少可成交流动性？</li>
+<li>你卖 1 ETH、5 ETH、10 ETH 时滑点分别是多少？</li>
+<li>LP 是锁住的，还是项目方随时可以撤？</li>
+<li>成交量来自真实用户，还是少数钱包互刷？</li>
 </ul>
-<h3 id="两者并用（推荐）"><a href="#两者并用（推荐）" class="headerlink" title="两者并用（推荐）"></a>两者并用（推荐）</h3><p>社区主流趋势是<strong>互补使用</strong>：OpenClaw 负责广泛的平台集成和现成工具，Hermes 负责深度个人化和自动技能沉淀。Hermes 官方也支持直接导入 OpenClaw 的 Skills 和记忆配置，迁移成本极低。</p>
+<p>所以，Liquidity 只能当入口，不能当结论。</p>
+<p>判断一个币能不能碰，至少要从“池子结构、卖出滑点、LP 控制权、成交量质量”四个方向一起看。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214509967-961682694.jpg" alt="原线程配图：不要只看 Liquidity 表面数字"></p>
 <hr>
-<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>场景</th>
-<th>推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>快速上手，即插即用</td>
-<td>OpenClaw</td>
-</tr>
-<tr>
-<td>长期使用，越用越强</td>
-<td>Hermes Agent</td>
-</tr>
-<tr>
-<td>多平台统一管理</td>
-<td>OpenClaw</td>
-</tr>
-<tr>
-<td>个人知识沉淀</td>
-<td>Hermes Agent</td>
-</tr>
-<tr>
-<td>两者都想要</td>
-<td>并用，Hermes 导入 OpenClaw 配置</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Hermes Agent 代表了 AI 助手的下一个演进方向——<strong>不再是静态工具集，而是会自我成长的智能体</strong>。如果你正在考虑长期投入一个 AI 助手框架，现在是研究 Hermes 的好时机。</p>
+<h2 id="二、V2-和-V3-的流动性不是一回事"><a href="#二、V2-和-V3-的流动性不是一回事" class="headerlink" title="二、V2 和 V3 的流动性不是一回事"></a>二、V2 和 V3 的流动性不是一回事</h2><p>很多人看池子时不区分 V2 和 V3，这是第一个大坑。</p>
+<h3 id="V2：池子深度相对直观"><a href="#V2：池子深度相对直观" class="headerlink" title="V2：池子深度相对直观"></a>V2：池子深度相对直观</h3><p>Uniswap V2 这类 AMM 池比较好理解。</p>
+<p>池子里有多少 token 和 ETH，大致就能判断当前价格附近的交易深度。虽然大额交易同样会滑点，但至少流动性分布相对连续。</p>
+<h3 id="V3：总流动性不等于当前价格深度"><a href="#V3：总流动性不等于当前价格深度" class="headerlink" title="V3：总流动性不等于当前价格深度"></a>V3：总流动性不等于当前价格深度</h3><p>V3 完全不一样。</p>
+<p>V3 是<strong>区间流动性</strong>。LP 可以只把资金放在某一个价格区间里，而不是覆盖所有价格。</p>
+<p>这会带来一个问题：</p>
+<blockquote>
+<p>一个 V3 池显示 Liquidity 很高，但如果这些资金不在当前价格附近，你实际交易时仍然会遇到很差的深度。</p>
+</blockquote>
+<p>可以把 V2/V3 的区别理解成这样：</p>
+<pre class="mermaid">flowchart TD
+    A[同样显示高 Liquidity] --&gt; B[V2 池]
+    A --&gt; C[V3 池]
+    B --&gt; D[资金通常覆盖整条价格曲线]
+    C --&gt; E[资金可能集中在某些价格区间]
+    D --&gt; F[表面流动性更接近真实深度]
+    E --&gt; G[必须检查当前价格附近深度]</pre>
+
+<p>所以，看到 V3 池时，不要只看总 Liquidity，而要追问：<strong>这些流动性是不是刚好在当前价格附近？</strong></p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214629365-1470644251.jpg" alt="原线程配图：V2 与 V3 流动性差异"></p>
 <hr>
+<h2 id="三、最直接的方法：模拟卖出，看真实滑点"><a href="#三、最直接的方法：模拟卖出，看真实滑点" class="headerlink" title="三、最直接的方法：模拟卖出，看真实滑点"></a>三、最直接的方法：模拟卖出，看真实滑点</h2><p>判断一个币有没有真实流动性，最直接的方法不是看别人怎么说，而是自己模拟卖出。</p>
+<p>很多人买币前只模拟买入，很少模拟卖出。但你真正需要知道的是：</p>
+<ul>
+<li>如果我买进去，能不能顺利卖出来？</li>
+<li>卖出 1 倍仓位、2 倍仓位时，滑点会不会突然爆炸？</li>
+<li>小额能卖，大额是不是完全卖不动？</li>
+</ul>
+<h3 id="实操步骤"><a href="#实操步骤" class="headerlink" title="实操步骤"></a>实操步骤</h3><ol>
+<li>打开 Dexscreener，找到这个币的主池；</li>
+<li>点击 <code>Trade</code>，跳转到对应 DEX；</li>
+<li>把交易方向切换为：卖出该代币，换成 ETH/USDC；</li>
+<li>假设自己持有一定数量，分别模拟小额、中额、大额卖出；</li>
+<li>观察报价、Price Impact、Minimum received。</li>
+</ol>
+<p>不要只测一个金额。建议至少测三档：</p>
+<ul>
+<li>小额：确认是否能正常交易；</li>
+<li>中额：接近自己计划买入金额；</li>
+<li>大额：模拟极端情况下能不能退出。</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    A[准备买入新币] --&gt; B[先模拟卖出]
+    B --&gt; C[小额卖出]
+    B --&gt; D[计划仓位卖出]
+    B --&gt; E[更大金额卖出]
+    C --&gt; F{滑点是否稳定}
+    D --&gt; F
+    E --&gt; F
+    F --&gt;|稳定| G[流动性相对可信]
+    F --&gt;|大额爆炸| H[警惕假流动性]</pre>
+
+<p>这里有个实战判断：</p>
+<blockquote>
+<p>小额卖出正常，不代表池子健康；计划仓位卖出也能接受，才有参考价值。</p>
+</blockquote>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214644519-1985081069.jpg" alt="原线程配图：通过模拟卖出观察真实滑点"></p>
+<hr>
+<h2 id="四、流动性不只看多少，还要看是谁加的"><a href="#四、流动性不只看多少，还要看是谁加的" class="headerlink" title="四、流动性不只看多少，还要看是谁加的"></a>四、流动性不只看多少，还要看是谁加的</h2><p>池子里有钱是一回事，钱由谁控制是另一回事。</p>
+<p>一个池子的 LP 如果主要由项目方或少数钱包控制，就要继续查。因为这意味着对方可能拥有撤走流动性的能力。</p>
+<p>重点看几个问题：</p>
+<ul>
+<li>LP token 在谁手里？</li>
+<li>LP 有没有锁？</li>
+<li>锁仓时间到什么时候？</li>
+<li>是否频繁加 LP / 撤 LP？</li>
+<li>V3 的 LP NFT 有没有被转走？</li>
+<li>LP 钱包和项目方、部署者、早期持仓地址有没有关联？</li>
+</ul>
+<p>很多项目不会一开盘就直接砸盘，而是采用更隐蔽的方式：</p>
+<ol>
+<li>先加一个看起来不错的池子；</li>
+<li>拉盘制造赚钱效应；</li>
+<li>吸引散户买入；</li>
+<li>随着买盘进入，逐步撤出流动性；</li>
+<li>最后留下高位筹码和越来越差的退出深度。</li>
+</ol>
+<p>这个过程不一定表现为一根暴跌线，但本质仍然是在抽走市场承接。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214658264-1987907095.jpg" alt="原线程配图：检查 LP 控制权与锁仓状态"></p>
+<hr>
+<h2 id="五、成交量和流动性要匹配"><a href="#五、成交量和流动性要匹配" class="headerlink" title="五、成交量和流动性要匹配"></a>五、成交量和流动性要匹配</h2><p>还有一种情况也很常见：</p>
+<blockquote>
+<p>Liquidity 很低，但 Volume 很高。</p>
+</blockquote>
+<p>表面看，这个币 24h 成交量很大，好像很活跃。</p>
+<p>但如果继续查，可能会发现成交量只是少数钱包反复买卖刷出来的。</p>
+<p>这时候要看三个匹配关系。</p>
+<h3 id="1-Volume-增长时，Holder-是否同步增长"><a href="#1-Volume-增长时，Holder-是否同步增长" class="headerlink" title="1. Volume 增长时，Holder 是否同步增长"></a>1. Volume 增长时，Holder 是否同步增长</h3><p>如果成交量很高，但持有人增长很慢，说明交易活跃度可能集中在少数地址之间。</p>
+<h3 id="2-买卖是否集中在少数钱包"><a href="#2-买卖是否集中在少数钱包" class="headerlink" title="2. 买卖是否集中在少数钱包"></a>2. 买卖是否集中在少数钱包</h3><p>如果大部分交易来自几个固定钱包，尤其是反复买卖、金额相似、时间间隔规律，就要警惕刷量。</p>
+<h3 id="3-价格上涨是否伴随真实买盘扩散"><a href="#3-价格上涨是否伴随真实买盘扩散" class="headerlink" title="3. 价格上涨是否伴随真实买盘扩散"></a>3. 价格上涨是否伴随真实买盘扩散</h3><p>健康上涨通常会伴随更多地址参与，而不是只有几个钱包来回对倒。</p>
+<pre class="mermaid">flowchart TD
+    A[Volume 很高] --&gt; B{Holder 是否同步增长}
+    B --&gt;|是| C[继续观察买盘质量]
+    B --&gt;|否| D[可能刷量]
+    C --&gt; E{交易是否分散}
+    E --&gt;|分散| F[活跃度相对真实]
+    E --&gt;|集中少数钱包| G[警惕对倒和假活跃]
+    D --&gt; G</pre>
+
+<p>成交量不是越高越好，关键是成交量背后有没有真实用户和真实承接。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214710942-1959282056.jpg" alt="原线程配图：成交量与流动性是否匹配"></p>
+<hr>
+<h2 id="六、判断假流动性的信号清单"><a href="#六、判断假流动性的信号清单" class="headerlink" title="六、判断假流动性的信号清单"></a>六、判断假流动性的信号清单</h2><p>遇到下面这些情况，要提高警惕：</p>
+<ul>
+<li>Liquidity 看起来很高，但主池成交量很低；</li>
+<li>多个池子分散流动性，真实成交深度很差；</li>
+<li>V3 总流动性高，但当前价格附近没深度；</li>
+<li>小额卖出正常，大额卖出滑点爆炸；</li>
+<li>LP 由少数钱包控制；</li>
+<li>LP 没有锁，或者锁仓时间很短；</li>
+<li>上涨过程中 LP 被频繁撤出；</li>
+<li>Volume 很高，但 Holder 增长不明显；</li>
+<li>买卖集中在少数钱包，且交易节奏异常规律；</li>
+<li>社群持续强调“池子很厚”，但回避 LP 控制权和滑点问题。</li>
+</ul>
+<p>这些信号不一定单独构成死刑，但如果同时出现两三个，就应该明显降低仓位，甚至直接放弃。</p>
+<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214713474-2013624171.jpg" alt="原线程配图：判断假流动性的风险信号清单"></p>
+<hr>
+<h2 id="七、买新币前的-5-分钟检查流程"><a href="#七、买新币前的-5-分钟检查流程" class="headerlink" title="七、买新币前的 5 分钟检查流程"></a>七、买新币前的 5 分钟检查流程</h2><p>如果只给你一个最小可执行流程，我建议这样做：</p>
+<h3 id="Step-1：看主池"><a href="#Step-1：看主池" class="headerlink" title="Step 1：看主池"></a>Step 1：看主池</h3><p>确认主池在哪里，是 V2 还是 V3，流动性是否集中在一个主要池子里。</p>
+<h3 id="Step-2：模拟卖出"><a href="#Step-2：模拟卖出" class="headerlink" title="Step 2：模拟卖出"></a>Step 2：模拟卖出</h3><p>按计划仓位模拟卖出，重点看 Price Impact 和 Minimum received。</p>
+<h3 id="Step-3：查-LP-控制权"><a href="#Step-3：查-LP-控制权" class="headerlink" title="Step 3：查 LP 控制权"></a>Step 3：查 LP 控制权</h3><p>看 LP token 或 V3 LP NFT 在谁手里，有没有锁，锁到什么时候。</p>
+<h3 id="Step-4：看成交分布"><a href="#Step-4：看成交分布" class="headerlink" title="Step 4：看成交分布"></a>Step 4：看成交分布</h3><p>看成交量是否由真实用户贡献，还是少数钱包反复对倒。</p>
+<h3 id="Step-5：看动态变化"><a href="#Step-5：看动态变化" class="headerlink" title="Step 5：看动态变化"></a>Step 5：看动态变化</h3><p>观察上涨过程中 LP 有没有持续撤出，主池深度有没有变差。</p>
+<pre class="mermaid">flowchart TD
+    A[准备买入] --&gt; B[确认主池 V2 / V3]
+    B --&gt; C[模拟卖出看滑点]
+    C --&gt; D[检查 LP 控制权与锁仓]
+    D --&gt; E[核对 Volume 与 Holder]
+    E --&gt; F[观察 LP 动态变化]
+    F --&gt; G{风险是否可接受}
+    G --&gt;|是| H[小仓位参与]
+    G --&gt;|否| I[放弃或等待]</pre>
+
+<p>这套流程不保证你一定赚钱，但能过滤掉很多“看起来热闹、实际无法退出”的坑。</p>
+<hr>
+<h2 id="结语：真正的流动性，是你能退出的流动性"><a href="#结语：真正的流动性，是你能退出的流动性" class="headerlink" title="结语：真正的流动性，是你能退出的流动性"></a>结语：真正的流动性，是你能退出的流动性</h2><p>链上交易里，最容易骗人的指标往往不是价格，而是“看起来很厚”的池子。</p>
+<p>因为价格可以拉，成交量可以刷，Liquidity 可以堆到不关键的位置，LP 也可以在买盘进来后慢慢撤。</p>
+<p>所以判断新币安全性时，不要只问：</p>
+<blockquote>
+<p>这个币池子有多厚？</p>
+</blockquote>
+<p>更应该问：</p>
+<blockquote>
+<p>如果我现在买进去，按我的仓位卖出时，市场能不能接住我？</p>
+</blockquote>
+<p>真正的流动性，不是页面上显示的那个数字，而是你需要退出时，仍然存在的真实承接。</p>
+<hr>
+<blockquote>
+<p>原始线程作者：<a href="https://x.com/Mojito_cx/status/2059963599788093529">@Mojito_cx</a>。本文为基于原线程的结构化整理与扩展，不构成投资建议。</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>AI工具</category>
+        <category>加密投研</category>
       </categories>
       <tags>
-        <tag>AI Agent</tag>
-        <tag>OpenClaw</tag>
-        <tag>Hermes</tag>
-        <tag>开源工具</tag>
+        <tag>Meme币</tag>
+        <tag>链上分析</tag>
+        <tag>交易风控</tag>
+        <tag>加密投研</tag>
       </tags>
   </entry>
   <entry>
@@ -13437,218 +13649,6 @@ If yes, summarize what was generated and what was manually verified.<span aria-h
       </tags>
   </entry>
   <entry>
-    <title>链上行为学：如何判断一个币是不是“假流动性”</title>
-    <url>/posts/onchain-fake-liquidity-token-checklist.html</url>
-    <content><![CDATA[<h1 id="链上行为学：如何判断一个币是不是“假流动性”"><a href="#链上行为学：如何判断一个币是不是“假流动性”" class="headerlink" title="链上行为学：如何判断一个币是不是“假流动性”"></a>链上行为学：如何判断一个币是不是“假流动性”</h1><p>很多新币刚上线时，Dexscreener 上的 <code>Liquidity</code> 数字看起来很好看：几十万、几百万美元，好像池子很厚，买卖都不会出问题。</p>
-<p>但这个数字只能作为参考，不能直接等同于“真实可成交深度”。</p>
-<p>尤其是在 Meme 币、新项目首发、低市值高波动标的里，<strong>流动性看起来很厚，真正卖出时却发现滑点爆炸</strong>，是非常常见的坑。</p>
-<p>这篇整理自 <a href="https://x.com/Mojito_cx/status/2059963599788093529">Mojito 的 X 线程</a>，我会把原线程扩展成一套更适合实战的检查框架：买一个新币前，如何判断它是不是“假流动性”。</p>
-<hr>
-<h2 id="先定义：什么是假流动性？"><a href="#先定义：什么是假流动性？" class="headerlink" title="先定义：什么是假流动性？"></a>先定义：什么是假流动性？</h2><p>所谓“假流动性”，不是说池子里完全没有钱，而是指：</p>
-<blockquote>
-<p>表面指标显示有流动性，但当前价格附近真实可成交深度很差，或者流动性被少数主体控制，随时可能撤走。</p>
-</blockquote>
-<p>它常见于几种情况：</p>
-<ul>
-<li>V3 池总流动性很高，但资金集中在远离当前价格的区间；</li>
-<li>多个池子分散显示 liquidity，但主交易池深度很差；</li>
-<li>小额交易正常，大额卖出滑点极高；</li>
-<li>LP token 或 V3 LP NFT 主要由项目方/少数钱包控制；</li>
-<li>成交量看起来很高，但只是少数钱包互刷；</li>
-<li>上涨过程中项目方持续撤 LP，慢慢抽走买盘承接。</li>
-</ul>
-<p>一个简单公式是：</p>
-<pre class="mermaid">flowchart LR
-    A[表面 Liquidity] --&gt; B{是否真实可卖出}
-    B --&gt;|滑点低| C[相对健康的流动性]
-    B --&gt;|滑点高| D[可能是假流动性]
-    D --&gt; E[继续查 V3 区间]
-    D --&gt; F[继续查 LP 控制权]
-    D --&gt; G[继续查成交量与钱包分布]</pre>
-
-<p>真正重要的不是“池子显示有多少钱”，而是：<strong>你要卖的时候，有没有足够买盘接住你。</strong></p>
-<hr>
-<h2 id="一、不要把-Liquidity-数字当安全垫"><a href="#一、不要把-Liquidity-数字当安全垫" class="headerlink" title="一、不要把 Liquidity 数字当安全垫"></a>一、不要把 Liquidity 数字当安全垫</h2><p>很多人看新币，只看 Dexscreener 上的两个数字：</p>
-<ul>
-<li>Liquidity；</li>
-<li>24h Volume。</li>
-</ul>
-<p>如果 Liquidity 显示几十万，就觉得至少不会一卖归零。</p>
-<p>这个判断太粗糙。</p>
-<p>因为 Dexscreener 显示的流动性，通常只是池子层面的表面统计。它不能直接回答几个更关键的问题：</p>
-<ul>
-<li>当前价格附近有多少可成交流动性？</li>
-<li>你卖 1 ETH、5 ETH、10 ETH 时滑点分别是多少？</li>
-<li>LP 是锁住的，还是项目方随时可以撤？</li>
-<li>成交量来自真实用户，还是少数钱包互刷？</li>
-</ul>
-<p>所以，Liquidity 只能当入口，不能当结论。</p>
-<p>判断一个币能不能碰，至少要从“池子结构、卖出滑点、LP 控制权、成交量质量”四个方向一起看。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214509967-961682694.jpg" alt="原线程配图：不要只看 Liquidity 表面数字"></p>
-<hr>
-<h2 id="二、V2-和-V3-的流动性不是一回事"><a href="#二、V2-和-V3-的流动性不是一回事" class="headerlink" title="二、V2 和 V3 的流动性不是一回事"></a>二、V2 和 V3 的流动性不是一回事</h2><p>很多人看池子时不区分 V2 和 V3，这是第一个大坑。</p>
-<h3 id="V2：池子深度相对直观"><a href="#V2：池子深度相对直观" class="headerlink" title="V2：池子深度相对直观"></a>V2：池子深度相对直观</h3><p>Uniswap V2 这类 AMM 池比较好理解。</p>
-<p>池子里有多少 token 和 ETH，大致就能判断当前价格附近的交易深度。虽然大额交易同样会滑点，但至少流动性分布相对连续。</p>
-<h3 id="V3：总流动性不等于当前价格深度"><a href="#V3：总流动性不等于当前价格深度" class="headerlink" title="V3：总流动性不等于当前价格深度"></a>V3：总流动性不等于当前价格深度</h3><p>V3 完全不一样。</p>
-<p>V3 是<strong>区间流动性</strong>。LP 可以只把资金放在某一个价格区间里，而不是覆盖所有价格。</p>
-<p>这会带来一个问题：</p>
-<blockquote>
-<p>一个 V3 池显示 Liquidity 很高，但如果这些资金不在当前价格附近，你实际交易时仍然会遇到很差的深度。</p>
-</blockquote>
-<p>可以把 V2/V3 的区别理解成这样：</p>
-<pre class="mermaid">flowchart TD
-    A[同样显示高 Liquidity] --&gt; B[V2 池]
-    A --&gt; C[V3 池]
-    B --&gt; D[资金通常覆盖整条价格曲线]
-    C --&gt; E[资金可能集中在某些价格区间]
-    D --&gt; F[表面流动性更接近真实深度]
-    E --&gt; G[必须检查当前价格附近深度]</pre>
-
-<p>所以，看到 V3 池时，不要只看总 Liquidity，而要追问：<strong>这些流动性是不是刚好在当前价格附近？</strong></p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214629365-1470644251.jpg" alt="原线程配图：V2 与 V3 流动性差异"></p>
-<hr>
-<h2 id="三、最直接的方法：模拟卖出，看真实滑点"><a href="#三、最直接的方法：模拟卖出，看真实滑点" class="headerlink" title="三、最直接的方法：模拟卖出，看真实滑点"></a>三、最直接的方法：模拟卖出，看真实滑点</h2><p>判断一个币有没有真实流动性，最直接的方法不是看别人怎么说，而是自己模拟卖出。</p>
-<p>很多人买币前只模拟买入，很少模拟卖出。但你真正需要知道的是：</p>
-<ul>
-<li>如果我买进去，能不能顺利卖出来？</li>
-<li>卖出 1 倍仓位、2 倍仓位时，滑点会不会突然爆炸？</li>
-<li>小额能卖，大额是不是完全卖不动？</li>
-</ul>
-<h3 id="实操步骤"><a href="#实操步骤" class="headerlink" title="实操步骤"></a>实操步骤</h3><ol>
-<li>打开 Dexscreener，找到这个币的主池；</li>
-<li>点击 <code>Trade</code>，跳转到对应 DEX；</li>
-<li>把交易方向切换为：卖出该代币，换成 ETH/USDC；</li>
-<li>假设自己持有一定数量，分别模拟小额、中额、大额卖出；</li>
-<li>观察报价、Price Impact、Minimum received。</li>
-</ol>
-<p>不要只测一个金额。建议至少测三档：</p>
-<ul>
-<li>小额：确认是否能正常交易；</li>
-<li>中额：接近自己计划买入金额；</li>
-<li>大额：模拟极端情况下能不能退出。</li>
-</ul>
-<pre class="mermaid">flowchart LR
-    A[准备买入新币] --&gt; B[先模拟卖出]
-    B --&gt; C[小额卖出]
-    B --&gt; D[计划仓位卖出]
-    B --&gt; E[更大金额卖出]
-    C --&gt; F{滑点是否稳定}
-    D --&gt; F
-    E --&gt; F
-    F --&gt;|稳定| G[流动性相对可信]
-    F --&gt;|大额爆炸| H[警惕假流动性]</pre>
-
-<p>这里有个实战判断：</p>
-<blockquote>
-<p>小额卖出正常，不代表池子健康；计划仓位卖出也能接受，才有参考价值。</p>
-</blockquote>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214644519-1985081069.jpg" alt="原线程配图：通过模拟卖出观察真实滑点"></p>
-<hr>
-<h2 id="四、流动性不只看多少，还要看是谁加的"><a href="#四、流动性不只看多少，还要看是谁加的" class="headerlink" title="四、流动性不只看多少，还要看是谁加的"></a>四、流动性不只看多少，还要看是谁加的</h2><p>池子里有钱是一回事，钱由谁控制是另一回事。</p>
-<p>一个池子的 LP 如果主要由项目方或少数钱包控制，就要继续查。因为这意味着对方可能拥有撤走流动性的能力。</p>
-<p>重点看几个问题：</p>
-<ul>
-<li>LP token 在谁手里？</li>
-<li>LP 有没有锁？</li>
-<li>锁仓时间到什么时候？</li>
-<li>是否频繁加 LP / 撤 LP？</li>
-<li>V3 的 LP NFT 有没有被转走？</li>
-<li>LP 钱包和项目方、部署者、早期持仓地址有没有关联？</li>
-</ul>
-<p>很多项目不会一开盘就直接砸盘，而是采用更隐蔽的方式：</p>
-<ol>
-<li>先加一个看起来不错的池子；</li>
-<li>拉盘制造赚钱效应；</li>
-<li>吸引散户买入；</li>
-<li>随着买盘进入，逐步撤出流动性；</li>
-<li>最后留下高位筹码和越来越差的退出深度。</li>
-</ol>
-<p>这个过程不一定表现为一根暴跌线，但本质仍然是在抽走市场承接。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214658264-1987907095.jpg" alt="原线程配图：检查 LP 控制权与锁仓状态"></p>
-<hr>
-<h2 id="五、成交量和流动性要匹配"><a href="#五、成交量和流动性要匹配" class="headerlink" title="五、成交量和流动性要匹配"></a>五、成交量和流动性要匹配</h2><p>还有一种情况也很常见：</p>
-<blockquote>
-<p>Liquidity 很低，但 Volume 很高。</p>
-</blockquote>
-<p>表面看，这个币 24h 成交量很大，好像很活跃。</p>
-<p>但如果继续查，可能会发现成交量只是少数钱包反复买卖刷出来的。</p>
-<p>这时候要看三个匹配关系。</p>
-<h3 id="1-Volume-增长时，Holder-是否同步增长"><a href="#1-Volume-增长时，Holder-是否同步增长" class="headerlink" title="1. Volume 增长时，Holder 是否同步增长"></a>1. Volume 增长时，Holder 是否同步增长</h3><p>如果成交量很高，但持有人增长很慢，说明交易活跃度可能集中在少数地址之间。</p>
-<h3 id="2-买卖是否集中在少数钱包"><a href="#2-买卖是否集中在少数钱包" class="headerlink" title="2. 买卖是否集中在少数钱包"></a>2. 买卖是否集中在少数钱包</h3><p>如果大部分交易来自几个固定钱包，尤其是反复买卖、金额相似、时间间隔规律，就要警惕刷量。</p>
-<h3 id="3-价格上涨是否伴随真实买盘扩散"><a href="#3-价格上涨是否伴随真实买盘扩散" class="headerlink" title="3. 价格上涨是否伴随真实买盘扩散"></a>3. 价格上涨是否伴随真实买盘扩散</h3><p>健康上涨通常会伴随更多地址参与，而不是只有几个钱包来回对倒。</p>
-<pre class="mermaid">flowchart TD
-    A[Volume 很高] --&gt; B{Holder 是否同步增长}
-    B --&gt;|是| C[继续观察买盘质量]
-    B --&gt;|否| D[可能刷量]
-    C --&gt; E{交易是否分散}
-    E --&gt;|分散| F[活跃度相对真实]
-    E --&gt;|集中少数钱包| G[警惕对倒和假活跃]
-    D --&gt; G</pre>
-
-<p>成交量不是越高越好，关键是成交量背后有没有真实用户和真实承接。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214710942-1959282056.jpg" alt="原线程配图：成交量与流动性是否匹配"></p>
-<hr>
-<h2 id="六、判断假流动性的信号清单"><a href="#六、判断假流动性的信号清单" class="headerlink" title="六、判断假流动性的信号清单"></a>六、判断假流动性的信号清单</h2><p>遇到下面这些情况，要提高警惕：</p>
-<ul>
-<li>Liquidity 看起来很高，但主池成交量很低；</li>
-<li>多个池子分散流动性，真实成交深度很差；</li>
-<li>V3 总流动性高，但当前价格附近没深度；</li>
-<li>小额卖出正常，大额卖出滑点爆炸；</li>
-<li>LP 由少数钱包控制；</li>
-<li>LP 没有锁，或者锁仓时间很短；</li>
-<li>上涨过程中 LP 被频繁撤出；</li>
-<li>Volume 很高，但 Holder 增长不明显；</li>
-<li>买卖集中在少数钱包，且交易节奏异常规律；</li>
-<li>社群持续强调“池子很厚”，但回避 LP 控制权和滑点问题。</li>
-</ul>
-<p>这些信号不一定单独构成死刑，但如果同时出现两三个，就应该明显降低仓位，甚至直接放弃。</p>
-<p><img src="https://img2024.cnblogs.com/blog/2910984/202605/2910984-20260528214713474-2013624171.jpg" alt="原线程配图：判断假流动性的风险信号清单"></p>
-<hr>
-<h2 id="七、买新币前的-5-分钟检查流程"><a href="#七、买新币前的-5-分钟检查流程" class="headerlink" title="七、买新币前的 5 分钟检查流程"></a>七、买新币前的 5 分钟检查流程</h2><p>如果只给你一个最小可执行流程，我建议这样做：</p>
-<h3 id="Step-1：看主池"><a href="#Step-1：看主池" class="headerlink" title="Step 1：看主池"></a>Step 1：看主池</h3><p>确认主池在哪里，是 V2 还是 V3，流动性是否集中在一个主要池子里。</p>
-<h3 id="Step-2：模拟卖出"><a href="#Step-2：模拟卖出" class="headerlink" title="Step 2：模拟卖出"></a>Step 2：模拟卖出</h3><p>按计划仓位模拟卖出，重点看 Price Impact 和 Minimum received。</p>
-<h3 id="Step-3：查-LP-控制权"><a href="#Step-3：查-LP-控制权" class="headerlink" title="Step 3：查 LP 控制权"></a>Step 3：查 LP 控制权</h3><p>看 LP token 或 V3 LP NFT 在谁手里，有没有锁，锁到什么时候。</p>
-<h3 id="Step-4：看成交分布"><a href="#Step-4：看成交分布" class="headerlink" title="Step 4：看成交分布"></a>Step 4：看成交分布</h3><p>看成交量是否由真实用户贡献，还是少数钱包反复对倒。</p>
-<h3 id="Step-5：看动态变化"><a href="#Step-5：看动态变化" class="headerlink" title="Step 5：看动态变化"></a>Step 5：看动态变化</h3><p>观察上涨过程中 LP 有没有持续撤出，主池深度有没有变差。</p>
-<pre class="mermaid">flowchart TD
-    A[准备买入] --&gt; B[确认主池 V2 / V3]
-    B --&gt; C[模拟卖出看滑点]
-    C --&gt; D[检查 LP 控制权与锁仓]
-    D --&gt; E[核对 Volume 与 Holder]
-    E --&gt; F[观察 LP 动态变化]
-    F --&gt; G{风险是否可接受}
-    G --&gt;|是| H[小仓位参与]
-    G --&gt;|否| I[放弃或等待]</pre>
-
-<p>这套流程不保证你一定赚钱，但能过滤掉很多“看起来热闹、实际无法退出”的坑。</p>
-<hr>
-<h2 id="结语：真正的流动性，是你能退出的流动性"><a href="#结语：真正的流动性，是你能退出的流动性" class="headerlink" title="结语：真正的流动性，是你能退出的流动性"></a>结语：真正的流动性，是你能退出的流动性</h2><p>链上交易里，最容易骗人的指标往往不是价格，而是“看起来很厚”的池子。</p>
-<p>因为价格可以拉，成交量可以刷，Liquidity 可以堆到不关键的位置，LP 也可以在买盘进来后慢慢撤。</p>
-<p>所以判断新币安全性时，不要只问：</p>
-<blockquote>
-<p>这个币池子有多厚？</p>
-</blockquote>
-<p>更应该问：</p>
-<blockquote>
-<p>如果我现在买进去，按我的仓位卖出时，市场能不能接住我？</p>
-</blockquote>
-<p>真正的流动性，不是页面上显示的那个数字，而是你需要退出时，仍然存在的真实承接。</p>
-<hr>
-<blockquote>
-<p>原始线程作者：<a href="https://x.com/Mojito_cx/status/2059963599788093529">@Mojito_cx</a>。本文为基于原线程的结构化整理与扩展，不构成投资建议。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>加密投研</category>
-      </categories>
-      <tags>
-        <tag>Meme币</tag>
-        <tag>链上分析</tag>
-        <tag>交易风控</tag>
-        <tag>加密投研</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Agent Harness：从 Demo 到工程系统的 10 层架构</title>
     <url>/posts/agent-harness-engineering-architecture.html</url>
     <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260613135557666-283571046.jpg" style="zoom:33%;" alt="Agent Harness 工程架构指南封面图"></p>
@@ -13968,6 +13968,205 @@ If yes, summarize what was generated and what was manually verified.<span aria-h
         <tag>架构</tag>
         <tag>工程</tag>
         <tag>LLM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</title>
+    <url>/posts/cs336-llm-from-scratch-knowledge-map.html</url>
+    <content><![CDATA[<h1 id="CS336-语言模型从零构建知识地图：一张图拆开-Stanford-LLM-训练课"><a href="#CS336-语言模型从零构建知识地图：一张图拆开-Stanford-LLM-训练课" class="headerlink" title="CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课"></a>CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</h1><p>Stanford CS336《Language Modeling from Scratch》不是那种“讲一堆 Transformer 概念就结束”的课。</p>
+<p>它真正有价值的地方在于：它把一个语言模型从零做出来所需的几条主线放到了一起——<strong>模型结构、训练系统、算力效率、数据工程、Scaling Laws、评测、推理和对齐</strong>。如果你不是只想调用 API，而是想理解大模型为什么这样训练、哪里贵、哪里难、哪里容易踩坑，这门课很适合当作路线图。</p>
+<p>但课程原网页是按日期排的。对自学者来说，按时间顺序看不一定最友好：你很容易今天看 tokenizer，明天跳到 GPU，再过几天突然 scaling law，脑子里缺少一张总图。</p>
+<p>所以这篇文章不做逐课翻译，而是把 CS336 拆成一张中文知识地图：每一块告诉你<strong>学什么、为什么重要、对应哪几节课、该做哪份作业</strong>。等你有时间，就可以按模块点进去看。</p>
+<blockquote>
+<p>课程主页：<a href="https://cs336.stanford.edu/">CS336: Language Modeling from Scratch, Spring 2026</a></p>
+</blockquote>
+<h2 id="先看总图：从一个-Token-到一个可用模型"><a href="#先看总图：从一个-Token-到一个可用模型" class="headerlink" title="先看总图：从一个 Token 到一个可用模型"></a>先看总图：从一个 Token 到一个可用模型</h2><pre class="mermaid">flowchart TD
+    A[文本进入模型] --&gt; B[Tokenization 与基础训练代码]
+    B --&gt; C[Transformer 架构与超参数]
+    C --&gt; D[GPU / Kernel / Triton]
+    D --&gt; E[并行训练系统]
+    E --&gt; F[Scaling Laws 与训练预算]
+    F --&gt; G[数据工程与数据质量]
+    G --&gt; H[评测与推理]
+    H --&gt; I[SFT / RLHF / RLVR 对齐]
+    I --&gt; J[可用、可评估、可迭代的语言模型]</pre>
+
+<p>这张图可以理解为 CS336 的学习顺序：</p>
+<ul>
+<li><strong>先能跑起来</strong>：tokenizer、PyTorch、Transformer、训练循环。</li>
+<li><strong>再让它跑得动</strong>：GPU、kernel、Triton、并行训练。</li>
+<li><strong>然后知道该训练多大</strong>：Scaling Laws、资源预算、训练曲线。</li>
+<li><strong>接着处理真实世界问题</strong>：数据质量、评测体系、推理成本。</li>
+<li><strong>最后让模型更像产品</strong>：SFT、RLHF、RLVR、对齐与反馈学习。</li>
+</ul>
+<p>如果只想快速建立框架，先看总图和每块的“学习目标”；如果想动手，优先做 5 个 assignment。</p>
+<h2 id="模块一：从文本到训练样本"><a href="#模块一：从文本到训练样本" class="headerlink" title="模块一：从文本到训练样本"></a>模块一：从文本到训练样本</h2><p>这一块解决最基础、也最容易被低估的问题：<strong>模型到底吃进去的是什么？</strong></p>
+<p>很多人学语言模型时会直接从 Transformer 开始，但实际训练里，tokenization 会影响词表、序列长度、训练效率、长尾字符处理，甚至影响多语言能力。CS336 第一节课把入口放在 tokenization，是很合理的。</p>
+<h3 id="你要建立的概念"><a href="#你要建立的概念" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>原始文本不会直接进入模型，而是先被切成 token。</li>
+<li>tokenizer 不是纯工程细节，它会改变训练分布和上下文利用率。</li>
+<li>从零训练模型时，数据清洗、编码方式、batch 构造都属于基础设施。</li>
+</ul>
+<h3 id="对应资料"><a href="#对应资料" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 1：Overview, tokenization<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_01">lecture_01.py</a></li>
+</ul>
+<h3 id="对应作业"><a href="#对应作业" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 1 Basics：从基础组件开始搭建语言模型训练流程<br><a href="https://github.com/stanford-cs336/assignment1-basics/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_assignment1_basics.pdf">作业 PDF</a></li>
+</ul>
+<p>这一份作业最适合当“入门门槛”：如果你能把它认真做完，后面的系统优化、扩展规律、对齐训练才不只是听概念。</p>
+<h2 id="模块二：Transformer-架构与训练基本功"><a href="#模块二：Transformer-架构与训练基本功" class="headerlink" title="模块二：Transformer 架构与训练基本功"></a>模块二：Transformer 架构与训练基本功</h2><p>有了 token 和数据流，下一步才是模型本体。</p>
+<p>这里的重点不是背诵“Attention is All You Need”，而是理解训练一个语言模型时，架构选择和超参数会怎样影响容量、稳定性和成本。比如层数、宽度、attention 形式、MoE、学习率、batch size、上下文长度，都会在训练预算里互相牵制。</p>
+<h3 id="你要建立的概念-1"><a href="#你要建立的概念-1" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>Transformer 是语言模型的核心计算图，但不是唯一决策点。</li>
+<li>超参数不是“调参玄学”，而是和算力预算、数据规模、模型大小绑定。</li>
+<li>MoE 的价值不只是“参数更多”，而是用稀疏激活改变计算和容量的关系。</li>
+</ul>
+<h3 id="对应资料-1"><a href="#对应资料-1" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 2：PyTorch, resource accounting<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_02">lecture_02.py</a></li>
+<li>Lecture 3：Architectures, hyperparameters<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_03.pdf">lecture 3.pdf</a></li>
+<li>Lecture 4：Attention alternatives and Mixture of Experts<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_04.pdf">lecture 4.pdf</a></li>
+</ul>
+<h3 id="推荐学习方式"><a href="#推荐学习方式" class="headerlink" title="推荐学习方式"></a>推荐学习方式</h3><p>先看 Lecture 2，把 PyTorch 和资源记账补起来；再看 Lecture 3 理解标准 Transformer 训练；最后看 Lecture 4 的 MoE。这样顺序更自然：<strong>先密集模型，再理解为什么需要稀疏模型</strong>。</p>
+<h2 id="模块三：GPU、Kernel-与训练系统"><a href="#模块三：GPU、Kernel-与训练系统" class="headerlink" title="模块三：GPU、Kernel 与训练系统"></a>模块三：GPU、Kernel 与训练系统</h2><p>这是 CS336 和很多普通 LLM 课程最大的差别之一：它不把“系统”当作附录。</p>
+<p>真实的大模型训练不是“写个 PyTorch 脚本然后等它跑完”。瓶颈经常来自显存、带宽、通信、kernel launch、并行策略，而不是模型公式本身。你如果只懂 Transformer 不懂系统，就很难判断训练为什么慢、为什么爆显存、为什么扩 GPU 后效率反而下降。</p>
+<h3 id="你要建立的概念-2"><a href="#你要建立的概念-2" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>GPU 不是“更快的 CPU”，它有自己的内存层级和并行计算模型。</li>
+<li>Kernel 优化的核心是减少无效访存、提高并行度、降低调度开销。</li>
+<li>Triton 的意义在于让研究者能写接近底层性能的 GPU kernel。</li>
+<li>并行训练不是只有 data parallel，还有 tensor/pipeline/sequence 等维度。</li>
+</ul>
+<h3 id="对应资料-2"><a href="#对应资料-2" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 5：GPUs, TPUs<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_05.pdf">lecture 5.pdf</a></li>
+<li>Lecture 6：Kernels, Triton<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_06">lecture_06.py</a></li>
+<li>Lecture 7：Parallelism basics<br><a href="https://github.com/stanford-cs336/spring2026-lectures/blob/main/nonexecutable/Lecture%207%20-%20Parallelism%20basics.pdf">lecture 7.pdf</a></li>
+<li>Lecture 8：Parallelism<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_08.pdf">lecture_08.py</a></li>
+</ul>
+<h3 id="对应作业-1"><a href="#对应作业-1" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 2 Systems：训练系统与性能优化<br><a href="https://github.com/stanford-cs336/assignment2-systems/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf">作业 PDF</a></li>
+</ul>
+<p>如果你想走 LLM Infra、训练框架、推理引擎、GPU kernel 方向，这一块值得反复啃。它比“会调 API”难得多，但也更有护城河。</p>
+<h2 id="模块四：Scaling-Laws-与训练预算"><a href="#模块四：Scaling-Laws-与训练预算" class="headerlink" title="模块四：Scaling Laws 与训练预算"></a>模块四：Scaling Laws 与训练预算</h2><p>模型做大以后，最重要的问题会变成：<strong>我到底该训练多大的模型、用多少数据、花多少算力？</strong></p>
+<p>Scaling Laws 的价值就在这里。它不是为了画漂亮曲线，而是为了让训练决策从拍脑袋变成可估算：在固定预算下，模型参数、数据 token、训练步数应该如何分配？什么时候继续加数据更划算？什么时候加参数更划算？什么时候只是浪费 GPU？</p>
+<h3 id="你要建立的概念-3"><a href="#你要建立的概念-3" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>loss 会随模型规模、数据规模、计算量呈现可预测趋势。</li>
+<li>训练预算不是单独看参数量，而是看 compute、data、model 的组合。</li>
+<li>小规模实验可以用于预测大规模训练，但前提是实验设计靠谱。</li>
+<li>Scaling law 是工程决策工具，不只是论文里的经验公式。</li>
+</ul>
+<h3 id="对应资料-3"><a href="#对应资料-3" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 9：Scaling laws basics<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_09.pdf">lecture 9.pdf</a></li>
+<li>Lecture 10：Inference<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_10">lecture_10.py</a></li>
+<li>Lecture 11：Scaling details<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_11.pdf">lecture 11.pdf</a></li>
+</ul>
+<h3 id="对应作业-2"><a href="#对应作业-2" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 3 Scaling：用实验理解 scaling 规律<br><a href="https://github.com/stanford-cs336/assignment3-scaling/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment3-scaling/blob/main/cs336_assignment3_scaling.pdf">作业 PDF</a></li>
+</ul>
+<p>这一块建议和推理一起看，因为训练成本和推理成本最后都会回到同一个问题：<strong>模型能力不是免费的，系统账必须算清楚。</strong></p>
+<h2 id="模块五：评测、数据与模型质量"><a href="#模块五：评测、数据与模型质量" class="headerlink" title="模块五：评测、数据与模型质量"></a>模块五：评测、数据与模型质量</h2><p>当模型可以训练、可以扩展之后，下一个问题是：<strong>它真的变好了吗？</strong></p>
+<p>这也是很多项目最容易翻车的地方。训练 loss 降了，不代表用户体验变好；benchmark 涨了，不代表真实任务可用；数据更多，也不代表质量更高。CS336 把 Evaluation 和 Data 放在 scaling 之后，非常符合真实研发节奏：当你开始认真扩模型时，数据和评测会变成最关键的杠杆。</p>
+<h3 id="你要建立的概念-4"><a href="#你要建立的概念-4" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>评测不是最后打分，而是训练过程中的反馈系统。</li>
+<li>数据质量、去重、过滤、混合比例，会直接影响模型能力边界。</li>
+<li>好的 benchmark 应该和目标能力相关，否则容易优化错方向。</li>
+<li>数据工程是 LLM 能力的一部分，不是“脏活外包”。</li>
+</ul>
+<h3 id="对应资料-4"><a href="#对应资料-4" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 12：Evaluation<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_12">lecture_12.py</a></li>
+<li>Lecture 13：Data<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_13">lecture_13.py</a></li>
+<li>Lecture 14：Data<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_14">lecture_14.py</a></li>
+</ul>
+<h3 id="对应作业-3"><a href="#对应作业-3" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 4 Data：数据处理、过滤与质量评估<br><a href="https://github.com/stanford-cs336/assignment4-data/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment4-data/blob/main/cs336_assignment4_data.pdf">作业 PDF</a></li>
+</ul>
+<p>如果你未来想做 Agent、RAG、垂直模型或企业 AI，这一块尤其重要。很多时候，模型效果差不是因为“模型不够大”，而是数据和评测闭环没有搭起来。</p>
+<h2 id="模块六：SFT、RLHF-与-RLVR-对齐"><a href="#模块六：SFT、RLHF-与-RLVR-对齐" class="headerlink" title="模块六：SFT、RLHF 与 RLVR 对齐"></a>模块六：SFT、RLHF 与 RLVR 对齐</h2><p>预训练模型学会的是“预测下一个 token”，但用户想要的是“按我的意图完成任务”。这中间的落差，就是对齐要解决的问题。</p>
+<p>CS336 后半部分进入 SFT、RLHF、RLVR。这里不应该只把它理解成“让模型更听话”，更准确地说，它是在构建一个反馈系统：用示范数据、偏好信号、奖励模型或可验证奖励，把基础模型推向更适合任务和产品的行为分布。</p>
+<h3 id="你要建立的概念-5"><a href="#你要建立的概念-5" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
+<li>SFT 让模型模仿高质量示范，是从预训练到可用助手的第一步。</li>
+<li>RLHF 用人类偏好构造优化目标，但会引入奖励建模和稳定性问题。</li>
+<li>RLVR 更强调可验证奖励，在数学、代码、推理任务里尤其重要。</li>
+<li>对齐不是魔法，它仍然受数据、评测、训练稳定性和系统成本约束。</li>
+</ul>
+<h3 id="对应资料-5"><a href="#对应资料-5" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Lecture 15：Mid/post-training - SFT/RLHF<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_15.pdf">lecture 15.pdf</a></li>
+<li>Lecture 16：Alignment - RL / RLVR<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_16.pdf">lecture 16.pdf</a></li>
+<li>Lecture 17：Alignment - multimodality<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_17">lecture_17.py</a></li>
+</ul>
+<h3 id="对应作业-4"><a href="#对应作业-4" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
+<li>Assignment 5 Alignment：对齐训练实践<br><a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main/blob/main/cs336_spring2026_assignment5_alignment.pdf">作业 PDF</a></li>
+</ul>
+<p>对齐部分建议放在最后学。因为如果前面的训练系统、数据、评测没建立起来，RLHF 很容易被误解成一套孤立算法，而不是完整模型工程链条里的最后几步。</p>
+<h2 id="模块七：前沿讲座与行业视角"><a href="#模块七：前沿讲座与行业视角" class="headerlink" title="模块七：前沿讲座与行业视角"></a>模块七：前沿讲座与行业视角</h2><p>CS336 后面还有两场 guest lecture，适合作为扩展阅读。它们不一定是“基础必修”，但适合用来连接工业界的真实问题。</p>
+<h3 id="对应资料-6"><a href="#对应资料-6" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
+<li>Guest Lecture：Daniel Selsam</li>
+<li>Guest Lecture：Dan Fu</li>
+</ul>
+<p>这类讲座最适合在你完成前六个模块后再看：前面建立底层地图，后面再看行业专家怎么取舍，收获会更大。</p>
+<h2 id="如果只想自学，推荐三条路径"><a href="#如果只想自学，推荐三条路径" class="headerlink" title="如果只想自学，推荐三条路径"></a>如果只想自学，推荐三条路径</h2><p>不同目标的人不必按同一条路线学。可以按自己的方向选择重点。</p>
+<h3 id="路径-A：想理解-LLM-从零训练"><a href="#路径-A：想理解-LLM-从零训练" class="headerlink" title="路径 A：想理解 LLM 从零训练"></a>路径 A：想理解 LLM 从零训练</h3><p>推荐顺序：</p>
+<ol>
+<li>Lecture 1：Tokenization</li>
+<li>Lecture 2：PyTorch 与资源记账</li>
+<li>Lecture 3：架构与超参数</li>
+<li>Assignment 1 Basics</li>
+<li>Lecture 12-14：Evaluation 与 Data</li>
+</ol>
+<p>这条路适合想补齐基础的人。目标不是马上训练大模型，而是理解一个语言模型训练项目有哪些必要组件。</p>
+<h3 id="路径-B：想走-LLM-Infra-Systems"><a href="#路径-B：想走-LLM-Infra-Systems" class="headerlink" title="路径 B：想走 LLM Infra / Systems"></a>路径 B：想走 LLM Infra / Systems</h3><p>推荐顺序：</p>
+<ol>
+<li>Lecture 5：GPUs</li>
+<li>Lecture 6：Kernels, Triton</li>
+<li>Lecture 7-8：Parallelism</li>
+<li>Assignment 2 Systems</li>
+<li>Lecture 10：Inference</li>
+</ol>
+<p>这条路更偏工程和性能优化。它不会像做 prompt 那样立刻有“可见成果”，但长期价值很高。</p>
+<h3 id="路径-C：想做模型训练策略与对齐"><a href="#路径-C：想做模型训练策略与对齐" class="headerlink" title="路径 C：想做模型训练策略与对齐"></a>路径 C：想做模型训练策略与对齐</h3><p>推荐顺序：</p>
+<ol>
+<li>Lecture 9 / 11：Scaling Laws</li>
+<li>Assignment 3 Scaling</li>
+<li>Lecture 12-14：Evaluation 与 Data</li>
+<li>Lecture 15-17：SFT、RLHF、RLVR</li>
+<li>Assignment 5 Alignment</li>
+</ol>
+<p>这条路适合对 post-training、推理模型、奖励建模、评测体系感兴趣的人。</p>
+<h2 id="五份作业入口汇总"><a href="#五份作业入口汇总" class="headerlink" title="五份作业入口汇总"></a>五份作业入口汇总</h2><p>如果只能收藏一部分，我建议优先收藏作业。课件让你理解，作业逼你真的动手。</p>
+<ul>
+<li>Assignment 1 Basics：<br><a href="https://github.com/stanford-cs336/assignment1-basics/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_assignment1_basics.pdf">作业 PDF</a></li>
+<li>Assignment 2 Systems：<br><a href="https://github.com/stanford-cs336/assignment2-systems/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf">作业 PDF</a></li>
+<li>Assignment 3 Scaling：<br><a href="https://github.com/stanford-cs336/assignment3-scaling/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment3-scaling/blob/main/cs336_assignment3_scaling.pdf">作业 PDF</a></li>
+<li>Assignment 4 Data：<br><a href="https://github.com/stanford-cs336/assignment4-data/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment4-data/blob/main/cs336_assignment4_data.pdf">作业 PDF</a></li>
+<li>Assignment 5 Alignment：<br><a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main/blob/main/cs336_spring2026_assignment5_alignment.pdf">作业 PDF</a></li>
+</ul>
+<h2 id="最后：这门课最值得学的不是“知识点”，而是工程视角"><a href="#最后：这门课最值得学的不是“知识点”，而是工程视角" class="headerlink" title="最后：这门课最值得学的不是“知识点”，而是工程视角"></a>最后：这门课最值得学的不是“知识点”，而是工程视角</h2><p>CS336 最好的地方，不是它覆盖了多少新概念，而是它把语言模型放回了真实工程链条里：</p>
+<pre class="mermaid">flowchart LR
+    A[数据] --&gt; B[训练目标]
+    B --&gt; C[模型架构]
+    C --&gt; D[系统实现]
+    D --&gt; E[训练预算]
+    E --&gt; F[评测反馈]
+    F --&gt; G[对齐优化]
+    G --&gt; H[推理与产品]
+    H --&gt; A</pre>
+
+<p>很多 LLM 学习材料会把这些拆散：模型结构归模型结构，GPU 归 GPU，RLHF 归 RLHF，评测归评测。但真实的大模型研发不是这样运转的。一个看似算法层面的选择，可能会改变系统瓶颈；一个看似数据层面的过滤规则，可能会改变评测结果；一个看似后训练的问题，可能最后还是回到数据和奖励设计。</p>
+<p>所以这篇知识地图的使用方式也很简单：</p>
+<ul>
+<li>想快速入门，就按模块一到模块六顺序看。</li>
+<li>想补系统能力，就重点看 GPU、Kernel、Parallelism 和 Inference。</li>
+<li>想理解模型能力增长，就重点看 Scaling、Data、Evaluation。</li>
+<li>想研究对齐和推理模型，就把 SFT、RLHF、RLVR 放到最后精读。</li>
+</ul>
+<p>别急着一次看完。收藏这张地图，等有时间了，一块一块点进去就行。</p>
+]]></content>
+      <categories>
+        <category>AI研究</category>
+      </categories>
+      <tags>
+        <tag>LLM</tag>
+        <tag>训练</tag>
+        <tag>系统</tag>
+        <tag>对齐</tag>
       </tags>
   </entry>
   <entry>
@@ -15851,169 +16050,6 @@ DEEPSEEK_API_KEY=sk-...<span aria-hidden="true" class="line-numbers-rows"><span>
       </tags>
   </entry>
   <entry>
-    <title>Typora For Mac：把 Markdown 写作变成一种专注体验</title>
-    <url>/posts/typora-mac-markdown-editor-2026.html</url>
-    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260603150346821-738781193.jpg" style="zoom:33%;" alt="Typora For Mac 封面图"></p>
-<h1 id="Typora-For-Mac：把-Markdown-写作变成一种专注体验"><a href="#Typora-For-Mac：把-Markdown-写作变成一种专注体验" class="headerlink" title="Typora For Mac：把 Markdown 写作变成一种专注体验"></a>Typora For Mac：把 Markdown 写作变成一种专注体验</h1><p>如果你经常写博客、整理课堂笔记、维护技术文档，或者只是想找一个比 Word 更轻、更干净的写作工具，Typora 仍然是 macOS 上最值得试用的 Markdown 编辑器之一。</p>
-<p>它最核心的价值不是“功能多”，而是把 Markdown 从“左边源码、右边预览”的割裂状态里解放出来：你写下标题、列表、代码块、表格，页面会直接呈现最终效果。写作时不需要频繁在编辑区和预览区之间切换，注意力自然会回到内容本身。</p>
-<h2 id="为什么-Typora-适合长期写作？"><a href="#为什么-Typora-适合长期写作？" class="headerlink" title="为什么 Typora 适合长期写作？"></a>为什么 Typora 适合长期写作？</h2><p>很多 Markdown 编辑器都会提供实时预览，但常见形态是“双栏模式”：左边写 Markdown 源码，右边看渲染效果。这种方式对程序员很直观，但对持续写作来说，它有一个问题：你会一直被“格式”和“成品”来回打断。</p>
-<p>Typora 的思路更接近“所见即所得”：</p>
-<pre class="mermaid">flowchart LR
-    A[输入 Markdown 语法] --&gt; B[即时渲染成排版效果]
-    B --&gt; C[继续在成品视图里编辑]
-    C --&gt; D[导出或发布]</pre>
-
-<p>这让它特别适合几类场景：</p>
-<ul>
-<li><strong>博客写作</strong>：标题、引用、代码块、图片、表格都能直接看到效果。</li>
-<li><strong>课程笔记</strong>：公式、列表、层级结构更容易保持清晰。</li>
-<li><strong>技术文档</strong>：代码高亮、目录、脚注和表格支持比较完整。</li>
-<li><strong>知识管理</strong>：纯文本 Markdown 文件便于同步、备份和跨平台迁移。</li>
-</ul>
-<h2 id="无干扰界面：写作比“折腾编辑器”更重要"><a href="#无干扰界面：写作比“折腾编辑器”更重要" class="headerlink" title="无干扰界面：写作比“折腾编辑器”更重要"></a>无干扰界面：写作比“折腾编辑器”更重要</h2><p>Typora 的界面很克制。打开之后，你看到的基本就是一张干净的纸，没有复杂工具栏，也没有密密麻麻的按钮。</p>
-<p>这种设计对写作者很友好：</p>
-<ul>
-<li>不用在格式按钮里找功能；</li>
-<li>不用反复切换源码和预览；</li>
-<li>不会被侧边栏、插件面板、复杂菜单抢注意力；</li>
-<li>更容易进入连续写作状态。</li>
-</ul>
-<p>在 macOS 上，Typora 也比较像一个原生应用：常用快捷键、系统字体、窗口行为都比较自然。对于习惯 Mac 工作流的人来说，上手成本很低。</p>
-<h2 id="Markdown-能力：轻量，但够完整"><a href="#Markdown-能力：轻量，但够完整" class="headerlink" title="Markdown 能力：轻量，但够完整"></a>Markdown 能力：轻量，但够完整</h2><p>Typora 支持常见 Markdown 写作需求，包括：</p>
-<ul>
-<li>标题、段落、引用块；</li>
-<li>有序列表、无序列表、任务列表；</li>
-<li>加粗、斜体、删除线、行内代码；</li>
-<li>超链接与图片插入；</li>
-<li>表格编辑；</li>
-<li>脚注；</li>
-<li>代码围栏与语法高亮；</li>
-<li>数学公式与基础排版能力。</li>
-</ul>
-<p>相比一些功能堆得很满的笔记软件，Typora 的优势是“轻”。它不会强迫你进入某个封闭数据库，而是直接面对 Markdown 文件本身。文件就是文件，你可以放在 iCloud、Git 仓库、坚果云、Obsidian Vault 或任意同步目录里。</p>
-<h2 id="表格、代码块和脚注：技术写作者会很舒服"><a href="#表格、代码块和脚注：技术写作者会很舒服" class="headerlink" title="表格、代码块和脚注：技术写作者会很舒服"></a>表格、代码块和脚注：技术写作者会很舒服</h2><p>对技术博客来说，代码块体验很关键。Typora 内置了代码块编辑能力，支持常见语言的语法高亮，例如 Java、C++、JavaScript、XML 等。</p>
-<p>示例：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> editor <span class="token operator">=</span> <span class="token string">"Typora"</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> reason <span class="token operator">=</span> <span class="token string">"focus on writing, not formatting"</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>editor<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>reason<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>表格也是 Typora 的一个实用点。普通 Markdown 表格手写起来很烦，列宽很容易乱；Typora 会把表格以更接近可视化的方式呈现，适合整理软件对比、参数说明、任务清单。</p>
-<p>脚注则适合写稍微严肃一点的文章：正文保持简洁，补充说明放到脚注里，不破坏阅读节奏。</p>
-<h2 id="主题系统：从白天写作到夜间模式"><a href="#主题系统：从白天写作到夜间模式" class="headerlink" title="主题系统：从白天写作到夜间模式"></a>主题系统：从白天写作到夜间模式</h2><p>长时间写作时，编辑器主题会明显影响体验。Typora 提供了多种主题，例如 Github、Gothic、Newsprint、Night、Whitey 等。</p>
-<p>我的建议是：</p>
-<ul>
-<li>白天写技术文档：优先用 Github / Whitey 这类浅色主题；</li>
-<li>晚上长时间写作：切到 Night，眼睛压力会小一些；</li>
-<li>写偏文学或长文：可以试试 Newsprint，阅读感更强。</li>
-</ul>
-<p>主题不是核心功能，但它会影响你愿不愿意每天打开这个工具。一个编辑器如果看着舒服，本身就是效率的一部分。</p>
-<h2 id="Typora-和其他-Markdown-编辑器的差异"><a href="#Typora-和其他-Markdown-编辑器的差异" class="headerlink" title="Typora 和其他 Markdown 编辑器的差异"></a>Typora 和其他 Markdown 编辑器的差异</h2><p>Typora 最值得强调的不是“它支持 Markdown”，而是它让 Markdown 写作更像正常写作。</p>
-<pre class="mermaid">flowchart TD
-    A[传统 Markdown 编辑器] --&gt; B[源码区]
-    A --&gt; C[预览区]
-    B --&gt; D[注意力在语法和渲染之间切换]
-
-    E[Typora] --&gt; F[所见即所得编辑]
-    F --&gt; G[注意力集中在内容结构]</pre>
-
-<p>如果你喜欢完全控制源码、插件生态、双链笔记，Obsidian 或 VS Code 可能更适合；但如果你的主要目标是“安静地写完一篇文章”，Typora 的体验往往更顺手。</p>
-<h2 id="常见问题：Mac-提示“身份不明的开发者”怎么办？"><a href="#常见问题：Mac-提示“身份不明的开发者”怎么办？" class="headerlink" title="常见问题：Mac 提示“身份不明的开发者”怎么办？"></a>常见问题：Mac 提示“身份不明的开发者”怎么办？</h2><p>安装第三方 Mac 软件时，经常会遇到这些提示：</p>
-<ul>
-<li>“无法打开 xxx，因为它来自身份不明的开发者。”</li>
-<li>“无法打开 xxx，因为无法验证开发者。”</li>
-<li>“Apple 无法检查其是否包含恶意软件。”</li>
-<li>“它不是从 App Store 下载。”</li>
-<li>“未打开 xxx.app，Apple 无法验证其是否包含可能危害 Mac 安全或泄漏隐私的恶意软件。”</li>
-</ul>
-<p>这些提示来自 macOS 的 Gatekeeper 安全机制。它的目的不是单纯阻止你使用软件，而是提醒你：这个应用没有通过 Apple 的完整签名、公证或 App Store 分发流程。</p>
-<h3 id="更推荐的处理方式：右键打开"><a href="#更推荐的处理方式：右键打开" class="headerlink" title="更推荐的处理方式：右键打开"></a>更推荐的处理方式：右键打开</h3><p>如果你确认软件来源可信，可以优先用下面这种方式打开，而不是直接关闭系统安全保护。</p>
-<p><strong>PKG / DMG 安装包：</strong></p>
-<ol>
-<li>找到下载好的 <code>.dmg</code> 或 <code>.pkg</code> 文件；</li>
-<li>鼠标右键点击安装包；</li>
-<li>选择“打开”；</li>
-<li>弹窗中再次点击“打开”。</li>
-</ol>
-<p><strong>APP 应用程序：</strong></p>
-<ol>
-<li>打开“访达”；</li>
-<li>进入“应用程序”文件夹；</li>
-<li>找到对应 <code>.app</code>；</li>
-<li>鼠标右键点击应用图标；</li>
-<li>选择“打开”；</li>
-<li>弹窗中再次点击“打开”。</li>
-</ol>
-<p>这种方式只针对当前应用放行，相对更安全。</p>
-<h3 id="通过系统设置放行"><a href="#通过系统设置放行" class="headerlink" title="通过系统设置放行"></a>通过系统设置放行</h3><p>如果第一次打开时被拦截，也可以从系统安全设置里手动允许。</p>
-<p><strong>macOS 12 及以下：</strong></p>
-<ol>
-<li>打开应用，遇到弹窗后点击“取消”；</li>
-<li>打开“系统偏好设置”；</li>
-<li>进入“安全性与隐私” → “通用”；</li>
-<li>找到“已阻止 xxx”的提示；</li>
-<li>点击“仍要打开”；</li>
-<li>输入 Mac 开机密码确认。</li>
-</ol>
-<p><strong>macOS 13 及以上：</strong></p>
-<ol>
-<li>打开应用，遇到弹窗后点击“取消”；</li>
-<li>打开“系统设置”；</li>
-<li>进入“隐私与安全性”；</li>
-<li>在“安全性”区域找到被阻止的应用提示；</li>
-<li>点击“仍要打开”；</li>
-<li>输入 Mac 开机密码确认。</li>
-</ol>
-<h3 id="不建议长期关闭-Gatekeeper"><a href="#不建议长期关闭-Gatekeeper" class="headerlink" title="不建议长期关闭 Gatekeeper"></a>不建议长期关闭 Gatekeeper</h3><p>网上常见的命令是：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> spctl --master-disable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>它可以让系统显示“任何来源”选项，并降低 Gatekeeper 的拦截强度。但我不建议普通用户长期这样设置，因为这相当于削弱了 macOS 对未知软件的第一层防护。</p>
-<p>如果确实需要临时处理，可以在确认软件安全、完成安装后，再恢复默认保护：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> spctl --master-enable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>更稳妥的原则是：<strong>能右键打开就不要全局关闭安全保护；能用官方渠道就不要下载来源不明的安装包。</strong></p>
-<h2 id="下载与安装建议"><a href="#下载与安装建议" class="headerlink" title="下载与安装建议"></a>下载与安装建议</h2><p>Typora 是商业软件，建议优先从官方渠道下载和购买授权：</p>
-<ul>
-<li>官方网站：<a href="https://typora.io/">https://typora.io/</a></li>
-<li>官方下载页：<a href="https://typora.io/releases/all">https://typora.io/releases/all</a></li>
-</ul>
-<p>如果你从第三方网盘或资源站获取安装包，务必注意三件事：</p>
-<ol>
-<li><strong>确认来源可信</strong>：不要随便运行来源不明的 <code>.dmg</code> 或 <code>.pkg</code>。</li>
-<li><strong>检查文件安全</strong>：安装前可以用杀毒工具或 VirusTotal 做基础扫描。</li>
-<li><strong>尊重软件授权</strong>：长期使用建议购买正版，尤其是写作工具这类高频生产力软件。</li>
-</ol>
-<p>对生产力工具来说，稳定、安全、可持续更新，比“省一次下载成本”更重要。</p>
-<blockquote>
-<p>MacOS免费破解版链接：<a href="https://macxzb.lanzoul.com/iLbSp3ph3ida">https://macxzb.lanzoul.com/iLbSp3ph3ida</a> 密码 i6wt</p>
-</blockquote>
-<h2 id="适合谁使用？"><a href="#适合谁使用？" class="headerlink" title="适合谁使用？"></a>适合谁使用？</h2><p>Typora 特别适合：</p>
-<ul>
-<li>经常写博客的人；</li>
-<li>需要维护 README、技术文档的人；</li>
-<li>喜欢纯文本和 Markdown 文件的人；</li>
-<li>不想被复杂笔记系统绑定的人；</li>
-<li>想要一个“打开就能写”的 Mac 写作工具的人。</li>
-</ul>
-<p>不太适合：</p>
-<ul>
-<li>需要多人协作批注的人；</li>
-<li>强依赖双链知识图谱的人；</li>
-<li>需要大量插件和自动化工作流的人；</li>
-<li>喜欢完全免费开源工具的人。</li>
-</ul>
-<h2 id="结语：好编辑器应该让你忘记编辑器本身"><a href="#结语：好编辑器应该让你忘记编辑器本身" class="headerlink" title="结语：好编辑器应该让你忘记编辑器本身"></a>结语：好编辑器应该让你忘记编辑器本身</h2><p>Typora 的优点很明确：界面干净、写作流畅、Markdown 支持完整、macOS 融合度不错。它不是功能最庞大的 Markdown 工具，但它非常擅长一件事：让你专注写作。</p>
-<p>如果你正在寻找一款 Mac 上的 Markdown 编辑器，用来写博客、写技术文档、整理学习笔记，Typora 值得放进候选列表。</p>
-<p>真正好的写作工具，不是让你每天研究它，而是让你更快进入内容本身。</p>
-]]></content>
-      <categories>
-        <category>效率工具</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-        <tag>工具</tag>
-        <tag>Markdown</tag>
-        <tag>写作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后</title>
     <url>/posts/openai-phd-industry-job-search-notes.html</url>
     <content><![CDATA[<h1 id="一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后"><a href="#一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后" class="headerlink" title="一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后"></a>一位华盛顿大学NLP博士的OpenAI求职复盘：57场面试之后</h1><blockquote>
@@ -16181,6 +16217,169 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <tag>AI求职</tag>
         <tag>面经</tag>
         <tag>PhD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora For Mac：把 Markdown 写作变成一种专注体验</title>
+    <url>/posts/typora-mac-markdown-editor-2026.html</url>
+    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202606/2910984-20260603150346821-738781193.jpg" style="zoom:33%;" alt="Typora For Mac 封面图"></p>
+<h1 id="Typora-For-Mac：把-Markdown-写作变成一种专注体验"><a href="#Typora-For-Mac：把-Markdown-写作变成一种专注体验" class="headerlink" title="Typora For Mac：把 Markdown 写作变成一种专注体验"></a>Typora For Mac：把 Markdown 写作变成一种专注体验</h1><p>如果你经常写博客、整理课堂笔记、维护技术文档，或者只是想找一个比 Word 更轻、更干净的写作工具，Typora 仍然是 macOS 上最值得试用的 Markdown 编辑器之一。</p>
+<p>它最核心的价值不是“功能多”，而是把 Markdown 从“左边源码、右边预览”的割裂状态里解放出来：你写下标题、列表、代码块、表格，页面会直接呈现最终效果。写作时不需要频繁在编辑区和预览区之间切换，注意力自然会回到内容本身。</p>
+<h2 id="为什么-Typora-适合长期写作？"><a href="#为什么-Typora-适合长期写作？" class="headerlink" title="为什么 Typora 适合长期写作？"></a>为什么 Typora 适合长期写作？</h2><p>很多 Markdown 编辑器都会提供实时预览，但常见形态是“双栏模式”：左边写 Markdown 源码，右边看渲染效果。这种方式对程序员很直观，但对持续写作来说，它有一个问题：你会一直被“格式”和“成品”来回打断。</p>
+<p>Typora 的思路更接近“所见即所得”：</p>
+<pre class="mermaid">flowchart LR
+    A[输入 Markdown 语法] --&gt; B[即时渲染成排版效果]
+    B --&gt; C[继续在成品视图里编辑]
+    C --&gt; D[导出或发布]</pre>
+
+<p>这让它特别适合几类场景：</p>
+<ul>
+<li><strong>博客写作</strong>：标题、引用、代码块、图片、表格都能直接看到效果。</li>
+<li><strong>课程笔记</strong>：公式、列表、层级结构更容易保持清晰。</li>
+<li><strong>技术文档</strong>：代码高亮、目录、脚注和表格支持比较完整。</li>
+<li><strong>知识管理</strong>：纯文本 Markdown 文件便于同步、备份和跨平台迁移。</li>
+</ul>
+<h2 id="无干扰界面：写作比“折腾编辑器”更重要"><a href="#无干扰界面：写作比“折腾编辑器”更重要" class="headerlink" title="无干扰界面：写作比“折腾编辑器”更重要"></a>无干扰界面：写作比“折腾编辑器”更重要</h2><p>Typora 的界面很克制。打开之后，你看到的基本就是一张干净的纸，没有复杂工具栏，也没有密密麻麻的按钮。</p>
+<p>这种设计对写作者很友好：</p>
+<ul>
+<li>不用在格式按钮里找功能；</li>
+<li>不用反复切换源码和预览；</li>
+<li>不会被侧边栏、插件面板、复杂菜单抢注意力；</li>
+<li>更容易进入连续写作状态。</li>
+</ul>
+<p>在 macOS 上，Typora 也比较像一个原生应用：常用快捷键、系统字体、窗口行为都比较自然。对于习惯 Mac 工作流的人来说，上手成本很低。</p>
+<h2 id="Markdown-能力：轻量，但够完整"><a href="#Markdown-能力：轻量，但够完整" class="headerlink" title="Markdown 能力：轻量，但够完整"></a>Markdown 能力：轻量，但够完整</h2><p>Typora 支持常见 Markdown 写作需求，包括：</p>
+<ul>
+<li>标题、段落、引用块；</li>
+<li>有序列表、无序列表、任务列表；</li>
+<li>加粗、斜体、删除线、行内代码；</li>
+<li>超链接与图片插入；</li>
+<li>表格编辑；</li>
+<li>脚注；</li>
+<li>代码围栏与语法高亮；</li>
+<li>数学公式与基础排版能力。</li>
+</ul>
+<p>相比一些功能堆得很满的笔记软件，Typora 的优势是“轻”。它不会强迫你进入某个封闭数据库，而是直接面对 Markdown 文件本身。文件就是文件，你可以放在 iCloud、Git 仓库、坚果云、Obsidian Vault 或任意同步目录里。</p>
+<h2 id="表格、代码块和脚注：技术写作者会很舒服"><a href="#表格、代码块和脚注：技术写作者会很舒服" class="headerlink" title="表格、代码块和脚注：技术写作者会很舒服"></a>表格、代码块和脚注：技术写作者会很舒服</h2><p>对技术博客来说，代码块体验很关键。Typora 内置了代码块编辑能力，支持常见语言的语法高亮，例如 Java、C++、JavaScript、XML 等。</p>
+<p>示例：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> editor <span class="token operator">=</span> <span class="token string">"Typora"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> reason <span class="token operator">=</span> <span class="token string">"focus on writing, not formatting"</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>editor<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>reason<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>表格也是 Typora 的一个实用点。普通 Markdown 表格手写起来很烦，列宽很容易乱；Typora 会把表格以更接近可视化的方式呈现，适合整理软件对比、参数说明、任务清单。</p>
+<p>脚注则适合写稍微严肃一点的文章：正文保持简洁，补充说明放到脚注里，不破坏阅读节奏。</p>
+<h2 id="主题系统：从白天写作到夜间模式"><a href="#主题系统：从白天写作到夜间模式" class="headerlink" title="主题系统：从白天写作到夜间模式"></a>主题系统：从白天写作到夜间模式</h2><p>长时间写作时，编辑器主题会明显影响体验。Typora 提供了多种主题，例如 Github、Gothic、Newsprint、Night、Whitey 等。</p>
+<p>我的建议是：</p>
+<ul>
+<li>白天写技术文档：优先用 Github / Whitey 这类浅色主题；</li>
+<li>晚上长时间写作：切到 Night，眼睛压力会小一些；</li>
+<li>写偏文学或长文：可以试试 Newsprint，阅读感更强。</li>
+</ul>
+<p>主题不是核心功能，但它会影响你愿不愿意每天打开这个工具。一个编辑器如果看着舒服，本身就是效率的一部分。</p>
+<h2 id="Typora-和其他-Markdown-编辑器的差异"><a href="#Typora-和其他-Markdown-编辑器的差异" class="headerlink" title="Typora 和其他 Markdown 编辑器的差异"></a>Typora 和其他 Markdown 编辑器的差异</h2><p>Typora 最值得强调的不是“它支持 Markdown”，而是它让 Markdown 写作更像正常写作。</p>
+<pre class="mermaid">flowchart TD
+    A[传统 Markdown 编辑器] --&gt; B[源码区]
+    A --&gt; C[预览区]
+    B --&gt; D[注意力在语法和渲染之间切换]
+
+    E[Typora] --&gt; F[所见即所得编辑]
+    F --&gt; G[注意力集中在内容结构]</pre>
+
+<p>如果你喜欢完全控制源码、插件生态、双链笔记，Obsidian 或 VS Code 可能更适合；但如果你的主要目标是“安静地写完一篇文章”，Typora 的体验往往更顺手。</p>
+<h2 id="常见问题：Mac-提示“身份不明的开发者”怎么办？"><a href="#常见问题：Mac-提示“身份不明的开发者”怎么办？" class="headerlink" title="常见问题：Mac 提示“身份不明的开发者”怎么办？"></a>常见问题：Mac 提示“身份不明的开发者”怎么办？</h2><p>安装第三方 Mac 软件时，经常会遇到这些提示：</p>
+<ul>
+<li>“无法打开 xxx，因为它来自身份不明的开发者。”</li>
+<li>“无法打开 xxx，因为无法验证开发者。”</li>
+<li>“Apple 无法检查其是否包含恶意软件。”</li>
+<li>“它不是从 App Store 下载。”</li>
+<li>“未打开 xxx.app，Apple 无法验证其是否包含可能危害 Mac 安全或泄漏隐私的恶意软件。”</li>
+</ul>
+<p>这些提示来自 macOS 的 Gatekeeper 安全机制。它的目的不是单纯阻止你使用软件，而是提醒你：这个应用没有通过 Apple 的完整签名、公证或 App Store 分发流程。</p>
+<h3 id="更推荐的处理方式：右键打开"><a href="#更推荐的处理方式：右键打开" class="headerlink" title="更推荐的处理方式：右键打开"></a>更推荐的处理方式：右键打开</h3><p>如果你确认软件来源可信，可以优先用下面这种方式打开，而不是直接关闭系统安全保护。</p>
+<p><strong>PKG / DMG 安装包：</strong></p>
+<ol>
+<li>找到下载好的 <code>.dmg</code> 或 <code>.pkg</code> 文件；</li>
+<li>鼠标右键点击安装包；</li>
+<li>选择“打开”；</li>
+<li>弹窗中再次点击“打开”。</li>
+</ol>
+<p><strong>APP 应用程序：</strong></p>
+<ol>
+<li>打开“访达”；</li>
+<li>进入“应用程序”文件夹；</li>
+<li>找到对应 <code>.app</code>；</li>
+<li>鼠标右键点击应用图标；</li>
+<li>选择“打开”；</li>
+<li>弹窗中再次点击“打开”。</li>
+</ol>
+<p>这种方式只针对当前应用放行，相对更安全。</p>
+<h3 id="通过系统设置放行"><a href="#通过系统设置放行" class="headerlink" title="通过系统设置放行"></a>通过系统设置放行</h3><p>如果第一次打开时被拦截，也可以从系统安全设置里手动允许。</p>
+<p><strong>macOS 12 及以下：</strong></p>
+<ol>
+<li>打开应用，遇到弹窗后点击“取消”；</li>
+<li>打开“系统偏好设置”；</li>
+<li>进入“安全性与隐私” → “通用”；</li>
+<li>找到“已阻止 xxx”的提示；</li>
+<li>点击“仍要打开”；</li>
+<li>输入 Mac 开机密码确认。</li>
+</ol>
+<p><strong>macOS 13 及以上：</strong></p>
+<ol>
+<li>打开应用，遇到弹窗后点击“取消”；</li>
+<li>打开“系统设置”；</li>
+<li>进入“隐私与安全性”；</li>
+<li>在“安全性”区域找到被阻止的应用提示；</li>
+<li>点击“仍要打开”；</li>
+<li>输入 Mac 开机密码确认。</li>
+</ol>
+<h3 id="不建议长期关闭-Gatekeeper"><a href="#不建议长期关闭-Gatekeeper" class="headerlink" title="不建议长期关闭 Gatekeeper"></a>不建议长期关闭 Gatekeeper</h3><p>网上常见的命令是：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> spctl --master-disable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>它可以让系统显示“任何来源”选项，并降低 Gatekeeper 的拦截强度。但我不建议普通用户长期这样设置，因为这相当于削弱了 macOS 对未知软件的第一层防护。</p>
+<p>如果确实需要临时处理，可以在确认软件安全、完成安装后，再恢复默认保护：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> spctl --master-enable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>更稳妥的原则是：<strong>能右键打开就不要全局关闭安全保护；能用官方渠道就不要下载来源不明的安装包。</strong></p>
+<h2 id="下载与安装建议"><a href="#下载与安装建议" class="headerlink" title="下载与安装建议"></a>下载与安装建议</h2><p>Typora 是商业软件，建议优先从官方渠道下载和购买授权：</p>
+<ul>
+<li>官方网站：<a href="https://typora.io/">https://typora.io/</a></li>
+<li>官方下载页：<a href="https://typora.io/releases/all">https://typora.io/releases/all</a></li>
+</ul>
+<p>如果你从第三方网盘或资源站获取安装包，务必注意三件事：</p>
+<ol>
+<li><strong>确认来源可信</strong>：不要随便运行来源不明的 <code>.dmg</code> 或 <code>.pkg</code>。</li>
+<li><strong>检查文件安全</strong>：安装前可以用杀毒工具或 VirusTotal 做基础扫描。</li>
+<li><strong>尊重软件授权</strong>：长期使用建议购买正版，尤其是写作工具这类高频生产力软件。</li>
+</ol>
+<p>对生产力工具来说，稳定、安全、可持续更新，比“省一次下载成本”更重要。</p>
+<blockquote>
+<p>MacOS免费破解版链接：<a href="https://macxzb.lanzoul.com/iLbSp3ph3ida">https://macxzb.lanzoul.com/iLbSp3ph3ida</a> 密码 i6wt</p>
+</blockquote>
+<h2 id="适合谁使用？"><a href="#适合谁使用？" class="headerlink" title="适合谁使用？"></a>适合谁使用？</h2><p>Typora 特别适合：</p>
+<ul>
+<li>经常写博客的人；</li>
+<li>需要维护 README、技术文档的人；</li>
+<li>喜欢纯文本和 Markdown 文件的人；</li>
+<li>不想被复杂笔记系统绑定的人；</li>
+<li>想要一个“打开就能写”的 Mac 写作工具的人。</li>
+</ul>
+<p>不太适合：</p>
+<ul>
+<li>需要多人协作批注的人；</li>
+<li>强依赖双链知识图谱的人；</li>
+<li>需要大量插件和自动化工作流的人；</li>
+<li>喜欢完全免费开源工具的人。</li>
+</ul>
+<h2 id="结语：好编辑器应该让你忘记编辑器本身"><a href="#结语：好编辑器应该让你忘记编辑器本身" class="headerlink" title="结语：好编辑器应该让你忘记编辑器本身"></a>结语：好编辑器应该让你忘记编辑器本身</h2><p>Typora 的优点很明确：界面干净、写作流畅、Markdown 支持完整、macOS 融合度不错。它不是功能最庞大的 Markdown 工具，但它非常擅长一件事：让你专注写作。</p>
+<p>如果你正在寻找一款 Mac 上的 Markdown 编辑器，用来写博客、写技术文档、整理学习笔记，Typora 值得放进候选列表。</p>
+<p>真正好的写作工具，不是让你每天研究它，而是让你更快进入内容本身。</p>
+]]></content>
+      <categories>
+        <category>效率工具</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>工具</tag>
+        <tag>Markdown</tag>
+        <tag>写作</tag>
       </tags>
   </entry>
   <entry>
@@ -20311,202 +20510,254 @@ FNR = \frac{FN}{TP + FN}
       </tags>
   </entry>
   <entry>
-    <title>CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</title>
-    <url>/posts/cs336-llm-from-scratch-knowledge-map.html</url>
-    <content><![CDATA[<h1 id="CS336-语言模型从零构建知识地图：一张图拆开-Stanford-LLM-训练课"><a href="#CS336-语言模型从零构建知识地图：一张图拆开-Stanford-LLM-训练课" class="headerlink" title="CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课"></a>CS336 语言模型从零构建知识地图：一张图拆开 Stanford LLM 训练课</h1><p>Stanford CS336《Language Modeling from Scratch》不是那种“讲一堆 Transformer 概念就结束”的课。</p>
-<p>它真正有价值的地方在于：它把一个语言模型从零做出来所需的几条主线放到了一起——<strong>模型结构、训练系统、算力效率、数据工程、Scaling Laws、评测、推理和对齐</strong>。如果你不是只想调用 API，而是想理解大模型为什么这样训练、哪里贵、哪里难、哪里容易踩坑，这门课很适合当作路线图。</p>
-<p>但课程原网页是按日期排的。对自学者来说，按时间顺序看不一定最友好：你很容易今天看 tokenizer，明天跳到 GPU，再过几天突然 scaling law，脑子里缺少一张总图。</p>
-<p>所以这篇文章不做逐课翻译，而是把 CS336 拆成一张中文知识地图：每一块告诉你<strong>学什么、为什么重要、对应哪几节课、该做哪份作业</strong>。等你有时间，就可以按模块点进去看。</p>
-<blockquote>
-<p>课程主页：<a href="https://cs336.stanford.edu/">CS336: Language Modeling from Scratch, Spring 2026</a></p>
-</blockquote>
-<h2 id="先看总图：从一个-Token-到一个可用模型"><a href="#先看总图：从一个-Token-到一个可用模型" class="headerlink" title="先看总图：从一个 Token 到一个可用模型"></a>先看总图：从一个 Token 到一个可用模型</h2><pre class="mermaid">flowchart TD
-    A[文本进入模型] --&gt; B[Tokenization 与基础训练代码]
-    B --&gt; C[Transformer 架构与超参数]
-    C --&gt; D[GPU / Kernel / Triton]
-    D --&gt; E[并行训练系统]
-    E --&gt; F[Scaling Laws 与训练预算]
-    F --&gt; G[数据工程与数据质量]
-    G --&gt; H[评测与推理]
-    H --&gt; I[SFT / RLHF / RLVR 对齐]
-    I --&gt; J[可用、可评估、可迭代的语言模型]</pre>
+    <title>蚂蚁 AI Coding 笔试经验：3道题与通用 AI Harness Prompt</title>
+    <url>/posts/ant-ai-coding-interview-guide.html</url>
+    <content><![CDATA[<p><img src="https://img2024.cnblogs.com/blog/2910984/202608/2910984-20260820162645301-2002010257.jpg" style="zoom:33%;" alt="蚂蚁 AI Coding 笔试指南封面图"></p>
+<h1 id="蚂蚁-AI-Coding-笔试经验：3道题与通用-AI-Harness-Prompt"><a href="#蚂蚁-AI-Coding-笔试经验：3道题与通用-AI-Harness-Prompt" class="headerlink" title="蚂蚁 AI Coding 笔试经验：3道题与通用 AI Harness Prompt"></a>蚂蚁 AI Coding 笔试经验：3道题与通用 AI Harness Prompt</h1><p>蚂蚁近年的 AI Coding 笔试，和传统的“在编辑器里完成几道算法题”不太一样。候选人通常会进入一个云端 IDE，项目目录中提供 <code>README.md</code>，再通过与 AI 对话完成需求分析、架构设计、编码、调试、测试和文档整理。</p>
+<p>这类考试表面上考的是“能不能把项目做出来”，实际还会考察三件事：</p>
+<ul>
+<li>能不能从 README 中提取真正的验收标准；</li>
+<li>能不能把 AI 当作工程协作者，而不是一次性代码生成器；</li>
+<li>能不能在有限时间内交付一个可运行、可验证、能解释的最小系统。</li>
+</ul>
+<p>本文根据公开复盘文章、候选人分享和题面截图整理 3 类代表性题目。<strong>这些题目不应被当作蚂蚁官方固定题库或下一场考试的原题</strong>；它们更适合作为备考时的高仿训练样本。公开题面来源可参考：<a href="https://onefly.top/zero2Leetcode/04_real_interviews/ant/">产品阿莫：有意思，聊聊蚂蚁的 AI coding、附练习题</a>。</p>
+<h2 id="一、先理解考试：README-才是第一道题"><a href="#一、先理解考试：README-才是第一道题" class="headerlink" title="一、先理解考试：README 才是第一道题"></a>一、先理解考试：README 才是第一道题</h2><p>公开复盘中出现的考试流程大致是：</p>
+<ol>
+<li>进入云端 IDE，读取项目目录中的 <code>README.md</code>；</li>
+<li>README 给出业务背景、功能要求、技术限制、测试标准、交付物和加分项；</li>
+<li>候选人与 AI 对话，完成需求分析、架构设计、编码、调试和测试；</li>
+<li>系统通过测试用例或 Judger 检查核心功能；</li>
+<li>后续面试可能继续追问：哪些设计是你决定的、AI 帮了什么、为什么采用这套架构，以及项目还有哪些已知问题。</li>
+</ol>
+<p>因此，第一轮对话不要直接说“帮我把项目做完”。更稳妥的做法是先让 AI 把 README 转成一份可验收清单：</p>
+<ul>
+<li>必做功能有哪些？</li>
+<li>每个功能的输入、输出和错误行为是什么？</li>
+<li>哪些约束不能违反？</li>
+<li>测试可能从哪些边界进入？</li>
+<li>最终必须提交哪些文件？</li>
+<li>哪些内容只是加分项，不能挤占核心功能时间？</li>
+</ul>
+<h2 id="二、题目一：网页数据清洗管线"><a href="#二、题目一：网页数据清洗管线" class="headerlink" title="二、题目一：网页数据清洗管线"></a>二、题目一：网页数据清洗管线</h2><h3 id="题面概述"><a href="#题面概述" class="headerlink" title="题面概述"></a>题面概述</h3><p>题目要求在一批脏、乱、结构不统一的网页数据中，构建可批处理、可观测、可扩展的数据提取与清洗 Pipeline。</p>
+<p>公开题面截图中给出的数据规模约为 <strong>4,000 个 HTML 文件</strong>，目录名为 <code>html_samples/</code>。数据具有以下特点：</p>
+<ul>
+<li>HTML 结构存在多个版本；</li>
+<li>编码不统一；</li>
+<li>页面中包含较多脏数据；</li>
+<li>字段可能缺失，或格式不规范。</li>
+</ul>
+<p>必做目标通常包括：批量提取商品名、价格、币种、库存等字段；统计成功和失败数量；保证批处理性能；输出清洗结果文件和运行统计摘要。</p>
+<h3 id="推荐解法"><a href="#推荐解法" class="headerlink" title="推荐解法"></a>推荐解法</h3><p>不要为每种 HTML 结构写一个巨大而脆弱的 <code>if-else</code>。可以拆成四层：</p>
+<ol>
+<li><strong>文件发现层</strong>：递归扫描输入目录，过滤扩展名，稳定排序；</li>
+<li><strong>解析层</strong>：统一读取编码，使用 HTML 解析器定位候选节点；</li>
+<li><strong>归一化层</strong>：清洗空白、价格符号、货币别名、库存文本；</li>
+<li><strong>结果层</strong>：输出结构化结果、失败原因和汇总统计。</li>
+</ol>
+<p>建议每个文件都形成一条可追踪记录，而不是失败后直接丢弃：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"source_file"</span><span class="token operator">:</span> <span class="token string">"html_samples/001.html"</span><span class="token punctuation">,</span>
+  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"success"</span><span class="token punctuation">,</span>
+  <span class="token property">"product_name"</span><span class="token operator">:</span> <span class="token string">"Example Phone"</span><span class="token punctuation">,</span>
+  <span class="token property">"price"</span><span class="token operator">:</span> <span class="token number">2999.0</span><span class="token punctuation">,</span>
+  <span class="token property">"currency"</span><span class="token operator">:</span> <span class="token string">"CNY"</span><span class="token punctuation">,</span>
+  <span class="token property">"stock"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+  <span class="token property">"errors"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>失败记录也要保留原文件名和原因，例如 <code>encoding_error</code>、<code>missing_price</code>、<code>invalid_stock</code> 或 <code>parse_error</code>。这样既方便验收，也方便后续定位样本问题。</p>
+<h3 id="边界与性能"><a href="#边界与性能" class="headerlink" title="边界与性能"></a>边界与性能</h3><ul>
+<li>空 HTML、截断 HTML、非法编码不能让整个程序退出；</li>
+<li>价格中可能有货币符号、千分位、空格或中文单位；</li>
+<li>库存可能是数字，也可能是“有货”“缺货”“暂时售罄”；</li>
+<li>结果输出要避免把异常对象直接序列化；</li>
+<li>4,000 个文件不一定需要复杂分布式方案，先保证单机批处理稳定，再考虑线程池或进程池；</li>
+<li>不要为了追求并发而牺牲确定性、错误统计和可复现性。</li>
+</ul>
+<h3 id="这道题考什么"><a href="#这道题考什么" class="headerlink" title="这道题考什么"></a>这道题考什么</h3><p>这道题不只是考 HTML 选择器。它重点考察：<strong>脏数据处理、数据模型设计、错误隔离、批处理可观测性和工程取舍</strong>。</p>
+<h2 id="三、题目二：LLM-批量推理控制台"><a href="#三、题目二：LLM-批量推理控制台" class="headerlink" title="三、题目二：LLM 批量推理控制台"></a>三、题目二：LLM 批量推理控制台</h2><h3 id="题面概述-1"><a href="#题面概述-1" class="headerlink" title="题面概述"></a>题面概述</h3><p>公开题面截图中的项目名称是“LLM 批量推理控制台”。目标是实现一个基于 TUI 的批量推理工具，让用户在终端中配置推理参数、执行批量任务，并实时查看任务进度。</p>
+<p>典型要求包括：</p>
+<ul>
+<li>读取 CSV 文件作为推理输入；</li>
+<li>在 TUI 中配置 Prompt 模板；</li>
+<li>使用 <code>{列名}</code> 引用 CSV 列；</li>
+<li>配置 API 地址、认证信息和模型名称；</li>
+<li>对每一行数据完成模板替换并调用 LLM API；</li>
+<li>支持 OpenAI 兼容的 Chat Completions 接口；</li>
+<li>在考试环境无法联网时，允许对推理接口进行 Mock。</li>
+</ul>
+<h3 id="推荐解法：先把外部推理接口抽象掉"><a href="#推荐解法：先把外部推理接口抽象掉" class="headerlink" title="推荐解法：先把外部推理接口抽象掉"></a>推荐解法：先把外部推理接口抽象掉</h3><p>最重要的设计不是先画 TUI，而是把“任务控制”和“模型调用”分离：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">CSV 输入
+  -&gt; 模板渲染
+  -&gt; 推理任务队列
+  -&gt; ModelClient 接口
+       ├── MockModelClient
+       └── OpenAICompatibleClient
+  -&gt; 结果持久化
+  -&gt; TUI 状态展示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>ModelClient</code> 至少应该统一成功、失败、超时和重试后的返回结构。这样测试时可以使用 Mock，不依赖外网，也不会把 API Key 写进代码或日志。</p>
+<h3 id="关键实现点"><a href="#关键实现点" class="headerlink" title="关键实现点"></a>关键实现点</h3><ul>
+<li>模板中的列名不存在时，应给出明确错误，不要静默替换为空字符串；</li>
+<li>CSV 的空值、引号、换行和不同编码需要处理；</li>
+<li>单条请求失败不能让整个批次崩溃；</li>
+<li>需要区分任务总数、已完成数、成功数、失败数和重试数；</li>
+<li>对网络请求设置超时，避免 TUI 看起来“卡死”；</li>
+<li>结果应持续写入文件或可恢复存储，避免进程退出后全部丢失；</li>
+<li>Mock 模式应能模拟成功、失败、延迟和限流等场景。</li>
+</ul>
+<h3 id="TUI-不应先做得过重"><a href="#TUI-不应先做得过重" class="headerlink" title="TUI 不应先做得过重"></a>TUI 不应先做得过重</h3><p>两小时考试中，TUI 的重点是“可操作和可观察”，不是做出完整商业产品。优先实现：</p>
+<ol>
+<li>输入文件和 Prompt 配置；</li>
+<li>API/Mock 模式选择；</li>
+<li>开始、暂停或取消任务；</li>
+<li>进度、成功数、失败数和最近错误展示；</li>
+<li>结果文件路径提示。</li>
+</ol>
+<p>复杂的主题、动画和大量快捷键属于低优先级功能。核心逻辑应先能通过命令行或单元测试独立验证。</p>
+<h3 id="这道题考什么-1"><a href="#这道题考什么-1" class="headerlink" title="这道题考什么"></a>这道题考什么</h3><p>这道题综合考察：<strong>接口抽象、异步或并发任务管理、可靠性设计、可测试性和交互状态建模</strong>。如果只让 AI 生成一个“能调用 API 的脚本”，通常会漏掉 Mock、超时、错误隔离和结果恢复。</p>
+<h2 id="四、题目三：征信对账系统账单解析引擎"><a href="#四、题目三：征信对账系统账单解析引擎" class="headerlink" title="四、题目三：征信对账系统账单解析引擎"></a>四、题目三：征信对账系统账单解析引擎</h2><h3 id="题面概述-2"><a href="#题面概述-2" class="headerlink" title="题面概述"></a>题面概述</h3><p>公开题面截图中的题目是“征信对账系统——账单解析引擎”。业务背景是：多家合作机构定期以 Excel 文件发送账单，账单格式并不统一。候选人需要从不同机构、不同产品的账单中提取计费信息，并输出结构化 JSON。</p>
+<p>题面强调的复杂点包括：</p>
+<ul>
+<li>数据源来自多家合作机构，格式不统一；</li>
+<li>一个文件可能包含多个 Sheet；</li>
+<li>Sheet 中可能包含汇总行、小计行和备注；</li>
+<li>同一机构可能出现简称或全称；</li>
+<li>部分字段缺失或格式不规范。</li>
+</ul>
+<h3 id="推荐解法：规范化，而不是为文件写死脚本"><a href="#推荐解法：规范化，而不是为文件写死脚本" class="headerlink" title="推荐解法：规范化，而不是为文件写死脚本"></a>推荐解法：规范化，而不是为文件写死脚本</h3><p>可以设计一个“读取—识别—过滤—映射—校验—输出”的流水线：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Excel 文件
+  -&gt; 读取所有 Sheet
+  -&gt; 识别表头与明细区域
+  -&gt; 过滤汇总/小计/备注行
+  -&gt; 机构名与产品名归一化
+  -&gt; 金额、日期、数量字段规范化
+  -&gt; 必填字段校验
+  -&gt; 结构化 JSON + 错误报告<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>建议先定义统一的内部数据模型，例如：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"institution"</span><span class="token operator">:</span> <span class="token string">"机构标准名"</span><span class="token punctuation">,</span>
+  <span class="token property">"product"</span><span class="token operator">:</span> <span class="token string">"产品标准名"</span><span class="token punctuation">,</span>
+  <span class="token property">"billing_date"</span><span class="token operator">:</span> <span class="token string">"2026-08-01"</span><span class="token punctuation">,</span>
+  <span class="token property">"quantity"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  <span class="token property">"unit_price"</span><span class="token operator">:</span> <span class="token number">2.5</span><span class="token punctuation">,</span>
+  <span class="token property">"amount"</span><span class="token operator">:</span> <span class="token number">250.0</span><span class="token punctuation">,</span>
+  <span class="token property">"source_file"</span><span class="token operator">:</span> <span class="token string">"bill.xlsx"</span><span class="token punctuation">,</span>
+  <span class="token property">"source_sheet"</span><span class="token operator">:</span> <span class="token string">"Sheet1"</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>机构简称、全称和常见别名可以放在配置中，不要散落在代码分支里。字段映射也应尽量配置化，例如把“产品名称”“产品名”“商品”映射为统一字段 <code>product</code>。</p>
+<h3 id="重点边界"><a href="#重点边界" class="headerlink" title="重点边界"></a>重点边界</h3><ul>
+<li>多 Sheet 文件不能只读取第一个 Sheet；</li>
+<li>表头可能不在第一行；</li>
+<li>汇总行和明细行不能重复计入金额；</li>
+<li>金额字段可能包含逗号、货币符号或空字符串；</li>
+<li>数量可能是整数、小数或带单位文本；</li>
+<li>缺少关键字段时，应记录错误并继续处理其他行；</li>
+<li>输出 JSON 时要保证数值类型稳定，不能把所有内容都当字符串。</li>
+</ul>
+<h3 id="这道题考什么-2"><a href="#这道题考什么-2" class="headerlink" title="这道题考什么"></a>这道题考什么</h3><p>这道题考察：<strong>半结构化数据解析、规则配置、字段归一化、数据校验和可追溯性</strong>。它与网页清洗题的共同点是：输入格式不可靠，但输出必须稳定、可解释、可复核。</p>
+<h2 id="五、三道题背后的共同解题框架"><a href="#五、三道题背后的共同解题框架" class="headerlink" title="五、三道题背后的共同解题框架"></a>五、三道题背后的共同解题框架</h2><p>虽然三道题分别处理 HTML、CSV/API 和 Excel，但可以使用同一套工程思路：</p>
+<h3 id="1-先建立统一的数据模型"><a href="#1-先建立统一的数据模型" class="headerlink" title="1. 先建立统一的数据模型"></a>1. 先建立统一的数据模型</h3><p>先写清楚每条记录最终长什么样，再决定如何从输入中提取。没有数据模型时，AI 很容易围绕输入格式堆叠临时字段，最后输出不一致。</p>
+<h3 id="2-把输入、核心逻辑和输出分层"><a href="#2-把输入、核心逻辑和输出分层" class="headerlink" title="2. 把输入、核心逻辑和输出分层"></a>2. 把输入、核心逻辑和输出分层</h3><p>推荐至少拆成：</p>
+<ul>
+<li><code>reader</code>：读取文件或请求；</li>
+<li><code>parser</code>：解析原始结构；</li>
+<li><code>normalizer</code>：字段归一化；</li>
+<li><code>validator</code>：校验必填字段和类型；</li>
+<li><code>writer</code>：写结果和报告；</li>
+<li><code>cli/ui</code>：命令行或 TUI 交互。</li>
+</ul>
+<h3 id="3-错误隔离优先于“全部成功”"><a href="#3-错误隔离优先于“全部成功”" class="headerlink" title="3. 错误隔离优先于“全部成功”"></a>3. 错误隔离优先于“全部成功”</h3><p>批处理项目最忌讳一个坏样本让整个程序退出。每条记录都应有明确状态：成功、跳过、失败或重试中，并带有稳定的错误码或错误原因。</p>
+<h3 id="4-先完成必做项，再做加分项"><a href="#4-先完成必做项，再做加分项" class="headerlink" title="4. 先完成必做项，再做加分项"></a>4. 先完成必做项，再做加分项</h3><p>两小时可以按这个节奏安排：</p>
+<ul>
+<li>前 15–20 分钟：读 README、确认输入输出、设计数据模型；</li>
+<li>中间 70–80 分钟：完成主链路、异常处理和最小测试；</li>
+<li>最后至少 15 分钟：对照 README 验收、补运行说明、测试报告和已知问题。</li>
+</ul>
+<h3 id="5-测试自己补充的样例"><a href="#5-测试自己补充的样例" class="headerlink" title="5. 测试自己补充的样例"></a>5. 测试自己补充的样例</h3><p>不要只运行项目自带的样例。至少补充：</p>
+<ul>
+<li>正常数据；</li>
+<li>空输入；</li>
+<li>缺字段；</li>
+<li>类型错误；</li>
+<li>多种格式混合；</li>
+<li>单条失败但其他记录应继续运行；</li>
+<li>外部 API 不可用或超时。</li>
+</ul>
+<h2 id="六、候选人通用-AI-Harness-Prompt"><a href="#六、候选人通用-AI-Harness-Prompt" class="headerlink" title="六、候选人通用 AI Harness Prompt"></a>六、候选人通用 AI Harness Prompt</h2><p>下面这份 Prompt 不是让 AI 一次性生成全部代码，而是给候选人建立一个稳定的协作流程。使用时，把它放在第一次完整阅读 README 之后，再根据项目情况补充约束。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">你是我的 AI Coding 工程协作者。当前任务是在考试提供的项目目录中，根据 README.md 完成一个可运行、可测试、可交付的工程项目。
 
-<p>这张图可以理解为 CS336 的学习顺序：</p>
-<ul>
-<li><strong>先能跑起来</strong>：tokenizer、PyTorch、Transformer、训练循环。</li>
-<li><strong>再让它跑得动</strong>：GPU、kernel、Triton、并行训练。</li>
-<li><strong>然后知道该训练多大</strong>：Scaling Laws、资源预算、训练曲线。</li>
-<li><strong>接着处理真实世界问题</strong>：数据质量、评测体系、推理成本。</li>
-<li><strong>最后让模型更像产品</strong>：SFT、RLHF、RLVR、对齐与反馈学习。</li>
-</ul>
-<p>如果只想快速建立框架，先看总图和每块的“学习目标”；如果想动手，优先做 5 个 assignment。</p>
-<h2 id="模块一：从文本到训练样本"><a href="#模块一：从文本到训练样本" class="headerlink" title="模块一：从文本到训练样本"></a>模块一：从文本到训练样本</h2><p>这一块解决最基础、也最容易被低估的问题：<strong>模型到底吃进去的是什么？</strong></p>
-<p>很多人学语言模型时会直接从 Transformer 开始，但实际训练里，tokenization 会影响词表、序列长度、训练效率、长尾字符处理，甚至影响多语言能力。CS336 第一节课把入口放在 tokenization，是很合理的。</p>
-<h3 id="你要建立的概念"><a href="#你要建立的概念" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
-<li>原始文本不会直接进入模型，而是先被切成 token。</li>
-<li>tokenizer 不是纯工程细节，它会改变训练分布和上下文利用率。</li>
-<li>从零训练模型时，数据清洗、编码方式、batch 构造都属于基础设施。</li>
-</ul>
-<h3 id="对应资料"><a href="#对应资料" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
-<li>Lecture 1：Overview, tokenization<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_01">lecture_01.py</a></li>
-</ul>
-<h3 id="对应作业"><a href="#对应作业" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
-<li>Assignment 1 Basics：从基础组件开始搭建语言模型训练流程<br><a href="https://github.com/stanford-cs336/assignment1-basics/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_assignment1_basics.pdf">作业 PDF</a></li>
-</ul>
-<p>这一份作业最适合当“入门门槛”：如果你能把它认真做完，后面的系统优化、扩展规律、对齐训练才不只是听概念。</p>
-<h2 id="模块二：Transformer-架构与训练基本功"><a href="#模块二：Transformer-架构与训练基本功" class="headerlink" title="模块二：Transformer 架构与训练基本功"></a>模块二：Transformer 架构与训练基本功</h2><p>有了 token 和数据流，下一步才是模型本体。</p>
-<p>这里的重点不是背诵“Attention is All You Need”，而是理解训练一个语言模型时，架构选择和超参数会怎样影响容量、稳定性和成本。比如层数、宽度、attention 形式、MoE、学习率、batch size、上下文长度，都会在训练预算里互相牵制。</p>
-<h3 id="你要建立的概念-1"><a href="#你要建立的概念-1" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
-<li>Transformer 是语言模型的核心计算图，但不是唯一决策点。</li>
-<li>超参数不是“调参玄学”，而是和算力预算、数据规模、模型大小绑定。</li>
-<li>MoE 的价值不只是“参数更多”，而是用稀疏激活改变计算和容量的关系。</li>
-</ul>
-<h3 id="对应资料-1"><a href="#对应资料-1" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
-<li>Lecture 2：PyTorch, resource accounting<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_02">lecture_02.py</a></li>
-<li>Lecture 3：Architectures, hyperparameters<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_03.pdf">lecture 3.pdf</a></li>
-<li>Lecture 4：Attention alternatives and Mixture of Experts<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_04.pdf">lecture 4.pdf</a></li>
-</ul>
-<h3 id="推荐学习方式"><a href="#推荐学习方式" class="headerlink" title="推荐学习方式"></a>推荐学习方式</h3><p>先看 Lecture 2，把 PyTorch 和资源记账补起来；再看 Lecture 3 理解标准 Transformer 训练；最后看 Lecture 4 的 MoE。这样顺序更自然：<strong>先密集模型，再理解为什么需要稀疏模型</strong>。</p>
-<h2 id="模块三：GPU、Kernel-与训练系统"><a href="#模块三：GPU、Kernel-与训练系统" class="headerlink" title="模块三：GPU、Kernel 与训练系统"></a>模块三：GPU、Kernel 与训练系统</h2><p>这是 CS336 和很多普通 LLM 课程最大的差别之一：它不把“系统”当作附录。</p>
-<p>真实的大模型训练不是“写个 PyTorch 脚本然后等它跑完”。瓶颈经常来自显存、带宽、通信、kernel launch、并行策略，而不是模型公式本身。你如果只懂 Transformer 不懂系统，就很难判断训练为什么慢、为什么爆显存、为什么扩 GPU 后效率反而下降。</p>
-<h3 id="你要建立的概念-2"><a href="#你要建立的概念-2" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
-<li>GPU 不是“更快的 CPU”，它有自己的内存层级和并行计算模型。</li>
-<li>Kernel 优化的核心是减少无效访存、提高并行度、降低调度开销。</li>
-<li>Triton 的意义在于让研究者能写接近底层性能的 GPU kernel。</li>
-<li>并行训练不是只有 data parallel，还有 tensor/pipeline/sequence 等维度。</li>
-</ul>
-<h3 id="对应资料-2"><a href="#对应资料-2" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
-<li>Lecture 5：GPUs, TPUs<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_05.pdf">lecture 5.pdf</a></li>
-<li>Lecture 6：Kernels, Triton<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_06">lecture_06.py</a></li>
-<li>Lecture 7：Parallelism basics<br><a href="https://github.com/stanford-cs336/spring2026-lectures/blob/main/nonexecutable/Lecture%207%20-%20Parallelism%20basics.pdf">lecture 7.pdf</a></li>
-<li>Lecture 8：Parallelism<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_08.pdf">lecture_08.py</a></li>
-</ul>
-<h3 id="对应作业-1"><a href="#对应作业-1" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
-<li>Assignment 2 Systems：训练系统与性能优化<br><a href="https://github.com/stanford-cs336/assignment2-systems/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf">作业 PDF</a></li>
-</ul>
-<p>如果你想走 LLM Infra、训练框架、推理引擎、GPU kernel 方向，这一块值得反复啃。它比“会调 API”难得多，但也更有护城河。</p>
-<h2 id="模块四：Scaling-Laws-与训练预算"><a href="#模块四：Scaling-Laws-与训练预算" class="headerlink" title="模块四：Scaling Laws 与训练预算"></a>模块四：Scaling Laws 与训练预算</h2><p>模型做大以后，最重要的问题会变成：<strong>我到底该训练多大的模型、用多少数据、花多少算力？</strong></p>
-<p>Scaling Laws 的价值就在这里。它不是为了画漂亮曲线，而是为了让训练决策从拍脑袋变成可估算：在固定预算下，模型参数、数据 token、训练步数应该如何分配？什么时候继续加数据更划算？什么时候加参数更划算？什么时候只是浪费 GPU？</p>
-<h3 id="你要建立的概念-3"><a href="#你要建立的概念-3" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
-<li>loss 会随模型规模、数据规模、计算量呈现可预测趋势。</li>
-<li>训练预算不是单独看参数量，而是看 compute、data、model 的组合。</li>
-<li>小规模实验可以用于预测大规模训练，但前提是实验设计靠谱。</li>
-<li>Scaling law 是工程决策工具，不只是论文里的经验公式。</li>
-</ul>
-<h3 id="对应资料-3"><a href="#对应资料-3" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
-<li>Lecture 9：Scaling laws basics<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_09.pdf">lecture 9.pdf</a></li>
-<li>Lecture 10：Inference<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_10">lecture_10.py</a></li>
-<li>Lecture 11：Scaling details<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_11.pdf">lecture 11.pdf</a></li>
-</ul>
-<h3 id="对应作业-2"><a href="#对应作业-2" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
-<li>Assignment 3 Scaling：用实验理解 scaling 规律<br><a href="https://github.com/stanford-cs336/assignment3-scaling/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment3-scaling/blob/main/cs336_assignment3_scaling.pdf">作业 PDF</a></li>
-</ul>
-<p>这一块建议和推理一起看，因为训练成本和推理成本最后都会回到同一个问题：<strong>模型能力不是免费的，系统账必须算清楚。</strong></p>
-<h2 id="模块五：评测、数据与模型质量"><a href="#模块五：评测、数据与模型质量" class="headerlink" title="模块五：评测、数据与模型质量"></a>模块五：评测、数据与模型质量</h2><p>当模型可以训练、可以扩展之后，下一个问题是：<strong>它真的变好了吗？</strong></p>
-<p>这也是很多项目最容易翻车的地方。训练 loss 降了，不代表用户体验变好；benchmark 涨了，不代表真实任务可用；数据更多，也不代表质量更高。CS336 把 Evaluation 和 Data 放在 scaling 之后，非常符合真实研发节奏：当你开始认真扩模型时，数据和评测会变成最关键的杠杆。</p>
-<h3 id="你要建立的概念-4"><a href="#你要建立的概念-4" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
-<li>评测不是最后打分，而是训练过程中的反馈系统。</li>
-<li>数据质量、去重、过滤、混合比例，会直接影响模型能力边界。</li>
-<li>好的 benchmark 应该和目标能力相关，否则容易优化错方向。</li>
-<li>数据工程是 LLM 能力的一部分，不是“脏活外包”。</li>
-</ul>
-<h3 id="对应资料-4"><a href="#对应资料-4" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
-<li>Lecture 12：Evaluation<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_12">lecture_12.py</a></li>
-<li>Lecture 13：Data<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_13">lecture_13.py</a></li>
-<li>Lecture 14：Data<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_14">lecture_14.py</a></li>
-</ul>
-<h3 id="对应作业-3"><a href="#对应作业-3" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
-<li>Assignment 4 Data：数据处理、过滤与质量评估<br><a href="https://github.com/stanford-cs336/assignment4-data/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment4-data/blob/main/cs336_assignment4_data.pdf">作业 PDF</a></li>
-</ul>
-<p>如果你未来想做 Agent、RAG、垂直模型或企业 AI，这一块尤其重要。很多时候，模型效果差不是因为“模型不够大”，而是数据和评测闭环没有搭起来。</p>
-<h2 id="模块六：SFT、RLHF-与-RLVR-对齐"><a href="#模块六：SFT、RLHF-与-RLVR-对齐" class="headerlink" title="模块六：SFT、RLHF 与 RLVR 对齐"></a>模块六：SFT、RLHF 与 RLVR 对齐</h2><p>预训练模型学会的是“预测下一个 token”，但用户想要的是“按我的意图完成任务”。这中间的落差，就是对齐要解决的问题。</p>
-<p>CS336 后半部分进入 SFT、RLHF、RLVR。这里不应该只把它理解成“让模型更听话”，更准确地说，它是在构建一个反馈系统：用示范数据、偏好信号、奖励模型或可验证奖励，把基础模型推向更适合任务和产品的行为分布。</p>
-<h3 id="你要建立的概念-5"><a href="#你要建立的概念-5" class="headerlink" title="你要建立的概念"></a>你要建立的概念</h3><ul>
-<li>SFT 让模型模仿高质量示范，是从预训练到可用助手的第一步。</li>
-<li>RLHF 用人类偏好构造优化目标，但会引入奖励建模和稳定性问题。</li>
-<li>RLVR 更强调可验证奖励，在数学、代码、推理任务里尤其重要。</li>
-<li>对齐不是魔法，它仍然受数据、评测、训练稳定性和系统成本约束。</li>
-</ul>
-<h3 id="对应资料-5"><a href="#对应资料-5" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
-<li>Lecture 15：Mid/post-training - SFT/RLHF<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_15.pdf">lecture 15.pdf</a></li>
-<li>Lecture 16：Alignment - RL / RLVR<br><a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_16.pdf">lecture 16.pdf</a></li>
-<li>Lecture 17：Alignment - multimodality<br><a href="https://cs336.stanford.edu/lectures/?trace=lecture_17">lecture_17.py</a></li>
-</ul>
-<h3 id="对应作业-4"><a href="#对应作业-4" class="headerlink" title="对应作业"></a>对应作业</h3><ul>
-<li>Assignment 5 Alignment：对齐训练实践<br><a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main/blob/main/cs336_spring2026_assignment5_alignment.pdf">作业 PDF</a></li>
-</ul>
-<p>对齐部分建议放在最后学。因为如果前面的训练系统、数据、评测没建立起来，RLHF 很容易被误解成一套孤立算法，而不是完整模型工程链条里的最后几步。</p>
-<h2 id="模块七：前沿讲座与行业视角"><a href="#模块七：前沿讲座与行业视角" class="headerlink" title="模块七：前沿讲座与行业视角"></a>模块七：前沿讲座与行业视角</h2><p>CS336 后面还有两场 guest lecture，适合作为扩展阅读。它们不一定是“基础必修”，但适合用来连接工业界的真实问题。</p>
-<h3 id="对应资料-6"><a href="#对应资料-6" class="headerlink" title="对应资料"></a>对应资料</h3><ul>
-<li>Guest Lecture：Daniel Selsam</li>
-<li>Guest Lecture：Dan Fu</li>
-</ul>
-<p>这类讲座最适合在你完成前六个模块后再看：前面建立底层地图，后面再看行业专家怎么取舍，收获会更大。</p>
-<h2 id="如果只想自学，推荐三条路径"><a href="#如果只想自学，推荐三条路径" class="headerlink" title="如果只想自学，推荐三条路径"></a>如果只想自学，推荐三条路径</h2><p>不同目标的人不必按同一条路线学。可以按自己的方向选择重点。</p>
-<h3 id="路径-A：想理解-LLM-从零训练"><a href="#路径-A：想理解-LLM-从零训练" class="headerlink" title="路径 A：想理解 LLM 从零训练"></a>路径 A：想理解 LLM 从零训练</h3><p>推荐顺序：</p>
-<ol>
-<li>Lecture 1：Tokenization</li>
-<li>Lecture 2：PyTorch 与资源记账</li>
-<li>Lecture 3：架构与超参数</li>
-<li>Assignment 1 Basics</li>
-<li>Lecture 12-14：Evaluation 与 Data</li>
-</ol>
-<p>这条路适合想补齐基础的人。目标不是马上训练大模型，而是理解一个语言模型训练项目有哪些必要组件。</p>
-<h3 id="路径-B：想走-LLM-Infra-Systems"><a href="#路径-B：想走-LLM-Infra-Systems" class="headerlink" title="路径 B：想走 LLM Infra / Systems"></a>路径 B：想走 LLM Infra / Systems</h3><p>推荐顺序：</p>
-<ol>
-<li>Lecture 5：GPUs</li>
-<li>Lecture 6：Kernels, Triton</li>
-<li>Lecture 7-8：Parallelism</li>
-<li>Assignment 2 Systems</li>
-<li>Lecture 10：Inference</li>
-</ol>
-<p>这条路更偏工程和性能优化。它不会像做 prompt 那样立刻有“可见成果”，但长期价值很高。</p>
-<h3 id="路径-C：想做模型训练策略与对齐"><a href="#路径-C：想做模型训练策略与对齐" class="headerlink" title="路径 C：想做模型训练策略与对齐"></a>路径 C：想做模型训练策略与对齐</h3><p>推荐顺序：</p>
-<ol>
-<li>Lecture 9 / 11：Scaling Laws</li>
-<li>Assignment 3 Scaling</li>
-<li>Lecture 12-14：Evaluation 与 Data</li>
-<li>Lecture 15-17：SFT、RLHF、RLVR</li>
-<li>Assignment 5 Alignment</li>
-</ol>
-<p>这条路适合对 post-training、推理模型、奖励建模、评测体系感兴趣的人。</p>
-<h2 id="五份作业入口汇总"><a href="#五份作业入口汇总" class="headerlink" title="五份作业入口汇总"></a>五份作业入口汇总</h2><p>如果只能收藏一部分，我建议优先收藏作业。课件让你理解，作业逼你真的动手。</p>
-<ul>
-<li>Assignment 1 Basics：<br><a href="https://github.com/stanford-cs336/assignment1-basics/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_assignment1_basics.pdf">作业 PDF</a></li>
-<li>Assignment 2 Systems：<br><a href="https://github.com/stanford-cs336/assignment2-systems/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf">作业 PDF</a></li>
-<li>Assignment 3 Scaling：<br><a href="https://github.com/stanford-cs336/assignment3-scaling/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment3-scaling/blob/main/cs336_assignment3_scaling.pdf">作业 PDF</a></li>
-<li>Assignment 4 Data：<br><a href="https://github.com/stanford-cs336/assignment4-data/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment4-data/blob/main/cs336_assignment4_data.pdf">作业 PDF</a></li>
-<li>Assignment 5 Alignment：<br><a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main">代码仓库</a> / <a href="https://github.com/stanford-cs336/assignment5-alignment/tree/main/blob/main/cs336_spring2026_assignment5_alignment.pdf">作业 PDF</a></li>
-</ul>
-<h2 id="最后：这门课最值得学的不是“知识点”，而是工程视角"><a href="#最后：这门课最值得学的不是“知识点”，而是工程视角" class="headerlink" title="最后：这门课最值得学的不是“知识点”，而是工程视角"></a>最后：这门课最值得学的不是“知识点”，而是工程视角</h2><p>CS336 最好的地方，不是它覆盖了多少新概念，而是它把语言模型放回了真实工程链条里：</p>
-<pre class="mermaid">flowchart LR
-    A[数据] --&gt; B[训练目标]
-    B --&gt; C[模型架构]
-    C --&gt; D[系统实现]
-    D --&gt; E[训练预算]
-    E --&gt; F[评测反馈]
-    F --&gt; G[对齐优化]
-    G --&gt; H[推理与产品]
-    H --&gt; A</pre>
+请严格遵守以下工作方式：
 
-<p>很多 LLM 学习材料会把这些拆散：模型结构归模型结构，GPU 归 GPU，RLHF 归 RLHF，评测归评测。但真实的大模型研发不是这样运转的。一个看似算法层面的选择，可能会改变系统瓶颈；一个看似数据层面的过滤规则，可能会改变评测结果；一个看似后训练的问题，可能最后还是回到数据和奖励设计。</p>
-<p>所以这篇知识地图的使用方式也很简单：</p>
+【第一阶段：只分析，不写大段代码】
+1. 先完整阅读 README.md 以及项目目录中的相关文件。
+2. 用自己的话复述：业务目标、必做功能、输入格式、输出格式、技术限制、验收方式、交付物和加分项。
+3. 把需求整理成验收清单，并区分 P0 必做项、P1 重要增强项和 P2 加分项。
+4. 明确列出你认为最容易被测试用例检查的边界条件。
+5. 如果 README 存在歧义，先列出假设，不要擅自扩大需求。
+
+【第二阶段：设计最小可行架构】
+1. 先给出目录结构和模块职责。
+2. 定义核心数据模型、接口、错误码和结果格式。
+3. 将输入读取、解析、归一化、校验、业务处理、输出和 UI/CLI 分离。
+4. 对外部 API、文件系统和时间等依赖提供可替换的 Mock 或适配器。
+5. 说明关键设计取舍，以及为什么当前方案适合考试时间和验收方式。
+6. 等我确认设计后，再开始分模块实现。
+
+【第三阶段：分模块实现】
+1. 每次只实现一个小模块，不要覆盖或删除无关文件。
+2. 实现前先说明将修改哪些文件、增加哪些接口、如何验证。
+3. 保留清晰的类型、错误处理和日志，不要用静默吞错代替处理。
+4. 不要把密钥、Token、密码或真实认证信息写入代码、测试数据和日志。
+5. 对批处理任务做到单条失败不影响其他记录，并保留失败原因和来源定位信息。
+
+【第四阶段：边做边测】
+每完成一个模块，立即：
+1. 运行对应的单元测试或最小样例；
+2. 检查正常输入、空输入、缺字段、错误类型和异常依赖；
+3. 展示真实的命令、测试结果和失败原因；
+4. 如果测试失败，先解释根因，再做最小修复，不要无关重构。
+
+【第五阶段：最终验收】
+在声称完成之前，必须：
+1. 对照 README 逐项检查必做功能；
+2. 运行完整测试、静态检查和一次真实的端到端样例；
+3. 检查输出文件、统计摘要、错误报告和运行说明是否存在；
+4. 检查是否误提交敏感信息、临时文件或不必要的大文件；
+5. 给出：已完成项、未完成项、测试命令及结果、已知问题、运行方式和交付文件清单。
+
+重要约束：
+- 不要在没有读完 README 的情况下开始编码；
+- 不要一次性生成整个项目；
+- 不要声称“已完成”而不实际运行测试；
+- 不要为了加分项破坏 P0 核心功能；
+- 不要改变验收接口、文件名或输出格式，除非 README 明确允许；
+- 如果无法联网，优先使用 Mock 完成可验证的核心流程；
+- 所有结论都要以实际代码、测试输出或 README 要求为依据。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="七、如何准备自己的-Prompt"><a href="#七、如何准备自己的-Prompt" class="headerlink" title="七、如何准备自己的 Prompt"></a>七、如何准备自己的 Prompt</h2><p>考前不建议只背一段万能 Prompt。更有效的是准备三个可组合片段：</p>
+<h3 id="需求分析片段"><a href="#需求分析片段" class="headerlink" title="需求分析片段"></a>需求分析片段</h3><p>用于第一次对话，把 README 变成验收清单和边界条件。</p>
+<h3 id="工程实现片段"><a href="#工程实现片段" class="headerlink" title="工程实现片段"></a>工程实现片段</h3><p>用于约束 AI 分模块修改、保留接口、避免覆盖文件，并要求每次修改后运行测试。</p>
+<h3 id="验收片段"><a href="#验收片段" class="headerlink" title="验收片段"></a>验收片段</h3><p>用于最后 15 分钟，让 AI 对照 README 检查功能、输出、文档、测试和敏感信息。</p>
+<p>这比“请帮我完成整个项目”更稳定，因为它把 AI 的工作限定在可检查的步骤中，也让候选人始终知道项目当前完成到了哪里。</p>
+<h2 id="八、最后的面试追问准备"><a href="#八、最后的面试追问准备" class="headerlink" title="八、最后的面试追问准备"></a>八、最后的面试追问准备</h2><p>AI Coding 笔试结束后，面试官可能追问：</p>
 <ul>
-<li>想快速入门，就按模块一到模块六顺序看。</li>
-<li>想补系统能力，就重点看 GPU、Kernel、Parallelism 和 Inference。</li>
-<li>想理解模型能力增长，就重点看 Scaling、Data、Evaluation。</li>
-<li>想研究对齐和推理模型，就把 SFT、RLHF、RLVR 放到最后精读。</li>
+<li>为什么把外部 API 抽象成接口？</li>
+<li>为什么选择逐条错误隔离，而不是遇错即停？</li>
+<li>如何保证金额、价格或库存字段的类型稳定？</li>
+<li>如果数据量扩大十倍，瓶颈在哪里？</li>
+<li>如何补充监控、重试、幂等和断点续跑？</li>
+<li>AI 生成的代码中，你实际审查和修改了哪些地方？</li>
 </ul>
-<p>别急着一次看完。收藏这张地图，等有时间了，一块一块点进去就行。</p>
+<p>候选人至少应该能解释四件事：<strong>数据模型、核心链路、异常处理、测试证据</strong>。不需要把项目包装成生产级平台，但必须清楚哪些地方是当前考试范围内的最小实现，哪些地方仍然需要在生产环境继续加强。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>蚂蚁 AI Coding 的关键，不是让 AI 写出最多代码，而是让 AI 在明确的工程边界内持续交付可验证结果。</p>
+<p>备考时，可以把网页清洗、批量推理、账单解析这三类题目反复练习一遍：它们分别覆盖了半结构化数据处理、外部服务编排和配置化规则解析。真正进入考试后，先读 README，先定数据模型，再实现主链路，最后用测试和交付清单收口。</p>
+<p>这样即使遇到没有见过的业务背景，也能把题目还原成一组熟悉的工程问题。</p>
 ]]></content>
       <categories>
-        <category>AI研究</category>
+        <category>求职笔试</category>
       </categories>
       <tags>
-        <tag>LLM</tag>
-        <tag>训练</tag>
-        <tag>系统</tag>
-        <tag>对齐</tag>
+        <tag>Agent</tag>
+        <tag>面试</tag>
+        <tag>AI笔试</tag>
       </tags>
   </entry>
 </search>

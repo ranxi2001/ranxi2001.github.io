@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-08-13T07:31:57.588Z</updated>
+  <updated>2026-08-20T08:27:14.440Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蚂蚁 AI Coding 笔试经验：3道题与通用 AI Harness Prompt</title>
+    <link href="https://onefly.top/posts/ant-ai-coding-interview-guide.html"/>
+    <id>https://onefly.top/posts/ant-ai-coding-interview-guide.html</id>
+    <published>2026-08-20T07:25:00.000Z</published>
+    <updated>2026-08-20T08:27:14.440Z</updated>
+    
+    
+    <summary type="html">结合公开复盘与题面截图，整理蚂蚁 AI Coding 笔试的流程、3 类高频工程题、解题策略，以及候选人可直接改写使用的通用 AI Harness Prompt。</summary>
+    
+    
+    
+    <category term="求职笔试" scheme="https://onefly.top/categories/%E6%B1%82%E8%81%8C%E7%AC%94%E8%AF%95/"/>
+    
+    
+    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
+    
+    <category term="面试" scheme="https://onefly.top/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="AI笔试" scheme="https://onefly.top/tags/AI%E7%AC%94%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>GMGN 30%返佣注册指南：邀请码、计算规则与领取说明</title>
@@ -474,31 +497,6 @@
     <category term="评测" scheme="https://onefly.top/tags/%E8%AF%84%E6%B5%8B/"/>
     
     <category term="高考数学" scheme="https://onefly.top/tags/%E9%AB%98%E8%80%83%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>因子的半衰期：量化策略真正的慢性失效</title>
-    <link href="https://onefly.top/posts/factor-half-life-quant-strategy-decay.html"/>
-    <id>https://onefly.top/posts/factor-half-life-quant-strategy-decay.html</id>
-    <published>2026-06-08T18:18:21.000Z</published>
-    <updated>2026-06-08T18:20:57.878Z</updated>
-    
-    
-    <summary type="html">因子不是永动机，它会被套利、被市场结构改变，也会因为过拟合而失效。本文系统拆解因子半衰期的成因、测量方法和因子库的新陈代谢机制。</summary>
-    
-    
-    
-    <category term="量化交易" scheme="https://onefly.top/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    
-    
-    <category term="风控" scheme="https://onefly.top/tags/%E9%A3%8E%E6%8E%A7/"/>
-    
-    <category term="量化" scheme="https://onefly.top/tags/%E9%87%8F%E5%8C%96/"/>
-    
-    <category term="因子" scheme="https://onefly.top/tags/%E5%9B%A0%E5%AD%90/"/>
-    
-    <category term="策略" scheme="https://onefly.top/tags/%E7%AD%96%E7%95%A5/"/>
     
   </entry>
   

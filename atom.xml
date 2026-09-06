@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-08-20T17:26:32.752Z</updated>
+  <updated>2026-09-06T18:33:30.967Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>上下文工程：Agent 长程任务的缓存、压缩与回放</title>
+    <link href="https://onefly.top/posts/agent-context-engineering-cache-compaction.html"/>
+    <id>https://onefly.top/posts/agent-context-engineering-cache-compaction.html</id>
+    <published>2026-09-08T01:00:00.000Z</published>
+    <updated>2026-09-06T18:33:30.967Z</updated>
+    
+    
+    <summary type="html">上下文是 Agent 与大模型之间的核心桥梁。本文从 KV Cache 命中率出发，整理上下文装配、压缩、长程任务稳定性、事件日志与回放机制的工程方法。</summary>
+    
+    
+    
+    <category term="Agent工程" scheme="https://onefly.top/categories/Agent%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+    <category term="Agent工程" scheme="https://onefly.top/tags/Agent%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="Harness" scheme="https://onefly.top/tags/Harness/"/>
+    
+    <category term="上下文" scheme="https://onefly.top/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
+    
+    <category term="KV Cache" scheme="https://onefly.top/tags/KV-Cache/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>端侧 AI Infra：VLM 推理优化与软硬件协同</title>
+    <link href="https://onefly.top/posts/edge-ai-infra-vlm-inference-optimization.html"/>
+    <id>https://onefly.top/posts/edge-ai-infra-vlm-inference-optimization.html</id>
+    <published>2026-09-08T01:00:00.000Z</published>
+    <updated>2026-09-06T18:33:30.306Z</updated>
+    
+    
+    <summary type="html">从机器人与自动驾驶的实时约束出发，拆解 VLM 端侧推理时延，系统梳理视觉 Token 裁剪、跨帧 KV Cache 复用、量化、异构切分、流水线并行与端云协同。</summary>
+    
+    
+    
+    <category term="AI Infra" scheme="https://onefly.top/categories/AI-Infra/"/>
+    
+    
+    <category term="AI Infra" scheme="https://onefly.top/tags/AI-Infra/"/>
+    
+    <category term="端侧推理" scheme="https://onefly.top/tags/%E7%AB%AF%E4%BE%A7%E6%8E%A8%E7%90%86/"/>
+    
+    <category term="模型量化" scheme="https://onefly.top/tags/%E6%A8%A1%E5%9E%8B%E9%87%8F%E5%8C%96/"/>
+    
+    <category term="VLM" scheme="https://onefly.top/tags/VLM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VLM in Robotics：端侧 AI 的工程挑战与职业机会</title>
+    <link href="https://onefly.top/posts/vlm-in-robotics-edge-ai-infra.html"/>
+    <id>https://onefly.top/posts/vlm-in-robotics-edge-ai-infra.html</id>
+    <published>2026-08-29T10:30:00.000Z</published>
+    <updated>2026-09-06T18:41:17.859Z</updated>
+    
+    
+    <summary type="html">以机器人 VLM/VLA 为例，拆解端侧 AI 从模型选择、量化、图优化到 Runtime 集成的完整链路，并给出项目路线与职业选择框架。</summary>
+    
+    
+    
+    <category term="人工智能" scheme="https://onefly.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="端侧AI" scheme="https://onefly.top/tags/%E7%AB%AF%E4%BE%A7AI/"/>
+    
+    <category term="机器人" scheme="https://onefly.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+    <category term="模型部署" scheme="https://onefly.top/tags/%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="推理优化" scheme="https://onefly.top/tags/%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>Agent自进化：从DeepSeek Harness看可回滚的脚手架工程</title>
@@ -426,77 +501,6 @@
     <category term="API" scheme="https://onefly.top/tags/API/"/>
     
     <category term="Codex" scheme="https://onefly.top/tags/Codex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GEO：让 AI 主动推荐你</title>
-    <link href="https://onefly.top/posts/generative-engine-optimization-ai-search.html"/>
-    <id>https://onefly.top/posts/generative-engine-optimization-ai-search.html</id>
-    <published>2026-06-23T02:56:13.000Z</published>
-    <updated>2026-06-23T03:00:35.146Z</updated>
-    
-    
-    <summary type="html">GEO 不是把 SEO 换个新名字，而是面向 ChatGPT、Perplexity、豆包等生成式答案引擎，重新设计内容、结构化数据和可信信号，让 AI 在回答用户问题时愿意引用并推荐你。</summary>
-    
-    
-    
-    <category term="AI工程" scheme="https://onefly.top/categories/AI%E5%B7%A5%E7%A8%8B/"/>
-    
-    
-    <category term="AI搜索" scheme="https://onefly.top/tags/AI%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="GEO" scheme="https://onefly.top/tags/GEO/"/>
-    
-    <category term="SEO" scheme="https://onefly.top/tags/SEO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AI代码合入哲学：大型基础设施不能只追求生成速度</title>
-    <link href="https://onefly.top/posts/ai-infra-code-merge-philosophy.html"/>
-    <id>https://onefly.top/posts/ai-infra-code-merge-philosophy.html</id>
-    <published>2026-06-19T08:52:13.000Z</published>
-    <updated>2026-06-19T09:03:31.740Z</updated>
-    
-    
-    <summary type="html">当 AI 让代码生成速度超过验证速度，大型开源基础设施项目需要重新设计 PR Review、测试、合入与责任边界。</summary>
-    
-    
-    
-    <category term="AI工程" scheme="https://onefly.top/categories/AI%E5%B7%A5%E7%A8%8B/"/>
-    
-    
-    <category term="AI审查" scheme="https://onefly.top/tags/AI%E5%AE%A1%E6%9F%A5/"/>
-    
-    <category term="基建" scheme="https://onefly.top/tags/%E5%9F%BA%E5%BB%BA/"/>
-    
-    <category term="测试" scheme="https://onefly.top/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-    <category term="合入" scheme="https://onefly.top/tags/%E5%90%88%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Loop Engineering：让 AI 自己沉淀上下文</title>
-    <link href="https://onefly.top/posts/loop-engineering-ai-memory.html"/>
-    <id>https://onefly.top/posts/loop-engineering-ai-memory.html</id>
-    <published>2026-06-16T16:18:00.000Z</published>
-    <updated>2026-07-14T15:06:23.163Z</updated>
-    
-    
-    <summary type="html">Prompt 不是没用了，而是不够了。真正能把 AI Agent 用顺的人，正在从写提示词，转向设计循环、检查闸门和可复用的长期上下文。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Agent" scheme="https://onefly.top/tags/Agent/"/>
-    
-    <category term="上下文" scheme="https://onefly.top/tags/%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
-    
-    <category term="技能" scheme="https://onefly.top/tags/%E6%8A%80%E8%83%BD/"/>
     
   </entry>
   

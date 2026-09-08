@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-09-06T18:33:30.967Z</updated>
+  <updated>2026-09-08T06:25:42.700Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LoopRec：戴耳机也能录下面试的 Mac 音频复盘工具</title>
+    <link href="https://onefly.top/posts/looprec-mac-interview-audio-recorder.html"/>
+    <id>https://onefly.top/posts/looprec-mac-interview-audio-recorder.html</id>
+    <published>2026-09-08T04:36:00.000Z</published>
+    <updated>2026-09-08T06:25:42.700Z</updated>
+    
+    
+    <summary type="html">LoopRec 是一款原生 macOS 15+ 音频录制工具，可同时录制 Mac 系统声音与麦克风。戴耳机参加面试或线上会议时，将双方声音保存为本地 M4A，方便复盘与导入飞书妙记；免费版每次 40 分钟，现已全球上架 Mac App Store。</summary>
+    
+    
+    
+    <category term="Mac应用" scheme="https://onefly.top/categories/Mac%E5%BA%94%E7%94%A8/"/>
+    
+    
+    <category term="Mac应用" scheme="https://onefly.top/tags/Mac%E5%BA%94%E7%94%A8/"/>
+    
+    <category term="音频工具" scheme="https://onefly.top/tags/%E9%9F%B3%E9%A2%91%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="面试复盘" scheme="https://onefly.top/tags/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98/"/>
+    
+    <category term="macOS" scheme="https://onefly.top/tags/macOS/"/>
+    
+  </entry>
   
   <entry>
     <title>上下文工程：Agent 长程任务的缓存、压缩与回放</title>
@@ -476,31 +501,6 @@
     <category term="面经" scheme="https://onefly.top/tags/%E9%9D%A2%E7%BB%8F/"/>
     
     <category term="PhD" scheme="https://onefly.top/tags/PhD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AI入门第一课：装App和填API Key</title>
-    <link href="https://onefly.top/posts/ai-api-key-mac-app-install-guide.html"/>
-    <id>https://onefly.top/posts/ai-api-key-mac-app-install-guide.html</id>
-    <published>2026-06-23T13:48:16.000Z</published>
-    <updated>2026-06-25T15:54:03.643Z</updated>
-    
-    
-    <summary type="html">企业推广 AI 最容易卡在两件小事：Mac 怎么安装非 App Store 应用，以及 API Key、Base URL、OpenAI 兼容接口到底怎么配置。这篇文章用 Codex App、Codex CLI 和 Tosky AI 为例，把第一步讲清楚。</summary>
-    
-    
-    
-    <category term="AI工具" scheme="https://onefly.top/categories/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Mac" scheme="https://onefly.top/tags/Mac/"/>
-    
-    <category term="AI工具" scheme="https://onefly.top/tags/AI%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="API" scheme="https://onefly.top/tags/API/"/>
-    
-    <category term="Codex" scheme="https://onefly.top/tags/Codex/"/>
     
   </entry>
   

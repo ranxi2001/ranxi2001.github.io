@@ -461,8 +461,9 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    推理 Infra：从计算特征推导系统架构理解推理基础设施，最容易走的路是先记住一串组件名称：推理引擎、GPU 调度器、模型网关、分布式缓存。问题是，名称能够说明系统用了什么，却不能解释为什么需要它，更不能说明什么时候不该用它。
-更可靠的起点
+                                    推理 Infra：从计算特征推导系统架构
+推理系统不应从组件名开始，而应先问三个问题：一次请求怎样消耗算力和显存，哪些状态能复用，用户能等多久。架构是这些约束推出来的分工，不是产品清单。
+本文讨论常见 decoder-only、自回归 Tr
                                 
                             </div>
                             <div class="publish-info">
@@ -526,7 +527,9 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    Agent 走向生产：从任务完成到证据闭环一个 Agent 能读懂文本、调用工具并输出结构化结果，只说明一条执行路径已经跑通。生产系统面对的却是持续变化的输入、相互矛盾的证据、不稳定的外部服务，以及会被下游继续使用的判断。一次输出看起来完整
+                                    Agent 走向生产：从任务完成到证据闭环
+一个 Agent 能调用工具、输出 JSON，只能说明流程跑通。生产系统还要回答：结果有依据吗？工具失败有没有被掩盖？修改之后，正常任务会不会反而变差？
+可信的 Agent，需要把业务判断、错误处
                                 
                             </div>
                             <div class="publish-info">

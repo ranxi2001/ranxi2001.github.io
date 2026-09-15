@@ -6,7 +6,7 @@
   <link href="https://onefly.top/atom.xml" rel="self"/>
   
   <link href="https://onefly.top/"/>
-  <updated>2026-09-15T08:14:07.508Z</updated>
+  <updated>2026-09-15T08:45:39.843Z</updated>
   <id>https://onefly.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://onefly.top/posts/llm-inference-infra-system-design.html"/>
     <id>https://onefly.top/posts/llm-inference-infra-system-design.html</id>
     <published>2026-09-15T07:45:03.000Z</published>
-    <updated>2026-09-15T08:14:07.508Z</updated>
+    <updated>2026-09-15T08:45:39.843Z</updated>
     
     
     <summary type="html">从自回归推理的计算与访存特征出发，推导推理引擎、Kubernetes 资源调度和流量网关的职责，分析 KV 缓存与 PD 分离的跨层取舍，并给出面向 Go 与云原生工程的最小实验路径。</summary>
@@ -46,7 +46,7 @@
     <link href="https://onefly.top/posts/agent-production-evidence-loop.html"/>
     <id>https://onefly.top/posts/agent-production-evidence-loop.html</id>
     <published>2026-09-15T07:45:01.000Z</published>
-    <updated>2026-09-15T08:14:07.508Z</updated>
+    <updated>2026-09-15T08:45:39.840Z</updated>
     
     
     <summary type="html">以风险事件抽取为例，分析 Agent 从任务完成走向生产可信的工程路径，覆盖业务语义、上下文隔离、错误恢复、幂等提交，以及 Test、Trace、Eval 与持续评估组成的证据闭环。</summary>
@@ -71,7 +71,7 @@
     <link href="https://onefly.top/posts/looprec-mac-interview-audio-recorder.html"/>
     <id>https://onefly.top/posts/looprec-mac-interview-audio-recorder.html</id>
     <published>2026-09-08T04:36:00.000Z</published>
-    <updated>2026-09-15T08:14:07.510Z</updated>
+    <updated>2026-09-15T08:20:04.735Z</updated>
     
     
     <summary type="html">LoopRec 是一款原生 macOS 15+ 音频录制工具，可同时录制 Mac 系统声音与麦克风。戴耳机参加面试或线上会议时，将双方声音保存为本地 M4A，方便复盘与导入飞书妙记；免费版每次 40 分钟，现已全球上架 Mac App Store。</summary>
@@ -96,7 +96,7 @@
     <link href="https://onefly.top/posts/agent-context-engineering-cache-compaction.html"/>
     <id>https://onefly.top/posts/agent-context-engineering-cache-compaction.html</id>
     <published>2026-09-08T01:00:00.000Z</published>
-    <updated>2026-09-15T08:14:07.511Z</updated>
+    <updated>2026-09-15T08:22:35.488Z</updated>
     
     
     <summary type="html">上下文是 Agent 与大模型之间的核心桥梁。本文从 KV Cache 命中率出发，整理上下文装配、压缩、长程任务稳定性、事件日志与回放机制的工程方法。</summary>
@@ -121,7 +121,7 @@
     <link href="https://onefly.top/posts/edge-ai-infra-vlm-inference-optimization.html"/>
     <id>https://onefly.top/posts/edge-ai-infra-vlm-inference-optimization.html</id>
     <published>2026-09-08T01:00:00.000Z</published>
-    <updated>2026-09-15T08:14:07.511Z</updated>
+    <updated>2026-09-15T08:22:35.490Z</updated>
     
     
     <summary type="html">从机器人与自动驾驶的实时约束出发，拆解 VLM 端侧推理时延，系统梳理视觉 Token 裁剪、跨帧 KV Cache 复用、量化、异构切分、流水线并行与端云协同。</summary>

@@ -1,0 +1,2093 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="Agent, 多智能体, Agent as a Tool, 幂等提交, 可观测性, Trace, Eval, Golden Set">
+    <meta name="description" content="以风险事件抽取为例，分析 Agent 从任务完成走向生产可信的工程路径，覆盖业务语义、上下文隔离、错误恢复、幂等提交，以及 Test、Trace、Eval 与持续评估组成的证据闭环。">
+    <link rel="canonical" href="https://onefly.top/posts/agent-production-evidence-loop.html">
+    
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Agent 走向生产：从任务完成到证据闭环","description":"以风险事件抽取为例，分析 Agent 从任务完成走向生产可信的工程路径，覆盖业务语义、上下文隔离、错误恢复、幂等提交，以及 Test、Trace、Eval 与持续评估组成的证据闭环。","url":"https://onefly.top/posts/agent-production-evidence-loop.html","mainEntityOfPage":"https://onefly.top/posts/agent-production-evidence-loop.html","datePublished":"2026-09-15T07:45:01.000Z","dateModified":"2026-09-15T08:14:07.508Z","inLanguage":"zh-CN","image":"https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260915161233366-1840884558.png","author":{"@type":"Person","name":"Onefly","url":"https://onefly.top/about/"},"publisher":{"@type":"Person","name":"Onefly","url":"https://onefly.top/"}}</script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Agent 走向生产：从任务完成到证据闭环 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="https://tosky.top/" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+      
+      <i class="fab fa-bitcoin" style="zoom: 0.6;"></i>
+      
+      <span>Web3</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="https://tosky.top/" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+			
+			    <i class="fa-fw fab fa-bitcoin"></i>
+			
+			Web3
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260915161233366-1840884558.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Agent 走向生产：从任务完成到证据闭环</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* Onefly Shop 闪卡 CTA */
+.gpt-shop-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 8px;
+    margin: 0 0 12px 0;
+    border: 1px solid rgba(125, 211, 252, 0.55);
+    border-radius: 10px;
+    background: linear-gradient(105deg, #071a52, #075bd8, #00a8e8, #075bd8, #071a52);
+    background-size: 300% auto;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-decoration: none !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18);
+    animation: gpt-card-flow 4s linear infinite, gpt-card-pulse 2.2s ease-in-out infinite;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gpt-shop-btn:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(0, 168, 232, 0.55), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.gpt-shop-btn::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -55%;
+    width: 34%;
+    height: 220%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-22deg);
+    animation: gpt-card-sweep 2.8s ease-in-out infinite;
+}
+
+.gpt-shop-btn > * {
+    position: relative;
+    z-index: 1;
+}
+
+.gpt-shop-icon {
+    font-size: 16px;
+    filter: drop-shadow(0 0 5px rgba(125, 211, 252, 0.9));
+}
+
+.badge-shop {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gpt-card-flow {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+@keyframes gpt-card-sweep {
+    0%, 35% { left: -55%; }
+    75%, 100% { left: 125%; }
+}
+
+@keyframes gpt-card-pulse {
+    0%, 100% { box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18); }
+    50% { box-shadow: 0 5px 19px rgba(0, 168, 232, 0.58), inset 0 1px 0 rgba(255,255,255,0.24); }
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <!-- Onefly Shop 闪卡 CTA -->
+        <a class="gpt-shop-btn"
+           href="https://pay.ldxp.cn/shop/XBXEDJWO"
+           target="_blank"
+           rel="noopener noreferrer">
+            <span class="gpt-shop-icon">✦</span>
+            <span>速刷 GPT 账号购买</span>
+            <span class="badge-shop">Onefly Shop</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Agent/">
+                                <span class="chip bg-color">Agent</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%94%99%E8%AF%AF%E6%8E%A7%E5%88%B6/">
+                                <span class="chip bg-color">错误控制</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B/">
+                                <span class="chip bg-color">可观测</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AF%84%E4%BC%B0%E9%9B%86/">
+                                <span class="chip bg-color">评估集</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                AI工程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-09-15
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    19 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Agent-走向生产：从任务完成到证据闭环"><a href="#Agent-走向生产：从任务完成到证据闭环" class="headerlink" title="Agent 走向生产：从任务完成到证据闭环"></a>Agent 走向生产：从任务完成到证据闭环</h1><p>一个 Agent 能读懂文本、调用工具并输出结构化结果，只说明一条执行路径已经跑通。生产系统面对的却是持续变化的输入、相互矛盾的证据、不稳定的外部服务，以及会被下游继续使用的判断。一次输出看起来完整，不代表它值得接受；一次任务显示成功，也不代表中途的失败得到正确处理。</p>
+<p>从 Demo 走向生产，关键不是把流程画得更复杂，而是把“完成了什么”转化为“凭什么接受这个结果”。业务语义规定什么算正确，执行约束限制错误传播，可观测性保存判断经过，评估与反馈检验修改是否有效。这些环节连接起来，才构成证据闭环。</p>
+<p>下文以<strong>风险事件抽取案例</strong>展开：系统从互联网文本与视频线索中识别事件，提取时间、地点、风险类型，并关联工商主体。文中的企业名称、视频口播、查询故障和版本对照均为<strong>教学模拟</strong>，用于解释机制，不代表实际测量结果。</p>
+<h2 id="一、先定义业务完成，而不是字段填满"><a href="#一、先定义业务完成，而不是字段填满" class="headerlink" title="一、先定义业务完成，而不是字段填满"></a>一、先定义业务完成，而不是字段填满</h2><p>假设输入是：“9 月 1 日，位于乙市的某设备有限公司暂停生产，原因尚不明确。”抽取出日期、城市和停产描述并不难，难点在于每个字段的含义及其证据边界。</p>
+<p>“暂停生产”不能自动扩展为企业倒闭，“原因不明”不能由模型补成经营困难。“9 月 1 日”若没有可用年份，不能随意生成完整日期。页面发布时间、采集时间与事件发生时间也不是同一概念：它们可以帮助解释相对时间，却不能在缺少依据时相互替代。一个可信结果应保留原始表述、可确定的要素和仍然缺失的信息，而不是用格式完整掩盖事实不足。</p>
+<p>主体关联尤其容易制造隐蔽错误。另一段模拟文本提到：“去年刚进去时在甲市培训，年后才调到乙市”，随后说“我们厂里一直叫星禾，工牌上写的是 XH”。仅按简称查询工商库，可能命中不同地区的候选。上下文中的乙市可以帮助缩小范围，但它首先是推断出的工作地点，不是已经核实的注册地址。</p>
+<p>因此，<strong>同名工商记录不等于同一主体，事件地点也不等于注册地址</strong>。培训地点、工作地点、厂区所在地和注册地可能分别指向不同位置。若将推断出的乙市直接作为不可放宽的注册地过滤条件，甚至可能排除真正的候选。查询参数应保留地点的角色和确定程度；候选返回后，仍需寻找原文线索与注册主体之间的关联依据。</p>
+<p>业务输出可以分开表达事件事实与工商确认状态。即使企业尚未确认，文本中的简称和停产线索仍然有价值；反过来，查到一家真实存在的企业，也不能证明事件与它有关。允许“部分完成且缺口明确”，比强迫模型填满所有字段更接近真实业务。</p>
+<h2 id="二、拆分-Agent，是为了隔离调查而非增加角色"><a href="#二、拆分-Agent，是为了隔离调查而非增加角色" class="headerlink" title="二、拆分 Agent，是为了隔离调查而非增加角色"></a>二、拆分 Agent，是为了隔离调查而非增加角色</h2><p>最初的抽取 Agent 可以直接调用工商查询工具。遇到跨段地点时，改进查询依据就可能足够，并不必然需要增加一个 Agent。架构变化应来自任务和上下文的变化，而不是工具数量。</p>
+<p>当原文只留下团队线索，例如“星旅项目组让程序员先别来，什么时候恢复也没说”，工商确认便需要探索。教学模拟中的搜索可能命中一张招聘页，其中写着“星旅研发岗位｜乙市”，并列出远帆软件有限公司。这个页面提供了新的企业候选，却仍不能自动证明该公司就是原文团队对应的风险主体：招聘发布者、用人主体、外包服务商可能具有不同角色。</p>
+<p>调查需要反复搜索、查看页面、比较候选、核验关系。如果全部放进主 Context，原文与事件要素会和大量搜索片段共享上下文。将工商确认拆为独立 Context 的 subagent，可以把中间调查材料留在局部任务内，让主 Agent 接收结论和必要依据。</p>
+<pre class="mermaid">flowchart TD
+    A["主 Agent：保留原文与事件要素"] --&gt; B["委派：名称、地点角色、原文依据与确认目标"]
+    B --&gt; C["工商 subagent：独立调查 Context"]
+    C --&gt; D["搜索与工商查询"]
+    D --&gt; E["检查候选关系、证据缺口与预算"]
+    E --&gt;|"仍有缺口且预算允许"| C
+    E --&gt;|"可交付或达到停止条件"| F["返回状态、主体标识、依据或未确认原因"]
+    F --&gt; G["主 Agent：合并事件结果并保留证据引用"]</pre>
+
+<p>隔离并非没有代价。委派增加调用和交接成本；过度压缩的任务输入可能丢失地点转移、说话者身份或否定语句，摘要也可能把候选误写成结论。因此，任务接口不仅要传递关键词，还要传递相关原文、来源标识和待解决的问题。交付时要区分已确认主体、候选线索与未确认原因，证据引用应能回到保留的调查材料。</p>
+<p>如果调查很短且高度依赖主任务的完整语境，保持单 Agent 可能更合适。是否拆分，应比较任务独立性、上下文干扰和交接损失；“多 Agent 更先进”不能替代这一判断。</p>
+<h2 id="三、Agent-as-a-Tool：把昂贵能力变成按需服务"><a href="#三、Agent-as-a-Tool：把昂贵能力变成按需服务" class="headerlink" title="三、Agent as a Tool：把昂贵能力变成按需服务"></a>三、Agent as a Tool：把昂贵能力变成按需服务</h2><p>视频进一步暴露了资源约束。为每条视频全量解析，可能让成本和延迟先于业务价值增长。更合理的路径是先处理标题与描述，再判断是否存在影响结论的事实缺口。</p>
+<p>模拟标题“安成夜班又停了”，只能提供有限线索。若按需读取口播，得到“我们乙市二厂这边，昨晚又没开夜班……白班还在上”，结果就必须收窄为特定厂区和班次，而不是整家企业停产。“昨晚”的绝对时间及工商全称仍需核验。读取失败时，应保留这些缺口，不能把“没有读到”解释为“视频没有说明”。</p>
+<p>内容获取可以由独立 Agent 完成：内部选择浏览器操作、视频获取与解析工具，检查结果并决定是否继续；外部则暴露为一次工具调用。这就是 <strong>Agent as a Tool</strong>：调用方使用稳定的任务接口，但被调用能力内部仍有 Agent Loop，并不只是固定步骤的函数。</p>
+<p>事件抽取 Agent、工商 subagent 与上层问答 Agent 都可以复用这个入口，每次调用使用独立 Context，返回与任务有关的内容、来源和缺口。它与 subagent 分工关注点不同：前者强调调用接口和能力复用，后者强调任务委派与上下文边界，两者可以同时成立。</p>
+<p>作为工程扩展，这类工具还应约定超时、调用预算、结果大小和访问权限。网页内容应作为待核验材料，而不是能够改写任务目标的指令。共享能力越通用，越需要明确的输入输出契约，否则复杂性只是从主 Agent 转移到了一个不透明的工具内部。</p>
+<h2 id="四、前置分类节省成本，也会制造不可见的漏筛"><a href="#四、前置分类节省成本，也会制造不可见的漏筛" class="headerlink" title="四、前置分类节省成本，也会制造不可见的漏筛"></a>四、前置分类节省成本，也会制造不可见的漏筛</h2><p>事件解析只是整条数据链路的一环。页面、文本和视频线索先经过清洗、来源去重与相关性分类，再进入深度处理，随后用于事件聚合、风险分级和上层检索问答。若主体在解析阶段误绑，下游可能把多条事件聚到错误企业名下；若前置阶段漏筛，Agent 则根本没有纠正机会。</p>
+<p>前置分类可以采用 BERT 或小语言模型，也可以使用 DSPy 优化分类程序。这里真正重要的不是组件名，而是职责分配：低成本步骤缩小处理范围，昂贵的推理与工具调用留给相关或待判断内容。同时通过队列、优先级、并发限制和单任务配额控制执行容量。</p>
+<pre class="mermaid">flowchart TD
+    A["来源接入：保留原文与时间元数据"] --&gt; B["清洗去重与相关性分类"]
+    B --&gt;|"相关或待判断"| C["队列调度：优先级、并发与配额"]
+    C --&gt; D["Agent 深度处理：按需搜索或读取视频"]
+    D --&gt; E["结果接受检查与持久化"]
+    B --&gt;|"暂不深度处理"| F["保留来源与筛选决定"]
+    F --&gt; G["随机抽检与难例复核"]
+    G --&gt; H["识别漏筛并形成评估样本"]
+    H --&gt; I["验证分类策略后更新版本"]
+    I -.-&gt; B</pre>
+
+<p>只在进入 Agent 的样本上评估，会把分类漏筛排除在分母之外，得到过于乐观的端到端结论。因此，筛除数据也要抽检，并保留当时的模型版本、分类结果与来源。普通随机样本用于理解流量分布，难例加采样用于发现边界；两者混合后的错误比例不能不加区分地当成总体错误率。</p>
+<p>成本优化也不应只看模型调用费用。排队时间、外部工具耗时、重试、人工复核和错误传播都属于系统代价。减少深度调用是否值得，需要同时检查相关事件召回与下游质量，而不是用调用量下降直接宣布优化成功。</p>
+<h2 id="五、错误控制：先诚实表达失败，再讨论恢复"><a href="#五、错误控制：先诚实表达失败，再讨论恢复" class="headerlink" title="五、错误控制：先诚实表达失败，再讨论恢复"></a>五、错误控制：先诚实表达失败，再讨论恢复</h2><p>工商查询超时后，系统尚不知道是否存在匹配记录。这与查询成功但候选列表为空，是两种不同事实。工具协议应明确区分 <code>status: error</code> 与成功空结果，并保留错误类型；业务层还应分别记录执行状态和主体确认状态，不能用一个笼统的“成功”覆盖全部含义。</p>
+<p>一个典型的教学模拟是：工具已经返回超时，后续模型也确实收到了错误，却仍输出“星禾制造有限公司，已确认”，同时没有工商记录。这说明错误不一定来自工具封装，也可能发生在模型解释错误之后。此时先检查实际输入输出，比直接归因于模型能力不足更可靠。</p>
+<p>恢复应由运行时约束，而不是让 Agent 无限尝试。临时网络错误可以在次数、总时长和配额范围内退避重试；权限错误或无效参数需要其他处理；带副作用的操作则必须先明确重试语义。预算耗尽后，系统可以保留已有事件信息，以主体未确认交付或转入复核，但不能凭名称和记忆补全企业。</p>
+<p><strong>确定性接受门禁与语义 Eval 必须分工。</strong> 程序可以检查确认结果是否包含工商记录、引用是否指向真实保存的材料、字段与状态是否一致；这些是不满足就不能接受的必要条件。但是，一段招聘页即便存在且可访问，也未必支持原文团队与企业之间的关系。证据是否真正支持结论，需要按业务准则进行语义评估。</p>
+<p>因此，门禁不能被包装成“真实性证明”。它负责拦截可确定的违规，语义 Eval 负责检验主体、角色、时间和事件范围是否判断正确。门禁拒绝的原因也要进入 Trace，避免系统只留下一个无法解释的失败标签。</p>
+<h2 id="六、提交超时：幂等必须约束-K-与-R"><a href="#六、提交超时：幂等必须约束-K-与-R" class="headerlink" title="六、提交超时：幂等必须约束 K 与 R"></a>六、提交超时：幂等必须约束 K 与 R</h2><p>结果通过检查之后，仍可能在写入时出错。假设执行器提交结构化事件，存储服务已经写入，但成功响应丢失。调用方看到超时，无法据此判断“未写入”。如果重新运行 Agent、生成另一份结果再直接提交，就可能重复新增或制造相互矛盾的记录。</p>
+<p>正确的边界是一次逻辑提交。执行器在提交前保存提交标识 <code>K</code> 与结果 <code>R</code>；超时恢复时复用同一个 <code>K</code> 和同一个 <code>R</code>，而不是重新生成内容。存储服务通过唯一约束识别提交，并将幂等记录与业务结果放在<strong>同一事务</strong>中提交。</p>
+<pre class="mermaid">flowchart TD
+    A["执行器持久保存待提交的 K 与 R"] --&gt; B["存储服务：开启事务并按 K 检查或占位"]
+    B --&gt;|"首次提交"| C["写业务结果与幂等记录：受 K 唯一约束"]
+    C --&gt; D["同一事务提交，保存首次凭据"]
+    B --&gt;|"K 已存在且请求 R 相同"| E["复用已提交结果与首次凭据"]
+    B --&gt;|"K 已存在但请求 R 不同"| F["返回冲突：不覆盖、不新增"]
+    D --&gt; G["返回首次提交凭据"]
+    E --&gt; G
+    G --&gt;|"响应丢失，执行器等待超时"| H["重试完全相同的 K 与 R"]
+    H --&gt; B</pre>
+
+<p>实现时，查重不能只是“先查再写”的应用层约定，并发请求仍可能同时认为记录不存在。唯一约束负责竞争裁决，冲突后的请求应等待或重新读取已提交记录，再核对请求内容。事务失败则一起回滚，不能留下“幂等记录存在、业务结果缺失”的半完成状态。</p>
+<p><code>R</code> 的比较还需要稳定规则，例如比较规范化后的提交内容，避免序列化字段顺序造成伪差异。<strong>同 K、不同 R 必须报冲突</strong>，不能静默覆盖。新的业务修订应走明确的版本或更新协议。这套机制防止同一提交重试造成重复写入，并不自动解决不同提交标识指向同一现实事件的业务去重，也不能据此宣称全链路实现了恰好一次执行。</p>
+<h2 id="七、Test、Trace、Eval-各自回答一种问题"><a href="#七、Test、Trace、Eval-各自回答一种问题" class="headerlink" title="七、Test、Trace、Eval 各自回答一种问题"></a>七、Test、Trace、Eval 各自回答一种问题</h2><p>Test 验证约定行为：注入查询超时后，错误状态是否保留；无工商记录的确认结果是否被门禁拒绝；模拟写入成功但响应丢失后，相同 K、R 的重试是否只产生一份业务结果。这些问题有明确预期，适合单元测试、集成测试和故障注入。</p>
+<p>Trace 还原一次执行：主任务派发了什么，子任务实际收到哪些原文，工具使用哪些参数，返回了错误还是空结果，后续模型又输出了什么。它需要关联模型调用、工具调用、父子关系、耗时和状态。任务最终结束不意味着每个子调用都正常，只有展开轨迹才能看见错误是否被后续输出掩盖。</p>
+<p>Trace 支持根因假设，却不是效果证明。看到错误进入 Context 后仍被无视，可以提出“明确确认依据并增加接受检查”的修改假设；但不能凭这一条轨迹断定更换模型一定有效，也不能证明该改动不会伤害正常样本。</p>
+<p>Eval 则在代表性任务上重新运行系统，检查业务表现与修改代价。主体确认准确率的分母是系统已确认的主体数；确认召回率的分母应是按现有证据本应能够确认的主体数。只减少确认，可能同时减少误绑与召回；一律回答未知不能算完成任务。</p>
+<p>还应分别观察时间与事件范围、证据支持、无依据确认、失败状态保留，以及成本和延迟分位数。候选版本即使阻止了超时后的虚构，也要检查证据充分的正例是否仍能确认、相对时间是否被错误补全、视频中的班次边界是否保持。指标必须对应业务错误，而不是汇总成一个无法解释的平均分。</p>
+<h2 id="八、从轨迹到-Golden-Set，再到持续反馈"><a href="#八、从轨迹到-Golden-Set，再到持续反馈" class="headerlink" title="八、从轨迹到 Golden Set，再到持续反馈"></a>八、从轨迹到 Golden Set，再到持续反馈</h2><p>生产 Trace 可以成为评估样本的来源，但不能直接成为标准答案。构建 Dataset 时，应随机保留普通任务，定向补充误绑、超时和长尾案例，并补齐证据充分的正例。材料经过去重、脱敏和固化后，保存完整输入、来源时间、工具快照及必要元数据。评子任务时保存它实际收到的输入，评端到端时保存原始任务。</p>
+<p>固化工具环境是可比较性的前提。同一名称今天和下周可能查到不同网页；若工具结果同时变化，就难以区分性能差异来自程序修改还是外部环境。原输出可以留下作对照，但参考答案需要另行标注和复核，不能复制 Agent 的回答。</p>
+<p>Code、LLM Judge 与人工应共享一套 rubric：评哪项，什么证据足够，什么时候必须保留未确认。代码适合比较标识、状态和确定性约束；Judge 可以判断角色与证据关系，但应输出理由和引用，并用人工标签校准；人工负责歧义、边界与分歧裁决。未经核验的自动标签属于候选或 Silver Set，而不是天然可信的 Golden Set。</p>
+<p>Golden Set 的可信性也不等于没有泄漏。应先按事件与来源归组，把转载、近重复和改写放在同一组，再划分开发集、验证集与留出集。开发集用于分析和修改，验证集用于比较候选，但不作为 few-shot 示例；留出集在方案冻结后检查泛化，不参与调参和方案选择。否则，表面上不同的文本可能只是同一事件的复述。</p>
+<pre class="mermaid">flowchart TD
+    A["线上 Trace：普通任务、成功任务与失败任务"] --&gt; B["随机抽样与难例加采样：关联评分"]
+    B --&gt; C["人工复核：确定参考答案与失败类型"]
+    C --&gt; D["版本化 Dataset：固化工具环境并按事件来源归组"]
+    D --&gt; E["开发集修改与验证集候选比较"]
+    E --&gt; F["重新运行：生成新 Trace、输出与分场景评分"]
+    F --&gt;|"需要修改"| E
+    F --&gt;|"方案冻结"| G["独立留出集检查：不用于调参"]
+    G --&gt;|"达标"| H["小流量验证、发布与持续观察"]
+    H --&gt; A
+    H --&gt;|"异常"| I["回退并保存问题证据"]
+    I --&gt; C</pre>
+
+<p>每次实验都要记录数据、工具、程序、模型、Prompt 和评估器版本；参考答案只交给评估器，不进入被评 Agent 的输入。必要时重复运行观察波动。修好一条失败样例，只能证明该样例改善；代表性评估集、独立留出集与持续线上流量，分别支持更广但仍有边界的结论。</p>
+<p>线上通常没有现成答案，可以异步执行约束检查与已校准的 Judge 评分，再人工抽检普通任务和评分分歧。前置筛除数据也必须进入观察范围。复核后的新问题沉淀到版本化数据集，经过离线回归、小流量验证再发布，异常则回退。若某次留出检查暴露的问题被用于后续修改，它就不能继续被视为完全未见的最终证据，需要维护新的独立检验边界。</p>
+<h2 id="九、贡献证据，是工程闭环的另一种表达"><a href="#九、贡献证据，是工程闭环的另一种表达" class="headerlink" title="九、贡献证据，是工程闭环的另一种表达"></a>九、贡献证据，是工程闭环的另一种表达</h2><p>介绍 Agent 项目时，架构图只能说明系统有什么，不能说明个人做出了什么判断。面试中的项目深度，应由业务约束、备选方案、具体修改与验证材料共同支撑，而不是框架名称或 Agent 数量。</p>
+<p>以查询超时案例为例，可以分别说明：依据哪段 Trace 判断错误发生在主体确认阶段；为什么选择加强证据要求与接受门禁；具体修改了哪些接口、Prompt 或执行逻辑；用什么故障测试验证约束；又如何通过完整任务 Eval 检查正常确认能力没有退步。若只完成了模拟测试，就应明确范围，不把预期行为描述成线上收益。</p>
+<p>“提出过”“实现过”和“验证过”是不同贡献，最好分别对应决策记录、代码或接口变更、实验配置与结果。质量、成本、延迟以及尚未解决的问题同样属于证据。能解释结论的适用边界，比一句没有样本和版本背景的“效果显著提升”更有说服力。</p>
+<p>Agent 走向生产，最终要连接四件事：业务判断能追到依据，执行失败不会悄悄变成成功，修改能够在同一条件下比较，新流量能够修正旧假设。任务完成是一次输出，证据闭环则让系统有能力持续判断：这次为什么可信，下一次怎样做得更好。</p>
+<h2 id="资料说明"><a href="#资料说明" class="headerlink" title="资料说明"></a>资料说明</h2><p>本文依据用户提供的《一周一课 AI Agent 04期》文字记录整理，并结合其中关于企业级 Agent 系统、错误控制、可观测与评估的内容作工程化展开，以风险事件抽取案例解释生产化设计。文中的企业线索、视频口播、故障过程与改进对照属于教学模拟；接口约束、事务实现细节及评估边界的补充属于工程扩展与示例，不是实测性能或真实实验结论，也不表示作者亲历了相关项目。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/agent-production-evidence-loop.html">https://onefly.top/posts/agent-production-evidence-loop.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Agent/">
+                                    <span class="chip bg-color">Agent</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%94%99%E8%AF%AF%E6%8E%A7%E5%88%B6/">
+                                    <span class="chip bg-color">错误控制</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B/">
+                                    <span class="chip bg-color">可观测</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AF%84%E4%BC%B0%E9%9B%86/">
+                                    <span class="chip bg-color">评估集</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/llm-inference-infra-system-design.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260915161323352-266459268.png" class="responsive-img" alt="推理 Infra：从计算特征推导系统架构">
+                        
+                        <span class="card-title">推理 Infra：从计算特征推导系统架构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-09-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    AI工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
+                        <span class="chip bg-color">云原生</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/">
+                        <span class="chip bg-color">推理引擎</span>
+                    </a>
+                    
+                    <a href="/tags/KV%E7%BC%93%E5%AD%98/">
+                        <span class="chip bg-color">KV缓存</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B0%83%E5%BA%A6/">
+                        <span class="chip bg-color">调度</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/looprec-mac-interview-audio-recorder.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260908142431903-1108929347.png" class="responsive-img" alt="LoopRec：戴耳机也能录下面试的 Mac 音频复盘工具">
+                        
+                        <span class="card-title">LoopRec：戴耳机也能录下面试的 Mac 音频复盘工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-09-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Mac%E5%BA%94%E7%94%A8/" class="post-category">
+                                    Mac应用
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Mac%E5%BA%94%E7%94%A8/">
+                        <span class="chip bg-color">Mac应用</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9F%B3%E9%A2%91%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">音频工具</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98/">
+                        <span class="chip bg-color">面试复盘</span>
+                    </a>
+                    
+                    <a href="/tags/macOS/">
+                        <span class="chip bg-color">macOS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>

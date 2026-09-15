@@ -1,0 +1,2114 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="baidu-site-verification" content="code-PFkiVLKA3Q" />
+    <meta name="msvalidate.01" content="F21521900A0ACFC5D4A1AEB36379B98F" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="LLM推理, AI Infra, Kubernetes, KV Cache, Prefix Cache, PD分离, TTFT, Goodput">
+    <meta name="description" content="从自回归推理的计算与访存特征出发，推导推理引擎、Kubernetes 资源调度和流量网关的职责，分析 KV 缓存与 PD 分离的跨层取舍，并给出面向 Go 与云原生工程的最小实验路径。">
+    <link rel="canonical" href="https://onefly.top/posts/llm-inference-infra-system-design.html">
+    
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"推理 Infra：从计算特征推导系统架构","description":"从自回归推理的计算与访存特征出发，推导推理引擎、Kubernetes 资源调度和流量网关的职责，分析 KV 缓存与 PD 分离的跨层取舍，并给出面向 Go 与云原生工程的最小实验路径。","url":"https://onefly.top/posts/llm-inference-infra-system-design.html","mainEntityOfPage":"https://onefly.top/posts/llm-inference-infra-system-design.html","datePublished":"2026-09-15T07:45:03.000Z","dateModified":"2026-09-15T08:14:07.508Z","inLanguage":"zh-CN","image":"https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260915161323352-266459268.png","author":{"@type":"Person","name":"Onefly","url":"https://onefly.top/about/"},"publisher":{"@type":"Person","name":"Onefly","url":"https://onefly.top/"}}</script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>推理 Infra：从计算特征推导系统架构 | 孤飞的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="孤飞的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">孤飞的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+      
+      <i class="fab fa-blogger" style="zoom: 0.6;"></i>
+      
+      <span>博客园</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="https://tosky.top/" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+      
+      <i class="fab fa-bitcoin" style="zoom: 0.6;"></i>
+      
+      <span>Web3</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">孤飞的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="https://www.cnblogs.com/ranxi169" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+			
+			    <i class="fa-fw fab fa-blogger"></i>
+			
+			博客园
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="https://tosky.top/" class="waves-effect waves-light" target="_blank" rel="noopener noreferrer">
+			
+			    <i class="fa-fw fab fa-bitcoin"></i>
+			
+			Web3
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260915161323352-266459268.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">推理 Infra：从计算特征推导系统架构</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-widget {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    #article-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #article-content {
+            padding: 5px 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #article-content {
+            padding: 0 3.5vw;
+        }
+    }
+</style>
+
+<div class="page-layout page-layout--post">
+
+    <!-- 左侧广告栏（≥1700px 显示） -->
+    <div class="page-layout__sidebar">
+        <!-- sidebar.ejs -->
+
+<style>
+.sidebar {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.profile {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 14px;
+    color: #333;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* 头部：头像 + 昵称 + 二维码 */
+.profile_avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.profile_avatar img.sidebar-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.profile_avatar .name-block {
+    flex: 1;
+}
+
+.profile_avatar .name-block h3 {
+    margin: 0 0 3px 0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
+
+.profile_avatar .name-block .tagline {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* 二维码区域 */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.qr-wrap img.qr-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qr-wrap img.qr-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(76,175,80,0.35);
+}
+
+.qr-wrap .qr-label {
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* 加群 CTA 按钮 */
+.join-group-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 2px 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43a047, #66bb6a, #43a047);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(67,160,71,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+}
+
+.join-group-btn:hover {
+    box-shadow: 0 5px 18px rgba(67,160,71,0.55);
+    color: #fff !important;
+}
+
+@keyframes btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 红包角标 */
+.badge-hongbao {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.1); }
+}
+
+/* AI 中转站 CTA 按钮 */
+.ai-relay-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c4dff, #448aff, #7c4dff);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: ai-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(124,77,255,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-relay-btn:hover {
+    box-shadow: 0 5px 18px rgba(124,77,255,0.55);
+    color: #fff !important;
+}
+
+.ai-relay-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes ai-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes ai-sweep {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+}
+
+.badge-ai {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* 比特币教程 CTA 按钮 */
+.btc-guide-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0 0 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e65100, #ff9800, #e65100);
+    background-size: 200% auto;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none !important;
+    animation: btc-btn-shine 3s linear infinite;
+    box-shadow: 0 3px 10px rgba(230,81,0,0.35);
+    letter-spacing: 0.3px;
+    transition: box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btc-guide-btn:hover {
+    box-shadow: 0 5px 18px rgba(230,81,0,0.55);
+    color: #fff !important;
+}
+
+.btc-guide-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ai-sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes btc-btn-shine {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.badge-btc {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* Onefly Shop 闪卡 CTA */
+.gpt-shop-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 8px;
+    margin: 0 0 12px 0;
+    border: 1px solid rgba(125, 211, 252, 0.55);
+    border-radius: 10px;
+    background: linear-gradient(105deg, #071a52, #075bd8, #00a8e8, #075bd8, #071a52);
+    background-size: 300% auto;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-decoration: none !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18);
+    animation: gpt-card-flow 4s linear infinite, gpt-card-pulse 2.2s ease-in-out infinite;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gpt-shop-btn:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(0, 168, 232, 0.55), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.gpt-shop-btn::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -55%;
+    width: 34%;
+    height: 220%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-22deg);
+    animation: gpt-card-sweep 2.8s ease-in-out infinite;
+}
+
+.gpt-shop-btn > * {
+    position: relative;
+    z-index: 1;
+}
+
+.gpt-shop-icon {
+    font-size: 16px;
+    filter: drop-shadow(0 0 5px rgba(125, 211, 252, 0.9));
+}
+
+.badge-shop {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gpt-card-flow {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+@keyframes gpt-card-sweep {
+    0%, 35% { left: -55%; }
+    75%, 100% { left: 125%; }
+}
+
+@keyframes gpt-card-pulse {
+    0%, 100% { box-shadow: 0 4px 14px rgba(7, 91, 216, 0.42), inset 0 1px 0 rgba(255,255,255,0.18); }
+    50% { box-shadow: 0 5px 19px rgba(0, 168, 232, 0.58), inset 0 1px 0 rgba(255,255,255,0.24); }
+}
+
+/* 分割线 */
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+}
+
+/* 链接列表 */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    color: #444 !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: background 0.18s, transform 0.18s, color 0.18s;
+    border: 1px solid #efefef;
+}
+
+.sidebar-links li a:hover {
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+    transform: translateX(3px);
+    color: #2e7d32 !important;
+}
+
+.sidebar-links li a .link-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-links li a .link-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.sidebar-links li a .link-badge {
+    font-size: 10px;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 1px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+</style>
+
+<aside class="sidebar">
+    <div class="profile">
+
+        <!-- 头部：头像 + 昵称 + 二维码 -->
+        <div class="profile_avatar">
+            <img class="sidebar-avatar"
+                 src="https://img2023.cnblogs.com/blog/2910984/202410/2910984-20241010193501717-1045925197.jpg"
+                 alt="头像">
+            <div class="name-block">
+                <h3>孤飞</h3>
+                <span class="tagline">Web3 · AI · 加密研究</span>
+            </div>
+            <div class="qr-wrap">
+                <img class="qr-img"
+                     src="https://img2024.cnblogs.com/blog/2910984/202604/2910984-20260420175154561-726807901.png"
+                     alt="扫码加群二维码"
+                     title="扫码加入Web3新人交流群">
+                <span class="qr-label">扫码加群</span>
+            </div>
+        </div>
+
+        <!-- 加群 CTA -->
+        <a class="join-group-btn"
+           href="https://vlink.cc/tosky?s=C5vWZIpho7"
+           target="_blank">
+            💬 加入 Web3 新人交流群
+            <span class="badge-hongbao">送¥100红包</span>
+        </a>
+
+        <!-- AI 中转站 CTA -->
+        <a class="ai-relay-btn"
+           href="https://ai.tosky.top/"
+           target="_blank">
+            ⚡ AI 中转站 · Claude/GPT
+            <span class="badge-ai">Codex·Code</span>
+        </a>
+
+        <!-- 比特币教程 CTA -->
+        <a class="btc-guide-btn"
+           href="https://onefly.top/posts/okx-bitcoin-trading-guide.html"
+           target="_blank">
+            🪙 比特币购买入门教程
+            <span class="badge-btc">新手必看</span>
+        </a>
+
+        <!-- Onefly Shop 闪卡 CTA -->
+        <a class="gpt-shop-btn"
+           href="https://pay.ldxp.cn/shop/XBXEDJWO"
+           target="_blank"
+           rel="noopener noreferrer">
+            <span class="gpt-shop-icon">✦</span>
+            <span>速刷 GPT 账号购买</span>
+            <span class="badge-shop">Onefly Shop</span>
+        </a>
+
+        <hr class="sidebar-divider">
+
+        <!-- 快捷链接 -->
+        <ul class="sidebar-links">
+            <li>
+                <a href="https://onefly.top/posts/8888.html" target="_blank">
+                    <span class="link-icon">🇨🇳</span>
+                    <span class="link-text">OKX 注册 · 国内 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.okx.com/zh-hans/join/45175356" target="_blank">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">OKX 注册 · 国外 IP</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hy.huoyuan.xyz/a/b/c///" target="_blank">
+                    <span class="link-icon">🎬</span>
+                    <span class="link-text">视频会员 · 自媒体涨粉</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</aside>
+
+    </div>
+
+    <!-- 正文 -->
+    <div class="page-layout__main">
+        <div id="article-content">
+            <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
+                                <span class="chip bg-color">云原生</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/">
+                                <span class="chip bg-color">推理引擎</span>
+                            </a>
+                        
+                            <a href="/tags/KV%E7%BC%93%E5%AD%98/">
+                                <span class="chip bg-color">KV缓存</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%B0%83%E5%BA%A6/">
+                                <span class="chip bg-color">调度</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                AI工程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-09-15
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="推理-Infra：从计算特征推导系统架构"><a href="#推理-Infra：从计算特征推导系统架构" class="headerlink" title="推理 Infra：从计算特征推导系统架构"></a>推理 Infra：从计算特征推导系统架构</h1><p>理解推理基础设施，最容易走的路是先记住一串组件名称：推理引擎、GPU 调度器、模型网关、分布式缓存。问题是，名称能够说明系统用了什么，却不能解释为什么需要它，更不能说明什么时候不该用它。</p>
+<p>更可靠的起点是计算本身：一次请求如何消耗算力和显存，请求之间哪些工作可以复用，哪些步骤必须串行，用户又愿意等待多久。沿着这些约束向外推导，引擎负责高效执行，资源层负责提供合适的执行环境，网关负责把请求送到合适的位置，缓存与网络则连接这些局部决策。架构不是组件清单，而是约束条件下的分工。</p>
+<h2 id="一、计算特征决定优化问题"><a href="#一、计算特征决定优化问题" class="headerlink" title="一、计算特征决定优化问题"></a>一、计算特征决定优化问题</h2><p>本文以常见的 decoder-only、自回归 Transformer 文本生成为主要对象，不将结论直接推广到所有多模态、混合架构或非自回归模型。</p>
+<p>首先要分清两组容易混淆的术语。<strong>Encoder 与 decoder 是模型结构概念，prefill 与 decode 是推理执行阶段，二者并不对应。</strong> 一个没有 encoder 的 decoder-only 模型，同样会经历 prefill 和 decode。</p>
+<p>Prefill 处理输入 token，在因果注意力约束下并行计算多个位置的表示，建立后续生成需要的状态，并得到用于生成首个输出 token 的结果。输入较长时，矩阵运算规模通常较大，更有机会发挥 GPU 的并行计算能力。Decode 则在已有上下文基础上逐步生成后续 token；同一条序列的新一步依赖上一步结果，无法像已知输入那样一次性并行展开。</p>
+<p>因此，decode 并不是“轻到可以忽略”。每一步仍需执行模型前向计算，读取权重和历史状态，并追加新状态。小批量时，权重读取和内存带宽往往形成限制；上下文增长后，读取 KV 的成本也会上升。具体瓶颈还受模型结构、批大小、并行方式和硬件影响，不能把两个阶段机械地贴成纯计算密集与纯访存密集。</p>
+<pre class="mermaid">flowchart LR
+    A["输入 token 序列"] --&gt; B["Prefill：处理已知上下文"]
+    B --&gt; C["建立历史 KV 状态"]
+    B --&gt; D["采样首个输出 token"]
+    C --&gt; E["Decode：执行下一步前向计算"]
+    D --&gt; E
+    E --&gt; F["追加新 KV 并采样下一个 token"]
+    F --&gt; G{"达到停止条件？"}
+    G --&gt;|否| E
+    G --&gt;|是| H["结束并释放请求占用"]</pre>
+
+<p>这里还必须区分两种复用。<strong>基础 KV Cache 是同一请求内的历史复用</strong>：缓存先前 token 在各层产生的 key 和 value，避免每次生成都重新计算完整历史对应的 KV。它不意味着整个注意力计算被缓存，新的 query 仍需与可见历史交互。</p>
+<p><strong>Prefix Cache 则是跨请求的前缀复用</strong>：新的请求若具有兼容的 token 前缀，可以复用已有前缀的 KV，减少对应的 prefill 工作。基础 KV Cache 并不要求有第二个请求，也不要求两个用户提交相同提示词。把两者混为一谈，会直接误导缓存命中率和路由策略的设计。</p>
+<h2 id="二、推理引擎：把计算变成受控的执行"><a href="#二、推理引擎：把计算变成受控的执行" class="headerlink" title="二、推理引擎：把计算变成受控的执行"></a>二、推理引擎：把计算变成受控的执行</h2><p>有了模型和 GPU，还缺少一层把模型计算转化为高效执行的系统。vLLM、SGLang、TensorRT-LLM 等推理引擎所在的层次，处理的是算子、显存、批次和请求生命周期之间的协调，而不只是封装一个生成接口。</p>
+<p>FlashAttention 通过分块和减少中间结果在不同存储层之间的读写，改善注意力计算的访存效率。它不是消除注意力计算，也不意味着所有序列长度都获得相同收益。PagedAttention 的关键是以块管理 KV 的存储与访问，降低连续分配带来的浪费，便于动态扩展和共享。分页机制并不会自动提供跨节点缓存服务，块的所有权、引用计数和回收仍需引擎管理。</p>
+<p>Continuous batching 则让批次随执行过程变化：已完成的请求退出，新请求在调度边界加入，而不是等待整批中最长的请求结束。它提高了填充计算资源的机会，但也引入公平性问题。一个长输入的 prefill，可能干扰正在输出的 decode；大量长输出请求，又可能长期占据 KV 空间。</p>
+<p>这也是分块 prefill、每轮 token 预算、最大活动序列数和抢占策略存在的原因。分块可以控制单次 prefill 对 decode 的干扰，却可能增加调度开销或改变首字延迟。抢占能够缓解显存压力，但恢复时可能需要重算或搬运状态。参数没有脱离负载的最优值，必须同时观察等待时间和执行时间。</p>
+<p>模型侧优化也应放在正确边界内。微调主要改变模型能力与行为，<strong>不会直接把模型参数规模缩小</strong>；蒸馏才可能通过训练较小学生模型承接特定任务。量化使用更低精度表示，既可能是整数，也可能是低精度浮点，并不保证加速。内核支持、反量化开销、批大小和硬件决定实际效果。剪枝同样需要稀疏执行支持，不能只看被删除的参数。任何优化都应在质量评估通过后，再讨论延迟、吞吐和成本。</p>
+<h2 id="三、资源调度：让算力真正成为服务能力"><a href="#三、资源调度：让算力真正成为服务能力" class="headerlink" title="三、资源调度：让算力真正成为服务能力"></a>三、资源调度：让算力真正成为服务能力</h2><p>引擎解决的是已经获得资源之后如何执行；资源层解决的是哪些实例可以获得资源、放在哪里、何时增加或回收。两者分别对应计算效率与分配效率，却共享同一个服务目标。</p>
+<p>在 Kubernetes 中，GPU 资源声明能够约束 Pod 的放置，但一个 GPU 数量并不足以描述推理容量。还需考虑显存、型号、互联拓扑、驱动与运行时兼容性，以及模型需要的并行配置。异构设备承载同一模型时，也不能只按副本数平均分流，应依据负载下的服务能力分配请求。</p>
+<p>如果模型需要多卡协同，相关进程必须获得匹配的资源与通信环境。跨节点并行还会引入网络依赖；跨数据中心则通常应以相对独立的服务池组织，在流量层处理地域选择与故障切换，而不是默认把所有设备拼成一个低延迟计算域。Kubernetes 提供编排基础，但不会自动完成多集群容灾或模型级调度。</p>
+<pre class="mermaid">flowchart TB
+    subgraph CP["控制面：管理期望状态"]
+        M["模型版本与服务规格"] --&gt; O["部署控制器与扩缩容策略"]
+        O --&gt; K["Kubernetes：资源分配与 Pod 生命周期"]
+    end
+    subgraph DP["数据面：处理在线请求"]
+        U["客户端"] --&gt; G["通用入口"]
+        G --&gt; R["推理路由层"]
+        R --&gt; E1["引擎实例 A"]
+        R --&gt; E2["引擎实例 B"]
+    end
+    K -. 创建与更新 .-&gt; E1
+    K -. 创建与更新 .-&gt; E2
+    E1 -. 队列和缓存遥测 .-&gt; T["观测与状态汇聚"]
+    E2 -. 队列和缓存遥测 .-&gt; T
+    T -. 容量反馈 .-&gt; O
+    T -. 路由提示 .-&gt; R</pre>
+
+<p>弹性也不是修改副本数就完成了。新实例需要经过资源等待、镜像获取、权重读取、加载和预热，才能承担流量。镜像缓存、权重本地副本和分发优化减少的是不同阶段的耗时，应分别计量。Readiness 应表达模型已可服务，而不只是进程存在；缩容则应先停止接收新请求，再排空活动流，避免中断生成。</p>
+<p>因此，不能只用 GPU 利用率驱动扩缩容。高利用率可能意味着合理批处理，也可能意味着队列失控、重复计算或大量即将超时的工作。更合理的反馈包括排队时长、待处理 token 量、KV 压力以及 SLO 达标情况，同时保留冷启动余量和扩缩容滞回，避免资源与流量来回振荡。</p>
+<h2 id="四、流量网关：感知计算，不接管业务"><a href="#四、流量网关：感知计算，不接管业务" class="headerlink" title="四、流量网关：感知计算，不接管业务"></a>四、流量网关：感知计算，不接管业务</h2><p>传统轮询并非没有价值，它是很好的基线。但请求代价不同、缓存分布不同之后，“每个实例收到相同数量的请求”就不再等价于负载均衡。短问短答和长文生成可能只各占一个连接，却消耗完全不同的计算与显存预算。</p>
+<p>推理路由需要知道模型版本、租户配额、输入长度、输出预算、截止时间，以及实例队列和缓存线索。这些是计算与服务契约，不是业务语义。支付规则、检索策略、提示词编排和工具调用流程应留在应用层；应用可以声明经过鉴权的优先级与预算，网关不应靠理解提示词内容来决定某个业务是否重要。</p>
+<p>分层也有助于控制复杂度：外层处理通用认证、入口防护和服务路由，平台内部处理模型实例选择、推理准入与状态亲和。缓存索引和遥测汇聚可以成为独立模块，避免每个请求都遍历全部引擎。控制面负责配置和期望状态，在线数据面只做有界、可降级的决策。</p>
+<p>流式响应还要求网关正确传递取消、截止时间和背压。客户端已经收到部分输出后，不能像普通幂等查询一样透明重试，否则可能出现重复片段或不一致内容。重试应区分尚未输出与已经输出，并依靠请求标识与明确的协议约定控制重复执行。取消如果没有传到引擎，连接虽然关闭，GPU 仍可能继续做无用计算。</p>
+<h2 id="五、缓存协同：命中只是决策输入"><a href="#五、缓存协同：命中只是决策输入" class="headerlink" title="五、缓存协同：命中只是决策输入"></a>五、缓存协同：命中只是决策输入</h2><p>Prefix Cache 的前提不是“文字看起来相同”，更不是语义相似。必须匹配同一模型权重版本，以及会影响计算的配置，例如适配器、位置编码条件和注意力语义；输入还需经过一致的 tokenizer 与模板处理，形成相同的有效 token 前缀。多模态输入及其编码结果也必须纳入兼容性判断。前缀后面的 token，即使局部文字一样，也不能脱离之前的上下文任意复用。</p>
+<p>工程上，缓存键需要包含这些身份与版本信息。共享通常受块粒度约束，命中块数不能直接当作完整请求命中。网关缓存索引可能已经过时，最终是否可复用应由引擎验证；状态不兼容时必须安全回退，不能为提高命中率接受错误结果。</p>
+<p>多租户环境还要隔离缓存命名空间、授权访问与淘汰预算。未经授权不能跨租户复用敏感前缀，日志也不应直接记录原始提示词。即使使用哈希索引，也不能忽略存在性和时延侧信道。公开公共前缀若要共享，应有显式策略，而不是把“内容相同”视为访问许可。</p>
+<p>真正的路由问题可以用一个假设场景说明：实例 A 已有共享文档前缀，但队列很长；实例 B 空闲，却没有缓存。此时有三条路：等待 A、把 KV 搬到 B、让 B 重算前缀。第一条节省计算但增加排队，第二条消耗传输与导入资源，第三条花费计算但可能更快开始。</p>
+<pre class="mermaid">flowchart TD
+    A["请求与候选实例"] --&gt; B["筛选模型兼容性、租户权限和资源容量"]
+    B --&gt; C["估计队列、前缀复用与传输代价"]
+    C --&gt; D{"选择满足 SLO 的较低代价路径"}
+    D --&gt; E["在缓存所在实例等待并执行"]
+    D --&gt; F["迁移兼容 KV 到另一实例"]
+    D --&gt; G["在可用实例重算前缀"]
+    F --&gt; H{"状态导入是否成功？"}
+    H --&gt;|是| I["使用已验证状态继续执行"]
+    H --&gt;|否| J["按剩余预算重算或返回失败"]
+    E --&gt; K["记录实际延迟与资源消耗"]
+    G --&gt; K
+    I --&gt; K
+    J --&gt; K</pre>
+
+<p>比较对象应是预计的端到端收益，而不是孤立的命中率。迁移成本包含数据定位、排队、传输、布局转换和目标显存分配，不能只拿理论带宽估算。缓存下沉到主机内存或 SSD 扩大了容量，却也增加了恢复延迟，只有未来复用价值足够高时才值得保留。</p>
+<p>热点进一步改变答案。公共前缀可能吸引大量请求到同一实例，形成“缓存越热，排队越长”的反馈。可以允许热门前缀在多个实例上形成副本，设置亲和性权重上限，或在排队超过阈值时退回负载优先。长短请求的隔离则可通过服务等级、token 预算和独立队列实现；输出长度通常只能估计，不能假装网关能提前准确知道。</p>
+<h2 id="六、PD-分离：把干扰转换为传输与协调"><a href="#六、PD-分离：把干扰转换为传输与协调" class="headerlink" title="六、PD 分离：把干扰转换为传输与协调"></a>六、PD 分离：把干扰转换为传输与协调</h2><p>Prefill 与 decode 的执行特征不同，因此可以考虑分离资源池，使两阶段独立配置硬件、批处理和容量。它可能减轻长 prefill 对持续生成的干扰，但不是免费优化，也不是所有服务的默认终点。</p>
+<p>分离后，decode 端需要获得 prefill 建立的 KV 和必要请求状态。网络、缓存格式、并行布局与接收端显存因此进入关键路径。高带宽设备只是条件之一，还要看拓扑、拥塞、传输实现，以及通信能否与计算重叠。</p>
+<pre class="mermaid">sequenceDiagram
+    participant R as 推理路由与协调层
+    participant P as Prefill 池
+    participant D as Decode 池
+    R-&gt;&gt;P: 提交输入与请求标识
+    P-&gt;&gt;P: 处理前缀并建立 KV
+    R-&gt;&gt;D: 选择目标并申请接收容量
+    D--&gt;&gt;R: 返回可接收状态
+    R-&gt;&gt;P: 提供传输目标
+    P-&gt;&gt;D: 传输兼容 KV 与生成状态
+    D--&gt;&gt;R: 确认状态可用
+    D-&gt;&gt;D: 执行后续生成
+    D--&gt;&gt;R: 持续返回输出
+    R-&gt;&gt;P: 按生命周期协议释放暂存状态</pre>
+
+<p>图中是逻辑过程，不规定每个实现的通信顺序；首个 token 的采样和返回位置也可以因引擎协议而异。关键是接收确认、失败回收与取消传播必须有定义，不能让两端都以为对方持有可用状态。</p>
+<p>PD 分离还要求两类容量联动。只扩 prefill 而 decode 已经饱和，会把瓶颈变成中间状态堆积；只按总 QPS 配比，又会忽略输入与输出长度分布。低并发、短上下文、网络较弱或资源池较小时，共置部署可能更简单且更快。正确问题不是是否足够先进，而是隔离收益能否覆盖搬运、碎片化和运维成本。</p>
+<h2 id="七、从-Go-与-Kubernetes-出发的最小实验"><a href="#七、从-Go-与-Kubernetes-出发的最小实验" class="headerlink" title="七、从 Go 与 Kubernetes 出发的最小实验"></a>七、从 Go 与 Kubernetes 出发的最小实验</h2><p>验证这套推导，不必一开始就搭建分布式 KV 存储。最小路径是固定模型、引擎版本、精度和生成配置，先建立单实例基线，再引入两个独立副本与一个薄 Go 网关。以下是测试设计，不包含实测性能结论。</p>
+<p>Go 网关先实现流式转发、取消传播、超时、有限队列和轮询；使用 Kubernetes EndpointSlice 发现已就绪实例，并通过最小权限的只读访问维护本地快照。服务端健康检查与端点状态共同决定候选集。第二阶段再加入在途请求、排队信息和前缀亲和策略，状态缺失时回退到基线，避免先把策略写成复杂调度平台。</p>
+<p>若引擎没有可用的缓存事件接口，可以用前缀哈希亲和作为近似策略，但必须标为“路由提示”，不能声称知道真实缓存位置。只有引擎提供命中 token 或块的统计，才能核验复用。没有两份真实 GPU 容量时，可用模拟后端测试发现、流式协议和故障处理；模拟结果不能证明 GPU 加速或生产容量。</p>
+<p>测试输入至少覆盖无共享前缀、可复用公共前缀、热点集中、长短输入输出混合，以及两个租户使用相同文本的隔离场景。分别运行冷缓存和预热状态，固定请求集合并记录实际输入输出 token 数。按到达速率逐级增加负载，保留开放式到达测试，避免客户端等响应再发请求而隐藏系统排队。</p>
+<p>指标口径应在实验前固定：</p>
+<ul>
+<li><strong>TTFT</strong>：客户端发出请求到收到首个有效输出 token 的时间，包含网络、网关、排队与首阶段执行，而不把空事件当作首字。</li>
+<li><strong>TPOT</strong>：对输出 token 数大于一的请求，以首个到最后一个 token 的耗时除以后续 token 数；单 token 请求不参与该均值。另记录相邻 token 间隔，避免平均值掩盖停顿。</li>
+<li><strong>P95</strong>：同一测试窗口、同一指标样本的第九十五百分位。分别报告请求级 TTFT、TPOT 与总时延，并按长短请求和租户分组，不能只给一个含义不明的“P95 延迟”。</li>
+<li><strong>SLO goodput</strong>：单位时间内，成功完成且同时满足预先约定 TTFT、TPOT 等约束的请求数。同步报告总吞吐、拒绝、失败和超时比例，防止只统计成功样本美化表现。</li>
+</ul>
+<p>流式网络块不一定与 token 一一对应，精确 token 时间需要引擎埋点或协议支持；只能测块到达时，应明确报告测量边界。GPU 利用率、显存占用、排队时间、缓存命中 token 比例和传输字节数则用于解释结果，而不能替代用户侧 SLO。</p>
+<p>观测链路最好使用统一请求标识串起网关、引擎与缓存事件，但不要把请求标识或前缀哈希直接作为指标标签，以免制造高基数。跨节点阶段耗时应注意时钟偏差，优先使用各组件本地持续时间并结合追踪事件解释。成本比较也要包含空闲预留、缓存内存与网络开销，不能只比较完成请求时的 GPU 时间。</p>
+<p>实验一次只改变一个主要因素：轮询对比负载感知，再对比加入缓存亲和；相同预算下比较共置与 PD 分离。重复测试并记录窗口、样本量、预热方法和版本配置。最后注入 Pod 退出、缓存淘汰、状态延迟、客户端取消等故障，检查路由回退、资源回收和流式错误是否符合约定。任何收益结论都应限定在这些硬件、负载与测量条件内。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>推理 Infra 的核心不是让某一层指标最好看，而是让系统在质量、延迟、吞吐和成本之间形成可解释的取舍。引擎可以降低一次执行的代价，资源调度可以缩短容量缺口，网关可以减少错误的请求放置，缓存与 PD 分离则把计算问题进一步变成状态和网络问题。</p>
+<p>沿着“计算特征—执行机制—资源供给—请求路由—跨层协同”建立因果链，才能知道一次优化究竟解决了什么、又把成本转移到了哪里。最终需要最大化的不是 GPU 忙碌时间或缓存命中率，而是在既定资源预算下真正满足服务承诺的有效产出。</p>
+<blockquote>
+<p>资料说明：本文依据提供的原始转写及配套纪要整理。转写中涉及的术语在本文中已作校订，并区分模型结构、执行阶段与缓存层次；未沿用其中未经核实的行业与招聘数字。关于指标口径、安全隔离、失败处理及实验路径的补充属于工程分析，不代表原始材料已有实测结论，也不构成作者亲历陈述。</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Onefly</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://onefly.top/posts/llm-inference-infra-system-design.html">https://onefly.top/posts/llm-inference-infra-system-design.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Onefly</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
+                                    <span class="chip bg-color">云原生</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/">
+                                    <span class="chip bg-color">推理引擎</span>
+                                </a>
+                            
+                                <a href="/tags/KV%E7%BC%93%E5%AD%98/">
+                                    <span class="chip bg-color">KV缓存</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%B0%83%E5%BA%A6/">
+                                    <span class="chip bg-color">调度</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false //邮件提醒' === 'true',
+        verify: 'true //评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开' === 'true',
+        visitor: '' === 'true',
+        avatar: 'hide //评论者的头像,我这里设置的不显示',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么吧！ //评论框默认显示'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/llm-inference-infra-system-design.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260915161323352-266459268.png" class="responsive-img" alt="推理 Infra：从计算特征推导系统架构">
+                        
+                        <span class="card-title">推理 Infra：从计算特征推导系统架构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-09-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    AI工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/">
+                        <span class="chip bg-color">云原生</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/">
+                        <span class="chip bg-color">推理引擎</span>
+                    </a>
+                    
+                    <a href="/tags/KV%E7%BC%93%E5%AD%98/">
+                        <span class="chip bg-color">KV缓存</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B0%83%E5%BA%A6/">
+                        <span class="chip bg-color">调度</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/agent-production-evidence-loop.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img2024.cnblogs.com/blog/2910984/202609/2910984-20260915161233366-1840884558.png" class="responsive-img" alt="Agent 走向生产：从任务完成到证据闭环">
+                        
+                        <span class="card-title">Agent 走向生产：从任务完成到证据闭环</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-09-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    AI工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Agent/">
+                        <span class="chip bg-color">Agent</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%94%99%E8%AF%AF%E6%8E%A7%E5%88%B6/">
+                        <span class="chip bg-color">错误控制</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B/">
+                        <span class="chip bg-color">可观测</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%84%E4%BC%B0%E9%9B%86/">
+                        <span class="chip bg-color">评估集</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+        </div>
+    </div>
+
+    <!-- 右侧 TOC 目录（≥768px 显示） -->
+    <div class="page-layout__toc" id="toc-aside">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<!-- TOC 目录脚本. -->
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('.page-layout__main');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+            } else {
+                $tocAside.addClass(expandedClass).show();
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <!-- <span id="year">2022</span> -->
+            <a href="/about" target="_blank">Onefly</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ranxi2001" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:ranxi169@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- Mermaid chart support -->
+    
+    <script src='https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js'></script>
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true});
+        }
+    </script>
+    
+
+    <!-- MathJax support for Hexo-rendered LaTeX formulas -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            },
+            showProcessingMessages: false,
+            messageStyle: 'none'
+        });
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":-50,"vOffset":-10},"mobile":{"show":false}});</script></body>
+
+</html>
